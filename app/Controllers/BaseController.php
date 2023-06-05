@@ -55,4 +55,118 @@ abstract class BaseController extends Controller
 
         // E.g.: $this->session = \Config\Services::session();
     }
+
+    public $viewPath = '';
+    public $data = [];
+    public $tittle = '';
+
+    public function __construct()
+    {
+        $this->data['navigation_bar_items'] = [
+
+            'dashboard' => [
+                'title' => 'Dashboard',
+                'href' => base_url('dashboard'),
+                'icon' => '<i class="fas fa-tachometer-alt"></i>',
+                'show_subitems' => false,
+                'subitems' => [
+                ]
+            ],
+
+            'equipment' => [
+                'title' => 'Equipamentos',
+                'href' => base_url('equipamentos'),
+                'icon' => '<i class="fas fa-tools"></i>',
+                'show_subitems' => true,
+                'color' => '#ff914d',
+                'subitems' => [
+                    'olt' => [
+                        'title' => 'OLTs',
+                        'href' => base_url('equipamentos/olt'),
+                        'icon' => '<i class="fas fa-server"></i>'
+                    ],
+                    'onu' => [
+                        'title' => 'ONUs',
+                        'href' => base_url('equipamentos/onu'),
+                        'icon' => '<i class="fas fa-microchip"></i>'
+                    ],
+                    'switch' => [
+                        'title' => 'Switches',
+                        'href' => base_url('equipamentos/switch'),
+                        'icon' => '<i class="fas fa-network-wired"></i>'
+                    ],
+                    'router' => [
+                        'title' => 'Roteadores',
+                        'href' => base_url('equipamentos/router'),
+                        'icon' => '<i class="fas fa-network-wired"></i>'
+                    ],
+                    'ap' => [
+                        'title' => 'Access Points',
+                        'href' => base_url('equipamentos/ap'),
+                        'icon' => '<i class="fas fa-wifi"></i>'
+                    ],
+                    'cpe' => [
+                        'title' => 'CPEs',
+                        'href' => base_url('equipamentos/cpe'),
+                        'icon' => '<i class="fas fa-wifi"></i>'
+                    ],
+                    'servidor' => [
+                        'title' => 'Servidores',
+                        'href' => base_url('equipamentos/servidor'),
+                        'icon' => '<i class="fas fa-server"></i>'
+                    ],
+                    'storage' => [
+                        'title' => 'Storages',
+                        'href' => base_url('equipamentos/storage'),
+                        'icon' => '<i class="fas fa-hdd"></i>'
+                    ],
+                    'ups' => [
+                        'title' => 'UPSs',
+                        'href' => base_url('equipamentos/ups'),
+                        'icon' => '<i class="fas fa-battery-full"></i>'
+                    ],
+                    'outros' => [
+                        'title' => 'Outros',
+                        'href' => base_url('equipamentos/outros'),
+                        'icon' => '<i class="fas fa-question"></i>'
+                    ],
+                ]
+            ],
+
+            'customers' => [
+                'title' => 'Clientes',
+                'href' => base_url('clientes'),
+                'icon' => '<i class="fas fa-users"></i>',
+                'show_subitems' => true,
+                'color' => '#00bf63',
+                'subitems' => [
+                    'pessoa_fisica' => [
+                        'title' => 'Pessoa Física',
+                        'href' => base_url('clientes/pessoa_fisica'),
+                        'icon' => '<i class="fas fa-user"></i>'
+                    ],
+                    'pessoa_juridica' => [
+                        'title' => 'Pessoa Jurídica',
+                        'href' => base_url('clientes/pessoa_juridica'),
+                        'icon' => '<i class="fas fa-building"></i>'
+                    ],
+                ]
+            ],
+
+            'settings' => [
+                'title' => 'Configurações',
+                'href' => base_url('configuracoes'),
+                'icon' => '<i class="fas fa-cog"></i>',
+                'show_subitems' => false,
+            ],
+        ];
+
+        $this->data['lang'] = 'pt-br';
+        $this->data['title'] = $this->tittle;
+    }
+
+    public function index()
+    {
+        return view($this->viewPath . '/index', $this->data);
+    }
 }
