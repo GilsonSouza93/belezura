@@ -12,18 +12,17 @@
         <div class="col-4">
             <div class="container">
                 <div class="row row-cols-2" style="height: 400px;">
-                    <div class="col bg-primary bg-gradient"></div>
-                    <div class="col bg-success bg-gradient">Column</div>
-                    <div class="col bg-orange bg-gradient">Column</div>
-                    <div class="col bg-gradient" style="background-color: #ff914d;">Column</div>
+                    <div class="col bg-primary bg-gradient">Contador 1</div>
+                    <div class="col bg-success bg-gradient">Contador 2</div>
+                    <div class="col bg-orange bg-gradient">Contador 3</div>
+                    <div class="col bg-gradient" style="background-color: #ff914d;">Contador 4</div>
                 </div>
             </div>
         </div>
     </div>
-</div>`
+</div>
 
-<!-- graphics samples -->
-
-
+<div class="card bg-black m-2 p-4">
+    
 
 <?= $this->endSection() ?>
