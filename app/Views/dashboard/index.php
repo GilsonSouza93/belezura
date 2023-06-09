@@ -3,7 +3,9 @@
 <?= $this->section('content') ?>
 
 <div class="card bg-black m-2 p-4">
-    <h1 class="text-white">Dashboard</h1>
+    <h1 class="text-white">
+        <?= $tittle ?>
+    </h1>
 
     <div class="row" style="height: 400PX">
         <div class="col-8">

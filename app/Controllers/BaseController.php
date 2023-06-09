@@ -162,11 +162,16 @@ abstract class BaseController extends Controller
         ];
 
         $this->data['lang'] = 'pt-br';
-        $this->data['title'] = $this->tittle;
+        $this->data['tittle'] = $this->tittle;
     }
 
     public function index()
     {
         return view($this->viewPath . '/index', $this->data);
+    }  
+
+    public function form()
+    {
+        return view($this->viewPath . '/form', $this->data);
     }
 }

@@ -35,7 +35,11 @@ $routes->get('/', 'Home::index');
 
 $routes->group('dashboard', static function($routes) {
     $routes->get('/', 'DashboardController::index');
+});
 
+$routes->group('clientes', static function($routes) {
+    $routes->get('/', 'CustomerController::index');
+    $routes->get('novo', 'CustomerController::form');
 });
 
 /*

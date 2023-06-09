@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?= esc($title) ?></title>
+    <title><?= esc($tittle) ?></title>
     <link href="<?= base_url('assets/css/bootstrap_5.3.min.css') ?>" rel="stylesheet">
 
     <style>
