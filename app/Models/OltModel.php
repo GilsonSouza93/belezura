@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
-use CodeIgniter\Model;
+use App\Models\BaseModel;
 
-class OltModel extends Model
+class OltModel extends BaseModel
 {
     protected $DBGroup          = 'default';
     protected $table            = 'olts';

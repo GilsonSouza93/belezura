@@ -33,13 +33,20 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
-$routes->group('dashboard', static function($routes) {
+$routes->group('dashboard', static function ($routes) {
     $routes->get('/', 'DashboardController::index');
 });
 
-$routes->group('clientes', static function($routes) {
+$routes->group('clientes', static function ($routes) {
     $routes->get('/', 'CustomerController::index');
     $routes->get('novo', 'CustomerController::form');
+});
+
+$routes->group('equipamentos', static function ($routes) {
+    $routes->group('olt', static function ($routes) {
+        $routes->get('/', 'OltController::index');
+        $routes->get('novo', 'OltController::form');
+    });
 });
 
 /*
