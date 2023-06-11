@@ -27,7 +27,7 @@
 
 <body>
     <header>
-        <nav class="card m-2 bg-black d-flex flex-row">
+        <nav class="card m-2 d-flex flex-row">
 
             <img src="<?= base_url('assets/imgs/logo.png') ?>" alt="logo" class="mx-2" style="height: 60px;">
 
@@ -55,6 +55,7 @@
     </header>
 
     <?= $this->renderSection('content') ?>
+
     <script src="<?= base_url('assets/js/bootstrap_5.3.bundle.min.js') ?>"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
