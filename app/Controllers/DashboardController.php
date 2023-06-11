@@ -6,6 +6,6 @@ use App\Controllers\BaseController;
 
 class DashboardController extends BaseController
 {
-    public $viewPath = 'dashboard';
     public $tittle = 'Dashboard';
+    public $viewPath = 'dashboard';
 }

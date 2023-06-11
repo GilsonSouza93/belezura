@@ -6,8 +6,7 @@ use App\Controllers\BaseController;
 
 class OltController extends BaseController
 {
-    public function index()
-    {
-        //
-    }
+    public $tittle = "Olt";
+    public $viewPath = "olt";
+
 }

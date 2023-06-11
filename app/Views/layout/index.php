@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="<?= esc($lang) ?>">
+<html lang="<?= esc($lang) ?>" data-bs-theme="dark">
 
 <head>
     <meta charset="utf-8">
@@ -8,9 +8,19 @@
     <link href="<?= base_url('assets/css/bootstrap_5.3.min.css') ?>" rel="stylesheet">
 
     <style>
+        :root {
+            --border-radius: 10px;
+            --background-color: #000;
+            --card-background-color-primary: #212529;
+            --card-background-color-secondary: #1E1E1E;
+        }
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #0d1117;
+            background-color: var(--background-color);
+        }
+        .card {
+            background-color: var(--card-background-color-primary) !important;
+            border: none;
+            border-radius: var(--border-radius);
         }
     </style>
 </head>
@@ -19,7 +29,7 @@
     <header>
         <nav class="card m-2 bg-black d-flex flex-row">
 
-            <img src="<?= base_url('assets/imgs/logo.png') ?>" alt="logo" style="height: 70px;">
+            <img src="<?= base_url('assets/imgs/logo.png') ?>" alt="logo" class="mx-2" style="height: 60px;">
 
             <div class="d-flex align-items-center">
                 <?php foreach ($navigation_bar_items as $item): ?>

@@ -7,13 +7,21 @@
         <?= $tittle ?>
     </h1>
 
+    <div>
+        <input type="text" name="search" id="search" class="form-control" placeholder="Buscar">
+    </div>
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Contato</th>
+                <th scope="col">Plano</th>
                 <th scope="col">Handle</th>
+                <th scope='col'>
+                    <button type="button" class="btn btn-outline-light ">
+                        <?= $addButtonText ?>
+                    </button>
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -40,4 +48,4 @@
 
 <div class="card bg-black m-2 p-4">
 
-<?= $this->endSection() ?>
+    <?= $this->endSection() ?>

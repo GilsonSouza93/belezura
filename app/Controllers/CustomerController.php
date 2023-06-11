@@ -6,6 +6,7 @@ use App\Controllers\BaseController;
 
 class CustomerController extends BaseController
 {
-    public $viewPath = 'customer';
     public $tittle = 'Clientes';
+    public $addButtonText = 'Novo Cliente';
+    public $viewPath = 'customer';
 }

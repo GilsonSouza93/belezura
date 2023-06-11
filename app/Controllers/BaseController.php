@@ -59,6 +59,7 @@ abstract class BaseController extends Controller
     public $viewPath = '';
     public $data = [];
     public $tittle = '';
+    public $addButtonText = '';
 
     public function __construct()
     {
@@ -163,6 +164,7 @@ abstract class BaseController extends Controller
 
         $this->data['lang'] = 'pt-br';
         $this->data['tittle'] = $this->tittle;
+        $this->data['addButtonText'] = $this->addButtonText;
     }
 
     public function index()
