@@ -60,6 +60,7 @@ abstract class BaseController extends Controller
     public $data = [];
     public $tittle = '';
     public $addButtonText = '';
+    public $baseRoute = '';
 
     public function __construct()
     {
@@ -138,20 +139,7 @@ abstract class BaseController extends Controller
                 'title' => 'Clientes',
                 'href' => base_url('clientes'),
                 'icon' => '<i class="fas fa-users"></i>',
-                'show_subitems' => true,
-                'color' => '#00bf63',
-                'subitems' => [
-                    'pessoa_fisica' => [
-                        'title' => 'Pessoa Física',
-                        'href' => base_url('clientes/pessoa_fisica'),
-                        'icon' => '<i class="fas fa-user"></i>'
-                    ],
-                    'pessoa_juridica' => [
-                        'title' => 'Pessoa Jurídica',
-                        'href' => base_url('clientes/pessoa_juridica'),
-                        'icon' => '<i class="fas fa-building"></i>'
-                    ],
-                ]
+                'show_subitems' => false,
             ],
 
             'settings' => [
@@ -165,6 +153,7 @@ abstract class BaseController extends Controller
         $this->data['lang'] = 'pt-br';
         $this->data['tittle'] = $this->tittle;
         $this->data['addButtonText'] = $this->addButtonText;
+        $this->data['baseRoute'] = base_url($this->baseRoute);
     }
 
     public function index()

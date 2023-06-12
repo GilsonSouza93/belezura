@@ -2,24 +2,23 @@
 
 <?= $this->section('content') ?>
 
-
-
 <div class="card bg-black m-2 p-4">
 
     <h2><?= $tittle ?></h2>
     
-    <div class="row my-3 d-flex align-items-center">
-        <div class="col-md-10">
-            <input type="text" name="search" id="search" class="form-control" placeholder="Buscar">
+    <div class="row card-2 py-3 my-3">
+        <div class="col-md-8">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Buscar" style="background-color: transparent;">
         </div>
-        <div class="col-md-2 btn-group">
-            <button class="btn btn-outline-secondary">Novo cliente</button>
-            <button class="btn btn-outline-secondary">Filtros</button>
+        <div class="col-md-4 btn-group">
+            <button class="btn btn-success">Pesquisar</button>
+            <button class="btn btn-success">Filtros</button>
+            <a class="btn btn-success" href="<?= $baseRoute ?>/novo">Novo cliente</a>
         </div>
     </div>
 
     <p>
-        Clientes cadastrados: 100
+        Clientes localizados: 100
     </p>
 
     <div class="d-flex justify-content ">
@@ -34,42 +33,9 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th>teste</th>
-                    <th>teste</th>
-                    <th>teste</th>
-                    <th>teste</th>
-                    <th>teste</th>
-                </tr>
-                <tr>
-                    <th>teste</th>
-                    <th>teste</th>
-                    <th>teste</th>
-                    <th>teste</th>
-                    <th>teste</th>
-                </tr>
-                <tr>
-                    <th>teste</th>
-                    <th>teste</th>
-                    <th>teste</th>
-                    <th>teste</th>
-                    <th>teste</th>
-                </tr>
-                <tr>
-                    <th>teste</th>
-                    <th>teste</th>
-                    <th>teste</th>
-                    <th>teste</th>
-                    <th>teste</th>
-                </tr>
             </tbody>
         </table>
     </div>
 </div>
-
-
-
-
-
 
 <?= $this->endSection() ?>

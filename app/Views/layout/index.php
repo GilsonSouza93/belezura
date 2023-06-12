@@ -19,7 +19,11 @@
         }
         .card {
             background-color: var(--card-background-color-primary) !important;
-            border: none;
+            border-radius: var(--border-radius);
+        }
+
+        .card-2 {
+            background-color: var(--card-background-color-secondary) !important;
             border-radius: var(--border-radius);
         }
     </style>
