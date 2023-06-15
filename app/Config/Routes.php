@@ -49,6 +49,11 @@ $routes->group('equipamentos', static function ($routes) {
     });
 });
 
+$routes->group('estoque', static function ($routes) {
+    $routes->get('/', 'StockController::index');
+    $routes->get('novo', 'StockController::form');
+});
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
