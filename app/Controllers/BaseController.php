@@ -75,6 +75,13 @@ abstract class BaseController extends Controller
                 ]
             ],
 
+            'customers' => [
+                'title' => 'Clientes',
+                'href' => base_url('clientes'),
+                'icon' => '<i class="fas fa-users"></i>',
+                'show_subitems' => false,
+            ],
+
             'Estoque' => [
                 'title' => 'Estoque',
                 'href' => base_url('estoque'),
@@ -140,13 +147,6 @@ abstract class BaseController extends Controller
                         'icon' => '<i class="fas fa-question"></i>'
                     ],
                 ]
-            ],
-
-            'customers' => [
-                'title' => 'Clientes',
-                'href' => base_url('clientes'),
-                'icon' => '<i class="fas fa-users"></i>',
-                'show_subitems' => false,
             ],
 
             'settings' => [
