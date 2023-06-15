@@ -54,6 +54,11 @@ $routes->group('estoque', static function ($routes) {
         $routes->get('/', 'ProductController::index');
         $routes->get('novo', 'ProductController::form');
     });
+
+    $routes->group('fornecedores', static function ($routes) {
+        $routes->get('/', 'SupplierController::index');
+        $routes->get('novo', 'SupplierController::form');
+    });
     
 });
 
