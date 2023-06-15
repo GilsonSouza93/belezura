@@ -82,13 +82,6 @@ abstract class BaseController extends Controller
                 'show_subitems' => false,
             ],
 
-            'Estoque' => [
-                'title' => 'Estoque',
-                'href' => base_url('estoque'),
-                'icon' => '<i class="fas fa-boxes"></i>',
-                'show_subitems' => false,
-            ],
-
             'equipment' => [
                 'title' => 'Equipamentos',
                 'href' => base_url('equipamentos'),
@@ -145,6 +138,75 @@ abstract class BaseController extends Controller
                         'title' => 'Outros',
                         'href' => base_url('equipamentos/outros'),
                         'icon' => '<i class="fas fa-question"></i>'
+                    ],
+                ]
+            ],
+
+            'Estoque' => [
+                'title' => 'Estoque',
+                'href' => base_url('estoque'),
+                'icon' => '<i class="fas fa-boxes"></i>',
+                'show_subitems' => true,
+                'color' => '#00bf63',
+                'subitems' => [
+                    'Produtos' => [
+                        'title' => 'Produtos',
+                        'href' => base_url('estoque/produtos'),
+                        'icon' => '<i class="fas fa-boxes"></i>'
+                    ],
+
+                    'Marcas' => [
+                        'title' => 'Marcas',
+                        'href' => base_url('estoque/marcas'),
+                        'icon' => '<i class="fas fa-boxes"></i>'
+                    ],
+
+                    'Categorias' => [
+                        'title' => 'Categorias',
+                        'href' => base_url('estoque/categorias'),
+                        'icon' => '<i class="fas fa-boxes"></i>'
+                    ],
+
+                    'Fornecedores' => [
+                        'title' => 'Fornecedores',
+                        'href' => base_url('estoque/fornecedores'),
+                        'icon' => '<i class="fas fa-boxes"></i>'
+                    ],
+
+                    'Entradas' => [
+                        'title' => 'Entradas',
+                        'href' => base_url('estoque/entradas'),
+                        'icon' => '<i class="fas fa-boxes"></i>'
+                    ],
+
+                    'Saidas' => [
+                        'title' => 'Saídas',
+                        'href' => base_url('estoque/saidas'),
+                        'icon' => '<i class="fas fa-boxes"></i>'
+                    ],
+
+                    'Transferencias' => [
+                        'title' => 'Transferências',
+                        'href' => base_url('estoque/transferencias'),
+                        'icon' => '<i class="fas fa-boxes"></i>'
+                    ],
+
+                    'Ajustes' => [
+                        'title' => 'Ajustes',
+                        'href' => base_url('estoque/ajustes'),
+                        'icon' => '<i class="fas fa-boxes"></i>'
+                    ],
+
+                    'Inventarios' => [
+                        'title' => 'Inventários',
+                        'href' => base_url('estoque/inventarios'),
+                        'icon' => '<i class="fas fa-boxes"></i>'
+                    ],
+
+                    'Relatorios' => [
+                        'title' => 'Relatórios',
+                        'href' => base_url('estoque/relatorios'),
+                        'icon' => '<i class="fas fa-boxes"></i>'
                     ],
                 ]
             ],

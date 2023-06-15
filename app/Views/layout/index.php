@@ -42,7 +42,7 @@
                             <a class="nav-link dropdown-toggle text-white" href="<?= $item['href'] ?>" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <?= $item['title'] ?>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-dark mt-2" aria-labelledby="navbarDarkDropdownMenuLink" style="background: rgba(0,0,0, 0.7); backdrop-filter: blur(5px); border-radius: 10px; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); border: 2px solid <?= $item['color'] ?>;">
+                            <ul class="dropdown-menu dropdown-menu-dark mt-2" aria-labelledby="navbarDarkDropdownMenuLink" style="background: rgba(33,37,41, 0.7); backdrop-filter: blur(5px); border-radius: 10px; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); border: 2px solid <?= $item['color'] ?>;">
                                 <?php foreach ($item['subitems'] as $subitem): ?>
                                     <li><a class="dropdown-item text-white" href="<?= $subitem['href'] ?>"><?= $subitem['title'] ?></a></li>
                                 <?php endforeach ?>
