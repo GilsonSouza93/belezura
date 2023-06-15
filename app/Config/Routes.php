@@ -59,6 +59,10 @@ $routes->group('estoque', static function ($routes) {
         $routes->get('/', 'SupplierController::index');
         $routes->get('novo', 'SupplierController::form');
     });
+    $routes->group('marcas', static function ($routes) {
+        $routes->get('/', 'BrandController::index');
+        $routes->get('novo', 'BrandController::form');
+    });
     
 });
 
