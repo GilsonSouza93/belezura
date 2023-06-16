@@ -12,7 +12,7 @@
         </div>
         <div class="col-md-4 btn-group">
             <a class="btn btn-success" href="<?= $baseRoute ?>">Voltar</a>
-            <button class="btn btn-success">Salvar</button>
+            <button class="btn btn-success" id='submit-btn'>Salvar</button>
         </div>
     </div>
 
@@ -142,5 +142,39 @@
         </div>
     </form>
 </div>
+
+<?= $this->endSection() ?>
+
+<?= $this->section('script') ?>
+
+<script>
+
+    const submitBtn = document.querySelector('#submit-btn');
+    const form = document.querySelector('form');
+    const url= '<?= $baseRoute ?>/save';
+
+    submitBtn.addEventListener('click', event => {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+
+        fetch(url, {
+            method: 'POST',
+            body: formData
+        }).then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                alert(data.message);
+            } else {
+                alert(data.message);
+                window.location.href = '<?= $baseRoute ?>';
+            }
+        }).catch(error => {
+            console.log(error);
+        });
+    });
+
+
+</script>
 
 <?= $this->endSection() ?>

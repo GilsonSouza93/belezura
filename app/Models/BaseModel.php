@@ -105,5 +105,5 @@ abstract class BaseModel extends Model {
             'qty' => $qty,
             'data' => $result
         ];
-    }
+}
 }

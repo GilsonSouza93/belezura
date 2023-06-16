@@ -61,6 +61,8 @@ abstract class BaseController extends Controller
     public $tittle = '';
     public $addButtonText = '';
     public $baseRoute = '';
+    public $mainModel = null;
+    public $saveMessage = 'Salvo com sucesso!';
 
     public function __construct()
     {
@@ -264,5 +266,33 @@ abstract class BaseController extends Controller
     public function form()
     {
         return view($this->viewPath . '/form', $this->data);
+    }
+
+    public function treatmentBeforeSave($data)
+    {
+        return $data;
+    }
+
+    public function save()
+    {
+        $data = $this->treatmentBeforeSave($this->request->getPost());
+
+        $response = $this->mainModel->save($data);
+
+        if($response) {
+            $data = [
+                'success' => true,
+                'message' => $this->saveMessage,
+                'data' => $response
+            ];
+        } else {
+            $data = [
+                'success' => false,
+                'message' => 'Erro ao salvar!',
+                'data' => $response
+            ];
+        }
+
+        return $this->response->setJSON($data);
     }
 }

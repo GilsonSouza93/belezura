@@ -40,6 +40,7 @@ $routes->group('dashboard', static function ($routes) {
 $routes->group('clientes', static function ($routes) {
     $routes->get('/', 'CustomerController::index');
     $routes->get('novo', 'CustomerController::form');
+    $routes->post('save', 'CustomerController::save');
 });
 
 $routes->group('equipamentos', static function ($routes) {

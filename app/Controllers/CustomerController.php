@@ -10,4 +10,10 @@ class CustomerController extends BaseController
     public $addButtonText = 'Novo Cliente';
     public $viewPath = 'customer';
     public $baseRoute = '/clientes';
+
+    public function __construct()
+    {
+        $this->mainModel = model('CustomerModel');
+        parent::__construct();
+    }
 }
