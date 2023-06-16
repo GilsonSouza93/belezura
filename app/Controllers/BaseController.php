@@ -120,7 +120,7 @@ abstract class BaseController extends Controller
                 'href' => base_url('equipamentos'),
                 'icon' => '<i class="fas fa-tools"></i>',
                 'show_subitems' => true,
-                'color' => '#ff914d',
+                'color' => '#00bf63',
                 'subitems' => [
                     'olt' => [
                         'title' => 'OLTs',
@@ -180,7 +180,7 @@ abstract class BaseController extends Controller
                 'href' => base_url('estoque'),
                 'icon' => '<i class="fas fa-boxes"></i>',
                 'show_subitems' => true,
-                'color' => '#00bf63',
+                'color' => '#00aeef',
                 'subitems' => [
                     'Produtos' => [
                         'title' => 'Produtos',
