@@ -82,6 +82,37 @@ abstract class BaseController extends Controller
                 'show_subitems' => false,
             ],
 
+            'financial' => [
+                'title' => 'Financeiro',
+                'href' => base_url('financeiro'),
+                'icon' => '<i class="fas fa-tools"></i>',
+                'show_subitems' => true,
+                'color' => '#ff914d',
+                'subitems' => [
+                    'dashboard' => [
+                        'title' => 'Dashboard',
+                        'href' => base_url('financeiro/dashboard'),
+                        'icon' => '<i class="fas fa-server"></i>'
+                    ],
+                    'caixa' => [
+                        'title' => 'Caixa',
+                        'href' => base_url('financeiro/caixa'),
+                        'icon' => '<i class="fas fa-server"></i>'    
+                    ],
+                    'payable' => [
+                        'title' => 'Contas a pagar',
+                        'href' => base_url('financeiro/contasapagar'),
+                        'icon' => '<i class="fas fa-server"></i>'    
+                    ],
+                    'receive' => [
+                        'title' => 'Contas receber',
+                        'href' => base_url('financeiro/contasareceber'),
+                        'icon' => '<i class="fas fa-server"></i>'    
+                    ],
+
+                ]
+            
+            ],      
             'equipment' => [
                 'title' => 'Equipamentos',
                 'href' => base_url('equipamentos'),
