@@ -295,4 +295,13 @@ abstract class BaseController extends Controller
 
         return $this->response->setJSON($data);
     }
+
+    public function search()
+    {
+        $data = $this->request->getPost();
+
+        $response = $this->mainModel->search($data);
+
+        return $this->response->setJSON($response);
+    }
 }
