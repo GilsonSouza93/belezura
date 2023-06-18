@@ -2,26 +2,25 @@
 
 <?= $this->section('content') ?>
 
-<div class="card bg-black m-2 p-4">
+<div class="card p-4">
 
     <h2><?= $tittle ?></h2>
     
     <div class="row card-2 py-3 my-3">
-        <div class="col-md-4">
-            <input type="text" name="search" id="search" class="form-control" placeholder="Buscar" style="background-color: transparent;">
-        </div>
-        
-        <div class="col-md-4 btn-group">
-            <button class="btn btn-success">Exportar arquivo CSV</button>
-            <button class="btn btn-success">Importar</button>
-        </div>
-        
-        <div class="col-md-4 btn-group">
-            <button class="btn btn-success">Pesquisar</button>
-            <button class="btn btn-success">Filtros</button>
-            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"><?= $addButtonText ?></button>
-        </div>
-        
+      <div class="col-md-4">
+          <input type="text" name="search" id="search" class="form-control" placeholder="Buscar" style="background-color: transparent;">
+      </div>
+      
+      <div class="col-md-4 btn-group">
+          <button class="btn btn-success">Exportar arquivo CSV</button>
+          <button class="btn btn-success">Importar</button>
+      </div>
+      
+      <div class="col-md-4 btn-group">
+          <button class="btn btn-success">Pesquisar</button>
+          <button class="btn btn-success">Filtros</button>
+          <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"><?= $addButtonText ?></button>
+      </div>
     </div>
 
     <p>

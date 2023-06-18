@@ -10,9 +10,6 @@
         :root {
             --border-radius: 15px;
             --bs-body-bg-rgb: 0, 0, 0;
-            --card-background-color-primary: #212529;
-            --card-background-color-secondary: #1E1E1E;
-
             --bs-body-bg-rgb: 33,37,41;
             --bs-primary-rgb: 13,110,253;
             --bd-accent-rgb: 255,228,132;
@@ -26,19 +23,11 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
-            background-position: center;
         }
 
         .card {
             border-radius: var(--border-radius);
-            background: rgba(0, 0, 0, 0.5) !important;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(33, 37, 41, 0.2);
-        }
-
-        .card-2 {
-            border-radius: var(--border-radius);
-            background: rgba(0, 0, 0, 0.5) !important;
+            background: rgba(0, 0, 0, 0.5);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
             border: 1px solid rgba(33, 37, 41, 0.2);
         }
@@ -66,14 +55,12 @@
             margin: 0 5px;
             border-radius: var(--border-radius);
         }
-
     </style>
 </head>
 
 <body>
     <header>
-        <nav class="card m-2 d-flex flex-row">
-
+        <nav class="card m-3 d-flex flex-row">
             <img src="<?= base_url('assets/imgs/logo.png') ?>" alt="logo" class="mx-2" style="height: 60px;">
 
             <div class="d-flex align-items-center">
@@ -99,7 +86,9 @@
         </nav>
     </header>
 
-    <?= $this->renderSection('content') ?>
+    <div class="m-3">
+        <?= $this->renderSection('content') ?>
+    </div>
 
     <script src="<?= base_url('assets/js/bootstrap_5.3.bundle.min.js') ?>"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
@@ -110,7 +99,6 @@
 
         }, function() {
             $(this).find('.dropdown-menu').first().stop(true, true).delay(200).slideUp();
-
         });
     </script>
 
