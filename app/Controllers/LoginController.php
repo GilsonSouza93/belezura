@@ -6,14 +6,10 @@ use App\Controllers\BaseController;
 
 class LoginController extends BaseController
 {
-    public function __construct()
-    {
-        
-    }
-
+    
     public function index()
     {
-        return view('login/index');
+        return view('auth/index', $this->data);
     }
 
     public function login()
