@@ -31,42 +31,44 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'DashboardController::index');
+$routes->get('/', 'LoginController::index');
 
-$routes->group('dashboard', static function ($routes) {
-    $routes->get('/', 'DashboardController::index');
-});
-
-$routes->group('clientes', static function ($routes) {
-    $routes->get('/', 'CustomerController::index');
-    $routes->get('novo', 'CustomerController::form');
-    $routes->post('save', 'CustomerController::save');
-});
-
-$routes->group('equipamentos', static function ($routes) {
-    $routes->group('olt', static function ($routes) {
-        $routes->get('/', 'OltController::index');
-        $routes->get('novo', 'OltController::form');
-    });
-});
-
-$routes->group('estoque', static function ($routes) {
-    $routes->group('produtos', static function ($routes) {
-        $routes->get('/', 'ProductController::index');
-        $routes->get('novo', 'ProductController::form');
-    });
-
-    $routes->group('fornecedores', static function ($routes) {
-        $routes->get('/', 'SupplierController::index');
-        $routes->get('novo', 'SupplierController::form');
-    });
-    $routes->group('marcas', static function ($routes) {
-        $routes->get('/', 'BrandController::index');
-        $routes->get('novo', 'BrandController::form');
+// protected routes group
+$routes->group('', ['filter' => 'auth'], static function ($routes) {
+    $routes->group('dashboard', static function ($routes) {
+        $routes->get('/', 'DashboardController::index');
     });
     
+    $routes->group('clientes', static function ($routes) {
+        $routes->get('/', 'CustomerController::index');
+        $routes->get('novo', 'CustomerController::form');
+        $routes->post('save', 'CustomerController::save');
+    });
+    
+    $routes->group('equipamentos', static function ($routes) {
+        $routes->group('olt', static function ($routes) {
+            $routes->get('/', 'OltController::index');
+            $routes->get('novo', 'OltController::form');
+        });
+    });
+    
+    $routes->group('estoque', static function ($routes) {
+        $routes->group('produtos', static function ($routes) {
+            $routes->get('/', 'ProductController::index');
+            $routes->get('novo', 'ProductController::form');
+        });
+    
+        $routes->group('fornecedores', static function ($routes) {
+            $routes->get('/', 'SupplierController::index');
+            $routes->get('novo', 'SupplierController::form');
+        });
+        $routes->group('marcas', static function ($routes) {
+            $routes->get('/', 'BrandController::index');
+            $routes->get('novo', 'BrandController::form');
+        });
+        
+    });
 });
-
 
 /*
  * --------------------------------------------------------------------
