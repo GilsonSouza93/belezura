@@ -248,7 +248,15 @@ abstract class BaseController extends Controller
                 'title' => 'Configurações',
                 'href' => base_url('configuracoes'),
                 'icon' => '<i class="fas fa-cog"></i>',
-                'show_subitems' => false,
+                'show_subitems' => true,
+                'color' => '#fff',
+                'subitems' =>[
+                    'Conta' => [
+                        'title' =>'Contas',
+                        'href' => base_url('configuracoes/contas'),
+                        
+                    ]
+                ]
             ],
         ];
 

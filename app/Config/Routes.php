@@ -64,6 +64,10 @@ $routes->group('estoque', static function ($routes) {
         $routes->get('/', 'BrandController::index');
         $routes->get('novo', 'BrandController::form');
     });
+    $routes->group('auth', static function ($routes) {
+        $routes->get('/', 'AuthController::index');
+        $routes->get('novo', 'AuthController::form');
+    });
     
 });
 
