@@ -58,67 +58,59 @@
             border-radius: var(--border-radius);
         }
 
-        .form-group{
+        .form-group {
             background: transparent;
         }
-        .input {
+
+        input {
             border: 1px solid #fff;
             background: transparent;
             border: none;
             border-bottom: 1px solid #fff;
-            margin: 30px;
-            width: 400px;
+            width: 100%;
+            text-indent: 15px;
+            margin: 0.2rem;
         }
-        .input-btn {
-            color: blue;
-            background-color: blue;
-            border-radius: 5px;
-            margin: 30px;
-            width: 150px;
-            height: 50px;
-            text-align: justify;
-                               
+
+        form > * {
+            margin-bottom: 3rem;
         }
-        .input-btn-enter{
-            display: flex;
-            text-align: center;
-            align-items: center;
+
+
+        input::placeholder {
+            color: #fff;
+            font-size: 1.2rem;
+            margin: 0.2rem;
         }
-        
     </style>
 </head>
 
 <body>
-    <div class="d-flex justify-content-center align-items-center" style="height: 100vh">
-        <form id="form" method="post">
-            <div class="image">
-                <img class="logo" src="" alt="" srcset="">
-            </div>
-            
-            <div class="form-group">
-                <input type="email" class= "input col" name="email" id="email" required placeholder="Email"
-                    style="">
-            </div>
-            <div class="form-group">
-                <input type="password" class="input col col" id="password" required placeholder="Senha"
-                    style="">
-            </div>
+    <div class="row d-flex justify-content-center" style="height: 100vh">
+        <div class="col-md-4">
+            <form id="form" class="d-flex flex-column justify-content-center" style="margin-top: 40%;">
+                <div class="d-flex justify-content-center">
+                    <img src="<?= base_url('assets/imgs/logo.png') ?>" alt="logo" style="height: 110px;">
+                </div>
 
-            <div class="input-btn col">
-                <button type="submit" class="input-btn-enter col-150"
-                    style="color: #fff;">ENTRAR</button>
-            </div>
-        </form>
+                <input type="email" id="email" required placeholder="Email" >
+
+                <input type="password" id="password" required placeholder="Senha">
+
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-light btn-lg px-4">Entrar</button>
+                </div>
+            </form>
+        </div>
     </div>
 
+
     <script src="<?= base_url('assets/js/bootstrap_5.3.bundle.min.js') ?>"></script>
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
-        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
     <script>
-
-        $(document).ready(function () {
-            $('#form').submit(function (e) {
+        $(document).ready(function() {
+            $('#form').submit(function(e) {
                 e.preventDefault();
 
                 var email = $('#email').val();
@@ -131,7 +123,7 @@
                         email: email,
                         password: password
                     },
-                    success: function (result) {
+                    success: function(result) {
                         if (result.status == '200') {
                             window.location.href = '<?= base_url('dashboard') ?>';
                         } else {
@@ -141,9 +133,7 @@
                 });
             });
         });
-
     </script>
-
 </body>
 
 </html>
