@@ -57,23 +57,55 @@
             margin: 0 5px;
             border-radius: var(--border-radius);
         }
+
+        .form-group{
+            background: transparent;
+        }
+        .input {
+            border: 1px solid #fff;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #fff;
+            margin: 30px;
+            width: 400px;
+        }
+        .input-btn {
+            color: blue;
+            background-color: blue;
+            border-radius: 5px;
+            margin: 30px;
+            width: 150px;
+            height: 50px;
+            text-align: justify;
+                               
+        }
+        .input-btn-enter{
+            display: flex;
+            text-align: center;
+            align-items: center;
+        }
+        
     </style>
 </head>
 
 <body>
     <div class="d-flex justify-content-center align-items-center" style="height: 100vh">
         <form id="form" method="post">
+            <div class="image">
+                <img class="logo" src="" alt="" srcset="">
+            </div>
+            
             <div class="form-group">
-                <input type="email" class="form-control border-0" name="email" id="email" required placeholder="Email"
-                    style="border-bottom: 1px solid #00aaff   !important;">
+                <input type="email" class= "input col" name="email" id="email" required placeholder="Email"
+                    style="">
             </div>
             <div class="form-group">
-                <input type="password" class="form-control border-0" id="password" required placeholder="Senha"
-                    style="border-bottom: 1px solid #00aaff   !important;">
+                <input type="password" class="input col col" id="password" required placeholder="Senha"
+                    style="">
             </div>
 
-            <div class="d-flex justify-content-center py-4">
-                <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn"
+            <div class="input-btn col">
+                <button type="submit" class="input-btn-enter col-150"
                     style="color: #fff;">ENTRAR</button>
             </div>
         </form>
