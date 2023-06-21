@@ -29,17 +29,36 @@ class LoginController extends BaseController
                 $password = $data['password'];
 
                 $userModel = new \App\Models\UserModel();
+
                 $user = $userModel->where('email', $email)->first();
 
                 if(!$user) {
                     return redirect()->back()->withInput()->with('errors', ['Usuário não encontrado']);
                 } else {
                     if(!password_verify($password, $user['password'])) {
-                        return redirect()->back()->withInput()->with('errors', ['Senha incorreta']);
+                        $response = [
+                            'status' => 401,
+                            'error' => true,
+                            'messages' => 'Senha incorreta'
+                        ];
                     } else {
-                        $this->setUserSession($user);
-                        return redirect()->to('dashboard');
+                        $SessionData = [
+                            'id' => $user['id'],
+                            'name' => $user['name'],
+                            'email' => $user['email'],
+                            'isLoggedIn' => true
+                        ];
+
+                        session()->set($SessionData);
+                        
+                        $response = [
+                            'status' => 200,
+                            'error' => false,
+                            'messages' => 'Login efetuado com sucesso'
+                        ];
                     }
+
+                    return $this->response->setJSON($response);
                 }
             }
 

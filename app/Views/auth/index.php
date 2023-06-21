@@ -115,6 +115,35 @@
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
+    <script>
+
+        $(document).ready(function () {
+            $('#form').submit(function (e) {
+                e.preventDefault();
+
+                var email = $('#email').val();
+                var password = $('#password').val();
+
+                $.ajax({
+                    url: '<?= base_url('login') ?>',
+                    type: 'POST',
+                    data: {
+                        email: email,
+                        password: password
+                    },
+                    success: function (result) {
+                        if (result.status == '200') {
+                            window.location.href = '<?= base_url('dashboard') ?>';
+                        } else {
+                            alert(result.messages);
+                        }
+                    }
+                });
+            });
+        });
+
+    </script>
+
 </body>
 
 </html>
