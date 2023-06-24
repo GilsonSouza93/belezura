@@ -73,6 +73,13 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         });
         
     });
+
+    $routes->group('configuracoes', static function ($routes) {
+        $routes->group('contas', static function ($routes) {
+            $routes->get('/', 'AccountController::index');
+            $routes->get('novo', 'AccountController::form');
+        });
+    });
 });
 
 /*

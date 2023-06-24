@@ -32,6 +32,10 @@
             border: 1px solid rgba(33, 37, 41, 0.2);
         }
 
+        .border {
+            border-radius: var(--border-radius);
+        }
+
         .gradient-1 {
             background: linear-gradient(to right, #ffbd59, #ff914d);
             margin: 0 5px;
