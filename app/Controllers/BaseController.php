@@ -94,22 +94,18 @@ abstract class BaseController extends Controller
                     'dashboard' => [
                         'title' => 'Dashboard',
                         'href' => base_url('financeiro/dashboard'),
-                        'icon' => '<i class="fas fa-server"></i>'
                     ],
                     'caixa' => [
                         'title' => 'Caixa',
                         'href' => base_url('financeiro/caixa'),
-                        'icon' => '<i class="fas fa-server"></i>'    
                     ],
                     'payable' => [
                         'title' => 'Contas a pagar',
-                        'href' => base_url('financeiro/contasapagar'),
-                        'icon' => '<i class="fas fa-server"></i>'    
+                        'href' => base_url('financeiro/contasapagar'), 
                     ],
                     'receive' => [
                         'title' => 'Contas receber',
-                        'href' => base_url('financeiro/contasareceber'),
-                        'icon' => '<i class="fas fa-server"></i>'    
+                        'href' => base_url('financeiro/contasareceber'), 
                     ],
 
                 ]
