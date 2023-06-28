@@ -23,7 +23,7 @@
 
 </div>
 <div class="row">
-    <div class="col-md-4 stretch-card grid-margin">
+    <div class="col-md-4 mt-3 stretch-card grid-margin">
         <div class="card bg-gradient-danger card-img-holder text-white">
             <div class="card-body">
                 <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
@@ -34,7 +34,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-4 stretch-card grid-margin">
+    <div class="col-md-4 mt-3 stretch-card grid-margin">
         <div class="card bg-gradient-info card-img-holder text-white">
             <div class="card-body">
                 <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
@@ -46,7 +46,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-4 stretch-card grid-margin">
+    <div class="col-md-4 mt-3 stretch-card grid-margin">
         <div class="card bg-gradient-success card-img-holder text-white">
             <div class="card-body">
                 <img src="assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
@@ -58,7 +58,15 @@
         </div>
     </div>
 </div>
-
+<div class="col-md-5 mt-3 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Traffic Sources</h4>
+            <canvas id="traffic-chart"></canvas>
+            <div id="traffic-chart-legend" class="rounded-legend legend-vertical legend-bottom-left pt-4"></div>
+        </div>
+    </div>
+</div>
 
 <script src="assets/vendors/js/vendor.bundle.base.js"></script>
 
