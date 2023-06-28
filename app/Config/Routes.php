@@ -80,6 +80,12 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('novo', 'AccountController::form');
         });
     });
+    $routes->group('financeiro', static function ($routes) {
+        $routes->group('dashboard', static function ($routes) {
+            $routes->get('/', 'FinancialController::index');
+            $routes->get('novo', 'FinancialController::form');
+        });
+    });
 });
 
 /*
