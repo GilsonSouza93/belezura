@@ -87,7 +87,59 @@
                 <input type="text" class="form-control" name="sku" placeholder="Insira o SKU">
             </div>
         </div>
+        <div class="form-group">
+      <label class="required" for="id_codigo">Código:</label>
+      <input type="text" name="codigo" id="id_codigo" required class="form-control" maxlength="50">
+    </div>
 
+    <div class="form-group">
+      <label class="required" for="id_descricao">Descrição:</label>
+      <input type="text" name="descricao" id="id_descricao" required class="form-control" maxlength="200">
+    </div>
+
+    <div class="form-group">
+      <label for="id_ean">Cód. Barras(GTIN/EAN):</label>
+      <input type="text" name="ean" id="id_ean" class="form-control" maxlength="100">
+    </div>
+
+    <div class="form-group">
+      <label for="id_tipo_referencia">Tipo de Referência:</label>
+      <select name="tipo_referencia" id="id_tipo_referencia" class="form-control">
+        <option value="" selected>---------</option>
+        <option value="1">MAC Address</option>
+        <option value="2">Serial</option>
+        <option value="3">Tombamento</option>
+      </select>
+      <div class="help">Se marcado, será verificado se a referência existe no estoque durante as operações (venda, comodato, etc.)</div>
+    </div>
+
+    <div class="form-check">
+      <input type="checkbox" name="informar_referencia_saida" id="id_informar_referencia_saida" class="form-check-input">
+      <label class="form-check-label" for="id_informar_referencia_saida">Permite informar referência na saída do Produto?</label>
+    </div>
+
+    <div class="form-group">
+      <label for="id_categorias">Categorias:</label>
+      <select name="categorias" multiple id="id_categorias" class="form-control">
+        <option value="20">ONU WIFI FIBERHOME</option>
+        <option value="19">Roteador Fast</option>
+        <option value="26">fdgfdgfdgfdg</option>
+        <!-- Opções restantes -->
+      </select>
+      <div class="help">Mantenha pressionado o "Control", ou "Command" no Mac, para selecionar mais de uma opção.</div>
+    </div>
+
+    <div class="form-group">
+      <label for="id_foto">Foto:</label>
+      <input type="file" name="foto" id="id_foto" class="form-control-file">
+    </div>
+
+    <div class="form-group">
+      <label for="id_valor_custo">Custo R$:</label>
+      <input type="number" name="valor_custo" step="0.01" id="id_valor_custo" class="form-control">
+    </div>
+
+    <div class.
         
     </form>
 </div>
