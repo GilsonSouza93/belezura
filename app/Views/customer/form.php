@@ -4,8 +4,10 @@
 
 <div class="card p-4">
 
-    <h2><?= $tittle ?></h2>
-    
+    <h2>
+        <?= $tittle ?>
+    </h2>
+
     <div class="row card-2 py-3 my-3">
         <div class="col-md-8">
             <h4>Formulário de cadastro</h4>
@@ -21,7 +23,7 @@
         <div class="row">
             <div class="mt-3 col">
                 <label for="name" class="form-label">Nome completo</label>
-                <input type="text" class="form-control"  name="name" placeholder="Insira o nome completo">
+                <input type="text" class="form-control" name="name" placeholder="Insira o nome completo">
             </div>
         </div>
 
@@ -33,7 +35,7 @@
 
             <div class="mt-3 col-md-5">
                 <label for="cpf" class="form-label">CPF</label>
-                <input type="text" class="form-control"  name="cpf" placeholder="Insira o Cpf">
+                <input type="text" class="form-control" name="cpf" placeholder="Insira o Cpf">
             </div>
             <div class="mt-3 col-md-4">
                 <label for="data" class="form-label">Data de Nascimento</label>
@@ -104,7 +106,8 @@
 
             <div class="mt-3 col-md-3">
                 <label for="referencia" class="form-label">Ponto de referência</label>
-                <input type="text" class="form-control" id="referencia" name="referencia" placeholder="Ponto de referência">
+                <input type="text" class="form-control" id="referencia" name="referencia"
+                    placeholder="Ponto de referência">
             </div>
 
             <div class="mt-3 col-md-3">
@@ -140,6 +143,7 @@
             </div>
 
         </div>
+
     </form>
 </div>
 
@@ -151,7 +155,7 @@
 
     const submitBtn = document.querySelector('#submit-btn');
     const form = document.querySelector('form');
-    const url= '<?= $baseRoute ?>/save';
+    const url = '<?= $baseRoute ?>/save';
 
     submitBtn.addEventListener('click', event => {
         event.preventDefault();
@@ -162,16 +166,16 @@
             method: 'POST',
             body: formData
         }).then(response => response.json())
-        .then(data => {
-            if (data.error) {
-                alert(data.message);
-            } else {
-                alert(data.message);
-                window.location.href = '<?= $baseRoute ?>';
-            }
-        }).catch(error => {
-            console.log(error);
-        });
+            .then(data => {
+                if (data.error) {
+                    alert(data.message);
+                } else {
+                    alert(data.message);
+                    window.location.href = '<?= $baseRoute ?>';
+                }
+            }).catch(error => {
+                console.log(error);
+            });
     });
 
 
