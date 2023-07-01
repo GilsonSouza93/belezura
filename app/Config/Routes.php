@@ -71,7 +71,10 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('/', 'BrandController::index');
             $routes->get('novo', 'BrandController::form');
         });
-        
+        $routes->group('categorias', static function ($routes) {
+            $routes->get('/', 'CategoryController::index');
+            $routes->get('novo', 'CategoryController::form');
+        });
     });
 
     $routes->group('configuracoes', static function ($routes) {

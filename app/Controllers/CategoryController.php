@@ -6,8 +6,13 @@ use App\Controllers\BaseController;
 
 class CategoryController extends BaseController
 {
-    public $tittle = 'Categorias';
-    public $addButtonText = 'Nova Categoria';
+      //public function index() 
+
+    
+    
+    public $tittle = 'Categoria';
+    public $addButtonText = 'Novo Categoria';
     public $viewPath = 'stock/category';
     public $baseRoute = '/estoque/categorias';
-}
+     
+ }
