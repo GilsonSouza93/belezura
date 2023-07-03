@@ -62,6 +62,14 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('/', 'ProductController::index');
             $routes->get('novo', 'ProductController::form');
         });
+        $routes->group('categoria', static function ($routes) {
+            $routes->get('/', 'CategoryController::index');
+            $routes->get('novo', 'CategoryController::form');
+        });
+        $routes->group('fabricantes', static function ($routes) {
+            $routes->get('/', 'ManufacturerController::index');
+            $routes->get('novo', 'ManufacturerController::form');
+        });
     
         $routes->group('fornecedores', static function ($routes) {
             $routes->get('/', 'SupplierController::index');
@@ -83,12 +91,17 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('novo', 'AccountController::form');
         });
     });
+    
     $routes->group('financeiro', static function ($routes) {
         $routes->group('dashboard', static function ($routes) {
             $routes->get('/', 'FinancialController::index');
             $routes->get('novo', 'FinancialController::form');
         });
     });
+
+
+
+
 });
 
 /*

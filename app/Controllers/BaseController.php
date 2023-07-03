@@ -201,6 +201,12 @@ abstract class BaseController extends Controller
                         'href' => base_url('estoque/fornecedores'),
                         'icon' => '<i class="fas fa-boxes"></i>'
                     ],
+                    
+                    'Fabricantes' => [
+                        'title' => 'Fabricantes',
+                        'href' => base_url('estoque/fabricantes'),
+                        'icon' => '<i class="fas fa-boxes"></i>'
+                    ],
 
                     'Entradas' => [
                         'title' => 'Entradas',
