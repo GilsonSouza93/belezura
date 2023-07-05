@@ -21,9 +21,21 @@
     <form>
 
         <div class="row">
-            <div class="mt-3 col">
+            <div class="mt-3 col-md-8">
                 <label for="name" class="form-label">Nome completo</label>
                 <input type="text" class="form-control" name="name" placeholder="Insira o nome completo">
+            </div>
+            <div class="mt-3 col-md-4">
+                <label for="uf" class="form-label">Plano</label>
+                <select class="form-control" aria-label="Default select example">
+                    <option selected>Selecione o plano</option>
+                    <option value="1">50mb</option>
+                    <option value="1">70mb</option>
+                    <option value="1">90mb</option>
+                    <option value="1">100mb</option>
+                    <option value="1">200mb</option>
+                    <option value="1">300mb</option>
+                </select>
             </div>
         </div>
 
@@ -44,10 +56,22 @@
         </div>
 
         <div class="row">
-            <div class="mt-3 col">
+            <div class="mt-3 col-md-8">
                 <label for="email" class="form-label">E-mail</label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="E-mail">
             </div>
+            <div class="mt-3 col-md-4">
+                <label for="uf" class="form-label">Estado Civil</label>
+                <select class="form-control" aria-label="Default select example">
+                    <option selected>Selecione o estado civil</option>
+                    <option value="1">----------</option>
+                    <option value="1">Solteiro(a)</option>
+                    <option value="2">Casado(a)</option>
+                    <option value="2">Divórciado(a)</option>
+                    <option value="2">Viúvo(a)</option>
+                </select>
+            </div>
+
         </div>
 
         <div class="row">
@@ -110,7 +134,7 @@
                     placeholder="Ponto de referência">
             </div>
 
-            <div class="mt-3 col-md-3">
+            <div class="mt-3 col-md-4">
                 <label for="uf" class="form-label">UF</label>
                 <select class="form-control" aria-label="Default select example">
                     <option selected>UF</option>
