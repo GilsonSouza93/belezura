@@ -23,7 +23,11 @@ class LoginController extends BaseController
             ];
 
             if(!$this->validate($rules)) {
-                return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+                $response = [
+                    'status' => 400,
+                    'error' => true,
+                    'messages' => $this->validator->getErrors()
+                ];
             } else {
                 $email = $data['email'];
                 $password = $data['password'];
@@ -33,7 +37,11 @@ class LoginController extends BaseController
                 $user = $userModel->where('email', $email)->first();
 
                 if(!$user) {
-                    return redirect()->back()->withInput()->with('errors', ['Usuário não encontrado']);
+                    $response = [
+                        'status' => 401,
+                        'error' => true,
+                        'messages' => 'Usuário não encontrado'
+                    ];
                 } else {
                     if(!password_verify($password, $user['password'])) {
                         $response = [
@@ -57,9 +65,9 @@ class LoginController extends BaseController
                             'messages' => 'Login efetuado com sucesso'
                         ];
                     }
-
-                    return $this->response->setJSON($response);
                 }
+
+                return $this->response->setJSON($response);
             }
 
 

@@ -98,10 +98,6 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('novo', 'FinancialController::form');
         });
     });
-
-
-
-
 });
 
 /*
