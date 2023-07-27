@@ -21,11 +21,11 @@
     <form>
 
         <div class="row">
-            <div class="mt-3 col-md-8">
+            <div class="mt-3 col-md-6">
                 <label for="name" class="form-label">Nome completo</label>
                 <input type="text" class="form-control" name="name" placeholder="Insira o nome completo">
             </div>
-            <div class="mt-3 col-md-4">
+            <div class="mt-3 col-md-3">
                 <label for="uf" class="form-label">Plano</label>
                 <select class="form-control" aria-label="Default select example">
                     <option selected>Selecione o plano</option>
@@ -35,6 +35,16 @@
                     <option value="1">100mb</option>
                     <option value="1">200mb</option>
                     <option value="1">300mb</option>
+                </select>
+            </div>
+            <div class="mt-3 col-md-3">
+                <label for="uf" class="form-label">ONU</label>
+                <select class="form-control" aria-label="Default select example">
+                    <option selected>Selecione a Onu</option>
+                    <option value="1">Onu Cdata</option>
+                    <option value="1">Onu Zte</option>
+                    <option value="1">Onu Sheroline</option>
+                    <option value="1">Cadastrar nova onu</option>
                 </select>
             </div>
         </div>
