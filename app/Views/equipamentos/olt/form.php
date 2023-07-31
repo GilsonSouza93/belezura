@@ -87,6 +87,61 @@
             </div>
         </div>
 
+        <div class="row">
+            <div class="mt-3 col-md-3">
+                <label for="" class="form-label"></label>
+                <input type="checkbox" name="debug"> Debug
+            </div>
+            <div class="mt-3 col-md-3">
+                <label for="password_admin" class="form-label"></label>
+                <input type="checkbox" name="debug"> Auto Salvar?
+            </div>
+            <div class="mt-3 col-md-3">
+                <label for="password_admin" class="form-label"></label>
+                <input type="checkbox" name="debug"> Requer ONU Template?
+            </div>
+            <div class="mt-3 col-md-3">
+                <label for="password_admin" class="form-label"></label>
+                <input type="checkbox" name="debug"> Requer Definir CTO na Autorização?
+            </div>
+        </div>
+        <div class="row">
+            <div class="mt-3 col-md-3">
+                <label for="password_admin" class="form-label"></label>
+                <input type="checkbox" name="debug"> Requer Definir Serviço na autorização?
+            </div>
+            <div class="mt-3 col-md-3">
+                <label for="password_admin" class="form-label"></label>
+                <input type="checkbox" name="debug"> Requer Definir VLAN Manualmente ?
+            </div>
+            <div class="mt-3 col-md-3">
+                <label for="password_admin" class="form-label"></label>
+                <input type="checkbox" name="debug"> Desativar ONU:
+            </div>
+            <div class="mt-3 col-md-3">
+                <label for="password_admin" class="form-label"></label>
+                <input type="checkbox" name="debug"> Filtrar por POP?
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="mt-3 col-md-6">
+                <label for="protocol" class="form-label">POPs</label>
+                <select class="form-control" aria-label="Default select example">
+                    <option selected>Selecione o POP</option>
+                    <option value="1">Caruaru - PE</option>
+                    <option value="2">SHH</option>
+                </select>
+            </div>
+            <div class="mt-3 col-md-3">
+                <label for="sinal_lote" class="form-label"></label>
+                <input type="checkbox" name="debug"> Coletar sinal do lote
+            </div>
+            <div class="mt-3 col-md-3">
+                <label for="ativa" class="form-label"></label>
+                <input type="checkbox" name="debug"> Ativa?
+            </div>
+        </div>
 
         <div class="row">
             <div class="mt-3 col-md-6">
@@ -137,7 +192,94 @@
                 <input type="text" class="form-control" name="valor_custo" placeholder="">
             </div>
         </div>
+        <div class="row">
+            <div class="mt-3 col-md-4">
+                <label for="thel" class="form-label">Integração</label>
+                <input type="text" class="form-control" name="valor_custo" placeholder="">
+            </div>
+            <div class="mt-3 col-md-4">
+                <label for="filtro" class="form-label"></label>
+                <input type="checkbox" name="filtro">Filtrar Templete
+            </div>
+            <div class="mt-3 col-md-4">
+                <label for="filtro" class="form-label"></label>
+                <input type="checkbox" name="filtro">Filtrar tipos de ONU
+            </div>
+        </div>
+        <div class="row">
+            <div class="mt-3 col-md-4">
+                <label for="thel" class="form-label">Limite do Sinal Alto</label>
+                <input type="text" class="form-control" name="valor_custo" placeholder="Insira o limite do sinal">
+            </div>
+            <div class="mt-3 col-md-4">
+                <label for="thel" class="form-label">Limite do Sinal baixo</label>
+                <input type="text" class="form-control" name="valor_custo" placeholder="Insira o limite do sinal">
+            </div>
+            <div class="mt-3 col-md-2">
+                <label for="thel" class="form-label">Cor do sinal alto</label>
+                <select class="form-control" aria-label="Default select example">
+                    <option selected>Selecione a cor</option>
+                    <option value="1">Azul</option>
+                    <option value="2">Preto</option>
+                </select>
+            </div>
+            <div class="mt-3 col-md-2">
+                <label for="thel" class="form-label">Cor do sinal baixo</label>
+                <select class="form-control" aria-label="Default select example">
+                    <option selected>Selecione a cor</option>
+                    <option value="1">Azul</option>
+                    <option value="2">Preto</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="mt-3 col-md-3">
+                <label for="thel" class="form-label">Voip IP</label>
+                <input type="text" class="form-control" name="valor_custo" placeholder="">
+            </div>
+            <div class="mt-3 col-md-3">
+                <label for="thel" class="form-label">Voip Máscara</label>
+                <input type="text" class="form-control" name="valor_custo" placeholder="">
+            </div>
+            <div class="mt-3 col-md-3">
+                <label for="thel" class="form-label">Voip Gateway</label>
+                <input type="text" class="form-control" name="valor_custo" placeholder="">
+            </div>
+            <div class="mt-3 col-md-3">
+                <label for="thel" class="form-label">Porta Voip</label>
+                <input type="text" class="form-control" name="valor_custo" placeholder="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="mt-3 col-md-12">
+                <label for="thel" class="form-label">Parâmetros JSON</label>
+                <input type="text" class="form-control" name="valor_custo" placeholder="">
+            </div>
+        </div>
+        <div class="row">
+        <div class="mt-3 col-md-4">
+                <label for="thel" class="form-label">Comando para Ativar Serviço</label>
+                <select class="form-control" aria-label="Default select example">
+                    <option selected>Selecione o comando</option>
+                    <option value="1">CMD 01</option>
+                </select>
+            </div>
+        <div class="mt-3 col-md-4">
+                <label for="thel" class="form-label">Comando para Suspender Serviço</label>
+                <select class="form-control" aria-label="Default select example">
+                    <option selected>Selecione o comando</option>
+                    <option value="1">CMD 01</option>
+                </select>
+            </div>
+        <div class="mt-3 col-md-4">
+                <label for="thel" class="form-label">Comando para Alterar Plano</label>
+                <select class="form-control" aria-label="Default select example">
+                    <option selected>Selecione o comando</option>
+                    <option value="1">CMD 01</option>
+                </select>
+            </div>
+        </div>
+
     </form>
-
-
-    <?= $this->endSection() ?>
+</div>
+<?= $this->endSection() ?>
