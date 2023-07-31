@@ -21,8 +21,8 @@
   <form>
 
     <div class="row">
-      <div class="mt-3 col-md-4">
-        <label for="name" class="form-label">Código</label>
+      <div class="mt-3 col-md-3">
+        <label for="name" class="form-label">Fonte</label>
         <input type="text" class="form-control" name="name" placeholder="Insira o código da onu">
       </div>
       <div class="mt-3 col-md-4">

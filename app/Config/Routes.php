@@ -94,6 +94,10 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('/', 'OltController::index');
             $routes->get('novo', 'OltController::form');
         });
+        $routes->group('switch', static function ($routes) {
+            $routes->get('/', 'SwitchController::index');
+            $routes->get('novo', 'SwitchController::form');
+        });
     });
     
     $routes->group('financeiro', static function ($routes) {

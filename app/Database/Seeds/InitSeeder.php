@@ -18,7 +18,7 @@ class InitSeeder extends Seeder
         $user = [
             'name' => 'Gilson',
             'account_type_id' => 1,
-            'email' => 'gigio@email.com',
+            'email' => 'gilson@email.com',
             'password' => password_hash('123456', PASSWORD_DEFAULT),
             'phone' => '11999999999',
         ];
