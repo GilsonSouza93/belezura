@@ -46,7 +46,7 @@
         <input type="text" class="form-control" name="valor_custo" placeholder="Insira o preço">
       </div>
       <div class="mt-3 col-md-4">
-        <label for="uf" class="form-label">Categoria</label>
+        <label for="categoria" class="form-label">Categoria</label>
         <select class="form-control" aria-label="Default select example">
           <option selected>Selecione a categoria</option>
           <option value="1">Roteador</option>

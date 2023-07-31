@@ -50,13 +50,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         $routes->post('save', 'CustomerController::save');
     });
     
-    $routes->group('equipamentos', static function ($routes) {
-        $routes->group('olt', static function ($routes) {
-            $routes->get('/', 'OltController::index');
-            $routes->get('novo', 'OltController::form');
-        });
-    });
-    
+
     $routes->group('estoque', static function ($routes) {
         $routes->group('produtos', static function ($routes) {
             $routes->get('/', 'ProductController::index');
@@ -89,6 +83,16 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         $routes->group('contas', static function ($routes) {
             $routes->get('/', 'AccountController::index');
             $routes->get('novo', 'AccountController::form');
+        });
+    });
+    $routes->group('equipamentos', static function ($routes) {
+        $routes->group('onu', static function ($routes) {
+            $routes->get('/', 'OnuController::index');
+            $routes->get('novo', 'OnuController::form');
+        });
+        $routes->group('olt', static function ($routes) {
+            $routes->get('/', 'OltController::index');
+            $routes->get('novo', 'OltController::form');
         });
     });
     
