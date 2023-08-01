@@ -26,12 +26,13 @@
                 <input type="text" class="form-control" name="name" placeholder="Insira a POP">
             </div>
             <div class="mt-3 col-md-6">
-            <label for="tipo" class="form-label">IP POLL</label>
+                <label for="tipo" class="form-label">IP POLL</label>
                 <select class="form-control" aria-label="Default select example">
                     <option selected>Selecione o IP POOL</option>
                     <option value="1">IP 01</option>
                 </select>
             </div>
+        </div>
         <div class="row">
             <div class="mt-3 col-md-6">
                 <label for="pop" class="form-label">Usuário</label>
@@ -44,29 +45,29 @@
         </div>
 
         <div class="row">
-        <div class="mt-3 col-md-4">
-            <label for="tipo" class="form-label">IPv6 Prefix Pool:</label>
+            <div class="mt-3 col-md-4">
+                <label for="tipo" class="form-label">IPv6 Prefix Pool:</label>
                 <select class="form-control" aria-label="Default select example">
                     <option selected>Selecione o IP POOL</option>
                     <option value="1">IP 01</option>
                 </select>
             </div>
-        <div class="mt-3 col-md-4">
-            <label for="tipo" class="form-label">IPv6 PD Pool:</label>
+            <div class="mt-3 col-md-4">
+                 <label for="tipo" class="form-label">IPv6 PD Pool:</label>
                 <select class="form-control" aria-label="Default select example">
                     <option selected>Selecione o IP POOL</option>
                     <option value="1">IP 01</option>
                 </select>
             </div>
-        <div class="mt-3 col-md-4">
-            <label for="tipo" class="form-label">IP Pool Bloqueio:</label>
+            <div class="mt-3 col-md-4">
+                <label for="tipo" class="form-label">IP Pool Bloqueio:</label>
                 <select class="form-control" aria-label="Default select example">
                     <option selected>Selecione o IP POOL</option>
                     <option value="1">IP 01</option>
                 </select>
             </div>
         </div>
-        
+
         <div class="row">
             <div class="mt-3 col-md-3">
                 <label for="IP" class="form-label">Endereço de IP</label>
@@ -95,11 +96,88 @@
                 <input type="text" class="form-control" name="name" placeholder="">
             </div>
             <div class="mt-3 col-md-4">
-                <label for="IP" class="form-label">IP de Origem do Pig</label>
+                <label for="IP" class="form-label">IP de origem Ping</label>
+                <input type="text" class="form-control" name="name" placeholder="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="mt-3 col-md-6">
+                <label for="tipo" class="form-label">Tipo de acesso exta:</label>
+                <select class="form-control" aria-label="Default select example">
+                    <option selected>Selecione o IPv6 prefixo POOL</option>
+                    <option value="1">IP 01</option>
+                </select>
+            </div>
+            <div class="mt-3 col-md-6">
+                <label for="tipo" class="form-label">Radius config:</label>
+                <select class="form-control" aria-label="Default select example">
+                    <option selected>Selecione o IPv6 POOL</option>
+                    <option value="1">IP 01</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="mt-3 col-md-4">
+                <label for="IP" class="form-label">Porta</label>
+                <input type="text" class="form-control" name="name" placeholder="">
+            </div>
+            <div class="mt-3 col-md-4">
+                <label for="IP" class="form-label">Usuário</label>
+                <input type="text" class="form-control" name="name" placeholder="">
+            </div>
+            <div class="mt-3 col-md-4">
+                <label for="IP" class="form-label">Senha</label>
+                <input type="text" class="form-control" name="name" placeholder="">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="mt-3 col-md-3">
+                <label for="IP" class="form-label">SNMP Version:</label>
+                <input type="text" class="form-control" name="name" placeholder="">
+            </div>
+            <div class="mt-3 col-md-3">
+                <label for="IP" class="form-label">SNMP Community:</label>
+                <input type="text" class="form-control" name="name" placeholder="">
+            </div>
+            <div class="mt-3 col-md-3">
+                <label for="IP" class="form-label">SNMP Port:</label>
+                <input type="text" class="form-control" name="name" placeholder="">
+            </div>
+            <div class="mt-3 col-md-3">
+                <label for="IP" class="form-label">HTTP Porta.</label>
+                <input type="text" class="form-control" name="name" placeholder="">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="mt-3 col-md-4">
+                <label for="IP" class="form-label">DNS primário:</label>
+                <input type="text" class="form-control" name="name" placeholder="">
+            </div>
+            <div class="mt-3 col-md-4">
+                <label for="IP" class="form-label">DNS Secundário:</label>
+                <input type="text" class="form-control" name="name" placeholder="">
+            </div>
+            <div class="mt-3 col-md-4">
+                <label for="IP" class="form-label">Accounting Update:</label>
+                <input type="text" class="form-control" name="name" placeholder="">
+            </div>
+        </div>
+
+        
+        <div class="row">
+            <div class="mt-3 col-md-4">
+                <label for="IP" class="form-label">Porta</label>
+                <input type="text" class="form-control" name="name" placeholder="">
+            </div>
+            <div class="mt-3 col-md-4">
+                <label for="IP" class="form-label">Latitude, longitudo</label>
                 <input type="text" class="form-control" name="name" placeholder="">
             </div>
         </div>
     </form>
 
-
-    <?= $this->endSection() ?>
+</div>
+<?= $this->endSection() ?>
