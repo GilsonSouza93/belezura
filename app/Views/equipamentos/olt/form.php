@@ -257,21 +257,21 @@
             </div>
         </div>
         <div class="row">
-        <div class="mt-3 col-md-4">
+            <div class="mt-3 col-md-4">
                 <label for="thel" class="form-label">Comando para Ativar Serviço</label>
                 <select class="form-control" aria-label="Default select example">
                     <option selected>Selecione o comando</option>
                     <option value="1">CMD 01</option>
                 </select>
             </div>
-        <div class="mt-3 col-md-4">
+            <div class="mt-3 col-md-4">
                 <label for="thel" class="form-label">Comando para Suspender Serviço</label>
                 <select class="form-control" aria-label="Default select example">
                     <option selected>Selecione o comando</option>
                     <option value="1">CMD 01</option>
                 </select>
             </div>
-        <div class="mt-3 col-md-4">
+            <div class="mt-3 col-md-4">
                 <label for="thel" class="form-label">Comando para Alterar Plano</label>
                 <select class="form-control" aria-label="Default select example">
                     <option selected>Selecione o comando</option>

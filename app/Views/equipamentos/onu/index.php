@@ -25,17 +25,15 @@
     </div>
 
     <p>
-        Clientes localizados: 100
+        Onu's localizadas: 100
     </p>
 
     <div class="d-flex justify-content ">
         <table class="table table-dark table-striped">
             <thead>
                 <tr>
-                    <th scope="col">Nome</th>
-                    <th scope="col">SKU</th>
-                    <th scope="col">Quantidade</th>
-                    <th scope="col">Preço</th>
+                    <th scope="col">Código</th>
+                    <th scope="col">Descrição</th>
                     <th scope='col'>Ações</th>
                 </tr>
             </thead>

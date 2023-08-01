@@ -51,12 +51,12 @@
           <option selected>Selecione a categoria</option>
           <option value="1">Roteador</option>
           <option value="2">ONU</option>
-          <option value="2">ONT</option>
-          <option value="2">EPI</option>
-          <option value="2">Splitter</option>
-          <option value="2">OLT</option>
-          <option value="2">Cabos</option>
-          <option value="2">Adicionar nova categoria</option>
+          <option value="3">ONT</option>
+          <option value="4">EPI</option>
+          <option value="5">Splitter</option>
+          <option value="6">OLT</option>
+          <option value="7">Cabos</option>
+          <option value="8">Adicionar nova categoria</option>
         </select>
       </div>
       <div class="mt-3 col-md-4">

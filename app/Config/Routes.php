@@ -98,6 +98,10 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('/', 'SwitchController::index');
             $routes->get('novo', 'SwitchController::form');
         });
+        $routes->group('radius', static function ($routes) {
+            $routes->get('/', 'RadiusController::index');
+            $routes->get('novo', 'RadiusController::form');
+        });
     });
     
     $routes->group('financeiro', static function ($routes) {

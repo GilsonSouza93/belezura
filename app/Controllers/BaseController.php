@@ -138,6 +138,11 @@ abstract class BaseController extends Controller
                         'href' => base_url('equipamentos/router'),
                         'icon' => '<i class="fas fa-network-wired"></i>'
                     ],
+                    'radius' => [
+                        'title' => 'Radius',
+                        'href' => base_url('equipamentos/radius'),
+                        'icon' => '<i class="fas fa-network-wired"></i>'
+                    ],
                     'ap' => [
                         'title' => 'Access Points',
                         'href' => base_url('equipamentos/ap'),
