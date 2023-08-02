@@ -11,7 +11,7 @@ class CategoryController extends BaseController
     
     
     public $tittle = 'Categoria';
-    public $addButtonText = 'Novo Categoria';
+    public $addButtonText = 'Nova Categoria';
     public $viewPath = 'stock/category';
     public $baseRoute = '/estoque/categorias';
      

@@ -27,7 +27,7 @@
     </div>
 
     <p>
-        Clientes localizados: 100
+        Categorias localizados: 100
     </p>
 
     <div class="d-flex justify-content ">

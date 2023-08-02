@@ -142,10 +142,11 @@ abstract class BaseController extends Controller
                         'title' => 'Radius',
                         'href' => base_url('equipamentos/radius'),
                         'icon' => '<i class="fas fa-network-wired"></i>'
+
                     ],
-                    'ap' => [
-                        'title' => 'Access Points',
-                        'href' => base_url('equipamentos/ap'),
+                    'Poste' => [
+                        'title' => 'Poste',
+                        'href' => base_url('equipamentos/post'),
                         'icon' => '<i class="fas fa-wifi"></i>'
                     ],
                     'cpe' => [
@@ -164,7 +165,7 @@ abstract class BaseController extends Controller
                         'icon' => '<i class="fas fa-hdd"></i>'
                     ],
                     'ups' => [
-                        'title' => 'UPSs',
+                        'title' => 'kaua',
                         'href' => base_url('equipamentos/ups'),
                         'icon' => '<i class="fas fa-battery-full"></i>'
                     ],
