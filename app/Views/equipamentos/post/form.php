@@ -44,8 +44,7 @@
                 <label for="name" class="form-label">Latitude e Longitude</label>
                 <input type="text" class="form-control" name="name" placeholder="">
             </div>
-            <div class="mt-3 col-md-4"
-            >
+            <div class="mt-3 col-md-4">
                 <label for="thel" class="form-label">POP</label>
                 <select class="form-control" aria-label="Default select example">
                     <option selected>Selecione o POP</option>
