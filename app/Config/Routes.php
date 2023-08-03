@@ -106,6 +106,10 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('/', 'PostController::index');
             $routes->get('novo', 'PostController::form');
         });
+        $routes->group('tower', static function ($routes) {
+            $routes->get('/', 'TowerController::index');
+            $routes->get('novo', 'TowerController::form');
+        });
     });
     
     $routes->group('financeiro', static function ($routes) {

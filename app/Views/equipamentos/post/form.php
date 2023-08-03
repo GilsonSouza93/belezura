@@ -20,6 +20,21 @@
 
     <form>
 
+    <div class="row">
+            <div class="mt-3 col-md-4">
+                <label for="price" class="form-label"></label>
+                <input type="checkbox" name="active" id="">CTO
+            </div>
+            <div class="mt-3 col-md-4">
+                <label for="price" class="form-label"></label>
+                <input type="checkbox" name="active" id="">Caixa Hermétrica
+            </div>
+            <div class="mt-3 col-md-4">
+                <label for="price" class="form-label"></label>
+                <input type="checkbox" name="active" id="">Rádio
+            </div>
+        </div>
+
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="name" class="form-label">Identificação</label>
@@ -29,7 +44,8 @@
                 <label for="name" class="form-label">Latitude e Longitude</label>
                 <input type="text" class="form-control" name="name" placeholder="">
             </div>
-            <div class="mt-3 col-md-4" style="color: black;">
+            <div class="mt-3 col-md-4"
+            >
                 <label for="thel" class="form-label">POP</label>
                 <select class="form-control" aria-label="Default select example">
                     <option selected>Selecione o POP</option>

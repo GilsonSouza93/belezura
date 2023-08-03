@@ -144,14 +144,14 @@ abstract class BaseController extends Controller
                         'icon' => '<i class="fas fa-network-wired"></i>'
 
                     ],
-                    'Poste' => [
+                    'poste' => [
                         'title' => 'Poste',
                         'href' => base_url('equipamentos/post'),
                         'icon' => '<i class="fas fa-wifi"></i>'
                     ],
-                    'cpe' => [
-                        'title' => 'CPEs',
-                        'href' => base_url('equipamentos/cpe'),
+                    'tower' => [
+                        'title' => 'Torre',
+                        'href' => base_url('equipamentos/tower'),
                         'icon' => '<i class="fas fa-wifi"></i>'
                     ],
                     'servidor' => [
