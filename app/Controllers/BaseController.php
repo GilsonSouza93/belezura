@@ -263,7 +263,17 @@ abstract class BaseController extends Controller
                         'title' =>'Contas',
                         'href' => base_url('configuracoes/contas'),
                         
-                    ]
+                    ],
+                    'Ip Pool' => [
+                        'title' =>'IP POOL',
+                        'href' => base_url('configuracoes/ippool'),
+                        'icon' => '<i class="fas fa-boxes"></i>'
+                    ],
+                    'Ipv6 Pool' => [
+                        'title' =>'IPv6 POOL',
+                        'href' => base_url('configuracoes/ipv6pool'),
+                        'icon' => '<i class="fas fa-boxes"></i>'
+                    ],
                 ]
             ],
         ];

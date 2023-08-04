@@ -84,6 +84,14 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('/', 'AccountController::index');
             $routes->get('novo', 'AccountController::form');
         });
+        $routes->group('ippool', static function ($routes) {
+            $routes->get('/', 'IppoolController::index');
+            $routes->get('novo', 'IppoolController::form');
+        });
+        $routes->group('ipv6pool', static function ($routes) {
+            $routes->get('/', 'Ipv6Controller::index');
+            $routes->get('novo', 'Ipv6Controller::form');
+        });
     });
     $routes->group('equipamentos', static function ($routes) {
         $routes->group('onu', static function ($routes) {

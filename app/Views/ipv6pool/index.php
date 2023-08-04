@@ -25,21 +25,23 @@
     </div>
 
     <p>
-        Torres localizadas: 100
+        IP POOL localizadas: 100
     </p>
 
     <div class="d-flex justify-content ">
         <table class="table table-dark table-striped">
             <thead>
                 <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Descrição</th>
-                    <th scope="col">POP</th>
-                    <th scope='col'>Endereço</th>
-                    <th scope='col'>Altura</th>
-                    <th scope='col'>Serv. Internet</th>
-                    <th scope='col'>Sustentável</th>
-                    <th scope='col'>Ação</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Range</th>
+                    <th scope="col">Total Ips</th>
+                    <th scope="col">Fixos</th>
+                    <th scope="col">Lease</th>
+                    <th scope="col">Online</th>
+                    <th scope="col">Livres</th>
+                    <th scope="col">Nas</th>
+                    <th scope="col">Obs</th>
+                    <th scope='col'>Ações</th>
                 </tr>
             </thead>
             <tbody>
