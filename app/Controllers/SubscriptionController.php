@@ -6,8 +6,8 @@ use App\Controllers\BaseController;
 
 class SubscriptionController extends BaseController
 {
-    public function index()
-    {
-        //
-    }
+    public $tittle = 'Planos';
+    public $addButtonText = 'Novo Plano';
+    public $viewPath = 'subscription';
+    public $baseRoute = '/configuracoes/subscription';
 }

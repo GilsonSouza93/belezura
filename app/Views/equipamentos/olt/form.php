@@ -10,7 +10,7 @@
 
     <div class="row card-2 py-3 my-3">
         <div class="col-md-8">
-            <h4>Adicionar ONU</h4>
+            <h4>Adicionar OLT</h4>
         </div>
         <div class="col-md-4 btn-group">
             <a class="btn btn-success" href="<?= $baseRoute ?>">Voltar</a>
@@ -88,39 +88,39 @@
         </div>
 
         <div class="row">
-            <div class="mt-3 col-md-3">
+            <div class="mt-4 col-md-3">
                 <label for="" class="form-label"></label>
-                <input type="checkbox" name="debug"> Debug
+                <input type="checkbox" name="debug" class="form-check-input" > Debug
             </div>
-            <div class="mt-3 col-md-3">
+            <div class="mt-4 col-md-3">
                 <label for="password_admin" class="form-label"></label>
-                <input type="checkbox" name="debug"> Auto Salvar?
+                <input type="checkbox" name="debug" class="form-check-input"> Auto Salvar?
             </div>
-            <div class="mt-3 col-md-3">
+            <div class="mt-4 col-md-3">
                 <label for="password_admin" class="form-label"></label>
-                <input type="checkbox" name="debug"> Requer ONU Template?
+                <input type="checkbox" name="debug" class="form-check-input"> Requer ONU Template?
             </div>
-            <div class="mt-3 col-md-3">
+            <div class="mt-4 col-md-3">
                 <label for="password_admin" class="form-label"></label>
-                <input type="checkbox" name="debug"> Requer Definir CTO na Autorização?
+                <input type="checkbox" name="debug" class="form-check-input"> Requer Definir CTO na Autorização?
             </div>
         </div>
         <div class="row">
-            <div class="mt-3 col-md-3">
+            <div class="mt-4 col-md-3">
                 <label for="password_admin" class="form-label"></label>
-                <input type="checkbox" name="debug"> Requer Definir Serviço na autorização?
+                <input type="checkbox" name="debug" class="form-check-input"> Requer Definir Serviço na autorização?
             </div>
-            <div class="mt-3 col-md-3">
+            <div class="mt-4 col-md-3">
                 <label for="password_admin" class="form-label"></label>
-                <input type="checkbox" name="debug"> Requer Definir VLAN Manualmente ?
+                <input type="checkbox" name="debug" class="form-check-input"> Requer Definir VLAN Manualmente ?
             </div>
-            <div class="mt-3 col-md-3">
+            <div class="mt-4 col-md-3">
                 <label for="password_admin" class="form-label"></label>
-                <input type="checkbox" name="debug"> Desativar ONU:
+                <input type="checkbox" name="debug" class="form-check-input"> Desativar ONU:
             </div>
-            <div class="mt-3 col-md-3">
+            <div class="mt-4 col-md-3">
                 <label for="password_admin" class="form-label"></label>
-                <input type="checkbox" name="debug"> Filtrar por POP?
+                <input type="checkbox" name="debug" class="form-check-input"> Filtrar por POP?
             </div>
         </div>
 
@@ -133,13 +133,13 @@
                     <option value="2">SHH</option>
                 </select>
             </div>
-            <div class="mt-3 col-md-3">
+            <div class="mt-5 col-md-3">
                 <label for="sinal_lote" class="form-label"></label>
-                <input type="checkbox" name="debug"> Coletar sinal do lote
+                <input type="checkbox" name="debug"class="form-check-input"> Coletar sinal do lote
             </div>
-            <div class="mt-3 col-md-3">
+            <div class="mt-5 col-md-3">
                 <label for="ativa" class="form-label"></label>
-                <input type="checkbox" name="debug"> Ativa?
+                <input type="checkbox" name="debug" class="form-check-input"> Ativa?
             </div>
         </div>
 
@@ -197,13 +197,13 @@
                 <label for="thel" class="form-label">Integração</label>
                 <input type="text" class="form-control" name="valor_custo" placeholder="">
             </div>
-            <div class="mt-3 col-md-4">
-                <label for="filtro" class="form-label"></label>
-                <input type="checkbox" name="filtro">Filtrar Templete
+            <div class="mt-5 col-md-4">
+                <label for="filtro" class="form-label" class="form-label"></label>
+                <input type="checkbox" name="filtro" class="form-check-input"> Filtrar Templete
             </div>
-            <div class="mt-3 col-md-4">
-                <label for="filtro" class="form-label"></label>
-                <input type="checkbox" name="filtro">Filtrar tipos de ONU
+            <div class="mt-5 col-md-4">
+                <label for="filtro" class="form-label" class="form-label"></label>
+                <input type="checkbox" name="filtro" class="form-check-input"> Filtrar tipos de ONU
             </div>
         </div>
         <div class="row">
