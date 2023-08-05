@@ -168,39 +168,39 @@
 
 
         <div class="row">
-            <div class="mt-3 col-md-4">
+            <div class="mt-3 col-md-6">
                 <label for="IP" class="form-label">Porta</label>
                 <input type="text" class="form-control" name="name" placeholder="">
             </div>
-            <div class="mt-3 col-md-4">
-                <label for="IP" class="form-label">Latitude, longitudo</label>
+            <div class="mt-3 col-md-6">
+                <label for="IP" class="form-label">Latitude, longitude</label>
                 <input type="text" class="form-control" name="name" placeholder="">
             </div>
         </div>
         <div class="row">
             <div class="mt-3 col-md-2">
                 <label for="IP" class="form-label"></label>
-                <input type="checkbox" name="" id=""> Ativar no radius
+                <input type="checkbox" name="" id="" class="form-check-input"> Ativar no radius
             </div>
             <div class="mt-3 col-md-2">
                 <label for="IP" class="form-label"></label>
-                <input type="checkbox" name="" id=""> Disponível para cliente
+                <input type="checkbox" name="" id="" class="form-check-input"> Disponível para cliente
             </div>
             <div class="mt-3 col-md-2">
                 <label for="IP" class="form-label"></label>
-                <input type="checkbox" name="" id=""> Verificar login
+                <input type="checkbox" name="" id="" class="form-check-input"> Verificar login
             </div>
             <div class="mt-3 col-md-2">
                 <label for="IP" class="form-label"></label>
-                <input type="checkbox" name="" id=""> Verificar Mac
+                <input type="checkbox" name="" id="" class="form-check-input"> Verificar Mac
             </div>
             <div class="mt-3 col-md-2">
                 <label for="IP" class="form-label"></label>
-                <input type="checkbox" name="" id=""> Verificar Mac+Login
+                <input type="checkbox" name="" id="" class="form-check-input"> Verificar Mac+Login
             </div>
             <div class="mt-3 col-md-2">
                 <label for="IP" class="form-label"></label>
-                <input type="checkbox" name="" id=""> RRd Interfaces
+                <input type="checkbox" name="" id="" class="form-check-input"> RRd Interfaces
             </div>
         </div>
         <div class="row">
@@ -208,17 +208,17 @@
                 <label for="IP" class="form-label">Parâmetros do JSON:</label>
                 <input type="text" class="form-control" name="name" placeholder="">
             </div>
-            <div class="mt-3 col-md-2">
+            <div class="mt-5 col-md-2">
                 <label for="IP" class="form-label"></label>
-                <input type="checkbox" name="" id=""> Auto Reload
+                <input type="checkbox" name="" id="" class="form-check-input"> Auto Reload
             </div>
             <div class="mt-3 col-md-4">
                 <label for="IP" class="form-label">Simutaneos User por Login:</label>
                 <input type="text" class="form-control" name="name" placeholder="">
             </div>
-            <div class="mt-3 col-md-2">
+            <div class="mt-5 col-md-2">
                 <label for="IP" class="form-label"></label>
-                <input type="checkbox" name="" id=""> Checar Radius
+                <input type="checkbox" name="" id="" class="form-check-input"> Checar Radius
             </div>
         </div>
         <div class="row">
@@ -226,9 +226,9 @@
                 <label for="IP" class="form-label">Timeout de Checagem de Conexão</label>
                 <input type="text" class="form-control" name="name" placeholder="">
             </div>
-            <div class="mt-3 col-md-2">
+            <div class="mt-5 col-md-2">
                 <label for="IP" class="form-label"></label>
-                <input type="checkbox" name="" id=""> Checar conectividade
+                <input type="checkbox" name="" id="" class="form-check-input"> Checar conectividade
             </div>
             <div class="mt-3 col-md-3">
                 <label for="IP" class="form-label">Timeout Gráfico de Coleta de Sinal:</label>

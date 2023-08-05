@@ -21,7 +21,7 @@
     <form>
 
         <div class="row">
-            <div class="mt-3 col-md-4">
+            <div class="mt-3 col-md-3">
                 <label for="thel" class="form-label">Fonte</label>
                 <select class="form-control" aria-label="Default select example">
                     <option selected>Selecione a Fonte</option>
@@ -29,15 +29,15 @@
                     <option value="1">Fonte 02</option>
                 </select>
             </div>
-            <div class="mt-3 col-md-4">
+            <div class="mt-3 col-md-3">
                 <label for="name" class="form-label">Código</label>
                 <input type="text" class="form-control" name="name" placeholder="Insira o código da onu">
             </div>
-            <div class="mt-3 col-md-4">
+            <div class="mt-3 col-md-3">
                 <label for="model" class="form-label">Descrição</label>
                 <input type="text" class="form-control" name="model" placeholder="Insira a descrição">
             </div>
-            <div class="mt-3 col-md-4">
+            <div class="mt-3 col-md-3">
                 <label for="qty" class="form-label">Portas</label>
                 <input type="text" class="form-control" name="qty" placeholder="Insira a porta">
             </div>

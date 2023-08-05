@@ -94,6 +94,14 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('/', 'Ipv6Controller::index');
             $routes->get('novo', 'Ipv6Controller::form');
         });
+        $routes->group('subscription', static function ($routes) {
+            $routes->get('/', 'SubscriptionController::index');
+            $routes->get('novo', 'SubscriptionController::form');
+        });
+        $routes->group('ipv6pool', static function ($routes) {
+            $routes->get('/', 'Ipv6Controller::index');
+            $routes->get('novo', 'Ipv6Controller::form');
+        });
     });
     $routes->group('equipamentos', static function ($routes) {
         $routes->group('onu', static function ($routes) {
