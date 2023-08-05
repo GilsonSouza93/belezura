@@ -16,4 +16,9 @@ class CustomerController extends BaseController
         $this->mainModel = model('CustomerModel');
         parent::__construct();
     }
+
+    public function search()
+    {
+        $data = $this->request->getPost();
+    }
 }

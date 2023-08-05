@@ -70,13 +70,29 @@
             <div class="d-flex align-items-center">
                 <?php foreach ($navigation_bar_items as $item): ?>
                     <?php if ($item['show_subitems']): ?>
-                        <div class="nav-item mx-4 dropdown">
+                        <div class="nav-item mx-3 dropdown">
                             <a class="nav-link dropdown-toggle text-white" href="<?= $item['href'] ?>" data-bs-toggle="dropdown">
                                 <?= $item['title'] ?>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-dark mt-4 px-4" style="background: rgba(0,0,0, 0.45); backdrop-filter: blur(7px); border-radius: 15px; border: 2px solid <?=$item['color'] ?>;">
+                            <ul class="dropdown-menu dropdown-menu-dark mt-4 px-2" style="background: rgba(0,0,0, 0.45); backdrop-filter: blur(7px); border-radius: 15px; border: 2px solid <?=$item['color'] ?>;">
                                 <?php foreach ($item['subitems'] as $subitem): ?>
-                                <li><a class="dropdown-item text-white rounded my-1" href="<?= $subitem['href'] ?>"><?= $subitem['title'] ?></a></li>
+
+                                    <?php if( isset($subitem['subitems'])) : ?>
+                                        <div class="btn-group dropend ms-3">
+                                            <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">
+                                                <?= $subitem['title'] ?>
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-menu-dark ms-6" style="background: rgba(0,0,0, 0.45); backdrop-filter: blur(7px); border-radius: 15px; border: 2px solid <?=$item['color'] ?>;">
+                                            <?php foreach ($subitem['subitems'] as $subsubitem): ?>
+                                                <li><a class="dropdown-item text-white rounded my-1" href="<?= $subsubitem['href'] ?>"><?= $subsubitem['title'] ?></a></li>
+                                            <?php endforeach ?>
+                                            </ul>
+                                        </div>
+
+                                    <?php else : ?>
+                                        <li><a class="dropdown-item text-white rounded" href="<?= $subitem['href'] ?>"><?= $subitem['title'] ?></a></li>
+                                    <?php endif ?>
+ 
                                 <?php endforeach ?>
                             </ul>
                         </div>

@@ -48,6 +48,8 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         $routes->get('/', 'CustomerController::index');
         $routes->get('novo', 'CustomerController::form');
         $routes->post('save', 'CustomerController::save');
+
+        $routes->post('search', 'CustomerController::search');
     });
     
 

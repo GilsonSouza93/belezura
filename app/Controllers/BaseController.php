@@ -262,7 +262,6 @@ abstract class BaseController extends Controller
                     'Conta' => [
                         'title' =>'Contas',
                         'href' => base_url('configuracoes/contas'),
-                        
                     ],
                     'Ip Pool' => [
                         'title' =>'IP POOL',
@@ -277,7 +276,19 @@ abstract class BaseController extends Controller
                     'Planos' => [
                         'title' =>'Planos',
                         'href' => base_url('configuracoes/ipv6pool'),
-                        'icon' => '<i class="fas fa-boxes"></i>'
+                        'icon' => '<i class="fas fa-boxes"></i>',
+                        'subitems' => [
+                            'Planos' => [
+                                'title' =>'Planos',
+                                'href' => base_url('configuracoes/planos'),
+                                'icon' => '<i class="fas fa-boxes"></i>'
+                            ],
+                            'Planos' => [
+                                'title' =>'Planos',
+                                'href' => base_url('configuracoes/planos'),
+                                'icon' => '<i class="fas fa-boxes"></i>'
+                            ],
+                        ]
                     ],
                 ]
             ],
