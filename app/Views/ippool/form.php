@@ -19,7 +19,7 @@
     </div>
 
     <form>
-    
+
 
         <div class="row">
             <div class="mt-3 col-md-4">
@@ -40,13 +40,17 @@
                 <label for="name" class="form-label">Radius Args</label>
                 <input type="text" class="form-control" name="name" placeholder="">
             </div>
-            <div class="mt-3 col-md-4">
-                <label for="name" class="form-label"></label>
-                <input type="checkbox" name="" id="">Ordenar IPs por Rede /24:
+            <div class="mt-5 col-md-4 form-check">
+                <label class="form-check-label" for="flexCheckDefault"></label>
+                <input type="checkbox" class="form-check-input" name="" id=""  checked>Ordenar IPs por Rede /24:
             </div>
-            <div class="mt-3 col-md-4">
-                <label for="name" class="form-label"></label>
-                <input type="checkbox" name="" id="">Ativo?
+            <div class="mt-5 col-md-4 form-check ">
+                <label class="form-check-label" for="flexCheckDefault"></label>
+                <input type="checkbox" class="form-check-input" name="" id="">Ordenar IPs por Rede /24:
+            </div>
+            <div class="mt-3 col-md-4 form-check">
+                <label class="form-check-label" for="flexCheckDefault"></label>
+                <input type="checkbox" class="form-check-input" name="" id="">Ativo?
             </div>
         </div>
         <div class="row">
@@ -55,7 +59,7 @@
                 <input type="text" class="form-control" name="name" placeholder="">
             </div>
         </div>
-        
+
 
     </form>
 </div>

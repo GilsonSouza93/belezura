@@ -274,6 +274,11 @@ abstract class BaseController extends Controller
                         'href' => base_url('configuracoes/ipv6pool'),
                         'icon' => '<i class="fas fa-boxes"></i>'
                     ],
+                    'Planos' => [
+                        'title' =>'Planos',
+                        'href' => base_url('configuracoes/ipv6pool'),
+                        'icon' => '<i class="fas fa-boxes"></i>'
+                    ],
                 ]
             ],
         ];
