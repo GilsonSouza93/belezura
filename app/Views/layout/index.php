@@ -70,7 +70,7 @@
             <div class="d-flex align-items-center">
                 <?php foreach ($navigation_bar_items as $item): ?>
                     <?php if ($item['show_subitems']): ?>
-                        <div class="nav-item mx-3 dropdown">
+                        <div class="nav-item mx-3 subitems">
                             <a class="nav-link dropdown-toggle text-white" href="<?= $item['href'] ?>" data-bs-toggle="dropdown">
                                 <?= $item['title'] ?>
                             </a>
@@ -78,7 +78,7 @@
                                 <?php foreach ($item['subitems'] as $subitem): ?>
 
                                     <?php if( isset($subitem['subitems'])) : ?>
-                                        <div class="btn-group dropend ms-3">
+                                        <div class="subitems btn-group dropend ms-3">
                                             <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">
                                                 <?= $subitem['title'] ?>
                                             </a>
@@ -114,7 +114,7 @@
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
     <script>
-        $('.dropdown').hover(function() {
+        $('.subitems').hover(function() {
             $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
 
         }, function() {
