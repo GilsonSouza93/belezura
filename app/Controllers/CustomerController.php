@@ -20,5 +20,7 @@ class CustomerController extends BaseController
     public function search()
     {
         $data = $this->request->getPost();
+
+        return $this->response->setJSON("Teste");
     }
 }
