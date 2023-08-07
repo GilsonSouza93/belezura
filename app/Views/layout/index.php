@@ -59,6 +59,10 @@
             margin: 0 5px;
             border-radius: var(--border-radius);
         }
+
+        .table tr {
+            background-color: transparent;
+        }
     </style>
 </head>
 
