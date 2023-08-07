@@ -19,6 +19,10 @@ class CustomerController extends BaseController
 
     public function search()
     {
-        $data = $this->request->getPost();
+        $data = $this->request->getJSON();
+        
+        $customers = $this->mainModel->search($data->search);
+
+        return $this->response->setJSON($customers);
     }
 }

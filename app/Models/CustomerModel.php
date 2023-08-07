@@ -55,4 +55,27 @@ class CustomerModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function search($field)
+    {
+        $fieldsToReturn = [
+            'id',
+            'name',
+            'email',
+            'phone1',
+            'phone2',
+        ];
+
+        $mainQuery = $this->db->table($this->table)
+                              ->select($fieldsToReturn);
+
+        if(!empty($field)) {
+            $mainQuery->like('name', $field)
+                      ->orLike('email', $field)
+                      ->orLike('phone1', $field)
+                      ->orLike('phone2', $field);
+        }
+
+        return $mainQuery->get()->getResultArray();
+    }
 }
