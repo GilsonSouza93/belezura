@@ -96,16 +96,8 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         });
         $routes->group('planos', static function ($routes) {
             $routes->get('/', 'SubscriptionController::index');
+            $routes->get('novo', 'SubscriptionController::form');
 
-            $routes->group('novo', static function ($routes) {
-                $routes->get('fibra', 'SubscriptionController::registerfibre');
-                $routes->get('radio', 'SubscriptionController::registerradius');
-                $routes->get('voip', 'SubscriptionController::registervoip');
-                $routes->get('cabo', 'SubscriptionController::registercable');
-                $routes->get('multimida', 'SubscriptionController::registermultimedia');
-                $routes->get('tv', 'SubscriptionController::registertv');
-                $routes->get('telefone', 'SubscriptionController::registertelephony');
-            });
         });
     });
     $routes->group('equipamentos', static function ($routes) {
@@ -139,6 +131,10 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         $routes->group('dashboard', static function ($routes) {
             $routes->get('/', 'FinancialController::index');
             $routes->get('novo', 'FinancialController::form');
+        });
+        $routes->group('cashbox', static function ($routes) {
+            $routes->get('/', 'FinancialboxController::index');
+            $routes->get('novo', 'FinancialboxController::form');
         });
     });
 });

@@ -25,27 +25,23 @@
     </div>
 
     <p>
-        Valor total do plano: R$ 9999,00<br>
-        Número de planos encontrados: R$ 9999,00
+        IP POOL localizadas: 100
     </p>
 
     <div class="d-flex justify-content ">
         <table class="table table-dark table-striped">
             <thead>
                 <tr>
-                    <th scope="col">Descrição</th>
-                    <th scope="col">Upload</th>
-                    <th scope='col'>Host</th>
-                    <th scope='col'>Ativos</th>
-                    <th scope='col'>Suspenso</th>
-                    <th scope='col'>Cancelados</th>
-                    <th scope='col'>Total</th>
-                    <th scope='col'>Download</th>
-                    <th scope='col'>Preço</th>
-                    <th scope='col'>Grupo</th>
-                    <th scope='col'>Pool</th>
-                    <th scope='col'>Tipo</th>
-                    <th scope='col'>Ação</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Range</th>
+                    <th scope="col">Total Ips</th>
+                    <th scope="col">Fixos</th>
+                    <th scope="col">Lease</th>
+                    <th scope="col">Online</th>
+                    <th scope="col">Livres</th>
+                    <th scope="col">Nas</th>
+                    <th scope="col">Obs</th>
+                    <th scope='col'>Ações</th>
                 </tr>
             </thead>
             <tbody>

@@ -164,11 +164,6 @@ abstract class BaseController extends Controller
                         'href' => base_url('equipamentos/storage'),
                         'icon' => '<i class="fas fa-hdd"></i>'
                     ],
-                    'ups' => [
-                        'title' => 'kaua',
-                        'href' => base_url('equipamentos/ups'),
-                        'icon' => '<i class="fas fa-battery-full"></i>'
-                    ],
                     'outros' => [
                         'title' => 'Outros',
                         'href' => base_url('equipamentos/outros'),
@@ -275,20 +270,9 @@ abstract class BaseController extends Controller
                     ],
                     'Planos' => [
                         'title' =>'Planos',
-                        'href' => base_url('configuracoes/ipv6pool'),
+                        'href' => base_url('configuracoes/planos'),
                         'icon' => '<i class="fas fa-boxes"></i>',
-                        'subitems' => [
-                            'Planos' => [
-                                'title' =>'Planos',
-                                'href' => base_url('configuracoes/planos'),
-                                'icon' => '<i class="fas fa-boxes"></i>'
-                            ],
-                            'Planos' => [
-                                'title' =>'Planos',
-                                'href' => base_url('configuracoes/planos'),
-                                'icon' => '<i class="fas fa-boxes"></i>'
-                            ],
-                        ]
+
                     ],
                 ]
             ],
