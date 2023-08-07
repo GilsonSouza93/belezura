@@ -94,7 +94,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('/', 'Ipv6Controller::index');
             $routes->get('novo', 'Ipv6Controller::form');
         });
-        $routes->group('subscription', static function ($routes) {
+        $routes->group('planos', static function ($routes) {
             $routes->get('/', 'SubscriptionController::index');
 
             $routes->group('novo', static function ($routes) {

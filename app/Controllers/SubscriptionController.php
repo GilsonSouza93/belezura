@@ -11,7 +11,7 @@ class SubscriptionController extends BaseController
     public $viewPath = 'subscription';
     public $baseRoute = '/configuracoes/subscription';
 
-    public function registerfibre(){
-        
+    public function registercable(){
+        return view('subscrition/form/cable', $this->data);
     }
 }
