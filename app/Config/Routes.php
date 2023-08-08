@@ -132,7 +132,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('/', 'FinancialController::index');
             $routes->get('novo', 'FinancialController::form');
         });
-        $routes->group('cashbox', static function ($routes) {
+        $routes->group('caixa', static function ($routes) {
             $routes->get('/', 'FinancialboxController::index');
             $routes->get('novo', 'FinancialboxController::form');
         });

@@ -8,6 +8,6 @@ class FinancialboxController extends BaseController
 {
     public $tittle = 'Caixa';
     public $addButtonText = 'Novo Lançamento';
-    public $viewPath = 'cahsbox';
+    public $viewPath = 'cashbox';
     public $baseRoute = 'financeiro/caixa';
 }
