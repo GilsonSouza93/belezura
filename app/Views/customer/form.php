@@ -2,8 +2,7 @@
 
 <?= $this->section('content') ?>
 
-<div class="card p-4">
-
+<div class="p-4">
     <h2>
         <?= $tittle ?>
     </h2>
@@ -18,8 +17,7 @@
         </div>
     </div>
 
-    <form>
-
+    <form class="card p-4">
         <div class="row">
             <div class="mt-3 col-md-6">
                 <label for="name" class="form-label">Nome completo</label>

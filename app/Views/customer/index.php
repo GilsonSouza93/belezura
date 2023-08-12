@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 
-<div class="card p-4">
+<div class="p-4">
 
     <h2><?= $tittle ?></h2>
     
@@ -21,7 +21,7 @@
         Clientes localizados: <span id="customersCount">0</span>
     </p>
 
-    <div id="collapseTable" class="collapse">
+    <div id="collapseTable" class="collapse card p-4">
         <table class="table">
             <thead>
                 <tr>
@@ -29,7 +29,7 @@
                     <th scope="col">Contato</th>
                     <th scope="col">Plano</th>
                     <th scope="col">Endereço</th>
-                    <th scope='col'>Ações</th>
+                    <th scope='col'></th>
                 </tr>
             </thead>
             <tbody>
@@ -95,9 +95,16 @@
                 </td>
                 <td></td>
                 <td></td>
-                <td>
-                    <a href="<?= $baseRoute ?>/edit/${customer.id}" class="btn btn-primary">Editar</a>
-                    <a href="<?= $baseRoute ?>/delete/${customer.id}" class="btn btn-danger">Excluir</a>
+                <td class='text-end'>
+                    <div class="dropstart">
+                        <button type="button" class="btn btn-outline-secondary text-white" data-bs-toggle="dropdown" aria-expanded="false">
+                            Ações
+                        </button>
+                        <ul class="dropdown-menu text-center me-2" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(7px); border-radius: 15px; border: 2px solid #198754;">
+                            <li><a href="<?= $baseRoute ?>/edit/${customer.id}" class="dropdown-item">Editar</a></li>
+                            <li><a href="<?= $baseRoute ?>/delete/${customer.id}" class="dropdown-item">Excluir</a></li>
+                        </ul>
+                    </div>
                 </td>
             `
             tbody.appendChild(tr);

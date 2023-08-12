@@ -27,7 +27,7 @@
 
         .card {
             border-radius: var(--border-radius);
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(255, 255, 255, 0.1);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
             border: 1px solid rgba(33, 37, 41, 0.2);
         }
@@ -68,17 +68,17 @@
 
 <body>
     <header>
-        <nav class="card m-3 d-flex flex-row">
+        <nav class="m-3 d-flex flex-row">
             <img src="<?= base_url('assets/imgs/logo.png') ?>" alt="logo" class="mx-2" style="height: 60px;">
 
-            <div class="d-flex align-items-center">
+            <div class="d-flex flex-row align-items-center">
                 <?php foreach ($navigation_bar_items as $item) : ?>
                     <?php if ($item['show_subitems']) : ?>
                         <div class="nav-item mx-3 subitems">
                             <a class="nav-link dropdown-toggle text-white" href="<?= $item['href'] ?>" data-bs-toggle="dropdown">
                                 <?= $item['title'] ?>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-dark mt-4 px-2" style="background: rgba(0,0,0, 0.45); backdrop-filter: blur(7px); border-radius: 15px; border: 2px solid <?= $item['color'] ?>;">
+                            <ul class="dropdown-menu dropdown-menu-dark mt-4 px-2" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(7px); border-radius: 15px; border: 2px solid <?= $item['color'] ?>;">
                                 <?php foreach ($item['subitems'] as $subitem) : ?>
 
                                     <?php if (isset($subitem['subitems'])) : ?>
@@ -86,7 +86,7 @@
                                             <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">
                                                 <?= $subitem['title'] ?>
                                             </a>
-                                            <ul class="dropdown-menu dropdown-menu-dark ms-6" style="background: rgba(0,0,0, 0.45); backdrop-filter: blur(7px); border-radius: 15px; border: 2px solid <?= $item['color'] ?>;">
+                                            <ul class="dropdown-menu dropdown-menu-dark ms-6" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(7px); border-radius: 15px; border: 2px solid <?= $item['color'] ?>;">
                                                 <?php foreach ($subitem['subitems'] as $subsubitem) : ?>
                                                     <li><a class="dropdown-item text-white rounded my-1" href="<?= $subsubitem['href'] ?>"><?= $subsubitem['title'] ?></a></li>
                                                 <?php endforeach ?>
