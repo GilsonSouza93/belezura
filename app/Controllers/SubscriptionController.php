@@ -10,5 +10,4 @@ class SubscriptionController extends BaseController
     public $addButtonText = 'Novo Plano';
     public $viewPath = 'subscription';
     public $baseRoute = '/configuracoes/planos';
-
 }

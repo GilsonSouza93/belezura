@@ -128,18 +128,47 @@
             <h6>Dados técnicos</h6>
         </div>
         <div class="mt-3 col-md-12">
-                <label for="thel" class="form-label">Modo de desconto</label>
-                <select class="form-control" aria-label="Default select example">
-                    <option selected>Selecione o tipo</option>
-                    <option value="1">VOIP</option>
-                    <option value="1">Rádio</option>
-                    <option value="1">Cabo</option>
-                    <option value="1">Fibra</option>
-                    <option value="1">Multimídia</option>
-                    <option value="1">TV</option>
-                    <option value="1">Telefonia</option>
-                </select>
+            <label for="typeInput" class="form-label">Selecione o tipo abaixo</label>
+            <select id='typeInput' class="form-control" aria-label="Selecione o tipo">
+                <option value="voip">VOIP</option>
+                <option value="radio">Rádio</option>
+                <option value="cabo">Cabo</option>
+                <option value="fibra">Fibra</option>
+                <option value="multimidia">Multimídia</option>
+                <option value="tv">TV</option>
+                <option value="telefonia">Telefonia</option>
+            </select>
+        </div>
+
+        <div id="typeDiv">
+            <div id="voip">
+                VOIP
             </div>
+    
+            <div id="radio">
+                RADIO
+            </div>
+        </div>
     </form>
 </div>
+<?= $this->endSection() ?>
+<?= $this->section('script') ?>
+    <script>
+        const updateType = () => {
+            const typeInput = document.getElementById('typeInput');
+        
+            const typeDivChildren = document.querySelectorAll('#typeDiv > div')
+
+            for (let i = 0; i < typeDivChildren.length; i++) {
+                typeDivChildren[i].style.display = 'none'
+            }
+
+            const type = typeInput.value
+
+            document.getElementById(type).style.display = 'block'
+        }
+
+        document.getElementById('typeInput').addEventListener('change', updateType)
+        document.addEventListener('DOMContentLoaded', updateType);
+    </script>
 <?= $this->endSection() ?>
