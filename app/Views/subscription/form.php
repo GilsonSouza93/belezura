@@ -130,6 +130,7 @@
         <div class="mt-3 col-md-12">
             <label for="typeInput" class="form-label">Selecione o tipo abaixo</label>
             <select id='typeInput' class="form-control" aria-label="Selecione o tipo">
+                <option selected>Selecione o tipo de serviço</option>
                 <option value="voip">VOIP</option>
                 <option value="radio">Rádio</option>
                 <option value="cabo">Cabo</option>
@@ -142,7 +143,16 @@
 
         <div id="typeDiv">
             <div id="voip">
-                VOIP
+               <div class="mt-3 col-md-4">
+                <label for="thel" class="form-label">Tipo de franquia</label>
+                    <select class="form-control" aria-label="Tipo de franquia">
+                        <option selected>Selecione a franquia</option>
+                        <option value="1">Individual</option>
+                        <option value="2">Individual local</option>
+                        <option value="3">Geral</option>
+                        <option value="4">Geral local</option>
+                    </select>
+               </div>
             </div>
     
             <div id="radio">
@@ -150,6 +160,7 @@
             </div>
         </div>
     </form>
+ 
 </div>
 <?= $this->endSection() ?>
 <?= $this->section('script') ?>
