@@ -39,7 +39,7 @@
         <div class="row">
             <div class="mt-3 col-md-12">
                 <label for="typo" class="form-label">Tipo</label>
-                <select class="form-control" aria-label="Default select example">
+                <select class="form-control" aria-label="Selecione o tipo">
                     <option selected>Selecione o tipo</option>
                     <option value="1">FiberHome</option>
                     <option value="2">FibeHome RP1000</option>
