@@ -2,10 +2,20 @@
 
 <?= $this->section('content') ?>
 
-<div class="p-4">
-    <h2>
-        <?= $tittle ?>
-    </h2>
+<div class="card p-4">
+        <h2>
+            <?= $tittle ?>
+        </h2>
+        <div class="row card-2 py-3 my-3">
+            <div class="col-md-8">
+                <input type="text" name="search" id="search" class="form-control" placeholder="Buscar" style="background-color: transparent;">
+            </div>
+            <div class="col-md-4 btn-group">
+                <button class="btn btn-success">Pesquisar</button>
+                <button class="btn btn-success" onclick="openModalFilterPost()" >Filtrar endereço</button>
+
+            </div>
+        </div>
 
     <div class="row" style="height: 400PX">
         <div class="col-8">
@@ -61,6 +71,72 @@
             </div>
         </div>
     </div>
+
 </div>
+<!-- Conteudo Modal Filtro para postes -->
+<div id='modalFilterPost' class="modal" tabindex="-1" style="backdrop-filter: blur(7px);">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Filtrar postes</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+            <form id='formFilter'>
+                <label for="uf" class="form-label">UF</label>
+                <select class="form-control form-select" name="uf" aria-label="Estado">
+                    <option selected="">Selecione o estado</option>
+                    <option value="1">Pernambuco</option>
+                    <option value="1">Paraíba</option>
+                    <option value="1">Alagoas</option>
+                    <option value="1">Bahia</option>
+                    <option value="1">Piauí</option>
+                    <option value="1">Natal</option>
+                </select>
+                <div class="mt-3 col">
+                    <label for="cep" class="form-label">CEP</label>
+                    <input type="number" class="form-control" id="cep" name="cep" placeholder="CEP">
+                </div>
+                <div class="mt-3 col">
+                    <label for="address" class="form-label">Endereço</label>
+                    <input type="text" class="form-control" id="andress" name="address" placeholder="Avenida/Rua">
+                </div>
+                <div class="mt-3 col">
+                    <label for="city" class="form-label">Cidade</label>
+                    <input type="text" class="form-control" id="text" name="text" placeholder="Cidade">
+                </div>
+                <div class="mt-3 col">
+                    <label for="district" class="form-label">Bairro</label>
+                    <input type="text" class="form-control" id="district" name="district" placeholder="Bairro">
+                </div>
+                <div class="mt-3 col">
+                    <label for="numberHouse" class="form-label">Número</label>
+                    <input type="number" class="form-control" id="numberHouse" name="numberHouse" placeholder="Número">
+                </div>
+            </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary">Filtrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<?= $this->endSection() ?>
+<?= $this->section('script') ?>
+
+<script>
+        const openModalFilterPost = () => {
+        const modalFilter = new bootstrap.Modal('#modalFilterPost', {
+            keyboard: true,
+        });
+
+        modalFilter.show();
+    }
+
+</script>           
+
+
 
 <?= $this->endSection() ?>
