@@ -475,19 +475,712 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-5 col-md-3 mt-3">
+                    <div class="col-sm-5 col-md-12 mt-3">
                         <label for="cmts_arch" class="form-label">CMTS Arquivo:</label>
                         <input type="text" class="form-control" name="name" placeholder="">  
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-5 col-md-3 mt-3">
+                    <div class="col-sm-5 col-md-12 mt-3">
                         <label for="cmts_arch" class="form-label">Filtro</label>
                         <input type="text" class="form-control" name="name" placeholder="">  
                     </div>
                 </div>
                 
-            </div>    
+            </div>   
+            
+            <div class="row" id="cabo">
+                <div class="row">
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="parametros" class="form-label">Unidade de velocidade</label>
+                        <select class="form-control" aria-label="Tipo de franquia">
+                            <option selected>Selecione a unidade que vai medir a velocidade</option>
+                            <option value="3">-----------</option>
+                            <option value="1">Kbps - Quilobits</option>
+                            <option value="2">Mbps - Megabits</option>
+                            <option value="2">Gbps - Gigabits</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="uuid" class="form-label">Upload</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="uuid" class="form-label">Download</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="uuid" class="form-label">Prioridade</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="uuid" class="form-label">Upload mínimo</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="uuid" class="form-label">Download mímino</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="parametros" class="form-label">Ipv4Pool</label>
+                        <select class="form-control" aria-label="Tipo de franquia">
+                            <option selected>Selecione o Ipv4 Pool</option>
+                            <option value="3">-----------</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="parametros" class="form-label">Ipv6 Pref. Pool</label>
+                        <select class="form-control" aria-label="Tipo de franquia">
+                            <option selected>Selecione o Ipv6 Pref. Pool</option>
+                            <option value="3">-----------</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="parametros" class="form-label">Burst</label>
+                        <select class="form-control" aria-label="Tipo de franquia">
+                            <option selected>Selecione Burst</option>
+                            <option value="3">-----------</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="parametros" class="form-label">Ipv6 PD Pool</label>
+                        <select class="form-control" aria-label="Tipo de franquia">
+                            <option selected>Selecione o Ipv6 PD Pool</option>
+                            <option value="1">-----------</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="mounth" class="form-label">Tráfego mensal</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="trafego" class="form-label">Contabilização de tráfego mensal</label>
+                        <select class="form-control" aria-label="Tipo de franquia">
+                            <option selected>----------</option>
+                            <option value="1">Download/Upload</option>
+                            <option value="1">Download</option>
+                            <option value="1">Download</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="mounth" class="form-label">Valor Tráfego Excedido</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="trafego" class="form-label">Trafego Excedente Ação:</label>
+                        <select class="form-control" aria-label="Tipo de franquia">
+                            <option selected>----------</option>
+                            <option value="1">Reduzir a velocidade</option>
+                            <option value="2">Suspender acessoDownload</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5 col-md-4 mt-5">
+                        <label class="form-check-label" for="flexCheckDefault"></label>
+                        <input type="checkbox" class="form-check-input" name="" id=""> Duplicação norturna
+                    </div>
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="noturna" class="form-label">Início da duplicação nortuna</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="noturna" class="form-label">Fim da duplicação nortuna</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5 col-md-3 mt-5">
+                        <label class="form-check-label" for="flexCheckDefault"></label>
+                        <input type="checkbox" class="form-check-input" name="" id=""> Auto Bloqueio
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="noturna" class="form-label">Dias após vencimento para Bloqueio:</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="noturna" class="form-label">Dias após vencimento para aviso de Bloqueio</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="noturna" class="form-label">Dias após vencimento para reduzir velocidade</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5 col-md-3 mt-5">
+                        <label class="form-check-label" for="flexCheckDefault"></label>
+                        <input type="checkbox" class="form-check-input" name="" id=""> Exibir Sici?
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="trafego" class="form-label">Faixa Sici:</label>
+                        <select class="form-control" aria-label="Tipo de franquia">
+                            <option selected>----------</option>
+                            <option value="1">Reduzir a velocidade</option>
+                            <option value="2">Suspender acessoDownload</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="trafego" class="form-label">DICI - setor que será atendido:</label>
+                        <select class="form-control" aria-label="Tipo de franquia">
+                            <option selected>----------</option>
+                            <option value="1">Urbano</option>
+                            <option value="2">Rural</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="noturna" class="form-label">Lista de endereço</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5 col-md-12 mt-3">
+                        <label for="trafego" class="form-label">Modo Velocidade Reduzida</label>
+                        <select class="form-control" aria-label="Tipo de franquia">
+                            <option selected>----------</option>
+                            <option value="1">Kbps - Quilobits</option>
+                            <option value="2">Mbps - Megabits</option>
+                            <option value="2">Gbps - Gigabits</option>  
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="red" class="form-label">Download Red. Financeiro:</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="red" class="form-label">Upload Red. Financeiro</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="red" class="form-label">Lista de endereço para redução</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="modo" class="form-label">Modo Velocidade Reduzida por Franquia</label>
+                        <select class="form-control" aria-label="Tipo de franquia">
+                            <option selected>----------</option>
+                            <option value="1">Kbps - Quilobits</option>
+                            <option value="2">Mbps - Megabits</option>
+                            <option value="2">Gbps - Gigabits</option>  
+                        </select>
+                    </div>
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="red" class="form-label">Download Red. Franquia</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="red" class="form-label">Download Red. Franquia</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="red" class="form-label">Upload Red. Franquia:</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="red" class="form-label">Policy In:</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="red" class="form-label">Policy Out:</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="red" class="form-label">Policy V6 In:</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="red" class="form-label">Policy V6 Out:</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="red" class="form-label">Policy In(redução):</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="red" class="form-label">Policy Out(redução)</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="red" class="form-label">Policy V6 In(redução):</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="red" class="form-label">Policy V6 Out(redução):</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5 col-md-12 mt-3">
+                        <label for="cmts_arch" class="form-label">CMTS Arquivo:</label>
+                        <input type="text" class="form-control" name="name" placeholder="">  
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5 col-md-12 mt-3">
+                        <label for="cmts_arch" class="form-label">Filtro</label>
+                        <input type="text" class="form-control" name="name" placeholder="">  
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5 col-md-6 mt-3">
+                        <label for="cmts_arch" class="form-label">Parâmetros Radius</label>
+                        <input type="text" class="form-control" name="name" placeholder="">  
+                    </div>
+                    <div class="col-sm-5 col-md-6 mt-3">
+                        <label for="cmts_arch" class="form-label">Parâmetros ONU</label>
+                        <input type="text" class="form-control" name="name" placeholder="">  
+                    </div>
+                </div>
+                
+            </div>   
+            
+            <div class="row" id="fibra">
+                <div class="row">
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="parametros" class="form-label">Unidade de velocidade</label>
+                        <select class="form-control" aria-label="Tipo de franquia">
+                            <option selected>Selecione a unidade que vai medir a velocidade</option>
+                            <option value="3">-----------</option>
+                            <option value="1">Kbps - Quilobits</option>
+                            <option value="2">Mbps - Megabits</option>
+                            <option value="2">Gbps - Gigabits</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="uuid" class="form-label">Upload</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="uuid" class="form-label">Download</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="uuid" class="form-label">Prioridade</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="uuid" class="form-label">Upload mínimo</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="uuid" class="form-label">Download mímino</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="parametros" class="form-label">Ipv4Pool</label>
+                        <select class="form-control" aria-label="Tipo de franquia">
+                            <option selected>Selecione o Ipv4 Pool</option>
+                            <option value="3">-----------</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="parametros" class="form-label">Ipv6 Pref. Pool</label>
+                        <select class="form-control" aria-label="Tipo de franquia">
+                            <option selected>Selecione o Ipv6 Pref. Pool</option>
+                            <option value="3">-----------</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="parametros" class="form-label">Burst</label>
+                        <select class="form-control" aria-label="Tipo de franquia">
+                            <option selected>Selecione Burst</option>
+                            <option value="3">-----------</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="parametros" class="form-label">Ipv6 PD Pool</label>
+                        <select class="form-control" aria-label="Tipo de franquia">
+                            <option selected>Selecione o Ipv6 PD Pool</option>
+                            <option value="1">-----------</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="mounth" class="form-label">Tráfego mensal</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="trafego" class="form-label">Contabilização de tráfego mensal</label>
+                        <select class="form-control" aria-label="Tipo de franquia">
+                            <option selected>----------</option>
+                            <option value="1">Download/Upload</option>
+                            <option value="1">Download</option>
+                            <option value="1">Download</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="mounth" class="form-label">Valor Tráfego Excedido</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="trafego" class="form-label">Trafego Excedente Ação:</label>
+                        <select class="form-control" aria-label="Tipo de franquia">
+                            <option selected>----------</option>
+                            <option value="1">Reduzir a velocidade</option>
+                            <option value="2">Suspender acessoDownload</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5 col-md-4 mt-5">
+                        <label class="form-check-label" for="flexCheckDefault"></label>
+                        <input type="checkbox" class="form-check-input" name="" id=""> Duplicação norturna
+                    </div>
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="noturna" class="form-label">Início da duplicação nortuna</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="noturna" class="form-label">Fim da duplicação nortuna</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5 col-md-3 mt-5">
+                        <label class="form-check-label" for="flexCheckDefault"></label>
+                        <input type="checkbox" class="form-check-input" name="" id=""> Auto Bloqueio
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="noturna" class="form-label">Dias após vencimento para Bloqueio:</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="noturna" class="form-label">Dias após vencimento para aviso de Bloqueio</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="noturna" class="form-label">Dias após vencimento para reduzir velocidade</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5 col-md-3 mt-5">
+                        <label class="form-check-label" for="flexCheckDefault"></label>
+                        <input type="checkbox" class="form-check-input" name="" id=""> Exibir Sici?
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="trafego" class="form-label">Faixa Sici:</label>
+                        <select class="form-control" aria-label="Tipo de franquia">
+                            <option selected>----------</option>
+                            <option value="1">Reduzir a velocidade</option>
+                            <option value="2">Suspender acessoDownload</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="trafego" class="form-label">DICI - setor que será atendido:</label>
+                        <select class="form-control" aria-label="Tipo de franquia">
+                            <option selected>----------</option>
+                            <option value="1">Urbano</option>
+                            <option value="2">Rural</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="noturna" class="form-label">Lista de endereço</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5 col-md-12 mt-3">
+                        <label for="trafego" class="form-label">Modo Velocidade Reduzida</label>
+                        <select class="form-control" aria-label="Tipo de franquia">
+                            <option selected>----------</option>
+                            <option value="1">Kbps - Quilobits</option>
+                            <option value="2">Mbps - Megabits</option>
+                            <option value="2">Gbps - Gigabits</option>  
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="red" class="form-label">Download Red. Financeiro:</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="red" class="form-label">Upload Red. Financeiro</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="red" class="form-label">Lista de endereço para redução</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="modo" class="form-label">Modo Velocidade Reduzida por Franquia</label>
+                        <select class="form-control" aria-label="Tipo de franquia">
+                            <option selected>----------</option>
+                            <option value="1">Kbps - Quilobits</option>
+                            <option value="2">Mbps - Megabits</option>
+                            <option value="2">Gbps - Gigabits</option>  
+                        </select>
+                    </div>
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="red" class="form-label">Download Red. Franquia</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="red" class="form-label">Download Red. Franquia</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="red" class="form-label">Upload Red. Franquia:</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="red" class="form-label">Policy In:</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="red" class="form-label">Policy Out:</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="red" class="form-label">Policy V6 In:</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="red" class="form-label">Policy V6 Out:</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="red" class="form-label">Policy In(redução):</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="red" class="form-label">Policy Out(redução)</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="red" class="form-label">Policy V6 In(redução):</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="red" class="form-label">Policy V6 Out(redução):</label>
+                        <input type="text" class="form-control" name="name" placeholder="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5 col-md-12 mt-3">
+                        <label for="cmts_arch" class="form-label">CMTS Arquivo:</label>
+                        <input type="text" class="form-control" name="name" placeholder="">  
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5 col-md-12 mt-3">
+                        <label for="cmts_arch" class="form-label">Filtro</label>
+                        <input type="text" class="form-control" name="name" placeholder="">  
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-5 col-md-6 mt-3">
+                        <label for="cmts_arch" class="form-label">Parâmetros Radius</label>
+                        <input type="text" class="form-control" name="name" placeholder="">  
+                    </div>
+                    <div class="col-sm-5 col-md-6 mt-3">
+                        <label for="cmts_arch" class="form-label">Parâmetros ONU</label>
+                        <input type="text" class="form-control" name="name" placeholder="">  
+                    </div>
+                </div>
+                
+            </div>   
+            <div class="row" id="multimidia">
+                <div class="row">
+                        <div class="col-sm-5 col-md-4 mt-3">
+                            <label for="cmts_arch" class="form-label">UUID</label>
+                            <input type="text" class="form-control" name="name" placeholder="">  
+                        </div>
+                    </div>
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="modo" class="form-label">Gateway</label>
+                        <select class="form-control" aria-label="Tipo de franquia">
+                            <option selected>----------</option> 
+                        </select>
+                    </div>
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="cmts_arch" class="form-label">Parâmetros JSON</label>
+                        <input type="text" class="form-control" name="name" placeholder="">  
+                    </div>        
+                </div>    
+                <div class="row">
+                    <div class="col-sm-5 col-md-3 mt-5">
+                        <label class="form-check-label" for="flexCheckDefault"></label>
+                        <input type="checkbox" class="form-check-input" name="" id=""> Auto Bloqueiro
+                    </div>
+                    
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="cmts_arch" class="form-label">Dias após vencimento para Bloqueio:</label>
+                        <input type="text" class="form-control" name="name" placeholder="">  
+                    </div>        
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="cmts_arch" class="form-label">Dias após vencimento para aviso de Bloqueio:</label>
+                        <input type="text" class="form-control" name="name" placeholder="">  
+                    </div>        
+                </div>    
+            
+            </div>
+            <div class="row" id="tv">
+                <div class="row">
+                        <div class="col-sm-5 col-md-3 mt-3">
+                            <label for="cmts_arch" class="form-label">UUID</label>
+                            <input type="text" class="form-control" name="name" placeholder="">  
+                        </div>
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="modo" class="form-label">Gateway</label>
+                        <select class="form-control" aria-label="Tipo de franquia">
+                            <option selected>----------</option> 
+                        </select>
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="cmts_arch" class="form-label">Gateway ID</label>
+                        <input type="text" class="form-control" name="name" placeholder="">  
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="cmts_arch" class="form-label">Parâmetros</label>
+                        <input type="text" class="form-control" name="name" placeholder="">  
+                    </div>        
+                </div>    
+                <div class="row">
+                    <div class="col-sm-5 col-md-3 mt-5">
+                        <label class="form-check-label" for="flexCheckDefault"></label>
+                        <input type="checkbox" class="form-check-input" name="" id=""> Auto Bloqueiro
+                    </div>
+                    
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="cmts_arch" class="form-label">Nome do pacote</label>
+                        <input type="text" class="form-control" name="name" placeholder="">  
+                    </div>        
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="cmts_arch" class="form-label">Dias após vencimento para aviso de Bloqueio:</label>
+                        <input type="text" class="form-control" name="name" placeholder="">  
+                    </div>        
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="cmts_arch" class="form-label">Dias após vencimento para Bloqueio:</label>
+                        <input type="text" class="form-control" name="name" placeholder="">  
+                    </div>        
+                </div>    
+            <div class="row" id="telefonia">
+                <div class="row">
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="cmts_arch" class="form-label">Valor Limite:</label>
+                        <input type="text" class="form-control" name="name" placeholder="">  
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="cmts_arch" class="form-label">Valor da franquia</label>
+                        <input type="text" class="form-control" name="name" placeholder="">  
+                    </div>
+                
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="modo" class="form-label">Gateway</label>
+                        <select class="form-control" aria-label="Tipo de franquia">
+                            <option selected>----------</option> 
+                        </select>
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="modo" class="form-label">Tipo da franquia</label>
+                        <select class="form-control" aria-label="Tipo de franquia">
+                            <option selected>----------</option>
+                            <option value="1">Individual</option>
+                            <option value="2">Individual local</option>
+                            <option value="3">Geral</option> 
+                            <option value="4">Geral Local</option> 
+                        </select>
+                    </div>      
+                </div>    
+                
+                <div class="row">
+                    <div class="col-sm-5 col-md-3 mt-5">
+                        <label class="form-check-label" for="flexCheckDefault"></label>
+                        <input type="checkbox" class="form-check-input" name="" id=""> Valor da Mensalidade pela Gateway:
+                    </div>
+                    
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="cmts_arch" class="form-label">UUID</label>
+                        <input type="text" class="form-control" name="name" placeholder="">  
+                    </div>        
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="cmts_arch" class="form-label">Parâmetros:</label>
+                        <input type="text" class="form-control" name="name" placeholder="">  
+                    </div>        
+                    <div class="col-sm-5 col-md-3 mt-3">
+                        <label for="modo" class="form-label">Tipo mensalidade gateway:</label>
+                        <select class="form-control" aria-label="Tipo de franquia">
+                            <option selected>----------</option>
+                            <option value="1">Integral</option>
+                            <option value="2">Acrescentar</option>
+                        </select>
+                    </div>      
+                </div>    
+                <div class="row">
+                    <div class="col-sm-5 col-md-3 mt-5">
+                        <label class="form-check-label" for="flexCheckDefault"></label>
+                        <input type="checkbox" class="form-check-input" name="" id=""> Inserir Créditos Automaticamente pela Gateway:
+                    </div>
+                    <div class="col-sm-5 col-md-3 mt-5">
+                        <label class="form-check-label" for="flexCheckDefault"></label>
+                        <input type="checkbox" class="form-check-input" name="" id=""> Auto Bloqueio?
+                    </div>
+                    
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="cmts_arch" class="form-label">Dias após vencimento para Bloqueio:</label>
+                        <input type="text" class="form-control" name="name" placeholder="">  
+                    </div>        
+                    <div class="col-sm-5 col-md-4 mt-3">
+                        <label for="cmts_arch" class="form-label">Dias após vencimento para aviso de Bloqueio::</label>
+                        <input type="text" class="form-control" name="name" placeholder="">  
+                    </div>        
+     
+                </div>    
+                <div class="row">
+                    <div class="col-sm-5 col-md-6 mt-3">
+                        <label for="modo" class="form-label">STFC - Tipo de atendimento:</label>
+                        <select class="form-control" aria-label="Tipo de franquia">
+                            <option selected>----------</option>
+                            <option value="1">Urbano</option>
+                            <option value="2">Rural</option>
+                        </select>
+                    </div> 
+                    <div class="col-sm-5 col-md-6 mt-3">
+                        <label for="modo" class="form-label">STFC - Tipo de Meio:</label>
+                        <select class="form-control" aria-label="Tipo de franquia">
+                            <option selected>----------</option>
+                            <option value="1">Cabo coaxial</option>
+                            <option value="1">Cabo metálico</option>
+                            <option value="1">Satélite</option>
+                            <option value="1">Rádio</option>
+                            <option value="1">Fibra</option>
+                        </select>
+                    </div>         
+     
+                </div>    
+            
+            </div>
+            
         </div>
     </form>
  
