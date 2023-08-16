@@ -137,6 +137,10 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('/', 'FinancialboxController::index');
             $routes->get('novo', 'FinancialboxController::form');
         });
+        $routes->group('contasapagar', static function ($routes) {
+            $routes->get('/', 'BillstopayController::index');
+            $routes->get('novo', 'BillstopayController::form');
+        });
     });
 });
 
