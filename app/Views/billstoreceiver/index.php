@@ -18,7 +18,7 @@
         
         <div class="col-md-4 btn-group">
             <button class="btn btn-success">Pesquisar</button>
-            <button class="btn btn-success" onclick="openModalPay()">Filtros</button>
+            <button class="btn btn-success" onclick="openModalReceiver()">Filtros</button>
             <a class="btn btn-success" href="<?= $baseRoute ?>/novo"><?= $addButtonText ?></a>
         </div>
         
@@ -34,16 +34,15 @@
                 <tr>
                     <th scope="col">Conta</th>
                     <th scope="col">Empresa</th>
+                    <th scope="col">Fornecedor</th>
                     <th scope="col">Ponto de Recebimento</th>
-                    <th scope="col">Recebedor</th>
                     <th scope="col">Descrição</th>
                     <th scope="col">Data Emissão</th>
                     <th scope="col">Vencimento</th>
-                    <th scope="col">Pagamento</th>
                     <th scope="col">Status</th>
                     <th scope="col">Parcela</th>
                     <th scope="col">Valor</th>
-                    <th scope="col">Pago?</th>
+                    <th scope="col">Status</th>
                     <th scope='col'>Ação</th>
                 </tr>
             </thead>
@@ -52,17 +51,16 @@
         </table>
     </div>
 </div>
-
 <!-- Filtro modal -->
-<div id='ModalPay' class="modal" tabindex="-1" style="backdrop-filter: blur(7px);">
+<div id='ModalReceiver' class="modal" tabindex="-1" style="backdrop-filter: blur(7px);">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
+        <h5 class="modal-title">Filtrar C. Receber</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form id='formFilter'>
+        <form id='formFilter'>
             <div class="mt-3 col-md-12">
                 <label for="descricao" class="form-label" id="descricao" >Descrição</label>
                 <input type="text" class="form-control" name="name" placeholder="">
@@ -160,16 +158,18 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('script') ?>
-    <script>
 
-        const openModalPay = () => {
-            const modalFilter = new bootstrap.Modal('#ModalPay', {
-                keyboard: true,
-            });
-            
-            modalFilter.show();
-        }
-    </script>
+<script>
+    const openModalReceiver = () => {
+        const modalFilter = new bootstrap.Modal('#ModalReceiver', {
+            keyboard: true,
+        });
+
+        modalFilter.show();
+    }
+</script>
+
+    
 
 
 <?= $this->endSection() ?>

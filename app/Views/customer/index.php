@@ -37,7 +37,7 @@
         </table>
     </div>
 </div>
-
+<!-- Filtro modal -->
 <div id='modalFilter' class="modal" tabindex="-1" style="backdrop-filter: blur(7px);">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
@@ -60,8 +60,8 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary">Consultar</button>
       </div>
     </div>
   </div>

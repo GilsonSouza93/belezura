@@ -141,6 +141,10 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('/', 'BillstopayController::index');
             $routes->get('novo', 'BillstopayController::form');
         });
+        $routes->group('contasareceber', static function ($routes) {
+            $routes->get('/', 'BillstoreceiverController::index');
+            $routes->get('novo', 'BillstoreceiverController::form');
+        });
     });
 });
 

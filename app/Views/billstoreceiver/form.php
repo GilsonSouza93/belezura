@@ -22,11 +22,11 @@
 
         <div class="row">
             <div class="mt-3 col-md-2">
-                <label for="type" class="form-label">Tipo</label>
+                <label for="typo" class="form-label">Empresa</label>
                 <select class="form-control" aria-label="Default select example">
-                    <option selected>Selecione se é entrada ou saída</option>
-                    <option value="1">Entrada</option>
-                    <option value="2">Saída</option>
+                    <option selected>Selecione a empresa</option>
+                    <option value="1">Provedor teste</option>
+                    <option value="2">Provedor Home telecomunicações</option>
                 </select>
             </div>
             <div class="mt-3 col-md-2">
@@ -41,21 +41,13 @@
                 </select>
             </div>
             <div class="mt-3 col-md-2">
-                <label for="typo" class="form-label">Ponto de pagamento</label>
+                <label for="typo" class="form-label">Fornecedor</label>
                 <select class="form-control" aria-label="Default select example">
-                    <option selected>Selecione o ponto de pagamento</option>
-                    <option value="1">Principal</option>
-                    <option value="2">Caixa reserva</option>
+                    <option selected>Selecione o Fornecedor</option>
+                    <option value="1">Home telecomunicações</option>
                 </select>
             </div>
-            <div class="mt-3 col-md-2">
-                <label for="typo" class="form-label">Plano de contas</label>
-                <select class="form-control" aria-label="Default select example">
-                    <option selected>Selecione o ponto de contas</option>
-                    <option value="1">Principal</option>
-                    <option value="2">Caixa reserva</option>
-                </select>
-            </div>
+
             <div class="mt-3 col-md-2">
                 <label for="typo" class="form-label">Forma de pagamento</label>
                 <select class="form-control" aria-label="Default select example">
@@ -67,6 +59,10 @@
                     <option value="1">Crédito</option>
                     <option value="1">Cheque</option>
                 </select>
+            </div>
+            <div class="mt-5 col-md-2 py-2 px-5 form-check">
+                <label class="form-check-label" for="flexCheckDefault"></label>
+                <input type="checkbox" class="form-check-input" name="" id="" checked> Valor Fixo:
             </div>
             <div class="mt-3 col-md-2">
                 <label for="typo" class="form-label">Valor</label>
@@ -84,32 +80,40 @@
         </div>
 
         <div class="row">
-            <div class="mt-3 col-md-6">
-                <label for="name" class="form-label">Valor</label>
+            <div class="mt-3 col-md-3">
+                <label for="typo" class="form-label">Tipo do documento</label>
+                <select class="form-control" aria-label="Default select example">
+                    <option selected>Selecione o tipo de pagamento</option>
+                </select>
+            </div>
+            <div class="mt-3 col-md-3">
+                <label for="name" class="form-label">Descrição</label>
                 <input type="text" class="form-control" name="name" placeholder="">
             </div>
-            <div class="mt-3 col-md-6">
-                <label for="name" class="form-label">Data da competência</label>
+            <div class="mt-3 col-md-3">
+                <label for="name" class="form-label">Nota fiscal</label>
+                <input type="text" class="form-control" name="name" placeholder="">
+            </div>
+            <div class="mt-3 col-md-3">
+                <label for="date" class="form-label">Data de emissão</label>
                 <input type="date" class="form-control" name="name" placeholder="">
             </div>
         </div>
         <div class="row">
-            <div class="mt-3 col-md-12">
-                <label for="name" class="form-label">Comprovante</label>
-                <input type="file" class="btn btn-outline-secondary" name="comprovante" id="comprovante">
+        <div class="mt-3 col-md-6">
+                <label for="date" class="form-label">Vencimento</label>
+                <input type="date" class="form-control" name="name" placeholder="">
+            </div>
+            <div class="mt-3 col-md-6 form-check">
+                <label for="typo" class="form-label">Tipo de Parcela</label>
+                    <select class="form-control" aria-label="Default select example">
+                        <option selected>Selecione o tipo de parcela</option>
+                        <option value="1">Fixo</option>
+                        <option value="1">Dinâmico</option>
+                    </select>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="mt-3 col-md-6">
-                <label for="name" class="form-label">Observação</label>
-                <input type="text" class="form-control" name="name" placeholder="">
-            </div>
-            <div class="mt-3 col-md-6">
-                <label for="name" class="form-label">Dados Abstratos</label>
-                <input type="text" class="form-control" name="name" placeholder="">
-            </div>
-        </div>
-
 
     </form>
 </div>
