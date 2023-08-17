@@ -107,6 +107,10 @@ abstract class BaseController extends Controller
                         'title' => 'Contas receber',
                         'href' => base_url('financeiro/contasareceber'), 
                     ],
+                    'ticket' => [
+                        'title' => 'Boletos',
+                        'href' => base_url('financeiro/boletos'), 
+                    ],
 
                 ]
             
