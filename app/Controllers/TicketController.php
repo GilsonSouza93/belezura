@@ -8,6 +8,7 @@ class TicketController extends BaseController
 {
     public $tittle = 'Boleto';
     public $addButtonText = 'Gerar Novo Boleto';
+
     public $viewPath = 'ticket';
     public $baseRoute = '/financeiro/boleto';
 }

@@ -61,6 +61,7 @@ abstract class BaseController extends Controller
     public $tittle = '';
     public $addButtonText = '';
     public $baseRoute = '';
+    public $baseRoutePrint = '';
     public $mainModel = null;
     public $saveMessage = 'Salvo com sucesso!';
 
@@ -109,7 +110,7 @@ abstract class BaseController extends Controller
                     ],
                     'ticket' => [
                         'title' => 'Boletos',
-                        'href' => base_url('financeiro/boletos'), 
+                        'href' => base_url('financeiro/boleto'), 
                     ],
 
                 ]

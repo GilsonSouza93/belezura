@@ -140,6 +140,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         $routes->group('boleto', static function ($routes) {
             $routes->get('/', 'TicketController::index');
             $routes->get('novo', 'TicketController::form');
+            $routes->get('novo', 'TicketController::print');
         });
         $routes->group('contasapagar', static function ($routes) {
             $routes->get('/', 'BillstopayController::index');

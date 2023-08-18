@@ -13,7 +13,7 @@
         <div class="col-md-5 btn-group">
             <button class="btn btn-success">Pesquisar</button>
             <button class="btn btn-success" id="accountFilter" >Filtros</button>
-            <button class="btn btn-success" id="printOut" >Imprimir</button>
+            <a class="btn btn-success" href="<?= $baseRoutePrint ?>/novo"><?= $addButtonPrint ?></a>
             <a class="btn btn-success" href="<?= $baseRoute ?>/novo"><?= $addButtonText ?></a>
         </div>
     </div>
