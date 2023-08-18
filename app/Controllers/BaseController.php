@@ -116,6 +116,28 @@ abstract class BaseController extends Controller
                 ]
             
             ],      
+            'gerencial' => [
+                'title' => 'Gerencial',
+                'href' => base_url('gerencial'),
+                'icon' => '<i class="fas fa-tools"></i>',
+                'show_subitems' => true,
+                'color' => '#ff914d',
+                'subitems' => [
+                    'pop' => [
+                        'title' => 'POP',
+                        'href' => base_url('gerencial/pop'),
+                    ],
+                    'email' => [
+                        'title' => 'Email',
+                        'href' => base_url('gerencial/pop'),
+                    ],
+                    'sms' => [
+                        'title' => 'SMS',
+                        'href' => base_url('gerencial/sms'), 
+                    ],
+                ]
+            
+            ],      
             'equipment' => [
                 'title' => 'Equipamentos',
                 'href' => base_url('equipamentos'),

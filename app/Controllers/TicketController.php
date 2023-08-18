@@ -11,4 +11,14 @@ class TicketController extends BaseController
 
     public $viewPath = 'ticket';
     public $baseRoute = '/financeiro/boleto';
+
+
+    public function __construct()
+    {
+        $this->mainModel = model('TicketModel');
+        parent::__construct();
+    }
+
+
 }
+
