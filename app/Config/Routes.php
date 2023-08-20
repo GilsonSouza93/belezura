@@ -118,7 +118,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('/', 'RadiusController::index');
             $routes->get('novo', 'RadiusController::form');
         });
-        $routes->group('post', static function ($routes) {
+        $routes->group('poste', static function ($routes) {
             $routes->get('/', 'PostController::index');
             $routes->get('novo', 'PostController::form');
         });
