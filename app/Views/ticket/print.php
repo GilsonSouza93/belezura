@@ -10,7 +10,7 @@
 
     <div class="row card-2 py-3 my-3">
         <div class="col-md-8">
-            <h4>Adicionar Boletos me Lote</h4>
+            <h4>Adicionar Boletos em Lote</h4>
         </div>
         <div class="col-md-4 btn-group">
             <a class="btn btn-success" href="<?= $baseRoute ?>">Voltar</a>
@@ -20,16 +20,10 @@
 
     <form>
 
-        <div class="row">
-            <div class="mt-3 col-md-3">
-                <label for="typo" class="form-label">Bairro</label>
-                <input type="text" class="form-control" name="name" placeholder="">
-            </div>
-            <div class="mt-3 col-md-3">
-                <label for="typo" class="form-label">Rua</label>
-                <input type="text" class="form-control" name="name" placeholder="">
-            </div>
-            <div class="mt-3 col-md-3">
+
+    <div class="row">
+            
+            <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">POP</label>
                 <select class="form-control" aria-label="Default select example">
                     <option selected>Selecione o local POP</option>
@@ -40,21 +34,46 @@
                     <option value="2">Garanhuns</option>
                 </select>
             </div>
-            <div class="mt-3 col-md-3">
+            <div class="mt-3 col-md-4">
+                <label for="typo" class="form-label">Plano</label>
+                <select class="form-control" aria-label="Default select example">
+                    <option selected>Selecione o Plano</option>
+                    <option value="1">100mb -</option>
+                    <option value="2">50 mb</option>
+                    <option value="3">1GB</option>
+                    <option value="3">Rádio - 1GB</option>
+                </select>
+            </div>
+            <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">NAS</label>
                 <select class="form-control" aria-label="Default select example">
                     <option selected>Selecione o NAS</option>
-                    <option value="1">Monsenhor Tabosa</option>
-                    <option value="1">Ria Rural</option>
+                    <option value="1">ACCEL-</option>
+                    <option value="2">Indentificador 1 </option>
+                    <option value="2">Indentificador 2 </option>
+                    <option value="2">Indentificador 3 </option>
+                </select>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="mt-3 col-md-12">
+                <label for="typo" class="form-label">OLT</label>
+                <select class="form-control" aria-label="selecione OLT">
+                    <option selected>Selecione OLT</option>
+                    <option value="1">OLT ZTE SIA - PE 172.16.12.1 SLOT1 - PON10</option>
+                    <option value="2">OLT ZTE SIA - PE 172.16.12.1 SLOT1 - PON10</option>
+                    <option value="3">OLT ZTE SIA - PE 172.16.12.1 SLOT1 - PON10</option>
+                    <option value="4">OLT ZTE SIA - PE 172.16.12.1 SLOT1 - PON10</option>
+                    <option value="5">OLT ZTE SIA - PE 172.16.12.1 SLOT1 - PON10</option>
+                    <option value="6">OLT ZTE SIA - PE 172.16.12.1 SLOT1 - PON10</option>
+                    <option value="7">OLT ZTE SIA - PE 172.16.12.1 SLOT1 - PON10</option>
+                    <option value="8">OLT ZTE SIA - PE 172.16.12.1 SLOT1 - PON10</option>
                 </select>
             </div>
         </div>
         <div class="row">
-            <div class="mt-3 col-md-3">
-                <label for="typo" class="form-label">Parcela</label>
-                <input type="text" class="form-control" name="name" placeholder="">
-            </div>
-            <div class="mt-3 col-md-3">
+            <div class="mt-3 col-md-6">
                 <label for="typo" class="form-label">Portador</label>
                 <select class="form-control" aria-label="Default select example">
                     <option selected>Selecione a instituição</option>
@@ -63,18 +82,7 @@
                     <option value="3">Banco do Brasil</option>                    
                 </select>
             </div>
-            <div class="mt-3 col-md-3">
-                <label for="typo" class="form-label">Mês/ano</label>
-                <select class="form-control" aria-label="Default select example">
-                    <option selected>Selecione o período</option>
-                    <option value="1">08/2023</option>
-                    <option value="2">09/2023</option>
-                    <option value="3">10/2023</option>
-                    <option value="4">11/2023</option>
-                    <option value="5">12/2023</option>                  
-                </select>
-            </div>
-            <div class="mt-3 col-md-3">
+            <div class="mt-3 col-md-6">
                 <label for="typo" class="form-label">Vencimento</label>
                 <select class="form-control" aria-label="Default select example">
                     <option selected>Selecione o dia do vencimento</option>
@@ -86,77 +94,129 @@
                     <option value="1">30</option>
                 </select>
             </div>
+
         </div>
         <div class="row">
-            <div class="mt-3 col-md-6">
-                <label for="typo" class="form-label">Plano</label>
-                <select class="form-control" aria-label="Default select example">
-                    <option selected>Selecione o Plano</option>
-                    <option value="1">100mb -</option>
-                    <option value="2">50 mb</option>
-                    <option value="3">1GB</option>
-                    <option value="3">Rádio - 1GB</option>
+            <div class="mt-3 col-md-4">
+                <label for="typo" class="form-label">Status do Contrato</label>
+                <select class="form-control" aria-label="status do contrato">
+                    <option selected>----------</option>
+                    <option value="1">Ativo</option>
+                    <option value="2">Ativo B. Reduzida</option>
+                    <option value="2">Suspenso</option>
+                    <option value="2">Cancelado</option>
+                    <option value="2">Inviabilidade Tec.</option>
                 </select>
             </div>
-            <div class="mt-3 col-md-6">
+            <div class="mt-3 col-md-4">
+                <label for="typo" class="form-label">Gerado Por:</label>
+                <select class="form-control" aria-label="status do contrato">
+                    <option selected>----------</option>
+                    <option value="1">SGP</option>
+                    <option value="2">Tecnico</option>
+                    <option value="3">Fabiana - Financeiro</option>
+                    <option value="2">Eduarda - Financeiro</option>
+                    <option value="2">Inviabilidade Tec.</option>
+                </select>
+            </div>
+            <div class="mt-3 col-md-4">
+                <label for="typo" class="form-label">Layout Página:</label>
+                <select class="form-control" aria-label="status do contrato">
+                    <option selected>----------</option>
+                    <option value="1">11,4x22,9 Envelope</option>
+                    <option value="2">A4 Paisagem</option>
+                    <option value="3">A4 Retrato<option>
+                    <option value="4">A3</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="mt-5 col-md-2 py-2 px-5 form-check">
+                <label class="form-check-label" for="flexCheckDefault"></label>
+                <input type="checkbox" class="form-check-input" name="" id="" checked> Imprimir protocolo
+            </div>            
+            <div class="mt-5 col-md-2 py-2 px-5 form-check">
+                <label class="form-check-label" for="flexCheckDefault"></label>
+                <input type="checkbox" class="form-check-input" name="" id="" checked> Somente Protocolo
+            </div>            
+            <div class="mt-5 col-md-2 py-2 px-5 form-check">
+                <label class="form-check-label" for="flexCheckDefault"></label>
+                <input type="checkbox" class="form-check-input" name="" id="" checked> Imprimir Capa
+            </div>            
+            <div class="mt-5 col-md-2 py-2 px-5 form-check">
+                <label class="form-check-label" for="flexCheckDefault"></label>
+                <input type="checkbox" class="form-check-input" name="" id="" checked> Somente Capa
+            </div>
+            <div class="mt-5 col-md-2 py-2 px-5 form-check">
+                <label class="form-check-label" for="flexCheckDefault"></label>
+                <input type="checkbox" class="form-check-input" name="" id="" checked> Imprimir separado
+            </div>
+        </div>
+
+
+
+
+
+        <div class="row">
+            <div class="mt-3 col-md-4">
+                <label for="typo" class="form-label">Bairro</label>
+                <input type="text" class="form-control" name="name" placeholder="">
+            </div>
+            <div class="mt-3 col-md-4">
+                <label for="typo" class="form-label">Rua</label>
+                <input type="text" class="form-control" name="name" placeholder="">
+            </div>
+            <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">Condominio</label>
                 <select class="form-control" aria-label="Default select example">
-                    <option selected>Selecione o condominio</option>
-                    <option value="1">Edf. Luis castro - Monsenhor Tabosa</option>
-                    <option value="1">VogVille - Caruaru</option>
+                    <option selected>---------</option>
+                    <option value="1">Vog Ville - Caruaru</option>
+                    <option value="2">Alpha Ville</option>
+                    <option value="3">Cidade Jardim</option>
+                    <option value="4">Cond. Baraúnas</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="mt-3 col-md-3">
+                <label for="typo" class="form-label">Parcela</label>
+                <input type="text" class="form-control" name="name" placeholder="">
+            </div>
+            <div class="mt-3 col-md-3">
+                <label for="typo" class="form-label">Gerados a partir de:</label>
+                <input type="date" class="form-control" name="gerados" id="" >
+            </div>
+            <div class="mt-3 col-md-3">
+                <label for="typo" class="form-label">Vencidos a partir de:</label>
+                <input type="date" class="form-control" name="gerados" id="" >
+            </div>
+            <div class="mt-3 col-md-3">
+                <label for="typo" class="form-label">Modo de geração</label>
+                <select class="form-control" aria-label="Default select example">
+                    <option selected>----------</option>
+                    <option value="1">Todos</option>
+                    <option value="2">Avulso</option>
+                    <option value="3">Lote</option>                    
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="mt-5 col-md-3 py-2 px-5 form-check">
+                <label for="name" class="form-label"></label>
+                <input type="checkbox" name="" id=""> Imprimir Somente Títulos em Aberto ?
+            </div>
+            <div class="mt-3 col-md-9">
+                <label for="typo" class="form-label">Formas de entregas</label>
+                <select class="form-control" aria-label="Default select example">
+                    <option selected>----------</option>
+                    <option value="1">Cartão</option>
+                    <option value="2">Correiro</option>
+                    <option value="3">E-mail</option>
+                    <option value="4">SMS</option>
                 </select>
             </div>
         </div>
 
-
-        <div class="row">
-            <div class="mt-3 col-md-3">
-                <label for="typo" class="form-label">Data Cad. Inicial:</label>
-                <input type="date" class="form-control" name="name" placeholder="">
-            </div>
-            <div class="mt-3 col-md-3">
-                <label for="typo" class="form-label">Data Cad. Final:</label>
-                <input type="date" class="form-control" name="name" placeholder="">
-            </div>
-            <div class="mt-5 col-md-3">
-                <label for="name" class="form-label"></label>
-                <input type="checkbox" name="" id=""> Exibe Carnê em aberto
-            </div>
-            <div class="mt-5 col-md-3">
-                <label for="name" class="form-label"></label>
-                <input type="checkbox" name="" id=""> Gerar PIX
-            </div>
-        </div>
-
-        
-
-        <div class="row">
-            <div class="mt-3 col-md-12">
-                <label for="typo" class="form-label">Observação</label>
-                <input type="text" class="form-control" name="name" placeholder="">
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="mt-3 col-md-6">
-                <label for="name" class="form-label">Valor</label>
-                <input type="text" class="form-control" name="name" placeholder="">
-            </div>
-            <div class="mt-3 col-md-6">
-                <label for="name" class="form-label">Data da competência</label>
-                <input type="date" class="form-control" name="name" placeholder="">
-            </div>
-        </div>
-        <div class="row">
-            <div class="mt-3 col-md-6">
-                <label for="typo" class="form-label">Títulos Emitidos (Não) - Inicial:</label>
-                <input type="date" class="form-control" name="" id="" >
-            </div>
-            <div class="mt-3 col-md-6">
-                <label for="typo" class="form-label">Títulos Emitidos (Não) - Final:</label>
-                <input type="date" class="form-control" name="" id="" >
-            </div>
-        </div>
 
     </form>
 </div>

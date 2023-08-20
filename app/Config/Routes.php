@@ -154,6 +154,12 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('novo', 'BillstoreceiverController::form');
         });
     });
+    $routes->group('gerencial', static function ($routes) {
+        $routes->group('pop', static function ($routes) {
+            $routes->get('/', 'PopController::index');
+            $routes->get('novo', 'PopController::form');
+        });
+    });
 });
 
 /*

@@ -40,6 +40,7 @@
                     <option value="2">Garanhuns</option>
                 </select>
             </div>
+
             <div class="mt-3 col-md-3">
                 <label for="typo" class="form-label">NAS</label>
                 <select class="form-control" aria-label="Default select example">
@@ -49,21 +50,14 @@
                 </select>
             </div>
         </div>
+       
         <div class="row">
-            <div class="mt-3 col-md-3">
+            <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">Parcela</label>
                 <input type="text" class="form-control" name="name" placeholder="">
             </div>
-            <div class="mt-3 col-md-3">
-                <label for="typo" class="form-label">Portador</label>
-                <select class="form-control" aria-label="Default select example">
-                    <option selected>Selecione a instituição</option>
-                    <option value="1">Banco Bradesco</option>
-                    <option value="2">Caixa Economica Federa</option>
-                    <option value="3">Banco do Brasil</option>                    
-                </select>
-            </div>
-            <div class="mt-3 col-md-3">
+
+            <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">Mês/ano</label>
                 <select class="form-control" aria-label="Default select example">
                     <option selected>Selecione o período</option>
@@ -74,21 +68,21 @@
                     <option value="5">12/2023</option>                  
                 </select>
             </div>
-            <div class="mt-3 col-md-3">
-                <label for="typo" class="form-label">Vencimento</label>
+            <div class="mt-3 col-md-4">
+                <label for="typo" class="form-label">Portador</label>
                 <select class="form-control" aria-label="Default select example">
-                    <option selected>Selecione o dia do vencimento</option>
-                    <option value="1">5</option>
-                    <option value="1">10</option>
-                    <option value="1">15</option>
-                    <option value="1">20</option>
-                    <option value="1">25</option>
-                    <option value="1">30</option>
+                    <option selected>-------</option>
+                    <option value="1">Caixa Economica Federal</option>
+                    <option value="2">Banco Rural</option>
+                    <option value="3">Banco do Brasil</option>
+                    <option value="4">Banco Itáu</option>
                 </select>
             </div>
         </div>
+
+
         <div class="row">
-            <div class="mt-3 col-md-6">
+            <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">Plano</label>
                 <select class="form-control" aria-label="Default select example">
                     <option selected>Selecione o Plano</option>
@@ -98,12 +92,24 @@
                     <option value="3">Rádio - 1GB</option>
                 </select>
             </div>
-            <div class="mt-3 col-md-6">
+            <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">Condominio</label>
                 <select class="form-control" aria-label="Default select example">
                     <option selected>Selecione o condominio</option>
                     <option value="1">Edf. Luis castro - Monsenhor Tabosa</option>
                     <option value="1">VogVille - Caruaru</option>
+                </select>
+            </div>
+            <div class="mt-3 col-md-4">
+                <label for="typo" class="form-label">Vencimento</label>
+                <select class="form-control" aria-label="Default select example">
+                    <option selected>---------</option>
+                    <option value="1">5</option>
+                    <option value="2">10</option>
+                    <option value="3">15</option>
+                    <option value="4">20</option>
+                    <option value="5">25</option>
+                    <option value="6">30</option>
                 </select>
             </div>
         </div>
@@ -128,25 +134,6 @@
             </div>
         </div>
 
-        
-
-        <div class="row">
-            <div class="mt-3 col-md-12">
-                <label for="typo" class="form-label">Observação</label>
-                <input type="text" class="form-control" name="name" placeholder="">
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="mt-3 col-md-6">
-                <label for="name" class="form-label">Valor</label>
-                <input type="text" class="form-control" name="name" placeholder="">
-            </div>
-            <div class="mt-3 col-md-6">
-                <label for="name" class="form-label">Data da competência</label>
-                <input type="date" class="form-control" name="name" placeholder="">
-            </div>
-        </div>
         <div class="row">
             <div class="mt-3 col-md-6">
                 <label for="typo" class="form-label">Títulos Emitidos (Não) - Inicial:</label>
@@ -155,6 +142,13 @@
             <div class="mt-3 col-md-6">
                 <label for="typo" class="form-label">Títulos Emitidos (Não) - Final:</label>
                 <input type="date" class="form-control" name="" id="" >
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="mt-3 col-md-12">
+                <label for="typo" class="form-label">Observação</label>
+                <input type="text" class="form-control" name="name" placeholder="">
             </div>
         </div>
 

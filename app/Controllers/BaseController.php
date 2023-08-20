@@ -129,7 +129,7 @@ abstract class BaseController extends Controller
                     ],
                     'email' => [
                         'title' => 'Email',
-                        'href' => base_url('gerencial/pop'),
+                        'href' => base_url('gerencial/email'),
                     ],
                     'sms' => [
                         'title' => 'SMS',

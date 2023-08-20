@@ -24,7 +24,7 @@ class TicketController extends BaseController
 
     public function print()
     {
-        $this->data['tittle'] = 'Teste';
+        $this->data['tittle'] = 'Imprimir Boletos';
 
         return view($this->viewPath . '/print', $this->data);
     }
