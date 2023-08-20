@@ -72,7 +72,6 @@ abstract class BaseController extends Controller
             'dashboard' => [
                 'title' => 'Dashboard',
                 'href' => base_url('dashboard'),
-                'icon' => '<i class="fas fa-tachometer-alt"></i>',
                 'show_subitems' => false,
                 'subitems' => [
                 ]
@@ -173,7 +172,7 @@ abstract class BaseController extends Controller
                     ],
                     'poste' => [
                         'title' => 'Poste',
-                        'href' => base_url('equipamentos/post'),
+                        'href' => base_url('equipamentos/poste'),
                         'icon' => '<i class="fas fa-wifi"></i>'
                     ],
                     'tower' => [
@@ -274,6 +273,35 @@ abstract class BaseController extends Controller
                 ]
             ],
 
+            'Monitoramento' => [
+                'title' => 'Monitoramento',
+                'href' => base_url('monitoramento'),
+                'icon' => '<i class="fas fa-boxes"></i>',
+                'show_subitems' => true,
+                'color' => '#00aeef',
+                'subitems' => [
+                    'Mapa' => [
+                        'title' => 'Mapa',
+                        'href' => base_url('monitoramento/mapa')
+                    ],
+
+                    'Clientes' => [
+                        'title' => 'Clientes',
+                        'href' => base_url('monitoramento/clientes')
+                    ],
+
+                    'Equipamentos' => [
+                        'title' => 'Equipamentos',
+                        'href' => base_url('monitoramento/equipamentos')
+                    ],
+
+                    'Rede' => [
+                        'title' => 'Rede',
+                        'href' => base_url('monitoramento/rede')
+                    ],
+                ]
+            ],
+
             'settings' => [
                 'title' => 'Configurações',
                 'href' => base_url('configuracoes'),
@@ -288,18 +316,14 @@ abstract class BaseController extends Controller
                     'Ip Pool' => [
                         'title' =>'IP POOL',
                         'href' => base_url('configuracoes/ippool'),
-                        'icon' => '<i class="fas fa-boxes"></i>'
                     ],
                     'Ipv6 Pool' => [
                         'title' =>'IPv6 POOL',
                         'href' => base_url('configuracoes/ipv6pool'),
-                        'icon' => '<i class="fas fa-boxes"></i>'
                     ],
                     'Planos' => [
                         'title' =>'Planos',
                         'href' => base_url('configuracoes/planos'),
-                        'icon' => '<i class="fas fa-boxes"></i>',
-
                     ],
                 ]
             ],

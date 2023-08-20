@@ -8,6 +8,6 @@ class PostController extends BaseController
 {
     public $tittle = 'Postes';
     public $addButtonText = 'Novo Poste';
-    public $viewPath = 'equipamentos/post';
-    public $baseRoute = '/equipamentos/post';
+    public $viewPath = 'equipamentos/poste';
+    public $baseRoute = '/equipamentos/poste';
 }
