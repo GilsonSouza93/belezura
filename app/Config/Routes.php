@@ -141,6 +141,9 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('/', 'TicketController::index');
             $routes->get('novo', 'TicketController::form');
             $routes->get('novo', 'TicketController::print');
+
+            // $routes->get('imprimir')
+            $routes->get('imprimir-em-lote', 'TicketController::print');
         });
         $routes->group('contasapagar', static function ($routes) {
             $routes->get('/', 'BillstopayController::index');

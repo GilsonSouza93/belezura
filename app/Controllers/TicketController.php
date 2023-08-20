@@ -16,10 +16,17 @@ class TicketController extends BaseController
     public function __construct()
     {
         $this->mainModel = model('TicketModel');
-        $this->data['baseRoutePrint'] = 'imprimir-boleto';
+        $this->data['baseRoutePrint'] = 'boleto/imprimir-em-lote';
         $this->data['addButtonPrint'] = 'Imprimir em lote';
 
         parent::__construct();
+    }
+
+    public function print()
+    {
+        $this->data['tittle'] = 'Teste';
+
+        return view($this->viewPath . '/print', $this->data);
     }
 
 
