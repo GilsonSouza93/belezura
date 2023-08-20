@@ -117,7 +117,7 @@
     <div class="m-3">
         <?= $this->renderSection('content') ?>
     </div>
-       
+
     <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
         <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-body">
@@ -160,7 +160,7 @@
 
         const showToast = (message, type) => {
             $('.toast').remove();
-            
+
             const borderColor = type === 'success' ? '#00bf63' : type === 'error' ? '#ff4e50' : type === 'warning' ? '#ffbd59' : '#00aeef';
             createToast(borderColor, message);
 
@@ -172,6 +172,42 @@
 
             $('.toast').toast('show');
         }
+
+        const showLoading = () => {
+            const div = document.createElement('div');
+            div.classList.add('position-fixed', 'top-0', 'start-0', 'p-3', 'w-100', 'h-100', 'd-flex', 'justify-content-center', 'align-items-center', 'bg-transparent', 'fade');
+            div.style.zIndex = '10';
+            div.style.backdropFilter = 'blur(7px)';
+            div.style.transition = 'opacity 0.5s ease-in-out';
+
+            const spinner = document.createElement('div');
+            spinner.classList.add('spinner-border', 'text-success');
+            spinner.setAttribute('role', 'status');
+
+            const span = document.createElement('span');
+            span.classList.add('visually-hidden');
+            span.innerText = 'Loading...';
+
+            spinner.appendChild(span);
+            div.appendChild(spinner);
+
+            document.body.appendChild(div);
+
+            setTimeout(() => {
+                div.style.opacity = '1';
+            }, 10);
+        };
+
+        const hideLoading = () => {
+            const loadingDiv = document.querySelector('.fade');
+            if (loadingDiv) {
+                loadingDiv.style.opacity = '0';
+
+                loadingDiv.addEventListener('transitionend', () => {
+                    loadingDiv.remove();
+                });
+            }
+        };
     </script>
 
     <?= $this->renderSection('script') ?>

@@ -25,11 +25,11 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Contato</th>
-                    <th scope="col">Plano</th>
-                    <th scope="col">Endereço</th>
-                    <th scope='col'></th>
+                    <th>Nome</th>
+                    <th>Contato</th>
+                    <th>Plano</th>
+                    <th>Endereço</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>

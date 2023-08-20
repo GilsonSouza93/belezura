@@ -14,7 +14,7 @@
         </div>
         <div class="col-md-4 btn-group">
             <a class="btn btn-success" href="<?= $baseRoute ?>">Voltar</a>
-            <button class="btn btn-success">Salvar</button>
+        <button class="btn btn-success" id="btnSave">Salvar</button>
         </div>
     </div>
 
@@ -92,11 +92,52 @@
 
 <?= $this->section('script') ?>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhZX90O1QnNedic9Z1XgY3P9HzA9AjbN4&libraries=places"></script>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         autoFillLocation();
+    });
+
+    const btnSave = document.getElementById('btnSave');
+
+    btnSave.addEventListener('click', async () => {
+        const body = formatBody();
+
+        showLoading();
+
+        try {
+            await fetch('<?= $baseRoute ?>/save', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(body),
+            })
+            .then(response => response.json())
+            .then(data => {
+                hideLoading();
+
+                if (data.status === 'success') {
+                    showToast(data.message, 'success');
+
+                    setTimeout(() => {
+                        window.location.href = '<?= $baseRoute ?>';
+                    }, 2000);
+                } else {
+                    showToast(data.message, 'error');
+                }
+            });
+
+        } catch (error) {
+            hideLoading();
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Erro ao cadastrar o poste',
+                text: 'Ocorreu um erro ao cadastrar o poste.',
+            });
+        }
     });
 
     const formatBody = () => {

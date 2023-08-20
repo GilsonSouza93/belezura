@@ -121,6 +121,8 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         $routes->group('poste', static function ($routes) {
             $routes->get('/', 'PostController::index');
             $routes->get('novo', 'PostController::form');
+            $routes->post('save', 'PostController::save');
+            $routes->post('search', 'PostController::search');
         });
         $routes->group('tower', static function ($routes) {
             $routes->get('/', 'TowerController::index');
