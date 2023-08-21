@@ -94,7 +94,7 @@
         })
         .then(response => response.json())
         .then(data => {
-            renderTable(data);
+            renderTableTwo(data);
         })
         .catch(error => {
             showToast('Erro ao buscar clientes !', 'error')
@@ -102,7 +102,7 @@
 
     }
 
-    const renderTable = (data) => {
+    const renderTableTwo = (data) => {
         customersCount.innerText = data.length
 
         const tbody = document.querySelector('tbody')

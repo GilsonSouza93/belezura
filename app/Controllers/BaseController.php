@@ -375,10 +375,23 @@ abstract class BaseController extends Controller
 
     public function search()
     {
-        $data = $this->request->getPost();
+        $json = $this->request->getJSON();
 
-        $response = $this->mainModel->search($data);
+        $data = [
+            'search' => $json->search
+        ];
 
-        return $this->response->setJSON($response);
+        try {
+            $response = $this->mainModel->search($data);
+
+            return $this->response->setJSON([
+                'status' => 'success',
+                'data' => $response
+            ]);
+        } catch (\Throwable $th) {
+            return $this->response->setJSON([
+                'status' => 'error',
+            ]);
+        }
     }
 }

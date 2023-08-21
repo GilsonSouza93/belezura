@@ -14,7 +14,7 @@
         </div>
         <div class="col-md-4 btn-group">
             <a class="btn btn-success" href="<?= $baseRoute ?>">Voltar</a>
-            <button class="btn btn-success">Salvar</button>
+            <button class="btn btn-success" onclick="save()">Salvar</button>
         </div>
     </div>
 
@@ -23,16 +23,16 @@
 
         <div class="row">
             <div class="mt-3 col-md-3">
-                <label for="city" class="form-label">Cidade</label>
-                <input type="text" id="city" class="form-control" name="name" placeholder="">
-            </div>
-            <div class="mt-3 col-md-3">
-                <label for="populacao" class="form-label">População</label>
-                <input type="text" id="populacao" class="form-control" name="name" placeholder="">
-            </div>
-            <div class="mt-3 col-md-3">
-                <label for="name" class="form-label">Código IBGE</label>
+                <label for="name" class="form-label">Cidade</label>
                 <input type="text" class="form-control" name="name" placeholder="">
+            </div>
+            <div class="mt-3 col-md-3">
+                <label for="name" class="form-label">População</label>
+                <input type="text" class="form-control" name="name" placeholder="">
+            </div>
+            <div class="mt-3 col-md-3">
+                <label for="codigo_ibge" class="form-label">Código IBGE</label>
+                <input type="text" class="form-control" id="codigo_ibge">
             </div>
             <div class="mt-3 col-md-3">
                 <label for="uf" class="form-label">UF</label>
@@ -44,12 +44,12 @@
                     <option value="4">PB</option>
                 </select>
             </div>
-        </div>    
-           
+        </div>
+
         <div class="row">
             <div class="mt-3 col-md-9">
-                <label for="portador" class="form-label">Portador Padrão</label>
-                <select class="form-control" id="portador">
+                <label for="tipo" class="form-label">Portador Padrão</label>
+                <select class="form-control">
                     <option selected>-------</option>
                     <option value="1">Banco do Brasil</option>
                     <option value="2">Caixa Economica Federal</option>
@@ -58,14 +58,14 @@
                 </select>
             </div>
             <div class="mt-5 col-md-3 py-1 form-check">
-                <label class="form-check-label" for="activePop"></label>
-                <input type="checkbox" class="form-check-input" name="" id="activePop"  checked>Ativo
+                <label class="form-check-label" for="flexCheckDefault"></label>
+                <input type="checkbox" class="form-check-input" name="" id=""  checked>Ativo
             </div>
         </div>
         <div class="row">
             <div class="mt-3 col-md-4">
-                <label for="plano" class="form-label">Plano</label>
-                <select class="form-control" aria-label="Plano" id="plano" >
+                <label for="typo" class="form-label">Plano</label>
+                <select class="form-control" aria-label="Default select example">
                     <option selected>Selecione o Plano</option>
                     <option value="1">100mb -</option>
                     <option value="2">50 mb</option>
@@ -74,16 +74,16 @@
                 </select>
             </div>
             <div class="mt-3 col-md-4">
-                <label for="nas" class="form-label">NAS</label>
-                <select class="form-control" aria-label="Default select example" id="nas" >
+                <label for="typo" class="form-label">NAS</label>
+                <select class="form-control" aria-label="Default select example">
                     <option selected>Selecione o NAS</option>
                     <option value="1">Monsenhor Tabosa</option>
                     <option value="1">Ria Rural</option>
                 </select>
             </div>
             <div class="mt-3 col-md-4">
-                <label for="user" class="form-label">Usuário</label>
-                <select class="form-control" aria-label="status do contrato" id="user">
+                <label for="typo" class="form-label">Usuário</label>
+                <select class="form-control" aria-label="status do contrato">
                     <option selected>----------</option>
                     <option value="1">SGP</option>
                     <option value="2">Tecnico</option>
@@ -98,4 +98,78 @@
 
     </form>
 </div>
+<?= $this->endSection() ?>
+
+<?= $this->section('script') ?>
+<script>
+    const preenchimentoDeTeste = () => {
+        document.getElementById("cidade").value = "Recife";
+        document.getElementById("populacao").value = "1000000";
+        document.getElementById("codigo_ibge").value = "123456";
+        document.getElementById("uf").value = "1";
+        document.getElementById("portador_padrao").value = "1";
+        document.getElementById("plano").value = "1";
+        document.getElementById("nas").value = "1";
+        document.getElementById("usuario").value = "1";
+        document.getElementById("active").checked = true;
+    }
+
+    document.addEventListener("DOMContentLoaded", function(event) {
+        preenchimentoDeTeste();
+    });
+
+    const save = async () => {
+        const body = formatBody();
+
+        showLoading();
+
+        try {
+            await fetch('<?= $baseRoute ?>/save', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(body),
+            })
+            .then(response => response.json())
+            .then(data => {
+                hideLoading();
+
+                if (data.status === 'success') {
+                    showToast('Salvo com sucesso', 'success');
+
+                    setTimeout(() => {
+                        window.location.href = '<?= $baseRoute ?>';
+                    }, 2000);
+                } else {
+                    showToast('Houve um erro', 'error');
+                }
+            });
+
+        } catch (error) {
+            hideLoading();
+            showToast('Houve um erro', 'error');
+        }
+    }
+
+    function formatBody() {
+        const body = {
+            "cidade": getValue("cidade"),
+            "populacao": getValue("populacao"),
+            "codigo_ibge": getValue("codigo_ibge"),
+            "uf": getValue("uf"),
+            "portador_padrao": getValue("portador_padrao"),
+            "plano": getValue("plano"),
+            "nas": getValue("nas"),
+            "usuario": getValue("usuario"),
+            "active": document.getElementById("active").checked
+        }
+
+        return body
+    }
+
+    function getValue(id) {
+        return document.getElementById(id).value;
+    }
+</script>
 <?= $this->endSection() ?>

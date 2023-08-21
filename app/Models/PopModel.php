@@ -4,30 +4,29 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class PostsModel extends Model
+class PopModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'posts';
+    protected $table            = 'pops';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
+
     protected $allowedFields    = [
-        'latitude',
-        'longitude',
-        'pop',
-        'localizacao',
-        'djson',
-        'observacao',
-        'cto',
-        'caixa_hermetica',
-        'radio',
-        'active',
-        'caixa_subterranea',
-        'created_at',
-        'updated_at',
-        'deleted_at',
+        "city",
+        "population",
+        "ibge_code",
+        "uf",
+        "carrier",
+        "plan",
+        "nas",
+        "user",
+        "active",
+        "created_at",
+        "updated_at",
+        "deleted_at"
     ];
 
     // Dates
@@ -54,27 +53,33 @@ class PostsModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
+
     public function search($data)
     {
         $fieldsToSearch = [
             'id',
-            'latitude',
-            'longitude',
+            'city',
+            'population',
+            'ibge_code',
+            'uf',
+            'carrier',
+            'plan',
+            'nas',
+            'user',
+            'active',	
         ];
 
         $fieldsToReturn = [
             'id',
-            'latitude',
-            'longitude',
-            'pop',
-            'localizacao',
-            'djson',
-            'observacao',
-            'cto',
-            'caixa_hermetica',
-            'radio',
-            'active',
-            'caixa_subterranea',
+            'city',
+            'population',
+            'ibge_code',
+            'uf',
+            'carrier',
+            'plan',
+            'nas',
+            'user',
+            'active',	
             'created_at',
             'updated_at',
             'deleted_at',
