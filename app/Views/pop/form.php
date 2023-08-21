@@ -23,20 +23,20 @@
 
         <div class="row">
             <div class="mt-3 col-md-3">
-                <label for="name" class="form-label">Cidade</label>
-                <input type="text" class="form-control" name="name" placeholder="">
+                <label for="city" class="form-label">Cidade</label>
+                <input type="text" id="city" class="form-control" name="name" placeholder="">
             </div>
             <div class="mt-3 col-md-3">
-                <label for="name" class="form-label">População</label>
-                <input type="text" class="form-control" name="name" placeholder="">
+                <label for="populacao" class="form-label">População</label>
+                <input type="text" id="populacao" class="form-control" name="name" placeholder="">
             </div>
             <div class="mt-3 col-md-3">
                 <label for="name" class="form-label">Código IBGE</label>
                 <input type="text" class="form-control" name="name" placeholder="">
             </div>
             <div class="mt-3 col-md-3">
-                <label for="tipo" class="form-label">UF</label>
-                <select class="form-control">
+                <label for="uf" class="form-label">UF</label>
+                <select class="form-control" id="uf">
                     <option selected>-------</option>
                     <option value="1">PE</option>
                     <option value="2">AL</option>
@@ -48,8 +48,8 @@
            
         <div class="row">
             <div class="mt-3 col-md-9">
-                <label for="tipo" class="form-label">Portador Padrão</label>
-                <select class="form-control">
+                <label for="portador" class="form-label">Portador Padrão</label>
+                <select class="form-control" id="portador">
                     <option selected>-------</option>
                     <option value="1">Banco do Brasil</option>
                     <option value="2">Caixa Economica Federal</option>
@@ -58,14 +58,14 @@
                 </select>
             </div>
             <div class="mt-5 col-md-3 py-1 form-check">
-                <label class="form-check-label" for="flexCheckDefault"></label>
-                <input type="checkbox" class="form-check-input" name="" id=""  checked>Ativo
+                <label class="form-check-label" for="activePop"></label>
+                <input type="checkbox" class="form-check-input" name="" id="activePop"  checked>Ativo
             </div>
         </div>
         <div class="row">
             <div class="mt-3 col-md-4">
-                <label for="typo" class="form-label">Plano</label>
-                <select class="form-control" aria-label="Default select example">
+                <label for="plano" class="form-label">Plano</label>
+                <select class="form-control" aria-label="Plano" id="plano" >
                     <option selected>Selecione o Plano</option>
                     <option value="1">100mb -</option>
                     <option value="2">50 mb</option>
@@ -74,16 +74,16 @@
                 </select>
             </div>
             <div class="mt-3 col-md-4">
-                <label for="typo" class="form-label">NAS</label>
-                <select class="form-control" aria-label="Default select example">
+                <label for="nas" class="form-label">NAS</label>
+                <select class="form-control" aria-label="Default select example" id="nas" >
                     <option selected>Selecione o NAS</option>
                     <option value="1">Monsenhor Tabosa</option>
                     <option value="1">Ria Rural</option>
                 </select>
             </div>
             <div class="mt-3 col-md-4">
-                <label for="typo" class="form-label">Usuário</label>
-                <select class="form-control" aria-label="status do contrato">
+                <label for="user" class="form-label">Usuário</label>
+                <select class="form-control" aria-label="status do contrato" id="user">
                     <option selected>----------</option>
                     <option value="1">SGP</option>
                     <option value="2">Tecnico</option>
