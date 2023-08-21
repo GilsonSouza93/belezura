@@ -10,7 +10,7 @@
 
     <div class="row card-2 py-3 my-3">
         <div class="col-md-8">
-            <h4>Adicionar Ip Pool</h4>
+            <h4>Adicionar POP</h4>
         </div>
         <div class="col-md-4 btn-group">
             <a class="btn btn-success" href="<?= $baseRoute ?>">Voltar</a>
@@ -91,7 +91,7 @@
                     <option value="2">Eduarda - Financeiro</option>
                     <option value="2">Inviabilidade Tec.</option>
                 </select>
-            </div>>
+            </div>
 
         </div>
 
