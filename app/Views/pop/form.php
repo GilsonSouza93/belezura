@@ -10,7 +10,7 @@
 
     <div class="row card-2 py-3 my-3">
         <div class="col-md-8">
-            <h4>Adicionar Ip Pool</h4>
+            <h4>Adicionar POP</h4>
         </div>
         <div class="col-md-4 btn-group">
             <a class="btn btn-success" href="<?= $baseRoute ?>">Voltar</a>
@@ -23,12 +23,12 @@
 
         <div class="row">
             <div class="mt-3 col-md-3">
-                <label for="cidade" class="form-label">Cidade</label>
-                <input type="text" class="form-control" id="cidade">
+                <label for="name" class="form-label">Cidade</label>
+                <input type="text" class="form-control" name="name" placeholder="">
             </div>
             <div class="mt-3 col-md-3">
-                <label for="populacao" class="form-label">População</label>
-                <input type="text" class="form-control" id="populacao">
+                <label for="name" class="form-label">População</label>
+                <input type="text" class="form-control" name="name" placeholder="">
             </div>
             <div class="mt-3 col-md-3">
                 <label for="codigo_ibge" class="form-label">Código IBGE</label>
@@ -69,8 +69,8 @@
         </div>
         <div class="row">
             <div class="mt-3 col-md-4">
-                <label for="plano" class="form-label">Plano</label>
-                <select class="form-control" id="plano">
+                <label for="typo" class="form-label">Plano</label>
+                <select class="form-control" aria-label="Default select example">
                     <option selected>Selecione o Plano</option>
                     <option value="1">100mb -</option>
                     <option value="2">50 mb</option>
@@ -79,16 +79,16 @@
                 </select>
             </div>
             <div class="mt-3 col-md-4">
-                <label for="nas" class="form-label">NAS</label>
-                <select class="form-control" id="nas">
+                <label for="typo" class="form-label">NAS</label>
+                <select class="form-control" aria-label="Default select example">
                     <option selected>Selecione o NAS</option>
                     <option value="1">Monsenhor Tabosa</option>
                     <option value="1">Ria Rural</option>
                 </select>
             </div>
             <div class="mt-3 col-md-4">
-                <label for="usuario" class="form-label">Usuário</label>
-                <select class="form-control" id="usuario">
+                <label for="typo" class="form-label">Usuário</label>
+                <select class="form-control" aria-label="status do contrato">
                     <option selected>----------</option>
                     <option value="1">SGP</option>
                     <option value="2">Tecnico</option>
@@ -96,7 +96,7 @@
                     <option value="2">Eduarda - Financeiro</option>
                     <option value="2">Inviabilidade Tec.</option>
                 </select>
-            </div>>
+            </div>
 
         </div>
 

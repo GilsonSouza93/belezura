@@ -20,12 +20,12 @@
     <form class="card p-4">
         <div class="row">
             <div class="mt-3 col-md-6">
-                <label for="name" class="form-label">Nome completo</label>
-                <input type="text" class="form-control" name="name" placeholder="Insira o nome completo">
+                <label for="nomeCliente" class="form-label">Nome completo</label>
+                <input type="text" id="nomeCliente" class="form-control" name="name" placeholder="Insira o nome completo">
             </div>
             <div class="mt-3 col-md-3">
-                <label for="uf" class="form-label">Plano</label>
-                <select class="form-control" aria-label="Default select example">
+                <label for="plano" class="form-label">Plano</label>
+                <select class="form-control" id="plano" aria-label="plano">
                     <option selected>Selecione o plano</option>
                     <option value="1">50mb</option>
                     <option value="1">70mb</option>
@@ -36,8 +36,8 @@
                 </select>
             </div>
             <div class="mt-3 col-md-3">
-                <label for="uf" class="form-label">ONU</label>
-                <select class="form-control" aria-label="Default select example">
+                <label for="onu" class="form-label">ONU</label>
+                <select class="form-control" id="onu" aria-label="Default select example">
                     <option selected>Selecione a Onu</option>
                     <option value="1">Onu Cdata</option>
                     <option value="1">Onu Zte</option>
@@ -50,27 +50,27 @@
         <div class="row">
             <div class="mt-3 col-md-3">
                 <label for="rg" class="form-label">RG</label>
-                <input type="text" class="form-control" name="rg" placeholder="insira o RG">
+                <input type="text" id="rg" class="form-control" name="rg" placeholder="insira o RG">
             </div>
 
             <div class="mt-3 col-md-5">
                 <label for="cpf" class="form-label">CPF</label>
-                <input type="text" class="form-control" name="cpf" placeholder="Insira o Cpf">
+                <input type="text" id="cpf" class="form-control" name="cpf" placeholder="Insira o Cpf">
             </div>
             <div class="mt-3 col-md-4">
-                <label for="data" class="form-label">Data de Nascimento</label>
-                <input type="date" class="form-control" name="date" placeholder="Data de nascimento">
+                <label for="dataNascimento" class="form-label">Data de Nascimento</label>
+                <input type="date" id="dataNascimento" class="form-control" name="date" placeholder="Data de nascimento">
             </div>
         </div>
 
         <div class="row">
             <div class="mt-3 col-md-8">
-                <label for="email" class="form-label">E-mail</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="E-mail">
+                <label for="emailCliente" class="form-label">E-mail</label>
+                <input type="email" id="emailCliente" class="form-control" id="email" name="email" placeholder="E-mail">
             </div>
             <div class="mt-3 col-md-4">
-                <label for="uf" class="form-label">Estado Civil</label>
-                <select class="form-control" aria-label="Default select example">
+                <label for="estadoCivil" class="form-label">Estado Civil</label>
+                <select class="form-control" id="estadoCivil" aria-label="Estado civil">
                     <option selected>Selecione o estado civil</option>
                     <option value="1">----------</option>
                     <option value="1">Solteiro(a)</option>
@@ -84,12 +84,12 @@
 
         <div class="row">
             <div class="mt-3 col-md-3">
-                <label for="telefone" class="form-label">Telefone 1</label>
-                <input type="tel" class="form-control" name="tel" id="tel" placeholder="Telefone">
+                <label for="telefone1Cliente" class="form-label">Telefone 1</label>
+                <input type="tel" id="telefone1Cliente" class="form-control" name="tel" id="tel" placeholder="Telefone">
             </div>
             <div class="mt-3 col-md-3">
-                <label for="tipo" class="form-label">Tipo:</label>
-                <select class="form-control">
+                <label for="tipoContato1" class="form-label">Tipo:</label>
+                <select class="form-control" id="tipoContato1" >
                     <option selected>Tipo do telefone</option>
                     <option value="1">Residencial</option>
                     <option value="2">Comercial</option>
@@ -97,12 +97,12 @@
             </div>
 
             <div class="mt-3 col-md-3">
-                <label for="telefone2" class="form-label">Telefone 2</label>
-                <input type="tel" class="form-control" name="tel" id="tel" placeholder="Telefone">
+                <label for="telefone2Cliente" class="form-label">Telefone 2</label>
+                <input type="tel" id="telefone2Cliente" class="form-control" name="tel" id="tel" placeholder="Telefone">
             </div>
             <div class="mt-3 col-md-3">
-                <label for="tipo" class="form-label">Tipo:</label>
-                <select class="form-control" aria-label="Default select example">
+                <label for="tipoContato2" class="form-label">Tipo:</label>
+                <select class="form-control" id="tipoContato2" aria-label="Default select example">
                     <option selected>Tipo do telefone</option>
                     <option value="1">Residencial</option>
                     <option value="2">Comercial</option>
@@ -112,39 +112,39 @@
 
         <div class="row">
             <div class="mt-3 col-md-3">
-                <label for="zipcode" class="form-label">Cep</label>
-                <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="Cep">
+                <label for="cepCliente" class="form-label">Cep</label>
+                <input type="text" id="cepCliente"  class="form-control" id="zipcode" name="zipcode" placeholder="Cep">
             </div>
 
             <div class="mt-3 col-md-5">
-                <label for="address1" class="form-label">Rua</label>
-                <input type="text" class="form-control" id="address1" name="address1" placeholder="Rua">
+                <label for="ruaCliente" class="form-label">Rua</label>
+                <input type="text" id="ruaCliente" class="form-control" id="address1" name="address1" placeholder="Rua">
             </div>
             <div class="mt-3 col-md-4">
-                <label for="address2" class="form-label">Bairro</label>
-                <input type="text" class="form-control" id="address2" name="address2" placeholder="Bairro">
+                <label for="bairroCliente" class="form-label">Bairro</label>
+                <input type="text" id="bairroCliente" class="form-control" id="address2" name="address2" placeholder="Bairro">
             </div>
         </div>
         <div class="row">
             <div class="mt-3 col-md-2">
-                <label for="number" class="form-label">Número</label>
-                <input type="text" class="form-control" id="number" name="number" placeholder="Número">
+                <label for="numeroCasaCliente" class="form-label">Número</label>
+                <input type="text" id="numeroCasaCliente" class="form-control" id="number" name="number" placeholder="Número">
             </div>
 
             <div class="mt-3 col-md-3">
-                <label for="complement" class="form-label">Complemento</label>
-                <input type="text" class="form-control" id="complement" name="complement" placeholder="Complemento">
+                <label for="complementoCliente" class="form-label">Complemento</label>
+                <input type="text" id="complementoCliente" class="form-control" id="complement" name="complement" placeholder="Complemento">
             </div>
 
             <div class="mt-3 col-md-3">
-                <label for="referencia" class="form-label">Ponto de referência</label>
-                <input type="text" class="form-control" id="referencia" name="referencia"
+                <label for="referenciaCliente" class="form-label">Ponto de referência</label>
+                <input type="text" id="referenciaCliente" class="form-control" id="referencia" name="referencia"
                     placeholder="Ponto de referência">
             </div>
 
             <div class="mt-3 col-md-4">
-                <label for="uf" class="form-label">UF</label>
-                <select class="form-control" aria-label="Default select example">
+                <label for="ufCliente" class="form-label">UF</label>
+                <select class="form-control" id="ufcliente" aria-label="uf cliente">
                     <option selected>UF</option>
                     <option value="1">Acre</option>
                     <option value="2">Alagoas</option>

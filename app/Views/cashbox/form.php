@@ -22,16 +22,16 @@
 
         <div class="row">
             <div class="mt-3 col-md-2">
-                <label for="type" class="form-label">Tipo</label>
-                <select class="form-control" aria-label="Default select example">
+                <label for="tipo" class="form-label">Tipo</label>
+                <select class="form-control" id="tipo" aria-label="Default select example">
                     <option selected>Selecione se é entrada ou saída</option>
                     <option value="1">Entrada</option>
                     <option value="2">Saída</option>
                 </select>
             </div>
             <div class="mt-3 col-md-2">
-                <label for="typo" class="form-label">POP</label>
-                <select class="form-control" aria-label="Default select example">
+                <label for="pop" class="form-label">POP</label>
+                <select class="form-control" id="pop" aria-label="Default select example">
                     <option selected>Selecione o local POP</option>
                     <option value="1">Caruaru</option>
                     <option value="2">Olinda</option>
@@ -41,24 +41,24 @@
                 </select>
             </div>
             <div class="mt-3 col-md-2">
-                <label for="typo" class="form-label">Ponto de pagamento</label>
-                <select class="form-control" aria-label="Default select example">
+                <label for="pontoDePagamento" class="form-label">Ponto de pagamento</label>
+                <select class="form-control" id="pontoDePagamento" aria-label="Default select example">
                     <option selected>Selecione o ponto de pagamento</option>
                     <option value="1">Principal</option>
                     <option value="2">Caixa reserva</option>
                 </select>
             </div>
             <div class="mt-3 col-md-2">
-                <label for="typo" class="form-label">Plano de contas</label>
-                <select class="form-control" aria-label="Default select example">
+                <label for="plandoDeConta" class="form-label">Plano de contas</label>
+                <select class="form-control" id="planoDeConta" aria-label="plano de conta">
                     <option selected>Selecione o ponto de contas</option>
                     <option value="1">Principal</option>
                     <option value="2">Caixa reserva</option>
                 </select>
             </div>
             <div class="mt-3 col-md-2">
-                <label for="typo" class="form-label">Forma de pagamento</label>
-                <select class="form-control" aria-label="Default select example">
+                <label for="formaDePagamento" class="form-label">Forma de pagamento</label>
+                <select class="form-control" id="formaDePagamento" aria-label="forma de pagamento">
                     <option selected>Selecione o ponto de contas</option>
                     <option value="1">Pix</option>
                     <option value="2">Caixa reserva</option>
@@ -69,44 +69,31 @@
                 </select>
             </div>
             <div class="mt-3 col-md-2">
-                <label for="typo" class="form-label">Valor</label>
-                <input type="text" class="form-control" name="name" placeholder="">
+                <label for="valor" class="form-label">Valor</label>
+                <input type="text" id="valor" class="form-control" name="name" placeholder="">
             </div>
         </div>
 
-        
-
+    
         <div class="row">
-            <div class="mt-3 col-md-12">
-                <label for="typo" class="form-label">Observação</label>
-                <input type="text" class="form-control" name="name" placeholder="">
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="mt-3 col-md-6">
-                <label for="name" class="form-label">Valor</label>
-                <input type="text" class="form-control" name="name" placeholder="">
-            </div>
-            <div class="mt-3 col-md-6">
-                <label for="name" class="form-label">Data da competência</label>
-                <input type="date" class="form-control" name="name" placeholder="">
-            </div>
-        </div>
-        <div class="row">
-            <div class="mt-3 col-md-12">
+        <div class="mt-4 col-md-6">
                 <label for="name" class="form-label">Comprovante</label>
                 <input type="file" class="btn btn-outline-secondary" name="comprovante" id="comprovante">
             </div>
+            <div class="mt-3 col-md-6">
+                <label for="dataCompetencia" class="form-label">Data da competência</label>
+                <input type="date" id="dataCompetencia" class="form-control" name="name" placeholder="">
+            </div>
         </div>
+
         <div class="row">
             <div class="mt-3 col-md-6">
-                <label for="name" class="form-label">Observação</label>
-                <input type="text" class="form-control" name="name" placeholder="">
+                <label for="observacao" class="form-label">Observação</label>
+                <input type="text" id="observacao" class="form-control" name="name" placeholder="">
             </div>
             <div class="mt-3 col-md-6">
-                <label for="name" class="form-label">Dados Abstratos</label>
-                <input type="text" class="form-control" name="name" placeholder="">
+                <label for="dadosAbstratos" class="form-label">Dados Abstratos</label>
+                <input type="text" id="dadosAbstratos" class="form-control" name="name" placeholder="">
             </div>
         </div>
 
