@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 
-<div class="card p-4">
+<div class="p-4">
 
     <h2><?= $tittle ?></h2>
     
@@ -11,35 +11,39 @@
             <input type="text" name="search" id="search" class="form-control" placeholder="Buscar" style="background-color: transparent;">
         </div>
         <div class="col-md-4 btn-group">
-            <button class="btn btn-success">Pesquisar</button>
+            <button class="btn btn-success" id="searchBtn">Pesquisar</button>
             <button class="btn btn-success" id="accountFilter" >Filtros</button>
             <a class="btn btn-success" href="<?= $baseRoute ?>/novo"><?= $addButtonText ?></a>
         </div>
     </div>
 
-    <p>
-        Pop's localizados: 100
-    </p>
+    <div class="card p-4 fade" id="tableDiv">
 
-    <div class="d-flex justify-content ">
-        <table class="table table-dark table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Código</th>
-                    <th scope="col">Cidade</th>
-                    <th scope="col">UF</th>
-                    <th scope="col">Clientes</th>
-                    <th scope="col">População</th>
-                    <th scope="col">Usuário</th>
-                    <th scope="col">Ativo</th>
-                    <th scope='col'>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
     </div>
 </div>
+
+<?= $this->endSection() ?>
+
+<?= $this->section('script') ?>
+
+<script>
+    const renderTableOptions = {
+        urlFetch: window.location.href + '/search',
+        tableDiv: document.getElementById('tableDiv'),
+        theadElements: ['ID' , 'Código', 'Cidade', 'UF', 'População', 'Usuário', 'Ativo', ''],
+        tbodyElements: ['id', 'ibge_code', 'city', 'uf', 'population', 'user', 'active', 'actions_dropdown'],
+        searchField: document.getElementById('search'),
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        renderTable(renderTableOptions);
+    });
+
+    const btnSearch = document.getElementById('searchBtn');
+
+    btnSearch.addEventListener('click', () => {
+        renderTable(renderTableOptions);
+    });
+</script>
 
 <?= $this->endSection() ?>

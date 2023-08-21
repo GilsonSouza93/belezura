@@ -36,6 +36,9 @@ $routes->post('login', 'LoginController::login');
 
 // protected routes group
 $routes->group('', ['filter' => 'auth'], static function ($routes) {
+    $routes->group('map', static function ($routes) {
+        $routes->get('postes', 'MapController::getPosts');
+    });
     $routes->group('dashboard', static function ($routes) {
         $routes->get('/', 'DashboardController::index');
     });
@@ -160,6 +163,8 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         $routes->group('pop', static function ($routes) {
             $routes->get('/', 'PopController::index');
             $routes->get('novo', 'PopController::form');
+            $routes->post('save', 'PopController::save');
+            $routes->post('search', 'PopController::search');
         });
     });
 });
