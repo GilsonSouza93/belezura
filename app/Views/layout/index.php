@@ -208,6 +208,125 @@
                 });
             }
         };
+
+        const renderTable = (options) => {
+            const tableDiv = options.tableDiv;
+            const theadElements = options.theadElements;
+            const tbodyElements = options.tbodyElements;
+            const searchField = options.searchField;
+            const urlFetch = options.urlFetch;
+
+            const data = {
+                search: searchField.value
+            }
+
+            tableDiv.style.opacity = '0';
+            setTimeout(() => {
+                tableDiv.innerHTML = '';
+                const table = document.createElement('table');
+                table.classList.add('table');
+
+                const thead = document.createElement('thead');
+
+                const tr = document.createElement('tr');
+
+                theadElements.forEach(element => {
+                    const th = document.createElement('th');
+                    th.classList.add('text-center');
+                    th.innerText = element;
+                    tr.appendChild(th);
+                });
+
+                thead.appendChild(tr);
+
+                const tbody = document.createElement('tbody');
+                table.appendChild(tbody);
+
+                fetch(urlFetch, {
+                        method: 'POST',
+                        body: JSON.stringify(data),
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status == 'success') {
+                            data.data.forEach(row => {
+                                const tr = document.createElement('tr');
+
+                                tbodyElements.forEach(element => {
+                                    const td = document.createElement('td');
+                                    td.classList.add('text-center');
+
+                                    if (element === 'actions_dropdown') {
+                                        const dropdown = document.createElement('div');
+                                        dropdown.classList.add('dropdown', 'text-end', 'dropstart');
+
+                                        const dropdownButton = document.createElement('button');
+                                        dropdownButton.classList.add('btn', 'btn-outline-secondary', 'dropdown-toggle', 'text-white');
+                                        dropdownButton.setAttribute('type', 'button');
+                                        dropdownButton.setAttribute('id', 'dropdownMenuButton1');
+                                        dropdownButton.setAttribute('data-bs-toggle', 'dropdown');
+                                        dropdownButton.setAttribute('aria-expanded', 'false');
+                                        dropdownButton.innerText = 'Ações';
+
+                                        const dropdownMenu = document.createElement('ul');
+                                        dropdownMenu.style = "background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(7px); border-radius: 15px; border: 2px solid #198754;"
+                                        dropdownMenu.classList.add('dropdown-menu', 'text-center', 'me-2');
+
+                                        const editButton = document.createElement('li');
+                                        editButton.classList.add('dropdown-item', 'edit-button');
+                                        editButton.setAttribute('data-id', row['id']);
+                                        editButton.innerText = 'Editar';
+
+
+                                        const deleteButton = document.createElement('li');
+                                        deleteButton.classList.add('dropdown-item', 'delete-button');
+                                        deleteButton.setAttribute('data-id', row['id']);
+                                        deleteButton.innerText = 'Excluir';
+
+                                        dropdownMenu.appendChild(editButton);
+                                        dropdownMenu.appendChild(deleteButton);
+
+                                        dropdown.appendChild(dropdownButton);
+
+                                        dropdown.appendChild(dropdownMenu);
+
+                                        td.appendChild(dropdown);
+                                    } else if (element === 'active') {
+                                        const dot = document.createElement('div');
+                                        dot.classList.add('rounded-circle', 'mx-auto');
+
+                                        dot.style.width = '15px';
+                                        dot.style.height = '15px';
+                                        dot.style.backgroundColor = row[element] == 1 ? '#00bf63' : '#ff4e50';
+
+                                        td.appendChild(dot);
+                                    } else {
+                                        td.innerText = row[element];
+                                    }
+                                    tr.appendChild(td);
+                                });
+
+                                tbody.appendChild(tr);
+                            });
+
+                            table.appendChild(tbody);
+                            tableDiv.appendChild(table);
+                            tableDiv.style.opacity = '1';
+                        } else {
+                            showToast('Erro ao carregar dados da tabela', 'error');
+                        }
+                    })
+                    .catch(error => {
+                        showToast('Erro ao carregar dados da tabela', 'error');
+                    })
+
+                table.appendChild(thead);
+                tableDiv.appendChild(table);
+            }, 700);
+        }
     </script>
 
     <?= $this->renderSection('script') ?>

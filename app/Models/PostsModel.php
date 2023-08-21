@@ -23,6 +23,8 @@ class PostsModel extends Model
         'cto',
         'caixa_hermetica',
         'radio',
+        'active',
+        'caixa_subterranea',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -54,9 +56,6 @@ class PostsModel extends Model
 
     public function search($data)
     {
-        $page = $data['page'];
-        $length = 50;
-
         $fieldsToSearch = [
             'id',
             'latitude',
@@ -74,51 +73,20 @@ class PostsModel extends Model
             'cto',
             'caixa_hermetica',
             'radio',
+            'active',
+            'caixa_subterranea',
             'created_at',
             'updated_at',
             'deleted_at',
         ];
 
-        [$filters, $search] = null;
-
-        if(isset($data['filters'])) 
-            $filters = $data['filters'];
-
+        $search = null;
 
         if(isset($data['search']))
             $search = $data['search'];
 
-        $session = session();
-
-        $accountType = $session->get('account_type_id');
-
-        $teamId = $session->get('team_id');
-
-        $brand_selected = $session->get('brand_selected');
-
         $query = $this->db->table($this->table)
-                ->select($fieldsToReturn)
-                ->select("DATE_FORMAT(customers.created_at, '%d/%m/%Y') AS date")
-                ->select('users.name as agent, teams.name as team')
-                ->join('users', 'users.id = customers.agent_id', 'left')
-                ->join('teams', 'teams.id = customers.team_id', 'left')
-                ->join('brands', 'brands.id = customers.brand_id', 'left')
-                ->join('platforms', 'platforms.id = customers.platform_id', 'left')
-                ->join('caps', 'caps.id = customers.cap', 'left')
-                ->where('isDiscard', 0);
-
-        if($accountType == 4) {
-            $query->where("customers.agent_id", $session->get('id'));
-        }
-
-        if($teamId) {
-            $query->where("customers.team_id", $teamId);
-        }
-
-        if($brand_selected != 'default') {
-            $query->where("customers.brand_id", $brand_selected);
-        }
-
+                ->select($fieldsToReturn);
 
         if($search) {
             $query->groupStart();
@@ -128,39 +96,9 @@ class PostsModel extends Model
             $query->groupEnd();
         }
 
-        if($filters) {
-            foreach($filters as $key => $filter) {
-
-                if($filter != "") {
-                    if($filter == 'null') {
-                        $query->where($key, null);
-                    } else {
-                        $key = $key == 'team_id' ? 'customers.team_id' : $key;
-                        $query->where($key, $filter);
-                    }
-                }
-            }
-        }
-        
         $query->orderBy('created_at', 'DESC');
         $result = $query->get()->getResultArray();
 
-
-        $qty = count($result);
-        $pages = ceil($qty / $length);
-
-        if($page > $pages)
-            $page = $pages;
-
-        $start = ($page - 1) * $length;
-
-        if ($length > 0)
-            $result = array_slice($result, $start, $length);
-        
-        return [
-            'pages' => $pages,
-            'qty' => $qty,
-            'data' => $result
-        ];
+        return $result;
     }
 }
