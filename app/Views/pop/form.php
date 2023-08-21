@@ -47,7 +47,7 @@
         </div>
 
         <div class="row">
-            <div class="mt-3 col-md-9">
+            <div class="mt-3 col">
                 <label for="portador_padrao" class="form-label">Portador Padrão</label>
                 <select class="form-control" id="portador_padrao">
                     <option selected>-------</option>
@@ -57,7 +57,12 @@
                     <option value="4">Banco Itau</option>
                 </select>
             </div>
-            <div class="mt-5 col-md-3 py-1 form-check">
+            <div class="mt-3 col">
+                <label for="identificador" class="form-label">Identificador</label>
+                <input type="text" id="identificador" class="form-control">
+            </div>
+            
+            <div class="mt-5 col py-1 form-check">
                 <label class="form-check-label" for="active">Ativo</label>
                 <input type="checkbox" class="form-check-input" id="active">
             </div>
@@ -102,22 +107,6 @@
 
 <?= $this->section('script') ?>
 <script>
-    const preenchimentoDeTeste = () => {
-        document.getElementById("cidade").value = "Recife";
-        document.getElementById("populacao").value = "1000000";
-        document.getElementById("codigo_ibge").value = "123456";
-        document.getElementById("uf").value = "1";
-        document.getElementById("portador_padrao").value = "1";
-        document.getElementById("plano").value = "1";
-        document.getElementById("nas").value = "1";
-        document.getElementById("usuario").value = "1";
-        document.getElementById("active").checked = true;
-    }
-
-    document.addEventListener("DOMContentLoaded", function(event) {
-        preenchimentoDeTeste();
-    });
-
     const save = async () => {
         const body = formatBody();
 
@@ -162,7 +151,8 @@
             "plano": getValue("plano"),
             "nas": getValue("nas"),
             "usuario": getValue("usuario"),
-            "active": document.getElementById("active").checked
+            "active": document.getElementById("active").checked,
+            "identification": getValue("identificador")
         }
 
         return body

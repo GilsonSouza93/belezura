@@ -24,6 +24,7 @@ class PopModel extends Model
         "nas",
         "user",
         "active",
+        "identification",
         "created_at",
         "updated_at",
         "deleted_at"

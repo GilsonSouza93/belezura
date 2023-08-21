@@ -60,6 +60,11 @@ class AddPops extends Migration
                 'default' => true,
             ],
 
+            'identification' => [
+                'type' => 'VARCHAR',
+                'constraint' => 100
+            ],
+
             'created_at timestamp DEFAULT current_timestamp NOT NULL',	
 
             'updated_at' => [
