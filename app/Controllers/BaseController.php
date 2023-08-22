@@ -134,6 +134,10 @@ abstract class BaseController extends Controller
                         'title' => 'SMS',
                         'href' => base_url('gerencial/sms'), 
                     ],
+                    'vehicle' => [
+                        'title' => 'Veículos',
+                        'href' => base_url('gerencial/veiculos'), 
+                    ],
                 ]
             
             ],      
