@@ -277,14 +277,19 @@
                                         dropdownMenu.classList.add('dropdown-menu', 'text-center', 'me-2');
 
                                         const editButton = document.createElement('li');
-                                        editButton.classList.add('dropdown-item', 'edit-button');
-                                        editButton.setAttribute('data-id', row['id']);
+                                        editButton.classList.add('dropdown-item');
+                                        editButton.addEventListener('click', () => {
+                                            edit(row['id']);
+                                        });
                                         editButton.innerText = 'Editar';
 
 
                                         const deleteButton = document.createElement('li');
-                                        deleteButton.classList.add('dropdown-item', 'delete-button');
-                                        deleteButton.setAttribute('data-id', row['id']);
+                                        deleteButton.classList.add('dropdown-item');
+                                        deleteButton.addEventListener('click', () => {
+                                            deleteRegister(row['id']);
+                                        });
+
                                         deleteButton.innerText = 'Excluir';
 
                                         dropdownMenu.appendChild(editButton);
