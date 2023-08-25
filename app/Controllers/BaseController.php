@@ -111,6 +111,10 @@ abstract class BaseController extends Controller
                         'title' => 'Boletos',
                         'href' => base_url('financeiro/boleto'), 
                     ],
+                    'contract' => [
+                        'title' => 'Contratos',
+                        'href' => base_url('financeiro/contratos'), 
+                    ],
 
                 ]
             
@@ -328,6 +332,10 @@ abstract class BaseController extends Controller
                     'Planos' => [
                         'title' =>'Planos',
                         'href' => base_url('configuracoes/planos'),
+                    ],
+                    'Central do Assinante' => [
+                        'title' =>'Central do Assinante',
+                        'href' => base_url('configuracoes/centraldoassinante'),
                     ],
                 ]
             ],

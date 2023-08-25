@@ -158,6 +158,10 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('/', 'BillstoreceiverController::index');
             $routes->get('novo', 'BillstoreceiverController::form');
         });
+        $routes->group('contratos', static function ($routes) {
+            $routes->get('/', 'ContractController::index');
+            $routes->get('novo', 'ContractController::form');
+        });
     });
     $routes->group('gerencial', static function ($routes) {
         $routes->group('pop', static function ($routes) {

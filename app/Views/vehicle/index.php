@@ -12,7 +12,7 @@
         </div>
         <div class="col-md-4 btn-group">
             <button class="btn btn-success">Pesquisar</button>
-            <button class="btn btn-success" id="accountFilter" >Filtros</button>
+            <button class="btn btn-success" onclick="openModalVehicle()" >Filtros</button>
             <a class="btn btn-success" href="<?= $baseRoute ?>/novo"><?= $addButtonText ?></a>
         </div>
     </div>

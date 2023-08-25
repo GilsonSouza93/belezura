@@ -18,7 +18,7 @@
         
         <div class="col-md-4 btn-group">
           <button class="btn btn-success">Pesquisar</button>
-          <button class="btn btn-success">Filtros</button>
+          <button class="btn btn-success" onclick="openModalCategory()" >Filtros</button>
           <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"><?= $addButtonText ?></button>
         </div>
     </div>
