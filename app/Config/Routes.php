@@ -103,6 +103,11 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('novo', 'SubscriptionController::form');
 
         });
+        $routes->group('senhas', static function ($routes) {
+            $routes->get('/', 'PasswordController::index');
+            $routes->get('novo', 'PasswordController::form');
+
+        });
     });
     $routes->group('equipamentos', static function ($routes) {
         $routes->group('onu', static function ($routes) {
