@@ -103,7 +103,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('novo', 'SubscriptionController::form');
 
         });
-        $routes->group('senhas', static function ($routes) {
+        $routes->group('alterarsenha', static function ($routes) {
             $routes->get('/', 'PasswordController::index');
             $routes->get('novo', 'PasswordController::form');
 

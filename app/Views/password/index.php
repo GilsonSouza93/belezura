@@ -19,7 +19,7 @@
         <div class="col-md-4 btn-group">
             <button class="btn btn-success">Pesquisar</button>
             <button class="btn btn-success" onclick="openModalBrand()" >Filtros</button>
-            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"><?= $addButtonText ?></button>
+            <a class="btn btn-success" href="<?= $baseRoute ?>/novo"><?= $addButtonText ?></a>
         </div>
         
     </div>
