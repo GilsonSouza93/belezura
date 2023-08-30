@@ -178,6 +178,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         $routes->group('veiculos', static function ($routes) {
             $routes->get('/', 'VehicleController::index');
             $routes->get('novo', 'VehicleController::form');
+            $routes->post('save', 'VehicleController::save');
         });
     });
 });

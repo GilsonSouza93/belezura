@@ -14,25 +14,23 @@
         </div>
         <div class="col-md-4 btn-group">
             <a class="btn btn-success" href="<?= $baseRoute ?>">Voltar</a>
-            <button class="btn btn-success">Salvar</button>
+            <button class="btn btn-success" onclick="submit()">Salvar</button>
         </div>
     </div>
 
-    <form>
-    
-
+    <form id="form">
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="modelo" class="form-label">Modelo</label>
-                <input type="text" id="modelo" class="form-control" name="name" placeholder="">
+                <input type="text" id="modelo" class="form-control">
             </div>
             <div class="mt-3 col-md-4">
                 <label for="placa" class="form-label">Placa</label>
-                <input type="text" id="placa" class="form-control" name="name" placeholder="">
+                <input type="text" id="placa" class="form-control" >
             </div>
             <div class="mt-3 col-md-4">
-                <label for="ufveiculo" class="form-label">UF</label>
-                <select class="form-control" id="ufveiculo" aria-label="uf cliente">
+                <label for="uf" class="form-label">UF</label>
+                <select class="form-control" id="uf" aria-label="uf cliente">
                     <option selected>UF</option>
                     <option value="1">Acre</option>
                     <option value="2">Alagoas</option>
@@ -63,22 +61,86 @@
             </div>
         </div>
         <div class="row">
-            <div class="d-flex justify-content-between">
-                <div class="mt-3 col-md-4">
-                    <label for="local" class="form-label">Local</label>
-                    <input type="text" id="local" class="form-control" name="name" placeholder="">
-                </div>
-                <div class="mt-5 col-md-4">
-                    <label for="disponivel" class="form-label "></label>
-                    <input type="checkbox" name="" id="disponivel"> Disponível para OS?
-                </div>
-                <div class="mt-3 col-md-4">
-                    <label for="obsveiculo" class="form-label">Observação</label>
-                    <input type="text" id="obsveiculo" class="form-control" name="name" placeholder="">
-                </div>
+            <div class="mt-3 col-md-4">
+                <label for="local" class="form-label">Local</label>
+                <input type="text" id="local" class="form-control">
+            </div>
+            <div class="mt-3 col-md-4">
+                <label for="obs" class="form-label">Observação</label>
+                <input type="text" id="obs" class="form-control">
+            </div>
+            <div class="mt-5 col-md-4">
+                <label for="disponivel" class="form-label "></label>
+                <input type="checkbox" name="" id="disponivel"> Disponível para OS?
             </div>
         </div>       
 
     </form>
 </div>
+<?= $this->endSection() ?>
+
+<?= $this->section('script') ?>
+<script>
+    const modelo = document.getElementById('modelo');
+    const placa = document.getElementById('placa');
+    const uf = document.getElementById('uf');
+    const local = document.getElementById('local');
+    const obs = document.getElementById('local');
+    const disponivel = document.getElementById('disponivel');
+    
+    const submit = () => {
+        const body = formatBody();
+
+        try {
+            validate(body);
+
+            fetch('<?= $baseRoute ?>/save', {
+                method: 'POST',
+                body: JSON.stringify(body)
+            }).then(response => response.json())
+            .then(data => {
+                if (data.error == false) {
+                    window.location.href = '<?= $baseRoute ?>';
+                } else {
+                    showToast('Houve um erro', 'error');
+                }
+            }).catch(error => {
+                showToast('Houve um erro', 'error');
+            });
+
+        } catch (error) {
+            showToast('Preencha todo os campos requeridos', 'warning');
+
+            document.getElementById(error).classList.add('is-invalid');
+        }
+        
+    }
+
+    const formatBody = () => {
+        return {
+            model: modelo.value,
+            plate: placa.value,
+            uf: uf.value,
+            locate: local.value,
+            obs: obs.value,
+            available: disponivel.checked
+        }
+    }
+
+    const validate = (body) => {
+        if(!body.model)
+            throw 'modelo'
+
+        if(!body.plate)
+            throw 'placa'
+    }
+
+    const inputs = document.querySelectorAll('input');
+
+    for (var i = 0, len = inputs.length; i < len; i++) {
+        inputs[i].addEventListener('keyup', function(e){
+            document.getElementById($(e.target).attr("id")).classList.remove('is-invalid');
+        });
+    }
+</script>
 <?= $this->endSection() ?>

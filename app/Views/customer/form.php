@@ -198,16 +198,16 @@
             method: 'POST',
             body: formData
         }).then(response => response.json())
-            .then(data => {
-                if (data.error) {
-                    alert(data.message);
-                } else {
-                    alert(data.message);
-                    window.location.href = '<?= $baseRoute ?>';
-                }
-            }).catch(error => {
-                console.log(error);
-            });
+        .then(data => {
+            if (data.error) {
+                alert(data.message);
+            } else {
+                alert(data.message);
+                window.location.href = '<?= $baseRoute ?>';
+            }
+        }).catch(error => {
+            console.log(error);
+        });
     });
 
 

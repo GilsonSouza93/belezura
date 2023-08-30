@@ -10,4 +10,15 @@ class VehicleController extends BaseController
     public $addButtonText = 'Nova Veículo';
     public $viewPath = 'vehicle';
     public $baseRoute = '/gerencial/veiculos';
+
+    public function save()
+    {
+        // $data = $this->request->getJSON();
+
+        $data = [
+            "error" => false
+        ];
+
+        return $this->response->setJSON($data);
+    }
 }
