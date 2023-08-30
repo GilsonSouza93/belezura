@@ -40,11 +40,11 @@
                 <label for="name" class="form-label">Radius Args</label>
                 <input type="text" class="form-control" name="name" placeholder="">
             </div>
-            <div class="mt-3 col-md-4">
+            <div class="mt-5 col-md-4">
                 <label for="name" class="form-label"></label>
                 <input type="checkbox" name="" id="">Ordenar IPs por Rede /24:
             </div>
-            <div class="mt-3 col-md-4">
+            <div class="mt-5 col-md-4">
                 <label for="name" class="form-label"></label>
                 <input type="checkbox" name="" id="">Ativo?
             </div>

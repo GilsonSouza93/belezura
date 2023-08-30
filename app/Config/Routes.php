@@ -103,6 +103,11 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('novo', 'SubscriptionController::form');
 
         });
+        $routes->group('alterarsenha', static function ($routes) {
+            $routes->get('/', 'PasswordController::index');
+            $routes->get('novo', 'PasswordController::form');
+
+        });
     });
     $routes->group('equipamentos', static function ($routes) {
         $routes->group('onu', static function ($routes) {
@@ -158,6 +163,10 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('/', 'BillstoreceiverController::index');
             $routes->get('novo', 'BillstoreceiverController::form');
         });
+        $routes->group('contratos', static function ($routes) {
+            $routes->get('/', 'ContractController::index');
+            $routes->get('novo', 'ContractController::form');
+        });
     });
     $routes->group('gerencial', static function ($routes) {
         $routes->group('pop', static function ($routes) {
@@ -165,6 +174,10 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('novo', 'PopController::form');
             $routes->post('save', 'PopController::save');
             $routes->post('search', 'PopController::search');
+        });
+        $routes->group('veiculos', static function ($routes) {
+            $routes->get('/', 'VehicleController::index');
+            $routes->get('novo', 'VehicleController::form');
         });
     });
 });
