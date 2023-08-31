@@ -22,16 +22,16 @@
 
         <div class="row">
             <div class="mt-3 col-md-3">
-                <label for="typo" class="form-label">Bairro</label>
-                <input type="text" class="form-control" name="name" placeholder="">
+                <label for="bairro" class="form-label">Bairro</label>
+                <input type="text" id="bairro" class="form-control" name="name">
             </div>
             <div class="mt-3 col-md-3">
-                <label for="typo" class="form-label">Rua</label>
-                <input type="text" class="form-control" name="name" placeholder="">
+                <label for="rua" class="form-label">Rua</label>
+                <input type="text" id="rua" class="form-control">
             </div>
             <div class="mt-3 col-md-3">
-                <label for="typo" class="form-label">POP</label>
-                <select class="form-control" aria-label="Default select example">
+                <label for="pop" class="form-label">POP</label>
+                <select class="form-control"  id="pop" aria-label="Default select example">
                     <option selected>Selecione o local POP</option>
                     <option value="1">Caruaru</option>
                     <option value="2">Olinda</option>
@@ -42,8 +42,8 @@
             </div>
 
             <div class="mt-3 col-md-3">
-                <label for="typo" class="form-label">NAS</label>
-                <select class="form-control" aria-label="Default select example">
+                <label for="nas" class="form-label">NAS</label>
+                <select class="form-control"  id="nas" aria-label="Default select example">
                     <option selected>Selecione o NAS</option>
                     <option value="1">Monsenhor Tabosa</option>
                     <option value="1">Ria Rural</option>
@@ -53,13 +53,13 @@
        
         <div class="row">
             <div class="mt-3 col-md-4">
-                <label for="typo" class="form-label">Parcela</label>
-                <input type="text" class="form-control" name="name" placeholder="">
+                <label for="parcela" class="form-label">Parcela</label>
+                <input type="text" class="form-control" id="parcela" name="name" placeholder="">
             </div>
 
             <div class="mt-3 col-md-4">
-                <label for="typo" class="form-label">Mês/ano</label>
-                <select class="form-control" aria-label="Default select example">
+                <label for="portador" class="form-label">Mês/ano</label>
+                <select class="form-control" id="portador" aria-label="Default select example">
                     <option selected>Selecione o período</option>
                     <option value="1">08/2023</option>
                     <option value="2">09/2023</option>
@@ -69,8 +69,8 @@
                 </select>
             </div>
             <div class="mt-3 col-md-4">
-                <label for="typo" class="form-label">Portador</label>
-                <select class="form-control" aria-label="Default select example">
+                <label for="portador" class="form-label">Portador</label>
+                <select class="form-control" id="portador" aria-label="Default select example">
                     <option selected>-------</option>
                     <option value="1">Caixa Economica Federal</option>
                     <option value="2">Banco Rural</option>
@@ -83,8 +83,8 @@
 
         <div class="row">
             <div class="mt-3 col-md-4">
-                <label for="typo" class="form-label">Plano</label>
-                <select class="form-control" aria-label="Default select example">
+                <label for="plano" class="form-label">Plano</label>
+                <select class="form-control" id="plano" aria-label="Default select example">
                     <option selected>Selecione o Plano</option>
                     <option value="1">100mb -</option>
                     <option value="2">50 mb</option>
@@ -93,16 +93,16 @@
                 </select>
             </div>
             <div class="mt-3 col-md-4">
-                <label for="typo" class="form-label">Condominio</label>
-                <select class="form-control" aria-label="Default select example">
+                <label for="condominio" class="form-label">Condominio</label>
+                <select class="form-control" id="condominio" aria-label="Default select example">
                     <option selected>Selecione o condominio</option>
                     <option value="1">Edf. Luis castro - Monsenhor Tabosa</option>
                     <option value="1">VogVille - Caruaru</option>
                 </select>
             </div>
             <div class="mt-3 col-md-4">
-                <label for="typo" class="form-label">Vencimento</label>
-                <select class="form-control" aria-label="Default select example">
+                <label for="vencimento" class="form-label">Vencimento</label>
+                <select class="form-control" id="vencimento" aria-label="Default select example">
                     <option selected>---------</option>
                     <option value="1">5</option>
                     <option value="2">10</option>
@@ -117,41 +117,107 @@
 
         <div class="row">
             <div class="mt-3 col-md-3">
-                <label for="typo" class="form-label">Data Cad. Inicial:</label>
-                <input type="date" class="form-control" name="name" placeholder="">
+                <label for="datainicial" class="form-label">Data Cad. Inicial:</label>
+                <input type="date" class="form-control" id="datainicial" name="name" placeholder="">
             </div>
             <div class="mt-3 col-md-3">
-                <label for="typo" class="form-label">Data Cad. Final:</label>
-                <input type="date" class="form-control" name="name" placeholder="">
+                <label for="datafinal" class="form-label">Data Cad. Final:</label>
+                <input type="date" class="form-control" id="datafinal" name="name" placeholder="">
             </div>
             <div class="mt-5 col-md-3">
-                <label for="name" class="form-label"></label>
-                <input type="checkbox" name="" id=""> Exibe Carnê em aberto
+                <label for="carneaberto" class="form-label"></label>
+                <input type="checkbox" name="" id="carneaberto"> Exibe Carnê em aberto
             </div>
             <div class="mt-5 col-md-3">
-                <label for="name" class="form-label"></label>
-                <input type="checkbox" name="" id=""> Gerar PIX
+                <label for="pix" class="form-label"></label>
+                <input type="checkbox" name="" id="pix"> Gerar PIX
             </div>
         </div>
 
         <div class="row">
             <div class="mt-3 col-md-6">
-                <label for="typo" class="form-label">Títulos Emitidos (Não) - Inicial:</label>
-                <input type="date" class="form-control" name="" id="" >
+                <label for="tituloinicial" class="form-label">Títulos Emitidos (Não) - Inicial:</label>
+                <input type="date" class="form-control" name="" id="tituloinicial" >
             </div>
             <div class="mt-3 col-md-6">
-                <label for="typo" class="form-label">Títulos Emitidos (Não) - Final:</label>
-                <input type="date" class="form-control" name="" id="" >
+                <label for="titulofinal" class="form-label">Títulos Emitidos (Não) - Final:</label>
+                <input type="date" class="form-control" name="" id="titulofinal" >
             </div>
         </div>
         
         <div class="row">
             <div class="mt-3 col-md-12">
-                <label for="typo" class="form-label">Observação</label>
-                <input type="text" class="form-control" name="name" placeholder="">
+                <label for="obs" class="form-label">Observação</label>
+                <input type="text" class="form-control" id="obs" name="name" placeholder="">
             </div>
         </div>
 
     </form>
 </div>
+<?= $this->endSection() ?>
+
+<?= $this->section('script') ?>
+<script>
+    const modelo = document.getElementById('modelo');
+    const placa = document.getElementById('placa');
+    const uf = document.getElementById('uf');
+    const local = document.getElementById('local');
+    const obs = document.getElementById('local');
+    const disponivel = document.getElementById('disponivel');
+    
+    const submit = () => {
+        const body = formatBody();
+
+        try {
+            validate(body);
+
+            fetch('<?= $baseRoute ?>/save', {
+                method: 'POST',
+                body: JSON.stringify(body)
+            }).then(response => response.json())
+            .then(data => {
+                if (data.error == false) {
+                    window.location.href = '<?= $baseRoute ?>';
+                } else {
+                    showToast('Houve um erro', 'error');
+                }
+            }).catch(error => {
+                showToast('Houve um erro', 'error');
+            });
+
+        } catch (error) {
+            showToast('Preencha todo os campos requeridos', 'warning');
+
+            document.getElementById(error).classList.add('is-invalid');
+        }
+        
+    }
+
+    const formatBody = () => {
+        return {
+            model: modelo.value,
+            plate: placa.value,
+            uf: uf.value,
+            locate: local.value,
+            obs: obs.value,
+            available: disponivel.checked
+        }
+    }
+
+    const validate = (body) => {
+        if(!body.model)
+            throw 'modelo'
+
+        if(!body.plate)
+            throw 'placa'
+    }
+
+    const inputs = document.querySelectorAll('input');
+
+    for (var i = 0, len = inputs.length; i < len; i++) {
+        inputs[i].addEventListener('keyup', function(e){
+            document.getElementById($(e.target).attr("id")).classList.remove('is-invalid');
+        });
+    }
+</script>
 <?= $this->endSection() ?>
