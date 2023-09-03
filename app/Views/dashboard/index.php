@@ -163,30 +163,28 @@
             markers.push(marker); // Adicione o marcador ao array
         }
 
-        setInterval(function() {
-            fetch('<?= base_url('map/postes') ?>')
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 'success') {
-                    for (var i = 0; i < markers.length; i++) {
-                        markers[i].setMap(null);
-                    }
-
-                    data.data.forEach(poste => {
-                        addDotMarker({
-                            lat: parseFloat(poste.latitude),
-                            lng: parseFloat(poste.longitude)
-                        }, poste.active);
-                    });
-
-                    var bounds = new google.maps.LatLngBounds();
-                    for (var i = 0; i < markers.length; i++) {
-                        bounds.extend(markers[i].getPosition());
-                    }
-                    map.fitBounds(bounds);
+        fetch('<?= base_url('map/postes') ?>')
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                for (var i = 0; i < markers.length; i++) {
+                    markers[i].setMap(null);
                 }
-            });
-        }, 3000);
+
+                data.data.forEach(poste => {
+                    addDotMarker({
+                        lat: parseFloat(poste.latitude),
+                        lng: parseFloat(poste.longitude)
+                    }, poste.active);
+                });
+
+                var bounds = new google.maps.LatLngBounds();
+                for (var i = 0; i < markers.length; i++) {
+                    bounds.extend(markers[i].getPosition());
+                }
+                map.fitBounds(bounds);
+            }
+        });
     }
     document.addEventListener('DOMContentLoaded', () => {
         initMap();

@@ -26,7 +26,7 @@ class LoginController extends BaseController
                 $response = [
                     'status' => 400,
                     'error' => true,
-                    'messages' => $this->validator->getErrors()
+                    'message' => $this->validator->getErrors()
                 ];
             } else {
                 $email = $data['email'];
@@ -40,14 +40,14 @@ class LoginController extends BaseController
                     $response = [
                         'status' => 401,
                         'error' => true,
-                        'messages' => 'Usuário não encontrado'
+                        'message' => 'Usuário não encontrado'
                     ];
                 } else {
                     if(!password_verify($password, $user['password'])) {
                         $response = [
                             'status' => 401,
                             'error' => true,
-                            'messages' => 'Senha incorreta'
+                            'message' => 'Senha incorreta'
                         ];
                     } else {
                         $SessionData = [
@@ -62,7 +62,7 @@ class LoginController extends BaseController
                         $response = [
                             'status' => 200,
                             'error' => false,
-                            'messages' => 'Login efetuado com sucesso'
+                            'message' => 'Login efetuado com sucesso'
                         ];
                     }
                 }

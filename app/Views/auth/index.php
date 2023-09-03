@@ -27,94 +27,154 @@
             background-size: cover;
         }
 
-        .card {
-            border-radius: var(--border-radius);
-            background: rgba(0, 0, 0, 0.5);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(33, 37, 41, 0.2);
-        }
-
-        .gradient-1 {
-            background: linear-gradient(to right, #ffbd59, #ff914d);
-            margin: 0 5px;
-            border-radius: var(--border-radius);
-        }
-
-        .gradient-2 {
-            background: linear-gradient(to right, #00bf63, #7ed957);
-            margin: 0 5px;
-            border-radius: var(--border-radius);
-        }
-
-        .gradient-3 {
-            background: linear-gradient(to right, #ff4e50, #f9d423);
-            margin: 0 5px;
-            border-radius: var(--border-radius);
-        }
-
-        .gradient-4 {
-            background: linear-gradient(to right, #00aeef, #5271ff);
-            margin: 0 5px;
-            border-radius: var(--border-radius);
-        }
-
-        .form-group {
-            background: transparent;
-        }
-
         input {
             border: 1px solid #fff;
             background: transparent;
             border: none;
             border-bottom: 1px solid #fff;
             width: 100%;
-            text-indent: 15px;
-            margin: 0.2rem;
+            text-align: center;
         }
 
-        form > * {
-            margin-bottom: 3rem;
+        form>* {
+            margin-bottom: 2.5rem;
         }
-
 
         input::placeholder {
+            text-align: center;
             color: #fff;
-            font-size: 1.2rem;
-            margin: 0.2rem;
         }
+
+        input:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 30px rgba(255, 255, 255, 0) inset;
+            -webkit-text-fill-color: #fff;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+
     </style>
 </head>
 
 <body>
-    <div class="row d-flex justify-content-center" style="height: 100vh">
-        <div class="col-md-4">
-            <form id="form" class="d-flex flex-column justify-content-center" style="margin-top: 40%;">
-                <div class="d-flex justify-content-center">
-                    <img src="<?= base_url('assets/imgs/logo.png') ?>" alt="logo" style="height: 110px;">
-                </div>
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <form id="form" style="background: rgba(255, 255, 255, 0.2); border-radius: 16px; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.3); opacity: 0;" class="p-5">
+            <div class="d-flex justify-content-center">
+                <img src="<?= base_url('assets/imgs/logo.png') ?>" alt="logo" style="height: 75px;">
+            </div>
 
-                <input type="email" id="email" required placeholder="Email" >
+            <input type="email" id="email" required placeholder="Email">
 
-                <input type="password" id="password" required placeholder="Senha">
+            <input type="password" id="password" required placeholder="Senha">
 
-                <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-light btn-lg px-4">Entrar</button>
-                </div>
-            </form>
-        </div>
+            <div class="d-flex justify-content-center mt-2">
+                <button type="submit" class="btn btn-outline-light px-5">Entrar</button>
+            </div>
+        </form>
     </div>
-
 
     <script src="<?= base_url('assets/js/bootstrap_5.3.bundle.min.js') ?>"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script>
+        const createToast = (borderColor, message) => {
+            const div = document.createElement('div');
+            div.classList.add('position-fixed', 'bottom-0', 'start-0', 'p-3');
+
+            const toast = document.createElement('div');
+            toast.classList.add('toast', 'card', 'text-white', 'p-1', 'fs-6', 'w-100', 'bg-transparent');
+            toast.style.borderLeft = `3px solid ${borderColor}`;
+            toast.style.backdropFilter = 'blur(7px)';
+
+            const toastBody = document.createElement('div');
+            toastBody.classList.add('toast-body', 'text-white');
+
+            toastBody.innerText = message;
+
+            toast.appendChild(toastBody);
+            div.appendChild(toast);
+
+            document.body.appendChild(div);
+        }
+
+        const showToast = (message, type) => {
+            $('.toast').remove();
+
+            const borderColor = type === 'success' ? '#00bf63' : type === 'error' ? '#ff4e50' : type === 'warning' ? '#ffbd59' : '#00aeef';
+            createToast(borderColor, message);
+
+            $('.toast').toast({
+                animation: true,
+                autohide: true,
+                delay: 5000
+            });
+
+            $('.toast').toast('show');
+        }
+
+        const showLoading = () => {
+            const div = document.createElement('div');
+            div.classList.add('position-fixed', 'top-0', 'start-0', 'p-3', 'w-100', 'h-100', 'd-flex', 'justify-content-center', 'align-items-center', 'bg-transparent', 'fade');
+            div.style.zIndex = '10';
+            div.style.backdropFilter = 'blur(7px)';
+            div.style.transition = 'opacity 0.5s ease-in-out';
+
+            const spinner = document.createElement('div');
+            spinner.classList.add('spinner-border', 'text-success');
+            spinner.setAttribute('role', 'status');
+
+            const span = document.createElement('span');
+            span.classList.add('visually-hidden');
+            span.innerText = 'Loading...';
+
+            spinner.appendChild(span);
+            div.appendChild(spinner);
+
+            document.body.appendChild(div);
+
+            setTimeout(() => {
+                div.style.opacity = '1';
+            }, 10);
+        };
+
+        const hideLoading = () => {
+            const loadingDiv = document.querySelector('.fade');
+            if (loadingDiv) {
+                loadingDiv.style.opacity = '0';
+
+                loadingDiv.addEventListener('transitionend', () => {
+                    loadingDiv.remove();
+                });
+            }
+        };
+
+        const showForm = () => {
+            const form = document.querySelector('#form');
+
+            form.style.transition = 'opacity 0.9s ease-in-out';
+            form.style.opacity = '1';
+        }
+
+        const hideForm = () => {
+            const form = document.querySelector('#form');
+
+            form.style.transition = 'opacity 0.9s ease-in-out';
+            form.style.opacity = '0';
+        }
+    </script>
 
     <script>
         $(document).ready(function() {
+
+            showForm();
+
+            setTimeout(function(){
+                $('#email').removeAttr('disabled');
+                $('#password').removeAttr('disabled');
+            }, 300);
+
             $('#form').submit(function(e) {
                 e.preventDefault();
 
-                var email = $('#email').val();
-                var password = $('#password').val();
+                const email = $('#email').val();
+                const password = $('#password').val();
 
                 $.ajax({
                     url: '<?= base_url('login') ?>',
@@ -123,11 +183,23 @@
                         email: email,
                         password: password
                     },
+                    beforeSend: function() {
+                        showLoading();
+                    },
+
                     success: function(result) {
+                        hideLoading();
+                        hideForm();
+
                         if (result.status == '200') {
-                            window.location.href = '<?= base_url('dashboard') ?>';
+                            showToast('Sucesso', 'success');
+
+                            setTimeout(function() {
+                                window.location.href = '<?= base_url('dashboard') ?>';
+                            }, 1000);
+
                         } else {
-                            alert(result.messages);
+                            showToast(result.message, 'error');
                         }
                     }
                 });
