@@ -11,12 +11,19 @@ class VehicleController extends BaseController
     public $viewPath = 'vehicle';
     public $baseRoute = '/gerencial/veiculos';
 
+    public function __construct()
+    {
+        $this->mainModel = model('VehicleModel');
+        parent::__construct();
+    }
+
     public function save()
     {
-        // $data = $this->request->getJSON();
-
+        $data = $this->request->getJSON();
+        var_dump($data); die;
+        
         $data = [
-            "error" => false
+            "error" => true
         ];
 
         return $this->response->setJSON($data);
