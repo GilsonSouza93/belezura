@@ -192,11 +192,9 @@
                         hideForm();
 
                         if (result.status == '200') {
-                            showToast('Sucesso', 'success');
-
                             setTimeout(function() {
                                 window.location.href = '<?= base_url('dashboard') ?>';
-                            }, 1000);
+                            }, 800);
 
                         } else {
                             showToast(result.message, 'error');
