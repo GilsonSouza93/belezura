@@ -354,7 +354,30 @@ abstract class BaseController extends Controller
     public function index()
     {
         return view($this->viewPath . '/index', $this->data);
-    }  
+    } 
+
+    public function delete()
+    {
+        $id = $this->request->getJSON('id');
+
+        $response = $this->mainModel->delete($id);
+
+        if($response) {
+            $data = [
+                'success' => true,
+                'message' => 'Excluído com sucesso!',
+                'data' => $response
+            ];
+        } else {
+            $data = [
+                'success' => false,
+                'message' => 'Erro ao excluir!',
+                'data' => $response
+            ];
+        }
+
+        return $this->response->setJSON($data);
+    }
 
     public function form()
     {

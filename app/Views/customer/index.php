@@ -130,8 +130,8 @@
                             Ações
                         </button>
                         <ul class="dropdown-menu text-center me-2" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(7px); border-radius: 15px; border: 2px solid #198754;">
-                            <li><a href="<?= $baseRoute ?>/edit/${customer.id}" class="dropdown-item">Editar</a></li>
-                            <li><a href="<?= $baseRoute ?>/delete/${customer.id}" class="dropdown-item">Excluir</a></li>
+                            <li class="dropdown-item" onclick="editCustomer(${customer.id})">Editar</li>
+                            <li class="dropdown-item" onclick="deleteCustomer(${customer.id})">Excluir</li>
                         </ul>
                     </div>
                 </td>
@@ -158,6 +158,29 @@
     searchBtn.addEventListener('click', () => {
         search()
     });
+
+    const deleteCustomer = (id) => {
+        url = '<?= $baseRoute ?>/delete';
+        showLoading();
+
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify({id: id}),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(response => response.json())
+        .then(data => {
+            hideLoading();
+
+            if (data.success === true) {
+                showToast('Cliente excluído com sucesso !', 'success')
+                search()
+            } else {
+                showToast('Erro ao excluir cliente !', 'error')
+            }
+        })
+    }
 
 </script>
 

@@ -54,6 +54,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         $routes->post('save', 'CustomerController::save');
 
         $routes->post('search', 'CustomerController::search');
+        $routes->post('delete', 'CustomerController::delete');	
     });
     
 
