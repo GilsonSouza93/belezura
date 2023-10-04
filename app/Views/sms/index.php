@@ -28,7 +28,7 @@
         IP POOL localizadas: 100
     </p>
 
-    <div id="tableIppool" class="collapsed p-4 justify-content ">
+    <div id="tableSms" class="collapsed p-4 justify-content ">
         <table class="table table-striped">
             <thead>
                 <tr>
