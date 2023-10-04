@@ -182,6 +182,10 @@
         })
     }
 
+    const editCustomer = (id) => {
+        window.location.href = '<?= $baseRoute ?>/editar/' + id;
+    }
+
 </script>
 
 <?= $this->endSection() ?>

@@ -9,7 +9,13 @@
 
     <div class="row card-2 py-3 my-3">
         <div class="col-md-8">
-            <h4>Formulário de cadastro</h4>
+            <h4>
+                <?php if (isset($register)) : ?>
+                    Editar cliente
+                <?php else : ?>
+                    Novo cliente
+                <?php endif ?>
+            </h4>
         </div>
         <div class="col-md-4 btn-group">
             <a class="btn btn-success" href="<?= $baseRoute ?>">Voltar</a>
@@ -18,10 +24,14 @@
     </div>
 
     <form class="card p-4">
+        <?php if (isset($register)) : ?>
+            <input type="hidden" name="id" value="<?= $register->id ?>">
+        <?php endif ?>
+
         <div class="row">
             <div class="mt-3 col-md-6">
                 <label for="nomeCliente" class="form-label">Nome completo</label>
-                <input type="text" id="nomeCliente" class="form-control" name="name" placeholder="Insira o nome completo">
+                <input type="text" id="nomeCliente" class="form-control" name="name" placeholder="Insira o nome completo" value="<?= isset($register) ? $register->name : '' ?>">
             </div>
             <div class="mt-3 col-md-3">
                 <label for="plano" class="form-label">Plano</label>
@@ -50,23 +60,23 @@
         <div class="row">
             <div class="mt-3 col-md-3">
                 <label for="rg" class="form-label">RG</label>
-                <input type="text" id="rg" class="form-control" name="rg" placeholder="insira o RG">
+                <input type="text" id="rg" class="form-control" name="rg" placeholder="insira o RG" value="<?= isset($register) ? $register->rg : '' ?>">
             </div>
 
             <div class="mt-3 col-md-5">
                 <label for="cpf" class="form-label">CPF</label>
-                <input type="text" id="cpf" class="form-control" name="cpf" placeholder="Insira o Cpf">
+                <input type="text" id="cpf" class="form-control" name="cpf" placeholder="Insira o Cpf" value="<?= isset($register) ? $register->cpf : '' ?>">
             </div>
             <div class="mt-3 col-md-4">
                 <label for="dataNascimento" class="form-label">Data de Nascimento</label>
-                <input type="date" id="dataNascimento" class="form-control" name="date" placeholder="Data de nascimento">
+                <input type="date" id="dataNascimento" class="form-control" name="date" placeholder="Data de nascimento" value="<?= isset($register) ? $register->date_of_birth : '' ?>">
             </div>
         </div>
 
         <div class="row">
             <div class="mt-3 col-md-8">
                 <label for="emailCliente" class="form-label">E-mail</label>
-                <input type="email" id="emailCliente" class="form-control" id="email" name="email" placeholder="E-mail">
+                <input type="email" id="emailCliente" class="form-control" id="email" name="email" placeholder="E-mail" value="<?= isset($register) ? $register->email : '' ?>">
             </div>
             <div class="mt-3 col-md-4">
                 <label for="estadoCivil" class="form-label">Estado Civil</label>
@@ -85,7 +95,7 @@
         <div class="row">
             <div class="mt-3 col-md-3">
                 <label for="telefone1Cliente" class="form-label">Telefone 1</label>
-                <input type="tel" id="telefone1Cliente" class="form-control" name="tel" id="tel" placeholder="Telefone">
+                <input type="tel" id="telefone1Cliente" class="form-control" name="tel" id="tel" placeholder="Telefone" value="<?= isset($register) ? $register->phone1 : '' ?>">
             </div>
             <div class="mt-3 col-md-3">
                 <label for="tipoContato1" class="form-label">Tipo:</label>
@@ -98,7 +108,7 @@
 
             <div class="mt-3 col-md-3">
                 <label for="telefone2Cliente" class="form-label">Telefone 2</label>
-                <input type="tel" id="telefone2Cliente" class="form-control" name="tel" id="tel" placeholder="Telefone">
+                <input type="tel" id="telefone2Cliente" class="form-control" name="tel" id="tel" placeholder="Telefone" value="<?= isset($register) ? $register->phone2 : '' ?>">
             </div>
             <div class="mt-3 col-md-3">
                 <label for="tipoContato2" class="form-label">Tipo:</label>
@@ -113,33 +123,32 @@
         <div class="row">
             <div class="mt-3 col-md-3">
                 <label for="cepCliente" class="form-label">Cep</label>
-                <input type="text" id="cepCliente"  class="form-control" id="zipcode" name="zipcode" placeholder="Cep">
+                <input type="text" id="cepCliente"  class="form-control" id="zipcode" name="zipcode" placeholder="Cep" value="<?= isset($register) ? $register->zipcode : '' ?>">
             </div>
 
             <div class="mt-3 col-md-5">
                 <label for="ruaCliente" class="form-label">Rua</label>
-                <input type="text" id="ruaCliente" class="form-control" id="address1" name="address1" placeholder="Rua">
+                <input type="text" id="ruaCliente" class="form-control" id="address1" name="address1" placeholder="Rua" value="<?= isset($register) ? $register->address1 : '' ?>">
             </div>
             <div class="mt-3 col-md-4">
                 <label for="bairroCliente" class="form-label">Bairro</label>
-                <input type="text" id="bairroCliente" class="form-control" id="address2" name="address2" placeholder="Bairro">
+                <input type="text" id="bairroCliente" class="form-control" id="address2" name="address2" placeholder="Bairro" value="<?= isset($register) ? $register->address2 : '' ?>">
             </div>
         </div>
         <div class="row">
             <div class="mt-3 col-md-2">
                 <label for="numeroCasaCliente" class="form-label">Número</label>
-                <input type="text" id="numeroCasaCliente" class="form-control" id="number" name="number" placeholder="Número">
+                <input type="text" id="numeroCasaCliente" class="form-control" id="number" name="number" placeholder="Número" value="<?= isset($register) ? $register->number : '' ?>">
             </div>
 
             <div class="mt-3 col-md-3">
                 <label for="complementoCliente" class="form-label">Complemento</label>
-                <input type="text" id="complementoCliente" class="form-control" id="complement" name="complement" placeholder="Complemento">
+                <input type="text" id="complementoCliente" class="form-control" id="complement" name="complement" placeholder="Complemento" value="<?= isset($register) ? $register->complement : '' ?>">
             </div>
 
             <div class="mt-3 col-md-3">
                 <label for="referenciaCliente" class="form-label">Ponto de referência</label>
-                <input type="text" id="referenciaCliente" class="form-control" id="referencia" name="referencia"
-                    placeholder="Ponto de referência">
+                <input type="text" id="referenciaCliente" class="form-control" id="referencia" name="referencia" placeholder="Ponto de referência" value="<?= isset($register) ? $register->reference_point : '' ?>">
             </div>
 
             <div class="mt-3 col-md-4">
@@ -191,6 +200,7 @@
 
     submitBtn.addEventListener('click', event => {
         event.preventDefault();
+        showLoading();
 
         const formData = new FormData(form);
 
@@ -199,10 +209,11 @@
             body: formData
         }).then(response => response.json())
         .then(data => {
+            hideLoading();
             if (data.error) {
-                alert(data.message);
+                showToast(data.message, 'error');
             } else {
-                alert(data.message);
+                showToast(data.message, 'success');
                 window.location.href = '<?= $baseRoute ?>';
             }
         }).catch(error => {

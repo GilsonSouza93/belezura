@@ -336,7 +336,14 @@ abstract class BaseController extends Controller
     public function index()
     {
         return view($this->viewPath . '/index', $this->data);
-    } 
+    }
+
+    public function edit($id = null)
+    {
+        $this->data['register'] = (object) $this->mainModel->find($id);
+
+        return view($this->viewPath . '/form', $this->data);
+    }
 
     public function delete()
     {
