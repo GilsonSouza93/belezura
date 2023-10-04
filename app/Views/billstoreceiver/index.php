@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 
-<div class="card p-4">
+<div class="p-4">
 
     <h2><?= $tittle ?></h2>
     
@@ -28,7 +28,7 @@
         Contas localizadas: 100
     </p>
 
-    <div class="d-flex justify-content ">
+    <div class="d-flex justify-content card">
         <table class="table table-dark table-striped">
             <thead>
                 <tr>
