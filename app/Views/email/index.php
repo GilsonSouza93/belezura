@@ -18,7 +18,7 @@
         
         <div class="col-md-4 btn-group">
             <button class="btn btn-success">Pesquisar</button>
-            <button class="btn btn-success" onclick="openModalSms()" >Filtros</button>
+            <button class="btn btn-success" onclick="openModalEmail()" >Filtros</button>
             <a class="btn btn-success" href="<?= $baseRoute ?>/novo"><?= $addButtonText ?></a>
         </div>
         
@@ -28,17 +28,16 @@
         Lotes localizados: 100
     </p>
 
-    <div id="tableSms" class="collapsed p-4 justify-content ">
+    <div id="tableEmail" class="collapsed p-4 justify-content ">
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th scope="col">Descrição</th>
                     <th scope="col">Dias</th>
-                    <th scope="col">Mensagem</th>
-                    <th scope="col">Gateway SMS</th>
-                    <th scope="col">Tipo</th>
+                    <th scope="col">Servidor SMTP</th>
                     <th scope="col">Ativo</th>
-                    <th scope="col">Ativos do contrato</th>
+                    <th scope="col">Status do contrato</th>
+                    <th scope="col">Mensagem</th>
                     <th scope='col'>Ações</th>
                 </tr>
             </thead>

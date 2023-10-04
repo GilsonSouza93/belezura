@@ -88,9 +88,13 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('/', 'InStockController::index');
             $routes->get('novo', 'InStockController::form');
         });
-        $routes->group('saida', static function ($routes) {
+        $routes->group('saidas', static function ($routes) {
             $routes->get('/', 'OutStockController::index');
             $routes->get('novo', 'OutStockController::form');
+        });
+        $routes->group('relatorios', static function ($routes) {
+            $routes->get('/', 'RelatorioController::index');
+            $routes->get('novo', 'RelatorioController::form');
         });
         $routes->group('transferencia', static function ($routes) {
             $routes->get('/', 'TransferController::index');
@@ -139,6 +143,10 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('/', 'SwitchController::index');
             $routes->get('novo', 'SwitchController::form');
         });
+        $routes->group('router', static function ($routes) {
+            $routes->get('/', 'RouterController::index');
+            $routes->get('novo', 'RouterController::form');
+        });
         $routes->group('radius', static function ($routes) {
             $routes->get('/', 'RadiusController::index');
             $routes->get('novo', 'RadiusController::form');
@@ -152,6 +160,18 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         $routes->group('tower', static function ($routes) {
             $routes->get('/', 'TowerController::index');
             $routes->get('novo', 'TowerController::form');
+        });
+        $routes->group('servidor', static function ($routes) {
+            $routes->get('/', 'ServidorController::index');
+            $routes->get('novo', 'ServidorController::form');
+        });
+        $routes->group('storage', static function ($routes) {
+            $routes->get('/', 'StorageController::index');
+            $routes->get('novo', 'StorageController::form');
+        });
+        $routes->group('outros', static function ($routes) {
+            $routes->get('/', 'OutrosController::index');
+            $routes->get('novo', 'OutrosController::form');
         });
     });
     
@@ -197,6 +217,12 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('novo', 'SmsController::form');
             $routes->post('save', 'SmsController::save');
             $routes->post('search', 'SmsController::search');
+        });
+        $routes->group('email', static function ($routes) {
+            $routes->get('/', 'EmailController::index');
+            $routes->get('novo', 'EmailController::form');
+            $routes->post('save', 'EmailController::save');
+            $routes->post('search', 'EmailController::search');
         });
         $routes->group('veiculos', static function ($routes) {
             $routes->get('/', 'VehicleController::index');

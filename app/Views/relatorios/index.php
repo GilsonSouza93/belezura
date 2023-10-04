@@ -18,27 +18,29 @@
         
         <div class="col-md-4 btn-group">
             <button class="btn btn-success">Pesquisar</button>
-            <button class="btn btn-success" onclick="openModalSms()" >Filtros</button>
+            <button class="btn btn-success" onclick="openModalIpPool()" >Filtros</button>
             <a class="btn btn-success" href="<?= $baseRoute ?>/novo"><?= $addButtonText ?></a>
         </div>
         
     </div>
 
     <p>
-        Lotes localizados: 100
+        IP POOL localizadas: 100
     </p>
 
-    <div id="tableSms" class="collapsed p-4 justify-content ">
-        <table class="table table-striped">
+    <div class="d-flex justify-content ">
+        <table class="table table-dark table-striped">
             <thead>
                 <tr>
-                    <th scope="col">Descrição</th>
-                    <th scope="col">Dias</th>
-                    <th scope="col">Mensagem</th>
-                    <th scope="col">Gateway SMS</th>
-                    <th scope="col">Tipo</th>
-                    <th scope="col">Ativo</th>
-                    <th scope="col">Ativos do contrato</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Range</th>
+                    <th scope="col">Total Ips</th>
+                    <th scope="col">Fixos</th>
+                    <th scope="col">Lease</th>
+                    <th scope="col">Online</th>
+                    <th scope="col">Livres</th>
+                    <th scope="col">Nas</th>
+                    <th scope="col">Obs</th>
                     <th scope='col'>Ações</th>
                 </tr>
             </thead>

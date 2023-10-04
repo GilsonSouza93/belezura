@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 
-<div class="p-4">
+<div class="card p-4">
 
     <h2><?= $tittle ?></h2>
     
@@ -18,28 +18,28 @@
         
         <div class="col-md-4 btn-group">
             <button class="btn btn-success">Pesquisar</button>
-            <button class="btn btn-success" onclick="openModalSms()" >Filtros</button>
+            <button class="btn btn-success" onclick="openModalServidor()" >Filtros</button>
             <a class="btn btn-success" href="<?= $baseRoute ?>/novo"><?= $addButtonText ?></a>
         </div>
         
     </div>
 
     <p>
-        Lotes localizados: 100
+        Torres localizadas: 100
     </p>
 
-    <div id="tableSms" class="collapsed p-4 justify-content ">
+    <div id="tableServidor" class="collapsed p-4 justify-content card">
         <table class="table table-striped">
             <thead>
                 <tr>
+                    <th scope="col">ID</th>
                     <th scope="col">Descrição</th>
-                    <th scope="col">Dias</th>
-                    <th scope="col">Mensagem</th>
-                    <th scope="col">Gateway SMS</th>
-                    <th scope="col">Tipo</th>
-                    <th scope="col">Ativo</th>
-                    <th scope="col">Ativos do contrato</th>
-                    <th scope='col'>Ações</th>
+                    <th scope="col">POP</th>
+                    <th scope='col'>Endereço</th>
+                    <th scope='col'>Altura</th>
+                    <th scope='col'>Serv. Internet</th>
+                    <th scope='col'>Sustentável</th>
+                    <th scope='col'>Ação</th>
                 </tr>
             </thead>
             <tbody>
