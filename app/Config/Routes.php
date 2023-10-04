@@ -84,6 +84,22 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('/', 'CategoryController::index');
             $routes->get('novo', 'CategoryController::form');
         });
+        $routes->group('entradas', static function ($routes) {
+            $routes->get('/', 'InStockController::index');
+            $routes->get('novo', 'InStockController::form');
+        });
+        $routes->group('saida', static function ($routes) {
+            $routes->get('/', 'OutStockController::index');
+            $routes->get('novo', 'OutStockController::form');
+        });
+        $routes->group('transferencia', static function ($routes) {
+            $routes->get('/', 'TransferController::index');
+            $routes->get('novo', 'TransferController::form');
+        });
+        $routes->group('comodato', static function ($routes) {
+            $routes->get('/', 'LendingController::index');
+            $routes->get('novo', 'LendingController::form');
+        });
     });
 
     $routes->group('configuracoes', static function ($routes) {
