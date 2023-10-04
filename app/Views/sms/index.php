@@ -25,22 +25,20 @@
     </div>
 
     <p>
-        IP POOL localizadas: 100
+        Lotes localizados: 100
     </p>
 
     <div id="tableSms" class="collapsed p-4 justify-content ">
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Range</th>
-                    <th scope="col">Total Ips</th>
-                    <th scope="col">Fixos</th>
-                    <th scope="col">Lease</th>
-                    <th scope="col">Online</th>
-                    <th scope="col">Livres</th>
-                    <th scope="col">Nas</th>
-                    <th scope="col">Obs</th>
+                    <th scope="col">Descrição</th>
+                    <th scope="col">Dias</th>
+                    <th scope="col">Mensagem</th>
+                    <th scope="col">Gateway SMS</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Ativo</th>
+                    <th scope="col">Ativos do contrato</th>
                     <th scope='col'>Ações</th>
                 </tr>
             </thead>
