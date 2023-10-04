@@ -255,24 +255,6 @@ abstract class BaseController extends Controller
                         'icon' => '<i class="fas fa-boxes"></i>'
                     ],
 
-                    'Transferencias' => [
-                        'title' => 'Transferências',
-                        'href' => base_url('estoque/transferencias'),
-                        'icon' => '<i class="fas fa-boxes"></i>'
-                    ],
-
-                    'Ajustes' => [
-                        'title' => 'Ajustes',
-                        'href' => base_url('estoque/ajustes'),
-                        'icon' => '<i class="fas fa-boxes"></i>'
-                    ],
-
-                    'Inventarios' => [
-                        'title' => 'Inventários',
-                        'href' => base_url('estoque/inventarios'),
-                        'icon' => '<i class="fas fa-boxes"></i>'
-                    ],
-
                     'Relatorios' => [
                         'title' => 'Relatórios',
                         'href' => base_url('estoque/relatorios'),
