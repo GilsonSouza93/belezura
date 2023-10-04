@@ -200,6 +200,7 @@
 
     submitBtn.addEventListener('click', event => {
         event.preventDefault();
+        showLoading();
 
         const formData = new FormData(form);
 
@@ -208,10 +209,11 @@
             body: formData
         }).then(response => response.json())
         .then(data => {
+            hideLoading();
             if (data.error) {
-                alert(data.message);
+                showToast(data.message, 'error');
             } else {
-                alert(data.message);
+                showToast(data.message, 'success');
                 window.location.href = '<?= $baseRoute ?>';
             }
         }).catch(error => {
