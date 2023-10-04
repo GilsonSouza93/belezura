@@ -29,8 +29,8 @@
         Número de planos encontrados: R$ 9999,00
     </p>
 
-    <div class="d-flex justify-content ">
-        <table class="table table-dark table-striped">
+    <div id="tableSubscription" class="collapsed p-4 justify-content ">
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th scope="col">Descrição</th>

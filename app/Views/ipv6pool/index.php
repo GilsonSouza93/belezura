@@ -28,8 +28,8 @@
         IP POOL localizadas: 100
     </p>
 
-    <div class="d-flex justify-content ">
-        <table class="table table-dark table-striped">
+    <div id="tableIpv6" class="collapsed p-4 justify-content ">
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th scope="col">Nome</th>

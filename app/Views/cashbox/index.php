@@ -29,8 +29,8 @@
         Saídas localizadas: 100
     </p>
 
-    <div class="d-flex justify-content card">
-        <table class="table table-dark table-striped">
+    <div id="tableCashBox" class="collapsed p-4 justify-content card">
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th scope="col">Código</th>

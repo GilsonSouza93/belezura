@@ -28,8 +28,8 @@
         Clientes localizados: 100
     </p>
 
-    <div class="d-flex justify-content ">
-        <table class="table table-dark table-striped">
+    <div id="tableProduct" class="collapsed p-4 justify-content ">
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th scope="col">Nome</th>

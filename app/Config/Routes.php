@@ -176,11 +176,18 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->post('save', 'PopController::save');
             $routes->post('search', 'PopController::search');
         });
+        $routes->group('sms', static function ($routes) {
+            $routes->get('/', 'SmsController::index');
+            $routes->get('novo', 'SmsController::form');
+            $routes->post('save', 'SmsController::save');
+            $routes->post('search', 'SmsController::search');
+        });
         $routes->group('veiculos', static function ($routes) {
             $routes->get('/', 'VehicleController::index');
             $routes->get('novo', 'VehicleController::form');
             $routes->post('save', 'VehicleController::save');
         });
+        
     });
 });
 

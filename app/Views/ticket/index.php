@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 
-<div class="card p-4">
+<div class="p-4">
 
     <h2><?= $tittle ?></h2>
     
@@ -22,8 +22,8 @@
         Lotes de Boletos localizados: 100
     </p>
 
-    <div class="d-flex justify-content ">
-        <table class="table table-dark table-striped">
+    <div id="tableTicket" class="collapsed p-4 justify-content card ">
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th scope="col">POP</th>
