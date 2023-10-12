@@ -228,6 +228,12 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         $routes->group('contratos', static function ($routes) {
             $routes->get('/', 'ContractController::index');
             $routes->get('novo', 'ContractController::form');
+            $routes->get('novo', 'ContractController::filter');
+            $routes->get('editar/(:num)', 'ContractController::edit/$1');
+
+            $routes->post('save', 'ContractController::save');
+            $routes->post('search', 'ContractController::search');
+            $routes->post('delete', 'ContractController::delete');
         });
     });
     $routes->group('gerencial', static function ($routes) {
