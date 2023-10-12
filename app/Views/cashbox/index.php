@@ -17,7 +17,7 @@
         </div>
 
         <div class="col-md-4 btn-group">
-            <button class="btn btn-success">Pesquisar</button>
+            <button class="btn btn-success" id="searchBtnCash">Pesquisar</button>
             <button class="btn btn-success" onclick="openModalCash()">Filtros</button>
             <a class="btn btn-success" href="<?= $baseRoute ?>/novo"><?= $addButtonText ?></a>
         </div>
@@ -25,8 +25,8 @@
     </div>
 
     <p>
-        Entradas localizadas: 100<br>
-        Saídas localizadas: 100
+        Entradas localizadas: <span id="cashInCount">0</span><br>
+        Saídas localizadas: <span id="cashOutCount">100</span>
     </p>
 
     <div id="tableCashBox" class="collapsed p-4 justify-content card">
@@ -43,6 +43,7 @@
                     <th scope="col">P. Contas</th>
                     <th scope="col">Entradas</th>
                     <th scope='col'>Saídas</th>
+                    <th scope='col'>Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -170,6 +171,7 @@
 </div>
 
 <?= $this->endSection() ?>
+
 <?= $this->section('script') ?>
 <script>
     const openModalCash = () => {
@@ -179,6 +181,123 @@
 
         modalFilter.show();
     }
+
+    const tableCashBox = document.getElementById('tableCashBox');
+    const cashInCount = document.getElementById('cashInCount')
+    const cashOutCount = document.getElementById('cashOutCount')
+    const searchBtnCash = document.getElementById('searchBtnCash')
+
+    const search = () => {
+        const search = document.getElementById('search').value
+        const url = '<?= $baseRoute ?>/search'
+        const data = {
+            search: search
+        }
+
+        cashInCount.innerText = 'Carregando...'
+
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            renderTableTwo(data);
+        })
+        .catch(error => {
+            showToast('Erro ao buscar clientes !', 'error')
+        })
+
+    }
+
+    const renderTableTwo = (data) => {
+        customersCount.innerText = data.length
+
+        const tbody = document.querySelector('tbody')
+        tbody.innerHTML = ''
+        data.forEach(cash => {
+
+            Object.keys(cash).forEach(key => {
+                if (cashInCount[key] === null) {
+                    cashInCount[key] = ''
+                }
+            });
+
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${cash?.name}</td>
+                <td>
+                    ${cash?.email}<br>
+                    ${cash?.phone1}
+                </td>
+                <td></td>
+                <td></td>
+                <td class='text-end'>
+                    <div class="dropstart">
+                        <button type="button" class="btn btn-outline-secondary text-white" data-bs-toggle="dropdown" aria-expanded="false">
+                            Ações
+                        </button>
+                        <ul class="dropdown-menu text-center me-2" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(7px); border-radius: 15px; border: 2px solid #198754;">
+                            <li class="dropdown-item" onclick="editCash(${cash.id})">Editar</li>
+                            <li class="dropdown-item" onclick="deleteCash(${cash.id})">Excluir</li>
+                        </ul>
+                    </div>
+                </td>
+            `
+            tbody.appendChild(tr);
+        })
+        
+        tableCashBox.classList.add('show');
+    }
+
+    const openModalFilter = () => {
+        const modalFilter = new bootstrap.Modal('#modalFilter', {
+            keyboard: true,
+        });
+
+        modalFilter.show();
+    }
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        search()
+    });
+
+    searchBtn.addEventListener('click', () => {
+        search()
+    });
+
+    const deleteCustomer = (id) => {
+        url = '<?= $baseRoute ?>/delete';
+        showLoading();
+
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify({id: id}),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(response => response.json())
+        .then(data => {
+            hideLoading();
+
+            if (data.success === true) {
+                showToast('Cliente excluído com sucesso !', 'success')
+                search()
+            } else {
+                showToast('Erro ao excluir cliente !', 'error')
+            }
+        })
+    }
+
+    const editCustomer = (id) => {
+        window.location.href = '<?= $baseRoute ?>/editar/' + id;
+    }
+
+
 </script>
 
 <?= $this->endSection() ?>

@@ -184,6 +184,8 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         $routes->group('caixa', static function ($routes) {
             $routes->get('/', 'FinancialboxController::index');
             $routes->get('novo', 'FinancialboxController::form');
+            $routes->get('novo', 'FinancialboxController::form');
+            $routes->get('novo', 'FinancialboxController::form');
         });
         $routes->group('boleto', static function ($routes) {
             $routes->get('/', 'TicketController::index');
@@ -196,6 +198,12 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         $routes->group('contasapagar', static function ($routes) {
             $routes->get('/', 'BillstopayController::index');
             $routes->get('novo', 'BillstopayController::form');
+            $routes->get('novo', 'BillstopayController::filter');
+            $routes->get('editar/(:num)', 'BillstopayController::edit/$1');
+
+            $routes->post('save', 'BillstopayControllerr::save');
+            $routes->post('search', 'BillstopayController::search');
+            $routes->post('delete', 'BillstopayController::delete');	
         });
         $routes->group('contasareceber', static function ($routes) {
             $routes->get('/', 'BillstoreceiverController::index');
