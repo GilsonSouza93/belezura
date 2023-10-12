@@ -10,15 +10,27 @@
 
     <div class="row card-2 py-3 my-3">
         <div class="col-md-8">
-            <h4>Adicionar Lançamento</h4>
+
+            <h4>
+            <h4>
+                <?php if (isset($register)) : ?>
+                    Editar Lançamento
+                <?php else : ?>
+                    Novo Lançamento
+                <?php endif ?>
+            </h4>
+
         </div>
         <div class="col-md-4 btn-group">
             <a class="btn btn-success" href="<?= $baseRoute ?>">Voltar</a>
-            <button class="btn btn-success">Salvar</button>
+            <button class="btn btn-success" id="submit-btn" >Salvar</button>
         </div>
     </div>
 
-    <form>
+    <form class="card p-4">
+        <?php if (isset($register)) : ?>
+            <input type="hidden" name="id" value="<?= $register->id ?>">
+        <?php endif ?>
 
         <div class="row">
             <div class="mt-3 col-md-2">

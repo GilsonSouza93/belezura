@@ -184,13 +184,23 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         $routes->group('caixa', static function ($routes) {
             $routes->get('/', 'FinancialboxController::index');
             $routes->get('novo', 'FinancialboxController::form');
-            $routes->get('novo', 'FinancialboxController::form');
-            $routes->get('novo', 'FinancialboxController::form');
+            $routes->get('novo', 'FinancialboxController::filter');
+            $routes->get('editar/(:num)', 'FinancialboxController::edit/$1');
+
+            $routes->post('save', 'FinancialboxController::save');
+            $routes->post('search', 'FinancialboxController::search');
+            $routes->post('delete', 'FinancialboxController::delete');
         });
         $routes->group('boleto', static function ($routes) {
             $routes->get('/', 'TicketController::index');
             $routes->get('novo', 'TicketController::form');
             $routes->get('novo', 'TicketController::print');
+            $routes->get('novo', 'TicketController::filter');
+            $routes->get('editar/(:num)', 'TicketController::edit/$1');
+
+            $routes->post('save', 'TicketController::save');
+            $routes->post('search', 'TicketController::search');
+            $routes->post('delete', 'TicketController::delete');	
 
             // $routes->get('imprimir')
             $routes->get('imprimir-em-lote', 'TicketController::print');
@@ -201,13 +211,19 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('novo', 'BillstopayController::filter');
             $routes->get('editar/(:num)', 'BillstopayController::edit/$1');
 
-            $routes->post('save', 'BillstopayControllerr::save');
+            $routes->post('save', 'BillstopayController::save');
             $routes->post('search', 'BillstopayController::search');
             $routes->post('delete', 'BillstopayController::delete');	
         });
         $routes->group('contasareceber', static function ($routes) {
             $routes->get('/', 'BillstoreceiverController::index');
             $routes->get('novo', 'BillstoreceiverController::form');
+            $routes->get('novo', 'BillstopayController::filter');
+            $routes->get('editar/(:num)', 'BillstoreceiverController::edit/$1');
+
+            $routes->post('save', 'BillstoreceiverController::save');
+            $routes->post('search', 'BillstoreceiverController::search');
+            $routes->post('delete', 'BillstoreceiverController::delete');
         });
         $routes->group('contratos', static function ($routes) {
             $routes->get('/', 'ContractController::index');
