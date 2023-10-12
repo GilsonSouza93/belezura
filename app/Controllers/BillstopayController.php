@@ -12,4 +12,19 @@ class BillstopayController extends BaseController
     public $viewPath = 'billstopay';
     public $baseRoute = '/financeiro/contasapagar';
 
+    public function __construct()
+    {
+        $this->mainModel = model('BillsPayModel');
+        parent::__construct();
+    }
+
+    public function search()
+    {
+        $data = $this->request->getJSON();
+        
+        $billsPay = $this->mainModel->search($data->search);
+
+        return $this->response->setJSON($billsPay);
+    }
+
 }

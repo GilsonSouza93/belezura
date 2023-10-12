@@ -10,7 +10,13 @@
 
     <div class="row card-2 py-3 my-3">
         <div class="col-md-8">
-            <h4>Adicionar Email</h4>
+        <h4>
+                <?php if (isset($register)) : ?>
+                    Editar Email
+                <?php else : ?>
+                    Novo Email
+                <?php endif ?>
+            </h4>
         </div>
         <div class="col-md-4 btn-group">
             <a class="btn btn-success" href="<?= $baseRoute ?>">Voltar</a>
@@ -20,6 +26,9 @@
 
     <form>
 
+        <?php if (isset($register)) : ?>
+            <input type="hidden" name="id" value="<?= $register->id ?>">
+        <?php endif ?>
 
         <div class="row">
         <div class="mt-3 col-md-3">
@@ -70,4 +79,40 @@
 
     </form>
 </div>
+<?= $this->endSection() ?>
+
+<?= $this->section('script') ?>
+
+<script>
+
+    const submitBtn = document.querySelector('#submit-btn');
+    const form = document.querySelector('form');
+    const url = '<?= $baseRoute ?>/save';
+
+    submitBtn.addEventListener('click', event => {
+        event.preventDefault();
+        showLoading();
+
+        const formData = new FormData(form);
+
+        fetch(url, {
+            method: 'POST',
+            body: formData
+        }).then(response => response.json())
+        .then(data => {
+            hideLoading();
+            if (data.error) {
+                showToast(data.message, 'error');
+            } else {
+                showToast(data.message, 'success');
+                window.location.href = '<?= $baseRoute ?>';
+            }
+        }).catch(error => {
+            console.log(error);
+        });
+    });
+
+
+</script>
+
 <?= $this->endSection() ?>

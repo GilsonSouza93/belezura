@@ -29,6 +29,14 @@ class TicketController extends BaseController
         return view($this->viewPath . '/print', $this->data);
     }
 
+    public function search()
+    {
+        $data = $this->request->getJSON();
+        
+        $tickets = $this->mainModel->search($data->search);
 
+        return $this->response->setJSON($tickets);
+    }
 }
+
 

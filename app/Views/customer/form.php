@@ -24,6 +24,7 @@
     </div>
 
     <form class="card p-4">
+        
         <?php if (isset($register)) : ?>
             <input type="hidden" name="id" value="<?= $register->id ?>">
         <?php endif ?>
