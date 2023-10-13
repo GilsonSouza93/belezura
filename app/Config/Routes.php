@@ -63,47 +63,115 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         $routes->group('produtos', static function ($routes) {
             $routes->get('/', 'ProductController::index');
             $routes->get('novo', 'ProductController::form');
+            $routes->get('novo', 'ProductController::filter');
+            $routes->get('editar/(:num)', 'ProductController::edit/$1');
+
+            $routes->post('save', 'ProductController::save');
+            $routes->post('search', 'ProductController::search');
+            $routes->post('delete', 'ProductController::delete');
+            
         });
         $routes->group('categoria', static function ($routes) {
             $routes->get('/', 'CategoryController::index');
             $routes->get('novo', 'CategoryController::form');
+            $routes->get('novo', 'CategoryController::filter');
+            $routes->get('editar/(:num)', 'CategoryController::edit/$1');
+
+            $routes->post('save', 'CategoryController::save');
+            $routes->post('search', 'CategoryController::search');
+            $routes->post('delete', 'CategoryController::delete');
         });
         $routes->group('fabricantes', static function ($routes) {
             $routes->get('/', 'ManufacturerController::index');
             $routes->get('novo', 'ManufacturerController::form');
+            $routes->get('novo', 'ManufacturerController::filter');
+            $routes->get('editar/(:num)', 'ManufacturerController::edit/$1');
+
+            $routes->post('save', 'ManufacturerController::save');
+            $routes->post('search', 'ManufacturerController::search');
+            $routes->post('delete', 'ManufacturerController::delete');
         });
     
         $routes->group('fornecedores', static function ($routes) {
             $routes->get('/', 'SupplierController::index');
             $routes->get('novo', 'SupplierController::form');
+            $routes->get('novo', 'SupplierController::filter');
+            $routes->get('editar/(:num)', 'SupplierController::edit/$1');
+
+            $routes->post('save', 'SupplierController::save');
+            $routes->post('search', 'SupplierController::search');
+            $routes->post('delete', 'SupplierController::delete');
         });
         $routes->group('marcas', static function ($routes) {
             $routes->get('/', 'BrandController::index');
             $routes->get('novo', 'BrandController::form');
+            $routes->get('novo', 'BrandControlle::filter');
+            $routes->get('editar/(:num)', 'BrandControlle::edit/$1');
+
+            $routes->post('save', 'BrandControlle::save');
+            $routes->post('search', 'BrandControlle::search');
+            $routes->post('delete', 'BrandControlle::delete');
         });
         $routes->group('categorias', static function ($routes) {
             $routes->get('/', 'CategoryController::index');
             $routes->get('novo', 'CategoryController::form');
+            $routes->get('novo', 'CategoryController::filter');
+            $routes->get('editar/(:num)', 'CategoryController::edit/$1');
+
+            $routes->post('save', 'CategoryController::save');
+            $routes->post('search', 'CategoryController::search');
+            $routes->post('delete', 'CategoryController::delete');
         });
         $routes->group('entradas', static function ($routes) {
             $routes->get('/', 'InStockController::index');
             $routes->get('novo', 'InStockController::form');
+            $routes->get('novo', 'InStockController::filter');
+            $routes->get('editar/(:num)', 'InStockController::edit/$1');
+
+            $routes->post('save', 'InStockController::save');
+            $routes->post('search', 'InStockController::search');
+            $routes->post('delete', 'InStockController::delete');
         });
         $routes->group('saidas', static function ($routes) {
             $routes->get('/', 'OutStockController::index');
             $routes->get('novo', 'OutStockController::form');
+            $routes->get('novo', 'OutStockController::filter');
+            $routes->get('editar/(:num)', 'OutStockController::edit/$1');
+
+            $routes->post('save', 'OutStockController::save');
+            $routes->post('search', 'OutStockController::search');
+            $routes->post('delete', 'OutStockController::delete');
         });
         $routes->group('relatorios', static function ($routes) {
             $routes->get('/', 'RelatorioController::index');
             $routes->get('novo', 'RelatorioController::form');
+            $routes->get('novo', 'RelatorioController::filter');
+            $routes->get('editar/(:num)', 'RelatorioController::edit/$1');
+
+            $routes->post('save', 'RelatorioController::save');
+            $routes->post('search', 'RelatorioController::search');
+            $routes->post('delete', 'RelatorioController::delete');
+        });
         });
         $routes->group('transferencia', static function ($routes) {
             $routes->get('/', 'TransferController::index');
             $routes->get('novo', 'TransferController::form');
+            $routes->get('novo', 'TransferController::filter');
+            $routes->get('editar/(:num)', 'TransferController::edit/$1');
+
+            $routes->post('save', 'TransferController::save');
+            $routes->post('search', 'TransferController::search');
+            $routes->post('delete', 'TransferController::delete');
         });
         $routes->group('comodato', static function ($routes) {
             $routes->get('/', 'LendingController::index');
             $routes->get('novo', 'LendingController::form');
+            $routes->get('novo', 'LendingController::filter');
+            $routes->get('editar/(:num)', 'LendingController::edit/$1');
+
+            $routes->post('save', 'LendingController::save');
+            $routes->post('search', 'LendingController::search');
+            $routes->post('delete', 'LendingController::delete');
         });
     });
 
@@ -115,19 +183,38 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         $routes->group('ippool', static function ($routes) {
             $routes->get('/', 'IppoolController::index');
             $routes->get('novo', 'IppoolController::form');
+            $routes->get('novo', 'IppoolController::filter');
+            $routes->get('editar/(:num)', 'IppoolController::edit/$1');
+
+            $routes->post('save', 'IppoolController::save');
+            $routes->post('search', 'IppoolController::search');
+            $routes->post('delete', 'IppoolController::delete');
         });
         $routes->group('ipv6pool', static function ($routes) {
             $routes->get('/', 'Ipv6Controller::index');
             $routes->get('novo', 'Ipv6Controller::form');
+            $routes->get('novo', 'Ipv6Controller::filter');
+            $routes->get('editar/(:num)', 'Ipv6Controller::edit/$1');
+
+            $routes->post('save', 'Ipv6Controller::save');
+            $routes->post('search', 'Ipv6Controller::search');
+            $routes->post('delete', 'Ipv6Controller::delete');
         });
         $routes->group('planos', static function ($routes) {
             $routes->get('/', 'SubscriptionController::index');
             $routes->get('novo', 'SubscriptionController::form');
+            $routes->get('novo', 'SubscriptionController::filter');
+            $routes->get('editar/(:num)', 'SubscriptionController::edit/$1');
+
+            $routes->post('save', 'SubscriptionController::save');
+            $routes->post('search', 'SubscriptionController::search');
+            $routes->post('delete', 'SubscriptionController::delete');
 
         });
         $routes->group('alterarsenha', static function ($routes) {
             $routes->get('/', 'PasswordController::index');
             $routes->get('novo', 'PasswordController::form');
+            
 
         });
     });
@@ -188,18 +275,39 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('novo', 'PostController::form');
             $routes->post('save', 'PostController::save');
             $routes->post('search', 'PostController::search');
+            $routes->get('editar/(:num)', 'PostController::edit/$1');
+            $routes->get('novo', 'PostController::filter');
+            $routes->post('delete', 'PostController::delete');
         });
         $routes->group('tower', static function ($routes) {
             $routes->get('/', 'TowerController::index');
             $routes->get('novo', 'TowerController::form');
+            $routes->get('novo', 'TowerController::filter');
+            $routes->get('editar/(:num)', 'TowerController::edit/$1');
+
+            $routes->post('save', 'TowerController::save');
+            $routes->post('search', 'TowerController::search');
+            $routes->post('delete', 'TowerController::delete');
         });
         $routes->group('servidor', static function ($routes) {
             $routes->get('/', 'ServidorController::index');
             $routes->get('novo', 'ServidorController::form');
+            $routes->get('novo', 'ServidorController::filter');
+            $routes->get('editar/(:num)', 'ServidorController::edit/$1');
+
+            $routes->post('save', 'ServidorController::save');
+            $routes->post('search', 'ServidorController::search');
+            $routes->post('delete', 'ServidorController::delete');
         });
         $routes->group('storage', static function ($routes) {
             $routes->get('/', 'StorageController::index');
             $routes->get('novo', 'StorageController::form');
+            $routes->get('novo', 'StorageController::filter');
+            $routes->get('editar/(:num)', 'StorageController::edit/$1');
+
+            $routes->post('save', 'StorageController::save');
+            $routes->post('search', 'StorageController::search');
+            $routes->post('delete', 'StorageController::delete');
         });
         $routes->group('outros', static function ($routes) {
             $routes->get('/', 'OutrosController::index');
@@ -273,23 +381,36 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('novo', 'PopController::form');
             $routes->post('save', 'PopController::save');
             $routes->post('search', 'PopController::search');
+            $routes->get('novo', 'PopController::filter');
+            $routes->get('editar/(:num)', 'PopController::edit/$1');
+            $routes->post('delete', 'PopController::delete');
         });
         $routes->group('sms', static function ($routes) {
             $routes->get('/', 'SmsController::index');
             $routes->get('novo', 'SmsController::form');
             $routes->post('save', 'SmsController::save');
             $routes->post('search', 'SmsController::search');
+            $routes->get('novo', 'SmsController::filter');
+            $routes->get('editar/(:num)', 'SmsController::edit/$1');
+            $routes->post('delete', 'SmsController::delete');
         });
         $routes->group('email', static function ($routes) {
             $routes->get('/', 'EmailController::index');
             $routes->get('novo', 'EmailController::form');
             $routes->post('save', 'EmailController::save');
             $routes->post('search', 'EmailController::search');
+            $routes->get('novo', 'EmailController::filter');
+            $routes->get('editar/(:num)', 'EmailController::edit/$1');
+            $routes->post('delete', 'EmailController::delete');
         });
         $routes->group('veiculos', static function ($routes) {
             $routes->get('/', 'VehicleController::index');
             $routes->get('novo', 'VehicleController::form');
             $routes->post('save', 'VehicleController::save');
+            $routes->get('novo', 'VehicleController::filter');
+            $routes->get('editar/(:num)', 'VehicleController::edit/$1');
+            $routes->post('delete', 'VehicleController::delete');
+            $routes->post('search', 'VehicleController::search');
         });
         
     });
