@@ -12,4 +12,18 @@ class SwitchController extends BaseController
     public $viewPath = 'equipamentos/switch';
     public $baseRoute = '/equipamentos/switch';
      
+    public function __construct()
+    {
+        $this->mainModel = model('SwitchModel');
+        parent::__construct();
+    }
+
+    public function search()
+    {
+        $data = $this->request->getJSON();
+        
+        $switchs = $this->mainModel->search($data->search);
+
+        return $this->response->setJSON($switchs);
+    }
 }

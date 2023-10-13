@@ -50,4 +50,14 @@ class PostController extends BaseController
             'message' => 'Erro ao cadastrar o poste!',
         ]);
     }
+
+    public function search()
+    {
+        $data = $this->request->getJSON();
+        
+        $postes = $this->mainModel->search($data->search);
+
+        return $this->response->setJSON($postes);
+    }
+    
 }

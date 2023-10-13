@@ -11,4 +11,19 @@ class SmsController extends BaseController
     public $viewPath = 'sms';
     public $baseRoute = '/gerencial/sms';
 
+    public function __construct()
+    {
+        $this->mainModel = model('SmsModel');
+        parent::__construct();
+    }
+
+    public function search()
+    {
+        $data = $this->request->getJSON();
+        
+        $sms = $this->mainModel->search($data->search);
+
+        return $this->response->setJSON($sms);
+    }
+
 }

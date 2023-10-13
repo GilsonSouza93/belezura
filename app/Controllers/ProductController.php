@@ -14,4 +14,19 @@ class ProductController extends BaseController
     public function index() {
         return view($this->viewPath . '/index', $this->data);
     }
+
+    public function __construct()
+    {
+        $this->mainModel = model('ProductModel');
+        parent::__construct();
+    }
+
+    public function search()
+    {
+        $data = $this->request->getJSON();
+        
+        $products = $this->mainModel->search($data->search);
+
+        return $this->response->setJSON($products);
+    }
 }
