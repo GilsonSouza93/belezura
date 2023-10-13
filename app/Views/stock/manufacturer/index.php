@@ -25,7 +25,7 @@
     </div>
 
     <p>
-        Marcas localizadas: <span id="manufactureCount">0</span>
+        Fabricantes localizados : <span id="manufactureCount">0</span>
     </p>
 
     <div id="tableManufacturer" class="collapsed p-4 justify-content ">

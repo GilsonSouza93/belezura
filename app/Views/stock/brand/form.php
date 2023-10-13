@@ -1,4 +1,9 @@
 <form>
+
+<?php if (isset($register)) : ?>
+            <input type="hidden" name="id" value="<?= $register->id ?>">
+        <?php endif ?>
+
     <div class="row">
         <div class="col">
             <label class="form-label" for="name">Nome:</label>
