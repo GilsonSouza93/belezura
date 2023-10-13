@@ -152,7 +152,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->post('search', 'RelatorioController::search');
             $routes->post('delete', 'RelatorioController::delete');
         });
-        });
+        
         $routes->group('transferencia', static function ($routes) {
             $routes->get('/', 'TransferController::index');
             $routes->get('novo', 'TransferController::form');
@@ -414,8 +414,8 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         });
         
     });
-});
 
+});
 /*
  * --------------------------------------------------------------------
  * Additional Routing
