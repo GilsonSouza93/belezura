@@ -170,7 +170,7 @@
 <script>
     const modelo = document.getElementById('modelo');
     const placa = document.getElementById('placa');
-    const uf = document.getElementById('uf');
+    const uf = document.getElementById('u7f');
     const local = document.getElementById('local');
     const obs = document.getElementById('local');
     const disponivel = document.getElementById('disponivel');

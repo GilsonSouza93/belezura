@@ -14,7 +14,7 @@
         </div>
         <div class="col-md-4 btn-group">
             <a class="btn btn-success" href="<?= $baseRoute ?>">Voltar</a>
-            <button class="btn btn-success" onclick="submit()">Salvar</button>
+            <button class="btn btn-success" id='submit-btn' onclick="submit()">Salvar</button>
         </div>
     </div>
 
@@ -142,5 +142,36 @@
             document.getElementById($(e.target).attr("id")).classList.remove('is-invalid');
         });
     }
+
+    
+    const submitBtn = document.querySelector('#submit-btn');
+    const form = document.querySelector('form');
+    const url = '<?= $baseRoute ?>/save';
+
+    submitBtn.addEventListener('click', event => {
+        event.preventDefault();
+        showLoading();
+
+        const formData = new FormData(form);
+
+        fetch(url, {
+            method: 'POST',
+            body: formData
+        }).then(response => response.json())
+        .then(data => {
+            hideLoading();
+            if (data.error) {
+                showToast(data.message, 'error');
+            } else {
+                showToast(data.message, 'success');
+                window.location.href = '<?= $baseRoute ?>';
+            }
+        }).catch(error => {
+            console.log(error);
+        });
+    });
+
+
 </script>
 <?= $this->endSection() ?>
+

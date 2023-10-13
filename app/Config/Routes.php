@@ -135,22 +135,53 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         $routes->group('onu', static function ($routes) {
             $routes->get('/', 'OnuController::index');
             $routes->get('novo', 'OnuController::form');
+            $routes->get('novo', 'OnuController::filter');
+            $routes->get('editar/(:num)', 'OnuController::edit/$1');
+
+            $routes->post('save', 'OnuController::save');
+            $routes->post('search', 'OnuController::search');
+            $routes->post('delete', 'OnuController::delete');
         });
         $routes->group('olt', static function ($routes) {
             $routes->get('/', 'OltController::index');
             $routes->get('novo', 'OltController::form');
+            $routes->get('novo', 'OltController::filter');
+            $routes->get('editar/(:num)', 'OltController::edit/$1');
+
+            $routes->post('save', 'OltController::save');
+            $routes->post('search', 'OltController::search');
+            $routes->post('delete', 'OltController::delete');
         });
         $routes->group('switch', static function ($routes) {
             $routes->get('/', 'SwitchController::index');
             $routes->get('novo', 'SwitchController::form');
+            $routes->get('novo', 'SwitchController::filter');
+            $routes->get('editar/(:num)', 'SwitchController::edit/$1');
+
+            $routes->post('save', 'SwitchController::save');
+            $routes->post('search', 'SwitchController::search');
+            $routes->post('delete', 'SwitchController::delete');
+            
         });
         $routes->group('router', static function ($routes) {
             $routes->get('/', 'RouterController::index');
             $routes->get('novo', 'RouterController::form');
+            $routes->get('novo', 'RouterController::filter');
+            $routes->get('editar/(:num)', 'RouterController::edit/$1');
+
+            $routes->post('save', 'RouterController::save');
+            $routes->post('search', 'RouterController::search');
+            $routes->post('delete', 'RouterController::delete');
         });
         $routes->group('radius', static function ($routes) {
             $routes->get('/', 'RadiusController::index');
             $routes->get('novo', 'RadiusController::form');
+            $routes->get('novo', 'RadiusController::filter');
+            $routes->get('editar/(:num)', 'RouterController::edit/$1');
+
+            $routes->post('save', 'RadiusController::save');
+            $routes->post('search', 'RadiusController::search');
+            $routes->post('delete', 'RadiusController::delete');
         });
         $routes->group('poste', static function ($routes) {
             $routes->get('/', 'PostController::index');
