@@ -2,13 +2,13 @@
 
 <?= $this->section('content') ?>
 
-<div class="card p-4">
+<div class="p-4">
 
     <h2>
         <?= $tittle ?>
     </h2>
 
-    <div class="row card-2 py-3 my-3">
+    <div class="row py-3 my-3">
         <div class="col-md-8">
             <h4>Formulário</h4>
         </div>

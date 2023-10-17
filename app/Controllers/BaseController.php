@@ -84,41 +84,45 @@ abstract class BaseController extends Controller
                 'show_subitems' => false,
             ],
 
-            'financial' => [
-                'title' => 'Financeiro',
-                'href' => base_url('financeiro'),
-                'icon' => '<i class="fas fa-tools"></i>',
-                'show_subitems' => true,
-                'color' => '#adb5bd',
-                'subitems' => [
-                    'dashboard' => [
-                        'title' => 'Dashboard',
-                        'href' => base_url('financeiro/dashboard'),
-                    ],
-                    'caixa' => [
-                        'title' => 'Caixa',
-                        'href' => base_url('financeiro/caixa'),
-                    ],
-                    'payable' => [
-                        'title' => 'Contas a pagar',
-                        'href' => base_url('financeiro/contasapagar'), 
-                    ],
-                    'receive' => [
-                        'title' => 'Contas receber',
-                        'href' => base_url('financeiro/contasareceber'), 
-                    ],
-                    'ticket' => [
-                        'title' => 'Boletos',
-                        'href' => base_url('financeiro/boleto'), 
-                    ],
-                    'contract' => [
-                        'title' => 'Contratos',
-                        'href' => base_url('financeiro/contratos'), 
-                    ],
+            // 'financial' => [
+            //     'title' => 'Financeiro',
+            //     'href' => base_url('financeiro'),
+            //     'icon' => '<i class="fas fa-tools"></i>',
+            //     'show_subitems' => true,
+            //     'color' => '#adb5bd',
+            //     'subitems' => [
+            //         'dashboard' => [
+            //             'title' => 'Dashboard',
+            //             'href' => base_url('financeiro/dashboard'),
+            //         ],
+            //         'caixa' => [
+            //             'title' => 'Caixa',
+            //             'href' => base_url('financeiro/caixa'),
+            //         ],
+            //         'lançamentos' => [
+            //             'title' => 'Lançamentos',
+            //             'href' => base_url('financeiro/lancamentos'),
+            //         ],
+            //         'payable' => [
+            //             'title' => 'Contas a pagar',
+            //             'href' => base_url('financeiro/contasapagar'), 
+            //         ],
+            //         'receive' => [
+            //             'title' => 'Contas receber',
+            //             'href' => base_url('financeiro/contasareceber'), 
+            //         ],
+            //         'ticket' => [
+            //             'title' => 'Boletos',
+            //             'href' => base_url('financeiro/boleto'), 
+            //         ],
+            //         'contract' => [
+            //             'title' => 'Contratos',
+            //             'href' => base_url('financeiro/contratos'), 
+            //         ],
 
-                ]
+            //     ]
             
-            ],      
+            // ],      
             'gerencial' => [
                 'title' => 'Gerencial',
                 'href' => base_url('gerencial'),
@@ -130,18 +134,18 @@ abstract class BaseController extends Controller
                         'title' => 'POP',
                         'href' => base_url('gerencial/pop'),
                     ],
-                    'email' => [
-                        'title' => 'Email',
-                        'href' => base_url('gerencial/email'),
-                    ],
-                    'sms' => [
-                        'title' => 'SMS',
-                        'href' => base_url('gerencial/sms'), 
-                    ],
-                    'vehicle' => [
-                        'title' => 'Veículos',
-                        'href' => base_url('gerencial/veiculos'), 
-                    ],
+                    // 'email' => [
+                    //     'title' => 'Email',
+                    //     'href' => base_url('gerencial/email'),
+                    // ],
+                    // 'sms' => [
+                    //     'title' => 'SMS',
+                    //     'href' => base_url('gerencial/sms'), 
+                    // ],
+                    // 'vehicle' => [
+                    //     'title' => 'Veículos',
+                    //     'href' => base_url('gerencial/veiculos'), 
+                    // ],
                 ]
             
             ],      
@@ -192,17 +196,7 @@ abstract class BaseController extends Controller
                         'title' => 'Servidores',
                         'href' => base_url('equipamentos/servidor'),
                         'icon' => '<i class="fas fa-server"></i>'
-                    ],
-                    'storage' => [
-                        'title' => 'Storages',
-                        'href' => base_url('equipamentos/storage'),
-                        'icon' => '<i class="fas fa-hdd"></i>'
-                    ],
-                    'outros' => [
-                        'title' => 'Outros',
-                        'href' => base_url('equipamentos/outros'),
-                        'icon' => '<i class="fas fa-question"></i>'
-                    ],
+                    ]
                 ]
             ],
 
@@ -243,54 +237,42 @@ abstract class BaseController extends Controller
                         'icon' => '<i class="fas fa-boxes"></i>'
                     ],
 
-                    'Entradas' => [
-                        'title' => 'Entradas',
-                        'href' => base_url('estoque/entradas'),
-                        'icon' => '<i class="fas fa-boxes"></i>'
-                    ],
-
-                    'Saidas' => [
-                        'title' => 'Saídas',
-                        'href' => base_url('estoque/saidas'),
-                        'icon' => '<i class="fas fa-boxes"></i>'
-                    ],
-
-                    'Relatorios' => [
-                        'title' => 'Relatórios',
-                        'href' => base_url('estoque/relatorios'),
+                    'movements' => [
+                        'title' => 'Movimentações',
+                        'href' => base_url('estoque/movements'),
                         'icon' => '<i class="fas fa-boxes"></i>'
                     ],
                 ]
             ],
 
-            'Monitoramento' => [
-                'title' => 'Monitoramento',
-                'href' => base_url('monitoramento'),
-                'icon' => '<i class="fas fa-boxes"></i>',
-                'show_subitems' => true,
-                'color' => '#adb5bd',
-                'subitems' => [
-                    'Mapa' => [
-                        'title' => 'Mapa',
-                        'href' => base_url('monitoramento/mapa')
-                    ],
+                // 'Monitoramento' => [
+                //     'title' => 'Monitoramento',
+                //     'href' => base_url('monitoramento'),
+                //     'icon' => '<i class="fas fa-boxes"></i>',
+                //     'show_subitems' => true,
+                //     'color' => '#adb5bd',
+                //     'subitems' => [
+                //         'Mapa' => [
+                //             'title' => 'Mapa',
+                //             'href' => base_url('monitoramento/mapa')
+                //         ],
 
-                    'Clientes' => [
-                        'title' => 'Clientes',
-                        'href' => base_url('monitoramento/clientes')
-                    ],
+                //         'Clientes' => [
+                //             'title' => 'Clientes',
+                //             'href' => base_url('monitoramento/clientes')
+                //         ],
 
-                    'Equipamentos' => [
-                        'title' => 'Equipamentos',
-                        'href' => base_url('monitoramento/equipamentos')
-                    ],
+                //         'Equipamentos' => [
+                //             'title' => 'Equipamentos',
+                //             'href' => base_url('monitoramento/equipamentos')
+                //         ],
 
-                    'Rede' => [
-                        'title' => 'Rede',
-                        'href' => base_url('monitoramento/rede')
-                    ],
-                ]
-            ],
+                //         'Rede' => [
+                //             'title' => 'Rede',
+                //             'href' => base_url('monitoramento/rede')
+                //         ],
+                //     ]
+                // ],
 
             'settings' => [
                 'title' => 'Configurações',
@@ -303,6 +285,10 @@ abstract class BaseController extends Controller
                         'title' =>'Contas',
                         'href' => base_url('configuracoes/contas'),
                     ],
+                    'Planos' => [
+                        'title' =>'Planos',
+                        'href' => base_url('configuracoes/planos'),
+                    ],
                     'Ip Pool' => [
                         'title' =>'IP POOL',
                         'href' => base_url('configuracoes/ippool'),
@@ -311,18 +297,14 @@ abstract class BaseController extends Controller
                         'title' =>'IPv6 POOL',
                         'href' => base_url('configuracoes/ipv6pool'),
                     ],
-                    'Planos' => [
-                        'title' =>'Planos',
-                        'href' => base_url('configuracoes/planos'),
-                    ],
-                    'Central do Assinante' => [
-                        'title' =>'Central do Assinante',
-                        'href' => base_url('configuracoes/centraldoassinante'),
-                    ],
-                    'Alterar Senha' => [
-                        'title' =>'Alterar Senha',
-                        'href' => base_url('configuracoes/alterarsenha'),
-                    ],
+                    // 'Central do Assinante' => [
+                    //     'title' =>'Central do Assinante',
+                    //     'href' => base_url('configuracoes/centraldoassinante'),
+                    // ],
+                    // 'Alterar Senha' => [
+                    //     'title' =>'Alterar Senha',
+                    //     'href' => base_url('configuracoes/alterarsenha'),
+                    // ],
                 ]
             ],
         ];

@@ -7,7 +7,7 @@ use App\Controllers\BaseController;
 class FinancialboxController extends BaseController
 {
     public $tittle = 'Caixa';
-    public $addButtonText = 'Novo Lançamento';
+    public $addButtonText = 'Novo Caixa';
     public $viewPath = 'cashbox';
     public $baseRoute = 'financeiro/caixa';
 
