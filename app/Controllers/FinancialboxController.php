@@ -25,4 +25,9 @@ class FinancialboxController extends BaseController
 
         return $this->response->setJSON($cash);
     }
+
+    public function save()
+    {
+        var_dump('teste de save'); die;
+    }
 }

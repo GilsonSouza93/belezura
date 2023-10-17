@@ -323,7 +323,6 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         $routes->group('caixa', static function ($routes) {
             $routes->get('/', 'FinancialboxController::index');
             $routes->get('novo', 'FinancialboxController::form');
-            $routes->get('novo', 'FinancialboxController::filter');
             $routes->get('editar/(:num)', 'FinancialboxController::edit/$1');
 
             $routes->post('save', 'FinancialboxController::save');

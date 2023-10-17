@@ -89,7 +89,7 @@ abstract class BaseController extends Controller
                 'href' => base_url('financeiro'),
                 'icon' => '<i class="fas fa-tools"></i>',
                 'show_subitems' => true,
-                'color' => '#ff914d',
+                'color' => '#adb5bd',
                 'subitems' => [
                     'dashboard' => [
                         'title' => 'Dashboard',
@@ -124,7 +124,7 @@ abstract class BaseController extends Controller
                 'href' => base_url('gerencial'),
                 'icon' => '<i class="fas fa-tools"></i>',
                 'show_subitems' => true,
-                'color' => '#ff914d',
+                'color' => '#adb5bd',
                 'subitems' => [
                     'pop' => [
                         'title' => 'POP',
@@ -150,7 +150,7 @@ abstract class BaseController extends Controller
                 'href' => base_url('equipamentos'),
                 'icon' => '<i class="fas fa-tools"></i>',
                 'show_subitems' => true,
-                'color' => '#00bf63',
+                'color' => '#adb5bd',
                 'subitems' => [
                     'olt' => [
                         'title' => 'OLTs',
@@ -211,7 +211,7 @@ abstract class BaseController extends Controller
                 'href' => base_url('estoque'),
                 'icon' => '<i class="fas fa-boxes"></i>',
                 'show_subitems' => true,
-                'color' => '#00aeef',
+                'color' => '#adb5bd',
                 'subitems' => [
                     'Produtos' => [
                         'title' => 'Produtos',
@@ -268,7 +268,7 @@ abstract class BaseController extends Controller
                 'href' => base_url('monitoramento'),
                 'icon' => '<i class="fas fa-boxes"></i>',
                 'show_subitems' => true,
-                'color' => '#00aeef',
+                'color' => '#adb5bd',
                 'subitems' => [
                     'Mapa' => [
                         'title' => 'Mapa',
@@ -297,7 +297,7 @@ abstract class BaseController extends Controller
                 'href' => base_url('configuracoes'),
                 'icon' => '<i class="fas fa-cog"></i>',
                 'show_subitems' => true,
-                'color' => '#fff',
+                'color' => '#adb5bd',
                 'subitems' =>[
                     'Conta' => [
                         'title' =>'Contas',
