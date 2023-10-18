@@ -7,7 +7,7 @@ use App\Controllers\BaseController;
 class FinancialboxController extends BaseController
 {
     public $tittle = 'Caixa';
-    public $addButtonText = 'Novo Lançamento';
+    public $addButtonText = 'Novo Caixa';
     public $viewPath = 'cashbox';
     public $baseRoute = 'financeiro/caixa';
 
@@ -24,5 +24,10 @@ class FinancialboxController extends BaseController
         $cash = $this->mainModel->search($data->search);
 
         return $this->response->setJSON($cash);
+    }
+
+    public function save()
+    {
+        var_dump('teste de save'); die;
     }
 }

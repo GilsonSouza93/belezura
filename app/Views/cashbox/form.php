@@ -12,38 +12,37 @@
         <div class="col-md-8">
 
             <h4>
-            <h4>
-                <?php if (isset($register)) : ?>
-                    Editar Lançamento
-                <?php else : ?>
-                    Novo Lançamento
-                <?php endif ?>
-            </h4>
+                <h4>
+                    <?php if (isset($register)) : ?>
+                        Editar Lançamento
+                    <?php else : ?>
+                        Novo Lançamento
+                    <?php endif ?>
+                </h4>
 
         </div>
         <div class="col-md-4 btn-group">
             <a class="btn btn-success" href="<?= $baseRoute ?>">Voltar</a>
-            <button class="btn btn-success" id="submit-btn" >Salvar</button>
+            <button class="btn btn-success" id="submit-btn">Salvar</button>
         </div>
     </div>
 
-    <form class="card p-4">
+    <form>
         <?php if (isset($register)) : ?>
             <input type="hidden" name="id" value="<?= $register->id ?>">
         <?php endif ?>
 
         <div class="row">
-            <div class="mt-3 col-md-2">
+            <div class="mt-3 col">
                 <label for="tipo" class="form-label">Tipo</label>
-                <select class="form-control" id="tipo" aria-label="Default select example">
-                    <option selected>Selecione se é entrada ou saída</option>
+                <select class="form-control" name="tipo">
                     <option value="1">Entrada</option>
                     <option value="2">Saída</option>
                 </select>
             </div>
-            <div class="mt-3 col-md-2">
+            <div class="mt-3 col">
                 <label for="pop" class="form-label">POP</label>
-                <select class="form-control" id="pop" aria-label="Default select example">
+                <select class="form-control" name="pop">
                     <option selected>Selecione o local POP</option>
                     <option value="1">Caruaru</option>
                     <option value="2">Olinda</option>
@@ -52,25 +51,27 @@
                     <option value="2">Garanhuns</option>
                 </select>
             </div>
-            <div class="mt-3 col-md-2">
+            <div class="mt-3 col">
                 <label for="pontoDePagamento" class="form-label">Ponto de pagamento</label>
-                <select class="form-control" id="pontoDePagamento" aria-label="Default select example">
+                <select class="form-control" name="pontoDePagamento">
                     <option selected>Selecione o ponto de pagamento</option>
                     <option value="1">Principal</option>
                     <option value="2">Caixa reserva</option>
                 </select>
             </div>
-            <div class="mt-3 col-md-2">
+        </div>
+        <div class="row">
+            <div class="mt-3 col">
                 <label for="plandoDeConta" class="form-label">Plano de contas</label>
-                <select class="form-control" id="planoDeConta" aria-label="plano de conta">
+                <select class="form-control" name="planoDeConta">
                     <option selected>Selecione o ponto de contas</option>
                     <option value="1">Principal</option>
                     <option value="2">Caixa reserva</option>
                 </select>
             </div>
-            <div class="mt-3 col-md-2">
+            <div class="mt-3 col">
                 <label for="formaDePagamento" class="form-label">Forma de pagamento</label>
-                <select class="form-control" id="formaDePagamento" aria-label="forma de pagamento">
+                <select class="form-control" name="formaDePagamento">
                     <option selected>Selecione o ponto de contas</option>
                     <option value="1">Pix</option>
                     <option value="2">Caixa reserva</option>
@@ -80,36 +81,33 @@
                     <option value="1">Cheque</option>
                 </select>
             </div>
-            <div class="mt-3 col-md-2">
+            <div class="mt-3 col">
                 <label for="valor" class="form-label">Valor</label>
-                <input type="text" id="valor" class="form-control" name="name" placeholder="">
+                <input type="text" id="valor" class="form-control" name="valor">
             </div>
         </div>
 
-    
         <div class="row">
-        <div class="mt-4 col-md-6">
+            <div class="mt-4 col-md-6">
                 <label for="name" class="form-label">Comprovante</label>
-                <input type="file" class="btn btn-outline-secondary" name="comprovante" id="comprovante">
+                <input type="file" class="btn btn-outline-secondary form-control" name="comprovante" id="comprovante">
             </div>
             <div class="mt-3 col-md-6">
                 <label for="dataCompetencia" class="form-label">Data da competência</label>
-                <input type="date" id="dataCompetencia" class="form-control" name="name" placeholder="">
+                <input type="date" name="dataCompetencia" class="form-control">
             </div>
         </div>
 
         <div class="row">
             <div class="mt-3 col-md-6">
                 <label for="observacao" class="form-label">Observação</label>
-                <input type="text" id="observacao" class="form-control" name="name" placeholder="">
+                <input type="text" name="observacao" class="form-control">
             </div>
             <div class="mt-3 col-md-6">
                 <label for="dadosAbstratos" class="form-label">Dados Abstratos</label>
-                <input type="text" id="dadosAbstratos" class="form-control" name="name" placeholder="">
+                <input type="text" id="dadosAbstratos" class="form-control">
             </div>
         </div>
-
-
     </form>
 </div>
 
@@ -118,7 +116,6 @@
 <?= $this->section('script') ?>
 
 <script>
-
     const submitBtn = document.querySelector('#submit-btn');
     const form = document.querySelector('form');
     const url = '<?= $baseRoute ?>/save';
@@ -130,23 +127,21 @@
         const formData = new FormData(form);
 
         fetch(url, {
-            method: 'POST',
-            body: formData
-        }).then(response => response.json())
-        .then(data => {
-            hideLoading();
-            if (data.error) {
-                showToast(data.message, 'error');
-            } else {
-                showToast(data.message, 'success');
-                window.location.href = '<?= $baseRoute ?>';
-            }
-        }).catch(error => {
-            console.log(error);
-        });
+                method: 'POST',
+                body: formData
+            }).then(response => response.json())
+            .then(data => {
+                hideLoading();
+                if (data.error) {
+                    showToast(data.message, 'error');
+                } else {
+                    showToast(data.message, 'success');
+                    window.location.href = '<?= $baseRoute ?>';
+                }
+            }).catch(error => {
+                console.log(error);
+            });
     });
-
-
 </script>
 
 <?= $this->endSection() ?>
