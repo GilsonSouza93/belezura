@@ -24,13 +24,12 @@
         </div>
     </div>
 
-    <form>
+    <form id="form">
 
         <?php if (isset($register)) : ?>
             <input type="hidden" name="id" value="<?= $register->id ?>">
         <?php endif ?>
 
-    <form id="form">
         <div class="row">
             <div class="col">
                 <div class="form-floating mb-3">
