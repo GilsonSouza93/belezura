@@ -18,7 +18,7 @@
     </div>
 
     <p>
-        Clientes localizados: 100
+        Contas localizadas: <span id="accountCount">0</span>
     </p>
 
     <div id="tableAccount" class="collapsed p-4 justify-content ">
@@ -37,5 +37,127 @@
         </table>
     </div>
 </div>
+
+<?= $this->endSection() ?>
+
+
+<?= $this->section('script') ?>
+
+<script>
+    const tableAccount = document.getElementById('tableAccount');
+    const accountCount = document.getElementById('accountCount')
+    const searchBtn = document.getElementById('searchBtn')
+
+    const search = () => {
+        const search = document.getElementById('search').value
+        const url = '<?= $baseRoute ?>/search'
+        const data = {
+            search: search
+        }
+
+        accountCount.innerText = 'Carregando...'
+
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            renderTableTwo(data);
+        })
+        .catch(error => {
+            showToast('Erro ao buscar clientes !', 'error')
+        })
+
+    }
+
+    const renderTableTwo = (data) => {
+        accountCount.innerText = data.length
+
+        const tbody = document.querySelector('tbody')
+        tbody.innerHTML = ''
+        data.forEach(account => {
+
+            Object.keys(account).forEach(key => {
+                if (account[key] === null) {
+                    account[key] = ''
+                }
+            });
+
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${account?.name}</td>
+                <td>
+                    ${account?.email}<br>
+                    ${account?.phone1}
+                </td>
+                <td></td>
+                <td></td>
+                <td class='text-end'>
+                    <div class="dropstart">
+                        <button type="button" class="btn btn-outline-secondary text-white" data-bs-toggle="dropdown" aria-expanded="false">
+                            Ações
+                        </button>
+                        <ul class="dropdown-menu text-center me-2" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(7px); border-radius: 15px; border: 2px solid #198754;">
+                            <li class="dropdown-item" onclick="editAccount(${account.id})">Editar</li>
+                            <li class="dropdown-item" onclick="deleteAccount(${account.id})">Excluir</li>
+                        </ul>
+                    </div>
+                </td>
+            `
+            tbody.appendChild(tr);
+        })
+        
+        tableAccount.classList.add('show');
+    }
+
+    const openModalFilter = () => {
+        const modalFilter = new bootstrap.Modal('#modalFilter', {
+            keyboard: true,
+        });
+
+        modalFilter.show();
+    }
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        search()
+    });
+
+    searchBtn.addEventListener('click', () => {
+        search()
+    });
+
+    const deleteAccount = (id) => {
+        url = '<?= $baseRoute ?>/delete';
+        showLoading();
+
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify({id: id}),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(response => response.json())
+        .then(data => {
+            hideLoading();
+
+            if (data.success === true) {
+                showToast('Cliente excluído com sucesso !', 'success')
+                search()
+            } else {
+                showToast('Erro ao excluir cliente !', 'error')
+            }
+        })
+    }
+
+    const editAccount = (id) => {
+        window.location.href = '<?= $baseRoute ?>/editar/' + id;
+    }
+
+</script>
 
 <?= $this->endSection() ?>

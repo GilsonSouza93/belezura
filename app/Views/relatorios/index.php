@@ -25,10 +25,10 @@
     </div>
 
     <p>
-        IP POOL localizadas: 100
+        Relatórios localizados: <span id="reportCount">0</span>
     </p>
 
-    <div class="d-flex justify-content ">
+    <div class="d-flex justify-content " id="tableReport" >
         <table class="table table-dark table-striped">
             <thead>
                 <tr>
@@ -49,5 +49,127 @@
         </table>
     </div>
 </div>
+
+<?= $this->endSection() ?>
+
+
+<?= $this->section('script') ?>
+
+<script>
+    const tableRepo = document.getElementById('tableRepo');
+    const reportCount = document.getElementById('reportCount')
+    const searchBtn = document.getElementById('searchBtn')
+
+    const search = () => {
+        const search = document.getElementById('search').value
+        const url = '<?= $baseRoute ?>/search'
+        const data = {
+            search: search
+        }
+
+        reportCount.innerText = 'Carregando...'
+
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            renderTableTwo(data);
+        })
+        .catch(error => {
+            showToast('Erro ao buscar clientes !', 'error')
+        })
+
+    }
+
+    const renderTableTwo = (data) => {
+        reportCount.innerText = data.length
+
+        const tbody = document.querySelector('tbody')
+        tbody.innerHTML = ''
+        data.forEach(report => {
+
+            Object.keys(report).forEach(key => {
+                if (report[key] === null) {
+                    report[key] = ''
+                }
+            });
+
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${report?.name}</td>
+                <td>
+                    ${report?.email}<br>
+                    ${report?.phone1}
+                </td>
+                <td></td>
+                <td></td>
+                <td class='text-end'>
+                    <div class="dropstart">
+                        <button type="button" class="btn btn-outline-secondary text-white" data-bs-toggle="dropdown" aria-expanded="false">
+                            Ações
+                        </button>
+                        <ul class="dropdown-menu text-center me-2" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(7px); border-radius: 15px; border: 2px solid #198754;">
+                            <li class="dropdown-item" onclick="editReport(${report.id})">Editar</li>
+                            <li class="dropdown-item" onclick="deleteReport(${report.id})">Excluir</li>
+                        </ul>
+                    </div>
+                </td>
+            `
+            tbody.appendChild(tr);
+        })
+        
+        tableRepo.classList.add('show');
+    }
+
+    const openModalFilter = () => {
+        const modalFilter = new bootstrap.Modal('#modalFilter', {
+            keyboard: true,
+        });
+
+        modalFilter.show();
+    }
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        search()
+    });
+
+    searchBtn.addEventListener('click', () => {
+        search()
+    });
+
+    const deleteReport = (id) => {
+        url = '<?= $baseRoute ?>/delete';
+        showLoading();
+
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify({id: id}),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(response => response.json())
+        .then(data => {
+            hideLoading();
+
+            if (data.success === true) {
+                showToast('Cliente excluído com sucesso !', 'success')
+                search()
+            } else {
+                showToast('Erro ao excluir cliente !', 'error')
+            }
+        })
+    }
+
+    const editReport = (id) => {
+        window.location.href = '<?= $baseRoute ?>/editar/' + id;
+    }
+
+</script>
 
 <?= $this->endSection() ?>

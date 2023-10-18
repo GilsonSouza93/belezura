@@ -1,8 +1,5 @@
 <form>
 
-<?php if (isset($register)) : ?>
-            <input type="hidden" name="id" value="<?= $register->id ?>">
-        <?php endif ?>
 
     <div class="row">
         <div class="col">
@@ -11,3 +8,5 @@
         </div>
     </div>
 </form>
+
+

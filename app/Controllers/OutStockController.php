@@ -10,5 +10,20 @@ class OutStockController extends BaseController
     public $addButtonText = 'Adicionar Saída';
     public $viewPath = 'outStock';
     public $baseRoute = '/estoque/saidas';
+
+    public function __construct()
+    {
+        $this->mainModel = model('SaidaModel');
+        parent::__construct();
+    }
+
+    public function search()
+    {
+        $data = $this->request->getJSON();
+        
+        $saidas = $this->mainModel->search($data->search);
+
+        return $this->response->setJSON($saidas);
+    }
 }
 
