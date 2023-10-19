@@ -19,16 +19,14 @@
     </div>
 
     <form>
-
-
         <div class="row">
             <div class="mt-3 col-md-3">
                 <label for="name" class="form-label">Cidade</label>
-                <input type="text" class="form-control" name="name" placeholder="">
+                <input type="text" class="form-control" name="name" id="cidade">
             </div>
             <div class="mt-3 col-md-3">
                 <label for="name" class="form-label">População</label>
-                <input type="text" class="form-control" name="name" placeholder="">
+                <input type="text" class="form-control" name="name" id="populacao">
             </div>
             <div class="mt-3 col-md-3">
                 <label for="codigo_ibge" class="form-label">Código IBGE</label>
@@ -70,7 +68,7 @@
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">Plano</label>
-                <select class="form-control" aria-label="Default select example">
+                <select class="form-control" id="plano">
                     <option selected>Selecione o Plano</option>
                     <option value="1">100mb -</option>
                     <option value="2">50 mb</option>
@@ -80,7 +78,7 @@
             </div>
             <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">NAS</label>
-                <select class="form-control" aria-label="Default select example">
+                <select class="form-control" id="nas">
                     <option selected>Selecione o NAS</option>
                     <option value="1">Monsenhor Tabosa</option>
                     <option value="1">Ria Rural</option>
@@ -88,7 +86,7 @@
             </div>
             <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">Usuário</label>
-                <select class="form-control" aria-label="status do contrato">
+                <select class="form-control" id="usuario">
                     <option selected>----------</option>
                     <option value="1">SGP</option>
                     <option value="2">Tecnico</option>
@@ -99,8 +97,6 @@
             </div>
 
         </div>
-
-
     </form>
 </div>
 <?= $this->endSection() ?>

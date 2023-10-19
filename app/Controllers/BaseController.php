@@ -386,7 +386,7 @@ abstract class BaseController extends Controller
     public function search()
     {
         $json = $this->request->getJSON();
-
+  
         $data = [
             'search' => $json->search
         ];
@@ -400,7 +400,7 @@ abstract class BaseController extends Controller
             ]);
         } catch (\Throwable $th) {
             return $this->response->setJSON([
-                'status' => 'error',
+                'status' => 'Não foi possivel conectar ao banco de dados',
             ]);
         }
     }

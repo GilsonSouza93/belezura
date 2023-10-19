@@ -179,6 +179,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         $routes->group('contas', static function ($routes) {
             $routes->get('/', 'AccountController::index');
             $routes->get('novo', 'AccountController::form');
+            $routes->post('search', 'AccountController::search');
         });
         $routes->group('ippool', static function ($routes) {
             $routes->get('/', 'IppoolController::index');
