@@ -11,13 +11,13 @@
             <input type="text" name="search" id="search" class="form-control" placeholder="Buscar" style="background-color: transparent;">
         </div>
         <div class="col-md-4 btn-group">
-            <button class="btn btn-success" id="searchBtn">Pesquisar</button>
+            <button class="btn btn-success" onclick="search()">Pesquisar</button>
             <button class="btn btn-success" id="accountFilter" >Filtros</button>
             <a class="btn btn-success" href="<?= $baseRoute ?>/novo"><?= $addButtonText ?></a>
         </div>
     </div>
 
-    <div class="card p-4 fade" id="tableDiv">
+    <div id="tableDiv">
 
     </div>
 </div>
@@ -35,14 +35,18 @@
         searchField: document.getElementById('search'),
     }
 
+    const search = () => {
+        advancedSearchEngine(renderTableOptions);
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
-        renderTable(renderTableOptions);
+        advancedSearchEngine(renderTableOptions);
     });
 
     const btnSearch = document.getElementById('searchBtn');
 
     btnSearch.addEventListener('click', () => {
-        renderTable(renderTableOptions);
+        advancedSearchEngine(renderTableOptions);
     });
 </script>
 

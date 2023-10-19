@@ -16,14 +16,4 @@ class AccountController extends BaseController
         $this->mainModel = model('AccountModel');
         parent::__construct();
     }
-
-    
-    public function search()
-    {
-        $data = $this->request->getJSON();
-        
-        $accounts = $this->mainModel->search($data->search);
-
-        return $this->response->setJSON($accounts);
-    }
 }

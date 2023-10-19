@@ -210,7 +210,7 @@
             }
         };
 
-        const renderTable = (options) => {
+        const advancedSearchEngine = (options) => {
             const tableDiv = options.tableDiv;
             const theadElements = options.theadElements;
             const tbodyElements = options.tbodyElements;
@@ -224,6 +224,8 @@
             tableDiv.style.opacity = '0';
             setTimeout(() => {
                 tableDiv.innerHTML = '';
+                tableDiv.classList.add('card', 'p-4')
+
                 const table = document.createElement('table');
                 table.classList.add('table');
 
@@ -331,7 +333,7 @@
 
                 table.appendChild(thead);
                 tableDiv.appendChild(table);
-            }, 700);
+            }, 100);
         }
     </script>
 
