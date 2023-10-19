@@ -355,7 +355,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             // $routes->get('imprimir')
             $routes->get('imprimir-em-lote', 'TicketController::print');
         });
-        $routes->group('contasapagar', static function ($routes) {
+        $routes->group('contas-pagar', static function ($routes) {
             $routes->get('/', 'BillstopayController::index');
             $routes->get('novo', 'BillstopayController::form');
             $routes->get('novo', 'BillstopayController::filter');
@@ -365,7 +365,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->post('search', 'BillstopayController::search');
             $routes->post('delete', 'BillstopayController::delete');	
         });
-        $routes->group('contasareceber', static function ($routes) {
+        $routes->group('contas-receber', static function ($routes) {
             $routes->get('/', 'BillstoreceiverController::index');
             $routes->get('novo', 'BillstoreceiverController::form');
             $routes->get('novo', 'BillstopayController::filter');

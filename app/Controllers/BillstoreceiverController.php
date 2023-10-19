@@ -9,7 +9,7 @@ class BillstoreceiverController extends BaseController
     public $tittle = 'Contas a Receber';
     public $addButtonText = 'Adicionar Conta a receber';
     public $viewPath = 'billstoreceiver';
-    public $baseRoute = '/financeiro/contasareceber';
+    public $baseRoute = '/financeiro/contas-receber';
 
     public function __construct()
     {
