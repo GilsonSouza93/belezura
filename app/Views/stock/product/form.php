@@ -109,7 +109,11 @@
   function formatBody() {
     const body = {
       name: document.querySelector('#name').value,
+      price: document.querySelector('#price').value,
       description: document.querySelector('#description').value,
+      manufacturer_id: document.querySelector('#manufacturer_id').value,
+      category_id: document.querySelector('#category_id').value,
+      suppliers_id: document.querySelector('#suppliers_id').value,
     }
 
     return JSON.stringify(body);

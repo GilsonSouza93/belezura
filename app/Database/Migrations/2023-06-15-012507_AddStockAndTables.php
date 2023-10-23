@@ -114,7 +114,6 @@ class AddStockAndTables extends Migration
     {
         $this->forge->dropTable('suppliers');
         $this->forge->dropTable('categories');
-        $this->forge->dropTable('brands');
         $this->forge->dropTable('manufacturers');
     }
 }

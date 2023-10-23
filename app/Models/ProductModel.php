@@ -13,7 +13,17 @@ class ProductModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = [
+        'id',
+        'name',
+        'description',
+        'price',
+        'manufacturer_id',
+        'category_id',
+        'suppliers_id',
+        'created_at',
+        'updated_at',
+    ];
 
     // Dates
     protected $useTimestamps = false;
@@ -56,15 +66,15 @@ class ProductModel extends Model
 
         $search = null;
 
-        if(isset($data['search']))
+        if (isset($data['search']))
             $search = $data['search'];
 
         $query = $this->db->table($this->table)
-                ->select($fieldsToReturn);
+            ->select($fieldsToReturn);
 
-        if($search) {
+        if ($search) {
             $query->groupStart();
-            foreach($fieldsToSearch as $field) {
+            foreach ($fieldsToSearch as $field) {
                 $query->orLike($field, $search);
             }
             $query->groupEnd();
