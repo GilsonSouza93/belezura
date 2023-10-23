@@ -63,27 +63,32 @@ class AddStockAndTables extends Migration
         $this->forge->addField([
             'id' => [
                 'type' => 'INT',
+                'constraint' => 5,
+                'unsigned' => true,
                 'auto_increment' => true,
             ],
             'name' => [
                 'type' => 'VARCHAR',
-                'constraint' => '100',
+                'constraint' => 255,
             ],
-            'cnpj' => [
+            'contact_name' => [
                 'type' => 'VARCHAR',
-                'constraint' => '100',
-            ],
-            'address' => [
-                'type' => 'VARCHAR',
-                'constraint' => '100',
-            ],
-            'phone' => [
-                'type' => 'VARCHAR',
-                'constraint' => '100',
+                'constraint' => 255,
+                'null' => true,
             ],
             'email' => [
                 'type' => 'VARCHAR',
-                'constraint' => '100',
+                'constraint' => 255,
+                'null' => true,
+            ],
+            'phone' => [
+                'type' => 'VARCHAR',
+                'constraint' => 20,
+                'null' => true,
+            ],
+            'address' => [
+                'type' => 'TEXT',
+                'null' => true,
             ],
             'created_at' => [
                 'type' => 'DATETIME',

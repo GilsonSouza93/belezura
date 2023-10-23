@@ -8,21 +8,14 @@
         <?= $tittle ?>
     </h2>
 
-    
+
     <form id="form">
         <div class="row py-3 my-3">
             <div class="col-md-8">
-                <h4>
-                    <?php if (isset($register)) : ?>
-                        Editar formulário
-                    <?php else : ?>
-                        Novo formulário
-                    <?php endif ?>
-                </h4>        
             </div>
             <div class="col-md-4 btn-group">
                 <a class="btn btn-success" href="<?= $baseRoute ?>">Voltar</a>
-                <button class="btn btn-success" type="submit">Salvar</button>
+                <button class="btn btn-success" id="submit-btn">Salvar</button>
             </div>
         </div>
 
@@ -281,8 +274,8 @@
     form.addEventListener('submit', event => {
         event.preventDefault();
         const data = formatBody();
-        if(!data) return;
-        
+        if (!data) return;
+
         showLoading();
 
         fetch(url, {
@@ -291,7 +284,7 @@
             }).then(response => response.json())
             .then(data => {
                 hideLoading();
-                if(data.status === 'success') {
+                if (data.status === 'success') {
                     showToast(data.message, 'success');
                     setTimeout(() => {
                         window.location.href = '<?= $baseRoute ?>';
@@ -314,7 +307,7 @@
             passwordConfirm: document.querySelector('#passwordConfirm').value,
         }
 
-        if (body.password != body.passwordConfirm ) {
+        if (body.password != body.passwordConfirm) {
             showToast('As senhas não conferem', 'error');
             return;
         }

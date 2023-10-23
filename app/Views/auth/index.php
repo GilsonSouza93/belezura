@@ -50,13 +50,15 @@
             -webkit-text-fill-color: #fff;
             transition: background-color 5000s ease-in-out 0s;
         }
-
     </style>
 </head>
 
 <body>
     <div class="d-flex justify-content-center align-items-center vh-100">
-        <form id="form" style="background: rgba(255, 255, 255, 0.2); border-radius: 16px; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.3); opacity: 0;" class="p-5">
+        <form id="form" style="            border-radius: var(--border-radius);
+            background: rgba(50, 50, 50, 0.4);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(33, 37, 41, 0.2); opacity: 0" class="p-5">
             <div class="d-flex justify-content-center">
                 <img src="<?= base_url('assets/imgs/logo.png') ?>" alt="logo" style="height: 75px;">
             </div>
@@ -117,7 +119,7 @@
             div.style.transition = 'opacity 0.5s ease-in-out';
 
             const spinner = document.createElement('div');
-            spinner.classList.add('spinner-border', 'text-success');
+            spinner.classList.add('spinner-grow', 'text-light');
             spinner.setAttribute('role', 'status');
 
             const span = document.createElement('span');
@@ -165,7 +167,7 @@
 
             showForm();
 
-            setTimeout(function(){
+            setTimeout(function() {
                 $('#email').removeAttr('disabled');
                 $('#password').removeAttr('disabled');
             }, 300);
@@ -189,7 +191,7 @@
 
                     success: function(result) {
                         hideLoading();
-                        
+
                         if (result.status == '200') {
                             setTimeout(function() {
                                 window.location.href = '<?= base_url('dashboard') ?>';

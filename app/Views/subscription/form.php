@@ -11,13 +11,6 @@
     <form id="form" class="p-4" enctype="multipart/form-data">
         <div class="row card-2 py-3 my-3">
             <div class="col-md-8">
-                <h4>
-                    <?php if (isset($register)) : ?>
-                        Editar plano
-                    <?php else : ?>
-                        Novo plano
-                    <?php endif ?>
-                </h4>
             </div>
             <div class="col-md-4 btn-group">
                 <a class="btn btn-success" href="<?= $baseRoute ?>">Voltar</a>
