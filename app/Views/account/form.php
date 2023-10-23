@@ -8,23 +8,23 @@
         <?= $tittle ?>
     </h2>
 
-    <div class="row py-3 my-3">
-        <div class="col-md-8">
-            <h4>
-                <?php if (isset($register)) : ?>
-                    Editar formulário
-                <?php else : ?>
-                    Novo formulário
-                <?php endif ?>
-            </h4>        
-        </div>
-        <div class="col-md-4 btn-group">
-            <a class="btn btn-success" href="<?= $baseRoute ?>">Voltar</a>
-            <button class="btn btn-success" id='submit-btn'>Salvar</button>
-        </div>
-    </div>
-
+    
     <form id="form">
+        <div class="row py-3 my-3">
+            <div class="col-md-8">
+                <h4>
+                    <?php if (isset($register)) : ?>
+                        Editar formulário
+                    <?php else : ?>
+                        Novo formulário
+                    <?php endif ?>
+                </h4>        
+            </div>
+            <div class="col-md-4 btn-group">
+                <a class="btn btn-success" href="<?= $baseRoute ?>">Voltar</a>
+                <button class="btn btn-success" type="submit">Salvar</button>
+            </div>
+        </div>
 
         <?php if (isset($register)) : ?>
             <input type="hidden" name="id" value="<?= $register->id ?>">
@@ -278,24 +278,19 @@
     const form = document.querySelector('form');
     const url = '<?= $baseRoute ?>/save';
 
-    // teste mode only
-    document.querySelector('#name').value = 'teste';
-    document.querySelector('#email').value = 'teste@teste';
-    document.querySelector('#phone1').value = '123456789';
-    document.querySelector('#phone2').value = '123456789';
-    
-
-
-    submitBtn.addEventListener('click', event => {
+    form.addEventListener('submit', event => {
         event.preventDefault();
         const data = formatBody();
         if(!data) return;
+        
+        showLoading();
 
         fetch(url, {
                 method: 'POST',
                 body: data
             }).then(response => response.json())
             .then(data => {
+                hideLoading();
                 if(data.status === 'success') {
                     showToast(data.message, 'success');
                     setTimeout(() => {

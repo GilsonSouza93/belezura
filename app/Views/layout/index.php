@@ -176,13 +176,14 @@
 
         const showLoading = () => {
             const div = document.createElement('div');
+            div.id = 'loading';
             div.classList.add('position-fixed', 'top-0', 'start-0', 'p-3', 'w-100', 'h-100', 'd-flex', 'justify-content-center', 'align-items-center', 'bg-transparent', 'fade');
             div.style.zIndex = '10';
             div.style.backdropFilter = 'blur(7px)';
             div.style.transition = 'opacity 0.5s ease-in-out';
 
             const spinner = document.createElement('div');
-            spinner.classList.add('spinner-border', 'text-success');
+            spinner.classList.add('spinner-grow', 'text-light');
             spinner.setAttribute('role', 'status');
 
             const span = document.createElement('span');
@@ -200,7 +201,7 @@
         };
 
         const hideLoading = () => {
-            const loadingDiv = document.querySelector('.fade');
+            const loadingDiv = document.querySelector('#loading');
             if (loadingDiv) {
                 loadingDiv.style.opacity = '0';
 
@@ -221,6 +222,7 @@
                 search: searchField.value
             }
 
+            showLoading();
             tableDiv.style.opacity = '0';
             setTimeout(() => {
                 tableDiv.innerHTML = '';
@@ -254,6 +256,8 @@
                     })
                     .then(response => response.json())
                     .then(data => {
+                        hideLoading();
+
                         if (data.status == 'success') {
                             data.data.forEach(row => {
                                 const tr = document.createElement('tr');
@@ -322,7 +326,10 @@
 
                             table.appendChild(tbody);
                             tableDiv.appendChild(table);
-                            tableDiv.style.opacity = '1';
+
+                            setTimeout(() => {
+                                tableDiv.style.opacity = '1';
+                            }, 500);
                         } else {
                             showToast('Erro ao carregar dados da tabela', 'error');
                         }

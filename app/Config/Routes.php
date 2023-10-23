@@ -104,12 +104,12 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         $routes->group('marcas', static function ($routes) {
             $routes->get('/', 'BrandController::index');
             $routes->get('novo', 'BrandController::form');
-            $routes->get('novo', 'BrandControlle::filter');
-            $routes->get('editar/(:num)', 'BrandControlle::edit/$1');
+            $routes->get('novo', 'BrandController::filter');
+            $routes->get('editar/(:num)', 'BrandController::edit/$1');
 
-            $routes->post('save', 'BrandControlle::save');
-            $routes->post('search', 'BrandControlle::search');
-            $routes->post('delete', 'BrandControlle::delete');
+            $routes->post('save', 'BrandController::save');
+            $routes->post('search', 'BrandController::search');
+            $routes->post('delete', 'BrandController::delete');
         });
         $routes->group('categorias', static function ($routes) {
             $routes->get('/', 'CategoryController::index');

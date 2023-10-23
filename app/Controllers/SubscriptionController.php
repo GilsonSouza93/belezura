@@ -17,12 +17,15 @@ class SubscriptionController extends BaseController
         parent::__construct();
     }
 
-    public function search()
+    public function treatmentBeforeSave($data)
     {
-        $data = $this->request->getJSON();
-        
-        $subscriptions = $this->mainModel->search($data->search);
+        $data['account_type_id'] = 2;
+        $data['created_at'] = date('Y-m-d H:i:s');
 
-        return $this->response->setJSON($subscriptions);
+        if($this->mainModel->where('name', $data['name'])->first()){
+            $data['error'] = 'Já existe um plano com este nome!';
+        }
+
+        return $data;
     }
 }

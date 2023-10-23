@@ -4,10 +4,10 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class BrandModel extends Model
+class SubscriptionModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'brands';
+    protected $table            = 'plans';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
@@ -16,7 +16,16 @@ class BrandModel extends Model
     protected $allowedFields    = [
         'id',
         'name',
-        'description',
+        'speed',
+        'monthly_price',
+        'contract_duration',
+        'data_limit',
+        'connection_type',
+        'features',
+        'notes',
+        'required_equipment',
+        'payment_options',
+        'geographical_availability',
         'created_at',
         'updated_at',
     ];
@@ -49,12 +58,30 @@ class BrandModel extends Model
     {
         $fieldsToSearch = [
             'name',
-            'description',
+            'speed',
+            'monthly_price',
+            'contract_duration',
+            'data_limit',
+            'connection_type',
+            'features',
+            'notes',
+            'required_equipment',
+            'payment_options',
+            'geographical_availability',
         ];
 
         $fieldsToReturn = [
             'name',
-            'description',
+            'speed',
+            'monthly_price',
+            'contract_duration',
+            'data_limit',
+            'connection_type',
+            'features',
+            'notes',
+            'required_equipment',
+            'payment_options',
+            'geographical_availability',
         ];
 
         $search = null;
