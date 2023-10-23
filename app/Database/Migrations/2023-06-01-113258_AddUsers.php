@@ -37,7 +37,13 @@ class AddUsers extends Migration
                 "constraint" => 255
             ],
 
-            "phone" => [
+            "phone1" => [
+                "type" => "varchar",
+                "constraint" => 255,
+                "null" => true
+            ],
+
+            "phone2" => [
                 "type" => "varchar",
                 "constraint" => 255,
                 "null" => true

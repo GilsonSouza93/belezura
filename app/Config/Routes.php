@@ -43,8 +43,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         $routes->get('/', 'DashboardController::index');
     });
     $routes->group('auth', static function ($routes) {
-        $routes->get('/', 'AuthController::index');
-        $routes->get('novo', 'AuthController::form');
+        $routes->get('logout', 'LoginController::logout');
     });
     
     $routes->group('clientes', static function ($routes) {
@@ -180,6 +179,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('/', 'AccountController::index');
             $routes->get('novo', 'AccountController::form');
             $routes->post('search', 'AccountController::search');
+            $routes->post('save', 'AccountController::save');
         });
         $routes->group('ippool', static function ($routes) {
             $routes->get('/', 'IppoolController::index');

@@ -64,6 +64,7 @@ abstract class BaseController extends Controller
     public $baseRoutePrint = '';
     public $mainModel = null;
     public $saveMessage = 'Salvo com sucesso!';
+    public $deleteMessage = 'Excluído com sucesso!';
 
     public function __construct()
     {
@@ -73,8 +74,7 @@ abstract class BaseController extends Controller
                 'title' => 'Dashboard',
                 'href' => base_url('dashboard'),
                 'show_subitems' => false,
-                'subitems' => [
-                ]
+                'subitems' => []
             ],
 
             'customers' => [
@@ -121,7 +121,7 @@ abstract class BaseController extends Controller
             //         ],
 
             //     ]
-            
+
             // ],      
             'gerencial' => [
                 'title' => 'Gerencial',
@@ -147,8 +147,8 @@ abstract class BaseController extends Controller
                     //     'href' => base_url('gerencial/veiculos'), 
                     // ],
                 ]
-            
-            ],      
+
+            ],
             'equipment' => [
                 'title' => 'Equipamentos',
                 'href' => base_url('equipamentos'),
@@ -230,7 +230,7 @@ abstract class BaseController extends Controller
                         'href' => base_url('estoque/fornecedores'),
                         'icon' => '<i class="fas fa-boxes"></i>'
                     ],
-                    
+
                     'Fabricantes' => [
                         'title' => 'Fabricantes',
                         'href' => base_url('estoque/fabricantes'),
@@ -245,34 +245,34 @@ abstract class BaseController extends Controller
                 ]
             ],
 
-                // 'Monitoramento' => [
-                //     'title' => 'Monitoramento',
-                //     'href' => base_url('monitoramento'),
-                //     'icon' => '<i class="fas fa-boxes"></i>',
-                //     'show_subitems' => true,
-                //     'color' => '#adb5bd',
-                //     'subitems' => [
-                //         'Mapa' => [
-                //             'title' => 'Mapa',
-                //             'href' => base_url('monitoramento/mapa')
-                //         ],
+            // 'Monitoramento' => [
+            //     'title' => 'Monitoramento',
+            //     'href' => base_url('monitoramento'),
+            //     'icon' => '<i class="fas fa-boxes"></i>',
+            //     'show_subitems' => true,
+            //     'color' => '#adb5bd',
+            //     'subitems' => [
+            //         'Mapa' => [
+            //             'title' => 'Mapa',
+            //             'href' => base_url('monitoramento/mapa')
+            //         ],
 
-                //         'Clientes' => [
-                //             'title' => 'Clientes',
-                //             'href' => base_url('monitoramento/clientes')
-                //         ],
+            //         'Clientes' => [
+            //             'title' => 'Clientes',
+            //             'href' => base_url('monitoramento/clientes')
+            //         ],
 
-                //         'Equipamentos' => [
-                //             'title' => 'Equipamentos',
-                //             'href' => base_url('monitoramento/equipamentos')
-                //         ],
+            //         'Equipamentos' => [
+            //             'title' => 'Equipamentos',
+            //             'href' => base_url('monitoramento/equipamentos')
+            //         ],
 
-                //         'Rede' => [
-                //             'title' => 'Rede',
-                //             'href' => base_url('monitoramento/rede')
-                //         ],
-                //     ]
-                // ],
+            //         'Rede' => [
+            //             'title' => 'Rede',
+            //             'href' => base_url('monitoramento/rede')
+            //         ],
+            //     ]
+            // ],
 
             'settings' => [
                 'title' => 'Configurações',
@@ -280,21 +280,21 @@ abstract class BaseController extends Controller
                 'icon' => '<i class="fas fa-cog"></i>',
                 'show_subitems' => true,
                 'color' => '#adb5bd',
-                'subitems' =>[
+                'subitems' => [
                     'Conta' => [
-                        'title' =>'Contas',
+                        'title' => 'Contas',
                         'href' => base_url('configuracoes/contas'),
                     ],
                     'Planos' => [
-                        'title' =>'Planos',
+                        'title' => 'Planos',
                         'href' => base_url('configuracoes/planos'),
                     ],
                     'Ip Pool' => [
-                        'title' =>'IP POOL',
+                        'title' => 'IP POOL',
                         'href' => base_url('configuracoes/ippool'),
                     ],
                     'Ipv6 Pool' => [
-                        'title' =>'IPv6 POOL',
+                        'title' => 'IPv6 POOL',
                         'href' => base_url('configuracoes/ipv6pool'),
                     ],
                     // 'Central do Assinante' => [
@@ -307,6 +307,14 @@ abstract class BaseController extends Controller
                     // ],
                 ]
             ],
+        ];
+
+        // add button logout
+        $this->data['navigation_bar_items']['logout'] = [
+            'title' => 'Sair',
+            'href' => base_url('auth/logout'),
+            'icon' => '<i class="fas fa-sign-out-alt"></i>',
+            'show_subitems' => false,
         ];
 
         $this->data['lang'] = 'pt-br';
@@ -333,7 +341,7 @@ abstract class BaseController extends Controller
 
         $response = $this->mainModel->delete($id);
 
-        if($response) {
+        if ($response) {
             $data = [
                 'success' => true,
                 'message' => 'Excluído com sucesso!',
@@ -362,21 +370,34 @@ abstract class BaseController extends Controller
 
     public function save()
     {
-        $data = $this->treatmentBeforeSave($this->request->getPost());
+        $data = $this->request->getPost();
+
+        if (!$data)
+            $data = $this->request->getJSON();
+
+        if (is_object($data))
+            $data = (array) $data;
+
+        $data = $this->treatmentBeforeSave($data);
+
+        if(isset($data['error'])){
+            return $this->response->setJSON([
+                'status' => 'fail',
+                'message' => $data['error'],
+            ]);
+        }
 
         $response = $this->mainModel->save($data);
 
-        if($response) {
+        if ($response) {
             $data = [
-                'success' => true,
+                'status' => 'success',
                 'message' => $this->saveMessage,
-                'data' => $response
             ];
         } else {
             $data = [
-                'success' => false,
-                'message' => 'Erro ao salvar!',
-                'data' => $response
+                'status' => 'fail',
+                'message' => $this->deleteMessage,
             ];
         }
 
@@ -386,7 +407,7 @@ abstract class BaseController extends Controller
     public function search()
     {
         $json = $this->request->getJSON();
-  
+
         $data = [
             'search' => $json->search
         ];

@@ -278,26 +278,64 @@
     const form = document.querySelector('form');
     const url = '<?= $baseRoute ?>/save';
 
+    // teste mode only
+    document.querySelector('#name').value = 'teste';
+    document.querySelector('#email').value = 'teste@teste';
+    document.querySelector('#phone1').value = '123456789';
+    document.querySelector('#phone2').value = '123456789';
+    
+
+
     submitBtn.addEventListener('click', event => {
         event.preventDefault();
-
-        const formData = new FormData(form);
+        const data = formatBody();
+        if(!data) return;
 
         fetch(url, {
                 method: 'POST',
-                body: formData
+                body: data
             }).then(response => response.json())
             .then(data => {
-                if (data.error) {
-                    alert(data.message);
+                if(data.status === 'success') {
+                    showToast(data.message, 'success');
+                    setTimeout(() => {
+                        window.location.href = '<?= $baseRoute ?>';
+                    }, 1000);
                 } else {
-                    alert(data.message);
-                    window.location.href = '<?= $baseRoute ?>';
+                    showToast(data.message, 'error');
                 }
             }).catch(error => {
                 console.log(error);
             });
     });
+
+    function formatBody() {
+        const body = {
+            name: document.querySelector('#name').value,
+            email: document.querySelector('#email').value,
+            phone1: document.querySelector('#phone1').value,
+            phone2: document.querySelector('#phone2').value,
+            password: document.querySelector('#password').value,
+            passwordConfirm: document.querySelector('#passwordConfirm').value,
+        }
+
+        if (body.password != body.passwordConfirm ) {
+            showToast('As senhas não conferem', 'error');
+            return;
+        }
+
+        if (body.password == '') {
+            showToast('A senha não pode ser vazia', 'error');
+            return;
+        }
+
+        if (body.password.length < 6) {
+            showToast('A senha deve ter no mínimo 6 caracteres', 'error');
+            return;
+        }
+
+        return JSON.stringify(body);
+    }
 </script>
 
 <?= $this->endSection() ?>

@@ -13,7 +13,21 @@ class AccountModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = [
+        'id',
+        'name',
+        'account_type_id',
+        'email',
+        'password',
+        'phone1',
+        'phone2',
+        'deleted_by',
+        'updated_by',
+        'created_by',
+        'deleted_at',
+        'updated_at',
+        'created_at',
+    ];
 
     // Dates
     protected $useTimestamps = false;
@@ -44,13 +58,15 @@ class AccountModel extends Model
         $fieldsToSearch = [
             'name',
             'email',
-            'phone',
+            'phone1',
+            'phone2',
         ];
 
         $fieldsToReturn = [
             'name',
             'email',
-            'phone',
+            'phone1',
+            'phone2',
         ];
 
         $search = null;

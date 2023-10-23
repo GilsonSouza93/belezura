@@ -189,16 +189,20 @@
 
                     success: function(result) {
                         hideLoading();
-                        hideForm();
-
+                        
                         if (result.status == '200') {
                             setTimeout(function() {
                                 window.location.href = '<?= base_url('dashboard') ?>';
                             }, 800);
 
+                            hideForm();
                         } else {
                             showToast(result.message, 'error');
                         }
+                    },
+                    error: function() {
+                        hideLoading();
+                        showToast('Erro ao realizar login', 'error');
                     }
                 });
             });
