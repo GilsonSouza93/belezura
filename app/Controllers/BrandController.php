@@ -20,7 +20,6 @@ class BrandController extends BaseController
 
     public function treatmentBeforeSave($data)
     {
-        $data['account_type_id'] = 2;
         $data['created_at'] = date('Y-m-d H:i:s');
 
         if($this->mainModel->where('name', $data['name'])->first()){

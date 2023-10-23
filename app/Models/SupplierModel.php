@@ -13,7 +13,16 @@ class SupplierModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = [
+        'id',
+        'name',
+        'contact_name',
+        'email',
+        'phone',
+        'address',
+        'created_at',
+        'updated_at',
+    ];
 
     // Dates
     protected $useTimestamps = false;
@@ -38,4 +47,45 @@ class SupplierModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function search($data)
+    {
+        $fieldsToSearch = [
+            'name',
+            'contact_name',
+            'email',
+            'phone',
+            'address',
+        ];
+
+        $fieldsToReturn = [
+            'id',
+            'name',
+            'contact_name',
+            'email',
+            'phone',
+            'address',
+        ];
+
+        $search = null;
+
+        if(isset($data['search']))
+            $search = $data['search'];
+
+        $query = $this->db->table($this->table)
+                ->select($fieldsToReturn);
+
+        if($search) {
+            $query->groupStart();
+            foreach($fieldsToSearch as $field) {
+                $query->orLike($field, $search);
+            }
+            $query->groupEnd();
+        }
+
+        $query->orderBy('created_at', 'DESC');
+        $result = $query->get()->getResultArray();
+
+        return $result;
+    }
 }

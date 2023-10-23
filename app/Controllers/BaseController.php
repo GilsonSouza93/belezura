@@ -213,12 +213,6 @@ abstract class BaseController extends Controller
                         'icon' => '<i class="fas fa-boxes"></i>'
                     ],
 
-                    'Marcas' => [
-                        'title' => 'Marcas',
-                        'href' => base_url('estoque/marcas'),
-                        'icon' => '<i class="fas fa-boxes"></i>'
-                    ],
-
                     'Categorias' => [
                         'title' => 'Categorias',
                         'href' => base_url('estoque/categorias'),

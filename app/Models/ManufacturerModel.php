@@ -4,10 +4,10 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class BrandModel extends Model
+class ManufacturerModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'brands';
+    protected $table            = 'manufacturers';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
@@ -17,6 +17,7 @@ class BrandModel extends Model
         'id',
         'name',
         'description',
+        'website',
         'created_at',
         'updated_at',
     ];
@@ -50,12 +51,14 @@ class BrandModel extends Model
         $fieldsToSearch = [
             'name',
             'description',
+            'website',
         ];
 
         $fieldsToReturn = [
             'id',
             'name',
             'description',
+            'website',
         ];
 
         $search = null;
@@ -80,3 +83,4 @@ class BrandModel extends Model
         return $result;
     }
 }
+

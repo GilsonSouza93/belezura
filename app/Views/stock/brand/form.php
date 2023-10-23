@@ -72,7 +72,7 @@
     function formatBody() {
         const body = {
             name: document.querySelector('#name').value,
-            speed: document.querySelector('#description').value,
+            description: document.querySelector('#description').value,
         }
 
         return JSON.stringify(body);

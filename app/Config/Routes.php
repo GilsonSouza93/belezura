@@ -83,7 +83,6 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         $routes->group('fabricantes', static function ($routes) {
             $routes->get('/', 'ManufacturerController::index');
             $routes->get('novo', 'ManufacturerController::form');
-            $routes->get('novo', 'ManufacturerController::filter');
             $routes->get('editar/(:num)', 'ManufacturerController::edit/$1');
 
             $routes->post('save', 'ManufacturerController::save');
@@ -100,16 +99,6 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->post('save', 'SupplierController::save');
             $routes->post('search', 'SupplierController::search');
             $routes->post('delete', 'SupplierController::delete');
-        });
-        $routes->group('marcas', static function ($routes) {
-            $routes->get('/', 'BrandController::index');
-            $routes->get('novo', 'BrandController::form');
-            $routes->get('novo', 'BrandController::filter');
-            $routes->get('editar/(:num)', 'BrandController::edit/$1');
-
-            $routes->post('save', 'BrandController::save');
-            $routes->post('search', 'BrandController::search');
-            $routes->post('delete', 'BrandController::delete');
         });
         $routes->group('categorias', static function ($routes) {
             $routes->get('/', 'CategoryController::index');

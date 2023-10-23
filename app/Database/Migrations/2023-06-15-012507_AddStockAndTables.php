@@ -11,32 +11,7 @@ class AddStockAndTables extends Migration
         $this->forge->addField([
             'id' => [
                 'type' => 'INT',
-                'auto_increment' => true,
-            ],
-            'name' => [
-                'type' => 'VARCHAR',
-                'constraint' => '100',
-            ],
-            'description' => [
-                'type' => 'TEXT',
-                'null' => true,
-            ],
-            'created_at' => [
-                'type' => 'DATETIME',
-                'null' => true,
-            ],
-            'updated_at' => [
-                'type' => 'DATETIME',
-                'null' => true,
-            ],
-        ]);
-
-        $this->forge->addKey('id', true);
-        $this->forge->createTable('brands');
-
-        $this->forge->addField([
-            'id' => [
-                'type' => 'INT',
+                'constraint' => 5,
                 'auto_increment' => true,
             ],
             'name' => [
@@ -64,7 +39,6 @@ class AddStockAndTables extends Migration
             'id' => [
                 'type' => 'INT',
                 'constraint' => 5,
-                'unsigned' => true,
                 'auto_increment' => true,
             ],
             'name' => [
@@ -102,42 +76,24 @@ class AddStockAndTables extends Migration
 
         $this->forge->addKey('id', true);
         $this->forge->createTable('suppliers');
-        
+
         $this->forge->addField([
             'id' => [
                 'type' => 'INT',
+                'constraint' => 5,
                 'auto_increment' => true,
-            ],
-            'brand_id' => [
-                'type' => 'INT',
-                'constraint' => 5,
-            ],
-            'category_id' => [
-                'type' => 'INT',
-                'constraint' => 5,
-            ],
-            'suppliers_id' => [
-                'type' => 'VARCHAR',
-                'constraint' => '150',
             ],
             'name' => [
                 'type' => 'VARCHAR',
-                'constraint' => '100',
+                'constraint' => 255,
             ],
             'description' => [
+                'type' => 'TEXT',
+                'null' => true,
+            ],
+            'website' => [
                 'type' => 'VARCHAR',
-                'constraint' => '100',
-            ],
-            'price' => [
-                'type' => 'DECIMAL',
-                'constraint' => '10,2',
-            ],
-            'quantity' => [
-                'type' => 'INT',
-                'constraint' => 5,
-            ],
-            'manufacturing_date' => [
-                'type' => 'DATE',
+                'constraint' => 255,
                 'null' => true,
             ],
             'created_at' => [
@@ -151,16 +107,14 @@ class AddStockAndTables extends Migration
         ]);
 
         $this->forge->addKey('id', true);
-        $this->forge->addForeignKey('brand_id', 'brands', 'id', 'CASCADE', 'CASCADE');
-        $this->forge->addForeignKey('category_id', 'categories', 'id', 'CASCADE', 'CASCADE');
-        $this->forge->createTable('products');
+        $this->forge->createTable('manufacturers');
     }
 
     public function down()
     {
-        $this->forge->dropTable('products');
         $this->forge->dropTable('suppliers');
         $this->forge->dropTable('categories');
         $this->forge->dropTable('brands');
+        $this->forge->dropTable('manufacturers');
     }
 }

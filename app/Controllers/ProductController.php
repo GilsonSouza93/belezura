@@ -18,15 +18,15 @@ class ProductController extends BaseController
     public function __construct()
     {
         $this->mainModel = model('ProductModel');
+
+        $manufacturerModel = model('ManufacturerModel');
+        $categoryModel = model('CategoryModel');
+        $supplierModel = model('SupplierModel');
+
+        $this->data['manufacturers'] = $manufacturerModel->findAll();
+        $this->data['categories'] = $categoryModel->findAll();
+        $this->data['suppliers'] = $supplierModel->findAll();
+
         parent::__construct();
-    }
-
-    public function search()
-    {
-        $data = $this->request->getJSON();
-        
-        $products = $this->mainModel->search($data->search);
-
-        return $this->response->setJSON($products);
     }
 }

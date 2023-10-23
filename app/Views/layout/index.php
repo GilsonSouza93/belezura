@@ -224,123 +224,122 @@
 
             showLoading();
             tableDiv.style.opacity = '0';
-            setTimeout(() => {
-                tableDiv.innerHTML = '';
-                tableDiv.classList.add('card', 'p-4')
 
-                const table = document.createElement('table');
-                table.classList.add('table');
+            tableDiv.innerHTML = '';
+            tableDiv.classList.add('card', 'p-4')
 
-                const thead = document.createElement('thead');
+            const table = document.createElement('table');
+            table.classList.add('table');
 
-                const tr = document.createElement('tr');
+            const thead = document.createElement('thead');
 
-                theadElements.forEach(element => {
-                    const th = document.createElement('th');
-                    th.classList.add('text-center');
-                    th.innerText = element;
-                    tr.appendChild(th);
-                });
+            const tr = document.createElement('tr');
 
-                thead.appendChild(tr);
+            theadElements.forEach(element => {
+                const th = document.createElement('th');
+                th.classList.add('text-center');
+                th.innerText = element;
+                tr.appendChild(th);
+            });
 
-                const tbody = document.createElement('tbody');
-                table.appendChild(tbody);
+            thead.appendChild(tr);
 
-                fetch(urlFetch, {
-                        method: 'POST',
-                        body: JSON.stringify(data),
-                        headers: {
-                            'Content-Type': 'application/json'
-                        }
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        hideLoading();
+            const tbody = document.createElement('tbody');
+            table.appendChild(tbody);
 
-                        if (data.status == 'success') {
-                            data.data.forEach(row => {
-                                const tr = document.createElement('tr');
+            fetch(urlFetch, {
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    hideLoading();
 
-                                tbodyElements.forEach(element => {
-                                    const td = document.createElement('td');
-                                    td.classList.add('text-center');
+                    if (data.status == 'success') {
+                        data.data.forEach(row => {
+                            const tr = document.createElement('tr');
 
-                                    if (element === 'actions_dropdown') {
-                                        const dropdown = document.createElement('div');
-                                        dropdown.classList.add('dropdown', 'text-end', 'dropstart');
+                            tbodyElements.forEach(element => {
+                                const td = document.createElement('td');
+                                td.classList.add('text-center');
 
-                                        const dropdownButton = document.createElement('button');
-                                        dropdownButton.classList.add('btn', 'btn-outline-secondary', 'dropdown-toggle', 'text-white');
-                                        dropdownButton.setAttribute('type', 'button');
-                                        dropdownButton.setAttribute('id', 'dropdownMenuButton1');
-                                        dropdownButton.setAttribute('data-bs-toggle', 'dropdown');
-                                        dropdownButton.setAttribute('aria-expanded', 'false');
-                                        dropdownButton.innerText = 'Ações';
+                                if (element === 'actions_dropdown') {
+                                    const dropdown = document.createElement('div');
+                                    dropdown.classList.add('dropdown', 'text-end', 'dropstart');
 
-                                        const dropdownMenu = document.createElement('ul');
-                                        dropdownMenu.style = "background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(7px); border-radius: 15px; border: 2px solid #198754;"
-                                        dropdownMenu.classList.add('dropdown-menu', 'text-center', 'me-2');
+                                    const dropdownButton = document.createElement('button');
+                                    dropdownButton.classList.add('btn', 'btn-outline-secondary', 'dropdown-toggle', 'text-white');
+                                    dropdownButton.setAttribute('type', 'button');
+                                    dropdownButton.setAttribute('id', 'dropdownMenuButton1');
+                                    dropdownButton.setAttribute('data-bs-toggle', 'dropdown');
+                                    dropdownButton.setAttribute('aria-expanded', 'false');
+                                    dropdownButton.innerText = 'Ações';
 
-                                        const editButton = document.createElement('li');
-                                        editButton.classList.add('dropdown-item');
-                                        editButton.addEventListener('click', () => {
-                                            edit(row['id']);
-                                        });
-                                        editButton.innerText = 'Editar';
+                                    const dropdownMenu = document.createElement('ul');
+                                    dropdownMenu.style = "background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(7px); border-radius: 15px; border: 2px solid #198754;"
+                                    dropdownMenu.classList.add('dropdown-menu', 'text-center', 'me-2');
+
+                                    const editButton = document.createElement('li');
+                                    editButton.classList.add('dropdown-item');
+                                    editButton.addEventListener('click', () => {
+                                        edit(row['id']);
+                                    });
+                                    editButton.innerText = 'Editar';
 
 
-                                        const deleteButton = document.createElement('li');
-                                        deleteButton.classList.add('dropdown-item');
-                                        deleteButton.addEventListener('click', () => {
-                                            deleteRegister(row['id']);
-                                        });
+                                    const deleteButton = document.createElement('li');
+                                    deleteButton.classList.add('dropdown-item');
+                                    deleteButton.addEventListener('click', () => {
+                                        deleteRegister(row['id']);
+                                    });
 
-                                        deleteButton.innerText = 'Excluir';
+                                    deleteButton.innerText = 'Excluir';
 
-                                        dropdownMenu.appendChild(editButton);
-                                        dropdownMenu.appendChild(deleteButton);
+                                    dropdownMenu.appendChild(editButton);
+                                    dropdownMenu.appendChild(deleteButton);
 
-                                        dropdown.appendChild(dropdownButton);
+                                    dropdown.appendChild(dropdownButton);
 
-                                        dropdown.appendChild(dropdownMenu);
+                                    dropdown.appendChild(dropdownMenu);
 
-                                        td.appendChild(dropdown);
-                                    } else if (element === 'active') {
-                                        const dot = document.createElement('div');
-                                        dot.classList.add('rounded-circle', 'mx-auto');
+                                    td.appendChild(dropdown);
+                                } else if (element === 'active') {
+                                    const dot = document.createElement('div');
+                                    dot.classList.add('rounded-circle', 'mx-auto');
 
-                                        dot.style.width = '15px';
-                                        dot.style.height = '15px';
-                                        dot.style.backgroundColor = row[element] == 1 ? '#00bf63' : '#ff4e50';
+                                    dot.style.width = '15px';
+                                    dot.style.height = '15px';
+                                    dot.style.backgroundColor = row[element] == 1 ? '#00bf63' : '#ff4e50';
 
-                                        td.appendChild(dot);
-                                    } else {
-                                        td.innerText = row[element];
-                                    }
-                                    tr.appendChild(td);
-                                });
-
-                                tbody.appendChild(tr);
+                                    td.appendChild(dot);
+                                } else {
+                                    td.innerText = row[element];
+                                }
+                                tr.appendChild(td);
                             });
 
-                            table.appendChild(tbody);
-                            tableDiv.appendChild(table);
+                            tbody.appendChild(tr);
+                        });
 
-                            setTimeout(() => {
-                                tableDiv.style.opacity = '1';
-                            }, 500);
-                        } else {
-                            showToast('Erro ao carregar dados da tabela', 'error');
-                        }
-                    })
-                    .catch(error => {
+                        table.appendChild(tbody);
+                        tableDiv.appendChild(table);
+
+                        setTimeout(() => {
+                            tableDiv.style.opacity = '1';
+                        }, 100);
+                    } else {
                         showToast('Erro ao carregar dados da tabela', 'error');
-                    })
+                    }
+                })
+                .catch(error => {
+                    showToast('Erro ao carregar dados da tabela', 'error');
+                })
 
-                table.appendChild(thead);
-                tableDiv.appendChild(table);
-            }, 100);
+            table.appendChild(thead);
+            tableDiv.appendChild(table);
         }
     </script>
 

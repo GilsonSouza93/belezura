@@ -8,171 +8,112 @@
     <?= $tittle ?>
   </h2>
 
-  <div class="row card-2 py-3 my-3">
-    <div class="col-md-8">
-    <h4>
-                <?php if (isset($register)) : ?>
-                    Editar cliente
-                <?php else : ?>
-                    Novo cliente
-                <?php endif ?>
-            </h4>    </div>
-    <div class="col-md-4 btn-group">
-      <a class="btn btn-success" href="<?= $baseRoute ?>">Voltar</a>
-      <button class="btn btn-success" id="submit-btn" >Salvar</button>
-    </div>
-  </div>
-
-  <form>
-
-    <?php if (isset($register)) : ?>
-      <input type="hidden" name="id" value="<?= $register->id ?>">
-    <?php endif ?>
-
-    <div class="row">
-      <div class="mt-3 col-md-4">
-        <label for="name" class="form-label">Nome do produto</label>
-        <input type="text" class="form-control" name="name" placeholder="Insira o nome do produto">
+  <form id="form" class="p-4" enctype="multipart/form-data">
+    <div class="row card-2 py-3 my-3">
+      <div class="col-md-8">
       </div>
-      <div class="mt-3 col-md-4">
-        <label for="model" class="form-label">Modelo</label>
-        <input type="text" class="form-control" name="model" placeholder="Insira o modelo">
-      </div>
-      <div class="mt-3 col-md-4">
-        <label for="qty" class="form-label">Quantidade</label>
-        <input type="text" class="form-control" name="qty" placeholder="Insira a quantidade de entrada">
-      </div>
-
-    </div>
-
-    <div class="row">
-      <div class="mt-3 col-md-2">
-        <label for="price" class="form-label">Preço</label>
-        <input type="text" class="form-control" name="price" placeholder="Insira o preço">
-      </div>
-      <div class="mt-3 col-md-2">
-        <label for="id_valor_custo" class="form-label">Custo R$:</label>
-        <input type="text" class="form-control" name="valor_custo" placeholder="Insira o preço">
-      </div>
-      <div class="mt-3 col-md-4">
-        <label for="categoria" class="form-label">Categoria</label>
-        <select class="form-control" aria-label="Default select example">
-          <option selected>Selecione a categoria</option>
-          <option value="1">Roteador</option>
-          <option value="2">ONU</option>
-          <option value="3">ONT</option>
-          <option value="4">EPI</option>
-          <option value="5">Splitter</option>
-          <option value="6">OLT</option>
-          <option value="7">Cabos</option>
-          <option value="8">Adicionar nova categoria</option>
-        </select>
-      </div>
-      <div class="mt-3 col-md-4">
-        <label for="data" class="form-label">Data de entrada</label>
-        <input type="date" class="form-control" name="date" placeholder="Insira a data de entrada">
+      <div class="col-md-4 btn-group">
+        <a class="btn btn-success" href="<?= $baseRoute ?>">Voltar</a>
+        <button class="btn btn-success" id="submit-btn">Salvar</button>
       </div>
     </div>
-
     <div class="row">
-      <div class="mt-3 col-md-4">
-        <label for="uf" class="form-label">Fornecedor</label>
-        <select class="form-control" aria-label="Default select example">
-          <option selected>Selecione o fornecedor</option>
-          <option value="1">Home Telecomunicações</option>
-          <option value="2">TOPVendas</option>
-          <option value="2">TechInfo</option>
-          <option value="2">Adicionar um novo fornecedor</option>
-        </select>
-      </div>
-      <div class="mt-3 col-md-4">
-        <label for="uf" class="form-label">Marca</label>
-        <select class="form-control" aria-label="Default select example">
-          <option selected>Selecione a marca</option>
-          <option value="1">Sumec</option>
-          <option value="2">2Flex</option>
-          <option value="2">Transcend</option>
-          <option value="2">Adicionar uma nova marca</option>
-        </select>
-      </div>
-      <div class="mt-3 col-md-4">
-        <label for="sku" class="form-label">SKU</label>
-        <input type="text" class="form-control" name="sku" placeholder="Insira o SKU">
-      </div>
-    </div>
-
-
-    <div class="row">
-      <div class="form-group mt-3 col-md-4">
-        <label class="required" for="id_descricao">Descrição:</label>
-        <input type="text" name="descricao" id="id_descricao" required class="form-control" maxlength="200">
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="form-group mt-3 col-md-8">
-        <label for="id_ean">Cód. Barras(GTIN/EAN):</label>
-        <input type="text" name="ean" id="id_ean" class="form-control" maxlength="100">
-      </div>
-      <div class="form-group mt-3 col-md-4">
-        <label for="id_tipo_referencia">Tipo de Referência:</label>
-        <select name="tipo_referencia" id="id_tipo_referencia" class="form-control">
-          <option value="" selected>---------</option>
-          <option value="1">MAC Address</option>
-          <option value="2">Serial</option>
-          <option value="3">Tombamento</option>
-        </select>
-      </div>
-
-
-      <div class="row">
-        <div class="form-group mt-3 col-md-4">
-          <label for="id_foto">Foto:</label>
-          <input type="file" name="foto" id="id_foto" class="form-control-file">
+      <div class="col">
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="name" placeholder="Nome do Produto" name="name" required>
+          <label for="name">Nome do Produto</label>
         </div>
-
       </div>
+      <div class="col">
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="price" placeholder="Preço" name="price" required>
+          <label for="price">Preço</label>
+        </div>
+      </div>
+    </div>
 
 
+    <div class="form-floating mb-3">
+      <textarea class="form-control" id="description" placeholder="Descrição" name="description" rows="4"></textarea>
+      <label for="description">Descrição</label>
+    </div>
 
+
+    <div class="form-floating mb-3">
+      <select class="form-select" id="manufacturer_id" name="manufacturer_id" required>
+        <option value="" disabled selected>Selecione um Fabricante</option>
+        <?php foreach ($manufacturers as $manufacturer) : ?>
+          <option value="<?= $manufacturer['id'] ?>"><?= $manufacturer['name'] ?></option>
+        <?php endforeach; ?>
+      </select>
+      <label for="manufacturer_id">Fabricante</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <select class="form-select" id="category_id" name="category_id" required>
+        <option value="" disabled selected>Selecione uma Categoria</option>
+        <?php foreach ($categories as $category) : ?>
+          <option value="<?= $category['id'] ?>"><?= $category['name'] ?></option>
+        <?php endforeach; ?>
+      </select>
+      <label for="category_id">Categoria</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <select class="form-select" id="suppliers_id" name="suppliers_id" required>
+        <option value="" disabled selected>Selecione um Fornecedor</option>
+        <?php foreach ($suppliers as $supplier) : ?>
+          <option value="<?= $supplier['id'] ?>"><?= $supplier['name'] ?></option>
+        <?php endforeach; ?>
+      </select>
+      <label for="suppliers_id">Fornecedor</label>
+    </div>
   </form>
 
+</div>
+<?= $this->endSection() ?>
 
-  <?= $this->endSection() ?>
-
-
-  <?= $this->section('script') ?>
+<?= $this->section('script') ?>
 
 <script>
+  const submitBtn = document.querySelector('#submit-btn');
+  const form = document.querySelector('form');
+  const url = '<?= $baseRoute ?>/save';
 
-    const submitBtn = document.querySelector('#submit-btn');
-    const form = document.querySelector('form');
-    const url = '<?= $baseRoute ?>/save';
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    const data = formatBody();
+    if (!data) return;
 
-    submitBtn.addEventListener('click', event => {
-        event.preventDefault();
-        showLoading();
+    showLoading();
 
-        const formData = new FormData(form);
+    fetch(url, {
+        method: 'POST',
+        body: data
+      }).then(response => response.json())
+      .then(data => {
+        hideLoading();
+        if (data.status === 'success') {
+          showToast(data.message, 'success');
+          setTimeout(() => {
+            window.location.href = '<?= $baseRoute ?>';
+          }, 1000);
+        } else {
+          showToast(data.message, 'error');
+        }
+      }).catch(error => {
+        console.log(error);
+      });
+  });
 
-        fetch(url, {
-            method: 'POST',
-            body: formData
-        }).then(response => response.json())
-        .then(data => {
-            hideLoading();
-            if (data.error) {
-                showToast(data.message, 'error');
-            } else {
-                showToast(data.message, 'success');
-                window.location.href = '<?= $baseRoute ?>';
-            }
-        }).catch(error => {
-            console.log(error);
-        });
-    });
+  function formatBody() {
+    const body = {
+      name: document.querySelector('#name').value,
+      description: document.querySelector('#description').value,
+    }
 
-
+    return JSON.stringify(body);
+  }
 </script>
 
 <?= $this->endSection() ?>
