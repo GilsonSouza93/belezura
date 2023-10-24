@@ -332,8 +332,6 @@ abstract class BaseController extends Controller
     public function delete()
     {
         $id = $this->request->getJSON('id');
-        var_dump($id);
-        die;
 
         $response = $this->mainModel->delete($id);
 
