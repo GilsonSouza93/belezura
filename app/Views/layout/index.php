@@ -261,6 +261,7 @@
                     if (data.status == 'success') {
                         data.data.forEach(row => {
                             const tr = document.createElement('tr');
+                            console.log(row);
 
                             tbodyElements.forEach(element => {
                                 const td = document.createElement('td');
@@ -341,6 +342,38 @@
             table.appendChild(thead);
             tableDiv.appendChild(table);
         }
+
+        function edit(id){
+            window.location.href = `<?= $baseRoute ?>/editar/${id}`;
+        }    
+
+        function deleteRegister(id){
+            const url = `<?= $baseRoute ?>/delete`;
+            const data = {
+                id: id,
+            }
+
+            showLoading();
+
+            fetch (url, {
+                method: 'POST',
+                body: data,
+            }).then(response => response.json())
+            .then(data => {
+                hideLoading();
+                if (data.status === 'success') {
+                    showToast(data.message, 'success');
+                    setTimeout(() => {
+                        window.location.href = '<?= $baseRoute ?>';
+                    }, 100);
+                } else {
+                    showToast(data.message, 'error');
+                }
+            }).catch(error => {
+                console.log(error);
+            });
+        }
+
     </script>
 
     <?= $this->renderSection('script') ?>

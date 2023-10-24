@@ -71,6 +71,7 @@ class SubscriptionModel extends Model
         ];
 
         $fieldsToReturn = [
+            'id',
             'name',
             'speed',
             'monthly_price',
