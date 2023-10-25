@@ -45,7 +45,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
     $routes->group('auth', static function ($routes) {
         $routes->get('logout', 'LoginController::logout');
     });
-    
+
     $routes->group('clientes', static function ($routes) {
         $routes->get('/', 'CustomerController::index');
         $routes->get('novo', 'CustomerController::form');
@@ -54,9 +54,9 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
 
         $routes->post('save', 'CustomerController::save');
         $routes->post('search', 'CustomerController::search');
-        $routes->post('delete', 'CustomerController::delete');	
+        $routes->post('delete', 'CustomerController::delete');
     });
-    
+
 
     $routes->group('estoque', static function ($routes) {
         $routes->group('produtos', static function ($routes) {
@@ -68,7 +68,6 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->post('save', 'ProductController::save');
             $routes->post('search', 'ProductController::search');
             $routes->post('delete', 'ProductController::delete');
-            
         });
         $routes->group('categoria', static function ($routes) {
             $routes->get('/', 'CategoryController::index');
@@ -89,7 +88,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->post('search', 'ManufacturerController::search');
             $routes->post('delete', 'ManufacturerController::delete');
         });
-    
+
         $routes->group('fornecedores', static function ($routes) {
             $routes->get('/', 'SupplierController::index');
             $routes->get('novo', 'SupplierController::form');
@@ -140,7 +139,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->post('search', 'RelatorioController::search');
             $routes->post('delete', 'RelatorioController::delete');
         });
-        
+
         $routes->group('transferencia', static function ($routes) {
             $routes->get('/', 'TransferController::index');
             $routes->get('novo', 'TransferController::form');
@@ -169,7 +168,9 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('novo', 'AccountController::form');
             $routes->post('search', 'AccountController::search');
             $routes->post('save', 'AccountController::save');
+            $routes->post('delete', 'AccountController::delete');
         });
+
         $routes->group('ippool', static function ($routes) {
             $routes->get('/', 'IppoolController::index');
             $routes->get('novo', 'IppoolController::form');
@@ -180,6 +181,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->post('search', 'IppoolController::search');
             $routes->post('delete', 'IppoolController::delete');
         });
+
         $routes->group('ipv6pool', static function ($routes) {
             $routes->get('/', 'Ipv6Controller::index');
             $routes->get('novo', 'Ipv6Controller::form');
@@ -190,6 +192,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->post('search', 'Ipv6Controller::search');
             $routes->post('delete', 'Ipv6Controller::delete');
         });
+
         $routes->group('planos', static function ($routes) {
             $routes->get('/', 'SubscriptionController::index');
             $routes->get('novo', 'SubscriptionController::form');
@@ -199,13 +202,11 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->post('save', 'SubscriptionController::save');
             $routes->post('search', 'SubscriptionController::search');
             $routes->post('delete', 'SubscriptionController::delete');
-
         });
+
         $routes->group('alterarsenha', static function ($routes) {
             $routes->get('/', 'PasswordController::index');
             $routes->get('novo', 'PasswordController::form');
-            
-
         });
     });
     $routes->group('equipamentos', static function ($routes) {
@@ -238,7 +239,6 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->post('save', 'SwitchController::save');
             $routes->post('search', 'SwitchController::search');
             $routes->post('delete', 'SwitchController::delete');
-            
         });
         $routes->group('router', static function ($routes) {
             $routes->get('/', 'RouterController::index');
@@ -304,7 +304,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('novo', 'OutrosController::form');
         });
     });
-    
+
     $routes->group('financeiro', static function ($routes) {
         $routes->group('dashboard', static function ($routes) {
             $routes->get('/', 'FinancialController::index');
@@ -340,7 +340,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
 
             $routes->post('save', 'TicketController::save');
             $routes->post('search', 'TicketController::search');
-            $routes->post('delete', 'TicketController::delete');	
+            $routes->post('delete', 'TicketController::delete');
 
             // $routes->get('imprimir')
             $routes->get('imprimir-em-lote', 'TicketController::print');
@@ -353,7 +353,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
 
             $routes->post('save', 'BillstopayController::save');
             $routes->post('search', 'BillstopayController::search');
-            $routes->post('delete', 'BillstopayController::delete');	
+            $routes->post('delete', 'BillstopayController::delete');
         });
         $routes->group('contas-receber', static function ($routes) {
             $routes->get('/', 'BillstoreceiverController::index');
@@ -413,9 +413,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->post('delete', 'VehicleController::delete');
             $routes->post('search', 'VehicleController::search');
         });
-        
     });
-
 });
 /*
  * --------------------------------------------------------------------

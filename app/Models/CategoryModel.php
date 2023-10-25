@@ -53,6 +53,7 @@ class CategoryModel extends Model
         ];
 
         $fieldsToReturn = [
+            'id',
             'name',
             'description',
         ];

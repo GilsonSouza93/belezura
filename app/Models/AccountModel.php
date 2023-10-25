@@ -63,6 +63,7 @@ class AccountModel extends Model
         ];
 
         $fieldsToReturn = [
+            'id',
             'name',
             'email',
             'phone1',

@@ -331,19 +331,22 @@ abstract class BaseController extends Controller
 
     public function delete()
     {
-        $id = $this->request->getJSON('id');
+        $data = $this->request->getJSON();
 
-        $response = $this->mainModel->delete($id);
+        if (is_object($data))
+            $data = (array) $data;
+
+        $response = $this->mainModel->delete($data['id']);
 
         if ($response) {
             $data = [
-                'success' => true,
+                'status' => 'success',
                 'message' => 'Excluído com sucesso!',
                 'data' => $response
             ];
         } else {
             $data = [
-                'success' => false,
+                'status' => 'fail',
                 'message' => 'Erro ao excluir!',
                 'data' => $response
             ];

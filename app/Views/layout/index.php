@@ -348,6 +348,7 @@
         }    
 
         function deleteRegister(id){
+            console.log(id);
             const url = `<?= $baseRoute ?>/delete`;
             const data = {
                 id: id,
@@ -357,7 +358,7 @@
 
             fetch (url, {
                 method: 'POST',
-                body: data,
+                body: JSON.stringify(data),
             }).then(response => response.json())
             .then(data => {
                 hideLoading();
