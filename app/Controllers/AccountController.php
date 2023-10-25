@@ -31,7 +31,13 @@ class AccountController extends BaseController
         $data['account_type_id'] = 2;
         $data['created_at'] = date('Y-m-d H:i:s');
 
-        if($this->mainModel->where('email', $data['email'])->first()){
+        $id = isset($data['id']) ? $data['id'] : null;
+
+        if($id){
+            $data['updated_at'] = date('Y-m-d H:i:s');
+        }
+
+        if($this->mainModel->where('email', $data['email'])->first() && $id == null){
             $data['error'] = 'Este email já foi cadastrado!';
         }
 

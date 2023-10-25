@@ -166,6 +166,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         $routes->group('contas', static function ($routes) {
             $routes->get('/', 'AccountController::index');
             $routes->get('novo', 'AccountController::form');
+            $routes->get('editar/(:num)', 'AccountController::edit/$1');
             $routes->post('search', 'AccountController::search');
             $routes->post('save', 'AccountController::save');
             $routes->post('delete', 'AccountController::delete');

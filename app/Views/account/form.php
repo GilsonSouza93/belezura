@@ -10,6 +10,7 @@
 
 
     <form id="form">
+        <input type="hidden" name="id" id="id" value="<?= $register->id ?? '' ?>">
         <div class="row py-3 my-3">
             <div class="col-md-8">
             </div>
@@ -19,33 +20,29 @@
             </div>
         </div>
 
-        <?php if (isset($register)) : ?>
-            <input type="hidden" name="id" value="<?= $register->id ?>">
-        <?php endif ?>
-
         <div class="row">
             <div class="col">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="name" placeholder="Nome" name="name" required>
+                    <input type="text" class="form-control" id="name" placeholder="Nome" name="name" required value="<?= $register->name ?? '' ?>">
                     <label for="name">Nome</label>
                 </div>
             </div>
             <div class="col">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="email" placeholder="Email" name="email" required>
+                    <input type="text" class="form-control" id="email" placeholder="Email" name="email" required value="<?= $register->email ?? '' ?>">
                     <label for="email">Email</label>
                 </div>
             </div>
 
             <div class="col">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="phone1" placeholder="Celular" name="phone1">
+                    <input type="text" class="form-control" id="phone1" placeholder="Celular" name="phone1" required value="<?= $register->phone1 ?? '' ?>">
                     <label for="phone1">Celular</label>
                 </div>
             </div>
             <div class="col">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="phone2" placeholder="Celular Adicional" name="phone2">
+                    <input type="text" class="form-control" id="phone2" placeholder="Celular Adicional" name="phone2" value="<?= $register->phone2 ?? '' ?>">
                     <label for="phone2">Telefone adicional</label>
                 </div>
             </div>
@@ -54,13 +51,13 @@
         <div class="row">
             <div class="col">
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="password" placeholder="Senha" name="password">
+                    <input type="text" class="form-control" id="password" placeholder="Senha" name="password" <?= isset($register) ? '' : 'required' ?>>
                     <label for="password">Senha</label>
                 </div>
             </div>
             <div class="col">
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="passwordConfirm" placeholder="Confirmar Senha" name="passwordConfirm">
+                    <input type="text" class="form-control" id="passwordConfirm" placeholder="Confirmar Senha" name="passwordConfirm" <?= isset($register) ? '' : 'required' ?>>
                     <label for="passwordConfirm">Confirma Senha</label>
                 </div>
             </div>
@@ -305,6 +302,9 @@
             phone2: document.querySelector('#phone2').value,
             password: document.querySelector('#password').value,
             passwordConfirm: document.querySelector('#passwordConfirm').value,
+            <?php if (isset($register)) : ?>
+                id: document.querySelector('#id').value,
+            <?php endif ?>
         }
 
         if (body.password != body.passwordConfirm) {
@@ -312,12 +312,7 @@
             return;
         }
 
-        if (body.password == '') {
-            showToast('A senha não pode ser vazia', 'error');
-            return;
-        }
-
-        if (body.password.length < 6) {
+        if (body.password.length < 6 && !body.id) {
             showToast('A senha deve ter no mínimo 6 caracteres', 'error');
             return;
         }
