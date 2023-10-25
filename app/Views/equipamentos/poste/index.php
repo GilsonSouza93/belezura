@@ -62,14 +62,6 @@
     btnSearch.addEventListener('click', () => {
         renderTable(renderTableOptions);
     });
-
-    const edit = (id) => {
-        console.log("")
-    }
-
-    const deleteRegister = (id) => {
-
-    }
 </script>
 <?= $this->endSection() ?>
 

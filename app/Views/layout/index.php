@@ -261,8 +261,6 @@
                     if (data.status == 'success') {
                         data.data.forEach(row => {
                             const tr = document.createElement('tr');
-                            console.log(row);
-
                             tbodyElements.forEach(element => {
                                 const td = document.createElement('td');
                                 td.classList.add('text-center');
@@ -348,7 +346,6 @@
         }    
 
         function deleteRegister(id){
-            console.log(id);
             const url = `<?= $baseRoute ?>/delete`;
             const data = {
                 id: id,
