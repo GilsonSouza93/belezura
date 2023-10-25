@@ -21,13 +21,13 @@
         <div class="row">
             <div class="col">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="name" placeholder="Nome" name="name" required>
+                    <input type="text" class="form-control" id="name" placeholder="Nome" name="name" required value="<?= $register->name ?? '' ?>">
                     <label for="name">Nome</label>
                 </div>
             </div>
             <div class="col">
                 <div class="form-floating mb-3">
-                    <input type="number" class="form-control" id="speed" placeholder="Velocidade (Mbps)" name="speed" required>
+                    <input type="number" class="form-control" id="speed" placeholder="Velocidade (Mbps)" name="speed" required value="<?= $register->speed ?? '' ?>">
                     <label for="speed">Velocidade (Mbps)</label>
                 </div>
             </div>
@@ -36,13 +36,13 @@
         <div class="row">
             <div class="col">
                 <div class="form-floating mb-3">
-                    <input type="number" class="form-control" id="monthly_price" placeholder="Preço Mensal (USD)" name="monthly_price" required>
+                    <input type="number" class="form-control" id="monthly_price" placeholder="Preço Mensal (USD)" name="monthly_price" required value="<?= $register->monthly_price ?? '' ?>">
                     <label for="monthly_price">Preço Mensal (Reais)</label>
                 </div>
             </div>
             <div class="col">
                 <div class="form-floating mb-3">
-                    <input type="number" class="form-control" id="contract_duration" placeholder="Duração do Contrato (Meses)" name="contract_duration" required>
+                    <input type="number" class="form-control" id="contract_duration" placeholder="Duração do Contrato (Meses)" name="contract_duration" required value="<?= $register->contract_duration ?? '' ?>">
                     <label for="contract_duration">Duração do Contrato (Meses)</label>
                 </div>
             </div>
@@ -51,40 +51,40 @@
         <div class="row">
             <div class="col">
                 <div class="form-floating mb-3">
-                    <input type="number" class="form-control" id="data_limit" placeholder="Limite de Dados (Opcional)" name="data_limit">
+                    <input type="number" class="form-control" id="data_limit" placeholder="Limite de Dados (Opcional)" name="data_limit" value="<?= $register->data_limit ?? '' ?>">
                     <label for="data_limit">Limite de Dados (Mbps/Opcional)</label>
                 </div>
             </div>
             <div class="col">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="connection_type" placeholder="Tipo de Conexão" name="connection_type" required>
+                    <input type="text" class="form-control" id="connection_type" placeholder="Tipo de Conexão" name="connection_type" required value="<?= $register->connection_type ?? '' ?>">
                     <label for="connection_type">Tipo de Conexão</label>
                 </div>
             </div>
         </div>
 
         <div class="form-floating mb-3">
-            <textarea class="form-control" id="features" placeholder="Características do Plano (Opcional)" name="features" rows="4"></textarea>
+            <textarea class="form-control" id="features" placeholder="Características do Plano (Opcional)" name="features" rows="4" ><?= $register->features ?? '' ?></textarea>
             <label for="features">Características do Plano (Opcional)</label>
         </div>
 
         <div class="form-floating mb-3">
-            <textarea class="form-control" id="notes" placeholder="Notas ou Observações (Opcional)" name="notes" rows="4"></textarea>
+            <textarea class="form-control" id="notes" placeholder="Notas ou Observações (Opcional)" name="notes" rows="4" ><?= $register->notes ?? '' ?></textarea>
             <label for="notes">Notas ou Observações (Opcional)</label>
         </div>
 
         <div class="form-floating mb-3">
-            <textarea class="form-control" id="required_equipment" placeholder="Requisitos de Equipamento (Opcional)" name="required_equipment" rows="4"></textarea>
+            <textarea class="form-control" id="required_equipment" placeholder="Requisitos de Equipamento (Opcional)" name="required_equipment" rows="4"><?= $register->required_equipment ?? '' ?></textarea>
             <label for="required_equipment">Requisitos de Equipamento (Opcional)</label>
         </div>
 
         <div class="form-floating mb-3">
-            <textarea class="form-control" id="payment_options" placeholder="Opções de Pagamento (Opcional)" name="payment_options" rows="4"></textarea>
+            <textarea class="form-control" id="payment_options" placeholder="Opções de Pagamento (Opcional)" name="payment_options" rows="4"><?= $register->payment_options ?? '' ?></textarea>
             <label for="payment_options">Opções de Pagamento (Opcional)</label>
         </div>
 
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="geographical_availability" placeholder="Disponibilidade Geográfica (Opcional)" name="geographical_availability">
+            <input type="text" class="form-control" id="geographical_availability" placeholder="Disponibilidade Geográfica (Opcional)" name="geographical_availability" value="<?= $register->geographical_availability ?? '' ?>">
             <label for="geographical_availability">Disponibilidade Geográfica (Opcional)</label>
         </div>
     </form>
@@ -139,6 +139,9 @@
             required_equipment: document.querySelector('#required_equipment').value,
             payment_options: document.querySelector('#payment_options').value,
             geographical_availability: document.querySelector('#geographical_availability').value,
+            <?php if (isset($register)) : ?>
+                id: document.querySelector('#id').value,
+            <?php endif ?>
         }
 
         return JSON.stringify(body);

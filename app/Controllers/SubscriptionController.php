@@ -22,6 +22,12 @@ class SubscriptionController extends BaseController
         $data['account_type_id'] = 2;
         $data['created_at'] = date('Y-m-d H:i:s');
 
+        $id = isset($data['id']) ? $data['id'] : null;
+
+        if($id){
+            $data['updated_at'] = date('Y-m-d H:i:s');
+        }
+
         if($this->mainModel->where('name', $data['name'])->first()){
             $data['error'] = 'Já existe um plano com este nome!';
         }
