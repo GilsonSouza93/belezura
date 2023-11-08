@@ -132,6 +132,7 @@
                         <ul class="dropdown-menu text-center me-2" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(7px); border-radius: 15px; border: 2px solid #198754;">
                             <li class="dropdown-item" onclick="editCustomer(${customer.id})">Editar</li>
                             <li class="dropdown-item" onclick="deleteCustomer(${customer.id})">Excluir</li>
+                            <li class="dropdown-item" onclick="ticketCustomer(${customer.id})">Boleto</li>
                         </ul>
                     </div>
                 </td>
