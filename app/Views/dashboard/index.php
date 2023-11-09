@@ -6,7 +6,52 @@
     <h2>
         <?= $tittle ?>
     </h2>
-    <div class="row card-2 py-3 my-3">
+
+    <div class="row p-1 mb-4">
+        <div class="col gradient-1 p-3">
+            <div class="d-flex justify-content-around align-items-center h-100">
+                <div class="d-flex">
+                    <div class="d-flex flex-column justify-content-around">
+                        <h5 class="mb-0 text-white">Clientes</h5>
+                        <h1 class="me-2 mb-0 text-white">10.000</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col gradient-2 p-3">
+            <div class="d-flex justify-content-around align-items-center h-100">
+                <div class="d-flex">
+                    <div class="d-flex flex-column justify-content-around">
+                        <h5 class="mb-0 text-white">Postes</h5>
+                        <h1 class="me-2 mb-0 text-white">500</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col gradient-3 p-3">
+            <div class="d-flex justify-content-around align-items-center h-100">
+                <div class="d-flex">
+                    <div class="d-flex flex-column justify-content-around">
+                        <h5 class="mb-0 text-white">Entrada</h5>
+                        <h1 class="me-2 mb-0 text-white">R$ 9000</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col gradient-4 p-3">
+            <div class="d-flex justify-content-around align-items-center h-100">
+                <div class="d-flex">
+                    <div class="d-flex flex-column justify-content-around">
+                        <h5 class="mb-0 text-white">Notificações</h5>
+                        <h1 class="me-2 mb-0 text-white">10</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-4 card-2">
         <div class="col-md-8">
             <input type="text" name="search" id="search" class="form-control" placeholder="Buscar" style="background-color: transparent;">
         </div>
@@ -18,59 +63,11 @@
     </div>
 
     <div class="row" style="height: 400PX">
-        <div class="col-8 rounded" id="map">
-
-        </div>
-        <div class="col-4">
-            <div class="container" style="height: 390px;">
-                <div class="row h-50" style="margin-bottom: 10px;">
-                    <div class="col gradient-1">
-                        <div class="d-flex justify-content-around align-items-center h-100">
-                            <div class="d-flex">
-                                <div class="d-flex flex-column justify-content-around">
-                                    <h5 class="mb-0 text-white">Clientes</h5>
-                                    <h1 class="me-2 mb-0 text-white">10.000</h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col gradient-2">
-                        <div class="d-flex justify-content-around align-items-center h-100">
-                            <div class="d-flex">
-                                <div class="d-flex flex-column justify-content-around">
-                                    <h5 class="mb-0 text-white">Olts</h5>
-                                    <h1 class="me-2 mb-0 text-white">500</h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="row h-50">
-                    <div class="col gradient-3">
-                        <div class="d-flex justify-content-around align-items-center h-100">
-                            <div class="d-flex">
-                                <div class="d-flex flex-column justify-content-around">
-                                    <h5 class="mb-0 text-white">Entrada</h5>
-                                    <h1 class="me-2 mb-0 text-white">R$ 9000</h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col gradient-4">
-                        <div class="d-flex justify-content-around align-items-center h-100">
-                            <div class="d-flex">
-                                <div class="d-flex flex-column justify-content-around">
-                                    <h5 class="mb-0 text-white">Notificações</h5>
-                                    <h1 class="me-2 mb-0 text-white">10</h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="row rounded" id="map">
         </div>
     </div>
+</div>
+
 
 </div>
 <!-- Conteudo Modal Filtro para postes -->
@@ -164,27 +161,27 @@
         }
 
         fetch('<?= base_url('map/postes') ?>')
-        .then(response => response.json())
-        .then(data => {
-            if (data.status === 'success') {
-                for (var i = 0; i < markers.length; i++) {
-                    markers[i].setMap(null);
-                }
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    for (var i = 0; i < markers.length; i++) {
+                        markers[i].setMap(null);
+                    }
 
-                data.data.forEach(poste => {
-                    addDotMarker({
-                        lat: parseFloat(poste.latitude),
-                        lng: parseFloat(poste.longitude)
-                    }, poste.active);
-                });
+                    data.data.forEach(poste => {
+                        addDotMarker({
+                            lat: parseFloat(poste.latitude),
+                            lng: parseFloat(poste.longitude)
+                        }, poste.active);
+                    });
 
-                var bounds = new google.maps.LatLngBounds();
-                for (var i = 0; i < markers.length; i++) {
-                    bounds.extend(markers[i].getPosition());
+                    var bounds = new google.maps.LatLngBounds();
+                    for (var i = 0; i < markers.length; i++) {
+                        bounds.extend(markers[i].getPosition());
+                    }
+                    map.fitBounds(bounds);
                 }
-                map.fitBounds(bounds);
-            }
-        });
+            });
     }
     document.addEventListener('DOMContentLoaded', () => {
         initMap();

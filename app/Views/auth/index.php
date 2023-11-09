@@ -113,6 +113,7 @@
 
         const showLoading = () => {
             const div = document.createElement('div');
+            div.id = 'loading';
             div.classList.add('position-fixed', 'top-0', 'start-0', 'p-3', 'w-100', 'h-100', 'd-flex', 'justify-content-center', 'align-items-center', 'bg-transparent', 'fade');
             div.style.zIndex = '10';
             div.style.backdropFilter = 'blur(7px)';
@@ -137,7 +138,7 @@
         };
 
         const hideLoading = () => {
-            const loadingDiv = document.querySelector('.fade');
+            const loadingDiv = document.querySelector('#loading');
             if (loadingDiv) {
                 loadingDiv.style.opacity = '0';
 

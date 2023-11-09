@@ -17,7 +17,6 @@ class BrandController extends BaseController
         parent::__construct();
     }
 
-
     public function treatmentBeforeSave($data)
     {
         $data['created_at'] = date('Y-m-d H:i:s');

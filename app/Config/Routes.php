@@ -377,6 +377,11 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->post('delete', 'ContractController::delete');
         });
     });
+
+    $routes->group('api', static function ($routes) {
+        $routes->get('teste', 'ApiController::index');
+    });
+
     $routes->group('gerencial', static function ($routes) {
         $routes->group('pop', static function ($routes) {
             $routes->get('/', 'PopController::index');

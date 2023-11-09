@@ -10,12 +10,13 @@
     <style>
         :root {
             --border-radius: 15px;
-            --bs-body-bg-rgb: 0, 0, 0;
-            --bs-body-bg-rgb: 33, 37, 41;
-            --bs-primary-rgb: 13, 110, 253;
-            --bd-accent-rgb: 255, 228, 132;
-            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-            --bd-pink-rgb: 214, 51, 132;
+            --bs-body-bg-rgb: 20, 20, 20;
+
+            --bs-primary-rgb: 25,93,168;
+            --bd-accent-rgb: 18,71,129;
+
+            --bd-pink-rgb: 0,147,255;
+            --bd-violet-rgb: 0,147,255;
         }
 
         body {
@@ -74,7 +75,7 @@
 <body>
     <header>
         <nav class="m-3 d-flex flex-row">
-            <img src="<?= base_url('assets/imgs/logo.png') ?>" alt="logo" class="mx-2" style="height: 60px;">
+        <img src="<?= base_url('assets/imgs/logo.png') ?>" alt="logo" class="mx-2" style="height: 60px;">
 
             <div class="d-flex flex-row align-items-center">
                 <?php foreach ($navigation_bar_items as $item) : ?>
@@ -177,7 +178,7 @@
         const showLoading = () => {
             const div = document.createElement('div');
             div.id = 'loading';
-            div.classList.add('position-fixed', 'top-0', 'start-0', 'p-3', 'w-100', 'h-100', 'd-flex', 'justify-content-center', 'align-items-center', 'bg-transparent', 'fade');
+            div.classList.add('position-fixed', 'top-0', 'start-0', 'p-3', 'w-100', 'h-100', 'd-flex', 'justify-content-center', 'align-items-center', 'bg-transparent', 'fade', 'd-flex', 'justify-content-center', 'align-items-center',);
             div.style.zIndex = '10';
             div.style.backdropFilter = 'blur(7px)';
             div.style.transition = 'opacity 0.5s ease-in-out';
@@ -267,7 +268,7 @@
 
                                 if (element === 'actions_dropdown') {
                                     const dropdown = document.createElement('div');
-                                    dropdown.classList.add('dropdown', 'text-end', 'dropstart');
+                                    dropdown.classList.add('dropdown', 'text-end', 'dropstart', 'dropdown-dark', 'me-2');
 
                                     const dropdownButton = document.createElement('button');
                                     dropdownButton.classList.add('btn', 'btn-outline-secondary', 'dropdown-toggle', 'text-white');
