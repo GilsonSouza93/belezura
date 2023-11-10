@@ -10,13 +10,13 @@
     <style>
         :root {
             --border-radius: 15px;
-            --bs-body-bg-rgb: 20, 20, 20;
+            --bs-body-bg-rgb: 0, 20, 40;
 
-            --bs-primary-rgb: 25,93,168;
-            --bd-accent-rgb: 18,71,129;
+            --bs-primary-rgb: 25, 93, 168;
+            --bd-accent-rgb: 18, 71, 129;
 
-            --bd-pink-rgb: 0,147,255;
-            --bd-violet-rgb: 0,147,255;
+            --bd-pink-rgb: 0, 147, 255;
+            --bd-violet-rgb: 0, 147, 255;
         }
 
         body {
@@ -32,6 +32,7 @@
             background: rgba(50, 50, 50, 0.4);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
             border: 1px solid rgba(33, 37, 41, 0.2);
+            backdrop-filter: blur(7px);
         }
 
         .border {
@@ -69,65 +70,89 @@
         select {
             background: rgba(255, 255, 255, 0.1) !important;
         }
+
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            /* Place particles behind other content */
+        }
+
+        #content {
+            position: relative;
+            z-index: 1;
+        }
     </style>
 </head>
 
-<body>
-    <header>
-        <nav class="m-3 d-flex flex-row">
-        <img src="<?= base_url('assets/imgs/logo.png') ?>" alt="logo" class="mx-2" style="height: 60px;">
+<body id="particles-js" class="bg-dark text-white">
 
-            <div class="d-flex flex-row align-items-center">
-                <?php foreach ($navigation_bar_items as $item) : ?>
-                    <?php if ($item['show_subitems']) : ?>
-                        <div class="nav-item mx-3 subitems">
-                            <a class="nav-link dropdown-toggle text-white" href="<?= $item['href'] ?>" data-bs-toggle="dropdown">
-                                <?= $item['title'] ?>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-dark mt-4 px-2" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(7px); border-radius: 15px; border: 2px solid <?= $item['color'] ?>;">
-                                <?php foreach ($item['subitems'] as $subitem) : ?>
+    <div id="particles-container"></div>
 
-                                    <?php if (isset($subitem['subitems'])) : ?>
-                                        <div class="subitems btn-group dropend ms-3">
-                                            <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">
-                                                <?= $subitem['title'] ?>
-                                            </a>
-                                            <ul class="dropdown-menu dropdown-menu-dark ms-6" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(7px); border-radius: 15px; border: 2px solid <?= $item['color'] ?>;">
-                                                <?php foreach ($subitem['subitems'] as $subsubitem) : ?>
-                                                    <li><a class="dropdown-item text-white rounded my-1" href="<?= $subsubitem['href'] ?>"><?= $subsubitem['title'] ?></a></li>
-                                                <?php endforeach ?>
-                                            </ul>
-                                        </div>
+    <div id="content">
+        <header>
+            <nav class="m-3 d-flex flex-row">
+                <img src="<?= base_url('assets/imgs/logo.png') ?>" alt="logo" class="ms-3" style="height: 60px;">
 
-                                    <?php else : ?>
-                                        <li><a class="dropdown-item text-white rounded" href="<?= $subitem['href'] ?>"><?= $subitem['title'] ?></a></li>
-                                    <?php endif ?>
+                <div class="d-flex flex-row align-items-center">
+                    <?php foreach ($navigation_bar_items as $item) : ?>
+                        <?php if ($item['show_subitems']) : ?>
+                            <div class="nav-item mx-3 subitems">
+                                <a class="nav-link dropdown-toggle text-white" href="<?= $item['href'] ?>" data-bs-toggle="dropdown">
+                                    <?= $item['title'] ?>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark mt-4 px-2" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(7px); border-radius: 15px; border: 2px solid <?= $item['color'] ?>;">
+                                    <?php foreach ($item['subitems'] as $subitem) : ?>
 
-                                <?php endforeach ?>
-                            </ul>
-                        </div>
-                    <?php else : ?>
-                        <div class="nav-item mx-4">
-                            <a class="nav-link text-white" href="<?= $item['href'] ?>"><?= $item['title'] ?></a>
-                        </div>
-                    <?php endif ?>
-                <?php endforeach ?>
-            </div>
-        </nav>
-    </header>
+                                        <?php if (isset($subitem['subitems'])) : ?>
+                                            <div class="subitems btn-group dropend ms-3">
+                                                <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">
+                                                    <?= $subitem['title'] ?>
+                                                </a>
+                                                <ul class="dropdown-menu dropdown-menu-dark ms-6" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(7px); border-radius: 15px; border: 2px solid <?= $item['color'] ?>;">
+                                                    <?php foreach ($subitem['subitems'] as $subsubitem) : ?>
+                                                        <li><a class="dropdown-item text-white rounded my-1" href="<?= $subsubitem['href'] ?>"><?= $subsubitem['title'] ?></a></li>
+                                                    <?php endforeach ?>
+                                                </ul>
+                                            </div>
 
-    <div class="m-3">
-        <?= $this->renderSection('content') ?>
-    </div>
+                                        <?php else : ?>
+                                            <li><a class="dropdown-item text-white rounded" href="<?= $subitem['href'] ?>"><?= $subitem['title'] ?></a></li>
+                                        <?php endif ?>
 
-    <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
-        <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-body">
-                Hello, world! This is a toast message.
+                                    <?php endforeach ?>
+                                </ul>
+                            </div>
+                        <?php else : ?>
+                            <div class="nav-item mx-4">
+                                <a class="nav-link text-white" href="<?= $item['href'] ?>"><?= $item['title'] ?></a>
+                            </div>
+                        <?php endif ?>
+                    <?php endforeach ?>
+                </div>
+            </nav>
+        </header>
+
+        <div class="m-3">
+            <?= $this->renderSection('content') ?>
+        </div>
+
+        <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+            <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-body">
+                    Hello, world! This is a toast message.
+                </div>
             </div>
         </div>
     </div>
-
 
     <script src="<?= base_url('assets/js/bootstrap_5.3.bundle.min.js') ?>"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
@@ -178,7 +203,7 @@
         const showLoading = () => {
             const div = document.createElement('div');
             div.id = 'loading';
-            div.classList.add('position-fixed', 'top-0', 'start-0', 'p-3', 'w-100', 'h-100', 'd-flex', 'justify-content-center', 'align-items-center', 'bg-transparent', 'fade', 'd-flex', 'justify-content-center', 'align-items-center',);
+            div.classList.add('position-fixed', 'top-0', 'start-0', 'p-3', 'w-100', 'h-100', 'd-flex', 'justify-content-center', 'align-items-center', 'bg-transparent', 'fade', 'd-flex', 'justify-content-center', 'align-items-center', );
             div.style.zIndex = '10';
             div.style.backdropFilter = 'blur(7px)';
             div.style.transition = 'opacity 0.5s ease-in-out';
@@ -342,11 +367,11 @@
             tableDiv.appendChild(table);
         }
 
-        function edit(id){
+        function edit(id) {
             window.location.href = `<?= $baseRoute ?>/editar/${id}`;
-        }    
+        }
 
-        function deleteRegister(id){
+        function deleteRegister(id) {
             const url = `<?= $baseRoute ?>/delete`;
             const data = {
                 id: id,
@@ -354,26 +379,134 @@
 
             showLoading();
 
-            fetch (url, {
-                method: 'POST',
-                body: JSON.stringify(data),
-            }).then(response => response.json())
-            .then(data => {
-                hideLoading();
-                if (data.status === 'success') {
-                    showToast(data.message, 'success');
-                    setTimeout(() => {
-                        window.location.href = '<?= $baseRoute ?>';
-                    }, 100);
-                } else {
-                    showToast(data.message, 'error');
-                }
-            }).catch(error => {
-                console.log(error);
-            });
+            fetch(url, {
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                }).then(response => response.json())
+                .then(data => {
+                    hideLoading();
+                    if (data.status === 'success') {
+                        showToast(data.message, 'success');
+                        setTimeout(() => {
+                            window.location.href = '<?= $baseRoute ?>';
+                        }, 100);
+                    } else {
+                        showToast(data.message, 'error');
+                    }
+                }).catch(error => {
+                    console.log(error);
+                });
         }
 
+        document.addEventListener('DOMContentLoaded', function() {
+            particlesJS('particles-container', {
+                particles: {
+                    number: {
+                        value: 80, // Adjust the number of particles
+                        density: {
+                            enable: true,
+                            value_area: 800
+                        }
+                    },
+                    color: {
+                        value: '#3498db' // Blue color for particles
+                    },
+                    shape: {
+                        type: 'circle',
+                        stroke: {
+                            width: 0,
+                            color: '#3498db'
+                        },
+                        polygon: {
+                            nb_sides: 5
+                        }
+                    },
+                    opacity: {
+                        value: 0.3,
+                        random: true,
+                        anim: {
+                            enable: true,
+                            speed: 1,
+                            opacity_min: 0.1,
+                            sync: false
+                        }
+                    },
+                    size: {
+                        value: 3,
+                        random: true,
+                        anim: {
+                            enable: false,
+                            speed: 40,
+                            size_min: 0.1,
+                            sync: false
+                        }
+                    },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: '#3498db',
+                        opacity: 0.1,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 0.15,
+                        direction: 'none',
+                        random: false,
+                        straight: false,
+                        out_mode: 'out',
+                        bounce: false,
+                        attract: {
+                            enable: false,
+                            rotateX: 600,
+                            rotateY: 1200
+                        }
+                    }
+                },
+                interactivity: {
+                    detect_on: 'canvas',
+                    events: {
+                        onhover: {
+                            enable: true,
+                            mode: 'grab'
+                        },
+                        onclick: {
+                            enable: true,
+                            mode: 'push'
+                        },
+                        resize: true
+                    },
+                    modes: {
+                        grab: {
+                            distance: 140,
+                            line_linked: {
+                                opacity: 1
+                            }
+                        },
+                        bubble: {
+                            distance: 400,
+                            size: 40,
+                            duration: 2,
+                            opacity: 8,
+                            speed: 3
+                        },
+                        repulse: {
+                            distance: 200,
+                            duration: 0.4
+                        },
+                        push: {
+                            particles_nb: 4
+                        },
+                        remove: {
+                            particles_nb: 2
+                        }
+                    }
+                },
+                retina_detect: true
+            });
+        });
     </script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
     <?= $this->renderSection('script') ?>
 </body>
