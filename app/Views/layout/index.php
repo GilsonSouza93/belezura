@@ -8,15 +8,17 @@
     <link href="<?= base_url('assets/css/bootstrap_5.3.min.css') ?>" rel="stylesheet">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhZX90O1QnNedic9Z1XgY3P9HzA9AjbN4&libraries=places"></script>
     <style>
+
+
         :root {
             --border-radius: 15px;
-            --bs-body-bg-rgb: 0, 20, 40;
+            --bs-body-bg-rgb: 20, 20, 20;
 
-            --bs-primary-rgb: 25, 93, 168;
-            --bd-accent-rgb: 18, 71, 129;
+            --bs-primary-rgb: 25,93,168;
+            --bd-accent-rgb: 18,71,129;
 
-            --bd-pink-rgb: 0, 147, 255;
-            --bd-violet-rgb: 0, 147, 255;
+            --bd-pink-rgb: 0,147,255;
+            --bd-violet-rgb: 0,147,255;
         }
 
         body {
