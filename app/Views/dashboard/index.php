@@ -13,7 +13,7 @@
                 <div class="d-flex">
                     <div class="d-flex flex-column justify-content-around">
                         <h5 class="mb-0 text-white">Clientes</h5>
-                        <h1 class="me-2 mb-0 text-white">10.000</h1>
+                        <h1 class="me-2 mb-0 text-white" id="customerQty">0</h1>
                     </div>
                 </div>
             </div>
@@ -23,7 +23,7 @@
                 <div class="d-flex">
                     <div class="d-flex flex-column justify-content-around">
                         <h5 class="mb-0 text-white">Postes</h5>
-                        <h1 class="me-2 mb-0 text-white">500</h1>
+                        <h1 class="me-2 mb-0 text-white" id="postQty">0</h1>
                     </div>
                 </div>
             </div>
@@ -34,7 +34,7 @@
                 <div class="d-flex">
                     <div class="d-flex flex-column justify-content-around">
                         <h5 class="mb-0 text-white">Entrada</h5>
-                        <h1 class="me-2 mb-0 text-white">R$ 9000</h1>
+                        <h1 class="me-2 mb-0 text-white" id="withdrawValue">R$ 0.00</h1>
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                 <div class="d-flex">
                     <div class="d-flex flex-column justify-content-around">
                         <h5 class="mb-0 text-white">Notificações</h5>
-                        <h1 class="me-2 mb-0 text-white">10</h1>
+                        <h1 class="me-2 mb-0 text-white" id="notifications">0</h1>
                     </div>
                 </div>
             </div>
@@ -185,7 +185,24 @@
     }
     document.addEventListener('DOMContentLoaded', () => {
         initMap();
+        renderInfoCards();
     });
+
+    const renderInfoCards = () => {
+        const customersCard = document.querySelector('#customerQty');
+        const postCard = document.querySelector('#postQty');
+        const withdrawCard = document.querySelector('#withdrawValue');
+        const notificationsCard = document.querySelector('#notifications');
+
+        fetch('<?= base_url('dashboard/info') ?>')
+            .then(response => response.json())
+            .then(data => {
+                customersCard.innerHTML = data.customerQty;
+                postCard.innerHTML = data.postQty;
+                withdrawCard.innerHTML = data.withdrawValue;
+                notificationsCard.innerHTML = data.notifications.length;
+            });
+    }
 </script>
 
 

@@ -39,8 +39,11 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
     $routes->group('map', static function ($routes) {
         $routes->get('postes', 'MapController::getPosts');
     });
-    $routes->group('dashboard', static function ($routes) {
+    $routes->group('dashboard', static function ($routes) { 
         $routes->get('/', 'DashboardController::index');
+
+        // info to cards
+        $routes->get('info', 'DashboardController::info');
     });
     $routes->group('auth', static function ($routes) {
         $routes->get('logout', 'LoginController::logout');

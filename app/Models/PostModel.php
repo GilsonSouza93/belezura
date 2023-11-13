@@ -4,7 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class PostsModel extends Model
+class PostModel extends Model
 {
     protected $DBGroup          = 'default';
     protected $table            = 'posts';

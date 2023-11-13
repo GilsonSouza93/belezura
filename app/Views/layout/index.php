@@ -293,7 +293,8 @@
                                 const td = document.createElement('td');
                                 td.classList.add('text-center');
 
-                                if (element === 'actions_dropdown') {
+                                if (Array.isArray(element)) {
+                                    console.log(element);
                                     const dropdown = document.createElement('div');
                                     dropdown.classList.add('dropdown', 'text-end', 'dropstart', 'dropdown-dark', 'me-2');
 
@@ -309,27 +310,47 @@
                                     dropdownMenu.style = "background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(7px); border-radius: 15px; border: 2px solid #198754;"
                                     dropdownMenu.classList.add('dropdown-menu', 'text-center', 'me-2');
 
-                                    const editButton = document.createElement('li');
-                                    editButton.classList.add('dropdown-item');
-                                    editButton.addEventListener('click', () => {
-                                        edit(row['id']);
-                                    });
-                                    editButton.innerText = 'Editar';
+                                    if(element.includes('edit')) {
+                                        const editButton = document.createElement('li');
+                                        editButton.classList.add('dropdown-item');
+                                        editButton.addEventListener('click', () => {
+                                            edit(row['id']);
+                                        });
+                                        editButton.innerText = 'Editar';
+
+                                        dropdownMenu.appendChild(editButton);
+                                    };
 
 
-                                    const deleteButton = document.createElement('li');
-                                    deleteButton.classList.add('dropdown-item');
-                                    deleteButton.addEventListener('click', () => {
-                                        deleteRegister(row['id']);
-                                    });
+                                    if(element.includes('delete')) {
+                                        const deleteButton = document.createElement('li');
+                                        deleteButton.classList.add('dropdown-item');
+                                        deleteButton.addEventListener('click', () => {
+                                            deleteRegister(row['id']);
+                                        });
 
-                                    deleteButton.innerText = 'Excluir';
+                                        deleteButton.innerText = 'Excluir';
 
-                                    dropdownMenu.appendChild(editButton);
-                                    dropdownMenu.appendChild(deleteButton);
+                                        dropdownMenu.appendChild(deleteButton);
+                                    };
+
+                                    if(element.includes('whatsapp')) {
+                                        const numbersToWhatsapp = ['https://wa.me/message/5RGAMANRRVRCP1', 'https://wa.me/qr/UTHYIT5Y6NWCA1'];
+
+                                        const whatsappButton = document.createElement('li');
+                                        whatsappButton.classList.add('dropdown-item');
+
+                                        const whatsappButtonLink = document.createElement('a');
+                                        whatsappButtonLink.classList.add('text-white');
+                                        whatsappButtonLink.setAttribute('href', numbersToWhatsapp[Math.floor(Math.random() * numbersToWhatsapp.length)]);
+                                        whatsappButtonLink.setAttribute('target', '_blank');
+                                        whatsappButtonLink.innerText = 'Whatsapp';
+
+                                        whatsappButton.appendChild(whatsappButtonLink);
+                                        dropdownMenu.appendChild(whatsappButton);
+                                    }
 
                                     dropdown.appendChild(dropdownButton);
-
                                     dropdown.appendChild(dropdownMenu);
 
                                     td.appendChild(dropdown);

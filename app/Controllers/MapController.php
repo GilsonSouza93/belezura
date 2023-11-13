@@ -8,7 +8,7 @@ class MapController extends BaseController
 {
     public function getPosts()
     {
-        $posts = model('App\Models\PostsModel')->findAll();
+        $posts = model('App\Models\PostModel')->findAll();
 
         return $this->response->setJSON([
             'status' => 'success',

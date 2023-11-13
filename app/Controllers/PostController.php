@@ -14,7 +14,7 @@ class PostController extends BaseController
 
     public function __construct()
     {
-        $this->mainModel = model('PostsModel');
+        $this->mainModel = model('PostModel');
         return parent::__construct();
     }
 
