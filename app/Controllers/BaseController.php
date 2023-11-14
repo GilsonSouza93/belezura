@@ -105,11 +105,11 @@ abstract class BaseController extends Controller
                     ],
                     'payable' => [
                         'title' => 'Contas a pagar',
-                        'href' => base_url('financeiro/contasapagar'), 
+                        'href' => base_url('financeiro/contas-pagar'), 
                     ],
                     'receive' => [
                         'title' => 'Contas receber',
-                        'href' => base_url('financeiro/contasareceber'), 
+                        'href' => base_url('financeiro/contas-receber'), 
                     ],
                     'ticket' => [
                         'title' => 'Boletos',
