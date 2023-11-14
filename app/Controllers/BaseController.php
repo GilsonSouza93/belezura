@@ -301,6 +301,19 @@ abstract class BaseController extends Controller
                     ],
                 ]
             ],
+            'support' => [
+                'title' => 'Suporte',
+                'href' => base_url('suporte'),
+                'icon' => '<i class="fas fa-tools"></i>',
+                'show_subitems' => true,
+                'color' => '#adb5bd',
+                'subitems' => [
+                    'routerboard' => [
+                        'title' => 'Routerboard',
+                        'href' => base_url('suporte/routerboard'),
+                    ],
+                ]
+            ],
         ];
 
         // add button logout

@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class AddCompanies extends Migration
+class AddRouterBoard extends Migration
 {
     public function up()
     {
