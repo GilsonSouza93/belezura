@@ -80,6 +80,11 @@ class AddUsers extends Migration
                 "null" => true,
             ],
 
+            "company_id" => [
+                "type" => "int",
+                "constraint" => 5,
+            ],
+
             'created_at timestamp DEFAULT current_timestamp NOT NULL',	
         ]);
 
@@ -89,6 +94,7 @@ class AddUsers extends Migration
         $this->forge->addForeignKey('deleted_by', 'users', 'id');
         $this->forge->addForeignKey('updated_by', 'users', 'id');
         $this->forge->addForeignKey('created_by', 'users', 'id');
+        $this->forge->addForeignKey('company_id', 'companies', 'id');
 
         $this->forge->createTable('users');
     }

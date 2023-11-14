@@ -9,7 +9,6 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhZX90O1QnNedic9Z1XgY3P9HzA9AjbN4&libraries=places"></script>
     <style>
 
-
         :root {
             --border-radius: 15px;
             --bs-body-bg-rgb: 20, 20, 20;
@@ -73,10 +72,6 @@
             background: rgba(255, 255, 255, 0.1) !important;
         }
 
-        body {
-            margin: 0;
-            overflow: hidden;
-        }
 
         #particles-container {
             position: fixed;

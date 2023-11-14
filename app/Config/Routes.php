@@ -383,6 +383,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
 
     $routes->group('api', static function ($routes) {
         $routes->get('teste', 'ApiController::index');
+        $routes->get('listAllQueue', 'ApiController::listAllQueue');
     });
 
     $routes->group('gerencial', static function ($routes) {
