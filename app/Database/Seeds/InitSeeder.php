@@ -36,6 +36,7 @@ class InitSeeder extends Seeder
             'account_type_id' => 1,
             'email' => 'gilson@email.com',
             'password' => password_hash('123456', PASSWORD_DEFAULT),
+            'company_id' => 1,
         ];
 
         $this->db->table('users')->insert($user);
@@ -45,6 +46,7 @@ class InitSeeder extends Seeder
             'account_type_id' => 1,
             'email' => 'sergio@email.com',
             'password' => password_hash('123456', PASSWORD_DEFAULT),
+            'company_id' => 1,
         ];
 
         $this->db->table('users')->insert($user);
@@ -54,6 +56,7 @@ class InitSeeder extends Seeder
             'account_type_id' => 1,
             'email' => 'nathan@email.com',
             'password' => password_hash('creatina', PASSWORD_DEFAULT),
+            'company_id' => 1,
         ];
 
         $this->db->table('users')->insert($user);
