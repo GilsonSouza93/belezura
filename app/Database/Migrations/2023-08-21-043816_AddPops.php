@@ -76,9 +76,17 @@ class AddPops extends Migration
                 'type' => 'DATETIME',
                 'null' => true,
             ],
+
+            "company_id" => [
+                "type" => "int",
+                "constraint" => 5,
+            ],
         ]);
 
         $this->forge->addKey('id', true);
+
+        $this->forge->addForeignKey('company_id', 'companies', 'id');
+
         $this->forge->createTable('pops');
     }
 

@@ -94,8 +94,15 @@ class AddCustomer extends Migration
                 'constraint' => ['Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Espírito Santo', 'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais', 'Pará', 'Paraíba', 'Pernambuco', 'Piauí', 'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia', 'Roraima', 'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins', 'Distrito Federal'],
                 'null' => true,
             ],
+            "company_id" => [
+                "type" => "int",
+                "constraint" => 5,
+            ],
         ]);
         $this->forge->addKey('id', true);
+
+        $this->forge->addForeignKey('company_id', 'companies', 'id');
+
         $this->forge->createTable('customers');
     }
 

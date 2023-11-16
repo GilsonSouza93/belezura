@@ -42,6 +42,10 @@ class AddNotifications extends Migration
                 'null' => true,
             ],
         ]);
+
+        $this->forge->addKey('id', true);
+        $this->forge->addForeignKey('customer_id', 'customers', 'id');
+        $this->forge->createTable('notifications');
     }
 
     public function down()

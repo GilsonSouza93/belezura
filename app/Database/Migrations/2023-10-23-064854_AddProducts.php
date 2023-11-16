@@ -47,12 +47,17 @@ class AddProducts extends Migration
                 'type' => 'DATETIME',
                 'null' => true,
             ],
+            "company_id" => [
+                "type" => "int",
+                "constraint" => 5,
+            ],
         ]);
 
         $this->forge->addKey('id', true);
         $this->forge->addForeignKey('manufacturer_id', 'manufacturers', 'id', 'CASCADE', 'CASCADE');
         $this->forge->addForeignKey('suppliers_id', 'suppliers', 'id', 'CASCADE', 'CASCADE');
         $this->forge->addForeignKey('category_id', 'categories', 'id', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('company_id', 'companies', 'id');
         $this->forge->createTable('products');
     }
 

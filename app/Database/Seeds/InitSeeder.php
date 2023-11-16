@@ -22,6 +22,15 @@ class InitSeeder extends Seeder
 
         $this->db->table('account_types')->insert($accountType);
 
+        // create a company
+        $company = [
+            'id' => 1,
+            'name' => 'Home telecominicações',
+            'description' => 'A melhor empresa de telecomunicações do Brasil',
+        ];
+
+        $this->db->table('companies')->insert($company);
+
         $user = [
             'name' => 'Gilson',
             'account_type_id' => 1,
