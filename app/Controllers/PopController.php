@@ -20,6 +20,7 @@ class PopController extends BaseController
     public function save()
     {
         $data = $this->request->getJSON();
+        $session = session();
         
         $theadData = [
             "city" => $data->cidade,
@@ -30,7 +31,8 @@ class PopController extends BaseController
             "plan" => $data->plano,
             "nas" => $data->nas,
             "user" => $data->usuario,
-            "active" => $data->active
+            "active" => $data->active,
+            "company_id" => $session->get('company_id')
         ];
 
         $response = $this->mainModel->insert($theadData);

@@ -325,16 +325,6 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->post('delete', 'FinancialboxController::delete');
         });
 
-        $routes->group('lancamentos', static function ($routes) {
-            $routes->get('/', 'FinancialTransactionsController::index');
-            $routes->get('novo', 'FinancialTransactionsController::form');
-            $routes->get('editar/(:num)', 'FinancialTransactionsController::edit/$1');
-
-            $routes->post('save', 'FinancialTransactionsController::save');
-            $routes->post('search', 'FinancialTransactionsController::search');
-            $routes->post('delete', 'FinancialTransactionsController::delete');
-        });
-
         $routes->group('boleto', static function ($routes) {
             $routes->get('/', 'TicketController::index');
             $routes->get('novo', 'TicketController::form');

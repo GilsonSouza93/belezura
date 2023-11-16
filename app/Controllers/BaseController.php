@@ -99,10 +99,6 @@ abstract class BaseController extends Controller
                         'title' => 'Caixa',
                         'href' => base_url('financeiro/caixa'),
                     ],
-                    'lançamentos' => [
-                        'title' => 'Lançamentos',
-                        'href' => base_url('financeiro/lancamentos'),
-                    ],
                     'payable' => [
                         'title' => 'Contas a pagar',
                         'href' => base_url('financeiro/contas-pagar'), 

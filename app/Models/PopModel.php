@@ -27,7 +27,8 @@ class PopModel extends Model
         "identification",
         "created_at",
         "updated_at",
-        "deleted_at"
+        "deleted_at",
+        "company_id"
     ];
 
     // Dates

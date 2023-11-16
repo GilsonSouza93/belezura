@@ -54,7 +54,8 @@ class LoginController extends BaseController
                             'id' => $user['id'],
                             'name' => $user['name'],
                             'email' => $user['email'],
-                            'isLoggedIn' => true
+                            'isLoggedIn' => true,
+                            'company_id' => $user['company_id'],
                         ];
 
                         session()->set($SessionData);
