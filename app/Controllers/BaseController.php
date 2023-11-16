@@ -115,6 +115,10 @@ abstract class BaseController extends Controller
                         'title' => 'Contratos',
                         'href' => base_url('financeiro/contratos'), 
                     ],
+                    'receiverpoint' => [
+                        'title' => 'Ponto de Pagamento',
+                        'href' => base_url('financeiro/pontodepagamento'), 
+                    ],
 
                 ]
 

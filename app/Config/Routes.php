@@ -314,6 +314,10 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('/', 'FinancialController::index');
             $routes->get('novo', 'FinancialController::form');
         });
+        $routes->group('pontodepagamento', static function ($routes) {
+            $routes->get('/', 'ReceicerPointController::index');
+            $routes->get('novo', 'ReceicerPointController::form');
+        });
 
         $routes->group('caixa', static function ($routes) {
             $routes->get('/', 'FinancialboxController::index');
