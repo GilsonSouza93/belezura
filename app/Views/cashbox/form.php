@@ -44,11 +44,9 @@
                 <label for="pop" class="form-label">POP</label>
                 <select class="form-control" name="pop">
                     <option selected>Selecione o local POP</option>
-                    <option value="1">Caruaru</option>
-                    <option value="2">Olinda</option>
-                    <option value="2">Recife</option>
-                    <option value="2">Surubim</option>
-                    <option value="2">Garanhuns</option>
+                    <?php foreach ($pops as $pop) : ?>
+                    <option value="<?= $pop['id'] ?>"><?= $pop['city'] ?></option>
+                <?php endforeach; ?>
                 </select>
             </div>
             <div class="mt-3 col">

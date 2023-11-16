@@ -22,6 +22,7 @@ class SupplierModel extends Model
         'address',
         'created_at',
         'updated_at',
+        'company_id'
     ];
 
     // Dates

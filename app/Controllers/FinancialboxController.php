@@ -14,6 +14,9 @@ class FinancialboxController extends BaseController
     public function __construct()
     {
         $this->mainModel = model('CustomerModel');
+
+        $popModel = model('PopModel');
+        $this->data['pops'] = $popModel->findAll();
         parent::__construct();
     }
 

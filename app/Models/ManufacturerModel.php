@@ -20,6 +20,7 @@ class ManufacturerModel extends Model
         'website',
         'created_at',
         'updated_at',
+        'company_id'
     ];
 
     // Dates

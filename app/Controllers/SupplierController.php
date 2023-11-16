@@ -19,7 +19,11 @@ class SupplierController extends BaseController
 
     public function treatmentBeforeSave($data)
     {
+        $session = session();
+
         $data['created_at'] = date('Y-m-d H:i:s');
+        $data['company_id'] = $session->get('company_id');
+
 
         if($this->mainModel->where('name', $data['name'])->first()){
             $data['error'] = 'Já existe um fornecedor com este nome!';
