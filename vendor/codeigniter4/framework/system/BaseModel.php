@@ -547,7 +547,7 @@ abstract class BaseModel
                 'singleton' => $singleton,
             ]);
 
-            if (! empty($eventData['returnData'])) {
+            if (!empty($eventData['returnData'])) {
                 return $eventData['data'];
             }
         }
@@ -591,7 +591,7 @@ abstract class BaseModel
     }
 
     /**
-     * Fetches all results, while optionally limiting them.
+     * Fetches all results for the current company, while optionally limiting them.
      *
      * @param int $limit  Limit
      * @param int $offset Offset
@@ -600,6 +600,9 @@ abstract class BaseModel
      */
     public function findAll(int $limit = 0, int $offset = 0)
     {
+        $session = session();
+        $company_id = $session->get('company_id');
+
         if ($this->tempAllowCallbacks) {
             // Call the before event and check for a return
             $eventData = $this->trigger('beforeFind', [
@@ -609,13 +612,14 @@ abstract class BaseModel
                 'singleton' => false,
             ]);
 
-            if (! empty($eventData['returnData'])) {
+            if (!empty($eventData['returnData'])) {
                 return $eventData['data'];
             }
         }
 
+        // Adjust the query to include the company_id condition
         $eventData = [
-            'data'      => $this->doFindAll($limit, $offset),
+            'data'      => $this->doFindAllByCompany($company_id, $limit, $offset),
             'limit'     => $limit,
             'offset'    => $offset,
             'method'    => 'findAll',
@@ -634,6 +638,29 @@ abstract class BaseModel
     }
 
     /**
+     * Performs the actual findAll with the additional company_id condition.
+     *
+     * @param int $company_id Company ID
+     * @param int $limit      Limit
+     * @param int $offset     Offset
+     *
+     * @return array
+     */
+    protected function doFindAllByCompany(int $company_id, int $limit = 0, int $offset = 0)
+    {
+        // Adjust your query here based on your data model and database structure
+        // You may use the Query Builder or your preferred method to fetch records
+        // for the specified company_id.
+
+        // Example using Query Builder:
+        return $this->builder()
+            ->where('company_id', $company_id)
+            ->limit($limit, $offset)
+            ->get()
+            ->getResultArray();
+    }
+
+    /**
      * Returns the first row of the result set.
      *
      * @return array|object|null
@@ -647,7 +674,7 @@ abstract class BaseModel
                 'singleton' => true,
             ]);
 
-            if (! empty($eventData['returnData'])) {
+            if (!empty($eventData['returnData'])) {
                 return $eventData['data'];
             }
         }
@@ -707,7 +734,7 @@ abstract class BaseModel
      */
     protected function shouldUpdate($data): bool
     {
-        return ! empty($this->getIdValue($data));
+        return !empty($this->getIdValue($data));
     }
 
     /**
@@ -742,7 +769,7 @@ abstract class BaseModel
         $data = $this->transformDataToArray($data, 'insert');
 
         // Validate data before saving.
-        if (! $this->skipValidation && ! $this->validate($data)) {
+        if (!$this->skipValidation && !$this->validate($data)) {
             // Restore $cleanValidationRules
             $this->cleanValidationRules = $cleanValidationRules;
 
@@ -758,18 +785,18 @@ abstract class BaseModel
 
         // doProtectFields() can further remove elements from
         // $data so we need to check for empty dataset again
-        if (! $this->allowEmptyInserts && empty($data)) {
+        if (!$this->allowEmptyInserts && empty($data)) {
             throw DataException::forEmptyDataset('insert');
         }
 
         // Set created_at and updated_at with same time
         $date = $this->setDate();
 
-        if ($this->useTimestamps && $this->createdField && ! array_key_exists($this->createdField, $data)) {
+        if ($this->useTimestamps && $this->createdField && !array_key_exists($this->createdField, $data)) {
             $data[$this->createdField] = $date;
         }
 
-        if ($this->useTimestamps && $this->updatedField && ! array_key_exists($this->updatedField, $data)) {
+        if ($this->useTimestamps && $this->updatedField && !array_key_exists($this->updatedField, $data)) {
             $data[$this->updatedField] = $date;
         }
 
@@ -795,7 +822,7 @@ abstract class BaseModel
         $this->tempAllowCallbacks = $this->allowCallbacks;
 
         // If insertion failed, get out of here
-        if (! $result) {
+        if (!$result) {
             return $result;
         }
 
@@ -826,7 +853,7 @@ abstract class BaseModel
                 // If $data is using a custom class with public or protected
                 // properties representing the collection elements, we need to grab
                 // them as an array.
-                if (is_object($row) && ! $row instanceof stdClass) {
+                if (is_object($row) && !$row instanceof stdClass) {
                     $row = $this->objectToArray($row, false, true);
                 }
 
@@ -838,7 +865,7 @@ abstract class BaseModel
                 }
 
                 // Validate every row.
-                if (! $this->skipValidation && ! $this->validate($row)) {
+                if (!$this->skipValidation && !$this->validate($row)) {
                     // Restore $cleanValidationRules
                     $this->cleanValidationRules = $cleanValidationRules;
 
@@ -852,11 +879,11 @@ abstract class BaseModel
                 // Set created_at and updated_at with same time
                 $date = $this->setDate();
 
-                if ($this->useTimestamps && $this->createdField && ! array_key_exists($this->createdField, $row)) {
+                if ($this->useTimestamps && $this->createdField && !array_key_exists($this->createdField, $row)) {
                     $row[$this->createdField] = $date;
                 }
 
-                if ($this->useTimestamps && $this->updatedField && ! array_key_exists($this->updatedField, $row)) {
+                if ($this->useTimestamps && $this->updatedField && !array_key_exists($this->updatedField, $row)) {
                     $row[$this->updatedField] = $date;
                 }
             }
@@ -910,7 +937,7 @@ abstract class BaseModel
         $data = $this->transformDataToArray($data, 'update');
 
         // Validate data before saving.
-        if (! $this->skipValidation && ! $this->validate($data)) {
+        if (!$this->skipValidation && !$this->validate($data)) {
             return false;
         }
 
@@ -924,7 +951,7 @@ abstract class BaseModel
             throw DataException::forEmptyDataset('update');
         }
 
-        if ($this->useTimestamps && $this->updatedField && ! array_key_exists($this->updatedField, $data)) {
+        if ($this->useTimestamps && $this->updatedField && !array_key_exists($this->updatedField, $data)) {
             $data[$this->updatedField] = $this->setDate();
         }
 
@@ -972,7 +999,7 @@ abstract class BaseModel
                 // If $data is using a custom class with public or protected
                 // properties representing the collection elements, we need to grab
                 // them as an array.
-                if (is_object($row) && ! $row instanceof stdClass) {
+                if (is_object($row) && !$row instanceof stdClass) {
                     $row = $this->objectToArray($row, true, true);
                 }
 
@@ -984,7 +1011,7 @@ abstract class BaseModel
                 }
 
                 // Validate data before saving.
-                if (! $this->skipValidation && ! $this->validate($row)) {
+                if (!$this->skipValidation && !$this->validate($row)) {
                     return false;
                 }
 
@@ -1000,7 +1027,7 @@ abstract class BaseModel
                     $row[$index] = $updateIndex;
                 }
 
-                if ($this->useTimestamps && $this->updatedField && ! array_key_exists($this->updatedField, $row)) {
+                if ($this->useTimestamps && $this->updatedField && !array_key_exists($this->updatedField, $row)) {
                     $row[$this->updatedField] = $this->setDate();
                 }
             }
@@ -1082,7 +1109,7 @@ abstract class BaseModel
      */
     public function purgeDeleted()
     {
-        if (! $this->useSoftDeletes) {
+        if (!$this->useSoftDeletes) {
             return true;
         }
 
@@ -1099,7 +1126,7 @@ abstract class BaseModel
      */
     public function withDeleted(bool $val = true)
     {
-        $this->tempUseSoftDeletes = ! $val;
+        $this->tempUseSoftDeletes = !$val;
 
         return $this;
     }
@@ -1129,11 +1156,11 @@ abstract class BaseModel
     public function replace(?array $data = null, bool $returnSQL = false)
     {
         // Validate data before saving.
-        if ($data && ! $this->skipValidation && ! $this->validate($data)) {
+        if ($data && !$this->skipValidation && !$this->validate($data)) {
             return false;
         }
 
-        if ($this->useTimestamps && $this->updatedField && ! array_key_exists($this->updatedField, (array) $data)) {
+        if ($this->useTimestamps && $this->updatedField && !array_key_exists($this->updatedField, (array) $data)) {
             $data[$this->updatedField] = $this->setDate();
         }
 
@@ -1155,7 +1182,7 @@ abstract class BaseModel
     public function errors(bool $forceDB = false)
     {
         // Do we have validation errors?
-        if (! $forceDB && ! $this->skipValidation && ($errors = $this->validation->getErrors())) {
+        if (!$forceDB && !$this->skipValidation && ($errors = $this->validation->getErrors())) {
             return $errors;
         }
 
@@ -1234,7 +1261,7 @@ abstract class BaseModel
      */
     protected function doProtectFields(array $data): array
     {
-        if (! $this->protectFields) {
+        if (!$this->protectFields) {
             return $data;
         }
 
@@ -1243,7 +1270,7 @@ abstract class BaseModel
         }
 
         foreach (array_keys($data) as $key) {
-            if (! in_array($key, $this->allowedFields, true)) {
+            if (!in_array($key, $this->allowedFields, true)) {
                 unset($data[$key]);
             }
         }
@@ -1502,7 +1529,7 @@ abstract class BaseModel
         }
 
         foreach (array_keys($rules) as $field) {
-            if (! array_key_exists($field, $data)) {
+            if (!array_key_exists($field, $data)) {
                 unset($rules[$field]);
             }
         }
@@ -1550,12 +1577,12 @@ abstract class BaseModel
     protected function trigger(string $event, array $eventData)
     {
         // Ensure it's a valid event
-        if (! isset($this->{$event}) || empty($this->{$event})) {
+        if (!isset($this->{$event}) || empty($this->{$event})) {
             return $eventData;
         }
 
         foreach ($this->{$event} as $callback) {
-            if (! method_exists($this, $callback)) {
+            if (!method_exists($this, $callback)) {
                 throw DataException::forInvalidMethodTriggered($callback);
             }
 
@@ -1672,18 +1699,18 @@ abstract class BaseModel
      */
     protected function transformDataToArray($data, string $type): array
     {
-        if (! in_array($type, ['insert', 'update'], true)) {
+        if (!in_array($type, ['insert', 'update'], true)) {
             throw new InvalidArgumentException(sprintf('Invalid type "%s" used upon transforming data to array.', $type));
         }
 
-        if (! $this->allowEmptyInserts && empty($data)) {
+        if (!$this->allowEmptyInserts && empty($data)) {
             throw DataException::forEmptyDataset($type);
         }
 
         // If $data is using a custom class with public or protected
         // properties representing the collection elements, we need to grab
         // them as an array.
-        if (is_object($data) && ! $data instanceof stdClass) {
+        if (is_object($data) && !$data instanceof stdClass) {
             // If it validates with entire rules, all fields are needed.
             $onlyChanged = ($this->skipValidation === false && $this->cleanValidationRules === false)
                 ? false : ($type === 'update');
@@ -1699,7 +1726,7 @@ abstract class BaseModel
         }
 
         // If it's still empty here, means $data is no change or is empty object
-        if (! $this->allowEmptyInserts && empty($data)) {
+        if (!$this->allowEmptyInserts && empty($data)) {
             throw DataException::forEmptyDataset($type);
         }
 
@@ -1783,7 +1810,7 @@ abstract class BaseModel
             $replacements['{' . $key . '}'] = $value;
         }
 
-        if (! empty($replacements)) {
+        if (!empty($replacements)) {
             foreach ($rules as &$rule) {
                 if (is_array($rule)) {
                     foreach ($rule as &$row) {

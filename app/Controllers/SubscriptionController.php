@@ -19,7 +19,8 @@ class SubscriptionController extends BaseController
 
     public function treatmentBeforeSave($data)
     {
-        $data['account_type_id'] = 2;
+        $session = session();
+        $data['company_id'] = $session->get('company_id');
         $data['created_at'] = date('Y-m-d H:i:s');
 
         $id = isset($data['id']) ? $data['id'] : null;
@@ -28,7 +29,7 @@ class SubscriptionController extends BaseController
             $data['updated_at'] = date('Y-m-d H:i:s');
         }
 
-        if($this->mainModel->where('name', $data['name'])->first()){
+        if($this->mainModel->where('name', $data['name'])->first() && !$id){
             $data['error'] = 'Já existe um plano com este nome!';
         }
 

@@ -31,7 +31,7 @@
         urlFetch: window.location.href + '/search',
         tableDiv: document.getElementById('tableDiv'),
         theadElements: ['nome', 'velocidade(mbps)', 'preço mensal(reais)', 'duração do contrato(meses)', 'ações'],
-        tbodyElements: ['name', 'speed', 'monthly_price', 'contract_duration', 'actions_dropdown'],
+        tbodyElements: ['name', 'speed', 'monthly_price', 'contract_duration', ['edit', 'delete']],
         searchField: document.getElementById('search'),
     }
 

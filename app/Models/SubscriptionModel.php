@@ -28,7 +28,8 @@ class SubscriptionModel extends Model
         'geographical_availability',
         'created_at',
         'updated_at',
-    ];
+        'company_id'
+];
 
     // Dates
     protected $useTimestamps = false;

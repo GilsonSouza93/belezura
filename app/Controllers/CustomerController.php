@@ -11,9 +11,14 @@ class CustomerController extends BaseController
     public $viewPath = 'customer';
     public $baseRoute = '/clientes';
 
+    public $subscriptionModel;
+
     public function __construct()
     {
         $this->mainModel = model('CustomerModel');
+        $this->subscriptionModel = model('SubscriptionModel');
+
+        $this->data['subscription'] = $this->subscriptionModel->findAll();
         parent::__construct();
     }
 

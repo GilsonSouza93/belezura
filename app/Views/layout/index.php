@@ -84,7 +84,7 @@
     <div id="particles-container"></div>
     <div id="content">
         <header>
-            <nav class="d-flex flex-row border-bottom border-light m-4">
+            <nav class="d-flex flex-row border-bottom border-light mx-4 mt-4">
                 <img src="<?= base_url('assets/imgs/logo.png') ?>" alt="logo" class="ms-3" style="height: 50px;">
 
                 <div class="d-flex flex-row align-items-center">
@@ -94,7 +94,7 @@
                                 <a class="nav-link dropdown-toggle text-white" href="<?= $item['href'] ?>" data-bs-toggle="dropdown">
                                     <?= $item['title'] ?>
                                 </a>
-                                <ul class="dropdown-menu dropdown-menu-dark mt-4 px-2" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(7px); border-radius: 15px; border: 2px solid <?= $item['color'] ?>;">
+                                <ul class="dropdown-menu dropdown-menu-dark mt-4 px-2" style="background: rgba(10, 10, 10, 0.1); backdrop-filter: blur(7px); border-radius: 15px; border: 2px solid <?= $item['color'] ?>;">
                                     <?php foreach ($item['subitems'] as $subitem) : ?>
 
                                         <?php if (isset($subitem['subitems'])) : ?>
@@ -146,10 +146,11 @@
         const createToast = (borderColor, message) => {
             const div = document.createElement('div');
             div.classList.add('position-fixed', 'bottom-0', 'start-0', 'p-3');
+            div.style.zIndex = '10';
 
             const toast = document.createElement('div');
             toast.classList.add('toast', 'card', 'text-white', 'p-1', 'fs-6', 'w-100', 'bg-transparent');
-            toast.style.borderLeft = `3px solid ${borderColor}`;
+            toast.style.border = `3px solid ${borderColor}`;
             toast.style.backdropFilter = 'blur(7px)';
 
             const toastBody = document.createElement('div');
@@ -272,7 +273,7 @@
                                 if (Array.isArray(element)) {
                                     console.log(element);
                                     const dropdown = document.createElement('div');
-                                    dropdown.classList.add('dropdown', 'text-end', 'dropstart', 'dropdown-dark', 'me-2');
+                                    dropdown.classList.add('dropdown', 'dropstart', 'dropdown-dark', 'me-2');
 
                                     const dropdownButton = document.createElement('button');
                                     dropdownButton.classList.add('btn', 'btn-outline-secondary', 'dropdown-toggle', 'text-white');
@@ -421,7 +422,7 @@
                         }
                     },
                     opacity: {
-                        value: 0.3,
+                        value: 0.1,
                         random: true,
                         anim: {
                             enable: true,
@@ -466,11 +467,11 @@
                     detect_on: 'canvas',
                     events: {
                         onhover: {
-                            enable: true,
+                            enable: false,
                             mode: 'grab'
                         },
                         onclick: {
-                            enable: true,
+                            enable: false,
                             mode: 'push'
                         },
                         resize: true

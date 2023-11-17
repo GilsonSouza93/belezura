@@ -2,13 +2,17 @@
 
 <?= $this->section('content') ?>
 
-<div class="card p-4">
+<div class="p-4">
 
     <h2>
         <?= $tittle ?>
     </h2>
 
-    <form id="form" class="p-4" enctype="multipart/form-data">
+    <form id="form" enctype="multipart/form-data">
+        <?php if (isset($register)) : ?>
+            <input type="hidden" id="id" name="id" value="<?= $register->id ?>">
+        <?php endif ?>
+
         <div class="row card-2 py-3 my-3">
             <div class="col-md-8">
             </div>
@@ -27,7 +31,7 @@
             </div>
             <div class="col">
                 <div class="form-floating mb-3">
-                    <input type="number" class="form-control" id="speed" placeholder="Velocidade (Mbps)" name="speed" required value="<?= $register->speed ?? '' ?>">
+                    <input type="text" class="form-control" id="speed" placeholder="Velocidade (Mbps)" name="speed" required value="<?= $register->speed ?? '' ?>">
                     <label for="speed">Velocidade (Mbps)</label>
                 </div>
             </div>
@@ -36,7 +40,7 @@
         <div class="row">
             <div class="col">
                 <div class="form-floating mb-3">
-                    <input type="number" class="form-control" id="monthly_price" placeholder="Preço Mensal (USD)" name="monthly_price" required value="<?= $register->monthly_price ?? '' ?>">
+                    <input type="text" class="form-control" id="monthly_price" placeholder="Preço Mensal (USD)" name="monthly_price" required value="<?= $register->monthly_price ?? '' ?>">
                     <label for="monthly_price">Preço Mensal (Reais)</label>
                 </div>
             </div>
@@ -95,6 +99,27 @@
 <?= $this->section('script') ?>
 
 <script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // init autonumeric monthly_price
+        new AutoNumeric('#monthly_price', {
+            currencySymbol: 'R$ ',
+            decimalCharacter: ',',
+            digitGroupSeparator: '.',
+            decimalPlaces: 2,
+            minimumValue: '0',
+        });
+
+        // speed em mbps
+        new AutoNumeric('#speed', {
+            decimalCharacter: ',',
+            digitGroupSeparator: '.',
+            decimalPlaces: 0,
+            minimumValue: '0',
+            suffixText: ' Mbps',
+        });
+    });
+
     const submitBtn = document.querySelector('#submit-btn');
     const form = document.querySelector('form');
     const url = '<?= $baseRoute ?>/save';
@@ -126,11 +151,15 @@
             });
     });
 
+    function formatCurrency(value) {
+        return value.replace('R$ ', '').replace('.', '').replace(',', '.');
+    }
+
     function formatBody() {
         const body = {
             name: document.querySelector('#name').value,
             speed: document.querySelector('#speed').value,
-            monthly_price: document.querySelector('#monthly_price').value,
+            monthly_price: formatCurrency(document.querySelector('#monthly_price').value),
             contract_duration: document.querySelector('#contract_duration').value,
             data_limit: document.querySelector('#data_limit').value,
             connection_type: document.querySelector('#connection_type').value,
@@ -142,6 +171,31 @@
             <?php if (isset($register)) : ?>
                 id: document.querySelector('#id').value,
             <?php endif ?>
+        }
+
+        if(!body.name) {
+            showToast('O campo Nome é obrigatório', 'error');
+            return false;
+        }
+
+        if(!body.speed) {
+            showToast('O campo Velocidade é obrigatório', 'error');
+            return false;
+        }
+
+        if(!body.monthly_price) {
+            showToast('O campo Preço Mensal é obrigatório', 'error');
+            return false;
+        }
+
+        if(!body.contract_duration) {
+            showToast('O campo Duração do Contrato é obrigatório', 'error');
+            return false;
+        }
+
+        if(!body.connection_type) {
+            showToast('O campo Tipo de Conexão é obrigatório', 'error');
+            return false;
         }
 
         return JSON.stringify(body);
