@@ -24,24 +24,17 @@
         
     </div>
 
-    <p>
-        IP POOL localizadas: <span id="ippoolCount">0</span>
-    </p>
-
+    
     <div id="tableIppool" class="collapsed p-4 justify-content ">
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Range</th>
-                    <th scope="col">Total Ips</th>
-                    <th scope="col">Fixos</th>
-                    <th scope="col">Lease</th>
-                    <th scope="col">Online</th>
-                    <th scope="col">Livres</th>
-                    <th scope="col">Nas</th>
-                    <th scope="col">Obs</th>
-                    <th scope='col'>Ações</th>
+                <th scope="col">Nome</th>
+                    <th scope="col">Portador</th>
+                    <th scope="col">Empresa</th>
+                    <th scope="col">Disponibilidade</th>
+                    <th scope="col">Ativos</th>
+                    <th scope="col"> </th>
                 </tr>
             </thead>
             <tbody>
