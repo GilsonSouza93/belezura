@@ -5,27 +5,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= esc($tittle) ?></title>
+    <link rel="icon" href="assets/imgs/logo.png" type="image/x-icon">
     <link href="<?= base_url('assets/css/bootstrap_5.3.min.css') ?>" rel="stylesheet">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhZX90O1QnNedic9Z1XgY3P9HzA9AjbN4&libraries=places"></script>
     <style>
 
         :root {
-            --border-radius: 15px;
-            --bs-body-bg-rgb: 20, 20, 20;
-
-            --bs-primary-rgb: 25,93,168;
-            --bd-accent-rgb: 18,71,129;
-
-            --bd-pink-rgb: 0,147,255;
-            --bd-violet-rgb: 0,147,255;
+            --border-radius: 16px;
         }
 
         body {
-            background-image: linear-gradient(180deg, rgba(var(--bs-body-bg-rgb), 0.01), rgba(var(--bs-body-bg-rgb), 1) 85%), radial-gradient(ellipse at top left, rgba(var(--bs-primary-rgb), 0.5), transparent 50%), radial-gradient(ellipse at top right, rgba(var(--bd-accent-rgb), 0.5), transparent 50%), radial-gradient(ellipse at center right, rgba(var(--bd-violet-rgb), 0.5), transparent 50%), radial-gradient(ellipse at center left, rgba(var(--bd-pink-rgb), 0.5), transparent 50%);
-
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
+            background-color: #1d2125;
         }
 
         .card {
@@ -91,13 +81,11 @@
 </head>
 
 <body id="particles-js" class="bg-dark text-white">
-
     <div id="particles-container"></div>
-
     <div id="content">
         <header>
-            <nav class="m-3 d-flex flex-row">
-                <img src="<?= base_url('assets/imgs/logo.png') ?>" alt="logo" class="ms-3" style="height: 60px;">
+            <nav class="d-flex flex-row border-bottom border-light m-4">
+                <img src="<?= base_url('assets/imgs/logo.png') ?>" alt="logo" class="ms-3" style="height: 50px;">
 
                 <div class="d-flex flex-row align-items-center">
                     <?php foreach ($navigation_bar_items as $item) : ?>
@@ -138,16 +126,8 @@
             </nav>
         </header>
 
-        <div class="m-3">
+        <div class="m-1">
             <?= $this->renderSection('content') ?>
-        </div>
-
-        <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
-            <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                <div class="toast-body">
-                    Hello, world! This is a toast message.
-                </div>
-            </div>
         </div>
     </div>
 
