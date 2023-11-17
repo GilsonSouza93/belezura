@@ -143,6 +143,16 @@
             $(this).find('.dropdown-menu').first().stop(true, true).delay(200).slideUp();
         });
 
+        $('.show-text').hover(function() {
+            var text = $(this).data('text');
+
+            showToast(text, 'success');
+        });
+
+        $('.show-text').mouseleave(function() {
+            $('.toast').remove();
+        });
+
         const createToast = (borderColor, message) => {
             const div = document.createElement('div');
             div.classList.add('position-fixed', 'bottom-0', 'start-0', 'p-3');
