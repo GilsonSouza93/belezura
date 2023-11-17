@@ -119,6 +119,10 @@ abstract class BaseController extends Controller
                         'title' => 'Ponto de Pagamento',
                         'href' => base_url('financeiro/pontodepagamento'), 
                     ],
+                    'paymentplains' => [
+                        'title' => 'Planos de pagamento',
+                        'href' => base_url('financeiro/planosdepagamento'), 
+                    ],
 
                 ]
 
