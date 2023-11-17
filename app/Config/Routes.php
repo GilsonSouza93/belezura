@@ -316,8 +316,8 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         });
 
         $routes->group('pontodepagamento', static function ($routes) {
-            $routes->get('/', 'ReceicerPointController::index');
-            $routes->get('novo', 'ReceicerPointController::form');
+            $routes->get('/', 'ReceiverPointController::index');
+            $routes->get('novo', 'ReceiverPointController::form');
         });
 
         $routes->group('planosdepagamento', static function ($routes) {
