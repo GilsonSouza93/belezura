@@ -17,13 +17,16 @@ class CustomerController extends BaseController
     {
         $this->mainModel = model('CustomerModel');
         $this->subscriptionModel = model('SubscriptionModel');
-
-        
+       
+        $this->onuModel = model('OnuModel');
+        $this->data['onus'] = $this->onuModel->findAll();
         $this->data['subscription'] = $this->subscriptionModel->findAll();
         
         $onuModel = model('OnuModel');
         $this->data['onuModel'] = $onuModel->findAll();
         parent::__construct();
+
+        
     }
 
     public function search()

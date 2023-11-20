@@ -45,10 +45,10 @@
             </div>
             <div class="mt-3 col-md-3">
                 <label for="onus_id">ONU</label>
-                <select class="form-select" id="onus_id" name="onus_id" aria-label="Default select example">
+                <select class="form-select" id="onus_id" name="onus_id" aria-label="Default select example" alue="<?= isset($register) ? $register->onu : '' ?>">
                     <option selected>Selecione a Onu</option>
                     <?php foreach ($onus as $onu) : ?>
-                        <option value="<?= $onu['id'] ?>"><?= $onu['name'] ?></option>
+                        <option value="<?= $onu['id'] ?>"><?= $onu['onu_name'] ?></option>
                     <?php endforeach; ?>
                 </select>
             </div>
