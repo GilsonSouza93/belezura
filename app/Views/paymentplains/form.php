@@ -53,13 +53,14 @@
         <div class="row">
 
             <div class="mt-3 col-md-4">
-                <label for="plainAccount" class="form-label">Conta plano</label>
+                <label for="plainAccount" class="form-label">Conta plano
+                <span class="badge text-bg-light show-text" data-text='Definir apenas para receita se for mensalidade/adesão.'>?</span>
+                </label>
                 <select class="form-control" id="plainAccount" aria-label="forma de pagamento">
                     <option selected>Selecione a forma de pagamento</option>
                     <option value="1">Mensalidade Contrato</option>
                     <option value="2">Adesão Contrato</option>
                 </select>
-                <span class="text-small">Definir apenas para receita se for mensalidade/adesão.</span>
             </div>
 
             <div class="mt-3 col-md-4">
@@ -97,14 +98,17 @@
                     <input type="text" id="demonstrativoBoleto" class="form-control" name="name" placeholder="">
             </div>
             <div class="col-md-4">
-            <label for="suspender" class="form-label">Suspender serviço?</label>
+            <label for="suspender" class="form-label">Suspender serviço?
+                <span class="badge text-bg-light show-text" data-text='definido suspender e tiver débito no cliente com esse plano de conta, irá suspender o serviço do cliente. Conta Plano Adesão e Mensalidade suspendem serviço por padrão.'>?</span>
+            </label>
                 <input type="checkbox" name="suspender" id="suspender" class="form-check-input">
-                <span class="text-small"><br> definido suspender e tiver débito no cliente com esse plano de conta, irá suspender o serviço do cliente. Conta Plano Adesão e Mensalidade suspendem serviço por padrão.</span>
             </div>
             <div class="col-md-4">
-            <label for="suspender" class="form-label">Enviar cobrança auto</label>
+            <label for="suspender" class="form-label">Enviar cobrança auto
+            <span class="badge text-bg-light show-text" data-text='Habilita o envio dos títulos com este C. Custo por email caso habilitado também no Portador.'>?</span>
+            </label>
                 <input type="checkbox" name="suspender" id="suspender" class="form-check-input">
-                <span class="text-small"><br>Habilita o envio dos títulos com este C. Custo por email caso habilitado também no Portador.</span>
+                <span class="text-small"><br></span>
             </div>
         </div>
 
