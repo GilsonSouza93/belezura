@@ -52,8 +52,17 @@ class OnuModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function search($field)
+    public function search($data)
     {
+        $fieldsToSearch = [
+            'onu_serial_number',
+            'onu_name',
+            'onu_ip',
+            'onu_port',
+            'onu_username',
+            'onu_password',
+        ];
+
         $fieldsToReturn = [
             'id',
             'onu_serial_number',
@@ -68,24 +77,27 @@ class OnuModel extends Model
             'onu_deleted_at',
         ];
 
-        $fieldsToSearch = [
-            'onu_serial_number',
-            'onu_name',
-            'onu_ip',
-            'onu_port',
-            'onu_username',
-            'onu_password',
-        ];
+        $createAtName = 'onu_created_at';
 
-        $mainQuery = $this->db->table($this->table)
-                              ->select($fieldsToReturn);
+        $search = null;
 
-        if(!empty($field)) {
-            foreach ($fieldsToSearch as $fieldToSearch) {
-                $mainQuery->orLike($fieldToSearch, $field);
+        if (isset($data['search']))
+            $search = $data['search'];
+
+        $query = $this->db->table($this->table)
+            ->select($fieldsToReturn);
+
+        if ($search) {
+            $query->groupStart();
+            foreach ($fieldsToSearch as $field) {
+                $query->orLike($field, $search);
             }
+            $query->groupEnd();
         }
 
-        return $mainQuery->get()->getResultArray();
+        $query->orderBy($createAtName, 'DESC');
+        $result = $query->get()->getResultArray();
+
+        return $result;
     }
 }
