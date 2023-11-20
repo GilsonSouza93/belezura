@@ -13,7 +13,20 @@ class OnuModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = [
+        'id',
+        'onu_serial_number',
+        'onu_name',
+        'onu_ip',
+        'onu_port',
+        'onu_username',
+        'onu_password',
+        'onu_status',
+        'onu_created_at',
+        'onu_updated_at',
+        'onu_deleted_at',
+        'company_id',
+    ];
 
     // Dates
     protected $useTimestamps = false;
@@ -38,4 +51,41 @@ class OnuModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function search($field)
+    {
+        $fieldsToReturn = [
+            'id',
+            'onu_serial_number',
+            'onu_name',
+            'onu_ip',
+            'onu_port',
+            'onu_username',
+            'onu_password',
+            'onu_status',
+            'onu_created_at',
+            'onu_updated_at',
+            'onu_deleted_at',
+        ];
+
+        $fieldsToSearch = [
+            'onu_serial_number',
+            'onu_name',
+            'onu_ip',
+            'onu_port',
+            'onu_username',
+            'onu_password',
+        ];
+
+        $mainQuery = $this->db->table($this->table)
+                              ->select($fieldsToReturn);
+
+        if(!empty($field)) {
+            foreach ($fieldsToSearch as $fieldToSearch) {
+                $mainQuery->orLike($fieldToSearch, $field);
+            }
+        }
+
+        return $mainQuery->get()->getResultArray();
+    }
 }

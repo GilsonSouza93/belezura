@@ -38,12 +38,9 @@
                 <label for="plano" class="form-label">Plano</label>
                 <select class="form-control" id="plano" aria-label="plano">
                     <option selected>Selecione o plano</option>
-                    <option value="1">50mb</option>
-                    <option value="1">70mb</option>
-                    <option value="1">90mb</option>
-                    <option value="1">100mb</option>
-                    <option value="1">200mb</option>
-                    <option value="1">300mb</option>
+                    <?php foreach ($subscription as $plan) : ?>
+                        <option value="<?= $plan['id'] ?>"><?= $plan['name'] ?></option>
+                    <?php endforeach ?>
                 </select>
             </div>
             <div class="mt-3 col-md-3">
@@ -125,7 +122,7 @@
             <div class="mt-3 col-md-3">
                 <label for="cepCliente" class="form-label">Cep</label>
                 <input type="text" id="cepCliente"  class="form-control" id="zipcode" name="zipcode" placeholder="Cep" value="<?= isset($register) ? $register->zipcode : '' ?>">
-            </div>
+            </div> teste de cria
 
             <div class="mt-3 col-md-5">
                 <label for="ruaCliente" class="form-label">Rua</label>

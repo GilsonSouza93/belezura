@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 
-<div class="card p-4">
+<div class="p-4">
 
     <h2><?= $tittle ?></h2>
     
@@ -37,8 +37,8 @@
                     <th scope='col'>Ações</th>
                 </tr>
             </thead>
-            <tbody>
-            </tbody>
+            <tbody id="tableDiv">
+            </tbody>    
         </table>
     </div>
 </div>
@@ -49,119 +49,17 @@
 <?= $this->section('script') ?>
 
 <script>
-    const tableOnu = document.getElementById('tableOnu');
-    const onuCount = document.getElementById('onuCount')
-    const searchBtn = document.getElementById('searchBtn')
-
-    const search = () => {
-        const search = document.getElementById('search').value
-        const url = '<?= $baseRoute ?>/search'
-        const data = {
-            search: search
-        }
-
-        onuCount.innerText = 'Carregando...'
-
-        fetch(url, {
-            method: 'POST',
-            body: JSON.stringify(data),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            renderTableTwo(data);
-        })
-        .catch(error => {
-            showToast('Erro ao buscar clientes !', 'error')
-        })
-
+    const renderTableOptions = {
+        urlFetch: window.location.href + '/search',
+        tableDiv: document.getElementById('tableDiv'),
+        theadElements: ['nome', 'preço', 'descrição', 'ações'],
+        tbodyElements: ['name', 'price', 'description', ['edit', 'delete', 'whatsapp']],
+        searchField: document.getElementById('search'),
     }
-
-    const renderTableTwo = (data) => {
-        onuCount.innerText = data.length
-
-        const tbody = document.querySelector('tbody')
-        tbody.innerHTML = ''
-        data.forEach(onu => {
-
-            Object.keys(onu).forEach(key => {
-                if (onu[key] === null) {
-                    onu[key] = ''
-                }
-            });
-
-            const tr = document.createElement('tr');
-            tr.innerHTML = `
-                <td>${onu?.name}</td>
-                <td>
-                    ${onu?.email}<br>
-                    ${onu?.phone1}
-                </td>
-                <td></td>
-                <td></td>
-                <td class='text-end'>
-                    <div class="dropstart">
-                        <button type="button" class="btn btn-outline-secondary text-white" data-bs-toggle="dropdown" aria-expanded="false">
-                            Ações
-                        </button>
-                        <ul class="dropdown-menu text-center me-2" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(7px); border-radius: 15px; border: 2px solid #198754;">
-                            <li class="dropdown-item" onclick="editOnu(${onu.id})">Editar</li>
-                            <li class="dropdown-item" onclick="deleteOnu(${onu.id})">Excluir</li>
-                        </ul>
-                    </div>
-                </td>
-            `
-            tbody.appendChild(tr);
-        })
-        
-        tableOnu.classList.add('show');
-    }
-
-    const openModalFilter = () => {
-        const modalFilter = new bootstrap.Modal('#modalFilter', {
-            keyboard: true,
-        });
-
-        modalFilter.show();
-    }
-
 
     document.addEventListener('DOMContentLoaded', () => {
-        search()
+        advancedSearchEngine(renderTableOptions);
     });
-
-    searchBtn.addEventListener('click', () => {
-        search()
-    });
-
-    const deleteOnu = (id) => {
-        url = '<?= $baseRoute ?>/delete';
-        showLoading();
-
-        fetch(url, {
-            method: 'POST',
-            body: JSON.stringify({id: id}),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then(response => response.json())
-        .then(data => {
-            hideLoading();
-
-            if (data.success === true) {
-                showToast('Cliente excluído com sucesso !', 'success')
-                search()
-            } else {
-                showToast('Erro ao excluir cliente !', 'error')
-            }
-        })
-    }
-
-    const editOnu = (id) => {
-        window.location.href = '<?= $baseRoute ?>/editar/' + id;
-    }
 
 </script>
 

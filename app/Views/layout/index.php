@@ -237,6 +237,11 @@
                 search: searchField.value
             }
 
+            searchField.addEventListener('keyup', () => {
+                data.search = searchField.value;
+                renderTable();
+            });
+
             showLoading();
             tableDiv.style.opacity = '0';
 
@@ -459,7 +464,7 @@
                         width: 1
                     },
                     move: {
-                        enable: true,
+                        enable: false,
                         speed: 0.15,
                         direction: 'none',
                         random: false,
