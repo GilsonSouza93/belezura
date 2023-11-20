@@ -17,13 +17,4 @@ class OnuController extends BaseController
         $this->mainModel = model('OnuModel');
         parent::__construct();
     }
-
-    public function search()
-    {
-        $data = $this->request->getJSON();
-
-        $onus = $this->mainModel->search($data->search);
-
-        return $this->response->setJSON($onus);
-    }
 }

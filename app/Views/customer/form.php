@@ -44,13 +44,12 @@
                 </select>
             </div>
             <div class="mt-3 col-md-3">
-                <label for="onu" class="form-label">ONU</label>
-                <select class="form-control" id="onu" aria-label="Default select example">
+                <label for="onus_id">ONU</label>
+                <select class="form-select" id="onus_id" name="onus_id" aria-label="Default select example">
                     <option selected>Selecione a Onu</option>
-                    <option value="1">Onu Cdata</option>
-                    <option value="1">Onu Zte</option>
-                    <option value="1">Onu Sheroline</option>
-                    <option value="1">Cadastrar nova onu</option>
+                    <?php foreach ($onus as $onu) : ?>
+                        <option value="<?= $onu['id'] ?>"><?= $onu['name'] ?></option>
+                    <?php endforeach; ?>
                 </select>
             </div>
         </div>
@@ -122,7 +121,7 @@
             <div class="mt-3 col-md-3">
                 <label for="cepCliente" class="form-label">Cep</label>
                 <input type="text" id="cepCliente"  class="form-control" id="zipcode" name="zipcode" placeholder="Cep" value="<?= isset($register) ? $register->zipcode : '' ?>">
-            </div> teste de cria
+            </div>
 
             <div class="mt-3 col-md-5">
                 <label for="ruaCliente" class="form-label">Rua</label>

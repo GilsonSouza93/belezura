@@ -24,22 +24,8 @@
         
     </div>
 
-    <p>
-        Onu's localizadas: <span id="onuCount">0</span>
-    </p>
-
-    <div id="tableOnu" class="collapsed p-4 justify-content card">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">Código</th>
-                    <th scope="col">Descrição</th>
-                    <th scope='col'>Ações</th>
-                </tr>
-            </thead>
-            <tbody id="tableDiv">
-            </tbody>    
-        </table>
+    <div id="tableDiv" class="collapsed p-4 justify-content card">
+        
     </div>
 </div>
 
@@ -52,8 +38,8 @@
     const renderTableOptions = {
         urlFetch: window.location.href + '/search',
         tableDiv: document.getElementById('tableDiv'),
-        theadElements: ['nome', 'preço', 'descrição', 'ações'],
-        tbodyElements: ['name', 'price', 'description', ['edit', 'delete', 'whatsapp']],
+        theadElements: ['nome', 'serial', 'ip', 'porta', 'ações'],
+        tbodyElements: ['onu_name', 'onu_serial_number', 'onu_ip', 'onu_port', ['edit', 'delete']],
         searchField: document.getElementById('search'),
     }
 

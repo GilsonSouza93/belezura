@@ -18,7 +18,11 @@ class CustomerController extends BaseController
         $this->mainModel = model('CustomerModel');
         $this->subscriptionModel = model('SubscriptionModel');
 
+        
         $this->data['subscription'] = $this->subscriptionModel->findAll();
+        
+        $onuModel = model('OnuModel');
+        $this->data['onuModel'] = $onuModel->findAll();
         parent::__construct();
     }
 
