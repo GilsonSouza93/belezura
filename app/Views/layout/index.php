@@ -8,7 +8,7 @@
     <link rel="icon" href="assets/imgs/logo.png" type="image/x-icon">
     <link href="<?= base_url('assets/css/bootstrap_5.3.min.css') ?>" rel="stylesheet">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhZX90O1QnNedic9Z1XgY3P9HzA9AjbN4&libraries=places"></script>
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <style>
    
@@ -528,11 +528,6 @@
                 retina_detect: true
             });
         });
-        
-        $(document).ready(function() {
-        $('#meuSelect').select2();
-    });
-
     </script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
