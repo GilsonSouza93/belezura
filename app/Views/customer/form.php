@@ -45,7 +45,7 @@
             </div>
             <div class="mt-3 col-md-3">
                 <label for="onus_id">ONU</label>
-                <select class="form-select" id="onus_id" name="onus_id" aria-label="Default select example" alue="<?= isset($register) ? $register->onu : '' ?>">
+                <select class="form-select select2" id="onus_id" name="onus_id" aria-label="Default select example" alue="<?= isset($register) ? $register->onu : '' ?>">
                     <option selected>Selecione a Onu</option>
                     <?php foreach ($onus as $onu) : ?>
                         <option value="<?= $onu['id'] ?>"><?= $onu['onu_name'] ?></option>
@@ -150,7 +150,7 @@
 
             <div class="mt-3 col-md-4">
                 <label for="ufCliente" class="form-label">UF</label>
-                <select class="form-control" id="ufcliente" aria-label="uf cliente">
+                <select class="form-control select2" id="ufcliente" aria-label="uf cliente">
                     <option selected>UF</option>
                     <option value="1">Acre</option>
                     <option value="2">Alagoas</option>

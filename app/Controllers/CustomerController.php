@@ -12,6 +12,7 @@ class CustomerController extends BaseController
     public $baseRoute = '/clientes';
 
     public $subscriptionModel;
+    public $onuModel;
 
     public function __construct()
     {
