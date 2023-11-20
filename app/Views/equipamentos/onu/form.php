@@ -10,38 +10,38 @@
 
   <div class="row card-2 py-3 my-3">
     <div class="col-md-8">
-    <h4>
-                <?php if (isset($register)) : ?>
-                    Editar Onu
-                <?php else : ?>
-                    Novo Onu
-                <?php endif ?>
-            </h4>
+      <h4>
+        <?php if (isset($register)) : ?>
+          Editar Onu
+        <?php else : ?>
+          Nova Onu
+        <?php endif ?>
+      </h4>
     </div>
     <div class="col-md-4 btn-group">
       <a class="btn btn-success" href="<?= $baseRoute ?>">Voltar</a>
-      <button class="btn btn-success" id="submit-btn" >Salvar</button>
+      <button class="btn btn-success" id="submit-btn">Salvar</button>
     </div>
   </div>
 
   <form>
 
-      <?php if (isset($register)) : ?>
-        <input type="hidden" name="id" value="<?= $register->id ?>">
-      <?php endif ?>
+    <?php if (isset($register)) : ?>
+      <input type="hidden" name="id" value="<?= $register->id ?>">
+    <?php endif ?>
 
     <div class="row">
       <div class="mt-3 col-md-3">
-        <label for="name" class="form-label">Fonte</label>
-        <input type="text" class="form-control" name="name" placeholder="Insira o código da onu">
+        <label for="name" class="form-label">Código</label>
+        <input type="text" class="form-control" name="code" id="code" placeholder="Insira o código da onu">
       </div>
       <div class="mt-3 col-md-4">
-        <label for="model" class="form-label">Descrição</label>
-        <input type="text" class="form-control" name="model" placeholder="Insira a descrição">
+        <label for="model" class="form-label">Nome</label>
+        <input type="text" class="form-control" name="name" id="name" placeholder="Insira o nome">
       </div>
       <div class="mt-3 col-md-4">
-        <label for="qty" class="form-label">Portas</label>
-        <input type="text" class="form-control" name="qty" placeholder="Insira a porta">
+        <label for="qty" class="form-label">Porta</label>
+        <input type="text" class="form-control" name="port" id="port" placeholder="Insira a porta">
       </div>
 
     </div>
@@ -49,11 +49,16 @@
     <div class="row">
       <div class="mt-3 col-md-6">
         <label for="price" class="form-label">Parâmetros</label>
-        <input type="text" class="form-control" name="price" placeholder="Insira o parâmetro">
+        <input type="text" class="form-control" name="param" id="param" placeholder="Insira o parâmetro">
       </div>
       <div class="mt-3 col-md-6">
-        <label for="id_valor_custo" class="form-label">Olts</label>
-        <input type="text" class="form-control" name="valor_custo" placeholder="OLTS">
+        <label for="olt" class="form-label">OLT</label>
+        <select class="form-control" id="olt" aria-label="olt">
+          <option selected>Selecione a OLT</option>
+          <?php foreach ($olts as $olt) : ?>
+            <option value="<?= $olt['id'] ?>"><?= $olt['olt_name'] ?></option>
+          <?php endforeach ?>
+        </select>
       </div>
     </div>
 
@@ -65,36 +70,33 @@
 
   <?= $this->section('script') ?>
 
-<script>
-
+  <script>
     const submitBtn = document.querySelector('#submit-btn');
     const form = document.querySelector('form');
     const url = '<?= $baseRoute ?>/save';
 
     submitBtn.addEventListener('click', event => {
-        event.preventDefault();
-        showLoading();
+      event.preventDefault();
+      showLoading();
 
-        const formData = new FormData(form);
+      const formData = new FormData(form);
 
-        fetch(url, {
-            method: 'POST',
-            body: formData
+      fetch(url, {
+          method: 'POST',
+          body: formData
         }).then(response => response.json())
         .then(data => {
-            hideLoading();
-            if (data.error) {
-                showToast(data.message, 'error');
-            } else {
-                showToast(data.message, 'success');
-                window.location.href = '<?= $baseRoute ?>';
-            }
+          hideLoading();
+          if (data.error) {
+            showToast(data.message, 'error');
+          } else {
+            showToast(data.message, 'success');
+            window.location.href = '<?= $baseRoute ?>';
+          }
         }).catch(error => {
-            console.log(error);
+          console.log(error);
         });
     });
+  </script>
 
-
-</script>
-
-<?= $this->endSection() ?>
+  <?= $this->endSection() ?>
