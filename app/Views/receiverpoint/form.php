@@ -125,19 +125,15 @@
             </div>
 
             
-            <div class="mt-5 col-md-3 form-check">
+            <div class="mt-5 col-md-2 form-check">
                 <label class="form-check-label" for="active">Receber Cancelados</label>
                 <input type="checkbox" class="form-check-input" id="active">
-                <br>
-                <br>
-                <span>Receber titulos de contratos cancelados</span>
+                <span class="badge text-bg-light show-text" data-text='Receber titulos de contratos cancelados'>?</span>
             </div>
 
-            <div class="mt-5 col py-1 form-check">
+            <div class="mt-5 col-md-4 form-check">
                 <label class="form-check-label" for="active">Exigir Plano de Conta em Lançamento ?</label>
                 <input type="checkbox" class="form-check-input" id="active">
-                <br>
-                <br>
                 <span class="badge text-bg-light show-text" data-text='Marcar opção para somente permitir lançamento no caixa com plano de conta'>?</span>
             </div>
             
@@ -181,28 +177,26 @@
                     
                 </select>
             </div>
-            <div class="mt-5 col py-1 form-check">
+            <div class="mt-5 col-md-4 form-check">
                 <label class="form-check-label" for="active">Enviar NF?</label>
                 <input type="checkbox" class="form-check-input" id="active">
                 <span class="badge text-bg-light show-text" data-text='Enviar nota fiscal automáticamente após a NF ser gerada se houver baixa do título.'>?</span>
             </div>
             
-            <div class="mt-5 col py-1 form-check">
+            <div class="mt-5 col-md-4 form-check">
                 <label class="form-check-label" for="active">Filtrar Empresa nos Relatórios ?</label>
                 <input type="checkbox" class="form-check-input" id="active">
-                <br>
-                <br>
                 <span class="badge text-bg-light show-text" data-text='Se marcado, filtra a empresa definida do ponto de recebimento nos relatórios de caixa, dre etc. Se não definido, verifica a empresa no cadastro do Portador'>?</span>
             </div>
-            <div class="mt-5 col py-1 form-check">
+            <div class="mt-5 col-md-4 form-check">
                 <label class="form-check-label" for="active">Ativo Relatório de Caixa ?</label>
                 <input type="checkbox" class="form-check-input" id="active">
-                <br>
-                <br>
                 <span class="badge text-bg-light show-text" data-text='Se desmarcado, os lançamentos realizados neste ponto serão ocultados dos relatórios de lançamentos de caixa.'>?</span>
             </div>
-           
+
             <div class="mb-3">
+            </br>
+            </br>
             <label for="exampleFormControlTextarea1" class="form-label"> Horários</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
