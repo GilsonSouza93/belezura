@@ -15,6 +15,11 @@ class OnuController extends BaseController
     public function __construct()
     {
         $this->mainModel = model('OnuModel');
+        $this->oltModel = model('OltModel');
+
+
+        $this->data['olts'] = $this->oltModel->findAll();
         parent::__construct();
+
     }
 }

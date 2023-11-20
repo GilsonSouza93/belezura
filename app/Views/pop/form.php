@@ -68,12 +68,10 @@
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">Plano</label>
-                <select class="form-control" id="plano">
-                    <option selected>Selecione o Plano</option>
-                    <option value="1">100mb -</option>
-                    <option value="2">50 mb</option>
-                    <option value="3">1GB</option>
-                    <option value="3">Rádio - 1GB</option>
+                <select class="form-control select2" id="plano">
+                <?php foreach ($plans as $item) : ?>
+                        <option value="<?= $item['id'] ?>"><?= $item['name'] ?></option>
+                    <?php endforeach ?>
                 </select>
             </div>
             <div class="mt-3 col-md-4">

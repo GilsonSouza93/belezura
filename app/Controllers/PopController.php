@@ -11,10 +11,19 @@ class PopController extends BaseController
     public $viewPath = 'pop';
     public $baseRoute = '/gerencial/pop';
 
+    public $subscriptionModel;
+    private $userModel;
+    
+
     public function __construct()
     {
         $this->mainModel = model('App\Models\PopModel');
+        $this->subscriptionModel = model('SubscriptionModel');
+        $this->userModel = model('UserModel');
+        $this->data['plans'] = $this->subscriptionModel->findAll();
         return parent::__construct();
+    
+
     }
 
     public function save()

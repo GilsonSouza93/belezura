@@ -8,11 +8,8 @@
     <link rel="icon" href="assets/imgs/logo.png" type="image/x-icon">
     <link href="<?= base_url('assets/css/bootstrap_5.3.min.css') ?>" rel="stylesheet">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhZX90O1QnNedic9Z1XgY3P9HzA9AjbN4&libraries=places"></script>
-        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <style>
-   
-
         :root {
             --border-radius: 16px;
         }
@@ -79,6 +76,25 @@
         #content {
             position: relative;
             z-index: 1;
+        }
+
+        /* Adicione estilos para um tema escuro */
+        .select2-container--default .select2-selection--single,
+        .select2-container--default .select2-selection--multiple {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Adicione estilos para as opções na lista suspensa */
+        .select2-results__option {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Adicione estilos para o texto realçado durante a pesquisa */
+        .select2-results__option--highlighted {
+            background-color: #555;
+            color: #fff;
         }
     </style>
 </head>
@@ -232,7 +248,7 @@
         const advancedSearchEngine = (options) => {
 
             console.log('Estou pesquisando');
-        
+
             const tableDiv = options.tableDiv;
             const theadElements = options.theadElements;
             const tbodyElements = options.tbodyElements;
@@ -310,7 +326,7 @@
                                     dropdownMenu.style = "background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(7px); border-radius: 15px; border: 2px solid #198754;"
                                     dropdownMenu.classList.add('dropdown-menu', 'text-center', 'me-2');
 
-                                    if(element.includes('edit')) {
+                                    if (element.includes('edit')) {
                                         const editButton = document.createElement('li');
                                         editButton.classList.add('dropdown-item');
                                         editButton.addEventListener('click', () => {
@@ -322,7 +338,7 @@
                                     };
 
 
-                                    if(element.includes('delete')) {
+                                    if (element.includes('delete')) {
                                         const deleteButton = document.createElement('li');
                                         deleteButton.classList.add('dropdown-item');
                                         deleteButton.addEventListener('click', () => {
@@ -334,7 +350,7 @@
                                         dropdownMenu.appendChild(deleteButton);
                                     };
 
-                                    if(element.includes('whatsapp')) {
+                                    if (element.includes('whatsapp')) {
                                         const numbersToWhatsapp = ['https://wa.me/message/5RGAMANRRVRCP1', 'https://wa.me/qr/UTHYIT5Y6NWCA1'];
 
                                         const whatsappButton = document.createElement('li');
@@ -528,7 +544,13 @@
                 retina_detect: true
             });
         });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            $('.select2').select2();
+        });
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
     <?= $this->renderSection('script') ?>
