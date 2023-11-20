@@ -16,7 +16,7 @@ class AdOnu extends Migration
                 'auto_increment' => true,
             ],
 
-            'onu_serial_number' => [
+            'onu_code' => [
                 'type'           => 'INT',
                 'constraint'     => 5,
             ],
@@ -31,11 +31,21 @@ class AdOnu extends Migration
                 'constraint' => '100',
             ],
 
-            'onu_port' => [
+            'onu_parameters' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '100',
+            ],
+            
+            'onu_olt' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '100',
             ],
 
+            'onu_port' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '100',
+            ],
+            
             'onu_username' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '100',
