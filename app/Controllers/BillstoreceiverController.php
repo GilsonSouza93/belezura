@@ -7,7 +7,7 @@ use App\Controllers\BaseController;
 class BillstoreceiverController extends BaseController
 {
     public $tittle = 'Contas a Receber';
-    public $addButtonText = 'Adicionar Conta a receber';
+    public $addButtonText = 'Adicionar Conta a Receber';
     public $viewPath = 'billstoreceiver';
     public $baseRoute = '/financeiro/contas-receber';
 

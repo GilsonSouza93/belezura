@@ -18,7 +18,7 @@
     </div>
 
     <p>
-        Veículos Localizados  localizados:<span id="vehicleCount">0</span>
+        Veículos localizados:<span id="vehicleCount">0</span>
     </p>
 
     <div id="tableVehicle" class="collapsed p-4 justify-content ">

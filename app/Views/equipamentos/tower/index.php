@@ -25,7 +25,7 @@
     </div>
 
     <p>
-        Torres localizadas:  <span id="towerCount">0</span>
+        Torres localizadas: <span id="towerCount">0</span>
     </p>
 
     <div id="tableTower" class="collapsed p-4 justify-content card">

@@ -25,7 +25,7 @@
     </div>
 
     <p>
-        Radius localizadas: <span id="radiusCount">0</span>
+        Radius localizados: <span id="radiusCount">0</span>
     </p>
 
     <div id="tableRadius" class="collapsed p-4 justify-content card">

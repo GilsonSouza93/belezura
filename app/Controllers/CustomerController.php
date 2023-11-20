@@ -16,13 +16,13 @@ class CustomerController extends BaseController
     public function __construct()
     {
         $this->mainModel = model('CustomerModel');
-        $this->subscriptionModel = model('SubscriptionModel');
-
         
-        $this->data['subscription'] = $this->subscriptionModel->findAll();
-        
+        $subscriptionModel = model('SubscriptionModel');
         $onuModel = model('OnuModel');
+
+        $this->data['subscription'] = $subscriptionModel->findAll();
         $this->data['onuModel'] = $onuModel->findAll();
+
         parent::__construct();
     }
 

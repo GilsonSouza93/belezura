@@ -25,7 +25,7 @@
     </div>
 
     <p>
-        Contrato localizados: <span id="contractCount">0</span>
+        Contratos localizados: <span id="contractCount">0</span>
     </p>
 
     <div id="tableContract" class="collapsed p-4 justify-content card">

@@ -25,7 +25,7 @@
     </div>
 
     <p>
-        IP V6 Pool localizadas: <span id="ipv6Count">0</span>
+        IP V6 POOL localizados: <span id="ipv6Count">0</span>
     </p>
 
     <div id="tableIpv6" class="collapsed p-4 justify-content ">
