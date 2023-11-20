@@ -25,7 +25,7 @@
     </div>
 
     <p>
-        IP POOL localizadas: <span id="ippoolCount">0</span>
+        IP POOL localizados: <span id="ippoolCount">0</span>
     </p>
 
     <div id="tableIppool" class="collapsed p-4 justify-content ">

@@ -25,7 +25,7 @@
     </div>
 
     <p>
-        Switch's localizadas: 100
+        Roteadores localizados:<span id="routersCount">0</span>
     </p>
 
     <div id="tableRouter" class="collapsed p-4 justify-content card">

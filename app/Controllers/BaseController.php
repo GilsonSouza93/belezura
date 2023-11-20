@@ -100,11 +100,11 @@ abstract class BaseController extends Controller
                         'href' => base_url('financeiro/caixa'),
                     ],
                     'payable' => [
-                        'title' => 'Contas a pagar',
+                        'title' => 'Contas a Pagar',
                         'href' => base_url('financeiro/contas-pagar'), 
                     ],
                     'receive' => [
-                        'title' => 'Contas receber',
+                        'title' => 'Contas a Receber',
                         'href' => base_url('financeiro/contas-receber'), 
                     ],
                     'ticket' => [
@@ -120,7 +120,7 @@ abstract class BaseController extends Controller
                         'href' => base_url('financeiro/pontosdepagamento'), 
                     ],
                     'paymentplains' => [
-                        'title' => 'Planos de pagamento',
+                        'title' => 'Planos de Pagamento',
                         'href' => base_url('financeiro/planosdepagamento'), 
                     ],
 

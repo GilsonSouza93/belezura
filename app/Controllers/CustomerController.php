@@ -23,8 +23,12 @@ class CustomerController extends BaseController
         $this->data['onus'] = $this->onuModel->findAll();
         $this->data['subscription'] = $this->subscriptionModel->findAll();
         
+        $subscriptionModel = model('SubscriptionModel');
         $onuModel = model('OnuModel');
+
+        $this->data['subscription'] = $subscriptionModel->findAll();
         $this->data['onuModel'] = $onuModel->findAll();
+
         parent::__construct();
 
         

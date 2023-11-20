@@ -16,7 +16,6 @@
         <div class="col-md-4 btn-group">
             <button class="btn btn-success">Pesquisar</button>
             <button class="btn btn-success" onclick="openModalFinancial()" >Filtros</button>
-            <a class="btn btn-success" href="<?= $baseRoute ?>/novo"><?= $addButtonText ?></a>
         </div>
     </div>
 

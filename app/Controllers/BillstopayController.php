@@ -8,7 +8,7 @@ class BillstopayController extends BaseController
 {
 
     public $tittle = 'Contas a Pagar';
-    public $addButtonText = 'Adicionar Conta a pagar';
+    public $addButtonText = 'Adicionar Conta a Pagar';
     public $viewPath = 'billstopay';
     public $baseRoute = '/financeiro/contas-pagar';
 

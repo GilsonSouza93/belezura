@@ -19,7 +19,7 @@
     </div>
 
     <p>
-        Lotes de Boletos localizados: <span id="ticketsCount">0</span>
+        Lotes de boletos localizados: <span id="ticketsCount">0</span>
     </p>
 
     <div id="tableTicket" class="collapsed p-4 justify-content card ">
