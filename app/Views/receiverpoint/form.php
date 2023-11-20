@@ -49,48 +49,46 @@
                     <option value="3">LinkTop</option>
                     <option value="4">NAVIX ISP</option>
                     </select>
-                    <span>Se apenas 1 empresa, não é necessário definir.</span>
+                    <span class="badge text-bg-light show-text" data-text='Se apenas 1 empresa, não é necessário definir.'>?</span>
             </div>
             
-            <div class="mt-3 col-md-2">
+            <div class="mt-3 col-md-5">
                 <label for="saldo_maximo" class="form-label">Saldo máximo permitido por dia</label>
                 <input type="text" class="form-control" id="Empresas">
-                <span>Limitar recebimento para o caixa por dia. (Definir valor apenas se quiser limitar valor máximo para receber por caixa)</span>
+                <span class="badge text-bg-light show-text" data-text='Limitar recebimento para o caixa por dia. (Definir valor apenas se quiser limitar valor máximo para receber por caixa)'>?</span>
             </div>
             
-        </div>
+       
         
-      <!--  <div class="mt-3 col-md-3 form-check">
+        <div class="mt-3 col-md-1 form-check">
                 <label class="form-check-label" for="active">Ativo</label>
                 <input type="checkbox" class="form-check-input" id="active">
             </div>
-        -->
+        
             
             <div class="mt-3 col-md-3">
                 <label for="descontocaixa" class="form-label">% Desconto Caixa.</label>
                 <input type="text" class="form-control" id="Empresas">
-                <span>Porcentagem permitida para desconto nesse ponto de recebimento.(Usuários Normais)</span>
+                <span class="badge text-bg-light show-text" data-text='Porcentagem permitida para desconto nesse ponto de recebimento.(Usuários Normais)'>?</span>
             </div>
-            <div class="mt-3 col-md-3">
+            <div class="mt-3 col-md-4">
                 <label for="descontoadmin" class="form-label">% Desconto Admin.</label>
                 <input type="text" id="identificador" class="form-control">
-                <span>Porcentagem permitida para desconto nesse ponto de recebimento.(Usuários Admin)</span>
+                <span class="badge text-bg-light show-text" data-text='Porcentagem permitida para desconto nesse ponto de recebimento.(Usuários Admin)'>?</span>
             </div> 
         
             
-            <div class="mt-5 col py-1 form-check">
+            <div class="mt-5 col-md-1 form-check">
                 <label class="form-check-label" for="active">Permitir Desconto ?</label>
                 <input type="checkbox" class="form-check-input" id="active">
             </div>
 
-            <div class="mt-5 col py-1 form-check">
+            <div class="mt-5 col-md-3 form-check">
                 <label class="form-check-label" for="active">Refinanciar Valor ?</label>
                 <input type="checkbox" class="form-check-input" id="active">
-                <br>
-                <br>
-                <span>Refinanciar valor se houver diferença entre valor pago com o valor total - desconto.</span>
+                <span class="badge text-bg-light show-text" data-text='Refinanciar valor se houver diferença entre valor pago com o valor total - desconto.'>?</span>
             </div>
-            <div class="mt-3 col-md-3">
+            <div class="mt-3 col-md-4">
                 <label for="uf" class="form-label">Formas De Pagamento</label>
                 <select class="form-control" id="uf">
                     <option selected>-------</option>
@@ -101,33 +99,33 @@
                     <option value="5">Cheque à Vista</option>
                     <option value="6">PIX</option>
                 </select>
-                <span>Se não informado formas de pagamento que o caixa aceita, serão consideradas todas as formas</span>
+                <span class="badge text-bg-light show-text" data-text='Se não informado formas de pagamento que o caixa aceita, serão consideradas todas as formas'>?</span>
             </div>
        
             <div class="row">
-            <div class="mt-3 col-md-4">
+            <div class="mt-3 col-md-3">
                 <label for="typo" class="form-label">Formas de Recebimento</label>
                 <select class="form-control" id="formasderecebimento">
                     <option selected>Selecione o Plano</option>
                     <option value="1">Valor Total</option>
                     <option value="2">Valor Parcial</option>
                 </select>
-                <span>Se não informado formas de recebimento, serão consideradas todas as formas</span>
+                <span class="badge text-bg-light show-text" data-text='Se não informado formas de recebimento, serão consideradas todas as formas'>?</span>
             </div>
 
-            
-            <div class="row">
-            <div class="mt-3 col-md-4">
+             
+            <div class="mt-3 col-md-3">
                 <label for="typo" class="form-label">Pops</label>
                 <select class="form-control" id="pops">
                     <option selected>Selecione o Local</option>
                     <option value="1">Pop Caruaru</option>
                     <option value="2">Pop Garanhuns</option>
                 </select>
-                <span>Filtrar por Pop nos recebimentos via Retorno / Gateway. Requer ativar no portador filtrar pop.</span>
+                <span class="badge text-bg-light show-text" data-text='Filtrar por Pop nos recebimentos via Retorno / Gateway. Requer ativar no portador filtrar pop.'>?</span>
             </div>
+
             
-            <div class="mt-5 col py-1 form-check">
+            <div class="mt-5 col-md-3 form-check">
                 <label class="form-check-label" for="active">Receber Cancelados</label>
                 <input type="checkbox" class="form-check-input" id="active">
                 <br>
@@ -140,28 +138,28 @@
                 <input type="checkbox" class="form-check-input" id="active">
                 <br>
                 <br>
-                <span>Marcar opção para somente permitir lançamento no caixa com plano de conta</span>
+                <span class="badge text-bg-light show-text" data-text='Marcar opção para somente permitir lançamento no caixa com plano de conta'>?</span>
             </div>
             
-            <div class="mt-3 col-md-3">
+            <div class="mt-3 col-md-2">
                 <label for="saldo_maximo" class="form-label">Dias Lançamento Retorno</label>
                 <input type="text" class="form-control" id="Empresas">
-                <span>Se definido, lançamento no caixa será data atual + dias informados. Se não definido, data do lançamento = data da leitura do retorno.</span>
+                <span class="badge text-bg-light show-text" data-text='Se definido, lançamento no caixa será data atual + dias informados. Se não definido, data do lançamento = data da leitura do retorno.'>?</span>
             </div>
             
             <div class="mt-3 col-md-3">
                 <label for="saldo_maximo" class="form-label">Dias Lançamento Cartão</label>
                 <input type="text" class="form-control" id="Empresas">
-                <span>Se definido, lançamento no caixa será data atual + dias informados. Se não definido, data do lançamento = data da captura no cartão.</span>
+                <span class="badge text-bg-light show-text" data-text='Se definido, lançamento no caixa será data atual + dias informados. Se não definido, data do lançamento = data da captura no cartão.'>?</span>
             </div>
             <div class="mt-3 col-md-3">
                 <label for="saldo_maximo" class="form-label">Dias Lançamento Cartão (Debito)</label>
                 <input type="text" class="form-control" id="Empresas">
-                <span>Se definido, lançamento no caixa será data atual + dias informados. Se não definido, data do lançamento = data da captura no cartão.<span>
+                <span class="badge text-bg-light show-text" data-text='Se definido, lançamento no caixa será data atual + dias informados. Se não definido, data do lançamento = data da captura no cartão.'>?</span>
 
 
             </div>
-            <div class="mt-3 col-md-4">
+            <div class="mt-3 col-md-2">
                 <label for="typo" class="form-label">Gerar NF na Baixa do Título ?</label>
                 <select class="form-control" id="nas">
                     <option selected>----------</option>
@@ -174,7 +172,7 @@
             
            
 
-            <div class="mt-3 col-md-4">
+            <div class="mt-3 col-md-2">
                 <label for="typo" class="form-label">Gerar NF na Baixa do Título ?</label>
                 <select class="form-control" id="nas">
                     <option selected>----------</option>
@@ -186,9 +184,7 @@
             <div class="mt-5 col py-1 form-check">
                 <label class="form-check-label" for="active">Enviar NF?</label>
                 <input type="checkbox" class="form-check-input" id="active">
-                <br>
-                <br>
-                <span>Enviar nota fiscal automáticamente após a NF ser gerada se houver baixa do título.</span>
+                <span class="badge text-bg-light show-text" data-text='Enviar nota fiscal automáticamente após a NF ser gerada se houver baixa do título.'>?</span>
             </div>
             
             <div class="mt-5 col py-1 form-check">
@@ -196,14 +192,14 @@
                 <input type="checkbox" class="form-check-input" id="active">
                 <br>
                 <br>
-                <span>Se marcado, filtra a empresa definida do ponto de recebimento nos relatórios de caixa, dre etc. Se não definido, verifica a empresa no cadastro do Portador</span>
+                <span class="badge text-bg-light show-text" data-text='Se marcado, filtra a empresa definida do ponto de recebimento nos relatórios de caixa, dre etc. Se não definido, verifica a empresa no cadastro do Portador'>?</span>
             </div>
             <div class="mt-5 col py-1 form-check">
                 <label class="form-check-label" for="active">Ativo Relatório de Caixa ?</label>
                 <input type="checkbox" class="form-check-input" id="active">
                 <br>
                 <br>
-                <span>Se desmarcado, os lançamentos realizados neste ponto serão ocultados dos relatórios de lançamentos de caixa.</span>
+                <span class="badge text-bg-light show-text" data-text='Se desmarcado, os lançamentos realizados neste ponto serão ocultados dos relatórios de lançamentos de caixa.'>?</span>
             </div>
            
             <div class="mb-3">
