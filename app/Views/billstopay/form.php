@@ -41,8 +41,8 @@
             </div>
             <div class="mt-3 col-md-2">
                 <label for="pop" class="form-label">POP</label>
-                <select class="form-control select2" id="pop" aria-label="pop" name="POP" >
-                    <option selected>Selecione o Local POP</option>
+                <select class="form-control" id="pop" aria-label="pop" name="POP" >
+                    <option selected>Selecione o local POP</option>
                     <option value="1">Caruaru</option>
                     <option value="2">Olinda</option>
                     <option value="2">Recife</option>
@@ -52,16 +52,16 @@
             </div>
             <div class="mt-3 col-md-2">
                 <label for="fornecedor" class="form-label">Fornecedor</label>
-                <select class="form-control select2" id="fornecedor" aria-label="fornecedor" name="POP">
+                <select class="form-control" id="fornecedor" aria-label="fornecedor" name="POP">
                     <option selected>Selecione o Fornecedor</option>
                     <option value="1">Home Telecomunicações</option>
                 </select>
             </div>
 
             <div class="mt-3 col-md-2">
-                <label for="formaDePagamento" class="form-label">Forma De Pagamento</label>
-                <select class="form-control select2" id="formaDePagamento" aria-label="forma de pagamento" name="" >
-                    <option selected>Selecione a Forma De Pagamento</option>
+                <label for="formaDePagamento" class="form-label">Forma de pagamento</label>
+                <select class="form-control" id="formaDePagamento" aria-label="forma de pagamento" name="" >
+                    <option selected>Selecione a forma de pagamento</option>
                     <option value="1">Pix</option>
                     <option value="2">Caixa Reserva</option>
                     <option value="1">Dinheiro</option>

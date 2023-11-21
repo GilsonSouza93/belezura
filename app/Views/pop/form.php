@@ -59,7 +59,7 @@
                 <label for="identificador" class="form-label">Identificador</label>
                 <input type="text" id="identificador" class="form-control">
             </div>
-            
+
             <div class="mt-5 col py-1 form-check">
                 <label class="form-check-label" for="active">Ativo</label>
                 <input type="checkbox" class="form-check-input" id="active">
@@ -69,7 +69,8 @@
             <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">Plano</label>
                 <select class="form-control select2" id="plano">
-                <?php foreach ($plans as $item) : ?>
+                    <?php foreach ($plans as $item) : ?>cls
+                        
                         <option value="<?= $item['id'] ?>"><?= $item['name'] ?></option>
                     <?php endforeach ?>
                 </select>
@@ -108,26 +109,26 @@
 
         try {
             await fetch('<?= $baseRoute ?>/save', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(body),
-            })
-            .then(response => response.json())
-            .then(data => {
-                hideLoading();
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(body),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    hideLoading();
 
-                if (data.status === 'success') {
-                    showToast('Salvo com sucesso', 'success');
+                    if (data.status === 'success') {
+                        showToast('Salvo com sucesso', 'success');
 
-                    setTimeout(() => {
-                        window.location.href = '<?= $baseRoute ?>';
-                    }, 2000);
-                } else {
-                    showToast('Houve um erro', 'error');
-                }
-            });
+                        setTimeout(() => {
+                            window.location.href = '<?= $baseRoute ?>';
+                        }, 2000);
+                    } else {
+                        showToast('Houve um erro', 'error');
+                    }
+                });
 
         } catch (error) {
             hideLoading();
