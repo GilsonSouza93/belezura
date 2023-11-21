@@ -20,6 +20,8 @@ class AddAccountTypes extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '100',
             ],
+
+            'created_at timestamp DEFAULT current_timestamp NOT NULL',
         ]);
 
         $this->forge->addKey('id', true);

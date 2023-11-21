@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class AddStockAndTables extends Migration
+class AddCategoriesSuppliersAndManufactures extends Migration
 {
     public function up()
     {

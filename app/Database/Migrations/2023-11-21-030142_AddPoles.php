@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class AddPosts extends Migration
+class AddPoles extends Migration
 {
     public function up()
     {
@@ -69,33 +69,34 @@ class AddPosts extends Migration
                 'default' => false,
             ],
 
-            'created_at timestamp DEFAULT current_timestamp NOT NULL',	
-
+            
             'updated_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
             ],
-
+            
             'deleted_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
             ],
-
+            
             "company_id" => [
                 "type" => "int",
                 "constraint" => 5,
             ],
+
+            'created_at timestamp DEFAULT current_timestamp NOT NULL',	
         ]);
 
         $this->forge->addKey('id', true);
 
         $this->forge->addForeignKey('company_id', 'companies', 'id');
 
-        $this->forge->createTable('posts');
+        $this->forge->createTable('poles');
     }
 
     public function down()
     {
-        $this->forge->dropTable('posts');
+        $this->forge->dropTable('poles');
     }
 }

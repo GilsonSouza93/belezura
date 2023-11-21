@@ -18,18 +18,18 @@ class AddCompanies extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => '100',
             ],
+
             'description' => [
                 'type' => 'TEXT',
                 'null' => true,
             ],
-            'created_at' => [
-                'type' => 'DATETIME',
-                'null' => true,
-            ],
+
             'updated_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
             ],
+
+            'created_at timestamp DEFAULT current_timestamp NOT NULL',
         ]);
 
         $this->forge->addKey('id', true);

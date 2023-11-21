@@ -61,10 +61,7 @@ class AdOnu extends Migration
                 'constraint' => '100',
             ],
 
-            'onu_created_at' => [
-                'type' => 'DATETIME',
-                'null' => true,
-            ],
+            'onu_created_at timestamp DEFAULT current_timestamp NOT NULL',	
 
             'onu_updated_at' => [
                 'type' => 'DATETIME',

@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class AddOlt extends Migration
+class AddOlts extends Migration
 {
     public function up()
     {
@@ -87,6 +87,8 @@ class AddOlt extends Migration
                 "type" => "int",
                 "constraint" => 5,
             ],
+
+            'created_at timestamp DEFAULT current_timestamp NOT NULL',	
         ]);
 
         $this->forge->addKey('id', true);
