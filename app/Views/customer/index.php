@@ -5,7 +5,7 @@
 <div class="p-4">
 
     <h2><?= $tittle ?></h2>
-    
+
     <div class="row card-2 py-3 my-3">
         <div class="col-md-8">
             <input type="text" name="search" id="search" class="form-control" placeholder="Buscar" style="background-color: transparent;">
@@ -16,55 +16,36 @@
             <a class="btn btn-success" href="<?= $baseRoute ?>/novo"><?= $addButtonText ?></a>
         </div>
     </div>
-
-    <p>
-        Clientes localizados: <span id="customersCount">0</span>
-    </p>
-
-    <div id="collapseTable" class="collapse card p-4">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Contato</th>
-                    <th>Plano</th>
-                    <th>Endereço</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-    </div>
+    <div id="tableDiv"></div>
 </div>
 <!-- Filtro modal -->
 <div id='modalFilter' class="modal" tabindex="-1" style="backdrop-filter: blur(7px);">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form id='formFilter'>
-            <label for="plano" class="form-label">Plano</label>
-            <select class="form-control form-select" name="plano" aria-label="Selecione um plano">
-                <option selected="">Selecione o plano</option>
-                <option value="1">50mb</option>
-                <option value="1">70mb</option>
-                <option value="1">90mb</option>
-                <option value="1">100mb</option>
-                <option value="1">200mb</option>
-                <option value="1">300mb</option>
-            </select>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-primary">Consultar</button>
-      </div>
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id='formFilter'>
+                    <label for="plano" class="form-label">Plano</label>
+                    <select class="form-control form-select" name="plano" aria-label="Selecione um plano">
+                        <option selected="">Selecione o plano</option>
+                        <option value="1">50mb</option>
+                        <option value="1">70mb</option>
+                        <option value="1">90mb</option>
+                        <option value="1">100mb</option>
+                        <option value="1">200mb</option>
+                        <option value="1">300mb</option>
+                    </select>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary">Consultar</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <?= $this->endSection() ?>
@@ -76,117 +57,18 @@
     const customersCount = document.getElementById('customersCount')
     const searchBtn = document.getElementById('searchBtn')
 
-    const search = () => {
-        const search = document.getElementById('search').value
-        const url = '<?= $baseRoute ?>/search'
-        const data = {
-            search: search
-        }
+    const renderTableOptions = {
+        urlFetch: window.location.href + '/search',
+        tableDiv: document.getElementById('tableDiv'),
 
-        customersCount.innerText = 'Carregando...'
-
-        fetch(url, {
-            method: 'POST',
-            body: JSON.stringify(data),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            renderTableTwo(data);
-        })
-        .catch(error => {
-            showToast('Erro ao buscar clientes !', 'error')
-        })
-
+        theadElements: ['nome', 'ações'],
+        tbodyElements: ['name', ['edit', 'delete']],
+        searchField: document.getElementById('search'),
     }
-
-    const renderTableTwo = (data) => {
-        customersCount.innerText = data.length
-
-        const tbody = document.querySelector('tbody')
-        tbody.innerHTML = ''
-        data.forEach(customer => {
-
-            Object.keys(customer).forEach(key => {
-                if (customer[key] === null) {
-                    customer[key] = ''
-                }
-            });
-
-            const tr = document.createElement('tr');
-            tr.innerHTML = `
-                <td>${customer?.name}</td>
-                <td>
-                    ${customer?.email}<br>
-                    ${customer?.phone1}
-                </td>
-                <td></td>
-                <td></td>
-                <td class='text-end'>
-                    <div class="dropstart">
-                        <button type="button" class="btn btn-outline-secondary text-white" data-bs-toggle="dropdown" aria-expanded="false">
-                            Ações
-                        </button>
-                        <ul class="dropdown-menu text-center me-2" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(7px); border-radius: 15px; border: 2px solid #198754;">
-                            <li class="dropdown-item" onclick="editCustomer(${customer.id})">Editar</li>
-                            <li class="dropdown-item" onclick="deleteCustomer(${customer.id})">Excluir</li>
-                            <li class="dropdown-item" onclick="ticketCustomer(${customer.id})">Boleto</li>
-                        </ul>
-                    </div>
-                </td>
-            `
-            tbody.appendChild(tr);
-        })
-        
-        collapseTable.classList.add('show');
-    }
-
-    const openModalFilter = () => {
-        const modalFilter = new bootstrap.Modal('#modalFilter', {
-            keyboard: true,
-        });
-
-        modalFilter.show();
-    }
-
 
     document.addEventListener('DOMContentLoaded', () => {
-        search()
+        advancedSearchEngine(renderTableOptions);
     });
-
-    searchBtn.addEventListener('click', () => {
-        search()
-    });
-
-    const deleteCustomer = (id) => {
-        url = '<?= $baseRoute ?>/delete';
-        showLoading();
-
-        fetch(url, {
-            method: 'POST',
-            body: JSON.stringify({id: id}),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then(response => response.json())
-        .then(data => {
-            hideLoading();
-
-            if (data.success === true) {
-                showToast('Cliente excluído com sucesso !', 'success')
-                search()
-            } else {
-                showToast('Erro ao excluir cliente !', 'error')
-            }
-        })
-    }
-
-    const editCustomer = (id) => {
-        window.location.href = '<?= $baseRoute ?>/editar/' + id;
-    }
-
 </script>
 
 <?= $this->endSection() ?>

@@ -246,9 +246,6 @@
         };
 
         const advancedSearchEngine = (options) => {
-
-            console.log('Estou pesquisando');
-
             const tableDiv = options.tableDiv;
             const theadElements = options.theadElements;
             const tbodyElements = options.tbodyElements;
@@ -299,9 +296,6 @@
                 .then(response => response.json())
                 .then(data => {
                     hideLoading();
-
-                    console.log(data);
-
                     if (data.status == 'success') {
                         data.data.forEach(row => {
                             const tr = document.createElement('tr');
