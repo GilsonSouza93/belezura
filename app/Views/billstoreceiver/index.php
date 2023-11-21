@@ -12,7 +12,7 @@
         </div>
         
         <div class="col-md-4 btn-group">
-            <button class="btn btn-success">Exportar arquivo CSV</button>
+            <button class="btn btn-success">Exportar Arquivo CSV</button>
             <button class="btn btn-success">Importar</button>
         </div>
         
@@ -25,7 +25,7 @@
     </div>
 
     <p>
-        Contas a receber localizadas: <span id="billsReceiverCount">0</span>
+        Contas a Receber Localizadas: <span id="billsReceiverCount">0</span>
     </p>
 
     <div id="tableBillsReceiver" class="collapsed p-4 justify-content card">
@@ -67,7 +67,7 @@
             </div>
             <div class="mt-3 col-md-12">
                 <label for="status" class="form-label" id="status" >Status</label>
-                <select class="form-control" aria-label="Status">
+                <select class="form-control select2" aria-label="Status">
                     <option value="1">Pendente</option>
                     <option value="2">Quitado</option>
                     <option value="3">Cancelado</option>
@@ -76,40 +76,40 @@
             </div>
             <div class="mt-3 col-md-12">
                 <label for="pop" class="form-label" id="pop" >Pop</label>
-                <select class="form-control" aria-label="Pop">
-                    <option value="1">Carauru/PE</option>
+                <select class="form-control select2" aria-label="Pop">
+                    <option value="1">Caruaru/PE</option>
                     <option value="2">Surubim/PE</option>
                 </select>
             </div>
             <div class="mt-3 col-md-12">
                 <label for="pop" class="form-label" id="pop" >Pop</label>
-                <select class="form-control" aria-label="Pop">
-                    <option value="1">Carauru/PE</option>
+                <select class="form-control select2" aria-label="Pop">
+                    <option value="1">Caruaru/PE</option>
                     <option value="2">Surubim/PE</option>
                 </select>
             </div>
             <div class="mt-3 col-md-12">
                 <label for="documentType" class="form-label" id="documentType" >Tipo do Documento</label>
-                <select class="form-control" aria-label="tipo do documento">
+                <select class="form-control select2" aria-label="tipo do documento">
                     <option value="1">-------</option>
                 </select>
             </div>
             <div class="mt-3 col-md-12">
                 <label for="business" class="form-label" id="business" >Empresa</label>
-                <select class="form-control" aria-label="Empresa">
-                    <option value="1">Provedor de caruaru</option>
-                    <option value="1">Provedor de recife</option>
+                <select class="form-control select2" aria-label="Empresa">
+                    <option value="1">Provedor de Caruaru</option>
+                    <option value="1">Provedor de Recife</option>
                 </select>
             </div>
             <div class="mt-3 col-md-12">
                 <label for="fornecedor" class="form-label" id="fornecedor" >Fornecedor</label>
-                <select class="form-control" aria-label="Fornecedor">
+                <select class="form-control select2" aria-label="Fornecedor">
                     <option value="1">Home Telecomunicações</option>
                 </select>
             </div>
             <div class="mt-3 col-md-12">
-                <label for="countplan" class="form-label" id="countplan" >Plano de contas</label>
-                <select class="form-control" aria-label="Plano de contas">
+                <label for="countplan" class="form-label" id="countplan" >Plano de Contas</label>
+                <select class="form-control select2" aria-label="Plano de contas">
                     <option value="1">Mensalidade</option>
                     <option value="1">Receita</option>
                     <option value="1">Adesão</option>
@@ -118,7 +118,7 @@
             </div>
             <div class="mt-3 col-md-12">
                 <label for="user" class="form-label" id="user" >Usuário</label>
-                <select class="form-control" aria-label="Usuário">
+                <select class="form-control select2" aria-label="Usuário">
                     <option value="1">Fabiana - Financeiro</option>
                     <option value="1">Moacir - Diretor Geral</option>
                     <option value="1">Eduarda - Financeiro</option>
@@ -127,21 +127,21 @@
             </div>
             <div class="row">
                 <div class="mt-3 col-md-6">
-                    <label for="date" class="form-label" id="dataInicial" >Data inicial</label>
+                    <label for="date" class="form-label" id="dataInicial" >Data Inicial</label>
                     <input type="date" class="form-control" name="name" placeholder="">
                 </div>
                 <div class="mt-3 col-md-6">
-                    <label for="date" class="form-label" id="dataFinal" >Data final</label>
+                    <label for="date" class="form-label" id="dataFinal" >Data Final</label>
                     <input type="date" class="form-control" name="name" placeholder="">
                 </div>
             </div>
             <div class="row">
                 <div class="mt-3 col-md-6">
-                    <label for="date" class="form-label" id="vencimentoInicial" >Vencimento inicial</label>
+                    <label for="date" class="form-label" id="vencimentoInicial" >Vencimento Inicial</label>
                     <input type="date" class="form-control" name="name" placeholder="">
                 </div>
                 <div class="mt-3 col-md-6">
-                    <label for="date" class="form-label" id="vencimentoFinal" >Vencimento final</label>
+                    <label for="date" class="form-label" id="vencimentoFinal" >Vencimento Final</label>
                     <input type="date" class="form-control" name="name" placeholder="">
                 </div>
             </div>

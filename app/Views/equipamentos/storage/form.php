@@ -45,7 +45,7 @@
             </div>
             <div class="mt-3 col-md-3">
                 <label for="thel" class="form-label">POP</label>
-                <select class="form-control" aria-label="Default select example">
+                <select class="form-control select2" aria-label="Default select example">
                     <option selected>Selecione o POP</option>
                     <option value="1">Rua Tabareu</option>
                     <option value="1">Av. Tabacudo</option>

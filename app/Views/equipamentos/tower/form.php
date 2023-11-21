@@ -11,9 +11,9 @@
     <div class="row card-2 py-3 my-3">
         <div class="col-md-8">
         <?php if (isset($register)) : ?>
-                    Editar torre
+                    Editar Torre
                 <?php else : ?>
-                    Novo torre
+                    Novo Torre
                 <?php endif ?>
             </h4>
         </div>
@@ -44,7 +44,7 @@
             </div>
             <div class="mt-3 col-md-3">
                 <label for="thel" class="form-label">POP</label>
-                <select class="form-control" aria-label="Default select example">
+                <select class="form-control select2" aria-label="Default select example">
                     <option selected>Selecione o POP</option>
                     <option value="1">Rua Tabareu</option>
                     <option value="1">Av. Tabacudo</option>

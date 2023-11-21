@@ -33,7 +33,7 @@
         <div class="row">
         <div class="mt-3 col-md-3">
                 <label for="uf" id="popEmail" class="form-label">POP</label>
-                <select class="form-control" id="uf">
+                <select class="form-control select2" id="uf">
                     <option selected>-------</option>
                     <option value="1">PE</option>
                     <option value="2">AL</option>

@@ -11,9 +11,9 @@
         <div class="col-md-8">
             <h4>
                 <?php if (isset($register)) : ?>
-                    Editar cliente
+                    Editar Cliente
                 <?php else : ?>
-                    Novo cliente
+                    Novo Cliente
                 <?php endif ?>
             </h4>
         </div>
@@ -31,13 +31,13 @@
 
         <div class="row">
             <div class="mt-3 col-md-6">
-                <label for="nomeCliente" class="form-label">Nome completo</label>
-                <input type="text" id="nomeCliente" class="form-control" name="name" placeholder="Insira o nome completo" value="<?= isset($register) ? $register->name : '' ?>">
+                <label for="nomeCliente" class="form-label">Nome Completo</label>
+                <input type="text" id="nomeCliente" class="form-control" name="name" placeholder="Insira o Nome Completo" value="<?= isset($register) ? $register->name : '' ?>">
             </div>
             <div class="mt-3 col-md-3">
                 <label for="plano" class="form-label">Plano</label>
-                <select class="form-control" id="plano" aria-label="plano">
-                    <option selected>Selecione o plano</option>
+                <select class="form-control select2" id="plano" aria-label="plano">
+                    <option selected>Selecione o Plano</option>
                     <?php foreach ($subscription as $plan) : ?>
                         <option value="<?= $plan['id'] ?>"><?= $plan['name'] ?></option>
                     <?php endforeach ?>
@@ -77,8 +77,8 @@
             </div>
             <div class="mt-3 col-md-4">
                 <label for="estadoCivil" class="form-label">Estado Civil</label>
-                <select class="form-control" id="estadoCivil" aria-label="Estado civil">
-                    <option selected>Selecione o estado civil</option>
+                <select class="form-control select2" id="estadoCivil" aria-label="Estado civil">
+                    <option selected>Selecione o Estado Civil</option>
                     <option value="1">----------</option>
                     <option value="1">Solteiro(a)</option>
                     <option value="2">Casado(a)</option>
@@ -96,8 +96,8 @@
             </div>
             <div class="mt-3 col-md-3">
                 <label for="tipoContato1" class="form-label">Tipo:</label>
-                <select class="form-control" id="tipoContato1" >
-                    <option selected>Tipo do telefone</option>
+                <select class="form-control select2" id="tipoContato1" >
+                    <option selected>Tipo do Telefone</option>
                     <option value="1">Residencial</option>
                     <option value="2">Comercial</option>
                 </select>
@@ -109,8 +109,8 @@
             </div>
             <div class="mt-3 col-md-3">
                 <label for="tipoContato2" class="form-label">Tipo:</label>
-                <select class="form-control" id="tipoContato2" aria-label="Default select example">
-                    <option selected>Tipo do telefone</option>
+                <select class="form-control select2" id="tipoContato2" aria-label="Default select example">
+                    <option selected>Tipo do Telefone</option>
                     <option value="1">Residencial</option>
                     <option value="2">Comercial</option>
                 </select>
@@ -144,7 +144,7 @@
             </div>
 
             <div class="mt-3 col-md-3">
-                <label for="referenciaCliente" class="form-label">Ponto de referência</label>
+                <label for="referenciaCliente" class="form-label">Ponto de Referência</label>
                 <input type="text" id="referenciaCliente" class="form-control" id="referencia" name="referencia" placeholder="Ponto de referência" value="<?= isset($register) ? $register->reference_point : '' ?>">
             </div>
 
@@ -154,7 +154,7 @@
                     <option selected>UF</option>
                     <option value="1">Acre</option>
                     <option value="2">Alagoas</option>
-                    <option value="2">amapá</option>
+                    <option value="2">Amapá</option>
                     <option value="2">Amazonas</option>
                     <option value="2">Bahia</option>
                     <option value="2">Ceará</option>

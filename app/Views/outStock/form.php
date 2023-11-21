@@ -12,9 +12,9 @@
         <div class="col-md-8">
         <h4>
                 <?php if (isset($register)) : ?>
-                    Editar saída
+                    Editar Saída
                 <?php else : ?>
-                    Nova saída
+                    Nova Saída
                 <?php endif ?>
             </h4>        
         </div>

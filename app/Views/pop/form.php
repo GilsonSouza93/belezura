@@ -34,7 +34,7 @@
             </div>
             <div class="mt-3 col-md-3">
                 <label for="uf" class="form-label">UF</label>
-                <select class="form-control" id="uf">
+                <select class="form-control select2" id="uf">
                     <option selected>-------</option>
                     <option value="1">PE</option>
                     <option value="2">AL</option>
@@ -47,7 +47,7 @@
         <div class="row">
             <div class="mt-3 col">
                 <label for="portador_padrao" class="form-label">Portador Padrão</label>
-                <select class="form-control" id="portador_padrao">
+                <select class="form-control select2" id="portador_padrao">
                     <option selected>-------</option>
                     <option value="1">Banco do Brasil</option>
                     <option value="2">Caixa Economica Federal</option>
@@ -76,7 +76,7 @@
             </div>
             <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">NAS</label>
-                <select class="form-control" id="nas">
+                <select class="form-control select2" id="nas">
                     <option selected>Selecione o NAS</option>
                     <option value="1">Monsenhor Tabosa</option>
                     <option value="1">Ria Rural</option>
@@ -84,7 +84,7 @@
             </div>
             <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">Usuário</label>
-                <select class="form-control" id="usuario">
+                <select class="form-control select2" id="usuario">
                     <option selected>----------</option>
                     <option value="1">SGP</option>
                     <option value="2">Tecnico</option>

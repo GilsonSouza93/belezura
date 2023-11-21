@@ -30,7 +30,7 @@
             </div>
             <div class="mt-3 col-md-4">
                 <label for="uf" class="form-label">UF</label>
-                <select class="form-control" id="uf" aria-label="uf cliente">
+                <select class="form-control select2" id="uf" aria-label="uf cliente">
                     <option selected>UF</option>
                     <option value="1">Acre</option>
                     <option value="2">Alagoas</option>

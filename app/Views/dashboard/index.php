@@ -57,7 +57,7 @@
         </div>
         <div class="col-md-4 btn-group">
             <button class="btn btn-success">Pesquisar</button>
-            <button class="btn btn-success" onclick="openModalFilterPost()">Filtrar endereço</button>
+            <button class="btn btn-success" onclick="openModalFilterPost()">Filtrar Endereço</button>
 
         </div>
     </div>
@@ -75,14 +75,14 @@
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Filtrar postes</h5>
+                <h5 class="modal-title">Filtrar Postes</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form id='formFilter'>
                     <label for="uf" class="form-label">UF</label>
-                    <select class="form-control form-select" name="uf" aria-label="Estado">
-                        <option selected="">Selecione o estado</option>
+                    <select class="form-control form-select select2" name="uf" aria-label="Estado">
+                        <option selected="">Selecione o Estado</option>
                         <option value="1">Pernambuco</option>
                         <option value="1">Paraíba</option>
                         <option value="1">Alagoas</option>

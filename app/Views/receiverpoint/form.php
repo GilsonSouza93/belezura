@@ -31,7 +31,7 @@
             </div>
             <div class="mt-3 col-md-3">
                 <label for="portadores" class="form-label">Portadores</label>
-                <select class="form-control" id="uf">
+                <select class="form-control select2" id="uf">
                     <option selected>-------</option>
                     <option value="1">Banco do Brasil</option>
                     <option value="2">Banco Santander</option>
@@ -42,7 +42,7 @@
 
             <div class="mt-3 col-md-3">
                 <label for="uf" class="form-label">Empresas</label>
-                <select class="form-control" id="uf">
+                <select class="form-control select2" id="uf">
                     <option selected>-------</option>
                     <option value="1">Brisatel Telecom</option>
                     <option value="2">CR Telecom</option>
@@ -53,7 +53,7 @@
             </div>
             
             <div class="mt-3 col-md-5">
-                <label for="saldo_maximo" class="form-label">Saldo máximo permitido por dia</label>
+                <label for="saldo_maximo" class="form-label">Saldo Máximo Permitido por Dia</label>
                 <input type="text" class="form-control" id="Empresas">
                 <span class="badge text-bg-light show-text" data-text='Limitar recebimento para o caixa por dia. (Definir valor apenas se quiser limitar valor máximo para receber por caixa)'>?</span>
             </div>
@@ -90,7 +90,7 @@
             </div>
             <div class="mt-3 col-md-4">
                 <label for="uf" class="form-label">Formas De Pagamento</label>
-                <select class="form-control" id="uf">
+                <select class="form-control select2" id="uf">
                     <option selected>-------</option>
                     <option value="1">Dinheiro</option>
                     <option value="2">Transferencia Bancária</option>
@@ -105,7 +105,7 @@
             <div class="row">
             <div class="mt-3 col-md-3">
                 <label for="typo" class="form-label">Formas de Recebimento</label>
-                <select class="form-control" id="formasderecebimento">
+                <select class="form-control select2" id="formasderecebimento">
                     <option selected>Selecione o Plano</option>
                     <option value="1">Valor Total</option>
                     <option value="2">Valor Parcial</option>
@@ -116,7 +116,7 @@
              
             <div class="mt-3 col-md-3">
                 <label for="typo" class="form-label">Pops</label>
-                <select class="form-control" id="pops">
+                <select class="form-control select2" id="pops">
                     <option selected>Selecione o Local</option>
                     <option value="1">Pop Caruaru</option>
                     <option value="2">Pop Garanhuns</option>
@@ -157,7 +157,7 @@
             </div>
             <div class="mt-3 col-md-2">
                 <label for="typo" class="form-label">Gerar NF na Baixa do Título ?</label>
-                <select class="form-control" id="nas">
+                <select class="form-control select2" id="nas">
                     <option selected>----------</option>
                     <option value="1">Na baixa (automática) do título.</option>
                     <option value="2">Na baixa (automática e manual) do título.</option>
@@ -170,7 +170,7 @@
 
             <div class="mt-3 col-md-2">
                 <label for="typo" class="form-label">Gerar NF na Baixa do Título ?</label>
-                <select class="form-control" id="nas">
+                <select class="form-control select2" id="nas">
                     <option selected>----------</option>
                     <option value="1">Boleto + Nota Fiscal</option>
                     <option value="2">Somente Nota Fiscal</option>

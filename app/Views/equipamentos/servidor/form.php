@@ -12,9 +12,9 @@
         <div class="col-md-8">
         <h4>
                 <?php if (isset($register)) : ?>
-                    Editar servidor
+                    Editar Servidor
                 <?php else : ?>
-                    Novo servidor
+                    Novo Servidor
                 <?php endif ?>
             </h4>
         </div>

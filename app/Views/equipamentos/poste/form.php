@@ -12,9 +12,9 @@
         <div class="col-md-8">
         <h4>
                 <?php if (isset($register)) : ?>
-                    Editar poste
+                    Editar Poste
                 <?php else : ?>
-                    Novo poste
+                    Novo Poste
                 <?php endif ?>
             </h4>
         </div>
@@ -64,7 +64,7 @@
             </div>
             <div class="mt-3 col-md-4 row">
                 <div class="col">
-                    <h6>Tipo de equipamento</h6>
+                    <h6>Tipo de Equipamento</h6>
                     <div class="form-check">
                         <input type="checkbox" id="cto">
                         <label for="cto" class="form-label">CTO</label>
@@ -86,7 +86,7 @@
                     </div>
                     <div class="form-check">
                         <input type="checkbox" id="caixa_subterranea">
-                        <label for="caixa_subterranea" class="form-label">Caixa subterrânea</label>
+                        <label for="caixa_subterranea" class="form-label">Caixa Subterrânea</label>
                     </div>
                 </div>
             </div>            

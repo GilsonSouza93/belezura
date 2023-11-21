@@ -12,9 +12,9 @@
         <div class="col-md-8">
         <h4>
                 <?php if (isset($register)) : ?>
-                    Editar ipPool
+                    Editar IpPool
                 <?php else : ?>
-                    Novo ipPool
+                    Novo IpPool
                 <?php endif ?>
             </h4>
         </div>

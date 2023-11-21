@@ -12,7 +12,7 @@
         </div>
         
         <div class="col-md-4 btn-group">
-            <button class="btn btn-success">Exportar arquivo CSV</button>
+            <button class="btn btn-success">Exportar Arquivo CSV</button>
             <button class="btn btn-success">Importar</button>
         </div>
         
@@ -25,7 +25,7 @@
     </div>
 
     <p>
-        Saídas localizadas: <span id="saidaCount">0</span>
+        Saídas Localizadas: <span id="saidaCount">0</span>
     </p>
 
     <div class="d-flex justify-content " id="tableSaida" >

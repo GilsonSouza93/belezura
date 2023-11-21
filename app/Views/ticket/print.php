@@ -25,7 +25,7 @@
             
             <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">POP</label>
-                <select class="form-control" aria-label="Default select example">
+                <select class="form-control select2" aria-label="Default select example">
                     <option selected>Selecione o local POP</option>
                     <option value="1">Caruaru</option>
                     <option value="2">Olinda</option>
@@ -36,7 +36,7 @@
             </div>
             <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">Plano</label>
-                <select class="form-control" aria-label="Default select example">
+                <select class="form-control select2" aria-label="Default select example">
                     <option selected>Selecione o Plano</option>
                     <option value="1">100mb -</option>
                     <option value="2">50 mb</option>
@@ -46,7 +46,7 @@
             </div>
             <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">NAS</label>
-                <select class="form-control" aria-label="Default select example">
+                <select class="form-control select2" aria-label="Default select example">
                     <option selected>Selecione o NAS</option>
                     <option value="1">ACCEL-</option>
                     <option value="2">Indentificador 1 </option>
@@ -59,7 +59,7 @@
         <div class="row">
             <div class="mt-3 col-md-12">
                 <label for="typo" class="form-label">OLT</label>
-                <select class="form-control" aria-label="selecione OLT">
+                <select class="form-control select2" aria-label="selecione OLT">
                     <option selected>Selecione OLT</option>
                     <option value="1">OLT ZTE SIA - PE 172.16.12.1 SLOT1 - PON10</option>
                     <option value="2">OLT ZTE SIA - PE 172.16.12.1 SLOT1 - PON10</option>
@@ -75,8 +75,8 @@
         <div class="row">
             <div class="mt-3 col-md-6">
                 <label for="typo" class="form-label">Portador</label>
-                <select class="form-control" aria-label="Default select example">
-                    <option selected>Selecione a instituição</option>
+                <select class="form-control select2" aria-label="Default select example">
+                    <option selected>Selecione a Instituição</option>
                     <option value="1">Banco Bradesco</option>
                     <option value="2">Caixa Economica Federa</option>
                     <option value="3">Banco do Brasil</option>                    
@@ -84,8 +84,8 @@
             </div>
             <div class="mt-3 col-md-6">
                 <label for="typo" class="form-label">Vencimento</label>
-                <select class="form-control" aria-label="Default select example">
-                    <option selected>Selecione o dia do vencimento</option>
+                <select class="form-control select2" aria-label="Default select example">
+                    <option selected>Selecione o Dia do Vencimento</option>
                     <option value="1">5</option>
                     <option value="1">10</option>
                     <option value="1">15</option>
@@ -99,7 +99,7 @@
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">Status do Contrato</label>
-                <select class="form-control" aria-label="status do contrato">
+                <select class="form-control select2" aria-label="status do contrato">
                     <option selected>----------</option>
                     <option value="1">Ativo</option>
                     <option value="2">Ativo B. Reduzida</option>
@@ -110,7 +110,7 @@
             </div>
             <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">Gerado Por:</label>
-                <select class="form-control" aria-label="status do contrato">
+                <select class="form-control select2" aria-label="status do contrato">
                     <option selected>----------</option>
                     <option value="1">SGP</option>
                     <option value="2">Tecnico</option>
@@ -121,7 +121,7 @@
             </div>
             <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">Layout Página:</label>
-                <select class="form-control" aria-label="status do contrato">
+                <select class="form-control select2" aria-label="status do contrato">
                     <option selected>----------</option>
                     <option value="1">11,4x22,9 Envelope</option>
                     <option value="2">A4 Paisagem</option>
@@ -168,7 +168,7 @@
             </div>
             <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">Condominio</label>
-                <select class="form-control" aria-label="Default select example">
+                <select class="form-control select2" aria-label="Default select example">
                     <option selected>---------</option>
                     <option value="1">Vog Ville - Caruaru</option>
                     <option value="2">Alpha Ville</option>
@@ -183,16 +183,16 @@
                 <input type="text" class="form-control" name="name" placeholder="">
             </div>
             <div class="mt-3 col-md-3">
-                <label for="typo" class="form-label">Gerados a partir de:</label>
+                <label for="typo" class="form-label">Gerados a Partir de:</label>
                 <input type="date" class="form-control" name="gerados" id="" >
             </div>
             <div class="mt-3 col-md-3">
-                <label for="typo" class="form-label">Vencidos a partir de:</label>
+                <label for="typo" class="form-label">Vencidos a Partir de:</label>
                 <input type="date" class="form-control" name="gerados" id="" >
             </div>
             <div class="mt-3 col-md-3">
-                <label for="typo" class="form-label">Modo de geração</label>
-                <select class="form-control" aria-label="Default select example">
+                <label for="typo" class="form-label">Modo de Geração</label>
+                <select class="form-control select2" aria-label="Default select example">
                     <option selected>----------</option>
                     <option value="1">Todos</option>
                     <option value="2">Avulso</option>
@@ -206,8 +206,8 @@
                 <input type="checkbox" name="" id=""> Imprimir Somente Títulos em Aberto ?
             </div>
             <div class="mt-3 col-md-9">
-                <label for="typo" class="form-label">Formas de entregas</label>
-                <select class="form-control" aria-label="Default select example">
+                <label for="typo" class="form-label">Formas de Entregas</label>
+                <select class="form-control select2" aria-label="Default select example">
                     <option selected>----------</option>
                     <option value="1">Cartão</option>
                     <option value="2">Correiro</option>

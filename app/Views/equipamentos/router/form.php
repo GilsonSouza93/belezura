@@ -12,9 +12,9 @@
         <div class="col-md-8">
         <h4>
                 <?php if (isset($register)) : ?>
-                    Editar roteador
+                    Editar Roteador
                 <?php else : ?>
-                    Novo roteador
+                    Novo Roteador
                 <?php endif ?>
             </h4>
         </div>
@@ -33,7 +33,7 @@
         <div class="row">
             <div class="mt-3 col-md-3">
                 <label for="thel" class="form-label">Fonte</label>
-                <select class="form-control" aria-label="Default select example">
+                <select class="form-control select2" aria-label="Default select example">
                     <option selected>Selecione a Fonte</option>
                     <option value="1">Fonte 01</option>
                     <option value="1">Fonte 02</option>

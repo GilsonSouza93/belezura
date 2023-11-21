@@ -35,44 +35,44 @@
         <div class="row">
             <div class="mt-3 col">
                 <label for="tipo" class="form-label">Tipo</label>
-                <select class="form-control" name="tipo">
+                <select class="form-control select2" name="tipo">
                     <option value="1">Entrada</option>
                     <option value="2">Saída</option>
                 </select>
             </div>
             <div class="mt-3 col">
                 <label for="pop" class="form-label">POP</label>
-                <select class="form-control" name="pop">
-                    <option selected>Selecione o local POP</option>
+                <select class="form-control select2" name="pop">
+                    <option selected>Selecione o Local POP</option>
                     <?php foreach ($pops as $pop) : ?>
                     <option value="<?= $pop['id'] ?>"><?= $pop['city'] ?></option>
                 <?php endforeach; ?>
                 </select>
             </div>
             <div class="mt-3 col">
-                <label for="pontoDePagamento" class="form-label">Ponto de pagamento</label>
-                <select class="form-control" name="pontoDePagamento">
-                    <option selected>Selecione o ponto de pagamento</option>
+                <label for="pontoDePagamento" class="form-label">Ponto de Pagamento</label>
+                <select class="form-control select2" name="pontoDePagamento">
+                    <option selected>Selecione o Ponto de Pagamento</option>
                     <option value="1">Principal</option>
-                    <option value="2">Caixa reserva</option>
+                    <option value="2">Caixa Reserva</option>
                 </select>
             </div>
         </div>
         <div class="row">
             <div class="mt-3 col">
-                <label for="plandoDeConta" class="form-label">Plano de contas</label>
-                <select class="form-control" name="planoDeConta">
-                    <option selected>Selecione o ponto de contas</option>
+                <label for="plandoDeConta" class="form-label">Plano de Contas</label>
+                <select class="form-control select2" name="planoDeConta">
+                    <option selected>Selecione o Ponto de Contas</option>
                     <option value="1">Principal</option>
-                    <option value="2">Caixa reserva</option>
+                    <option value="2">Caixa Reserva</option>
                 </select>
             </div>
             <div class="mt-3 col">
-                <label for="formaDePagamento" class="form-label">Forma de pagamento</label>
-                <select class="form-control" name="formaDePagamento">
-                    <option selected>Selecione o ponto de contas</option>
+                <label for="formaDePagamento" class="form-label">Forma de Pagamento</label>
+                <select class="form-control select2" name="formaDePagamento">
+                    <option selected>Selecione o Ponto de Contas</option>
                     <option value="1">Pix</option>
-                    <option value="2">Caixa reserva</option>
+                    <option value="2">Caixa Reserva</option>
                     <option value="1">Dinheiro</option>
                     <option value="1">Débito</option>
                     <option value="1">Crédito</option>
@@ -91,7 +91,7 @@
                 <input type="file" class="btn btn-outline-secondary form-control" name="comprovante" id="comprovante">
             </div>
             <div class="mt-3 col-md-6">
-                <label for="dataCompetencia" class="form-label">Data da competência</label>
+                <label for="dataCompetencia" class="form-label">Data da Competência</label>
                 <input type="date" name="dataCompetencia" class="form-control">
             </div>
         </div>

@@ -35,7 +35,7 @@
             <div class="mt-3 col-md-4">
                 <label for="grupo" class="form-label">Grupo</label>
                 <select class="form-control" id="grupo" aria-label="Default select example">
-                    <option selected>Selecione se é entrada ou saída</option>
+                    <option selected>Selecione Se é Entrada ou Saída</option>
                     <option value="1">Entrada</option>
                     <option value="2">Saída</option>
                 </select>
@@ -57,7 +57,7 @@
                 <input type="file" class="btn btn-outline-secondary" name="comprovante" id="comprovante">
             </div>
             <div class="mt-3 col-md-6">
-                <label for="dataCompetencia" class="form-label">Data da competência</label>
+                <label for="dataCompetencia" class="form-label">Data da Competência</label>
                 <input type="date" id="dataCompetencia" class="form-control" name="name" placeholder="">
             </div>
         </div>

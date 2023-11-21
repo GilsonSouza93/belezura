@@ -12,7 +12,7 @@
         </div>
         
         <div class="col-md-4 btn-group">
-            <button class="btn btn-success">Exportar arquivo CSV</button>
+            <button class="btn btn-success">Exportar Arquivo CSV</button>
             <button class="btn btn-success">Importar</button>
         </div>
         
@@ -37,7 +37,7 @@
                     <th scope="col">Tipo</th>
                     <th scope='col'>Host</th>
                     <th scope='col'>Secret</th>
-                    <th scope='col'>Cadatro</th>
+                    <th scope='col'>Cadastro</th>
                     <th scope='col'>Serviço</th>
                     <th scope='col'>Status</th>
                     <th scope='col'>Ativo</th>

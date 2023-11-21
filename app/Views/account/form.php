@@ -43,7 +43,7 @@
             <div class="col">
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="phone2" placeholder="Celular Adicional" name="phone2" value="<?= $register->phone2 ?? '' ?>">
-                    <label for="phone2">Telefone adicional</label>
+                    <label for="phone2">Telefone Adicional</label>
                 </div>
             </div>
         </div>
@@ -70,19 +70,19 @@
                         <div class="ms-4">
                             <div class="form-check form-switch">
                                 <input class="form-check-input" type="checkbox" role="switch" id="AddCustomer">
-                                <label class="form-check-label" for="AddCustumer">Adicionar clientes</label>
+                                <label class="form-check-label" for="AddCustumer">Adicionar Clientes</label>
                             </div>
                             <div class="form-check form-switch">
                                 <input class="form-check-input" type="checkbox" role="switch" id="consultCustomer">
-                                <label class="form-check-label" for="consultCustomer">Consultar clientes</label>
+                                <label class="form-check-label" for="consultCustomer">Consultar Clientes</label>
                             </div>
                             <div class="form-check form-switch">
                                 <input class="form-check-input" type="checkbox" role="switch" id="deleteCustomer">
-                                <label class="form-check-label" for="deleteCustomer">Excluir clientes</label>
+                                <label class="form-check-label" for="deleteCustomer">Excluir Clientes</label>
                             </div>
                             <div class="form-check form-switch">
                                 <input class="form-check-input" type="checkbox" role="switch" id="editCostumer">
-                                <label class="form-check-label" for="editCostumer">Editar clientes</label>
+                                <label class="form-check-label" for="editCostumer">Editar Clientes</label>
                             </div>
                         </div>
                     </div>
@@ -95,15 +95,15 @@
                         <div class="ms-4">
                             <div class="form-check form-switch">
                                 <input class="form-check-input" type="checkbox" role="switch" id="createContract">
-                                <label class="form-check-label" for="createContract">Criar contrato</label>
+                                <label class="form-check-label" for="createContract">Criar Contrato</label>
                             </div>
                             <div class="form-check form-switch">
                                 <input class="form-check-input" type="checkbox" role="switch" id="editContract">
-                                <label class="form-check-label" for="editContract">Editar contrato</label>
+                                <label class="form-check-label" for="editContract">Editar Contrato</label>
                             </div>
                             <div class="form-check form-switch">
                                 <input class="form-check-input" type="checkbox" role="switch" id="SeeReports">
-                                <label class="form-check-label" for="SeeReports">Ver relatórios</label>
+                                <label class="form-check-label" for="SeeReports">Ver Relatórios</label>
                             </div>
                         </div>
                     </div>

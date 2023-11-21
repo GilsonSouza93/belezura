@@ -49,12 +49,12 @@
         <div class="row">
             <div class="mt-3 col-md-12">
                 <label for="typo" class="form-label">Tipo</label>
-                <select class="form-control" aria-label="Selecione o tipo">
-                    <option selected>Selecione o tipo</option>
+                <select class="form-control select2" aria-label="Selecione o tipo">
+                    <option selected>Selecione o Tipo</option>
                     <option value="1">FiberHome</option>
                     <option value="2">FibeHome RP1000</option>
                     <option value="2">FibeHome RP1000 551606</option>
-                    <option value="2">Hauwei</option>
+                    <option value="2">Huawei</option>
                     <option value="2">ZTE</option>
                     <option value="2">DataCom</option>
                     <option value="2">Parks</option>
@@ -118,7 +118,7 @@
         <div class="row">
             <div class="mt-4 col-md-3">
                 <label for="password_admin" class="form-label"></label>
-                <input type="checkbox" name="debug" class="form-check-input"> Requer Definir Serviço na autorização?
+                <input type="checkbox" name="debug" class="form-check-input"> Requer Definir Serviço na Autorização?
             </div>
             <div class="mt-4 col-md-3">
                 <label for="password_admin" class="form-label"></label>
@@ -160,10 +160,10 @@
             </div>
             <div class="mt-3 col-md-6">
                 <label for="protocol" class="form-label">Protocolo</label>
-                <select class="form-control" aria-label="Default select example">
-                    <option selected>Selecione protoloco</option>
+                <select class="form-control select2" aria-label="Default select example">
+                    <option selected>Selecione Protoloco</option>
                     <option value="1">Telnet</option>
-                    <option value="2">SHH</option>
+                    <option value="2">SSH</option>
                 </select>
             </div>
         </div>
@@ -213,7 +213,7 @@
             </div>
             <div class="mt-5 col-md-4">
                 <label for="filtro" class="form-label" class="form-label"></label>
-                <input type="checkbox" name="filtro" class="form-check-input"> Filtrar tipos de ONU
+                <input type="checkbox" name="filtro" class="form-check-input"> Filtrar Tipos de ONU
             </div>
         </div>
         <div class="row">
@@ -226,17 +226,17 @@
                 <input type="text" class="form-control" name="valor_custo" placeholder="Insira o limite do sinal">
             </div>
             <div class="mt-3 col-md-2">
-                <label for="thel" class="form-label">Cor do sinal alto</label>
-                <select class="form-control" aria-label="Default select example">
-                    <option selected>Selecione a cor</option>
+                <label for="thel" class="form-label">Cor do Sinal Alto</label>
+                <select class="form-control select2" aria-label="Default select example">
+                    <option selected>Selecione a Cor</option>
                     <option value="1">Azul</option>
                     <option value="2">Preto</option>
                 </select>
             </div>
             <div class="mt-3 col-md-2">
-                <label for="thel" class="form-label">Cor do sinal baixo</label>
-                <select class="form-control" aria-label="Default select example">
-                    <option selected>Selecione a cor</option>
+                <label for="thel" class="form-label">Cor do Sinal Baixo</label>
+                <select class="form-control select2" aria-label="Default select example">
+                    <option selected>Selecione a Cor</option>
                     <option value="1">Azul</option>
                     <option value="2">Preto</option>
                 </select>
@@ -269,22 +269,22 @@
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="thel" class="form-label">Comando para Ativar Serviço</label>
-                <select class="form-control" aria-label="Default select example">
-                    <option selected>Selecione o comando</option>
+                <select class="form-control select2" aria-label="Default select example">
+                    <option selected>Selecione o Comando</option>
                     <option value="1">CMD 01</option>
                 </select>
             </div>
             <div class="mt-3 col-md-4">
                 <label for="thel" class="form-label">Comando para Suspender Serviço</label>
-                <select class="form-control" aria-label="Default select example">
-                    <option selected>Selecione o comando</option>
+                <select class="form-control select2" aria-label="Default select example">
+                    <option selected>Selecione o Comando</option>
                     <option value="1">CMD 01</option>
                 </select>
             </div>
             <div class="mt-3 col-md-4">
                 <label for="thel" class="form-label">Comando para Alterar Plano</label>
-                <select class="form-control" aria-label="Default select example">
-                    <option selected>Selecione o comando</option>
+                <select class="form-control select2" aria-label="Default select example">
+                    <option selected>Selecione o Comando</option>
                     <option value="1">CMD 01</option>
                 </select>
             </div>

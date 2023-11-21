@@ -33,11 +33,11 @@
         <div class="row">
             <div class="mt-3 col-md-6">
                 <label for="pop" class="form-label">POP'S</label>
-                <input type="text" class="form-control" name="name" placeholder="Insira a POP">
+                <input type="text" class="form-control" name="name" placeholder="Insira o POP">
             </div>
             <div class="mt-3 col-md-6">
                 <label for="tipo" class="form-label">IP POLL</label>
-                <select class="form-control" aria-label="Default select example">
+                <select class="form-control select2" aria-label="Default select example">
                     <option selected>Selecione o IP POOL</option>
                     <option value="1">IP 01</option>
                 </select>
@@ -57,21 +57,21 @@
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="tipo" class="form-label">IPv6 Prefix Pool:</label>
-                <select class="form-control" aria-label="Default select example">
+                <select class="form-control select2" aria-label="Default select example">
                     <option selected>Selecione o IP POOL</option>
                     <option value="1">IP 01</option>
                 </select>
             </div>
             <div class="mt-3 col-md-4">
                 <label for="tipo" class="form-label">IPv6 PD Pool:</label>
-                <select class="form-control" aria-label="Default select example">
+                <select class="form-control select2" aria-label="Default select example">
                     <option selected>Selecione o IP POOL</option>
                     <option value="1">IP 01</option>
                 </select>
             </div>
             <div class="mt-3 col-md-4">
                 <label for="tipo" class="form-label">IP Pool Bloqueio:</label>
-                <select class="form-control" aria-label="Default select example">
+                <select class="form-control select2" aria-label="Default select example">
                     <option selected>Selecione o IP POOL</option>
                     <option value="1">IP 01</option>
                 </select>
@@ -84,7 +84,7 @@
                 <input type="text" class="form-control" name="name" placeholder="Insira IP">
             </div>
             <div class="mt-3 col-md-3">
-                <label for="IP" class="form-label">Nome do indentificador</label>
+                <label for="IP" class="form-label">Nome do Indentificador</label>
                 <input type="text" class="form-control" name="name" placeholder="Insira nome para indentificar">
             </div>
             <div class="mt-3 col-md-3">
@@ -92,35 +92,35 @@
                 <input type="text" class="form-control" name="name" placeholder="Insira o tipo">
             </div>
             <div class="mt-3 col-md-3">
-                <label for="IP" class="form-label">Palavra secreta</label>
+                <label for="IP" class="form-label">Palavra Secreta</label>
                 <input type="text" class="form-control" name="name" placeholder="Insira a palavra passe">
             </div>
         </div>
         <div class="row">
             <div class="mt-3 col-md-4">
-                <label for="IP" class="form-label">Porta de requisição NAS</label>
+                <label for="IP" class="form-label">Porta de Requisição NAS</label>
                 <input type="text" class="form-control" name="name" placeholder="">
             </div>
             <div class="mt-3 col-md-4">
-                <label for="IP" class="form-label">IP de requisição NAS</label>
+                <label for="IP" class="form-label">IP de Requisição NAS</label>
                 <input type="text" class="form-control" name="name" placeholder="">
             </div>
             <div class="mt-3 col-md-4">
-                <label for="IP" class="form-label">IP de origem Ping</label>
+                <label for="IP" class="form-label">IP de Origem Ping</label>
                 <input type="text" class="form-control" name="name" placeholder="">
             </div>
         </div>
         <div class="row">
             <div class="mt-3 col-md-6">
-                <label for="tipo" class="form-label">Tipo de acesso exta:</label>
-                <select class="form-control" aria-label="Default select example">
-                    <option selected>Selecione o IPv6 prefixo POOL</option>
+                <label for="tipo" class="form-label">Tipo de Acesso Extra:</label>
+                <select class="form-control select2" aria-label="Default select example">
+                    <option selected>Selecione o IPv6 Prefixo POOL</option>
                     <option value="1">IP 01</option>
                 </select>
             </div>
             <div class="mt-3 col-md-6">
-                <label for="tipo" class="form-label">Radius config:</label>
-                <select class="form-control" aria-label="Default select example">
+                <label for="tipo" class="form-label">Radius Config:</label>
+                <select class="form-control select2" aria-label="Default select example">
                     <option selected>Selecione o IPv6 POOL</option>
                     <option value="1">IP 01</option>
                 </select>
@@ -163,7 +163,7 @@
 
         <div class="row">
             <div class="mt-3 col-md-4">
-                <label for="IP" class="form-label">DNS primário:</label>
+                <label for="IP" class="form-label">DNS Primário:</label>
                 <input type="text" class="form-control" name="name" placeholder="">
             </div>
             <div class="mt-3 col-md-4">
@@ -183,22 +183,22 @@
                 <input type="text" class="form-control" name="name" placeholder="">
             </div>
             <div class="mt-3 col-md-6">
-                <label for="IP" class="form-label">Latitude, longitude</label>
+                <label for="IP" class="form-label">Latitude, Longitude</label>
                 <input type="text" class="form-control" name="name" placeholder="">
             </div>
         </div>
         <div class="row">
             <div class="mt-3 col-md-2">
                 <label for="IP" class="form-label"></label>
-                <input type="checkbox" name="" id="" class="form-check-input"> Ativar no radius
+                <input type="checkbox" name="" id="" class="form-check-input"> Ativar no Radius
             </div>
             <div class="mt-3 col-md-2">
                 <label for="IP" class="form-label"></label>
-                <input type="checkbox" name="" id="" class="form-check-input"> Disponível para cliente
+                <input type="checkbox" name="" id="" class="form-check-input"> Disponível para Cliente
             </div>
             <div class="mt-3 col-md-2">
                 <label for="IP" class="form-label"></label>
-                <input type="checkbox" name="" id="" class="form-check-input"> Verificar login
+                <input type="checkbox" name="" id="" class="form-check-input"> Verificar Login
             </div>
             <div class="mt-3 col-md-2">
                 <label for="IP" class="form-label"></label>
@@ -238,7 +238,7 @@
             </div>
             <div class="mt-5 col-md-2">
                 <label for="IP" class="form-label"></label>
-                <input type="checkbox" name="" id="" class="form-check-input"> Checar conectividade
+                <input type="checkbox" name="" id="" class="form-check-input"> Checar Conectividade
             </div>
             <div class="mt-3 col-md-3">
                 <label for="IP" class="form-label">Timeout Gráfico de Coleta de Sinal:</label>
@@ -252,7 +252,7 @@
         <div class="row">
         <div class="mt-3 col-md-12">
                 <label for="tipo" class="form-label">Tipo de Acesso - Importação:</label>
-                <select class="form-control" aria-label="Default select example">
+                <select class="form-control select2" aria-label="Default select example">
                     <option selected>Selecione a importação</option>
                     <option value="1">IP 01</option>
                 </select>

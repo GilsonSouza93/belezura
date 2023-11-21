@@ -12,7 +12,7 @@
         </div>
         
         <div class="col-md-4 btn-group">
-            <button class="btn btn-success">Exportar arquivo CSV</button>
+            <button class="btn btn-success">Exportar Arquivo CSV</button>
             <button class="btn btn-success">Importar</button>
         </div>
         
@@ -25,7 +25,7 @@
     </div>
 
     <p>
-        Lotes localizados: <span id="emailsCount">0</span>
+        Lotes Localizados: <span id="emailsCount">0</span>
     </p>
 
     <div id="tableEmail" class="collapsed p-4 justify-content ">
@@ -36,7 +36,7 @@
                     <th scope="col">Dias</th>
                     <th scope="col">Servidor SMTP</th>
                     <th scope="col">Ativo</th>
-                    <th scope="col">Status do contrato</th>
+                    <th scope="col">Status do Contrato</th>
                     <th scope="col">Mensagem</th>
                     <th scope='col'>Ações</th>
                 </tr>

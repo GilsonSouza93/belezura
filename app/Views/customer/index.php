@@ -29,14 +29,14 @@
             <div class="modal-body">
                 <form id='formFilter'>
                     <label for="plano" class="form-label">Plano</label>
-                    <select class="form-control form-select" name="plano" aria-label="Selecione um plano">
-                        <option selected="">Selecione o plano</option>
-                        <option value="1">50mb</option>
-                        <option value="1">70mb</option>
-                        <option value="1">90mb</option>
-                        <option value="1">100mb</option>
-                        <option value="1">200mb</option>
-                        <option value="1">300mb</option>
+                    <select class="form-control form-select select2" name="plano" aria-label="Selecione um plano">
+                        <option selected="">Selecione o Plano</option>
+                        <option value="1">50MB</option>
+                        <option value="1">70MB</option>
+                        <option value="1">90MB</option>
+                        <option value="1">100MB</option>
+                        <option value="1">200MB</option>
+                        <option value="1">300MB</option>
                     </select>
                 </form>
             </div>

@@ -12,7 +12,7 @@
         </div>
         
         <div class="col-md-4 btn-group">
-            <button class="btn btn-success">Exportar arquivo CSV</button>
+            <button class="btn btn-success">Exportar Arquivo CSV</button>
             <button class="btn btn-success">Importar</button>
         </div>
         
@@ -25,7 +25,7 @@
     </div>
 
     <p>
-        Storages localizados: <span id="storageCount">0</span>
+        Storages Localizados: <span id="storageCount">0</span>
     </p>
 
     <div id="tableStorage" class="collapsed p-4 justify-content card">

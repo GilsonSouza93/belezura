@@ -12,9 +12,9 @@
         <div class="col-md-8">
             <h4>
                 <?php if (isset($register)) : ?>
-                    Editar lançamento
+                    Editar Lançamento
                 <?php else : ?>
-                    Novo lançamento
+                    Novo Lançamento
                 <?php endif ?>
             </h4>
         </div>
@@ -33,8 +33,8 @@
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="tipo" class="form-label">Tipo</label>
-                <select class="form-control" aria-label="tipo" id="tipo">
-                    <option selected>Selecione o tipo</option>
+                <select class="form-control select2" aria-label="tipo" id="tipo">
+                    <option selected>Selecione o Tipo</option>
                     <option value="1">Receita</option>
                     <option value="2">Despesa</option>
                 </select>
@@ -53,11 +53,11 @@
         <div class="row">
 
             <div class="mt-3 col-md-4">
-                <label for="plainAccount" class="form-label">Conta plano
+                <label for="plainAccount" class="form-label">Conta Plano
                 <span class="badge text-bg-light show-text" data-text='Definir apenas para receita se for mensalidade/adesão.'>?</span>
                 </label>
-                <select class="form-control" id="plainAccount" aria-label="forma de pagamento">
-                    <option selected>Selecione a forma de pagamento</option>
+                <select class="form-control select2" id="plainAccount" aria-label="forma de pagamento">
+                    <option selected>Selecione a Forma de Pagamento</option>
                     <option value="1">Mensalidade Contrato</option>
                     <option value="2">Adesão Contrato</option>
                 </select>
@@ -65,46 +65,46 @@
 
             <div class="mt-3 col-md-4">
                 <label for="dretype" class="form-label">Tipo da DRE</label>
-                <select class="form-control" id="dretype" aria-label="dretype">
-                    <option selected>Selecione o tipo da dre</option>
+                <select class="form-control select2" id="dretype" aria-label="dretype">
+                    <option selected>Selecione o tipo da DRE</option>
                     <option value="" selected="">---------</option>
                     <option value="01">Receita</option>
                     <option value="02">Imposto s/ Faturamento</option>
                     <option value="03">Despesas Operacionais</option>
-                    <option value="04">Custo da mercadoria vendida</option>
-                    <option value="05">Despesas não Operacionais</option>
+                    <option value="04">Custo da Mercadoria vendida</option>
+                    <option value="05">Despesas Não Operacionais</option>
 
                 </select>
             </div>
 
             <div class="mt-3 col-md-4">
                 <label for="siciconta" class="form-label">SICI Conta</label>
-                <select class="form-control" id="siciconta" aria-label="forma de pagamento">
+                <select class="form-control select2" id="siciconta" aria-label="forma de pagamento">
                     <option selected>Selecione a forma de pagamento</option>
                     <option value="1">Receita Operacional</option>
-                    <option value="2">Despesa envolvendo interconexão</option>
-                    <option value="3">Despesa envolvendo vendas</option>
-                    <option value="4">Despesa envolvendo publicidade</option>
-                    <option value="5">Despesa envolvendo operação e manutenção</option>
+                    <option value="2">Despesa Envolvendo Interconexão</option>
+                    <option value="3">Despesa Envolvendo Vendas</option>
+                    <option value="4">Despesa Envolvendo Publicidade</option>
+                    <option value="5">Despesa Envolvendo Operação e Manutenção</option>
                 </select>
             </div>
         </div>
         <div class="row mt-3">
             <div class="col-md-4">
 
-                    <label for="demonstrativoBoleto" class="form-label">Demonstrativo boleto
+                    <label for="demonstrativoBoleto" class="form-label">Demonstrativo Boleto
                         <span class="badge text-bg-light show-text" data-text='Se informado será inserido no demonstrativo de boletos gerados automaticamente. Variáveis: GRUPO_SET, DATA_INI, DATA_FIM, REF_MES_ANTERIOR, REF_MES_ATUAL, MES_INI_DATA, MES_FIM_DATA. OBS: Variáveis não se aplicam a geração avulsa.'>?</span>
                     </label>
                     <input type="text" id="demonstrativoBoleto" class="form-control" name="name" placeholder="">
             </div>
             <div class="col-md-4">
-            <label for="suspender" class="form-label">Suspender serviço?
+            <label for="suspender" class="form-label">Suspender Serviço?
                 <span class="badge text-bg-light show-text" data-text='definido suspender e tiver débito no cliente com esse plano de conta, irá suspender o serviço do cliente. Conta Plano Adesão e Mensalidade suspendem serviço por padrão.'>?</span>
             </label>
                 <input type="checkbox" name="suspender" id="suspender" class="form-check-input">
             </div>
             <div class="col-md-4">
-            <label for="suspender" class="form-label">Enviar cobrança auto
+            <label for="suspender" class="form-label">Enviar Cobrança Auto
             <span class="badge text-bg-light show-text" data-text='Habilita o envio dos títulos com este C. Custo por email caso habilitado também no Portador.'>?</span>
             </label>
                 <input type="checkbox" name="suspender" id="suspender" class="form-check-input">
@@ -120,7 +120,7 @@
             </div>
 
             <div class="mt-3 col-md-4">
-                <label for="suspender" class="form-label">Incluir no bloco 1601 do arquivo SPED ?</label>
+                <label for="suspender" class="form-label">Incluir no Bloco 1601 do Arquivo SPED ?</label>
                 <input type="checkbox" name="suspender" id="suspender" class="form-check-input">
             </div>
 

@@ -12,9 +12,9 @@
         <div class="col-md-8">
         <h4>
                 <?php if (isset($register)) : ?>
-                    Editar boletos em lote
+                    Editar Boletos em Lote
                 <?php else : ?>
-                    Novo lote de boletos
+                    Novo Lote de Boletos
                 <?php endif ?>
             </h4>
         </div>
@@ -41,8 +41,8 @@
             </div>
             <div class="mt-3 col-md-3">
                 <label for="pop" class="form-label">POP</label>
-                <select class="form-control"  id="pop" aria-label="Default select example">
-                    <option selected>Selecione o local POP</option>
+                <select class="form-control select2"  id="pop" aria-label="Default select example">
+                    <option selected>Selecione o Local POP</option>
                     <option value="1">Caruaru</option>
                     <option value="2">Olinda</option>
                     <option value="2">Recife</option>
@@ -53,7 +53,7 @@
 
             <div class="mt-3 col-md-3">
                 <label for="nas" class="form-label">NAS</label>
-                <select class="form-control"  id="nas" aria-label="Default select example">
+                <select class="form-control select2"  id="nas" aria-label="Default select example">
                     <option selected>Selecione o NAS</option>
                     <option value="1">Monsenhor Tabosa</option>
                     <option value="1">Ria Rural</option>
@@ -69,7 +69,7 @@
 
             <div class="mt-3 col-md-4">
                 <label for="portador" class="form-label">Mês/ano</label>
-                <select class="form-control" id="portador" aria-label="Default select example">
+                <select class="form-control select2" id="portador" aria-label="Default select example">
                     <option selected>Selecione o período</option>
                     <option value="1">08/2023</option>
                     <option value="2">09/2023</option>
@@ -80,7 +80,7 @@
             </div>
             <div class="mt-3 col-md-4">
                 <label for="portador" class="form-label">Portador</label>
-                <select class="form-control" id="portador" aria-label="Default select example">
+                <select class="form-control select2" id="portador" aria-label="Default select example">
                     <option selected>-------</option>
                     <option value="1">Caixa Economica Federal</option>
                     <option value="2">Banco Rural</option>
@@ -94,7 +94,7 @@
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="plano" class="form-label">Plano</label>
-                <select class="form-control" id="plano" aria-label="Default select example">
+                <select class="form-control select2" id="plano" aria-label="Default select example">
                     <option selected>Selecione o Plano</option>
                     <option value="1">100mb -</option>
                     <option value="2">50 mb</option>
@@ -104,15 +104,15 @@
             </div>
             <div class="mt-3 col-md-4">
                 <label for="condominio" class="form-label">Condominio</label>
-                <select class="form-control" id="condominio" aria-label="Default select example">
-                    <option selected>Selecione o condominio</option>
-                    <option value="1">Edf. Luis castro - Monsenhor Tabosa</option>
+                <select class="form-control select2" id="condominio" aria-label="Default select example">
+                    <option selected>Selecione o Condominio</option>
+                    <option value="1">Edf. Luis Castro - Monsenhor Tabosa</option>
                     <option value="1">VogVille - Caruaru</option>
                 </select>
             </div>
             <div class="mt-3 col-md-4">
                 <label for="vencimento" class="form-label">Vencimento</label>
-                <select class="form-control" id="vencimento" aria-label="Default select example">
+                <select class="form-control select2" id="vencimento" aria-label="Default select example">
                     <option selected>---------</option>
                     <option value="1">5</option>
                     <option value="2">10</option>
@@ -136,7 +136,7 @@
             </div>
             <div class="mt-5 col-md-3">
                 <label for="carneaberto" class="form-label"></label>
-                <input type="checkbox" name="" id="carneaberto"> Exibe Carnê em aberto
+                <input type="checkbox" name="" id="carneaberto"> Exibe Carnê em Aberto
             </div>
             <div class="mt-5 col-md-3">
                 <label for="pix" class="form-label"></label>
