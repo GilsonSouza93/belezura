@@ -29,7 +29,8 @@ class CustomerModel extends Model
         'number',
         'complement',
         'reference_point',
-        'uf'
+        'uf',
+        'company_id'
     ];
 
     // Dates
