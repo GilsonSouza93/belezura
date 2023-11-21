@@ -441,7 +441,8 @@ abstract class BaseController extends Controller
             }
 
             return $this->response->setJSON([
-                'status' => $message,
+                'status' => 'error',
+                'message' => $message
             ]);
         }
     }

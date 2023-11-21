@@ -404,7 +404,7 @@
                             tableDiv.style.opacity = '1';
                         }, 100);
                     } else {
-                        showToast('Erro ao carregar dados da tabela', 'error');
+                        showToast(data.message, 'error');
                     }
                 })
                 .catch(error => {
