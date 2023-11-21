@@ -603,6 +603,10 @@ abstract class BaseModel
         $session = session();
         $company_id = $session->get('company_id');
 
+        if (empty($company_id)) {
+            throw new ModelException('Company ID not set in session.');
+        }
+
         if ($this->tempAllowCallbacks) {
             // Call the before event and check for a return
             $eventData = $this->trigger('beforeFind', [
