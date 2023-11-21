@@ -10,14 +10,14 @@ class DashboardController extends BaseController
     public $viewPath = 'dashboard';
 
     protected $customerModel;
-    protected $postModel;
+    protected $poleModel;
     protected $FinancialTransactionsController;
     protected $notificationModel;   
 
     public function __construct()
     {
         $this->customerModel = new \App\Models\CustomerModel();
-        $this->postModel = new \App\Models\PostModel();
+        $this->poleModel = new \App\Models\PoleModel();
         $this->FinancialTransactionsController = new \App\Controllers\FinancialTransactionsController();
         $this->notificationModel = new \App\Models\NotificationModel();
 
@@ -28,7 +28,7 @@ class DashboardController extends BaseController
     {
         $data = [
             'customerQty' => $this->customerModel->countAll(),
-            'postQty' => $this->postModel->countAll(),
+            'postQty' => $this->poleModel->countAll(),
             'depositValue' => 0,
             'notifications' => $this->notificationModel->getNotifications(),
         ];
