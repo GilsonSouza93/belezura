@@ -265,13 +265,13 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->post('delete', 'RadiusController::delete');
         });
         $routes->group('poste', static function ($routes) {
-            $routes->get('/', 'PostController::index');
-            $routes->get('novo', 'PostController::form');
-            $routes->post('save', 'PostController::save');
-            $routes->post('search', 'PostController::search');
-            $routes->get('editar/(:num)', 'PostController::edit/$1');
-            $routes->get('novo', 'PostController::filter');
-            $routes->post('delete', 'PostController::delete');
+            $routes->get('/', 'PoleController::index');
+            $routes->get('novo', 'PoleController::form');
+            $routes->post('save', 'PoleController::save');
+            $routes->post('search', 'PoleController::search');
+            $routes->get('editar/(:num)', 'PoleController::edit/$1');
+            $routes->get('novo', 'PoleController::filter');
+            $routes->post('delete', 'PoleController::delete');
         });
         $routes->group('tower', static function ($routes) {
             $routes->get('/', 'TowerController::index');

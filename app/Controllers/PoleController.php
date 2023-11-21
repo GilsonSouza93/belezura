@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use Config\Services;
 
-class PostController extends BaseController
+class PoleController extends BaseController
 {
     public $tittle = 'Postes';
     public $addButtonText = 'Novo Poste';
@@ -14,7 +14,7 @@ class PostController extends BaseController
 
     public function __construct()
     {
-        $this->mainModel = model('PostModel');
+        $this->mainModel = model('PoleModel');
         return parent::__construct();
     }
 
