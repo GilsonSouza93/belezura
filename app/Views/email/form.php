@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 
-<div class="card p-4">
+<div class="p-4">
 
     <h2>
         <?= $tittle ?>
@@ -10,7 +10,7 @@
 
     <div class="row card-2 py-3 my-3">
         <div class="col-md-8">
-        <h4>
+            <h4>
                 <?php if (isset($register)) : ?>
                     Editar Email
                 <?php else : ?>
@@ -24,14 +24,14 @@
         </div>
     </div>
 
-    <form>
+    <form class="card p-4">
 
         <?php if (isset($register)) : ?>
             <input type="hidden" name="id" value="<?= $register->id ?>">
         <?php endif ?>
 
         <div class="row">
-        <div class="mt-3 col-md-3">
+            <div class="mt-3 col-md-3">
                 <label for="uf" id="popEmail" class="form-label">POP</label>
                 <select class="form-control" id="uf">
                     <option selected>-------</option>
@@ -42,29 +42,30 @@
                 </select>
             </div>
         </div>
-            <div class="mt-3 col-md-4">
+        <div class="row">
+            <div class="mt-3 col-md-6">
                 <label for="name" class="form-label">Range</label>
                 <input type="text" class="form-control" name="name" placeholder="">
             </div>
-            <div class="mt-3 col-md-4">
+            <div class="mt-3 col-md-6">
                 <label for="name" class="form-label">Next Range</label>
                 <input type="text" class="form-control" name="name" placeholder="">
             </div>
         </div>
         <div class="row">
-            <div class="mt-5 col-md-4">
+            <div class="mt-3 col-md-3">
                 <label for="name" class="form-label">Radius Args</label>
                 <input type="text" class="form-control" name="name" placeholder="">
             </div>
-            <div class="mt-5 col-md-4 form-check">
+            <div class="mt-5 col-md-3 form-check">
                 <label class="form-check-label" for="flexCheckDefault"></label>
-                <input type="checkbox" class="form-check-input" name="" id=""  checked>Ordenar IPs por Rede /24:
+                <input type="checkbox" class="form-check-input" name="" id="" checked>Ordenar IPs por Rede /24:
             </div>
-            <div class="mt-5 col-md-4 form-check ">
+            <div class="mt-5 col py-1 form-check md-3">
                 <label class="form-check-label" for="flexCheckDefault"></label>
                 <input type="checkbox" class="form-check-input" name="" id="">Ordenar IPs por Rede /24:
             </div>
-            <div class="mt-3 col-md-4 form-check">
+            <div class="mt-5 col-md-3 form-check">
                 <label class="form-check-label" for="flexCheckDefault"></label>
                 <input type="checkbox" class="form-check-input" name="" id="">Ativo?
             </div>
@@ -84,7 +85,6 @@
 <?= $this->section('script') ?>
 
 <script>
-
     const submitBtn = document.querySelector('#submit-btn');
     const form = document.querySelector('form');
     const url = '<?= $baseRoute ?>/save';
@@ -96,23 +96,21 @@
         const formData = new FormData(form);
 
         fetch(url, {
-            method: 'POST',
-            body: formData
-        }).then(response => response.json())
-        .then(data => {
-            hideLoading();
-            if (data.error) {
-                showToast(data.message, 'error');
-            } else {
-                showToast(data.message, 'success');
-                window.location.href = '<?= $baseRoute ?>';
-            }
-        }).catch(error => {
-            console.log(error);
-        });
+                method: 'POST',
+                body: formData
+            }).then(response => response.json())
+            .then(data => {
+                hideLoading();
+                if (data.error) {
+                    showToast(data.message, 'error');
+                } else {
+                    showToast(data.message, 'success');
+                    window.location.href = '<?= $baseRoute ?>';
+                }
+            }).catch(error => {
+                console.log(error);
+            });
     });
-
-
 </script>
 
 <?= $this->endSection() ?>

@@ -69,7 +69,8 @@
             <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">Plano</label>
                 <select class="form-control select2" id="plano">
-                    <?php foreach ($plans as $item) : ?>
+                    <?php foreach ($plans as $item) : ?>cls
+                        
                         <option value="<?= $item['id'] ?>"><?= $item['name'] ?></option>
                     <?php endforeach ?>
                 </select>
