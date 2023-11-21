@@ -267,6 +267,16 @@
             tableDiv.innerHTML = '';
             tableDiv.classList.add('card', 'p-4')
 
+            const registerCounter = document.createElement('div');
+            registerCounter.classList.add('d-flex', 'flex-row', 'justify-content-between', 'align-items-center', 'mb-3');
+
+            const registerCounterText = document.createElement('h2');
+            registerCounterText.id = 'registerCounterText';
+
+            registerCounter.appendChild(registerCounterText);
+
+            tableDiv.appendChild(registerCounter);
+
             const table = document.createElement('table');
             table.classList.add('table');
 
@@ -297,6 +307,11 @@
                 .then(data => {
                     hideLoading();
                     if (data.status == 'success') {
+
+                        const registerQuantity = data.data.length;
+
+                        registerCounterText.innerText = `Foram encontrados ${registerQuantity} registros`;
+
                         data.data.forEach(row => {
                             const tr = document.createElement('tr');
                             tbodyElements.forEach(element => {

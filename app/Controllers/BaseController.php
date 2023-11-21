@@ -434,8 +434,14 @@ abstract class BaseController extends Controller
                 'data' => $response
             ]);
         } catch (\Throwable $th) {
+            if (ENVIRONMENT == 'production') {
+                $message = 'Não foi possivel conectar ao banco de dados, solicite suporte!';
+            } else {
+                $message = $th->getMessage();
+            }
+
             return $this->response->setJSON([
-                'status' => 'Não foi possivel conectar ao banco de dados',
+                'status' => $message,
             ]);
         }
     }
