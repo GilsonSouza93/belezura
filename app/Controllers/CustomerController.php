@@ -30,16 +30,5 @@ class CustomerController extends BaseController
         $this->data['onuModel'] = $onuModel->findAll();
 
         parent::__construct();
-
-        
-    }
-
-    public function search()
-    {
-        $data = $this->request->getJSON();
-        
-        $customers = $this->mainModel->search($data->search);
-
-        return $this->response->setJSON($customers);
     }
 }

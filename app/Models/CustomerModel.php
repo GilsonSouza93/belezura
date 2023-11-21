@@ -56,8 +56,15 @@ class CustomerModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function search($field)
+    public function search($data)
     {
+        $fieldsToSearch = [
+            'name',
+            'email',
+            'phone1',
+            'phone2',
+        ];
+
         $fieldsToReturn = [
             'id',
             'name',
@@ -66,16 +73,27 @@ class CustomerModel extends Model
             'phone2',
         ];
 
-        $mainQuery = $this->db->table($this->table)
-                              ->select($fieldsToReturn);
+        $createdAtName = 'created_at';
 
-        if(!empty($field)) {
-            $mainQuery->like('name', $field)
-                      ->orLike('email', $field)
-                      ->orLike('phone1', $field)
-                      ->orLike('phone2', $field);
+        $search = null;
+
+        if (isset($data['search']))
+            $search = $data['search'];
+
+        $query = $this->db->table($this->table)
+            ->select($fieldsToReturn);
+
+        if ($search) {
+            $query->groupStart();
+            foreach ($fieldsToSearch as $field) {
+                $query->orLike($field, $search);
+            }
+            $query->groupEnd();
         }
 
-        return $mainQuery->get()->getResultArray();
+        $query->orderBy($createdAtName, 'DESC');
+        $result = $query->get()->getResultArray();
+
+        return $result;
     }
 }
