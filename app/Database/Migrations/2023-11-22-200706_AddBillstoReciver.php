@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class AddBillstoPayModel extends Migration
+class BillstoReceiver extends Migration
 {
     public function up()
     {
@@ -14,12 +14,7 @@ class AddBillstoPayModel extends Migration
                 'auto_increment' => true,
             ],
 
-            'company' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
-            ],
-
-            'description' => [
+            'company_id' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
@@ -29,17 +24,64 @@ class AddBillstoPayModel extends Migration
                 'constraint' => '255',
             ],
 
+
             'suplier_id' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
 
-            'payment_id' => [
+            'billstoreceiver_form' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
 
-            'fixvalue_id' => [
+            'billstoreceiver_valuefixed' => [
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+            ],
+
+
+            'billstoreceiver_value' => [
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+            ],
+
+            'billstoreceiver_description' => [
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+            ],
+
+            'billstoreceiver_doctype' => [
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+            ],
+
+            'billstoreceiver_description' => [
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+            ],
+
+            'billstoreceiver_emissiondate' => [
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+            ],
+
+            'billstoreceiver_invoice' => [
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+            ],
+
+            'billstoreceiver_payout' => [
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+            ],
+
+            'billstoreceiver_potiontype' => [
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+            ],
+
+            'timeout_id' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
@@ -58,53 +100,6 @@ class AddBillstoPayModel extends Migration
                 'type' => 'DATETIME',
                 'null' => true,
             ],
-
-            'value_id' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
-            ],
-
-            'obs_id' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
-            ],
-
-            'tipododocumento_id' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
-            ],
-
-            'descricao_id' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
-            ],
-
-            'notaFiscal_id' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
-            ],
-
-            'dataDeEmissao_id' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
-            ],
-
-            'timeout_id' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
-            ],
-
-            'tipoDeParcela_id' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
-            ],
-
-            'timeout_id' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
-            ],
-
-            
             
             "company_id" => [
                 "type" => "int",
@@ -113,17 +108,16 @@ class AddBillstoPayModel extends Migration
 
     
         ]);
-
         $this->forge->addKey('id', true);
 
         $this->forge->addForeignKey('company_id', 'companies', 'id');
 
-        $this->forge->createTable('billstoPay');
-    
+        $this->forge->createTable('billstoReceiver');
+
     }
 
     public function down()
     {
-        $this->forge->DropTable('billstoPay');
+        $this->forge->DropTable('billstoReceiver');
     }
 }
