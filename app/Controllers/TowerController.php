@@ -17,7 +17,7 @@ class TowerController extends BaseController
     {
         $this->mainModel = model('PoleModel');
         $this->popModel = model('PopModel');
-        $this->data['pop'] = $this->popModel->findAll();
+        $this->data['pops'] = $this->popModel->findAll();
         parent::__construct();
     }
 

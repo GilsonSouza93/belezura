@@ -22,16 +22,16 @@
         <div class="row">
             <div class="mt-3 col-md-6">
                 <label for="name" class="form-label">Nome</label>
-                <input type="text" class="form-control" name="name" id="nome">
+                <input type="text" class="form-control" name="name" id="name">
                 
             </div>
             <div class="mt-3 col-md-3">
                 <label for="portador" class="form-label">Portador</label>
-                <input type="text" class="form-control" name="name" id="portadores">
+                <input type="text" class="form-control" name="carrier" id="carrier">
             </div>
             <div class="mt-3 col-md-3">
                 <label for="portadores" class="form-label">Portadores</label>
-                <select class="form-control select2" id="uf">
+                <select class="form-control select2" id="portadores" name="portadores" >
                     <option selected>-------</option>
                     <option value="1">Banco do Brasil</option>
                     <option value="2">Banco Santander</option>

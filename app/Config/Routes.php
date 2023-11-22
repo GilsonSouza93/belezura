@@ -52,7 +52,6 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
     $routes->group('clientes', static function ($routes) {
         $routes->get('/', 'CustomerController::index');
         $routes->get('novo', 'CustomerController::form');
-        $routes->get('novo', 'CustomerController::filter');
         $routes->get('editar/(:num)', 'CustomerController::edit/$1');
 
         $routes->post('save', 'CustomerController::save');

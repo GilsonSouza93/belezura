@@ -12,6 +12,7 @@ class CustomerController extends BaseController
     public $baseRoute = '/clientes';
 
     public $subscriptionModel;
+
     public $onuModel;
 
     public function __construct()
@@ -29,6 +30,7 @@ class CustomerController extends BaseController
         $this->data['subscription'] = $subscriptionModel->findAll();
         $this->data['onuModel'] = $onuModel->findAll();
 
+        $this->saveMessage = 'Cliente salvo com sucesso!';
         parent::__construct();
     }
 

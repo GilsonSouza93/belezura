@@ -401,7 +401,7 @@ abstract class BaseController extends Controller
             ]);
         }
 
-        $response = $this->mainModel->save($data);
+    $response = $this->mainModel->save($data);
 
         if ($response) {
             $data = [

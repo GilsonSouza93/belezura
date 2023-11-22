@@ -32,8 +32,8 @@
 
         <div class="row">
             <div class="mt-3 col-md-4">
-                <label for="tipo" class="form-label">Tipo</label>
-                <select class="form-control select2" aria-label="tipo" id="tipo">
+                <label for="type" class="form-label">Tipo</label>
+                <select class="form-control select2" aria-label="type" name="type" id="type">
                     <option selected>Selecione o Tipo</option>
                     <option value="1">Receita</option>
                     <option value="2">Despesa</option>
@@ -41,13 +41,13 @@
             </div>
 
             <div class="mt-3 col-md-4">
-                <label for="codigoFinanceiro" class="form-label">Código Financeiro</label>
-                <input type="text" class="form-control" name="codigoFinanceiro" id="codigoFinanceiro">
+                <label for="financialCode" class="form-label">Código Financeiro</label>
+                <input type="text" class="form-control" name="financialCode" id="financialCode">
             </div>
 
             <div class="mt-3 col-md-4">
-                <label for="descricao" class="form-label">Descrição</label>
-                <input type="text" name="descricao" class="form-control" id="descricao">
+                <label for="description" class="form-label">Descrição</label>
+                <input type="text" name="description" class="form-control" id="description">
             </div>
         </div>
         <div class="row">
@@ -64,8 +64,8 @@
             </div>
 
             <div class="mt-3 col-md-4">
-                <label for="dretype" class="form-label">Tipo da DRE</label>
-                <select class="form-control select2" id="dretype" aria-label="dretype">
+                <label for="dreType" class="form-label">Tipo da DRE</label>
+                <select class="form-control select2" id="dreType" aria-label="dreType">
                     <option selected>Selecione o tipo da DRE</option>
                     <option value="" selected="">---------</option>
                     <option value="01">Receita</option>
@@ -78,8 +78,8 @@
             </div>
 
             <div class="mt-3 col-md-4">
-                <label for="siciconta" class="form-label">SICI Conta</label>
-                <select class="form-control select2" id="siciconta" aria-label="forma de pagamento">
+                <label for="siciAccount" class="form-label">SICI Conta</label>
+                <select class="form-control select2" id="siciAccount" aria-label="forma de pagamento">
                     <option selected>Selecione a forma de pagamento</option>
                     <option value="1">Receita Operacional</option>
                     <option value="2">Despesa Envolvendo Interconexão</option>
@@ -92,22 +92,22 @@
         <div class="row mt-3">
             <div class="col-md-4">
 
-                    <label for="demonstrativoBoleto" class="form-label">Demonstrativo Boleto
+                    <label for="ticket" class="form-label">Demonstrativo Boleto
                         <span class="badge text-bg-light show-text" data-text='Se informado será inserido no demonstrativo de boletos gerados automaticamente. Variáveis: GRUPO_SET, DATA_INI, DATA_FIM, REF_MES_ANTERIOR, REF_MES_ATUAL, MES_INI_DATA, MES_FIM_DATA. OBS: Variáveis não se aplicam a geração avulsa.'>?</span>
                     </label>
-                    <input type="text" id="demonstrativoBoleto" class="form-control" name="name" placeholder="">
+                    <input type="text" id="ticket" class="form-control" name="ticket" placeholder="">
             </div>
             <div class="col-md-4">
-            <label for="suspender" class="form-label">Suspender Serviço?
+            <label for="suspend" class="form-label">Suspender Serviço?
                 <span class="badge text-bg-light show-text" data-text='definido suspender e tiver débito no cliente com esse plano de conta, irá suspender o serviço do cliente. Conta Plano Adesão e Mensalidade suspendem serviço por padrão.'>?</span>
             </label>
-                <input type="checkbox" name="suspender" id="suspender" class="form-check-input">
+                <input type="checkbox" name="suspend" id="suspend" class="form-check-input">
             </div>
             <div class="col-md-4">
-            <label for="suspender" class="form-label">Enviar Cobrança Auto
+            <label for="collection" class="form-label">Enviar Cobrança Auto
             <span class="badge text-bg-light show-text" data-text='Habilita o envio dos títulos com este C. Custo por email caso habilitado também no Portador.'>?</span>
             </label>
-                <input type="checkbox" name="suspender" id="suspender" class="form-check-input">
+                <input type="checkbox" name="collection" id="collection" class="form-check-input">
                 <span class="text-small"><br></span>
             </div>
         </div>
@@ -120,8 +120,8 @@
             </div>
 
             <div class="mt-3 col-md-4">
-                <label for="suspender" class="form-label">Incluir no Bloco 1601 do Arquivo SPED ?</label>
-                <input type="checkbox" name="suspender" id="suspender" class="form-check-input">
+                <label for="sped" class="form-label">Incluir no Bloco 1601 do Arquivo SPED ?</label>
+                <input type="checkbox" name="sped" id="sped" class="form-check-input">
             </div>
 
             <div class="mt-3 col-md-2">

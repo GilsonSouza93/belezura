@@ -211,7 +211,7 @@
                 showToast(data.message, 'error');
             } else {
                 showToast(data.message, 'success');
-                window.location.href = '<?= $baseRoute ?>';
+
             }
         }).catch(error => {
             console.log(error);
