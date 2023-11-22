@@ -138,9 +138,12 @@
             </div>
             
             <div class="mt-3 col-md-2">
-                <label for="saldo_maximo" class="form-label">Dias Lançamento Retorno</label>
+                <label for="saldo_maximo" class="form-label">Dias Lançamento Retorno
+
+                    <span class="badge text-bg-light show-text" data-text='Se definido, lançamento no caixa será data atual + dias informados. Se não definido, data do lançamento = data da leitura do retorno.'>?</span>
+
+                </label>
                 <input type="text" class="form-control" id="Empresas">
-                <span class="badge text-bg-light show-text" data-text='Se definido, lançamento no caixa será data atual + dias informados. Se não definido, data do lançamento = data da leitura do retorno.'>?</span>
             </div>
             
             <div class="mt-3 col-md-3">
