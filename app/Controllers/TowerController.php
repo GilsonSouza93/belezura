@@ -11,9 +11,13 @@ class TowerController extends BaseController
     public $viewPath = 'equipamentos/tower';
     public $baseRoute = '/equipamentos/tower';
 
+    public $popModel;
+
     public function __construct()
     {
-        $this->mainModel = model('TowerModel');
+        $this->mainModel = model('PoleModel');
+        $this->popModel = model('PopModel');
+        $this->data['pop'] = $this->popModel->findAll();
         parent::__construct();
     }
 

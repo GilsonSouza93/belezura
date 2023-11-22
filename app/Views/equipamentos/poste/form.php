@@ -10,7 +10,7 @@
 
     <div class="row card-2 py-3 my-3">
         <div class="col-md-8">
-        <h4>
+            <h4>
                 <?php if (isset($register)) : ?>
                     Editar Poste
                 <?php else : ?>
@@ -20,7 +20,7 @@
         </div>
         <div class="col-md-4 btn-group">
             <a class="btn btn-success" href="<?= $baseRoute ?>">Voltar</a>
-        <button class="btn btn-success" id="btnSave">Salvar</button>
+            <button class="btn btn-success" id="btnSave">Salvar</button>
         </div>
     </div>
 
@@ -37,9 +37,9 @@
             <div class="mt-3 col-md-4">
                 <label for="pop" class="form-label">POP</label>
                 <select class="form-control" id="pop">
-                    <option selected>Selecione o POP</option>
-                    <option value="1">Rua Tabareu</option>
-                    <option value="1">Av. Tabacudo</option>
+                    <?php foreach ($pops as $item) : ?>
+                        <option value="<?= $item['id'] ?>"><?= $item['name'] ?></option>
+                    <?php endforeach ?>
                 </select>
             </div>
         </div>
@@ -89,7 +89,7 @@
                         <label for="caixa_subterranea" class="form-label">Caixa Subterrânea</label>
                     </div>
                 </div>
-            </div>            
+            </div>
         </div>
 
     </form>
@@ -113,26 +113,26 @@
 
         try {
             await fetch('<?= $baseRoute ?>/save', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(body),
-            })
-            .then(response => response.json())
-            .then(data => {
-                hideLoading();
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(body),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    hideLoading();
 
-                if (data.status === 'success') {
-                    showToast(data.message, 'success');
+                    if (data.status === 'success') {
+                        showToast(data.message, 'success');
 
-                    setTimeout(() => {
-                        window.location.href = '<?= $baseRoute ?>';
-                    }, 2000);
-                } else {
-                    showToast(data.message, 'error');
-                }
-            });
+                        setTimeout(() => {
+                            window.location.href = '<?= $baseRoute ?>';
+                        }, 2000);
+                    } else {
+                        showToast(data.message, 'error');
+                    }
+                });
 
         } catch (error) {
             hideLoading();
@@ -192,56 +192,65 @@
 
                 navigator.geolocation.getCurrentPosition(
                     async (position) => {
-                        const { latitude, longitude } = position.coords;
-                        try {
-                            Swal.fire({
-                                title: 'Localização encontrada',
-                                html: `<div id="map" style="width: 100%; height: 300px;"></div>`,
-                                showCancelButton: true,
-                                confirmButtonText: 'Confirmar localização',
-                                cancelButtonText: 'Cancelar',
-                                didOpen: () => {
-                                    // Inicializar o mapa do Google Maps
-                                    const map = new google.maps.Map(document.getElementById('map'), {
-                                        center: { lat: latitude, lng: longitude },
-                                        zoom: 15
-                                    });
+                            const {
+                                latitude,
+                                longitude
+                            } = position.coords;
+                            try {
+                                Swal.fire({
+                                    title: 'Localização encontrada',
+                                    html: `<div id="map" style="width: 100%; height: 300px;"></div>`,
+                                    showCancelButton: true,
+                                    confirmButtonText: 'Confirmar localização',
+                                    cancelButtonText: 'Cancelar',
+                                    didOpen: () => {
+                                        // Inicializar o mapa do Google Maps
+                                        const map = new google.maps.Map(document.getElementById('map'), {
+                                            center: {
+                                                lat: latitude,
+                                                lng: longitude
+                                            },
+                                            zoom: 15
+                                        });
 
-                                    new google.maps.Marker({
-                                        position: { lat: latitude, lng: longitude },
-                                        map: map
-                                    });
-                                }
-                            }).then((result) => {
-                                if (result.isConfirmed) {
-                                    document.getElementById('latitude').value = latitude;
-                                    document.getElementById('longitude').value = longitude;
-                                }
-                            });
+                                        new google.maps.Marker({
+                                            position: {
+                                                lat: latitude,
+                                                lng: longitude
+                                            },
+                                            map: map
+                                        });
+                                    }
+                                }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        document.getElementById('latitude').value = latitude;
+                                        document.getElementById('longitude').value = longitude;
+                                    }
+                                });
 
-                        } catch (error) {
+                            } catch (error) {
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Erro ao obter a localização',
+                                    text: 'Ocorreu um erro ao buscar o endereço da localização.',
+                                });
+                            }
+                        },
+                        (error) => {
                             Swal.fire({
                                 icon: 'error',
                                 title: 'Erro ao obter a localização',
-                                text: 'Ocorreu um erro ao buscar o endereço da localização.',
+                                text: 'Não foi possível obter a localização atual.',
                             });
-                        }
-                    },
-                    (error) => {
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Erro ao obter a localização',
-                            text: 'Não foi possível obter a localização atual.',
-                        });
-                    },
-                    geolocationOptions
+                        },
+                        geolocationOptions
                 );
             }
         });
     };
 
 
-    
+
     const submitBtn = document.querySelector('#btnSave');
     const form = document.querySelector('form');
     const url = '<?= $baseRoute ?>/save';
@@ -253,26 +262,20 @@
         const formData = new FormData(form);
 
         fetch(url, {
-            method: 'POST',
-            body: formData
-        }).then(response => response.json())
-        .then(data => {
-            hideLoading();
-            if (data.error) {
-                showToast(data.message, 'error');
-            } else {
-                showToast(data.message, 'success');
-                window.location.href = '<?= $baseRoute ?>';
-            }
-        }).catch(error => {
-            console.log(error);
-        });
+                method: 'POST',
+                body: formData
+            }).then(response => response.json())
+            .then(data => {
+                hideLoading();
+                if (data.error) {
+                    showToast(data.message, 'error');
+                } else {
+                    showToast(data.message, 'success');
+                    window.location.href = '<?= $baseRoute ?>';
+                }
+            }).catch(error => {
+                console.log(error);
+            });
     });
-
-
-
-
-
 </script>
 <?= $this->endSection() ?>
-

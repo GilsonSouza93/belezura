@@ -18,6 +18,7 @@ class PopController extends BaseController
     public function __construct()
     {
         $this->mainModel = model('App\Models\PopModel');
+        $this->mainModel = model('PopModel');
         $this->subscriptionModel = model('SubscriptionModel');
         $this->userModel = model('UserModel');
         $this->data['plans'] = $this->subscriptionModel->findAll();
