@@ -51,7 +51,7 @@
             </div>
             <div class="mt-3 col">
                 <label for="pontoDePagamento" class="form-label">Ponto de Pagamento</label>
-                <select class="form-control select2" name="pontoDePagamento">
+                <select class="form-control select2" id="cashbox_pointpayment" name="cashbox_pointpayment" >
                     <option selected>Selecione o Ponto de Pagamento</option>
                     <option value="1">Principal</option>
                     <option value="2">Caixa Reserva</option>
@@ -61,7 +61,7 @@
         <div class="row">
             <div class="mt-3 col">
                 <label for="plandoDeConta" class="form-label">Plano de Contas</label>
-                <select class="form-control select2" name="planoDeConta">
+                <select class="form-control select2" name="cashbox_paymentplains" id="cashbox_paymentplains">
                     <option selected>Selecione o Ponto de Contas</option>
                     <option value="1">Principal</option>
                     <option value="2">Caixa Reserva</option>
@@ -69,7 +69,7 @@
             </div>
             <div class="mt-3 col">
                 <label for="formaDePagamento" class="form-label">Forma de Pagamento</label>
-                <select class="form-control select2" name="formaDePagamento">
+                <select class="form-control select2" name="cashbox_paymentform" id="cashbox_paymentform">
                     <option selected>Selecione o Ponto de Contas</option>
                     <option value="1">Pix</option>
                     <option value="2">Caixa Reserva</option>
@@ -81,29 +81,29 @@
             </div>
             <div class="mt-3 col">
                 <label for="valor" class="form-label">Valor</label>
-                <input type="text" id="valor" class="form-control" name="valor">
+                <input type="text" id="cashbox_value" class="form-control" name="cashbox_value">
             </div>
         </div>
 
         <div class="row">
             <div class="mt-4 col-md-6">
                 <label for="name" class="form-label">Comprovante</label>
-                <input type="file" class="btn btn-outline-secondary form-control" name="comprovante" id="comprovante">
+                <input type="file" class="btn btn-outline-secondary form-control" name="cashbox_checkingcopy" id="cashbox_checkingcopy">
             </div>
             <div class="mt-3 col-md-6">
                 <label for="dataCompetencia" class="form-label">Data da Competência</label>
-                <input type="date" name="dataCompetencia" class="form-control">
+                <input type="date" name="cashbox_competitiondate" class="form-control" name="cashbox_competitiondate" >
             </div>
         </div>
 
         <div class="row">
             <div class="mt-3 col-md-6">
                 <label for="observacao" class="form-label">Observação</label>
-                <input type="text" name="observacao" class="form-control">
+                <input type="text" name="cashbox_observation" class="form-control" id="cashbox_observation" >
             </div>
             <div class="mt-3 col-md-6">
                 <label for="dadosAbstratos" class="form-label">Dados Abstratos</label>
-                <input type="text" id="dadosAbstratos" class="form-control">
+                <input type="text" id="cashbox_dataabstrata" class="form-control" name="c0ashbox_dataabstrata" >
             </div>
         </div>
     </form>
