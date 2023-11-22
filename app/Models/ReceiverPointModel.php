@@ -13,7 +13,32 @@ class ReceiverPointModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = [
+        'name',
+        'carrier',
+        'portdores',
+        'companies',
+        'balance',
+        'active',
+        'billsDiscount',
+        'adminDiscount',
+        'allowDiscount',
+        'refinance',
+        'method',
+        'receiver',
+        'pops',
+        'canceled',
+        'plan',
+        'returnRelease',
+        'cardRelease',
+        'debitRelease',
+        'generateFiscalNote',
+        'fiscalNote',
+        'sendFiscalNote',
+        'filter',
+        'cashReports',
+        'schedule',
+    ];
 
     // Dates
     protected $useTimestamps = false;
@@ -42,21 +67,16 @@ class ReceiverPointModel extends Model
     public function search($data)
     {
         $fieldsToSearch = [
-            'id',
-            "financialCode",
-            "description",
+            "name",
+            "carrier",
+            "companies",
         ];
 
         $fieldsToReturn = [
-            'id',
-            "financialCode",
-            "description",
-            "dre",
-            "visibility",
-            "type",
-            "siciAccount",
-            "plainAccount",
-            "suspend",
+            "name",
+            "carrier",
+            "companies",
+            "active",
             'created_at',
             'updated_at',
             'deleted_at',
