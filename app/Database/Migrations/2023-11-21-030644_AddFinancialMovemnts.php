@@ -74,6 +74,6 @@ class AddFinanceMovement extends Migration
 
     public function down()
     {
-        $this->forge->DropTable('AddFinanceMovement');
+        $this->forge->DropTable('FinanceMovement');
     }
 }
