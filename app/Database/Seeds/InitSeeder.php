@@ -60,5 +60,15 @@ class InitSeeder extends Seeder
         ];
 
         $this->db->table('users')->insert($user);
+
+        $user = [
+            'name' => 'Gilsin',
+            'account_type_id' => 1,
+            'email' => 'gilsin@email.com',
+            'password' => password_hash('123456', PASSWORD_DEFAULT),
+            'company_id' => 1,
+        ];
+
+        $this->db->table('users')->insert($user);
     }
 }
