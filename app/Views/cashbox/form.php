@@ -35,14 +35,14 @@
         <div class="row">
             <div class="mt-3 col">
                 <label for="tipo" class="form-label">Tipo</label>
-                <select class="form-control select2" name="tipo">
+                <select class="form-control select2" id="cashbox_type" name="cashbox_type">
                     <option value="1">Entrada</option>
                     <option value="2">Saída</option>
                 </select>
             </div>
             <div class="mt-3 col">
                 <label for="pop" class="form-label">POP</label>
-                <select class="form-control select2" name="pop">
+                <select class="form-control select2" id="cashbox_pop" name="cashbox_pop">
                     <option selected>Selecione o Local POP</option>
                     <?php foreach ($pops as $pop) : ?>
                     <option value="<?= $pop['id'] ?>"><?= $pop['city'] ?></option>
