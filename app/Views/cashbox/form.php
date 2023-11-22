@@ -103,7 +103,7 @@
             </div>
             <div class="mt-3 col-md-6">
                 <label for="dadosAbstratos" class="form-label">Dados Abstratos</label>
-                <input type="text" id="cashbox_dataabstrata" class="form-control" name="c0ashbox_dataabstrata" >
+                <input type="text" id="cashbox_dataabstrata" class="form-control" name="cashbox_dataabstrata" >
             </div>
         </div>
     </form>
