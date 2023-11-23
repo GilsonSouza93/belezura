@@ -81,6 +81,7 @@
         /* Adicione estilos para um tema escuro */
         .select2-container--default .select2-selection--single,
         .select2-container--default .select2-selection--multiple {
+            display: block;
             padding: .375rem .75rem;
             font-size: 1rem;
             font-weight: 400;
@@ -106,6 +107,15 @@
         .select2-results__option--highlighted {
             background-color: #555;
             color: #fff;
+        }
+
+        .select2-search__field, .select2-search, .select2-search--dropdown {
+            background-color: #282a2d;
+            border: none;
+        }
+
+        .select2-search__field:focus {
+            outline: none;
         }
     </style>
 </head>
