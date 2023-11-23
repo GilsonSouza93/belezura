@@ -99,10 +99,6 @@ class AddBillstoPayModel extends Migration
                 'constraint' => '255',
             ],
 
-            'timeout_id' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
-            ],
 
             "company_id" => [
                 "type" => "int",
