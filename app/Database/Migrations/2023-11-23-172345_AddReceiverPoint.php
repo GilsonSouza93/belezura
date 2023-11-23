@@ -142,7 +142,7 @@ class AddReceiverPoint extends Migration
            ]); 
            $this->forge->addPrimaryKey('id'); 
            
-           $this->forge->addForeignKey('company_id');
+           $this->forge->addForeignKey('company_id', 'companies', 'id');
            
            $this->forge->CreateTable('receiverPoint');
 

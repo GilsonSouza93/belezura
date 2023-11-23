@@ -127,7 +127,7 @@ class BillstoReceiver extends Migration
 
         $this->forge->addKey('id');
 
-        $this->forge->addForeignKey('company_id');
+        $this->forge->addForeignKey('company_id', 'companies', 'id');
 
         $this->forge->createTable('billstoReceiver');
     }

@@ -104,15 +104,19 @@ class AddBillstoPayModel extends Migration
                 'constraint' => '255',
             ],
 
+            
+            
             "company_id" => [
                 "type" => "int",
                 "constraint" => 5,
             ],
+
+    
         ]);
 
         $this->forge->addKey('id', true);
 
-        $this->forge->addForeignKey('company_id');
+        $this->forge->addForeignKey('company_id', 'companies', 'id');
 
         $this->forge->createTable('billstoPay');
     
