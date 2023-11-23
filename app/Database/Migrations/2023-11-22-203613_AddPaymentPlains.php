@@ -94,7 +94,7 @@ class AddPaymentPlains extends Migration
 
         $this->forge->addKey('id', true);
 
-        $this->forge->addForeignKey('company_id', 'companies', 'id');
+        $this->forge->addForeignKey('company_id');
 
         $this->forge->createTable('paymentPlains');
     

@@ -114,6 +114,7 @@ class BillstoReceiver extends Migration
             'updated_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
+            ],
 
              'deleted_at' => [
                 'type' => 'DATETIME',
@@ -123,9 +124,10 @@ class BillstoReceiver extends Migration
 
     
         ]);
-        $this->forge->addKey('id', true);
+        
+        $this->forge->addKey('id');
 
-        $this->forge->addForeignKey('company_id', 'companies', 'id');
+        $this->forge->addForeignKey('company_id');
 
         $this->forge->createTable('billstoReceiver');
 
