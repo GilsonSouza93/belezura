@@ -83,6 +83,8 @@
         .select2-container--default .select2-selection--multiple {
             background-color: #333;
             color: #fff;
+
+            var(--bs-border-width) solid var(--bs-border-color)
         }
 
         /* Adicione estilos para as opções na lista suspensa */

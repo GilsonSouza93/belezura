@@ -17,13 +17,4 @@ class OltController extends BaseController
         $this->mainModel = model('OltModel');
         parent::__construct();
     }
-
-    public function search()
-    {
-        $data = $this->request->getJSON();
-        
-        $olts = $this->mainModel->search($data->search);
-
-        return $this->response->setJSON($olts);
-    }
 }

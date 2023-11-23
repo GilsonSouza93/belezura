@@ -33,15 +33,15 @@
         <div class="row">
             <div class="mt-3 col-md-3">
                 <label for="bairro" class="form-label">Bairro</label>
-                <input type="text" id="bairro" class="form-control" name="name">
+                <input type="text" id="ticket_district" class="form-control" name="ticket_district">
             </div>
             <div class="mt-3 col-md-3">
                 <label for="rua" class="form-label">Rua</label>
-                <input type="text" id="rua" class="form-control">
+                <input type="text" id="ticket_andress" name="ticket_andress" class="form-control">
             </div>
             <div class="mt-3 col-md-3">
                 <label for="pop" class="form-label">POP</label>
-                <select class="form-control select2"  id="pop" aria-label="Default select example">
+                <select class="form-control select2"  id="ticket_pop" name="ticket_pop">
                     <option selected>Selecione o Local POP</option>
                     <option value="1">Caruaru</option>
                     <option value="2">Olinda</option>
@@ -53,7 +53,7 @@
 
             <div class="mt-3 col-md-3">
                 <label for="nas" class="form-label">NAS</label>
-                <select class="form-control select2"  id="nas" aria-label="Default select example">
+                <select class="form-control select2"  id="ticket_nas" aria-label="Default select example" name="ticket_nas">
                     <option selected>Selecione o NAS</option>
                     <option value="1">Monsenhor Tabosa</option>
                     <option value="1">Ria Rural</option>
@@ -64,12 +64,12 @@
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="parcela" class="form-label">Parcela</label>
-                <input type="text" class="form-control" id="parcela" name="name" placeholder="">
+                <input type="text" class="form-control" id="ticket_parcel" name="ticket_parcel" placeholder="">
             </div>
 
             <div class="mt-3 col-md-4">
                 <label for="portador" class="form-label">Mês/ano</label>
-                <select class="form-control select2" id="portador" aria-label="Default select example">
+                <select class="form-control select2" id="ticket_date" aria-label="Default select example" name="ticket_date">
                     <option selected>Selecione o período</option>
                     <option value="1">08/2023</option>
                     <option value="2">09/2023</option>
@@ -80,7 +80,7 @@
             </div>
             <div class="mt-3 col-md-4">
                 <label for="portador" class="form-label">Portador</label>
-                <select class="form-control select2" id="portador" aria-label="Default select example">
+                <select class="form-control select2" id="ticket_carrier" aria-label="Default select example" name="ticket_carrier">
                     <option selected>-------</option>
                     <option value="1">Caixa Economica Federal</option>
                     <option value="2">Banco Rural</option>
@@ -94,7 +94,7 @@
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="plano" class="form-label">Plano</label>
-                <select class="form-control select2" id="plano" aria-label="Default select example">
+                <select class="form-control select2" id="ticket_plans" aria-label="Default select example" name="ticket_plans">
                     <option selected>Selecione o Plano</option>
                     <option value="1">100mb -</option>
                     <option value="2">50 mb</option>
@@ -104,7 +104,7 @@
             </div>
             <div class="mt-3 col-md-4">
                 <label for="condominio" class="form-label">Condominio</label>
-                <select class="form-control select2" id="condominio" aria-label="Default select example">
+                <select class="form-control select2" id="ticket_edf" aria-label="Default select example" name="ticket_edf">
                     <option selected>Selecione o Condominio</option>
                     <option value="1">Edf. Luis Castro - Monsenhor Tabosa</option>
                     <option value="1">VogVille - Caruaru</option>
@@ -112,7 +112,7 @@
             </div>
             <div class="mt-3 col-md-4">
                 <label for="vencimento" class="form-label">Vencimento</label>
-                <select class="form-control select2" id="vencimento" aria-label="Default select example">
+                <select class="form-control select2" id="ticket_payment" aria-label="Default select example" name="ticket_payment">
                     <option selected>---------</option>
                     <option value="1">5</option>
                     <option value="2">10</option>
@@ -128,37 +128,37 @@
         <div class="row">
             <div class="mt-3 col-md-3">
                 <label for="datainicial" class="form-label">Data Cad. Inicial:</label>
-                <input type="date" class="form-control" id="datainicial" name="name" placeholder="">
+                <input type="date" class="form-control" id="ticket_datestart" name="ticket_datestart" placeholder="">
             </div>
             <div class="mt-3 col-md-3">
-                <label for="datafinal" class="form-label">Data Cad. Final:</label>
-                <input type="date" class="form-control" id="datafinal" name="name" placeholder="">
+                <label for="datafticket_dateendinal" class="form-label">Data Cad. Final:</label>
+                <input type="date" class="form-control" id="ticket_dateend" name="ticket_dateend" placeholder="">
             </div>
             <div class="mt-5 col-md-3">
                 <label for="carneaberto" class="form-label"></label>
-                <input type="checkbox" name="" id="carneaberto"> Exibe Carnê em Aberto
+                <input type="checkbox" name="ticket_ticketinopen" id="ticket_ticketinopen"> Exibe Carnê em Aberto
             </div>
             <div class="mt-5 col-md-3">
                 <label for="pix" class="form-label"></label>
-                <input type="checkbox" name="" id="pix"> Gerar PIX
+                <input type="checkbox" name="ticket_pix" id="ticket_pix"> Gerar PIX
             </div>
         </div>
 
         <div class="row">
             <div class="mt-3 col-md-6">
                 <label for="tituloinicial" class="form-label">Títulos Emitidos (Não) - Inicial:</label>
-                <input type="date" class="form-control" name="" id="tituloinicial" >
+                <input type="date" class="form-control" name="ticket_titleissuedstart" id="ticket_titleissuedstart" >
             </div>
             <div class="mt-3 col-md-6">
                 <label for="titulofinal" class="form-label">Títulos Emitidos (Não) - Final:</label>
-                <input type="date" class="form-control" name="" id="titulofinal" >
+                <input type="date" class="form-control" name="ticket_titleissuedend" id="ticket_titleissuedend" >
             </div>
         </div>
         
         <div class="row">
             <div class="mt-3 col-md-12">
                 <label for="obs" class="form-label">Observação</label>
-                <input type="text" class="form-control" id="obs" name="name" placeholder="">
+                <input type="text" class="form-control" id="ticket_obs" name="ticket_obs" placeholder="">
             </div>
         </div>
 
