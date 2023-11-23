@@ -21,16 +21,16 @@
     <form id="form">
         <div class="row">
             <div class="mt-3 col-md-4">
-                <label for="modelo" class="form-label">Modelo</label>
-                <input type="text" id="modelo" class="form-control">
+                <label for="model" class="form-label">Modelo</label>
+                <input type="text" name="model" id="model" class="form-control">
             </div>
             <div class="mt-3 col-md-4">
-                <label for="placa" class="form-label">Placa</label>
-                <input type="text" id="placa" class="form-control" >
+                <label for="license" class="form-label">Placa</label>
+                <input type="text" name="license" id="license" class="form-control" >
             </div>
             <div class="mt-3 col-md-4">
                 <label for="uf" class="form-label">UF</label>
-                <select class="form-control select2" id="uf" aria-label="uf cliente">
+                <select class="form-control select2" name="uf" id="uf" aria-label="uf cliente">
                     <option selected>UF</option>
                     <option value="1">Acre</option>
                     <option value="2">Alagoas</option>
@@ -63,15 +63,15 @@
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="local" class="form-label">Local</label>
-                <input type="text" id="local" class="form-control">
+                <input type="text" name="local" id="local" class="form-control">
             </div>
             <div class="mt-3 col-md-4">
                 <label for="obs" class="form-label">Observação</label>
-                <input type="text" id="obs" class="form-control">
+                <input type="text" id="obs" name="obs" class="form-control">
             </div>
             <div class="mt-5 col-md-4">
-                <label for="disponivel" class="form-label "></label>
-                <input type="checkbox" name="" id="disponivel"> Disponível para OS?
+                <label for="available" class="form-label "></label>
+                <input type="checkbox" name="" id="available"> Disponível para OS?
             </div>
         </div>       
 
