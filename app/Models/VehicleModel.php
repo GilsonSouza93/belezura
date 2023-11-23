@@ -49,4 +49,50 @@ class VehicleModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function search($data)
+    {
+        $fieldsToSearch = [
+            'model',
+            'license',
+            'local',
+            'obs',
+            'available',
+        ];
+
+        $fieldsToReturn = [
+            'id',
+            'model',
+            'license',
+            'uf',
+            'local',
+            'obs',
+            'available',
+            'deleted_at',
+            'updated_at',
+            'created_at',
+
+        ];
+
+        $search = null;
+
+        if (isset($data['search']))
+            $search = $data['search'];
+
+        $query = $this->db->table($this->table)
+            ->select($fieldsToReturn);
+
+        if ($search) {
+            $query->groupStart();
+            foreach ($fieldsToSearch as $field) {
+                $query->orLike($field, $search);
+            }
+            $query->groupEnd();
+        }
+
+        $query->orderBy('created_at', 'DESC');
+        $result = $query->get()->getResultArray();
+
+        return $result;
+    }
 }

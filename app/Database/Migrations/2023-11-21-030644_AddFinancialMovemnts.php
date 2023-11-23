@@ -67,8 +67,10 @@ class AddFinanceMovement extends Migration
            ],
            ]); 
            $this->forge->addPrimaryKey('id'); 
-
-           $this->forge->CreateTable('AddFinanceMovement');
+           
+           $this->forge->addForeignKey('company_id', 'companies', 'id');
+           
+           $this->forge->CreateTable('FinanceMovement');
 
     }
 
