@@ -42,7 +42,7 @@
 
             <div class="mt-3 col-md-3">
                 <label for="uf" class="form-label">Empresas</label>
-                <select class="form-control select2" id="uf">
+                <select class="form-control select2" id="companies" name="companies">
                     <option selected>-------</option>
                     <option value="1">Brisatel Telecom</option>
                     <option value="2">CR Telecom</option>
@@ -54,7 +54,7 @@
             
             <div class="mt-3 col-md-5">
                 <label for="saldo_maximo" class="form-label">Saldo Máximo Permitido por Dia</label>
-                <input type="text" class="form-control" id="Empresas">
+                <input type="text" class="form-control" id="balance" name="balance" >
                 <span class="badge text-bg-light show-text" data-text='Limitar recebimento para o caixa por dia. (Definir valor apenas se quiser limitar valor máximo para receber por caixa)'>?</span>
             </div>
             
@@ -62,35 +62,35 @@
         
         <div class="mt-3 col-md-1 form-check">
                 <label class="form-check-label" for="active">Ativo</label>
-                <input type="checkbox" class="form-check-input" id="active">
+                <input type="checkbox" class="form-check-input" id="active" name="active" >
             </div>
         
             
             <div class="mt-3 col-md-3">
-                <label for="descontocaixa" class="form-label">% Desconto Caixa.</label>
-                <input type="text" class="form-control" id="Empresas">
+                <label for="billsDiscount" class="form-label">% Desconto Caixa.</label>
+                <input type="text" class="form-control" id="billsDiscount" name="billsDiscount">
                 <span class="badge text-bg-light show-text" data-text='Porcentagem permitida para desconto nesse ponto de recebimento.(Usuários Normais)'>?</span>
             </div>
             <div class="mt-3 col-md-4">
-                <label for="descontoadmin" class="form-label">% Desconto Admin.</label>
-                <input type="text" id="identificador" class="form-control">
+                <label for="adminDiscount" class="form-label">% Desconto Admin.</label>
+                <input type="text" id="adminDiscount" name="adminDiscount" class="form-control">
                 <span class="badge text-bg-light show-text" data-text='Porcentagem permitida para desconto nesse ponto de recebimento.(Usuários Admin)'>?</span>
             </div> 
         
             
             <div class="mt-5 col-md-1 form-check">
-                <label class="form-check-label" for="active">Permitir Desconto ?</label>
-                <input type="checkbox" class="form-check-input" id="active">
+                <label class="form-check-label" for="allowDiscount">Permitir Desconto ?</label>
+                <input type="checkbox" class="form-check-input" id="allowDiscount" name="allowDiscount" >
             </div>
 
             <div class="mt-5 col-md-3 form-check">
-                <label class="form-check-label" for="active">Refinanciar Valor ?</label>
-                <input type="checkbox" class="form-check-input" id="active">
+                <label class="form-check-label" for="refinance">Refinanciar Valor?</label>
+                <input type="checkbox" class="form-check-input" id="refinance" name="refinance">
                 <span class="badge text-bg-light show-text" data-text='Refinanciar valor se houver diferença entre valor pago com o valor total - desconto.'>?</span>
             </div>
             <div class="mt-3 col-md-4">
-                <label for="uf" class="form-label">Formas De Pagamento</label>
-                <select class="form-control select2" id="uf">
+                <label for="method" class="form-label">Formas De Pagamento</label>
+                <select class="form-control select2" id="method" name="method" >
                     <option selected>-------</option>
                     <option value="1">Dinheiro</option>
                     <option value="2">Transferencia Bancária</option>
@@ -104,8 +104,8 @@
        
             <div class="row">
             <div class="mt-3 col-md-3">
-                <label for="typo" class="form-label">Formas de Recebimento</label>
-                <select class="form-control select2" id="formasderecebimento">
+                <label for="receiver" class="form-label">Formas de Recebimento</label>
+                <select class="form-control select2" id="receiver" name="receiver" >
                     <option selected>Selecione o Plano</option>
                     <option value="1">Valor Total</option>
                     <option value="2">Valor Parcial</option>
@@ -115,8 +115,8 @@
 
              
             <div class="mt-3 col-md-3">
-                <label for="typo" class="form-label">Pops</label>
-                <select class="form-control select2" id="pops">
+                <label for="pops" class="form-label">Pops</label>
+                <select class="form-control select2" id="pops" name="pops" >
                     <option selected>Selecione o Local</option>
                     <option value="1">Pop Caruaru</option>
                     <option value="2">Pop Garanhuns</option>
@@ -126,41 +126,38 @@
 
             
             <div class="mt-5 col-md-2 form-check">
-                <label class="form-check-label" for="active">Receber Cancelados</label>
-                <input type="checkbox" class="form-check-input" id="active">
+                <label class="form-check-label" for="canceled">Receber Cancelados</label>
+                <input type="checkbox" class="form-check-input" name="canceled" id="canceled">
                 <span class="badge text-bg-light show-text" data-text='Receber titulos de contratos cancelados'>?</span>
             </div>
 
             <div class="mt-5 col-md-4 form-check">
-                <label class="form-check-label" for="active">Exigir Plano de Conta em Lançamento ?</label>
-                <input type="checkbox" class="form-check-input" id="active">
+                <label class="form-check-label" for="plan">Exigir Plano de Conta em Lançamento ?</label>
+                <input type="checkbox" class="form-check-input" id="plan" name="plan" >
                 <span class="badge text-bg-light show-text" data-text='Marcar opção para somente permitir lançamento no caixa com plano de conta'>?</span>
             </div>
             
             <div class="mt-3 col-md-2">
-                <label for="saldo_maximo" class="form-label">Dias Lançamento Retorno
-
-                    <span class="badge text-bg-light show-text" data-text='Se definido, lançamento no caixa será data atual + dias informados. Se não definido, data do lançamento = data da leitura do retorno.'>?</span>
-
-                </label>
-                <input type="text" class="form-control" id="Empresas">
+                <label for="returnRelease" class="form-label">Dias Lançamento Retorno</label>
+                <input type="text" class="form-control" id="returnRelease" name="returnRelease" >
+                <span class="badge text-bg-light show-text" data-text='Se definido, lançamento no caixa será data atual + dias informados. Se não definido, data do lançamento = data da leitura do retorno.'>?</span>
             </div>
             
             <div class="mt-3 col-md-3">
-                <label for="saldo_maximo" class="form-label">Dias Lançamento Cartão</label>
-                <input type="text" class="form-control" id="Empresas">
+                <label for="cardRelease" class="form-label">Dias Lançamento Cartão</label>
+                <input type="text" class="form-control" id="cardRelease" name="cardRelease">
                 <span class="badge text-bg-light show-text" data-text='Se definido, lançamento no caixa será data atual + dias informados. Se não definido, data do lançamento = data da captura no cartão.'>?</span>
             </div>
             <div class="mt-3 col-md-3">
-                <label for="saldo_maximo" class="form-label">Dias Lançamento Cartão (Debito)</label>
-                <input type="text" class="form-control" id="Empresas">
+                <label for="debitRelease" class="form-label">Dias Lançamento Cartão (Debito)</label>
+                <input type="text" class="form-control" id="debitRelease" name="debitRelease" >
                 <span class="badge text-bg-light show-text" data-text='Se definido, lançamento no caixa será data atual + dias informados. Se não definido, data do lançamento = data da captura no cartão.'>?</span>
 
 
             </div>
             <div class="mt-3 col-md-2">
-                <label for="typo" class="form-label">Gerar NF na Baixa do Título ?</label>
-                <select class="form-control select2" id="nas">
+                <label for="generateFiscalNote" class="form-label">Gerar NF na Baixa do Título ?</label>
+                <select class="form-control select2" id="generateFiscalNote" name="generateFiscalNote" >
                     <option selected>----------</option>
                     <option value="1">Na baixa (automática) do título.</option>
                     <option value="2">Na baixa (automática e manual) do título.</option>
@@ -172,8 +169,8 @@
            
 
             <div class="mt-3 col-md-2">
-                <label for="typo" class="form-label">Gerar NF na Baixa do Título ?</label>
-                <select class="form-control select2" id="nas">
+                <label for="fiscalNote" class="form-label">Gerar NF na Baixa do Título ?</label>
+                <select class="form-control select2" id="fiscalNote" name="fiscalNote" >
                     <option selected>----------</option>
                     <option value="1">Boleto + Nota Fiscal</option>
                     <option value="2">Somente Nota Fiscal</option>
@@ -181,27 +178,27 @@
                 </select>
             </div>
             <div class="mt-5 col-md-4 form-check">
-                <label class="form-check-label" for="active">Enviar NF?</label>
-                <input type="checkbox" class="form-check-input" id="active">
+                <label class="form-check-label" for="sendFiscalNote">Enviar NF?</label>
+                <input type="checkbox" class="form-check-input" id="sendFiscalNote" name="sendFiscalNote" >
                 <span class="badge text-bg-light show-text" data-text='Enviar nota fiscal automáticamente após a NF ser gerada se houver baixa do título.'>?</span>
             </div>
             
             <div class="mt-5 col-md-4 form-check">
-                <label class="form-check-label" for="active">Filtrar Empresa nos Relatórios ?</label>
-                <input type="checkbox" class="form-check-input" id="active">
+                <label class="form-check-label" for="filter">Filtrar Empresa nos Relatórios ?</label>
+                <input type="checkbox" class="form-check-input" name="filter" id="filter">
                 <span class="badge text-bg-light show-text" data-text='Se marcado, filtra a empresa definida do ponto de recebimento nos relatórios de caixa, dre etc. Se não definido, verifica a empresa no cadastro do Portador'>?</span>
             </div>
             <div class="mt-5 col-md-4 form-check">
-                <label class="form-check-label" for="active">Ativo Relatório de Caixa ?</label>
-                <input type="checkbox" class="form-check-input" id="active">
+                <label class="form-check-label" for="cashReports">Ativo Relatório de Caixa ?</label>
+                <input type="checkbox" class="form-check-input" name="cashReports" id="cashReports">
                 <span class="badge text-bg-light show-text" data-text='Se desmarcado, os lançamentos realizados neste ponto serão ocultados dos relatórios de lançamentos de caixa.'>?</span>
             </div>
 
             <div class="mb-3">
             </br>
             </br>
-            <label for="exampleFormControlTextarea1" class="form-label"> Horários</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <label for="schedule" class="form-label"> Horários</label>
+            <textarea class="form-control" name="schedule" id="schedule" rows="3"></textarea>
         </div>
 
        
