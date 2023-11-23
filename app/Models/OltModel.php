@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
-use App\Models\BaseModel;
+use CodeIgniter\Model;
 
-class OltModel extends BaseModel
+class OltModel extends Model
 {
     protected $DBGroup          = 'default';
     protected $table            = 'olts';
@@ -85,4 +85,49 @@ class OltModel extends BaseModel
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+    public function search($data)
+    {
+        $fieldsToSearch = [
+            'id',
+            'host',
+            'name',
+            'slot',
+            'type',
+            'active',
+        ];
+
+        $fieldsToReturn = [
+            'id',
+            'host',
+            'name',
+            'slot',
+            'type',
+            'active',
+            'create_at',
+            'delete_at',
+            'update_at',
+        ];
+
+        $search = null;
+
+        if (isset($data['search']))
+            $search = $data['search'];
+
+        $query = $this->db->table($this->table)
+            ->select($fieldsToReturn);
+
+        if ($search) {
+            $query->groupStart();
+            foreach ($fieldsToSearch as $field) {
+                $query->orLike($field, $search);
+            }
+            $query->groupEnd();
+        }
+
+        $query->orderBy('created_at', 'DESC');
+        $result = $query->get()->getResultArray();
+
+        return $result;
+    }
+
 }
