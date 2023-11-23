@@ -120,16 +120,13 @@ class BillstoReceiver extends Migration
                 'type' => 'DATETIME',
                 'null' => true,
             ],
-
-
-
         ]);
 
         $this->forge->addKey('id');
 
         $this->forge->addForeignKey('company_id', 'companies', 'id');
 
-        $this->forge->createTable('billstoReceiver');
+        $this->forge->createTable('billsToReceiver');
     }
 
     public function down()

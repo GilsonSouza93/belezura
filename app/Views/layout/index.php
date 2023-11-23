@@ -81,16 +81,25 @@
         /* Adicione estilos para um tema escuro */
         .select2-container--default .select2-selection--single,
         .select2-container--default .select2-selection--multiple {
-            background-color: #333;
-            color: #fff;
-
-            var(--bs-border-width) solid var(--bs-border-color)
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            height: calc(1.5em + .75rem + 2px);
+            color: var(--bs-body-color);
+            background-color: var(--bs-body-bg);
+            background-clip: padding-box;
+            border: var(--bs-border-width) solid var(--bs-border-color);
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border-radius: var(--bs-border-radius);
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out
         }
 
         /* Adicione estilos para as opções na lista suspensa */
         .select2-results__option {
-            background-color: #333;
-            color: #fff;
+            background-color: #282a2d;
+            color: var(--bs-body-color);
         }
 
         /* Adicione estilos para o texto realçado durante a pesquisa */

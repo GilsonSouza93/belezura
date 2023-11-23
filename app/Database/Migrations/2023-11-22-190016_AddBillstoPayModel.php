@@ -48,12 +48,12 @@ class AddBillstoPayModel extends Migration
                 'type' => 'DATETIME',
                 'null' => true,
             ],
-            
+
             'updated_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
             ],
-            
+
             'deleted_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
@@ -104,14 +104,10 @@ class AddBillstoPayModel extends Migration
                 'constraint' => '255',
             ],
 
-            
-            
             "company_id" => [
                 "type" => "int",
                 "constraint" => 5,
             ],
-
-    
         ]);
 
         $this->forge->addKey('id', true);
@@ -119,7 +115,6 @@ class AddBillstoPayModel extends Migration
         $this->forge->addForeignKey('company_id', 'companies', 'id');
 
         $this->forge->createTable('billstoPay');
-    
     }
 
     public function down()
