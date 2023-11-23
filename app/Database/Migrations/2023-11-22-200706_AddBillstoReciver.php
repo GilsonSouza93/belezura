@@ -24,7 +24,6 @@ class BillstoReceiver extends Migration
                 'constraint' => '255',
             ],
 
-
             'suplier_id' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
@@ -39,7 +38,6 @@ class BillstoReceiver extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
-
 
             'billstoreceiver_value' => [
                 'type' => 'VARCHAR',

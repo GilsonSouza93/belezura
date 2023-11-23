@@ -14,13 +14,16 @@ class VehicleModel extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        'model',
-        'license',
-        'uf',
-        'local',
-        'obs',
-        'available',
-        'company_id',
+        'id',
+        "vehicle_model",
+        "vehicle_plate",
+        "vehicle_uf",
+        "vehicle_locate",
+        "vehicle_obs",
+        "vehicle_available",
+        'created_at',
+        'updated_at',
+        'deleted_at',
     ];
 
     // Dates
