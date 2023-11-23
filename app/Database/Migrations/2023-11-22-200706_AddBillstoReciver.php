@@ -90,17 +90,17 @@ class BillstoReceiver extends Migration
                 'type' => 'DATETIME',
                 'null' => true,
             ],
-            
+
             'updated_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
             ],
-            
+
             'deleted_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
             ],
-            
+
             "company_id" => [
                 "type" => "int",
                 "constraint" => 5,
@@ -110,27 +110,26 @@ class BillstoReceiver extends Migration
                 'type' => 'DATETIME',
                 'null' => true,
             ],
-            
+
             'updated_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
             ],
 
-             'deleted_at' => [
+            'deleted_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
             ],
-            
 
-    
+
+
         ]);
-        
+
         $this->forge->addKey('id');
 
         $this->forge->addForeignKey('company_id');
 
         $this->forge->createTable('billstoReceiver');
-
     }
 
     public function down()
