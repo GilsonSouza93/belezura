@@ -22,15 +22,15 @@
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="modelo" class="form-label">Modelo</label>
-                <input type="text" id="modelo" class="form-control">
+                <input type="text" id="vehicle_model" class="form-control" name="vehicle_model" >
             </div>
             <div class="mt-3 col-md-4">
                 <label for="placa" class="form-label">Placa</label>
-                <input type="text" id="placa" class="form-control" >
+                <input type="text" id="vehicle_plate" class="form-control" name="vehicle_plate">
             </div>
             <div class="mt-3 col-md-4">
                 <label for="uf" class="form-label">UF</label>
-                <select class="form-control select2" id="uf" aria-label="uf cliente">
+                <select class="form-control select2" id="vehicle_uf" aria-label="uf cliente" name="vehicle_uf" >
                     <option selected>UF</option>
                     <option value="1">Acre</option>
                     <option value="2">Alagoas</option>
@@ -63,15 +63,15 @@
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="local" class="form-label">Local</label>
-                <input type="text" id="local" class="form-control">
+                <input type="text" id="vehicle_locate" class="form-control" name="vehicle_locate">
             </div>
             <div class="mt-3 col-md-4">
                 <label for="obs" class="form-label">Observação</label>
-                <input type="text" id="obs" class="form-control">
+                <input type="text" id="vehicle_obs" class="form-control" name="vehicle_obs">
             </div>
             <div class="mt-5 col-md-4">
                 <label for="disponivel" class="form-label "></label>
-                <input type="checkbox" name="" id="disponivel"> Disponível para OS?
+                <input type="checkbox" name="" id="vehicle_available" names="vehicle_available" > Disponível para OS?
             </div>
         </div>       
 
@@ -81,12 +81,12 @@
 
 <?= $this->section('script') ?>
 <script>
-    const modelo = document.getElementById('modelo');
-    const placa = document.getElementById('placa');
-    const uf = document.getElementById('uf');
-    const local = document.getElementById('local');
-    const obs = document.getElementById('local');
-    const disponivel = document.getElementById('disponivel');
+    const modelo = document.getElementById('vehicle_model');
+    const placa = document.getElementById('vehicle_plate');
+    const uf = document.getElementById('vehicle_uf');
+    const local = document.getElementById('vehicle_locate');
+    const obs = document.getElementById('vehicle_obs');
+    const disponivel = document.getElementById('vehicle_available');
     
     const submit = () => {
         const body = formatBody();

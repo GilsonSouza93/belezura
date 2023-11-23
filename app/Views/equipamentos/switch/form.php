@@ -33,7 +33,7 @@
         <div class="row">
             <div class="mt-3 col-md-3">
                 <label for="thel" class="form-label">Fonte</label>
-                <select class="form-control select2" aria-label="Default select example">
+                <select class="form-control select2" aria-label="Default select example"name="switch_fonte" id="switch_fonte">
                     <option selected>Selecione a Fonte</option>
                     <option value="1">Fonte 01</option>
                     <option value="1">Fonte 02</option>
@@ -41,15 +41,15 @@
             </div>
             <div class="mt-3 col-md-3">
                 <label for="name" class="form-label">Código</label>
-                <input type="text" class="form-control" name="name" placeholder="Insira o código da onu">
+                <input type="text" class="form-control" name="switch_cod" placeholder="Insira o código da onu" id="switch_cod">
             </div>
             <div class="mt-3 col-md-3">
                 <label for="model" class="form-label">Descrição</label>
-                <input type="text" class="form-control" name="model" placeholder="Insira a descrição">
+                <input type="text" class="form-control" name="switch_description" placeholder="Insira a descrição" id="switch_description">
             </div>
             <div class="mt-3 col-md-3">
                 <label for="qty" class="form-label">Portas</label>
-                <input type="text" class="form-control" name="qty" placeholder="Insira a porta">
+                <input type="text" class="form-control" name="switch_port" placeholder="Insira a porta"id="switch_port">
             </div>
 
         </div>
@@ -57,11 +57,11 @@
         <div class="row">
             <div class="mt-3 col-md-6">
                 <label for="price" class="form-label">Parâmetros</label>
-                <input type="text" class="form-control" name="price" placeholder="Insira o parâmetro">
+                <input type="text" class="form-control" name="switch_parameter" placeholder="Insira o parâmetro" id="switch_parameter">
             </div>
             <div class="mt-3 col-md-6">
-                <label for="id_valor_custo" class="form-label">Olts</label>
-                <input type="text" class="form-control" name="valor_custo" placeholder="OLTS">
+                <label for="switch_olt" class="form-label">Olts</label>
+                <input type="text" class="form-control" name="switch_olt" placeholder="OLTS" id="switch_olt">
             </div>
         </div>
 

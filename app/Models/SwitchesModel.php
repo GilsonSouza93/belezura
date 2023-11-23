@@ -4,10 +4,10 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class VehicleModel extends Model
+class SwitchesModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'vehicles';
+    protected $table            = 'switches';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
@@ -15,12 +15,12 @@ class VehicleModel extends Model
     protected $protectFields    = true;
     protected $allowedFields    = [
         'id',
-        "vehicle_model",
-        "vehicle_plate",
-        "vehicle_uf",
-        "vehicle_locate",
-        "vehicle_obs",
-        "vehicle_available",
+        "switch_fonte",
+        "switch_cod",
+        "switch_description",
+        "switch_port",
+        "switch_parameter",
+        "switch_olt",
         'created_at',
         'updated_at',
         'deleted_at',

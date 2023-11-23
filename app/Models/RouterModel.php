@@ -4,26 +4,22 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class VehicleModel extends Model
+class RouterModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'vehicles';
+    protected $table            = 'routers';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        'id',
-        "vehicle_model",
-        "vehicle_plate",
-        "vehicle_uf",
-        "vehicle_locate",
-        "vehicle_obs",
-        "vehicle_available",
-        'created_at',
-        'updated_at',
-        'deleted_at',
+        'router_font',
+        'router_code',
+        'router_description',
+        'router_port',
+        'router_parameter',
+        'router_olt',
     ];
 
     // Dates
