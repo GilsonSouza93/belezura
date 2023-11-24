@@ -10,7 +10,7 @@ class AddFinanceMovement extends Migration
     {
         $this->forge->addField([
             'id' => [
-                 'type' => 'INT',
+                'type' => 'INT',
                 'constraint' => 5,
                 'unsigned' => true,
                 'auto_increment' => true,
@@ -42,35 +42,47 @@ class AddFinanceMovement extends Migration
                 'constraint' => 255,
                 'null' => false,
             ],
-            
+
             'user' => [
                 'type' => 'VARCHAR',
                 'constraint' => 30,
                 'null' => false,
             ],
-           'enter' => [
+            'enter' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
                 'null' => false,
-           ],
+            ],
 
-           'exit' => [
-            'type' => 'VARCHAR',
-            'constraint' => 255,
-            'null' => false,
-           ],
+            'exit' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+                'null' => false,
+            ],
 
-           'actions' => [
-            'type' => 'VARCHAR',
-            'constraint' => 255,
-            'null' => false,
-           ],
-           ]); 
-           $this->forge->addPrimaryKey('id'); 
-           
-           $this->forge->addForeignKey('company_id', 'companies', 'id');
-           
-           $this->forge->CreateTable('FinanceMovement');
+            'actions' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+                'null' => false,
+            ],
+
+            'updated_at' => [
+                'type' => 'DATETIME',
+                'null' => true,
+            ],
+
+            'deleted_at' => [
+                'type' => 'DATETIME',
+                'null' => true,
+            ],
+
+            'created_at timestamp DEFAULT current_timestamp NOT NULL',
+        ]);
+        $this->forge->addPrimaryKey('id', true);
+
+        $this->forge->addForeignKey('company_id', 'companies', 'id');
+
+        $this->forge->CreateTable('FinanceMovement');
 
     }
 

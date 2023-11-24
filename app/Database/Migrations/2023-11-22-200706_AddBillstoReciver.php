@@ -54,7 +54,7 @@ class BillstoReceiver extends Migration
                 'constraint' => '255',
             ],
 
-        
+
 
             'billstoreceiver_emissiondate' => [
                 'type' => 'VARCHAR',
@@ -86,6 +86,12 @@ class BillstoReceiver extends Migration
                 'null' => true,
             ],
 
+
+            "company_id" => [
+                "type" => "int",
+                "constraint" => 5,
+            ],
+
             'updated_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
@@ -96,20 +102,12 @@ class BillstoReceiver extends Migration
                 'null' => true,
             ],
 
-            "company_id" => [
-                "type" => "int",
-                "constraint" => 5,
-            ],
+            'created_at timestamp DEFAULT current_timestamp NOT NULL',
 
-            'created_at' => [
-                'type' => 'DATETIME',
-                'null' => true,
-            ],
 
-            
         ]);
 
-        $this->forge->addKey('id');
+        $this->forge->addKey('id', true);
 
         $this->forge->addForeignKey('company_id', 'companies', 'id');
 
