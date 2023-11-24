@@ -10,7 +10,7 @@ class AddReceiverPoint extends Migration
     {
         $this->forge->addField([
             'id' => [
-                 'type' => 'INT',
+                'type' => 'INT',
                 'constraint' => 5,
                 'unsigned' => true,
                 'auto_increment' => true,
@@ -39,14 +39,14 @@ class AddReceiverPoint extends Migration
             'active' => [
                 'type' => 'boolean',
                 'default' => false,
-                
+
             ],
 
             'billsDiscount' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
-            
+
             'adminDiscount' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
@@ -137,14 +137,26 @@ class AddReceiverPoint extends Migration
                 "constraint" => 5,
             ],
 
+            'updated_at' => [
+                'type' => 'DATETIME',
+                'null' => true,
+            ],
 
-           
-           ]); 
-           $this->forge->addPrimaryKey('id'); 
-           
-           $this->forge->addForeignKey('company_id', 'companies', 'id');
-           
-           $this->forge->CreateTable('receiverPoint');
+            'deleted_at' => [
+                'type' => 'DATETIME',
+                'null' => true,
+            ],
+
+            'created_at timestamp DEFAULT current_timestamp NOT NULL',
+
+
+
+        ]);
+        $this->forge->addPrimaryKey('id', true);
+
+        $this->forge->addForeignKey('company_id', 'companies', 'id');
+
+        $this->forge->CreateTable('receiverPoint');
 
     }
 

@@ -73,23 +73,26 @@ class AddPaymentPlains extends Migration
                 'type' => 'boolean',
                 'default' => false,
             ],
-            
-            'updated_at' => [
-                'type' => 'DATETIME',
-                'null' => true,
-            ],
-            
-            'deleted_at' => [
-                'type' => 'DATETIME',
-                'null' => true,
-            ],
-            
+
+
             "company_id" => [
                 "type" => "int",
                 "constraint" => 5,
             ],
 
-        
+            'updated_at' => [
+                'type' => 'DATETIME',
+                'null' => true,
+            ],
+
+            'deleted_at' => [
+                'type' => 'DATETIME',
+                'null' => true,
+            ],
+
+            'created_at timestamp DEFAULT current_timestamp NOT NULL',
+
+
         ]);
 
         $this->forge->addKey('id', true);
@@ -97,7 +100,7 @@ class AddPaymentPlains extends Migration
         $this->forge->addForeignKey('company_id', 'companies', 'id');
 
         $this->forge->createTable('paymentPlains');
-    
+
     }
 
     public function down()

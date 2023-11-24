@@ -44,20 +44,6 @@ class AddBillstoPayModel extends Migration
                 'constraint' => '255',
             ],
 
-            'create_at' => [
-                'type' => 'DATETIME',
-                'null' => true,
-            ],
-
-            'updated_at' => [
-                'type' => 'DATETIME',
-                'null' => true,
-            ],
-
-            'deleted_at' => [
-                'type' => 'DATETIME',
-                'null' => true,
-            ],
 
             'value_id' => [
                 'type' => 'VARCHAR',
@@ -104,6 +90,18 @@ class AddBillstoPayModel extends Migration
                 "type" => "int",
                 "constraint" => 5,
             ],
+
+            'updated_at' => [
+                'type' => 'DATETIME',
+                'null' => true,
+            ],
+
+            'deleted_at' => [
+                'type' => 'DATETIME',
+                'null' => true,
+            ],
+
+            'created_at timestamp DEFAULT current_timestamp NOT NULL',
         ]);
 
         $this->forge->addKey('id', true);
