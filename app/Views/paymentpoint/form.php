@@ -30,8 +30,8 @@
                 <input type="text" class="form-control" name="carrier" id="carrier">
             </div>
             <div class="mt-3 col-md-3">
-                <label for="portadores" class="form-label">Portadores</label>
-                <select class="form-control select2" id="portadores" name="portadores" >
+                <label for="carriers" class="form-label">Portadores</label>
+                <select class="form-control select2" id="carriers" name="carriers" >
                     <option selected>-------</option>
                     <option value="1">Banco do Brasil</option>
                     <option value="2">Banco Santander</option>
@@ -67,20 +67,20 @@
         
             
             <div class="mt-3 col-md-3">
-                <label for="billsDiscount" class="form-label">% Desconto Caixa.</label>
-                <input type="text" class="form-control" id="billsDiscount" name="billsDiscount">
+                <label for="bills_discount" class="form-label">% Desconto Caixa.</label>
+                <input type="text" class="form-control" id="bills_discount" name="bills_discount">
                 <span class="badge text-bg-light show-text" data-text='Porcentagem permitida para desconto nesse ponto de recebimento.(Usuários Normais)'>?</span>
             </div>
             <div class="mt-3 col-md-4">
-                <label for="adminDiscount" class="form-label">% Desconto Admin.</label>
-                <input type="text" id="adminDiscount" name="adminDiscount" class="form-control">
+                <label for="admin_discount" class="form-label">% Desconto Admin.</label>
+                <input type="text" id="admin_discount" name="admin_discount" class="form-control">
                 <span class="badge text-bg-light show-text" data-text='Porcentagem permitida para desconto nesse ponto de recebimento.(Usuários Admin)'>?</span>
             </div> 
         
             
             <div class="mt-5 col-md-1 form-check">
-                <label class="form-check-label" for="allowDiscount">Permitir Desconto ?</label>
-                <input type="checkbox" class="form-check-input" id="allowDiscount" name="allowDiscount" >
+                <label class="form-check-label" for="allow_discount">Permitir Desconto ?</label>
+                <input type="checkbox" class="form-check-input" id="allow_discount" name="allow_discount" >
             </div>
 
             <div class="mt-5 col-md-3 form-check">
@@ -138,26 +138,26 @@
             </div>
             
             <div class="mt-3 col-md-2">
-                <label for="returnRelease" class="form-label">Dias Lançamento Retorno</label>
-                <input type="text" class="form-control" id="returnRelease" name="returnRelease" >
+                <label for="return_release" class="form-label">Dias Lançamento Retorno</label>
+                <input type="text" class="form-control" id="return_release" name="return_release" >
                 <span class="badge text-bg-light show-text" data-text='Se definido, lançamento no caixa será data atual + dias informados. Se não definido, data do lançamento = data da leitura do retorno.'>?</span>
             </div>
             
             <div class="mt-3 col-md-3">
-                <label for="cardRelease" class="form-label">Dias Lançamento Cartão</label>
-                <input type="text" class="form-control" id="cardRelease" name="cardRelease">
+                <label for="card_release" class="form-label">Dias Lançamento Cartão</label>
+                <input type="text" class="form-control" id="card_release" name="card_release">
                 <span class="badge text-bg-light show-text" data-text='Se definido, lançamento no caixa será data atual + dias informados. Se não definido, data do lançamento = data da captura no cartão.'>?</span>
             </div>
             <div class="mt-3 col-md-3">
-                <label for="debitRelease" class="form-label">Dias Lançamento Cartão (Debito)</label>
-                <input type="text" class="form-control" id="debitRelease" name="debitRelease" >
+                <label for="debit_release" class="form-label">Dias Lançamento Cartão (Debito)</label>
+                <input type="text" class="form-control" id="debit_release" name="debit_release" >
                 <span class="badge text-bg-light show-text" data-text='Se definido, lançamento no caixa será data atual + dias informados. Se não definido, data do lançamento = data da captura no cartão.'>?</span>
 
 
             </div>
             <div class="mt-3 col-md-2">
-                <label for="generateFiscalNote" class="form-label">Gerar NF na Baixa do Título ?</label>
-                <select class="form-control select2" id="generateFiscalNote" name="generateFiscalNote" >
+                <label for="generate_invoice" class="form-label">Gerar NF na Baixa do Título ?</label>
+                <select class="form-control select2" id="generate_invoice" name="generate_invoice" >
                     <option selected>----------</option>
                     <option value="1">Na baixa (automática) do título.</option>
                     <option value="2">Na baixa (automática e manual) do título.</option>
@@ -169,8 +169,8 @@
            
 
             <div class="mt-3 col-md-2">
-                <label for="fiscalNote" class="form-label">Gerar NF na Baixa do Título ?</label>
-                <select class="form-control select2" id="fiscalNote" name="fiscalNote" >
+                <label for="invoice" class="form-label">Gerar NF na Baixa do Título ?</label>
+                <select class="form-control select2" id="invoice" name="invoice" >
                     <option selected>----------</option>
                     <option value="1">Boleto + Nota Fiscal</option>
                     <option value="2">Somente Nota Fiscal</option>
@@ -178,8 +178,8 @@
                 </select>
             </div>
             <div class="mt-5 col-md-4 form-check">
-                <label class="form-check-label" for="sendFiscalNote">Enviar NF?</label>
-                <input type="checkbox" class="form-check-input" id="sendFiscalNote" name="sendFiscalNote" >
+                <label class="form-check-label" for="send_invoice">Enviar NF?</label>
+                <input type="checkbox" class="form-check-input" id="send_invoice" name="send_invoice" >
                 <span class="badge text-bg-light show-text" data-text='Enviar nota fiscal automáticamente após a NF ser gerada se houver baixa do título.'>?</span>
             </div>
             
@@ -189,8 +189,8 @@
                 <span class="badge text-bg-light show-text" data-text='Se marcado, filtra a empresa definida do ponto de recebimento nos relatórios de caixa, dre etc. Se não definido, verifica a empresa no cadastro do Portador'>?</span>
             </div>
             <div class="mt-5 col-md-4 form-check">
-                <label class="form-check-label" for="cashReports">Ativo Relatório de Caixa ?</label>
-                <input type="checkbox" class="form-check-input" name="cashReports" id="cashReports">
+                <label class="form-check-label" for="cash_reports">Ativo Relatório de Caixa ?</label>
+                <input type="checkbox" class="form-check-input" name="cash_reports" id="cash_reports">
                 <span class="badge text-bg-light show-text" data-text='Se desmarcado, os lançamentos realizados neste ponto serão ocultados dos relatórios de lançamentos de caixa.'>?</span>
             </div>
 

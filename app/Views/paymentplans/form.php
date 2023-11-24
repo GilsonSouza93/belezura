@@ -42,7 +42,7 @@
 
             <div class="mt-3 col-md-4">
                 <label for="financialCode" class="form-label">Código Financeiro</label>
-                <input type="text" class="form-control" name="financialCode" id="financialCode">
+                <input type="text" class="form-control" name="financial_code" id="financial_code">
             </div>
 
             <div class="mt-3 col-md-4">
@@ -53,10 +53,10 @@
         <div class="row">
 
             <div class="mt-3 col-md-4">
-                <label for="plainAccount" class="form-label">Conta Plano
+                <label for="plain_account" class="form-label">Conta Plano
                 <span class="badge text-bg-light show-text" data-text='Definir apenas para receita se for mensalidade/adesão.'>?</span>
                 </label>
-                <select class="form-control select2" id="plainAccount" aria-label="forma de pagamento">
+                <select class="form-control select2" name="plain_account" id="plain_account" aria-label="forma de pagamento">
                     <option selected>Selecione a Forma de Pagamento</option>
                     <option value="1">Mensalidade Contrato</option>
                     <option value="2">Adesão Contrato</option>
@@ -65,7 +65,7 @@
 
             <div class="mt-3 col-md-4">
                 <label for="dreType" class="form-label">Tipo da DRE</label>
-                <select class="form-control select2" id="dreType" aria-label="dreType">
+                <select class="form-control select2" id="dre_type" name="dre_type" aria-label="dre_type">
                     <option selected>Selecione o tipo da DRE</option>
                     <option value="" selected="">---------</option>
                     <option value="01">Receita</option>
@@ -78,8 +78,8 @@
             </div>
 
             <div class="mt-3 col-md-4">
-                <label for="siciAccount" class="form-label">SICI Conta</label>
-                <select class="form-control select2" id="siciAccount" aria-label="forma de pagamento">
+                <label for="sici_account" class="form-label">SICI Conta</label>
+                <select class="form-control select2" name="sici_account" id="sici_account" aria-label="forma de pagamento">
                     <option selected>Selecione a forma de pagamento</option>
                     <option value="1">Receita Operacional</option>
                     <option value="2">Despesa Envolvendo Interconexão</option>
@@ -104,11 +104,10 @@
                 <input type="checkbox" name="suspend" id="suspend" class="form-check-input">
             </div>
             <div class="col-md-4">
-            <label for="collection" class="form-label">Enviar Cobrança Auto
+            <label for="charge" class="form-label">Enviar Cobrança Auto
             <span class="badge text-bg-light show-text" data-text='Habilita o envio dos títulos com este C. Custo por email caso habilitado também no Portador.'>?</span>
             </label>
-                <input type="checkbox" name="collection" id="collection" class="form-check-input">
-                <span class="text-small"><br></span>
+                <input type="checkbox" name="charge" id="charge" class="form-check-input">
             </div>
         </div>
 

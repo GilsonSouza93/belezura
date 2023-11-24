@@ -41,7 +41,7 @@
             </div>
             <div class="mt-3 col-md-2">
                 <label for="pop" class="form-label">POP</label>
-                <select class="form-control select2" id="pop_id" aria-label="pop" name="pop_id" >
+                <select class="form-control select2" id="pop" aria-label="pop" name="pop" >
                     <option selected>Selecione o Local POP</option>
                     <option value="1">Caruaru</option>
                     <option value="2">Olinda</option>
@@ -51,16 +51,16 @@
                 </select>
             </div>
             <div class="mt-3 col-md-2">
-                <label for="forncedor" class="form-label">Fornecedor</label>
-                <select class="form-control select2" id="supplier_id" aria-label="fornececdor" name="supplier_id" >
+                <label for="supplier" class="form-label">Fornecedor</label>
+                <select class="form-control select2" id="supplier" aria-label="supplier" name="supplier" >
                     <option selected>Selecione o Fornecedor</option>
                     <option value="1">Home telecomunicações</option>
                 </select>
             </div>
 
             <div class="mt-3 col-md-2">
-                <label for="formaDePagamento" class="form-label">Forma de Pagamento</label>
-                <select class="form-control select2" id="billstoreceiver_form" aria-label="Default select example" name="billstoreceiver_form" >
+                <label for="form_payment" class="form-label">Forma de Pagamento</label>
+                <select class="form-control select2" id="form_payment" aria-label="Default select example" name="form_payment" >
                     <option selected>Selecione o ponto de contas</option>
                     <option value="1">Pix</option>
                     <option value="2">Caixa reserva</option>
@@ -71,12 +71,12 @@
                 </select>
             </div>
             <div class="mt-5 col-md-2 py-2 px-5 form-check">
-                <label class="form-check-label" for="billstoreceiver_valuefixed"></label>
-                <input type="checkbox" id="billstoreceiver_valuefixed" class="form-check-input" name="billstoreceiver_valuefixed" checked> Valor Fixo:
+                <label class="form-check-label" for="fix_value"></label>
+                <input type="checkbox" id="fix_value" class="form-check-input" name="fix_value" checked> Valor Fixo:
             </div>
             <div class="mt-3 col-md-2">
-                <label for="valor" class="form-label">Valor</label>
-                <input type="text" id="billstoreceiver_value" class="form-control" name="billstoreceiver_value" placeholder="">
+                <label for="value" class="form-label">Valor</label>
+                <input type="text" id="value" class="form-control" name="value" placeholder="">
             </div>
         </div>
 
@@ -84,39 +84,39 @@
 
         <div class="row">
             <div class="mt-3 col-md-12">
-                <label for="observacao" class="form-label">Observação</label>
-                <input type="text" id="billstoreceiver_description" class="form-control" name="billstoreceiver_description" placeholder="">
+                <label for="obs" class="form-label">Observação</label>
+                <input type="text" id="obs" class="form-control" name="obs" placeholder="">
             </div>
         </div>
 
         <div class="row">
             <div class="mt-3 col-md-3">
-                <label for="tipoDoDocumento" class="form-label">Tipo do Documento</label>
-                <select class="form-control select2" id="billstoreceiver_doctype" aria-label="Default select example" name="billstoreceiver_doctype" >
+                <label for="doc_type" class="form-label">Tipo do Documento</label>
+                <select class="form-control select2" id="doc_type" aria-label="Default select example" name="doc_type" >
                     <option selected>Selecione o Tipo de Pagamento</option>
                 </select>
             </div>
             <div class="mt-3 col-md-3">
-                <label for="descricao" class="form-label">Descrição</label>
-                <input type="text" id="billstoreceiver_description" class="form-control" name="billstoreceiver_description" placeholder="">
+                <label for="description" class="form-label">Descrição</label>
+                <input type="text" id="description" class="form-control" name="description" placeholder="">
             </div>
             <div class="mt-3 col-md-3">
-                <label for="notaFiscal" class="form-label">Nota Fiscal</label>
-                <input type="text" id="billstoreceiver_invoice" class="form-control" name="billstoreceiver_invoice" placeholder="">
+                <label for="invoice" class="form-label">Nota Fiscal</label>
+                <input type="text" id="invoice" class="form-control" name="invoice" placeholder="">
             </div>
             <div class="mt-3 col-md-3">
-                <label for="dataDeEmissao" class="form-label">Data de Emissão</label>
-                <input type="date" id="billstoreceiver_emissiondate" class="form-control" name="billstoreceiver_emissiondate" placeholder="">
+                <label for="date_issue" class="form-label">Data de Emissão</label>
+                <input type="date" id="date_issue" class="form-control" name="date_issue" placeholder="">
             </div>
         </div>
         <div class="row">
         <div class="mt-3 col-md-6">
-                <label for="vencimento" class="form-label">Vencimento</label>
-                <input type="date" id="billstoreceiver_payout" class="form-control" name="billstoreceiver_payout" placeholder="">
+                <label for="payout" class="form-label">Vencimento</label>
+                <input type="date" id="payout" class="form-control" name="payout" placeholder="">
             </div>
             <div class="mt-3 col-md-6 form-check">
-                <label for="tipoDeParcela" class="form-label">Tipo de Parcela</label>
-                    <select class="form-control select2" id="billstoreceiver_potiontype" aria-label="Tipo de parcela" name="billstoreceiver_potiontype" >
+                <label for="portion" class="form-label">Tipo de Parcela</label>
+                    <select class="form-control select2" id="portion" aria-label="Tipo de parcela" name="portion" >
                         <option selected>Selecione o Tipo de Parcela</option>
                         <option value="1">Fixo</option>
                         <option value="1">Dinâmico</option>

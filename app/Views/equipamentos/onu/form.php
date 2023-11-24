@@ -49,14 +49,14 @@
     <div class="row">
       <div class="mt-3 col-md-6">
         <label for="price" class="form-label">Parâmetros</label>
-        <input type="text" class="form-control" name="param" id="param" placeholder="Insira o parâmetro">
+        <input type="text" class="form-control" name="parameters" id="parameters" placeholder="Insira o parâmetro">
       </div>
       <div class="mt-3 col-md-6">
         <label for="olt" class="form-label">OLT</label>
         <select class="form-control" id="olt" aria-label="olt">
           <option selected>Selecione a OLT</option>
           <?php foreach ($olts as $olt) : ?>
-            <option value="<?= $olt['id'] ?>"><?= $olt['olt_name'] ?></option>
+            <option value="<?= $olt['id'] ?>"><?= $olt['name'] ?></option>
           <?php endforeach ?>
         </select>
       </div>

@@ -315,13 +315,13 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         });
 
         $routes->group('pontosdepagamento', static function ($routes) {
-            $routes->get('/', 'ReceiverPointController::index');
-            $routes->get('novo', 'ReceiverPointController::form');
+            $routes->get('/', 'PaymentPointController::index');
+            $routes->get('novo', 'PaymentPointController::form');
         });
 
         $routes->group('planosdepagamento', static function ($routes) {
-            $routes->get('/', 'PaymentPlainsController::index');
-            $routes->get('novo', 'PaymentPlainsController::form');
+            $routes->get('/', 'PaymentPlansController::index');
+            $routes->get('novo', 'PaymentPlansController::form');
         });
 
         $routes->group('caixa', static function ($routes) {

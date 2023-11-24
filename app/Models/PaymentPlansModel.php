@@ -4,10 +4,10 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class PaymentPlainsModel extends Model
+class PaymentPlansModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'paymentplains';
+    protected $table            = 'paymentplans';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
@@ -16,14 +16,14 @@ class PaymentPlainsModel extends Model
     protected $allowedFields    = [
         "id",
         "type",
-        "financialCode",
+        "financial_code",
         "description",
-        "plainAccount",
-        "dreType",
-        "siciAccount",
+        "plain_account",
+        "dre_type",
+        "sici_account",
         "ticket",
         "suspend",
-        "collection",
+        "charge",
         "dre",
         "sped",
         "visibility",

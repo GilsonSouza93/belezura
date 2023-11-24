@@ -16,7 +16,7 @@ class PopModel extends Model
 
     protected $allowedFields    = [
         "city",
-        "population",
+        // "population",
         "ibge_code",
         "uf",
         "carrier",
@@ -61,7 +61,6 @@ class PopModel extends Model
         $fieldsToSearch = [
             'id',
             'city',
-            'population',
             'ibge_code',
             'uf',
             'carrier',
@@ -74,7 +73,6 @@ class PopModel extends Model
         $fieldsToReturn = [
             'id',
             'city',
-            'population',
             'ibge_code',
             'uf',
             'carrier',

@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class AddPaymentPlains extends Migration
+class AddPaymentPlans extends Migration
 {
     public function up()
     {
@@ -96,12 +96,12 @@ class AddPaymentPlains extends Migration
 
         $this->forge->addForeignKey('company_id', 'companies', 'id');
 
-        $this->forge->createTable('paymentPlains');
+        $this->forge->createTable('paymentPlans');
     
     }
 
     public function down()
     {
-        $this->forge->DropTable('paymentPlains');
+        $this->forge->DropTable('paymentPlans');
     }
 }

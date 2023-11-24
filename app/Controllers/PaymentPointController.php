@@ -4,11 +4,11 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 
-class ReceiverPointController extends BaseController
+class PaymentPointController extends BaseController
 {
     public $tittle = 'Ponto de Pagamento';
     public $addButtonText = 'Novo Ponto de Pagamento';
-    public $viewPath = 'receiverpoint';
+    public $viewPath = 'paymentpoint';
     public $baseRoute = 'financeiro/pontosdepagamento';
 
 }

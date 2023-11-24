@@ -15,16 +15,11 @@ class OnuModel extends Model
     protected $protectFields    = true;
     protected $allowedFields    = [
         'id',
-        'onu_serial_number',
-        'onu_name',
-        'onu_ip',
-        'onu_port',
-        'onu_username',
-        'onu_password',
-        'onu_status',
-        'onu_created_at',
-        'onu_updated_at',
-        'onu_deleted_at',
+        'code',
+        'name',
+        'port',
+        'parameter',
+        'olt',
         'company_id',
     ];
 
@@ -55,29 +50,24 @@ class OnuModel extends Model
     public function search($data)
     {
         $fieldsToSearch = [
-            'onu_serial_number',
-            'onu_name',
-            'onu_ip',
-            'onu_port',
-            'onu_username',
-            'onu_password',
+            'code',
+            'name',
+            'port',
+            'parameter',
         ];
 
         $fieldsToReturn = [
             'id',
-            'onu_serial_number',
-            'onu_name',
-            'onu_ip',
-            'onu_port',
-            'onu_username',
-            'onu_password',
-            'onu_status',
-            'onu_created_at',
-            'onu_updated_at',
-            'onu_deleted_at',
+            'code',
+            'name',
+            'port',
+            'parameters',
+            'created_at',
+            'updated_at',
+            'deleted_at',
         ];
 
-        $createAtName = 'onu_created_at';
+        $createAtName = 'created_at';
 
         $search = null;
 

@@ -4,10 +4,10 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class ReceiverPointModel extends Model
+class PaymentPointModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'receiverpoints';
+    protected $table            = 'paymentpoints';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
@@ -16,27 +16,27 @@ class ReceiverPointModel extends Model
     protected $allowedFields    = [
         'name',
         'carrier',
-        'portdores',
+        'carriers',
         'companies',
         'balance',
         'active',
-        'billsDiscount',
-        'adminDiscount',
-        'allowDiscount',
+        'bills_discount',
+        'admin_discount',
+        'allow_discount',
         'refinance',
         'method',
         'receiver',
         'pops',
         'canceled',
         'plan',
-        'returnRelease',
-        'cardRelease',
-        'debitRelease',
-        'generateFiscalNote',
-        'fiscalNote',
-        'sendFiscalNote',
+        'return_release',
+        'card_release',
+        'debit_release',
+        'generate_invoice',
+        'invoice',
+        'send_invoice',
         'filter',
-        'cashReports',
+        'cash_reports',
         'schedule',
     ];
 
