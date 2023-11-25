@@ -42,17 +42,26 @@ class AddPaymentPoint extends Migration
 
             ],
 
+<<<<<<< Updated upstream:app/Database/Migrations/2023-11-23-172345_AddPaymentPoint.php
             'billsDiscount' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
 
             'adminDiscount' => [
+=======
+            'bills_discount' => [
+>>>>>>> Stashed changes:app/Database/Migrations/2023-11-23-172345_AddReceiverPoint.php
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
 
-            'allowDiscount' => [
+            'admin_discount' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
+
+            'allow_aiscount' => [
                 'type' => 'boolean',
                 'default' => false,
             ],
@@ -87,32 +96,32 @@ class AddPaymentPoint extends Migration
                 'default' => false,
             ],
 
-            'returnRelease' => [
+            'return_release' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
 
-            'cardRelease' => [
+            'card_release' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
 
-            'debitRelease' => [
+            'debit_release' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
 
-            'generateFiscalNote' => [
+            'generate_fiscal_note' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
 
-            'fiscalNote' => [
+            'fiscal_note' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
 
-            'sendFiscalNote' => [
+            'send_fiscal_note' => [
                 'type' => 'boolean',
                 'default' => false,
             ],
@@ -122,7 +131,7 @@ class AddPaymentPoint extends Migration
                 'default' => false,
             ],
 
-            'cashReports' => [
+            'cash_reports' => [
                 'type' => 'boolean',
                 'default' => false,
             ],
@@ -136,7 +145,9 @@ class AddPaymentPoint extends Migration
                 "type" => "int",
                 "constraint" => 5,
             ],
+        ]);
 
+<<<<<<< Updated upstream:app/Database/Migrations/2023-11-23-172345_AddPaymentPoint.php
             'updated_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
@@ -149,7 +160,13 @@ class AddPaymentPoint extends Migration
            $this->forge->addForeignKey('company_id', 'companies', 'id');
            
            $this->forge->CreateTable('paymentPoint');
+=======
+        $this->forge->addPrimaryKey('id');
 
+        $this->forge->addForeignKey('company_id', 'companies', 'id');
+>>>>>>> Stashed changes:app/Database/Migrations/2023-11-23-172345_AddReceiverPoint.php
+
+        $this->forge->CreateTable('receiverPoint');
     }
 
     public function down()

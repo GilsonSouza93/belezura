@@ -34,8 +34,7 @@ class PopController extends BaseController
         
         $theadData = [
             "city" => $data->cidade,
-            "population" => $data->populacao,
-            "ibge_code" => $data->codigo_ibge,
+            "ibge_code" => $data->ibge_code,
             "uf" => $data->uf,
             "carrier" => $data->portador_padrao,
             "plan" => $data->plano,

@@ -45,27 +45,8 @@ class AddCustomers extends Migration
                 'null' => true,
             ],
 
-            'phone1' => [
-                'type' => 'VARCHAR',
-                'constraint' => '20',
-                'null' => true,
-            ],
-
-            'phone1_type' => [
-                'type' => 'ENUM',
-                'constraint' => ['Residential', 'Commercial'],
-                'null' => true,
-            ],
-
-            'phone2' => [
-                'type' => 'VARCHAR',
-                'constraint' => '20',
-                'null' => true,
-            ],
-
-            'phone2_type' => [
-                'type' => 'ENUM',
-                'constraint' => ['Residential', 'Commercial'],
+            'phones' => [
+                'type' => 'JSON',
                 'null' => true,
             ],
 
@@ -116,10 +97,18 @@ class AddCustomers extends Migration
                 "constraint" => 5,
             ],
 
-            'created_at timestamp DEFAULT current_timestamp NOT NULL',	
+            "onu_id" => [
+                "type" => "int",
+                "constraint" => 5,
+                "unsigned" => true,
+                "null" => true
+            ],
+
+            'created_at timestamp DEFAULT current_timestamp NOT NULL',
         ]);
         $this->forge->addKey('id', true);
 
+        $this->forge->addForeignKey('onu_id', 'onus', 'id');
         $this->forge->addForeignKey('company_id', 'companies', 'id');
 
         $this->forge->createTable('customers');

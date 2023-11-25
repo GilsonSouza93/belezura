@@ -63,7 +63,6 @@ class AddVehicle extends Migration
             ],
 
             'created_at timestamp DEFAULT current_timestamp NOT NULL',
-
         ]);
 
         $this->forge->addPrimaryKey('id', true);

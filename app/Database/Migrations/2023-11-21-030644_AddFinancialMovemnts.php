@@ -48,6 +48,10 @@ class AddFinanceMovement extends Migration
                 'constraint' => 30,
                 'null' => false,
             ],
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
             'enter' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
@@ -65,6 +69,7 @@ class AddFinanceMovement extends Migration
                 'constraint' => 255,
                 'null' => false,
             ],
+<<<<<<< Updated upstream
 
             'updated_at' => [
                 'type' => 'DATETIME',
@@ -83,7 +88,19 @@ class AddFinanceMovement extends Migration
         $this->forge->addForeignKey('company_id', 'companies', 'id');
 
         $this->forge->CreateTable('FinanceMovement');
+=======
+            "company_id" => [
+                "type" => "int",
+                "constraint" => 5,
+            ],
+            'created_at timestamp DEFAULT current_timestamp NOT NULL',	
+        ]);
+        $this->forge->addPrimaryKey('id');
+>>>>>>> Stashed changes
 
+        $this->forge->addForeignKey('company_id', 'companies', 'id');
+
+        $this->forge->CreateTable('FinanceMovement');
     }
 
     public function down()

@@ -20,22 +20,17 @@
 
     <form>
         <div class="row">
-            <div class="mt-3 col-md-3">
+            <div class="mt-3 col-md-4">
                 <label for="name" class="form-label">Cidade</label>
                 <input type="text" class="form-control" name="name" id="cidade">
             </div>
-            <div class="mt-3 col-md-3">
-                <label for="name" class="form-label">População</label>
-                <input type="text" class="form-control" name="name" id="populacao">
-            </div>
-            <div class="mt-3 col-md-3">
+            <div class="mt-3 col-md-4">
                 <label for="codigo_ibge" class="form-label">Código IBGE</label>
-                <input type="text" class="form-control" id="codigo_ibge">
+                <input type="text" class="form-control" id="ibge_code">
             </div>
-            <div class="mt-3 col-md-3">
+            <div class="mt-3 col-md-4">
                 <label for="uf" class="form-label">UF</label>
                 <select class="form-control select2" id="uf">
-                    <option selected>-------</option>
                     <option value="1">PE</option>
                     <option value="2">AL</option>
                     <option value="3">BA</option>

@@ -19,7 +19,7 @@ class AddPaymentPlans extends Migration
                 'constraint' => '255',
             ],
 
-            'financialCode' => [
+            'financial_code' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
@@ -29,7 +29,7 @@ class AddPaymentPlans extends Migration
                 'constraint' => '255',
             ],
 
-            'plainAccount' => [
+            'plain_account' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
@@ -39,7 +39,7 @@ class AddPaymentPlans extends Migration
                 'constraint' => '255',
             ],
 
-            'siciAccount' => [
+            'sici_account' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],

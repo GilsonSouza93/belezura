@@ -51,8 +51,13 @@
                 </select>
             </div>
             <div class="mt-3 col-md-2">
+<<<<<<< Updated upstream
                 <label for="supplier" class="form-label">Fornecedor</label>
                 <select class="form-control" id="supplier" aria-label="supplier" name="supplier">
+=======
+                <label for="fornecedor" class="form-label">Fornecedor</label>
+                <select class="form-control" id="supplier_id" aria-label="fornecedor" name="supplier_id">
+>>>>>>> Stashed changes
                     <option selected>Selecione o Fornecedor</option>
                     <option value="1">Home Telecomunicações</option>
                 </select>

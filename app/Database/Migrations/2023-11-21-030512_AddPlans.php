@@ -61,10 +61,6 @@ class AddPlans extends Migration
                 'constraint' => 255,
                 'null' => true,
             ],
-            'created_at' => [
-                'type' => 'DATETIME',
-                'null' => true,
-            ],
             'updated_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
@@ -73,6 +69,7 @@ class AddPlans extends Migration
                 "type" => "int",
                 "constraint" => 5,
             ],
+            'created_at timestamp DEFAULT current_timestamp NOT NULL',	
         ]);
 
         $this->forge->addKey('id', true);

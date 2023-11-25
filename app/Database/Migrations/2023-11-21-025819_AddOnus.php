@@ -16,67 +16,67 @@ class AdOnu extends Migration
                 'auto_increment' => true,
             ],
 
-            'onu_code' => [
+            'code' => [
                 'type'           => 'INT',
                 'constraint'     => 5,
             ],
 
-            'onu_name' => [
+            'name' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '100',
             ],
 
-            'onu_ip' => [
+            'ip' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '100',
             ],
 
-            'onu_parameters' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '100',
-            ],
-            
-            'onu_olt' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '100',
-            ],
-
-            'onu_port' => [
+            'parameters' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '100',
             ],
             
-            'onu_username' => [
+            'olt' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '100',
             ],
 
-            'onu_password' => [
+            'port' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '100',
+            ],
+            
+            'username' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '100',
             ],
 
-            'onu_status' => [
+            'password' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '100',
             ],
 
-            'onu_created_at timestamp DEFAULT current_timestamp NOT NULL',	
-
-            'onu_updated_at' => [
+            'status' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '100',
+            ],
+            
+            'updated_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
             ],
-
-            'onu_deleted_at' => [
+            
+            'deleted_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
             ],
-
+            
             "company_id" => [
                 "type" => "int",
                 "constraint" => 5,
             ],
+
+            'created_at timestamp DEFAULT current_timestamp NOT NULL',
         ]);
 
 

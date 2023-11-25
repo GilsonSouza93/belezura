@@ -109,13 +109,19 @@
             color: #fff;
         }
 
-        .select2-search__field, .select2-search, .select2-search--dropdown {
+        .select2-search__field,
+        .select2-search,
+        .select2-search--dropdown {
             background-color: #282a2d;
             border: none;
         }
 
         .select2-search__field:focus {
             outline: none;
+        }
+
+        .select2-no-results {
+            display: none !important;
         }
     </style>
 </head>
@@ -134,7 +140,7 @@
                                 <a class="nav-link dropdown-toggle text-white" href="<?= $item['href'] ?>" data-bs-toggle="dropdown">
                                     <?= $item['title'] ?>
                                 </a>
-                                <ul class="dropdown-menu dropdown-menu-dark mt-4 px-2" style="background: rgba(10, 10, 10, 0.1); backdrop-filter: blur(7px); border-radius: 15px; border: 2px solid <?= $item['color'] ?>;">
+                                <ul class="dropdown-menu dropdown-menu-dark mt-4 px-2" style="background: rgba(10, 10, 10, 0.4); backdrop-filter: blur(7px); border-radius: 15px; border: 2px solid <?= $item['color'] ?>;">
                                     <?php foreach ($item['subitems'] as $subitem) : ?>
 
                                         <?php if (isset($subitem['subitems'])) : ?>
@@ -291,7 +297,7 @@
             const registerCounter = document.createElement('div');
             registerCounter.classList.add('d-flex', 'flex-row', 'justify-content-between', 'align-items-center', 'mb-3');
 
-            const registerCounterText = document.createElement('h2');
+            const registerCounterText = document.createElement('h5');
             registerCounterText.id = 'registerCounterText';
 
             registerCounter.appendChild(registerCounterText);
@@ -576,7 +582,12 @@
         });
 
         document.addEventListener('DOMContentLoaded', () => {
-            $('.select2').select2();
+            $('.select2').select2({
+                placeholder: 'Selecione uma opção', // Mensagem para exibir no campo de seleção
+                noResults: function() {
+                    return 'Nenhum resultado encontrado'; // Mensagem quando não há resultados encontrados
+                }
+            });
         });
     </script>
 

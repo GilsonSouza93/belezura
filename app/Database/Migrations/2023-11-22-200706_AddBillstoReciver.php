@@ -13,47 +13,47 @@ class BillstoReceiver extends Migration
                 'type' => 'INT',
                 'auto_increment' => true,
             ],
-
-            'company' => [
+            'form' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
 
-            'pop_id' => [
+            'value_fixed' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
 
-            'suplier_id' => [
+            'value' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
 
-            'billstoreceiver_form' => [
+            'description' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
 
-            'billstoreceiver_valuefixed' => [
+            'doctype' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
 
-            'billstoreceiver_value' => [
+            'emission_date' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
 
-            'billstoreceiver_description' => [
+            'invoice' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
 
-            'billstoreceiver_doctype' => [
+            'payout' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
 
+<<<<<<< Updated upstream
 
 
             'billstoreceiver_emissiondate' => [
@@ -72,6 +72,9 @@ class BillstoReceiver extends Migration
             ],
 
             'billstoreceiver_potiontype' => [
+=======
+            'potion_type' => [
+>>>>>>> Stashed changes
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
@@ -104,11 +107,30 @@ class BillstoReceiver extends Migration
 
             'created_at timestamp DEFAULT current_timestamp NOT NULL',
 
+<<<<<<< Updated upstream
+=======
+            'pop_id' => [
+                "type" => "int",
+                "constraint" => 5,
+            ],
+
+            'supplier_id' => [
+                "type" => "int",
+                "constraint" => 5,
+            ],
+
+            'created_at' => [
+                'type' => 'DATETIME',
+                'null' => true,
+            ],
+>>>>>>> Stashed changes
 
         ]);
 
         $this->forge->addKey('id', true);
 
+        $this->forge->addForeignKey('pop_id', 'pops', 'id');
+        $this->forge->addForeignKey('supplier_id', 'suppliers', 'id');
         $this->forge->addForeignKey('company_id', 'companies', 'id');
 
         $this->forge->createTable('billsToReceiver');

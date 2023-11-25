@@ -12,6 +12,7 @@ class AddCompanies extends Migration
             'id' => [
                 'type' => 'int',
                 'constraint' => 5,
+                'auto_increment' => true,
             ],
 
             'name' => [

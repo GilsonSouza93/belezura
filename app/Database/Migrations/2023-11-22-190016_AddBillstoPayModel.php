@@ -25,13 +25,13 @@ class AddBillstoPayModel extends Migration
             ],
 
             'pop_id' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
+                "type" => "int",
+                "constraint" => 5,
             ],
 
-            'suplier_id' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
+            'supplier_id' => [
+                "type" => "int",
+                "constraint" => 5,
             ],
 
             'payment_id' => [
@@ -44,7 +44,11 @@ class AddBillstoPayModel extends Migration
                 'constraint' => '255',
             ],
 
+<<<<<<< Updated upstream
 
+=======
+            
+>>>>>>> Stashed changes
             'value_id' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
@@ -79,13 +83,12 @@ class AddBillstoPayModel extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
-
+            
             'tipoDeParcela_id' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
-
-
+            
             "company_id" => [
                 "type" => "int",
                 "constraint" => 5,
@@ -95,17 +98,27 @@ class AddBillstoPayModel extends Migration
                 'type' => 'DATETIME',
                 'null' => true,
             ],
+<<<<<<< Updated upstream
 
+=======
+    
+>>>>>>> Stashed changes
             'deleted_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
             ],
 
+<<<<<<< Updated upstream
             'created_at timestamp DEFAULT current_timestamp NOT NULL',
+=======
+            'created_at timestamp DEFAULT current_timestamp NOT NULL',	
+>>>>>>> Stashed changes
         ]);
 
         $this->forge->addKey('id', true);
 
+        $this->forge->addForeignKey('pop_id', 'pops', 'id');
+        $this->forge->addForeignKey('supplier_id', 'suppliers', 'id');
         $this->forge->addForeignKey('company_id', 'companies', 'id');
 
         $this->forge->createTable('billstoPay');

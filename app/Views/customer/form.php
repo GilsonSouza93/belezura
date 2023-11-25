@@ -37,16 +37,14 @@
             <div class="mt-3 col-md-3">
                 <label for="plano" class="form-label">Plano</label>
                 <select class="form-control select2" id="plano" aria-label="plano">
-                    <option selected>Selecione o Plano</option>
                     <?php foreach ($subscription as $plan) : ?>
                         <option value="<?= $plan['id'] ?>"><?= $plan['name'] ?></option>
                     <?php endforeach ?>
                 </select>
             </div>
             <div class="mt-3 col-md-3">
-                <label for="onus_id">ONU</label>
+                <label for="onus_id" class="form-label">ONU</label>
                 <select class="form-select select2" id="onus_id" name="onus_id" aria-label="Default select example" alue="<?= isset($register) ? $register->onu : '' ?>">
-                    <option selected>Selecione a Onu</option>
                     <?php foreach ($onus as $onu) : ?>
                         <option value="<?= $onu['id'] ?>"><?= $onu['onu_name'] ?></option>
                     <?php endforeach; ?>
@@ -78,8 +76,6 @@
             <div class="mt-3 col-md-4">
                 <label for="estadoCivil" class="form-label">Estado Civil</label>
                 <select class="form-control select2" id="estadoCivil" aria-label="Estado civil">
-                    <option selected>Selecione o Estado Civil</option>
-                    <option value="1">----------</option>
                     <option value="1">Solteiro(a)</option>
                     <option value="2">Casado(a)</option>
                     <option value="2">Divórciado(a)</option>
@@ -97,7 +93,6 @@
             <div class="mt-3 col-md-3">
                 <label for="tipoContato1" class="form-label">Tipo:</label>
                 <select class="form-control select2" id="tipoContato1" >
-                    <option selected>Tipo do Telefone</option>
                     <option value="1">Residencial</option>
                     <option value="2">Comercial</option>
                 </select>
@@ -110,7 +105,6 @@
             <div class="mt-3 col-md-3">
                 <label for="tipoContato2" class="form-label">Tipo:</label>
                 <select class="form-control select2" id="tipoContato2" aria-label="Default select example">
-                    <option selected>Tipo do Telefone</option>
                     <option value="1">Residencial</option>
                     <option value="2">Comercial</option>
                 </select>

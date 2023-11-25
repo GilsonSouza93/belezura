@@ -20,11 +20,6 @@ class AddPops extends Migration
                 'constraint' => 255,
             ],
 
-            'population' => [
-                'type' => 'INT',
-                'constraint' => 11,
-            ],
-
             'ibge_code' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,

@@ -18,6 +18,7 @@ class BillstoPayModel extends Model
         'id',
         'empresa',
         'description',
+<<<<<<< Updated upstream
         'pop',
         'suplier',
         'payment',
@@ -29,6 +30,12 @@ class BillstoPayModel extends Model
         'payout',
         'installment',
         'created_at',
+=======
+        'pop_id',
+        'supplier_id',
+        'payment_id',
+        'fixvalue_id',
+>>>>>>> Stashed changes
         'updated_at',
         'deleted_at',
     ];
