@@ -89,7 +89,7 @@ class AddPaymentPlans extends Migration
                 "constraint" => 5,
             ],
 
-        
+            'created_at timestamp DEFAULT current_timestamp NOT NULL',
         ]);
 
         $this->forge->addKey('id', true);

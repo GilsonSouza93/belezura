@@ -15,270 +15,210 @@ class AddRadius extends Migration
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
-
-            'radius_pop' => [
-                'type' => 'INT',
-                'constraint' => 5,
-            ],
-
-            'radius_ippool' => [
+            'ip_pool' => [
                 'type' => 'INT',
                 'constraint' => 255,
             ],
-
-            'radius_user' => [
+            'user' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
-
-            'radius_password' => [
+            'password' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
-
-            'radius_prefxipv6' => [
+            'ipv6_prefix' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
-
             ],
-
-            'radius_ipv6pool' => [
+            'ipv6_pool' => [
                 'type' => 'VARCHAR',
-                'default' => false,
+                'constraint' => 255,
             ],
-
-            'radius_ippoolblock' => [
+            'ip_pool_block' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255.
+                'constraint' => 255,
             ],
-
-            'radius_andressip' => [
+            'ip_address' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255.
+                'constraint' => 255,
             ],
-
-            'radius_name' => [
+            'name' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255.
+                'constraint' => 255,
             ],
-
-            'radius_type' => [
+            'type' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255.
+                'constraint' => 255,
             ],
-
-            'radius_port' => [
+            'port' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255.
+                'constraint' => 255,
             ],
-
-            'radius_secretword' => [
+            'secret_word' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255.
+                'constraint' => 255,
             ],
-
-            'radius_nasip' => [
+            'nas_ip' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255.
+                'constraint' => 255,
             ],
-
-            'radius_extratype' => [
+            'extra_type' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255.
+                'constraint' => 255,
             ],
-
-            'radius_iporigin' => [
+            'ip_origin' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255.
+                'constraint' => 255,
             ],
-
-            'radius_radiusconfig' => [
+            'radius_config' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255.
+                'constraint' => 255,
             ],
-
-            'radius_port2' => [
+            'port_2' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255.
+                'constraint' => 255,
             ],
-
-            'radius_password2' => [
+            'password_2' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255.
+                'constraint' => 255,
             ],
-
-            'radius_smtpversion' => [
+            'smtp_version' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255.
+                'constraint' => 255,
             ],
-
-            'radius_snmpcommunity' => [
+            'snmp_community' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255.
+                'constraint' => 255,
             ],
-
-            'radius_snmpport' => [
+            'snmp_port' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255.
+                'constraint' => 255,
             ],
-
-            'radius_httpport' => [
+            'http_port' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255.
+                'constraint' => 255,
             ],
-
-            'radius_dnsprimary' => [
+            'dns_primary' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255.
+                'constraint' => 255,
             ],
-
-            'radius_dnssecundary' => [
+            'dns_secondary' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255.
+                'constraint' => 255,
             ],
-
-            'radius_accountingupdate' => [
+            'accounting_update' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255.
+                'constraint' => 255,
             ],
-
-            'radius_portsecundary' => [
+            'port_secondary' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255.
+                'constraint' => 255,
             ],
-
-            'radius_latlong' => [
+            'lat_long' => [
                 'type' => 'INT',
-                'constraint' => 255.
+                'constraint' => 255,
             ],
-
-            'radius_activeradius' => [
+            'active_radius' => [
                 'type' => 'BOOLEAN',
-                'default' => false,
+                'default' => 0,
             ],
-
-            'radius_costumerdisponible' => [
+            'customer_available' => [
                 'type' => 'BOOLEAN',
-                'default' => false,
+                'default' => 0,
             ],
-
-            'radius_verifylogin' => [
+            'verify_login' => [
                 'type' => 'BOOLEAN',
-                'default' => false,
+                'default' => 0,
             ],
-
-            'radius_verifymac' => [
+            'verify_mac' => [
                 'type' => 'BOOLEAN',
-                'default' => false,
+                'default' => 0,
             ],
-
-            'radius_verifymaclogin' => [
+            'verify_mac_login' => [
                 'type' => 'BOOLEAN',
-                'default' => false,
+                'default' => 0,
             ],
-
-            'radius_rrdinterfaces' => [
+            'rrd_interfaces' => [
                 'type' => 'BOOLEAN',
-                'default' => false,
+                'default' => 0,
             ],
-
-            'radius_jsonparameter' => [
+            'json_parameters' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255.
+                'constraint' => 255,
             ],
-
-            'radius_autoreload' => [
+            'auto_reload' => [
                 'type' => 'BOOLEAN',
-                'default' => false,
+                'default' => 0,
             ],
-
-            'radius_simutaneouserlogin' => [
+            'simultaneous_login' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255.
+                'constraint' => 255,
             ],
-
-            'radius_checkradius' => [
+            'check_radius' => [
                 'type' => 'BOOLEAN',
-                'default' => false,
+                'default' => 0,
             ],
-
-            'radius_timeoutcheck' => [
+            'timeout_check' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255.
+                'constraint' => 255,
             ],
-
-            'radius_checkconexion' => [
+            'check_connection' => [
                 'type' => 'BOOLEAN',
-                'default' => false,
+                'default' => 0,
             ],
-
-            'radius_timeoutgraphics' => [
+            'timeout_graphics' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255.
+                'constraint' => 255,
             ],
-
-            'radius_andressipacess' => [
+            'ip_address_access' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255.
+                'constraint' => 255,
             ],
-
-            'radius_acesstyp' => [
+            'access_type' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255.
+                'constraint' => 255,
             ],
-
-            'radius_acessport' => [
+            'access_port' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255.
+                'constraint' => 255,
             ],
-
-            'radius_acessuser' => [
+            'access_user' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255.
+                'constraint' => 255,
             ],
-
-            'radius_acesspassword' => [
+            'access_password' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255.
+                'constraint' => 255,
             ],
-
-            'radius_shortcode' => [
+            'short_code' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255.
+                'constraint' => 255,
             ],
-
             'company_id' => [
-                'type' => 'int',
+                'type' => 'INT',
                 'constraint' => 30,
             ],
-
-            'created_at' => [
-                'type' => 'DATETIME',
-                'null' => true,
-            ],
-
             'updated_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
             ],
-
             'deleted_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
             ],
 
+            'created_at timestamp DEFAULT current_timestamp NOT NULL',
         ]);
 
-        $this->forge->addPrimaryKey('id', true);
-
+        $this->forge->addKey('id', true);
         $this->forge->addForeignKey('company_id', 'companies', 'id');
-        $this->forge->addForeignKey('radius_pop', 'pops', 'id');
 
-        $this->forge->CreateTable('radius');
+        $this->forge->createTable('radius');
     }
 
     public function down()
     {
-        $this->forge->DropTable('radius');
+        $this->forge->dropTable('radius');
     }
 }

@@ -604,7 +604,7 @@ abstract class BaseModel
         $company_id = $session->get('company_id');
 
         if (empty($company_id)) {
-            throw new ModelException('Company ID not set in session.');
+            return [];
         }
 
         if ($this->tempAllowCallbacks) {

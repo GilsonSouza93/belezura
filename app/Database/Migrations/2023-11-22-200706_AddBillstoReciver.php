@@ -53,28 +53,23 @@ class BillstoReceiver extends Migration
                 'constraint' => '255',
             ],
 
-<<<<<<< Updated upstream
-
-
-            'billstoreceiver_emissiondate' => [
+            'emissiondate' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
 
-            'billstoreceiver_invoice' => [
+            'invoice' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
 
-            'billstoreceiver_payout' => [
+            'payout' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
 
-            'billstoreceiver_potiontype' => [
-=======
             'potion_type' => [
->>>>>>> Stashed changes
+
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
@@ -83,12 +78,6 @@ class BillstoReceiver extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
-
-            'create_at' => [
-                'type' => 'DATETIME',
-                'null' => true,
-            ],
-
 
             "company_id" => [
                 "type" => "int",
@@ -105,26 +94,17 @@ class BillstoReceiver extends Migration
                 'null' => true,
             ],
 
-            'created_at timestamp DEFAULT current_timestamp NOT NULL',
-
-<<<<<<< Updated upstream
-=======
             'pop_id' => [
                 "type" => "int",
                 "constraint" => 5,
             ],
-
+            
             'supplier_id' => [
                 "type" => "int",
                 "constraint" => 5,
             ],
 
-            'created_at' => [
-                'type' => 'DATETIME',
-                'null' => true,
-            ],
->>>>>>> Stashed changes
-
+            'created_at timestamp DEFAULT current_timestamp NOT NULL',
         ]);
 
         $this->forge->addKey('id', true);
@@ -133,11 +113,11 @@ class BillstoReceiver extends Migration
         $this->forge->addForeignKey('supplier_id', 'suppliers', 'id');
         $this->forge->addForeignKey('company_id', 'companies', 'id');
 
-        $this->forge->createTable('billsToReceiver');
+        $this->forge->createTable('bills_to_receive');
     }
 
     public function down()
     {
-        $this->forge->DropTable('billstoReceiver');
+        $this->forge->DropTable('bills_to_receive');
     }
 }

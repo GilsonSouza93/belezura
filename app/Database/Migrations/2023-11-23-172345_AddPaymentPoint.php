@@ -42,16 +42,12 @@ class AddPaymentPoint extends Migration
 
             ],
 
-<<<<<<< Updated upstream:app/Database/Migrations/2023-11-23-172345_AddPaymentPoint.php
             'billsDiscount' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
 
             'adminDiscount' => [
-=======
-            'bills_discount' => [
->>>>>>> Stashed changes:app/Database/Migrations/2023-11-23-172345_AddReceiverPoint.php
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
@@ -145,28 +141,20 @@ class AddPaymentPoint extends Migration
                 "type" => "int",
                 "constraint" => 5,
             ],
-        ]);
 
-<<<<<<< Updated upstream:app/Database/Migrations/2023-11-23-172345_AddPaymentPoint.php
             'updated_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
             ],
 
-           
-           ]); 
-           $this->forge->addPrimaryKey('id'); 
-           
-           $this->forge->addForeignKey('company_id', 'companies', 'id');
-           
-           $this->forge->CreateTable('paymentPoint');
-=======
+            'created_at timestamp DEFAULT current_timestamp NOT NULL',
+        ]);
+
         $this->forge->addPrimaryKey('id');
 
         $this->forge->addForeignKey('company_id', 'companies', 'id');
->>>>>>> Stashed changes:app/Database/Migrations/2023-11-23-172345_AddReceiverPoint.php
 
-        $this->forge->CreateTable('receiverPoint');
+        $this->forge->CreateTable('paymentPoint');
     }
 
     public function down()

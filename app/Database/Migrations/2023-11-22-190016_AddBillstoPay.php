@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class AddBillstoPayModel extends Migration
+class AddBillstoPay extends Migration
 {
     public function up()
     {
@@ -44,11 +44,6 @@ class AddBillstoPayModel extends Migration
                 'constraint' => '255',
             ],
 
-<<<<<<< Updated upstream
-
-=======
-            
->>>>>>> Stashed changes
             'value_id' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
@@ -98,21 +93,12 @@ class AddBillstoPayModel extends Migration
                 'type' => 'DATETIME',
                 'null' => true,
             ],
-<<<<<<< Updated upstream
-
-=======
-    
->>>>>>> Stashed changes
             'deleted_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
             ],
 
-<<<<<<< Updated upstream
             'created_at timestamp DEFAULT current_timestamp NOT NULL',
-=======
-            'created_at timestamp DEFAULT current_timestamp NOT NULL',	
->>>>>>> Stashed changes
         ]);
 
         $this->forge->addKey('id', true);
@@ -121,11 +107,11 @@ class AddBillstoPayModel extends Migration
         $this->forge->addForeignKey('supplier_id', 'suppliers', 'id');
         $this->forge->addForeignKey('company_id', 'companies', 'id');
 
-        $this->forge->createTable('billstoPay');
+        $this->forge->createTable('bills_to_pay');
     }
 
     public function down()
     {
-        $this->forge->DropTable('billstoPay');
+        $this->forge->DropTable('bills_to_pay');
     }
 }

@@ -65,7 +65,7 @@ class AddVehicle extends Migration
             'created_at timestamp DEFAULT current_timestamp NOT NULL',
         ]);
 
-        $this->forge->addPrimaryKey('id', true);
+        $this->forge->addKey('id', true);
 
         $this->forge->addForeignKey('company_id', 'companies', 'id');
 
