@@ -19,10 +19,7 @@ class CustomerModel extends Model
         'cpf',
         'date_of_birth',
         'email',
-        'phone1',
-        'phone1_type',
-        'phone2',
-        'phone2_type',
+        'phones',
         'zipcode',
         'address1',
         'address2',
@@ -62,16 +59,14 @@ class CustomerModel extends Model
         $fieldsToSearch = [
             'name',
             'email',
-            'phone1',
-            'phone2',
+            'phones',
         ];
 
         $fieldsToReturn = [
             'id',
             'name',
             'email',
-            'phone1',
-            'phone2',
+            'phones',
         ];
 
         $createdAtName = 'created_at';

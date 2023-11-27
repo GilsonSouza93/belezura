@@ -88,7 +88,7 @@
         <div class="row">
             <div class="mt-3 col-md-3">
                 <label for="telefone1Cliente" class="form-label">Telefone 1</label>
-                <input type="tel" id="telefone1Cliente" class="form-control" name="tel" id="tel" placeholder="Telefone" value="<?= isset($register) ? $register->phone1 : '' ?>">
+                <input type="tel" id="telefone1Cliente" class="form-control" name="phones" id="phones" placeholder="Telefone" value="<?= isset($register) ? $register->phone1 : '' ?>">
             </div>
             <div class="mt-3 col-md-3">
                 <label for="tipoContato1" class="form-label">Tipo:</label>
@@ -100,7 +100,7 @@
 
             <div class="mt-3 col-md-3">
                 <label for="telefone2Cliente" class="form-label">Telefone 2</label>
-                <input type="tel" id="telefone2Cliente" class="form-control" name="tel" id="tel" placeholder="Telefone" value="<?= isset($register) ? $register->phone2 : '' ?>">
+                <input type="tel" id="telefone2Cliente" class="form-control" name="phones" id="phones" placeholder="Telefone" value="<?= isset($register) ? $register->phone2 : '' ?>">
             </div>
             <div class="mt-3 col-md-3">
                 <label for="tipoContato2" class="form-label">Tipo:</label>
