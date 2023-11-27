@@ -16,10 +16,6 @@ class PopModel extends Model
 
     protected $allowedFields    = [
         "city",
-<<<<<<< Updated upstream
-        // "population",
-=======
->>>>>>> Stashed changes
         "ibge_code",
         "uf",
         "carrier",

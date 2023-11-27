@@ -12,20 +12,25 @@ class PoleController extends BaseController
     public $viewPath = 'equipamentos/poste';
     public $baseRoute = '/equipamentos/poste';
 
+
     public function __construct()
     {
         $this->mainModel = model('PoleModel');
+        $popModel = model('PopModel');
+
+        $this->data['pops'] = $popModel->where('active', true)->findAll();
+
         return parent::__construct();
     }
 
     public function save()
     {
         $json = $this->request->getJSON();
-
+        
         $data =[
             'latitude' => $json->latitude,
             'longitude' => $json->longitude,
-            'pop' => $json->pop,
+            'pop' => $json->pop_id,
             'localizacao' => $json->localizacao,
             'djson' => $json->djson,
             'observacao' => $json->observacao,
@@ -34,6 +39,7 @@ class PoleController extends BaseController
             'radio' => $json->radio,
             'active' => $json->active,
             'caixa_subterranea' => $json->caixa_subterranea,
+            'company_id' => session()->get('company_id'),
         ];
 
         $response = $this->mainModel->save($data);
@@ -49,15 +55,5 @@ class PoleController extends BaseController
             'status' => 'error',
             'message' => 'Erro ao cadastrar o poste!',
         ]);
-    }
-
-    public function search()
-    {
-        $data = $this->request->getJSON();
-        
-        $postes = $this->mainModel->search($data->search);
-
-        return $this->response->setJSON($postes);
-    }
-    
+    }    
 }

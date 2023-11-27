@@ -171,7 +171,7 @@
             </nav>
         </header>
 
-        <div class="m-1">
+        <div class="m-4">
             <?= $this->renderSection('content') ?>
         </div>
     </div>

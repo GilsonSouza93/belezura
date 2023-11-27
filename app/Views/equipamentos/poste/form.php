@@ -25,72 +25,89 @@
     </div>
 
     <form>
+        
         <div class="row">
-            <div class="mt-3 col-md-4">
-                <label for="latitude" class="form-label">Latitude</label>
-                <input type="text" class="form-control" id="latitude" placeholder="Insira o parâmetro">
+            <div class="col-md-8">
+                <div class="row mt-4">
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="latitude" name="latitude" placeholder="Latitude">
+                            <label for="latitude">Latitude</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="longitude" name="longitude" placeholder="Longitude">
+                            <label for="longitude" class="">Longitude</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <select class="form-select" id="pop_id" name="pop_id">
+                                <?php foreach ($pops as $item) : ?>
+                                    <option value="<?= $item['id'] ?>"><?= $item['name'] ?></option>
+                                <?php endforeach ?>
+                            </select>
+                            <label for="pop">POP</label>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="row mt-4">
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input id="localizacao" type="text" class="form-control" name="localizacao" placeholder="Localização">
+                            <label for="localizacao">Localização</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-floating">
+                            <input id="djson" type="text" class="form-control" name="djson">
+                            <label for="djson">DJSON</label>
+                        </div>
+                    </div>
+        
+                    <div class="col-md-4">
+                        <div class="form-floating mb-3">
+                            <textarea type="text" class="form-control" id="observacao" placeholder="observacao" name="observacao"></textarea>
+                            <label for="observacao">Observação</label>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="mt-3 col-md-4">
-                <label for="longitude" class="form-label">Longitude</label>
-                <input type="text" class="form-control" id="longitude" placeholder="Insira o parâmetro">
-            </div>
-            <div class="mt-3 col-md-4">
-                <label for="pop" class="form-label">POP</label>
-                <select class="form-control" id="pop">
-                    <?php foreach ($pops as $item) : ?>
-                        <option value="<?= $item['id'] ?>"><?= $item['name'] ?></option>
-                    <?php endforeach ?>
-                </select>
-            </div>
-        </div>
-
-        <div class="row mt-3">
-            <div class="mt-3 col-md-4">
-                <label for="localizacao" class="form-label">Localização</label>
-                <input id="localizacao" type="text" class="form-control" placeholder="Insira o parâmetro">
-            </div>
-            <div class="mt-3 col-md-4">
-                <label for="djson" class="form-label">DJSON</label>
-                <input id="djson" type="text" class="form-control" name="price" placeholder="Insira o parâmetro">
-            </div>
-        </div>
-
-        <!-- tynmce -->
-
-        <div class="row mt-3">
             <div class="col-md-4">
-                <label for="observacao" class="form-label">Observação</label>
-                <input id="observacao" type="text" class="form-control" placeholder="Insira o parâmetro">
-            </div>
-            <div class="mt-3 col-md-4 row">
-                <div class="col">
-                    <h6>Tipo de Equipamento</h6>
-                    <div class="form-check">
-                        <input type="checkbox" id="cto">
-                        <label for="cto" class="form-label">CTO</label>
+                <div class="row mt-2 border mx-1 p-3">
+                    <div class="col">
+                        <h6>Tipo de Equipamento</h6>
+                        <div class="form-check">
+                            <input type="checkbox" id="cto">
+                            <label for="cto" class="form-label">CTO</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="caixa_hermetica">
+                            <label for="caixa_hermetica" class="form-label">Caixa Hermética</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="radio">
+                            <label for="radio" class="form-label">Rádio</label>
+                        </div>
                     </div>
-                    <div class="form-check">
-                        <input type="checkbox" id="caixa_hermetica">
-                        <label for="caixa_hermetica" class="form-label">Caixa Hermética</label>
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" id="radio">
-                        <label for="radio" class="form-label">Rádio</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <h6>Status/Posição</h6>
-                    <div class="form-check">
-                        <input type="checkbox" id="active">
-                        <label for="active" class="form-label">Ativo</label>
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" id="caixa_subterranea">
-                        <label for="caixa_subterranea" class="form-label">Caixa Subterrânea</label>
+                    <div class="col">
+                        <h6>Status/Posição</h6>
+                        <div class="form-check">
+                            <input type="checkbox" id="active">
+                            <label for="active" class="form-label">Ativo</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="caixa_subterranea">
+                            <label for="caixa_subterranea" class="form-label">Caixa Subterrânea</label>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
+
 
     </form>
 </div>
@@ -149,7 +166,7 @@
         const body = {
             latitude: document.getElementById('latitude').value,
             longitude: document.getElementById('longitude').value,
-            pop: document.getElementById('pop').value,
+            pop_id: document.getElementById('pop_id').value,
             localizacao: document.getElementById('localizacao').value,
             djson: document.getElementById('djson').value,
             observacao: document.getElementById('observacao').value,
@@ -248,34 +265,5 @@
             }
         });
     };
-
-
-
-    const submitBtn = document.querySelector('#btnSave');
-    const form = document.querySelector('form');
-    const url = '<?= $baseRoute ?>/save';
-
-    submitBtn.addEventListener('click', event => {
-        event.preventDefault();
-        showLoading();
-
-        const formData = new FormData(form);
-
-        fetch(url, {
-                method: 'POST',
-                body: formData
-            }).then(response => response.json())
-            .then(data => {
-                hideLoading();
-                if (data.error) {
-                    showToast(data.message, 'error');
-                } else {
-                    showToast(data.message, 'success');
-                    window.location.href = '<?= $baseRoute ?>';
-                }
-            }).catch(error => {
-                console.log(error);
-            });
-    });
 </script>
 <?= $this->endSection() ?>
