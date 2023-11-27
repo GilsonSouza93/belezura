@@ -20,6 +20,7 @@ class CustomerModel extends Model
         'date_of_birth',
         'email',
         'phones',
+        'phones',
         'zipcode',
         'address1',
         'address2',

@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class BillstoreceiverModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'billstoreceivers';
+    protected $table            = 'bills_to_receive';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
@@ -16,7 +16,7 @@ class BillstoreceiverModel extends Model
     protected $allowedFields    = [
         'id',
         'company_id',
-        'pop',
+        'pop_id',
         'supplier',
         'form_payment',
         'fix_value',
@@ -28,6 +28,9 @@ class BillstoreceiverModel extends Model
         'date_issue',
         'payout',
         'portion',
+        'deleted_at',
+        'created_at',
+        'updated_at',
     ];
     
     // Dates
@@ -53,4 +56,42 @@ class BillstoreceiverModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+    public function search($data)
+    {
+        $fieldsToSearch = [
+            'name',
+            'supplier',
+            'value',
+        ];
+
+        $fieldsToReturn = [
+            'id',
+            'supplier',
+            'value',
+            'date_issue',
+            'payout',
+            
+        ];
+
+        $search = null;
+
+        if (isset($data['search']))
+            $search = $data['search'];
+
+        $query = $this->db->table($this->table)
+            ->select($fieldsToReturn);
+
+        if ($search) {
+            $query->groupStart();
+            foreach ($fieldsToSearch as $field) {
+                $query->orLike($field, $search);
+            }
+            $query->groupEnd();
+        }
+
+        $query->orderBy('created_at', 'DESC');
+        $result = $query->get()->getResultArray();
+
+        return $result;
+    }
 }

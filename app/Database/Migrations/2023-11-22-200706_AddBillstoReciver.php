@@ -13,12 +13,12 @@ class BillstoReceiver extends Migration
                 'type' => 'INT',
                 'auto_increment' => true,
             ],
-            'form' => [
+            'form_payment' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
 
-            'value_fixed' => [
+            'fix_value' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
@@ -28,22 +28,27 @@ class BillstoReceiver extends Migration
                 'constraint' => '255',
             ],
 
+            'obs' => [
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+            ],
+
+            'doc_type' => [
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+            ],
+
             'description' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
 
-            'doctype' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
-            ],
-
-            'emission_date' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
-            ],
-
             'invoice' => [
+                'type' => 'VARCHAR',
+                'constraint' => '255',
+            ],
+
+            'date_issue' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
@@ -53,23 +58,7 @@ class BillstoReceiver extends Migration
                 'constraint' => '255',
             ],
 
-            'emissiondate' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
-            ],
-
-            'invoice' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
-            ],
-
-            'payout' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
-            ],
-
-            'potion_type' => [
-
+            'portion' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
@@ -99,7 +88,7 @@ class BillstoReceiver extends Migration
                 "constraint" => 5,
             ],
             
-            'supplier_id' => [
+            'supplier' => [
                 "type" => "int",
                 "constraint" => 5,
             ],
@@ -110,7 +99,7 @@ class BillstoReceiver extends Migration
         $this->forge->addKey('id', true);
 
         $this->forge->addForeignKey('pop_id', 'pops', 'id');
-        $this->forge->addForeignKey('supplier_id', 'suppliers', 'id');
+        $this->forge->addForeignKey('supplier', 'suppliers', 'id');
         $this->forge->addForeignKey('company_id', 'companies', 'id');
 
         $this->forge->createTable('bills_to_receive');
