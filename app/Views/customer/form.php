@@ -24,7 +24,7 @@
     </div>
 
     <form class="card p-4">
-        
+
         <?php if (isset($register)) : ?>
             <input type="hidden" name="id" value="<?= $register->id ?>">
         <?php endif ?>
@@ -43,8 +43,8 @@
                 </select>
             </div>
             <div class="mt-3 col-md-3">
-                <label for="onus_id" class="form-label">ONU</label>
-                <select class="form-select select2" id="onus_id" name="onus_id" aria-label="Default select example" alue="<?= isset($register) ? $register->onu : '' ?>">
+                <label for="onu_id" class="form-label">ONU</label>
+                <select class="form-select select2" id="onu_id" name="onu_id" aria-label="Default select example" alue="<?= isset($register) ? $register->onu_id : '' ?>">
                     <?php foreach ($onus as $onu) : ?>
                         <option value="<?= $onu['id'] ?>"><?= $onu['onu_name'] ?></option>
                     <?php endforeach; ?>
@@ -63,8 +63,8 @@
                 <input type="text" id="cpf" class="form-control" name="cpf" placeholder="Insira o Cpf" value="<?= isset($register) ? $register->cpf : '' ?>">
             </div>
             <div class="mt-3 col-md-4">
-                <label for="dataNascimento" class="form-label">Data de Nascimento</label>
-                <input type="date" id="dataNascimento" class="form-control" name="date" placeholder="Data de nascimento" value="<?= isset($register) ? $register->date_of_birth : '' ?>">
+                <label for="date_of_birth" class="form-label">Data de Nascimento</label>
+                <input type="date" id="date_of_birth" class="form-control" name="date_of_birth" placeholder="Data de nascimento" value="<?= isset($register) ? $register->date_of_birth : '' ?>">
             </div>
         </div>
 
@@ -87,24 +87,12 @@
 
         <div class="row">
             <div class="mt-3 col-md-3">
-                <label for="telefone1Cliente" class="form-label">Telefone 1</label>
-                <input type="tel" id="telefone1Cliente" class="form-control" name="phones" id="phones" placeholder="Telefone" value="<?= isset($register) ? $register->phone1 : '' ?>">
+                <label for="telefone1Cliente" class="form-label">Telefone</label>
+                <input type="tel" id="telefone1Cliente" class="form-control" name="phones" id="phones" placeholder="Telefone" value="<?= isset($register) ? $register->phones : '' ?>">
             </div>
             <div class="mt-3 col-md-3">
                 <label for="tipoContato1" class="form-label">Tipo:</label>
-                <select class="form-control select2" id="tipoContato1" >
-                    <option value="1">Residencial</option>
-                    <option value="2">Comercial</option>
-                </select>
-            </div>
-
-            <div class="mt-3 col-md-3">
-                <label for="telefone2Cliente" class="form-label">Telefone 2</label>
-                <input type="tel" id="telefone2Cliente" class="form-control" name="phones" id="phones" placeholder="Telefone" value="<?= isset($register) ? $register->phone2 : '' ?>">
-            </div>
-            <div class="mt-3 col-md-3">
-                <label for="tipoContato2" class="form-label">Tipo:</label>
-                <select class="form-control select2" id="tipoContato2" aria-label="Default select example">
+                <select class="form-control select2" id="tipoContato1">
                     <option value="1">Residencial</option>
                     <option value="2">Comercial</option>
                 </select>
@@ -113,33 +101,33 @@
 
         <div class="row">
             <div class="mt-3 col-md-3">
-                <label for="cepCliente" class="form-label">Cep</label>
-                <input type="text" id="cepCliente"  class="form-control" id="zipcode" name="zipcode" placeholder="Cep" value="<?= isset($register) ? $register->zipcode : '' ?>">
+                <label for="zipcode" class="form-label">Cep</label>
+                <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="Cep" value="<?= isset($register) ? $register->zipcode : '' ?>">
             </div>
 
             <div class="mt-3 col-md-5">
-                <label for="ruaCliente" class="form-label">Rua</label>
-                <input type="text" id="ruaCliente" class="form-control" id="address1" name="address1" placeholder="Rua" value="<?= isset($register) ? $register->address1 : '' ?>">
+                <label for="address1" class="form-label">Rua</label>
+                <input type="text" class="form-control" id="address1" name="address1" placeholder="Rua" value="<?= isset($register) ? $register->address1 : '' ?>">
             </div>
             <div class="mt-3 col-md-4">
-                <label for="bairroCliente" class="form-label">Bairro</label>
-                <input type="text" id="bairroCliente" class="form-control" id="address2" name="address2" placeholder="Bairro" value="<?= isset($register) ? $register->address2 : '' ?>">
+                <label for="address2" class="form-label">Bairro</label>
+                <input type="text" class="form-control" id="address2" name="address2" placeholder="Bairro" value="<?= isset($register) ? $register->address2 : '' ?>">
             </div>
         </div>
         <div class="row">
             <div class="mt-3 col-md-2">
-                <label for="numeroCasaCliente" class="form-label">Número</label>
-                <input type="text" id="numeroCasaCliente" class="form-control" id="number" name="number" placeholder="Número" value="<?= isset($register) ? $register->number : '' ?>">
+                <label for="number" class="form-label">Número</label>
+                <input type="text" class="form-control" id="number" name="number" placeholder="Número" value="<?= isset($register) ? $register->number : '' ?>">
             </div>
 
             <div class="mt-3 col-md-3">
-                <label for="complementoCliente" class="form-label">Complemento</label>
-                <input type="text" id="complementoCliente" class="form-control" id="complement" name="complement" placeholder="Complemento" value="<?= isset($register) ? $register->complement : '' ?>">
+                <label for="complement" class="form-label">Complemento</label>
+                <input type="text" class="form-control" id="complement" name="complement" placeholder="Complemento" value="<?= isset($register) ? $register->complement : '' ?>">
             </div>
 
             <div class="mt-3 col-md-3">
-                <label for="referenciaCliente" class="form-label">Ponto de Referência</label>
-                <input type="text" id="referenciaCliente" class="form-control" id="referencia" name="referencia" placeholder="Ponto de referência" value="<?= isset($register) ? $register->reference_point : '' ?>">
+                <label for="reference_point" class="form-label">Ponto de Referência</label>
+                <input type="text" class="form-control" id="reference_point" name="reference_point" placeholder="Ponto de referência" value="<?= isset($register) ? $register->reference_point : '' ?>">
             </div>
 
             <div class="mt-3 col-md-4">
@@ -184,7 +172,6 @@
 <?= $this->section('script') ?>
 
 <script>
-
     const submitBtn = document.querySelector('#submit-btn');
     const form = document.querySelector('form');
     const url = '<?= $baseRoute ?>/save';
@@ -196,23 +183,23 @@
         const formData = new FormData(form);
 
         fetch(url, {
-            method: 'POST',
-            body: formData
-        }).then(response => response.json())
-        .then(data => {
-            hideLoading();
-            if (data.error) {
-                showToast(data.message, 'error');
-            } else {
-                showToast(data.message, 'success');
-
-            }
-        }).catch(error => {
-            console.log(error);
-        });
+                method: 'POST',
+                body: formData
+            }).then(response => response.json())
+            .then(data => {
+                hideLoading();
+                if (data.status === 'success') {
+                    showToast(data.message, 'success');
+                    setTimeout(() => {
+                        window.location.href = '<?= $baseRoute ?>';
+                    }, 1000);
+                } else {
+                    showToast(data.message, 'error');
+                }
+            }).catch(error => {
+                console.log(error);
+            });
     });
-
-
 </script>
 
 <?= $this->endSection() ?>

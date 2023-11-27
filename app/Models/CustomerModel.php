@@ -20,6 +20,7 @@ class CustomerModel extends Model
         'date_of_birth',
         'email',
         'phones',
+        'phones',
         'zipcode',
         'address1',
         'address2',
@@ -27,7 +28,8 @@ class CustomerModel extends Model
         'complement',
         'reference_point',
         'uf',
-        'company_id'
+        'company_id',
+        'onu_id',
     ];
 
     // Dates
@@ -65,8 +67,8 @@ class CustomerModel extends Model
         $fieldsToReturn = [
             'id',
             'name',
-            'email',
             'phones',
+            'address1',
         ];
 
         $createdAtName = 'created_at';
@@ -90,6 +92,6 @@ class CustomerModel extends Model
         $query->orderBy($createdAtName, 'DESC');
         $result = $query->get()->getResultArray();
 
-        return $result;
+    return $result;
     }
 }

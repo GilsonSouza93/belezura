@@ -16,8 +16,7 @@ class CashboxModel extends Model
     protected $allowedFields    = [
         'id',
         'type',
-        'pop',
-        'description',
+        'pop_id',
         'payment_point',
         'payment_plans',
         'payment_form',
@@ -55,11 +54,29 @@ class CashboxModel extends Model
     public function search($data)
     {
         $fieldsToSearch = [
-            
+            'id',
+            'pop_id',
+            'payment_point',
+            'payment_plans',
+            'payment_form',
+            'value',
+            'checking_proof',
+            'date',
+            'obs',
         ];
 
         $fieldsToReturn = [
-            
+            'id',
+            'type',
+            'pop_id',
+            'payment_point',
+            'payment_plans',
+            'payment_form',
+            'value',
+            'checking_proof',
+            'date',
+            'obs',
+            'data',
         ];
 
         $createAtName = 'created_at';

@@ -4,10 +4,10 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class BillstoreceiverModel extends Model
+class CashboxModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'bills_to_receive';
+    protected $table            = 'cashboxes';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
@@ -15,24 +15,22 @@ class BillstoreceiverModel extends Model
     protected $protectFields    = true;
     protected $allowedFields    = [
         'id',
-        'company_id',
+        'type',
         'pop_id',
-        'supplier',
-        'form_payment',
-        'fix_value',
+        'payment_point',
+        'payment_plans',
+        'payment_form',
         'value',
+        'checking_proof',
+        'date',
         'obs',
-        'doc_type',
-        'description',
-        'invoice',
-        'date_issue',
-        'payout',
-        'portion',
-        'deleted_at',
+        'data',
+        'company_id',
         'created_at',
         'updated_at',
+        'deleted_at',
     ];
-    
+
     // Dates
     protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
@@ -59,19 +57,27 @@ class BillstoreceiverModel extends Model
     public function search($data)
     {
         $fieldsToSearch = [
-            'name',
-            'supplier',
+            'id',
+            'pop_id',
+            'payment_point',
+            'payment_form',
             'value',
+            'date',
+            'obs',
         ];
 
         $fieldsToReturn = [
             'id',
-            'supplier',
+            'type',
+            'pop_id',
+            'payment_point',
+            'payment_form',
             'value',
-            'date_issue',
-            'payout',
-            
+            'date',
+            'obs',
         ];
+
+        $createAtName = 'created_at';
 
         $search = null;
 
@@ -89,7 +95,7 @@ class BillstoreceiverModel extends Model
             $query->groupEnd();
         }
 
-        $query->orderBy('created_at', 'DESC');
+        $query->orderBy($createAtName, 'DESC');
         $result = $query->get()->getResultArray();
 
         return $result;
