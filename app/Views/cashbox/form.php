@@ -41,8 +41,8 @@
                 </select>
             </div>
             <div class="mt-3 col">
-                <label for="pop" class="form-label">POP</label>
-                <select class="form-control select2" id="pop" name="pop">
+                <label for="pop_id" class="form-label">POP</label>
+                <select class="form-control select2" id="pop_id" name="pop_id">
                     <option selected>Selecione o Local POP</option>
                     <?php foreach ($pops as $pop) : ?>
                     <option value="<?= $pop['id'] ?>"><?= $pop['city'] ?></option>

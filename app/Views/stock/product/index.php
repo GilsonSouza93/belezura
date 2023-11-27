@@ -23,7 +23,6 @@
 </div>
 <?= $this->endSection() ?>
 
-
 <?= $this->section('script') ?>
 
 <script>

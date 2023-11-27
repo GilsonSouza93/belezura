@@ -61,8 +61,8 @@
         urlFetch: window.location.href + '/search',
         tableDiv: document.getElementById('tableDiv'),
 
-        theadElements: ['nome', 'ações'],
-        tbodyElements: ['name', ['edit', 'delete']],
+        theadElements: ['Nome', 'Telefone','Endereço', 'Ações'],
+        tbodyElements: ['name', 'phones', 'address1', ['edit', 'delete']],
         searchField: document.getElementById('search'),
     }
 

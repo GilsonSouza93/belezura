@@ -46,7 +46,8 @@ class AddCustomers extends Migration
             ],
 
             'phones' => [
-                'type' => 'JSON',
+                'type' => 'VARCHAR',
+                'constraint' => '255',
                 'null' => true,
             ],
 

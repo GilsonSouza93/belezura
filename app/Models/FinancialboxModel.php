@@ -4,31 +4,31 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class CustomerModel extends Model
+class CashboxModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'customers';
+    protected $table            = 'cashboxes';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        'name',
-        'rg',
-        'cpf',
-        'date_of_birth',
-        'email',
-        'phones',
-        'zipcode',
-        'address1',
-        'address2',
-        'number',
-        'complement',
-        'reference_point',
-        'uf',
+        'id',
+        'type',
+        'pop_id',
+        'payment_point',
+        'payment_plans',
+        'payment_form',
+        'value',
+        'checking_proof',
+        'date',
+        'obs',
+        'data',
         'company_id',
-        'onu_id',
+        'created_at',
+        'updated_at',
+        'deleted_at',
     ];
 
     // Dates
@@ -54,23 +54,30 @@ class CustomerModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
-
     public function search($data)
     {
         $fieldsToSearch = [
-            'name',
-            'email',
-            'phones',
+            'id',
+            'pop_id',
+            'payment_point',
+            'payment_form',
+            'value',
+            'date',
+            'obs',
         ];
 
         $fieldsToReturn = [
             'id',
-            'name',
-            'phones',
-            'address1',
+            'type',
+            'pop_id',
+            'payment_point',
+            'payment_form',
+            'value',
+            'date',
+            'obs',
         ];
 
-        $createdAtName = 'created_at';
+        $createAtName = 'created_at';
 
         $search = null;
 
@@ -88,9 +95,9 @@ class CustomerModel extends Model
             $query->groupEnd();
         }
 
-        $query->orderBy($createdAtName, 'DESC');
+        $query->orderBy($createAtName, 'DESC');
         $result = $query->get()->getResultArray();
 
-    return $result;
+        return $result;
     }
 }
