@@ -15,6 +15,13 @@ class BillstopayController extends BaseController
     public function __construct()
     {
         $this->mainModel = model('BillsPayModel');
+
+        $popModel = model('PopModel');
+        $supplierModel = model('SupplierModel');
+
+        $this->data['pops'] = $popModel->where('active', true)->findAll();
+        $this->data['suppliers'] = $supplierModel->findAll();
+
         parent::__construct();
     }
 

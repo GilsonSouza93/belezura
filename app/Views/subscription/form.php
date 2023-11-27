@@ -40,7 +40,7 @@
         <div class="row">
             <div class="col">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="monthly_price" placeholder="Preço Mensal (USD)" name="monthly_price" required value="<?= $register->monthly_price ?? '' ?>">
+                    <input type="text" class="form-control currency_auto_numeric" id="monthly_price" placeholder="Preço Mensal (USD)" name="monthly_price" required value="<?= $register->monthly_price ?? '' ?>">
                     <label for="monthly_price">Preço Mensal (Reais)</label>
                 </div>
             </div>
@@ -101,16 +101,6 @@
 <script>
 
     document.addEventListener('DOMContentLoaded', () => {
-        // init autonumeric monthly_price
-        new AutoNumeric('#monthly_price', {
-            currencySymbol: 'R$ ',
-            decimalCharacter: ',',
-            digitGroupSeparator: '.',
-            decimalPlaces: 2,
-            minimumValue: '0',
-        });
-
-        // speed em mbps
         new AutoNumeric('#speed', {
             decimalCharacter: ',',
             digitGroupSeparator: '.',

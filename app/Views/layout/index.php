@@ -587,6 +587,14 @@
                     return 'Nenhum resultado encontrado'; // Mensagem quando não há resultados encontrados
                 }
             });
+
+            new AutoNumeric('.currency_auto_numeric', {
+                currencySymbol: 'R$ ',
+                decimalCharacter: ',',
+                digitGroupSeparator: '.',
+                decimalPlaces: 2,
+                minimumValue: '0',
+            });
         });
     </script>
 
