@@ -18,27 +18,27 @@ class AddTower extends Migration
 
             'description'=> [
                 'type'=> 'VARCHAR',
-                'constrait'=> 255,
+                'constraint'=> 255,
             ],
             
             'sustainable'=> [
                 'type'=> 'FLOAT',
-                'constrait'=> 10,
+                'constraint'=> 10,
             ],
             
             'pop_id'=> [
                 'type'=> 'INT',
-                'constrait'=> 11,
+                'constraint'=> 11,
             ],
       
             'address'=> [
                 'type'=> 'VARCHAR',
-                'constrait'=> 255,
+                'constraint'=> 255,
             ],
 
             'Latitude/Longitude'=> [
                 'type'=> 'INT',
-                'constrait'=> 255,
+                'constraint'=> 255,
             ],
 
             'active'=> [

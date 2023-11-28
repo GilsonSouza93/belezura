@@ -18,32 +18,32 @@ class AddRouter extends Migration
 
             'router_font'=> [
                 'type'=> 'VARCHAR',
-                'constrait'=> 255,
+                'constraint'=> 255,
             ],
             
             'router_code'=> [
                 'type'=> 'VARCHAR',
-                'constrait'=> 255,
+                'constraint'=> 255,
             ],
             
             'router_discription'=> [
                 'type'=> 'VARCHAR',
-                'constrait'=> 255,
+                'constraint'=> 255,
             ],
       
             'router_port'=> [
                 'type'=> 'VARCHAR',
-                'constrait'=> 255,
+                'constraint'=> 255,
             ],
 
             'router_parameter'=> [
                 'type'=> 'VARCHAR',
-                'constrait'=> 255,
+                'constraint'=> 255,
             ],
 
             'router_olt'=> [
                 'type'=> 'VARCHAR',
-                'constrait'=> 255,
+                'constraint'=> 255,
             ],
 
             'company_id' => [
