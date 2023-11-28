@@ -42,13 +42,14 @@ class AddSwitch extends Migration
             ],
 
             'switch_olt' => [
-                'type' => 'VARCHAR',
-                'constraint' => 255,
+                'type' => 'INT',
+                'constraint' => 5,
+                'unsigned' => true,
             ],
 
             'company_id' => [
                 'type' => 'INT',
-                'constraint' => 30,
+                'constraint' => 5,
             ],
 
             'updated_at' => [

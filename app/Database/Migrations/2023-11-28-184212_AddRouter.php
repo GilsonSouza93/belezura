@@ -9,41 +9,42 @@ class AddRouter extends Migration
     public function up()
     {
         $this->forge->addField([
-            "id"=> [
+            "id" => [
                 'type' => 'INT',
                 'constraint' => 5,
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
 
-            'router_font'=> [
-                'type'=> 'VARCHAR',
-                'constraint'=> 255,
-            ],
-            
-            'router_code'=> [
-                'type'=> 'VARCHAR',
-                'constraint'=> 255,
-            ],
-            
-            'router_discription'=> [
-                'type'=> 'VARCHAR',
-                'constraint'=> 255,
-            ],
-      
-            'router_port'=> [
-                'type'=> 'VARCHAR',
-                'constraint'=> 255,
+            'router_font' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
             ],
 
-            'router_parameter'=> [
-                'type'=> 'VARCHAR',
-                'constraint'=> 255,
+            'router_code' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
             ],
 
-            'router_olt'=> [
-                'type'=> 'VARCHAR',
-                'constraint'=> 255,
+            'router_discription' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
+
+            'router_port' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
+
+            'router_parameter' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
+
+            'router_olt' => [
+                'type' => 'INT',
+                'constraint' => 5,
+                'unsigned' => true,
             ],
 
             'company_id' => [
