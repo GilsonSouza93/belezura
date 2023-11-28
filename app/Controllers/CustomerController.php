@@ -41,13 +41,8 @@ class CustomerController extends BaseController
     public function treatmentBeforeSave($data)
     {
       $session = session();
-  
       $data['company_id'] = $session->get('company_id');
-  
-      if ($this->mainModel->where('name', $data['name'])->first()) {
-        $data['error'] = 'Já existe um registro com este nome!';
-      }
-  
+    
       return $data;
     }
 }
