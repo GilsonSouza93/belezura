@@ -27,22 +27,21 @@
 <?= $this->section('script') ?>
 
 <script>
-    const renderTableOptions = {
+     const renderTableOptions = {
         urlFetch: window.location.href + '/search',
         tableDiv: document.getElementById('tableDiv'),
-        theadElements: ['ID' , 'Código', 'Cidade', 'UF', 'População', 'Usuário', 'Ativo', ''],
-        tbodyElements: ['id', 'ibge_code', 'city', 'uf', 'population', 'user', 'active', 'actions_dropdown'],
+        theadElements: ['ID', 'Cidade', 'UF', 'Usuários', 'Ativo', 'ações'],
+        tbodyElements: ['id', 'city', 'uf', 'user', 'active',  ['edit', 'delete']],
         searchField: document.getElementById('search'),
-    }
-
-    const search = () => {
-        advancedSearchEngine(renderTableOptions);
     }
 
     document.addEventListener('DOMContentLoaded', () => {
         advancedSearchEngine(renderTableOptions);
     });
 
+    const search = () => {
+        advancedSearchEngine(renderTableOptions);
+    }
     const btnSearch = document.getElementById('searchBtn');
 
     btnSearch.addEventListener('click', () => {

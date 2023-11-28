@@ -22,15 +22,15 @@
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="name" class="form-label">Cidade</label>
-                <input type="text" class="form-control" name="name" id="cidade">
+                <input type="text" class="form-control" name="city" id="city">
             </div>
             <div class="mt-3 col-md-4">
-                <label for="codigo_ibge" class="form-label">Código IBGE</label>
-                <input type="text" class="form-control" id="ibge_code">
+                <label for="ibge_code" class="form-label">Código IBGE</label>
+                <input type="text" class="form-control" id="ibge_code" name="ibge_code">
             </div>
             <div class="mt-3 col-md-4">
                 <label for="uf" class="form-label">UF</label>
-                <select class="form-control select2" id="uf">
+                <select class="form-control select2" id="uf" name="uf">
                     <option value="1">PE</option>
                     <option value="2">AL</option>
                     <option value="3">BA</option>
@@ -42,8 +42,7 @@
         <div class="row">
             <div class="mt-3 col">
                 <label for="portador_padrao" class="form-label">Portador Padrão</label>
-                <select class="form-control select2" id="portador_padrao">
-                    <option selected>-------</option>
+                <select class="form-control select2" id="carrier" name="carrier">
                     <option value="1">Banco do Brasil</option>
                     <option value="2">Caixa Economica Federal</option>
                     <option value="3">Banco do Nordente</option>
@@ -52,27 +51,26 @@
             </div>
             <div class="mt-3 col">
                 <label for="identificador" class="form-label">Identificador</label>
-                <input type="text" id="identificador" class="form-control">
+                <input type="text" id="identification" class="form-control" name="identification">
             </div>
 
             <div class="mt-5 col py-1 form-check">
                 <label class="form-check-label" for="active">Ativo</label>
-                <input type="checkbox" class="form-check-input" id="active">
+                <input type="checkbox" class="form-check-input" id="active" name="active">
             </div>
         </div>
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">Plano</label>
-                <select class="form-control select2" id="plano">
-                    <?php foreach ($plans as $item) : ?>
-                        
+                <select class="form-control select2" id="plan" name="plan">
+                    <?php foreach ($plans as $item) : ?> 
                         <option value="<?= $item['id'] ?>"><?= $item['name'] ?></option>
                     <?php endforeach ?>
                 </select>
             </div>
             <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">NAS</label>
-                <select class="form-control select2" id="nas">
+                <select class="form-control select2" id="nas" name="nas">
                     <option selected>Selecione o NAS</option>
                     <option value="1">Monsenhor Tabosa</option>
                     <option value="1">Ria Rural</option>
@@ -80,7 +78,7 @@
             </div>
             <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">Usuário</label>
-                <select class="form-control select2" id="usuario">
+                <select class="form-control select2" id="user" name="user">
                     <option selected>----------</option>
                     <option value="1">SGP</option>
                     <option value="2">Tecnico</option>
@@ -133,16 +131,15 @@
 
     function formatBody() {
         const body = {
-            "cidade": getValue("cidade"),
-            "populacao": getValue("populacao"),
-            "codigo_ibge": getValue("codigo_ibge"),
+            "city": getValue("city"),
+            "ibge_code": getValue("ibge_code"),
             "uf": getValue("uf"),
-            "portador_padrao": getValue("portador_padrao"),
-            "plano": getValue("plano"),
+            "carrier": getValue("carrier"),
+            "identification": getValue("identification"),
+            "plan": getValue("plan"),
             "nas": getValue("nas"),
-            "usuario": getValue("usuario"),
+            "user": getValue("user"),
             "active": document.getElementById("active").checked,
-            "identification": getValue("identificador")
         }
 
         return body

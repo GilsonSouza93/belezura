@@ -33,14 +33,15 @@ class PopController extends BaseController
         $session = session();
         
         $theadData = [
-            "city" => $data->cidade,
+            "city" => $data->city,
             "ibge_code" => $data->ibge_code,
             "uf" => $data->uf,
-            "carrier" => $data->portador_padrao,
-            "plan" => $data->plano,
-            "nas" => $data->nas,
-            "user" => $data->usuario,
+            "carrier" => $data->carrier,
+            "identification" => $data->identification,
             "active" => $data->active,
+            "plan" => $data->plan,
+            "nas" => $data->nas,
+            "user" => $data->user,
             "company_id" => $session->get('company_id')
         ];
 
