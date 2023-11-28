@@ -20,13 +20,13 @@
         <div class="row">
             <div class="col">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="name" placeholder="Nome da Marca" name="name" required>
+                    <input type="text" class="form-control" id="name" placeholder="Nome da Marca" name="name" required <?= isset($register) ? 'value="' . $register->name . '"' : '' ?>>
                     <label for="name">Nome da Categoria</label>
                 </div>
             </div>
             <div class="col">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="description" placeholder="Descrição" name="description">
+                    <input type="text" class="form-control" id="description" placeholder="Descrição" name="description" rows="4" <?= isset($register) ? 'value="' . $register->description . '"' : '' ?>>
                     <label for="description">Descrição</label>
                 </div>
             </div>

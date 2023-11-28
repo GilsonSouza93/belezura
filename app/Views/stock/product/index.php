@@ -29,7 +29,7 @@
     const renderTableOptions = {
         urlFetch: window.location.href + '/search',
         tableDiv: document.getElementById('tableDiv'),
-        theadElements: ['nome', 'preço', 'descrição', 'ações'],
+        theadElements: ['Nome', 'Preço', 'Descrição', 'Ações'],
         tbodyElements: ['name', 'price', 'description', ['edit', 'delete', 'whatsapp']],
         searchField: document.getElementById('search'),
     }

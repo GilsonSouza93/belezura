@@ -4,21 +4,19 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class BillstoPayModel extends Model
+class BillsToPayModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'billstopays';
+    protected $table            = 'bills_to_pay';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-
         'id',
         'empresa',
         'description',
-<<<<<<< Updated upstream
         'pop',
         'suplier',
         'payment',
@@ -30,17 +28,14 @@ class BillstoPayModel extends Model
         'payout',
         'installment',
         'created_at',
-=======
         'pop_id',
         'supplier_id',
         'payment_id',
         'fixvalue_id',
->>>>>>> Stashed changes
         'updated_at',
         'deleted_at',
     ];
-
-
+		
     // Dates
     protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';

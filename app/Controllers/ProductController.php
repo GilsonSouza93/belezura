@@ -37,9 +37,15 @@ class ProductController extends BaseController
         $data['created_at'] = date('Y-m-d H:i:s');
         $data['company_id'] = $session->get('company_id');
 
-        if($this->mainModel->where('name', $data['name'])->first()){
+        if($this->mainModel->where('name', $data['name'])->first() && !isset($data['id'])){
             $data['error'] = 'Já existe um produto com este nome!';
         }
+
+        $data['price'] = str_replace('R$', '', $data['price']);
+        $data['price'] = str_replace('.', '', $data['price']);
+        $data['price'] = str_replace(',', '.', $data['price']);
+        $data['price'] = str_replace(' ', '', $data['price']);
+        $data['price'] = floatval($data['price']);
 
         return $data;
     }

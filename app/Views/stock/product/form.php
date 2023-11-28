@@ -9,6 +9,8 @@
   </h2>
 
   <form id="form card p-4" class="p-4" enctype="multipart/form-data">
+    <input type="hidden" id="id" value="<?= isset($register) ? $register->id : '' ?>">
+
     <div class="row card-2 py-3 my-3">
       <div class="col-md-8">
       </div>
@@ -20,13 +22,13 @@
     <div class="row">
       <div class="col">
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="name" placeholder="Nome do Produto" name="name" required>
+          <input type="text" class="form-control" id="name" placeholder="Nome do Produto" name="name" required <?= isset($register) ? 'value="' . $register->name . '"' : '' ?>>
           <label for="name">Nome do Produto</label>
         </div>
       </div>
       <div class="col">
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="price" placeholder="Preço" name="price" required>
+          <input type="text" class="form-control currency_auto_numeric" id="price" placeholder="Preço" name="price" required <?= isset($register) ? 'value="' . $register->price . '"' : '' ?>>
           <label for="price">Preço</label>
         </div>
       </div>
@@ -34,14 +36,14 @@
 
 
     <div class="form-floating mb-3">
-      <textarea class="form-control" id="description" placeholder="Descrição" name="description" rows="4"></textarea>
+      <textarea class="form-control" id="description" placeholder="Descrição" name="description" rows="4" required><?= isset($register) ? $register->description : '' ?>
+      </textarea>
       <label for="description">Descrição</label>
     </div>
 
 
     <div class="form-floating mb-3">
-      <select class="form-select" id="manufacturer_id" name="manufacturer_id" required>
-        <option value="" disabled selected>Selecione um Fabricante</option>
+      <select class="form-select" id="manufacturer_id" name="manufacturer_id" required <?= isset($register) ? 'value="' . $register->manufacturer_id . '"' : '' ?>>
         <?php foreach ($manufacturers as $manufacturer) : ?>
           <option value="<?= $manufacturer['id'] ?>"><?= $manufacturer['name'] ?></option>
         <?php endforeach; ?>
@@ -50,8 +52,7 @@
     </div>
 
     <div class="form-floating mb-3">
-      <select class="form-select" id="category_id" name="category_id" required>
-        <option value="" disabled selected>Selecione uma Categoria</option>
+      <select class="form-select" id="category_id" name="category_id" required <?= isset($register) ? 'value="' . $register->category_id . '"' : '' ?>>
         <?php foreach ($categories as $category) : ?>
           <option value="<?= $category['id'] ?>"><?= $category['name'] ?></option>
         <?php endforeach; ?>
@@ -60,8 +61,7 @@
     </div>
 
     <div class="form-floating mb-3">
-      <select class="form-select" id="suppliers_id" name="suppliers_id" required>
-        <option value="" disabled selected>Selecione um Fornecedor</option>
+      <select class="form-select" id="suppliers_id" name="suppliers_id" required <?= isset($register) ? 'value="' . $register->suppliers_id . '"' : '' ?>>
         <?php foreach ($suppliers as $supplier) : ?>
           <option value="<?= $supplier['id'] ?>"><?= $supplier['name'] ?></option>
         <?php endforeach; ?>
@@ -108,6 +108,7 @@
 
   function formatBody() {
     const body = {
+      id: document.querySelector('#id').value,
       name: document.querySelector('#name').value,
       price: document.querySelector('#price').value,
       description: document.querySelector('#description').value,

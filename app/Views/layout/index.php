@@ -414,6 +414,8 @@
                                     dot.style.backgroundColor = row[element] == 1 ? '#00bf63' : '#ff4e50';
 
                                     td.appendChild(dot);
+                                } else if (element === 'price') {
+                                    td.innerText = formatToBRL(row[element]);
                                 } else {
                                     td.innerText = row[element];
                                 }
@@ -441,11 +443,11 @@
             tableDiv.appendChild(table);
         }
 
-        function edit(id) {
+        const edit = (id) => {
             window.location.href = `<?= $baseRoute ?>/editar/${id}`;
         }
 
-        function deleteRegister(id) {
+        const deleteRegister = (id) => {
             const url = `<?= $baseRoute ?>/delete`;
             const data = {
                 id: id,
@@ -470,6 +472,15 @@
                 }).catch(error => {
                     console.log(error);
                 });
+        }
+
+        const formatToBRL = (value) => {
+            const formatter = new Intl.NumberFormat('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+            });
+
+            return formatter.format(value);
         }
 
         document.addEventListener('DOMContentLoaded', function() {

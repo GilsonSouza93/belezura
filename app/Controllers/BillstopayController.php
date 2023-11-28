@@ -14,7 +14,7 @@ class BillstopayController extends BaseController
 
     public function __construct()
     {
-        $this->mainModel = model('BillsPayModel');
+        $this->mainModel = model('BillstoPayModel');
 
         $popModel = model('PopModel');
         $supplierModel = model('SupplierModel');

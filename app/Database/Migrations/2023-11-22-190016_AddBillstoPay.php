@@ -14,11 +14,6 @@ class AddBillstoPay extends Migration
                 'auto_increment' => true,
             ],
 
-            'company' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
-            ],
-
             'description' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
