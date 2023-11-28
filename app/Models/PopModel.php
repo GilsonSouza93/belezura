@@ -20,11 +20,11 @@ class PopModel extends Model
         "ibge_code",
         "uf",
         "carrier",
+        "identification",
+        "active",
         "plan",
         "nas",
         "user",
-        "active",
-        "identification",
         "created_at",
         "updated_at",
         "deleted_at",
@@ -59,15 +59,16 @@ class PopModel extends Model
     public function search($data)
     {
         $fieldsToSearch = [
-            'id',
-            'city',
-            'ibge_code',
-            'uf',
-            'carrier',
-            'plan',
-            'nas',
-            'user',
-            'active',	
+            "id",
+            "city",
+            "ibge_code",
+            "uf",
+            "carrier",
+            "identification",
+            "active",
+            "plan",
+            "nas",
+            "user",
         ];
 
         $fieldsToReturn = [
