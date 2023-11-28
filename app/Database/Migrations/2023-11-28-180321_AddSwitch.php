@@ -18,32 +18,32 @@ class AddSwitch extends Migration
 
             'switch_fonte' => [
                 'type' => 'VARCHAR',
-                'constrait' => 255,
+                'constraint' => 255,
             ],
 
             'switch_cod' => [
                 'type' => 'VARCHAR',
-                'constrait' => 255,
+                'constraint' => 255,
             ],
 
             'switch_discription' => [
                 'type' => 'VARCHAR',
-                'constrait' => 255,
+                'constraint' => 255,
             ],
 
             'switch_port' => [
                 'type' => 'VARCHAR',
-                'constrait' => 255,
+                'constraint' => 255,
             ],
 
             'switch_parameter' => [
                 'type' => 'VARCHAR',
-                'constrait' => 255,
+                'constraint' => 255,
             ],
 
             'switch_olt' => [
                 'type' => 'VARCHAR',
-                'constrait' => 255,
+                'constraint' => 255,
             ],
 
             'company_id' => [

@@ -103,8 +103,8 @@
                 <input type="checkbox" id="debug" name="debug" class="form-check-input" > Debug
             </div>
             <div class="mt-4 col-md-3">
-                <label for="autoSave" class="form-label"></label>
-                <input type="checkbox" name="autoSave" id="autoSave" class="form-check-input"> Auto Salvar?
+                <label for="auto_save" class="form-label"></label>
+                <input type="checkbox" name="auto_save" id="auto_save" class="form-check-input"> Auto Salvar?
             </div>
             <div class="mt-4 col-md-3">
                 <label for="template_onu" class="form-label"></label>

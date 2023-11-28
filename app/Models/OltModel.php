@@ -24,17 +24,17 @@ class OltModel extends Model
         'snmp_version',
         'snmp_community',
         'coord',
-        'debug',
-        'autoSave',
-        'template_onu',
-        'cto',
-        'authorization',
-        'vlan',
-        'disable_onu',
-        'pop_filter',
+        'debug',//
+        'auto_save',//
+        'template_onu',//
+        'cto',//
+        'authorization',//
+        'vlan',//
+        'disable_onu',//
+        'pop_filter',//
         'pop',
-        'plot_sign',
-        'active',
+        'plot_sign',//
+        'active',//
         'telnet',
         'protocol',
         'obs',
@@ -45,8 +45,8 @@ class OltModel extends Model
         'wait',
         'parameters',
         'integration',
-        'template_filter',
-        'onu_filter',
+        'template_filter',//
+        'onu_filter',//
         'high_signal',
         'low_signal',
         'high_signal_color',
