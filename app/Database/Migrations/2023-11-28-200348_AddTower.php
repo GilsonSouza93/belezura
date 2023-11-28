@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class AddRouter extends Migration
+class AddTower extends Migration
 {
     public function up()
     {
@@ -16,34 +16,34 @@ class AddRouter extends Migration
                 'auto_increment' => true,
             ],
 
-            'router_font'=> [
+            'description'=> [
                 'type'=> 'VARCHAR',
                 'constraint'=> 255,
             ],
             
-            'router_code'=> [
-                'type'=> 'VARCHAR',
-                'constraint'=> 255,
+            'sustainable'=> [
+                'type'=> 'FLOAT',
+                'constraint'=> 10,
             ],
             
-            'router_discription'=> [
-                'type'=> 'VARCHAR',
-                'constraint'=> 255,
+            'pop_id'=> [
+                'type'=> 'INT',
+                'constraint'=> 11,
             ],
       
-            'router_port'=> [
+            'address'=> [
                 'type'=> 'VARCHAR',
                 'constraint'=> 255,
             ],
 
-            'router_parameter'=> [
-                'type'=> 'VARCHAR',
+            'Latitude/Longitude'=> [
+                'type'=> 'INT',
                 'constraint'=> 255,
             ],
 
-            'router_olt'=> [
-                'type'=> 'VARCHAR',
-                'constraint'=> 255,
+            'active'=> [
+                'type' => 'BOOLEAN',
+                'default' => 0,
             ],
 
             'company_id' => [
@@ -65,13 +65,12 @@ class AddRouter extends Migration
 
         $this->forge->addKey('id', true);
         $this->forge->addForeignKey('company_id', 'companies', 'id');
-        $this->forge->addForeignKey('router_olt', 'olts', 'id');
-        $this->forge->createTable('router');
-
+        $this->forge->addForeignKey('pop_id', 'pops', 'id');
+        $this->forge->createTable('tower');
     }
 
     public function down()
     {
-        $this->forge->dropTable('router');
+        $this->forge->DropTable('tower');
     }
 }
