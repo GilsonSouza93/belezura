@@ -62,6 +62,7 @@ class OnuModel extends Model
             'name',
             'port',
             'parameters',
+            'olt',
             'created_at',
             'updated_at',
             'deleted_at',

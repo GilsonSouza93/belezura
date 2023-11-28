@@ -15,19 +15,9 @@ class TowerController extends BaseController
 
     public function __construct()
     {
-        $this->mainModel = model('PoleModel');
+        $this->mainModel = model('TowerModel');
         $this->popModel = model('PopModel');
         $this->data['pops'] = $this->popModel->findAll();
         parent::__construct();
     }
-
-    public function search()
-    {
-        $data = $this->request->getJSON();
-        
-        $towers = $this->mainModel->search($data->search);
-
-        return $this->response->setJSON($towers);
-    }
-
 }

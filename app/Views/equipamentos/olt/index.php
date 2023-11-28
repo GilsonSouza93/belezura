@@ -30,8 +30,8 @@
     const renderTableOptions = {
         urlFetch: window.location.href + '/search',
         tableDiv: document.getElementById('tableDiv'),
-        theadElements: ['nome', 'email', 'telefone 1', 'telefone 2', 'ações'],
-        tbodyElements: ['name', 'email', 'phone1', 'phone2', 'actions_dropdown'],
+        theadElements: ['ID','Nome', 'Host', 'Slot', 'Tipo','Ativo', 'ações'],
+        tbodyElements: ['id','name', 'host', 'slot', 'type','active', 'actions_dropdown'],
         searchField: document.getElementById('search'),
     }
 

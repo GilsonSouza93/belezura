@@ -23,14 +23,6 @@ class BillstoreceiverController extends BaseController
         $this->data['suppliers'] = $supplierModel->findAll();
     }
 
-    public function search()
-    {
-        $data = $this->request->getJSON();
-        
-        $billsReceiver = $this->mainModel->search($data->search);
-
-        return $this->response->setJSON($billsReceiver);
-    }
     public function save()
     {
         $data = $this->request->getJSON();

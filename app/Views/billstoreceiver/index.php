@@ -31,7 +31,7 @@
         urlFetch: window.location.href + '/search',
         tableDiv: document.getElementById('tableDiv'),
         theadElements: ['Fornecedor', 'Valor', 'Data de Emissão','Vencimento', 'ações'],
-        tbodyElements: ['supplier', 'value', 'date_issue', 'payout' ['edit', 'delete', 'whatsapp']],
+        tbodyElements: ['supplier', 'value', 'date_issue', 'payout', ['edit', 'delete']],
         searchField: document.getElementById('search'),
     }
 
