@@ -38,8 +38,8 @@
     const renderTableOptions = {
         urlFetch: window.location.href + '/search',
         tableDiv: document.getElementById('tableDiv'),
-        theadElements: ['nome', 'serial', 'ip', 'porta', 'ações'],
-        tbodyElements: ['onu_name', 'onu_serial_number', 'onu_ip', 'onu_port', ['edit', 'delete']],
+        theadElements: ['Nome', 'Código', 'Porta', 'Parâmetros', 'ações'],
+        tbodyElements: ['name', 'code', 'port', 'parameter', ['edit', 'delete']],
         searchField: document.getElementById('search'),
     }
 
