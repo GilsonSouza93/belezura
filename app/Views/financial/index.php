@@ -3,16 +3,16 @@
 <?= $this->section('content') ?>
 
 <div class="row d-flex mt-5 justify-content-center">
-    <div class="col-md-3 card mx-3">
+    <div class="col-md-3  mx-3">
       <label for="payments" class="mt-2">Receita</label>
       <canvas id="payments" height="300"></canvas>
     </div>
-    <div class="col-md-3 card mx-3">
+    <div class="col-md-3  mx-3">
       <label for="payments" class="mt-2">Clientes</label>
       <canvas id="customers"></canvas>
     </div>
-    <div class="col-md-3 card mx-3">
-      <label for="payments" class="mt-2">POPs</label>
+    <div class="col-md-3  mx-3">
+      <label for="payments" class="mt-2">Clientes por Plano</label>
         <canvas id="popChart"></canvas>
     </div>
 </div>
@@ -23,7 +23,6 @@
 
 <script>
   const ctx = document.getElementById('payments');
-
   new Chart(ctx, {
     type: 'bar',
     data: {
@@ -75,10 +74,10 @@
 var myChart = new Chart(popsChart, {
     type: 'doughnut',
     data: {
-        labels: ['Pernambuco', 'São Paulo', 'Minas Gerais'],
+        labels: ['50Mb', '100Mb','200Mb', '300Mb'],
         datasets: [{
-          label:'POPS',
-            data: [30, 50, 20],
+          label:'Clientes por Plano',
+            data: [100, 50,34, 20],
             //  
         }]
     }
