@@ -20,17 +20,13 @@ class FinancialboxController extends BaseController
         parent::__construct();
     }
 
-    public function search()
+    public function treatmentBeforeSave($data)
     {
-        $data = $this->request->getJSON();
-        
-        $cash = $this->mainModel->search($data->search);
-
-        return $this->response->setJSON($cash);
+      $session = session();
+  
+      $data['company_id'] = $session->get('company_id');
+  
+      return $data;
     }
 
-    public function save()
-    {
-        var_dump('teste de save'); die;
-    }
 }

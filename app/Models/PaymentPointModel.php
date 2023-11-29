@@ -14,6 +14,7 @@ class PaymentPointModel extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
+        'id',
         'name',
         'carrier',
         'carriers',
@@ -38,6 +39,10 @@ class PaymentPointModel extends Model
         'filter',
         'cash_reports',
         'schedule',
+        'deleted_at',
+        'created_at',
+        'updated_at',
+        'company_id',
     ];
 
     // Dates
@@ -67,19 +72,63 @@ class PaymentPointModel extends Model
     public function search($data)
     {
         $fieldsToSearch = [
-            "name",
-            "carrier",
-            "companies",
+            'id',
+            'name',
+            'carrier',
+            'carriers',
+            'companies',
+            'balance',
+            'active',
+            'bills_discount',
+            'admin_discount',
+            'allow_discount',
+            'refinance',
+            'method',
+            'receiver',
+            'pops',
+            'canceled',
+            'plan',
+            'return_release',
+            'card_release',
+            'debit_release',
+            'generate_invoice',
+            'invoice',
+            'send_invoice',
+            'filter',
+            'cash_reports',
+            'schedule',
         ];
 
         $fieldsToReturn = [
-            "name",
-            "carrier",
-            "companies",
-            "active",
+            'id',
+            'name',
+            'carrier',
+            'carriers',
+            'companies',
+            'balance',
+            'active',
+            'bills_discount',
+            'admin_discount',
+            'allow_discount',
+            'refinance',
+            'method',
+            'receiver',
+            'pops',
+            'canceled',
+            'plan',
+            'return_release',
+            'card_release',
+            'debit_release',
+            'generate_invoice',
+            'invoice',
+            'send_invoice',
+            'filter',
+            'cash_reports',
+            'schedule',
+            'deleted_at',
             'created_at',
             'updated_at',
-            'deleted_at',
+            'company_id',
         ];
 
         $search = null;

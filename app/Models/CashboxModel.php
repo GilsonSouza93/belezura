@@ -76,7 +76,6 @@ class CashboxModel extends Model
             'checking_proof',
             'date',
             'obs',
-            'data',
         ];
 
         $createAtName = 'created_at';

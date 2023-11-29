@@ -26,7 +26,7 @@ class AddPaymentPoint extends Migration
                 'constraint' => 255,
             ],
 
-            'portdores' => [
+            'carriers' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
@@ -42,12 +42,7 @@ class AddPaymentPoint extends Migration
 
             ],
 
-            'billsDiscount' => [
-                'type' => 'VARCHAR',
-                'constraint' => 255,
-            ],
-
-            'adminDiscount' => [
+            'bills_discount' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
@@ -57,7 +52,7 @@ class AddPaymentPoint extends Migration
                 'constraint' => 255,
             ],
 
-            'allow_aiscount' => [
+            'allow_discount' => [
                 'type' => 'boolean',
                 'default' => false,
             ],
@@ -107,17 +102,17 @@ class AddPaymentPoint extends Migration
                 'constraint' => 255,
             ],
 
-            'generate_fiscal_note' => [
+            'generate_invoice' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
 
-            'fiscal_note' => [
+            'invoice' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
 
-            'send_fiscal_note' => [
+            'send_invoice' => [
                 'type' => 'boolean',
                 'default' => false,
             ],

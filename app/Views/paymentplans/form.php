@@ -57,7 +57,6 @@
                 <span class="badge text-bg-light show-text" data-text='Definir apenas para receita se for mensalidade/adesão.'>?</span>
                 </label>
                 <select class="form-control select2" name="plain_account" id="plain_account" aria-label="forma de pagamento">
-                    <option selected>Selecione a Forma de Pagamento</option>
                     <option value="1">Mensalidade Contrato</option>
                     <option value="2">Adesão Contrato</option>
                 </select>
@@ -66,8 +65,6 @@
             <div class="mt-3 col-md-4">
                 <label for="dreType" class="form-label">Tipo da DRE</label>
                 <select class="form-control select2" id="dre_type" name="dre_type" aria-label="dre_type">
-                    <option selected>Selecione o tipo da DRE</option>
-                    <option value="" selected="">---------</option>
                     <option value="01">Receita</option>
                     <option value="02">Imposto s/ Faturamento</option>
                     <option value="03">Despesas Operacionais</option>

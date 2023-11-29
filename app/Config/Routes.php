@@ -317,6 +317,10 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         $routes->group('pontosdepagamento', static function ($routes) {
             $routes->get('/', 'PaymentPointController::index');
             $routes->get('novo', 'PaymentPointController::form');
+            
+            $routes->post('save', 'PaymentPointController::save');
+            $routes->post('search', 'PaymentPointController::search');
+            $routes->post('delete', 'PaymentPointController::delete');
         });
 
         $routes->group('planosdepagamento', static function ($routes) {

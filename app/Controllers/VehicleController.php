@@ -26,5 +26,4 @@ class VehicleController extends BaseController
       return $data;
     }
 
-
 }
