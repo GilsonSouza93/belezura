@@ -210,7 +210,14 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('script') ?>
+
 <script>
+    const submitBtn = document.querySelector('#submit-btn');
+    const form = document.querySelector('form');
+    const url = '<?= $baseRoute ?>/save';
+
+
+
     const save = async () => {
         const body = formatBody();
 
@@ -247,16 +254,31 @@
 
     function formatBody() {
         const body = {
-            "cidade": getValue("cidade"),
-            "populacao": getValue("populacao"),
-            "codigo_ibge": getValue("codigo_ibge"),
-            "uf": getValue("uf"),
-            "portador_padrao": getValue("portador_padrao"),
-            "plano": getValue("plano"),
-            "nas": getValue("nas"),
-            "usuario": getValue("usuario"),
+            "name": getValue('name'),
+            "carrier": getValue('carrier'),
+            "carriers": getValue('carriers'),
+            "companies": getValue('companies'),
+            "balance": getValue('balance'),
             "active": document.getElementById("active").checked,
-            "identification": getValue("identificador")
+            "bills_discount": getValue('bills_discount'),
+            "admin_discount": getValue('admin_discount'),
+            "allow_discount": document.getElementById("allow_discount").checked,
+            "refinance": document.getElementById("refinance").checked,
+            "method": getValue('method'),
+            "receiver": getValue('receiver'),
+            "pops": getValue('pops'),
+            "canceled": document.getElementById("canceled").checked,
+            "plan": document.getElementById("plan").checked,
+            "return_release": getValue('return_release'),
+            "card_release": getValue('card_release'),
+            "debit_release": getValue('debit_release'),
+            "generate_invoice": getValue('generate_invoice'),
+            "invoice": getValue('invoice'),
+            "send_invoice": document.getElementById("send_invoice").checked,
+            "filter": document.getElementById("filter").checked,
+            "cash_reports": document.getElementById("cash_reports").checked,
+            "schedule": getValue('schedule'),
+
         }
 
         return body
