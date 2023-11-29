@@ -30,6 +30,7 @@ class CustomerModel extends Model
         'uf',
         'company_id',
         'onu_id',
+        'pop_id',
     ];
 
     // Dates
@@ -62,6 +63,8 @@ class CustomerModel extends Model
             'name',
             'email',
             'phones',
+            'pop_id',
+            'address1',
         ];
 
         $fieldsToReturn = [
@@ -69,6 +72,7 @@ class CustomerModel extends Model
             'name',
             'phones',
             'address1',
+            'pop_id',
         ];
 
         $createdAtName = 'created_at';

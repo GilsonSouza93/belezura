@@ -86,15 +86,24 @@
         </div>
 
         <div class="row">
-            <div class="mt-3 col-md-3">
+            <div class="mt-3 col-md-4">
                 <label for="telefone1Cliente" class="form-label">Telefone</label>
                 <input type="tel" id="telefone1Cliente" class="form-control" name="phones" id="phones" placeholder="Telefone" value="<?= isset($register) ? $register->phones : '' ?>">
             </div>
-            <div class="mt-3 col-md-3">
+            <div class="mt-3 col-md-4">
                 <label for="tipoContato1" class="form-label">Tipo:</label>
                 <select class="form-control select2" id="tipoContato1">
                     <option value="1">Residencial</option>
                     <option value="2">Comercial</option>
+                </select>
+            </div>
+            <div class="mt-3 col-md-4">
+                <label for="pop_id" class="form-label">POP</label>
+                <select class="form-control select2" id="pop_id" name="pop_id">
+                    <option selected>Selecione o Local POP</option>
+                    <?php foreach ($pops as $pop) : ?>
+                    <option value="<?= $pop['id'] ?>"><?= $pop['city'] ?></option>
+                <?php endforeach; ?>
                 </select>
             </div>
         </div>

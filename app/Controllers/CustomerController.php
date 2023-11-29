@@ -31,6 +31,9 @@ class CustomerController extends BaseController
         $subscriptionModel = model('SubscriptionModel');
         $onuModel = model('OnuModel');
 
+        $popModel = model('PopModel');
+        $this->data['pops'] = $popModel->findAll();
+
         $this->data['subscription'] = $subscriptionModel->findAll();
         $this->data['onuModel'] = $onuModel->findAll();
 
