@@ -17,10 +17,17 @@ class OnuModel extends Model
         'id',
         'code',
         'name',
-        'port',
-        'parameter',
+        'ip',
+        'parameters',
         'olt',
+        'port',
+        'username',
+        'password',
+        'status',
+        'updated_at',
+        'deleted_at',
         'company_id',
+        'created_at',
     ];
 
     // Dates
