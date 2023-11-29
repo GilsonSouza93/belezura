@@ -80,70 +80,8 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('script') ?>
+
 <script>
-    const modelo = document.getElementById('vehicle_model');
-    const placa = document.getElementById('vehicle_plate');
-    const uf = document.getElementById('vehicle_uf');
-    const local = document.getElementById('vehicle_locate');
-    const obs = document.getElementById('vehicle_obs');
-    const disponivel = document.getElementById('vehicle_available');
-    
-    const submit = () => {
-        const body = formatBody();
-
-        try {
-            validate(body);
-
-            fetch('<?= $baseRoute ?>/save', {
-                method: 'POST',
-                body: JSON.stringify(body)
-            }).then(response => response.json())
-            .then(data => {
-                if (data.error == false) {
-                    window.location.href = '<?= $baseRoute ?>';
-                } else {
-                    showToast('Houve um erro', 'error');
-                }
-            }).catch(error => {
-                showToast('Houve um erro', 'error');
-            });
-
-        } catch (error) {
-            showToast('Preencha todo os campos requeridos', 'warning');
-
-            document.getElementById(error).classList.add('is-invalid');
-        }
-        
-    }
-
-    const formatBody = () => {
-        return {
-            model: modelo.value,
-            plate: placa.value,
-            uf: uf.value,
-            locate: local.value,
-            obs: obs.value,
-            available: disponivel.checked
-        }
-    }
-
-    const validate = (body) => {
-        if(!body.model)
-            throw 'modelo'
-
-        if(!body.plate)
-            throw 'placa'
-    }
-
-    const inputs = document.querySelectorAll('input');
-
-    for (var i = 0, len = inputs.length; i < len; i++) {
-        inputs[i].addEventListener('keyup', function(e){
-            document.getElementById($(e.target).attr("id")).classList.remove('is-invalid');
-        });
-    }
-
-    
     const submitBtn = document.querySelector('#submit-btn');
     const form = document.querySelector('form');
     const url = '<?= $baseRoute ?>/save';
@@ -155,23 +93,23 @@
         const formData = new FormData(form);
 
         fetch(url, {
-            method: 'POST',
-            body: formData
-        }).then(response => response.json())
-        .then(data => {
-            hideLoading();
-            if (data.error) {
-                showToast(data.message, 'error');
-            } else {
-                showToast(data.message, 'success');
-                window.location.href = '<?= $baseRoute ?>';
-            }
-        }).catch(error => {
-            console.log(error);
-        });
+                method: 'POST',
+                body: formData
+            }).then(response => response.json())
+            .then(data => {
+                hideLoading();
+                if (data.status === 'success') {
+                    showToast(data.message, 'success');
+                    setTimeout(() => {
+                        window.location.href = '<?= $baseRoute ?>';
+                    }, 1000);
+                } else {
+                    showToast(data.message, 'error');
+                }
+            }).catch(error => {
+                console.log(error);
+            });
     });
-
-
 </script>
-<?= $this->endSection() ?>
 
+<?= $this->endSection() ?>

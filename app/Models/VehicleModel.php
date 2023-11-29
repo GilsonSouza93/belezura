@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class VehicleModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'vehicles';
+    protected $table            = 'vehicle';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
