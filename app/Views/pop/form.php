@@ -19,18 +19,20 @@
     </div>
 
     <form>
+
+        <input type="hidden" id="id" name="id" <?= isset($register) ? 'value="' . $register->id . '"' : '' ?>>
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="name" class="form-label">Cidade</label>
-                <input type="text" class="form-control" name="city" id="city">
+                <input type="text" class="form-control" name="city" id="city" <?= isset($register) ? 'value="' . $register->city . '"' : '' ?>>
             </div>
             <div class="mt-3 col-md-4">
                 <label for="ibge_code" class="form-label">Código IBGE</label>
-                <input type="text" class="form-control" id="ibge_code" name="ibge_code">
+                <input type="text" class="form-control" id="ibge_code" name="ibge_code" <?= isset($register) ? 'value="' . $register->ibge_code . '"' : '' ?>>
             </div>
             <div class="mt-3 col-md-4">
                 <label for="uf" class="form-label">UF</label>
-                <select class="form-control select2" id="uf" name="uf">
+                <select class="form-control select2" id="uf" name="uf" <?= isset($register) ? 'value="' . $register->uf . '"' : '' ?>>
                     <option value="1">PE</option>
                     <option value="2">AL</option>
                     <option value="3">BA</option>
@@ -42,7 +44,7 @@
         <div class="row">
             <div class="mt-3 col">
                 <label for="portador_padrao" class="form-label">Portador Padrão</label>
-                <select class="form-control select2" id="carrier" name="carrier">
+                <select class="form-control select2" id="carrier" name="carrier" <?= isset($register) ? 'value="' . $register->carrier . '"' : '' ?>>
                     <option value="1">Banco do Brasil</option>
                     <option value="2">Caixa Economica Federal</option>
                     <option value="3">Banco do Nordente</option>
@@ -51,18 +53,18 @@
             </div>
             <div class="mt-3 col">
                 <label for="identificador" class="form-label">Identificador</label>
-                <input type="text" id="identification" class="form-control" name="identification">
+                <input type="text" id="identification" class="form-control" name="identification" <?= isset($register) ? 'value="' . $register->identification . '"' : '' ?>>
             </div>
 
             <div class="mt-5 col py-1 form-check">
                 <label class="form-check-label" for="active">Ativo</label>
-                <input type="checkbox" class="form-check-input" id="active" name="active">
+                <input type="checkbox" class="form-check-input" id="active" name="active" <?= isset($register) && $register->active ? 'checked' : '' ?>>
             </div>
         </div>
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">Plano</label>
-                <select class="form-control select2" id="plan" name="plan">
+                <select class="form-control select2" id="plan" name="plan" <?= isset($register) ? 'value="' . $register->plan . '"' : '' ?>>
                     <?php foreach ($plans as $item) : ?> 
                         <option value="<?= $item['id'] ?>"><?= $item['name'] ?></option>
                     <?php endforeach ?>
@@ -70,7 +72,7 @@
             </div>
             <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">NAS</label>
-                <select class="form-control select2" id="nas" name="nas">
+                <select class="form-control select2" id="nas" name="nas" <?= isset($register) ? 'value="' . $register->nas . '"' : '' ?>>
                     <option selected>Selecione o NAS</option>
                     <option value="1">Monsenhor Tabosa</option>
                     <option value="1">Ria Rural</option>
@@ -78,7 +80,7 @@
             </div>
             <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">Usuário</label>
-                <select class="form-control select2" id="user" name="user">
+                <select class="form-control select2" id="user" name="user" <?= isset($register) ? 'value="' . $register->user . '"' : '' ?>>
                     <option selected>----------</option>
                     <option value="1">SGP</option>
                     <option value="2">Tecnico</option>
@@ -131,6 +133,7 @@
 
     function formatBody() {
         const body = {
+            "id": getValue("id"),
             "city": getValue("city"),
             "ibge_code": getValue("ibge_code"),
             "uf": getValue("uf"),
