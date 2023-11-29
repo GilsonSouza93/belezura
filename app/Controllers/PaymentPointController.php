@@ -11,6 +11,12 @@ class PaymentPointController extends BaseController
     public $viewPath = 'paymentpoint';
     public $baseRoute = 'financeiro/pontosdepagamento';
 
+    public function __construct()
+    {
+        $this->mainModel = model('PaymentPointModel');
+        parent::__construct();
+    }
+
     public function save()
     {
         $data = $this->request->getJSON();
