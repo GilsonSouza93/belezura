@@ -36,7 +36,7 @@
                 <input type="text" class="form-control" name="radius_pop" placeholder="Insira o POP" id="radius_pop">
             </div>
             <div class="mt-3 col-md-6">
-                <label for="tipo" class="form-label">IP POLL</label>
+                <label for="tipo" class="form-label">IP POOL</label>
                 <select class="form-control select2" aria-label="Default select example" name="radius_ippool" id="radius_ippool">
                     <option selected>Selecione o IP POOL</option>
                     <option value="1">IP 01</option>

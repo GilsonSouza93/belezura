@@ -17,4 +17,13 @@ class VehicleController extends BaseController
         parent::__construct();
     }
 
+    public function treatmentBeforeSave($data)
+    {
+      $session = session();
+  
+      $data['company_id'] = $session->get('company_id');
+  
+      return $data;
+    }
+
 }
