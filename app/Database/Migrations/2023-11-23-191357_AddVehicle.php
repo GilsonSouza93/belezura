@@ -21,7 +21,7 @@ class AddVehicle extends Migration
                 'constraint' => 255,
             ],
 
-            'license' => [
+            'plate' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
@@ -31,7 +31,7 @@ class AddVehicle extends Migration
                 'constraint' => 255,
             ],
 
-            'local' => [
+            'locate' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
@@ -43,12 +43,12 @@ class AddVehicle extends Migration
             ],
 
             'available' => [
-                'type' => 'boolean',
-                'default' => false,
+                'type' => 'BOOLEAN',
+                'default' => 0,
             ],
 
             'company_id' => [
-                'type' => 'int',
+                'type' => 'INT',
                 'constraint' => 5,
             ],
 
