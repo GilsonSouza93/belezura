@@ -101,32 +101,32 @@ abstract class BaseController extends Controller
                     ],
                     'payable' => [
                         'title' => 'Contas a Pagar',
-                        'href' => base_url('financeiro/contas-pagar'), 
+                        'href' => base_url('financeiro/contas-pagar'),
                     ],
                     'receive' => [
                         'title' => 'Contas a Receber',
-                        'href' => base_url('financeiro/contas-receber'), 
+                        'href' => base_url('financeiro/contas-receber'),
                     ],
                     'ticket' => [
                         'title' => 'Boletos',
-                        'href' => base_url('financeiro/boleto'), 
+                        'href' => base_url('financeiro/boleto'),
                     ],
                     'contract' => [
                         'title' => 'Contratos',
-                        'href' => base_url('financeiro/contratos'), 
+                        'href' => base_url('financeiro/contratos'),
                     ],
                     'paymentpoint' => [
                         'title' => 'Ponto de Pagamento',
-                        'href' => base_url('financeiro/pontosdepagamento'), 
+                        'href' => base_url('financeiro/pontosdepagamento'),
                     ],
                     'paymentplans' => [
                         'title' => 'Planos de Pagamento',
-                        'href' => base_url('financeiro/planosdepagamento'), 
+                        'href' => base_url('financeiro/planosdepagamento'),
                     ],
 
                 ]
 
-            ],      
+            ],
             'gerencial' => [
                 'title' => 'Gerencial',
                 'href' => base_url('gerencial'),
@@ -144,11 +144,11 @@ abstract class BaseController extends Controller
                     ],
                     'sms' => [
                         'title' => 'SMS',
-                        'href' => base_url('gerencial/sms'), 
+                        'href' => base_url('gerencial/sms'),
                     ],
                     'vehicle' => [
                         'title' => 'Veículos',
-                        'href' => base_url('gerencial/veiculos'), 
+                        'href' => base_url('gerencial/veiculos'),
                     ],
                 ]
 
@@ -296,11 +296,11 @@ abstract class BaseController extends Controller
                         'href' => base_url('configuracoes/ipv6pool'),
                     ],
                     'Central do Assinante' => [
-                        'title' =>'Central do Assinante',
+                        'title' => 'Central do Assinante',
                         'href' => base_url('configuracoes/centraldoassinante'),
                     ],
                     'Alterar Senha' => [
-                        'title' =>'Alterar Senha',
+                        'title' => 'Alterar Senha',
                         'href' => base_url('configuracoes/alterarsenha'),
                     ],
                 ]
@@ -394,14 +394,14 @@ abstract class BaseController extends Controller
 
         $data = $this->treatmentBeforeSave($data);
 
-        if(isset($data['error'])){
+        if (isset($data['error'])) {
             return $this->response->setJSON([
                 'status' => 'fail',
                 'message' => $data['error'],
             ]);
         }
 
-    $response = $this->mainModel->save($data);
+        $response = $this->mainModel->save($data);
 
         if ($response) {
             $data = [

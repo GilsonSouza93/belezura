@@ -17,4 +17,17 @@ class OltController extends BaseController
         $this->mainModel = model('OltModel');
         parent::__construct();
     }
+
+    public function treatmentBeforeSave($data)
+    {
+        $session = session();
+
+        if(!isset($data['name']))
+            $data['error'] = 'Nome é obrigatório';
+
+        $data['company_id'] = $session->get('company_id');
+        $data['create_by'] = $session->get('id');
+
+        return $data;
+    }
 }

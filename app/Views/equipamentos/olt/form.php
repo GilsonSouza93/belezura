@@ -10,7 +10,7 @@
 
     <div class="row card-2 py-3 my-3">
         <div class="col-md-8">
-        <h4>
+            <h4>
                 <?php if (isset($register)) : ?>
                     Editar Olt
                 <?php else : ?>
@@ -20,7 +20,7 @@
         </div>
         <div class="col-md-4 btn-group">
             <a class="btn btn-success" href="<?= $baseRoute ?>">Voltar</a>
-            <button class="btn btn-success" id="submit-btn" >Salvar</button>
+            <button class="btn btn-success" id="submit-btn">Salvar</button>
         </div>
     </div>
 
@@ -100,7 +100,7 @@
         <div class="row">
             <div class="mt-4 col-md-3">
                 <label for="debug" class="form-label"></label>
-                <input type="checkbox" id="debug" name="debug" class="form-check-input" > Debug
+                <input type="checkbox" id="debug" name="debug" class="form-check-input"> Debug
             </div>
             <div class="mt-4 col-md-3">
                 <label for="auto_save" class="form-label"></label>
@@ -297,7 +297,6 @@
 <?= $this->section('script') ?>
 
 <script>
-
     const submitBtn = document.querySelector('#submit-btn');
     const form = document.querySelector('form');
     const url = '<?= $baseRoute ?>/save';
@@ -309,23 +308,23 @@
         const formData = new FormData(form);
 
         fetch(url, {
-            method: 'POST',
-            body: formData
-        }).then(response => response.json())
-        .then(data => {
-            hideLoading();
-            if (data.error) {
-                showToast(data.message, 'error');
-            } else {
-                showToast(data.message, 'success');
-                window.location.href = '<?= $baseRoute ?>';
-            }
-        }).catch(error => {
-            console.log(error);
-        });
+                method: 'POST',
+                body: formData
+            }).then(response => response.json())
+            .then(data => {
+                hideLoading();
+                if (data.status === 'success') {
+                    showToast(data.message, 'success');
+                    setTimeout(() => {
+                        window.location.href = '<?= $baseRoute ?>';
+                    }, 1000);
+                } else {
+                    showToast(data.message, 'error');
+                }
+            }).catch(error => {
+                console.log(error);
+            });
     });
-
-
 </script>
 
 <?= $this->endSection() ?>
