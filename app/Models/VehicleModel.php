@@ -14,13 +14,13 @@ class VehicleModel extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        'id',
         "model",
         "plate",
         "uf",
         "locate",
         "obs",
         "available",
+        "company_id",
         'created_at',
         'updated_at',
         'deleted_at',
@@ -54,8 +54,8 @@ class VehicleModel extends Model
     {
         $fieldsToSearch = [
             'model',
-            'license',
-            'local',
+            'plate',
+            'locate',
             'obs',
             'available',
         ];
@@ -63,11 +63,12 @@ class VehicleModel extends Model
         $fieldsToReturn = [
             'id',
             'model',
-            'license',
+            'plate',
             'uf',
-            'local',
+            'locate',
             'obs',
             'available',
+            "company_id",
             'deleted_at',
             'updated_at',
             'created_at',
