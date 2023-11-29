@@ -22,15 +22,15 @@
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="modelo" class="form-label">Modelo</label>
-                <input type="text" id="vehicle_model" class="form-control" name="vehicle_model" >
+                <input type="text" id="model" class="form-control" name="model" >
             </div>
             <div class="mt-3 col-md-4">
                 <label for="placa" class="form-label">Placa</label>
-                <input type="text" id="vehicle_plate" class="form-control" name="vehicle_plate">
+                <input type="text" id="plate" class="form-control" name="plate">
             </div>
             <div class="mt-3 col-md-4">
                 <label for="uf" class="form-label">UF</label>
-                <select class="form-control select2" id="vehicle_uf" aria-label="uf cliente" name="vehicle_uf" >
+                <select class="form-control select2" id="uf" name="uf" >
                     <option selected>UF</option>
                     <option value="1">Acre</option>
                     <option value="2">Alagoas</option>
@@ -63,15 +63,15 @@
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="local" class="form-label">Local</label>
-                <input type="text" id="vehicle_locate" class="form-control" name="vehicle_locate">
+                <input type="text" id="locate" class="form-control" name="locate">
             </div>
             <div class="mt-3 col-md-4">
                 <label for="obs" class="form-label">Observação</label>
-                <input type="text" id="vehicle_obs" class="form-control" name="vehicle_obs">
+                <input type="text" id="obs" class="form-control" name="obs">
             </div>
             <div class="mt-5 col-md-4">
                 <label for="disponivel" class="form-label "></label>
-                <input type="checkbox" name="" id="vehicle_available" names="vehicle_available" > Disponível para OS?
+                <input type="checkbox" name="" id="available" names="available" > Disponível para OS?
             </div>
         </div>       
 
