@@ -34,6 +34,12 @@ class AddCustomers extends Migration
                 'null' => true,
             ],
 
+            'pop_id' => [
+                'type' => 'VARCHAR',
+                'constraint' => '14',
+                'null' => true,
+            ],
+
             'date_of_birth' => [
                 'type' => 'DATE',
                 'null' => true,

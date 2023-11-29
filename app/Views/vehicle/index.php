@@ -61,8 +61,8 @@
         urlFetch: window.location.href + '/search',
         tableDiv: document.getElementById('tableDiv'),
 
-        theadElements: ['Modelo', ' Placa','Uf', 'Local', 'Obs', 'Disponivel'],
-        tbodyElements: ['model', 'plate', 'uf', 'locate','obs', 'available'['edit', 'delete']],
+        theadElements: ['Modelo', ' Placa','Uf', 'Local', 'Obs', 'Disponivel', 'Ações'],
+        tbodyElements: ['model', 'plate', 'uf', 'locate','obs', 'available',['edit', 'delete']],
         searchField: document.getElementById('search'),
     }
 

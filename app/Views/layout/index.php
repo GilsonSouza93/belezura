@@ -406,7 +406,7 @@
                                     dropdown.appendChild(dropdownMenu);
 
                                     td.appendChild(dropdown);
-                                } else if (element === 'active') {
+                                } else if (element === 'active' || element === 'available') {
                                     const dot = document.createElement('div');
                                     dot.classList.add('rounded-circle', 'mx-auto');
 

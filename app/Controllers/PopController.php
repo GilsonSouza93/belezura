@@ -23,8 +23,6 @@ class PopController extends BaseController
         $this->userModel = model('UserModel');
         $this->data['plans'] = $this->subscriptionModel->findAll();
         return parent::__construct();
-    
-
     }
 
     public function save()
@@ -45,7 +43,11 @@ class PopController extends BaseController
             "company_id" => $session->get('company_id')
         ];
 
-        $response = $this->mainModel->insert($theadData);
+        if($data->id) {
+            $theadData['id'] = $data->id;
+        }
+
+        $response = $this->mainModel->save($theadData);
 
         if($response) {
             return $this->response->setJSON([
