@@ -31,6 +31,11 @@ class AddOlts extends Migration
                 'constraint' => '100',
             ],
 
+            'type' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '100',
+            ],
+
             'user' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '100',
@@ -237,6 +242,11 @@ class AddOlts extends Migration
             ],
 
             'updated_at' => [
+                'type' => 'DATETIME',
+                'null' => true,
+            ],
+
+            'deleted_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
             ],

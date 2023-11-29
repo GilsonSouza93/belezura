@@ -18,6 +18,7 @@ class OltModel extends Model
         'name',
         'host',
         'slot',
+        'type',
         'user',
         'password',
         'password_admin',
@@ -60,6 +61,9 @@ class OltModel extends Model
         'service_suspend',
         'change_plan',
         'company_id',
+        'created_at',
+        'updated_at',
+        'deleted_at',
     ];
 
     // Dates
@@ -103,9 +107,9 @@ class OltModel extends Model
             'slot',
             'type',
             'active',
-            'create_at',
-            'delete_at',
-            'update_at',
+            'created_at',
+            'deleted_at',
+            'updated_at',
         ];
 
         $search = null;

@@ -15,7 +15,7 @@ class AddFinancialMovements extends Migration
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
-            'Recive_point' => [
+            'recive_point' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
