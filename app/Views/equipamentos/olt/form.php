@@ -324,22 +324,6 @@
             }).catch(error => {
                 console.log(error);
             });
-                method: 'POST',
-                body: formData
-            }).then(response => response.json())
-            .then(data => {
-                hideLoading();
-                if (data.status === 'success') {
-                    showToast(data.message, 'success');
-                    setTimeout(() => {
-                        window.location.href = '<?= $baseRoute ?>';
-                    }, 1000);
-                } else {
-                    showToast(data.message, 'error');
-                }
-            }).catch(error => {
-                console.log(error);
-            });
     });
 </script>
 
