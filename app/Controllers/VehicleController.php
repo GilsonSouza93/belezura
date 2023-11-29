@@ -17,15 +17,4 @@ class VehicleController extends BaseController
         parent::__construct();
     }
 
-    public function save()
-    {
-        $data = $this->request->getJSON();
-        var_dump($data); die;
-        
-        $data = [
-            "error" => true
-        ];
-
-        return $this->response->setJSON($data);
-    }
 }
