@@ -26,7 +26,7 @@ class OltController extends BaseController
             $data['error'] = 'Nome é obrigatório';
 
         $data['company_id'] = $session->get('company_id');
-        $data['create_by'] = $session->get('id');
+        $data['created_by'] = $session->get('id');
 
         return $data;
     }

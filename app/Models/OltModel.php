@@ -62,7 +62,9 @@ class OltModel extends Model
         'change_plan',
         'company_id',
         'created_at',
+        'created_by',
         'updated_at',
+        'updated_by',
         'deleted_at',
     ];
 
@@ -108,8 +110,10 @@ class OltModel extends Model
             'type',
             'active',
             'created_at',
+            'created_by',
             'deleted_at',
             'updated_at',
+            'updated_by',
         ];
 
         $search = null;
