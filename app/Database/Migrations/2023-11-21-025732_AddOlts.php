@@ -261,6 +261,7 @@ class AddOlts extends Migration
                 'type' => 'INT',
                 'constraint' => 5,
                 'unsigned' => true,
+                'null' => true,
             ],
 
             "company_id" => [
