@@ -22,7 +22,7 @@
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="modelo" class="form-label">Modelo</label>
-                <input type="text" id="model" class="form-control" name="model" >
+                <input type="text" id="model" class="form-control" name="model">
             </div>
             <div class="mt-3 col-md-4">
                 <label for="placa" class="form-label">Placa</label>
@@ -30,7 +30,7 @@
             </div>
             <div class="mt-3 col-md-4">
                 <label for="uf" class="form-label">UF</label>
-                <select class="form-control select2" id="uf" name="uf" >
+                <select class="form-control select2" id="uf" name="uf">
                     <option selected>UF</option>
                     <option value="1">Acre</option>
                     <option value="2">Alagoas</option>
@@ -71,9 +71,9 @@
             </div>
             <div class="mt-5 col-md-4">
                 <label for="disponivel" class="form-label "></label>
-                <input type="checkbox" name="" id="available" names="available" > Disponível para OS?
+                <input type="checkbox" name="" id="available" names="available"> Disponível para OS?
             </div>
-        </div>       
+        </div>
 
     </form>
 </div>
@@ -93,9 +93,9 @@
         const formData = new FormData(form);
 
         fetch(url, {
-                method: 'POST',
-                body: formData
-            }).then(response => response.json())
+            method: 'POST',
+            body: formData
+        }).then(response => response.json())
             .then(data => {
                 hideLoading();
                 if (data.status === 'success') {

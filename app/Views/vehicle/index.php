@@ -62,7 +62,7 @@
         tableDiv: document.getElementById('tableDiv'),
 
         theadElements: ['Modelo', ' Placa','Uf', 'Local', 'Obs', 'Disponivel'],
-        tbodyElements: ['model', 'plate', 'uf', 'locate','obs', 'available'['edit', 'delete']],
+        tbodyElements: ['model', 'plate', 'uf', 'locate','obs', 'available',['edit', 'delete']],
         searchField: document.getElementById('search'),
     }
 
