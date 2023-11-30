@@ -19,6 +19,9 @@ class TicketController extends BaseController
         $this->data['baseRoutePrint'] = 'boleto/imprimir-em-lote';
         $this->data['addButtonPrint'] = 'Imprimir em lote';
 
+        $popModel = model('PopModel');
+        $this->data['pops'] = $popModel->findAll();
+
         parent::__construct();
     }
 

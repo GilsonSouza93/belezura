@@ -42,12 +42,7 @@
             <div class="mt-3 col-md-3">
                 <label for="pop" class="form-label">POP</label>
                 <select class="form-control select2"  id="pop" name="pop">
-                    <option selected>Selecione o Local POP</option>
-                    <option value="1">Caruaru</option>
-                    <option value="2">Olinda</option>
-                    <option value="2">Recife</option>
-                    <option value="2">Surubim</option>
-                    <option value="2">Garanhuns</option>
+                    
                 </select>
             </div>
 
