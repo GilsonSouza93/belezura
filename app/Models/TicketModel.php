@@ -32,7 +32,7 @@ class TicketModel extends Model
         "title_issued_start",
         "title_issued_end",
         "obs",
-        "company_id",
+        'company_id',
         'created_at',
         'updated_at',
         'deleted_at',
