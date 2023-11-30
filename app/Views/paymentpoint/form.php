@@ -288,4 +288,4 @@
         return document.getElementById(id).value;
     }
 </script>
-<?= $this->endSection() ?>
+<?= $this->endSection() ?><?php
