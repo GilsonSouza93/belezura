@@ -149,11 +149,11 @@ class AddPaymentPoint extends Migration
 
         $this->forge->addForeignKey('company_id', 'companies', 'id');
 
-        $this->forge->CreateTable('paymentPoint');
+        $this->forge->CreateTable('paymentPoints');
     }
 
     public function down()
     {
-        $this->forge->DropTable('paymentPoint');
+        $this->forge->DropTable('paymentPoints');
     }
 }

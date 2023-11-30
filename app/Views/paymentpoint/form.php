@@ -262,7 +262,7 @@
             "active": document.getElementById("active").checked,
             "bills_discount": getValue('bills_discount'),
             "admin_discount": getValue('admin_discount'),
-            "allow_discount": document.maingetElementById("allow_discount").checked,
+            "allow_discount": document.getElementById("allow_discount").checked,
             "refinance": document.getElementById("refinance").checked,
             "method": getValue('method'),
             "receiver": getValue('receiver'),
