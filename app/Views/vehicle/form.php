@@ -19,18 +19,20 @@
     </div>
 
     <form id="form">
+        <input type="hidden" name="id" id="id" value="<?= isset($register) ? $register->id : '' ?>">
+
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="modelo" class="form-label">Modelo</label>
-                <input type="text" id="model" class="form-control" name="model">
+                <input type="text" id="model" class="form-control" name="model" <?= isset($register) ? "value='{$register->model}'" : '' ?>>
             </div>
             <div class="mt-3 col-md-4">
                 <label for="placa" class="form-label">Placa</label>
-                <input type="text" id="plate" class="form-control" name="plate">
+                <input type="text" id="plate" class="form-control" name="plate" <?= isset($register) ? "value='{$register->plate}'" : '' ?>>
             </div>
             <div class="mt-3 col-md-4">
                 <label for="uf" class="form-label">UF</label>
-                <select class="form-control select2" id="uf" name="uf">
+                <select class="form-control select2" id="uf" name="uf" <?= isset($register) ? "value='{$register->uf}'" : '' ?>>
                     <option selected>UF</option>
                     <option value="1">Acre</option>
                     <option value="2">Alagoas</option>
@@ -63,15 +65,15 @@
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="local" class="form-label">Local</label>
-                <input type="text" id="locate" class="form-control" name="locate">
+                <input type="text" id="locate" class="form-control" name="locate" <?= isset($register) ? "value='{$register->locate}'" : '' ?>>
             </div>
             <div class="mt-3 col-md-4">
                 <label for="obs" class="form-label">Observação</label>
-                <input type="text" id="obs" class="form-control" name="obs">
+                <input type="text" id="obs" class="form-control" name="obs" <?= isset($register) ? "value='{$register->obs}'" : '' ?>>
             </div>
             <div class="mt-5 col-md-4">
-                <label for="disponivel" class="form-label "></label>
-                <input type="checkbox" name="" id="available" names="available"> Disponível para OS?
+                <input type="checkbox" name="" id="available" names="available" <?= isset($register) ? "value='{$register->available}'" : '' ?>>
+                <label for="disponivel" class="form-label ">Disponível para OS?</label>
             </div>
         </div>
 
