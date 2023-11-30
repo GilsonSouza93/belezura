@@ -187,12 +187,6 @@
             showToast('Houve um erro', 'error');
         }
     }
-
-                
-                
-
-
-
 </script>
 
                     

@@ -141,6 +141,11 @@ class AddPaymentPoint extends Migration
                 'type' => 'DATETIME',
                 'null' => true,
             ],
+            
+            'deleted_at' => [
+                'type' => 'DATETIME',
+                'null' => true,
+            ],
 
             'created_at timestamp DEFAULT current_timestamp NOT NULL',
         ]);
