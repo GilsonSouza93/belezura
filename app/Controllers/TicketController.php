@@ -29,14 +29,15 @@ class TicketController extends BaseController
         return view($this->viewPath . '/print', $this->data);
     }
 
-    public function search()
+    public function treatmentBeforeSave($data)
     {
-        $data = $this->request->getJSON();
-        
-        $tickets = $this->mainModel->search($data->search);
-
-        return $this->response->setJSON($tickets);
+      $session = session();
+      $data['company_id'] = $session->get('company_id');
+    
+      return $data;
     }
+
+
 }
 
 

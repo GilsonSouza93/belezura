@@ -32,11 +32,88 @@ class TicketModel extends Model
         "title_issued_start",
         "title_issued_end",
         "obs",
+        "company_id",
         'created_at',
         'updated_at',
         'deleted_at',
         'company_id',
     ];
+
+    public function search($data)
+    {
+        $fieldsToSearch = [
+        'id',
+        "district",
+        "andress",
+        "pop",
+        "nas",
+        "parcel",
+        "date",
+        "carrier",
+        "plans",
+        "edf",
+        "payment",
+        "date_start",
+        "date_end",
+        "ticket_open",
+        "pix",
+        "title_issued_start",
+        "title_issued_end",
+        "obs",
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        'company_id',
+        ];
+
+        $fieldsToReturn = [
+            'id',
+            "district",
+            "andress",
+            "pop",
+            "nas",
+            "parcel",
+            "date",
+            "carrier",
+            "plans",
+            "edf",
+            "payment",
+            "date_start",
+            "date_end",
+            "ticket_open",
+            "pix",
+            "title_issued_start",
+            "title_issued_end",
+            "obs",
+            'created_at',
+            'updated_at',
+            'deleted_at',
+            'company_id',
+        ];
+
+        $createdAtName = 'created_at';
+
+        $search = null;
+
+        if (isset($data['search']))
+            $search = $data['search'];
+
+        $query = $this->db->table($this->table)
+            ->select($fieldsToReturn);
+
+        if ($search) {
+            $query->groupStart();
+            foreach ($fieldsToSearch as $field) {
+                $query->orLike($field, $search);
+            }
+            $query->groupEnd();
+        }
+
+        $query->orderBy($createdAtName, 'DESC');
+        $result = $query->get()->getResultArray();
+
+    return $result;
+    }
 
     // Dates
     protected $useTimestamps = false;
