@@ -37,6 +37,11 @@ class AddTicket extends Migration
                 'constraint' => 50,
             ],
 
+            'parcel' => [
+                'type' => 'INT',
+                'constraint' => 50,
+            ],
+
             'date' => [
                 'type' => 'DATETIME',
                 'null' => true,
