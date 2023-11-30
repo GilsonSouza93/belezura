@@ -27,6 +27,10 @@
 <?= $this->section('script') ?>
 
 <script>
+    const collapseTable = document.getElementById('collapseTable');
+    const customersCount = document.getElementById('customersCount')
+    const searchBtn = document.getElementById('searchBtn')
+    
     const renderTableOptions = {
         urlFetch: window.location.href + '/search',
         tableDiv: document.getElementById('tableDiv'),
