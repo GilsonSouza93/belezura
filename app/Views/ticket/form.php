@@ -235,7 +235,6 @@
 <?= $this->section('script') ?>
 
 <script>
-
     const submitBtn = document.querySelector('#submit-btn');
     const form = document.querySelector('form');
     const url = '<?= $baseRoute ?>/save';
@@ -250,20 +249,20 @@
             method: 'POST',
             body: formData
         }).then(response => response.json())
-        .then(data => {
-            hideLoading();
-            if (data.error) {
-                showToast(data.message, 'error');
-            } else {
-                showToast(data.message, 'success');
-                window.location.href = '<?= $baseRoute ?>';
-            }
-        }).catch(error => {
-            console.log(error);
-        });
+            .then(data => {
+                hideLoading();
+                if (data.status === 'success') {
+                    showToast(data.message, 'success');
+                    setTimeout(() => {
+                        window.location.href = '<?= $baseRoute ?>';
+                    }, 1000);
+                } else {
+                    showToast(data.message, 'error');
+                }
+            }).catch(error => {
+                console.log(error);
+            });
     });
-
-
 </script>
 
 <?= $this->endSection() ?>
