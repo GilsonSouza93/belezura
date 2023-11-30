@@ -321,11 +321,16 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->post('save', 'PaymentPointController::save');
             $routes->post('search', 'PaymentPointController::search');
             $routes->post('delete', 'PaymentPointController::delete');
+            $routes->get('editar/(:num)', 'PaymentPointController::edit/$1');
         });
 
         $routes->group('planosdepagamento', static function ($routes) {
             $routes->get('/', 'PaymentPlansController::index');
             $routes->get('novo', 'PaymentPlansController::form');
+            $routes->post('save', 'PaymentPlansController::save');
+            $routes->post('search', 'PaymentPlansController::search');
+            $routes->post('delete', 'PaymentPlansController::delete');
+            $routes->get('editar/(:num)', 'PaymentPlansController::edit/$1');
         });
 
         $routes->group('caixa', static function ($routes) {

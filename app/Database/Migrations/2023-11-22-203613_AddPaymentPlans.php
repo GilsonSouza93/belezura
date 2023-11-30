@@ -34,7 +34,7 @@ class AddPaymentPlans extends Migration
                 'constraint' => '255',
             ],
 
-            'dreType' => [
+            'dre_type' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
@@ -54,7 +54,7 @@ class AddPaymentPlans extends Migration
                 'default' => false,
             ],
 
-            'colection' => [
+            'charge' => [
                 'type' => 'boolean',
                 'default' => false,
             ],
