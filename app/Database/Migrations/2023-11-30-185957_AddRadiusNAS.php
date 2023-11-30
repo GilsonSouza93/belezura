@@ -197,7 +197,7 @@ class AddRadius extends Migration
             ],
             'company_id' => [
                 'type' => 'INT',
-                'constraint' => 30,
+                'constraint' => 5,
             ],
             'updated_at' => [
                 'type' => 'DATETIME',
