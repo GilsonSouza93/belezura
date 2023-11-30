@@ -152,11 +152,13 @@
             }).then(response => response.json())
             .then(data => {
                 hideLoading();
-                if (data.error) {
-                    showToast(data.message, 'error');
-                } else {
+                if (data.status === 'success') {
                     showToast(data.message, 'success');
-                    window.location.href = '<?= $baseRoute ?>';
+                    setTimeout(() => {
+                        window.location.href = '<?= $baseRoute ?>';
+                    }, 1000);
+                } else {
+                    showToast(data.message, 'error');
                 }
             }).catch(error => {
                 console.log(error);
