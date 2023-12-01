@@ -214,11 +214,11 @@ class AddRadius extends Migration
         $this->forge->addKey('id', true);
         $this->forge->addForeignKey('company_id', 'companies', 'id');
 
-        $this->forge->createTable('radiusNAS');
+        $this->forge->createTable('radiusNAN');
     }
 
     public function down()
     {
-        $this->forge->dropTable('radiusNAS');
+        $this->forge->dropTable('radiusNAN');
     }
 }

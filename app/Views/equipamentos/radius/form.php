@@ -33,11 +33,11 @@
         <div class="row">
             <div class="mt-3 col-md-6">
                 <label for="pop" class="form-label">POP'S</label>
-                <input type="text" class="form-control" name="radius_pop" placeholder="Insira o POP" id="radius_pop">
+                <input type="text" class="form-control" name="pop" placeholder="Insira o POP" id="pop">
             </div>
             <div class="mt-3 col-md-6">
-                <label for="tipo" class="form-label">IP POOL</label>
-                <select class="form-control select2" aria-label="Default select example" name="radius_ippool" id="radius_ippool">
+                <label for="ip_pool" class="form-label">IP POOL</label>
+                <select class="form-control select2" aria-label="Default select example" name="ip_pool" id="ip_pool">
                     <option selected>Selecione o IP POOL</option>
                     <option value="1">IP 01</option>
                 </select>
@@ -45,33 +45,33 @@
         </div>
         <div class="row">
             <div class="mt-3 col-md-6">
-                <label for="pop" class="form-label">Usuário</label>
-                <input type="text" class="form-control" name="radius_user" placeholder="Insira um nome"id="radius_user">
+                <label for="user" class="form-label">Usuário</label>
+                <input type="text" class="form-control" name="user" placeholder="Insira um nome"id="user">
             </div>
             <div class="mt-3 col-md-6">
-                <label for="pop" class="form-label">Senha</label>
-                <input type="text" class="form-control" name="radius_password" placeholder="Insira uma senha" id="radius_password">
+                <label for="password" class="form-label">Senha</label>
+                <input type="text" class="form-control" name="password" placeholder="Insira uma senha" id="password">
             </div>
         </div>
 
         <div class="row">
             <div class="mt-3 col-md-4">
-                <label for="tipo" class="form-label">IPv6 Prefix Pool:</label>
-                <select class="form-control select2" aria-label="Default select example"name="radius_prefxipv6" id="radius_prefxipv6">
+                <label for="prefx_ipv6" class="form-label">IPv6 Prefix Pool:</label>
+                <select class="form-control select2" aria-label="Default select example"name="prefx_ipv6" id="prefx_ipv6">
                     <option selected>Selecione o IP POOL</option>
                     <option value="1">IP 01</option>
                 </select>
             </div>
             <div class="mt-3 col-md-4">
-                <label for="tipo" class="form-label">IPv6 PD Pool:</label>
-                <select class="form-control select2" aria-label="Default select example" name="radius_ipv6pool" id="radius_ipv6pool">
+                <label for="ipv6_pool" class="form-label">IPv6 PD Pool:</label>
+                <select class="form-control select2" aria-label="Default select example" name="ipv6_pool" id="ipv6_pool">
                     <option selected>Selecione o IP POOL</option>
                     <option value="1">IP 01</option>
                 </select>
             </div>
             <div class="mt-3 col-md-4">
-                <label for="tipo" class="form-label">IP Pool Bloqueio:</label>
-                <select class="form-control select2" aria-label="Default select example" name="radius_ippoolblock" id="radius_ippoolblock">
+                <label for="ip_pool_block" class="form-label">IP Pool Bloqueio:</label>
+                <select class="form-control select2" aria-label="Default select example" name="ip_pool_block" id="ip_pool_block">
                     <option selected>Selecione o IP POOL</option>
                     <option value="1">IP 01</option>
                 </select>
@@ -80,47 +80,47 @@
 
         <div class="row">
             <div class="mt-3 col-md-3">
-                <label for="IP" class="form-label">Endereço de IP</label>
-                <input type="text" class="form-control" name="radius_andressip" placeholder="Insira IP" id="radius_andressip">
+                <label for="ip_address" class="form-label">Endereço de IP</label>
+                <input type="text" class="form-control" name="ip_address" placeholder="Insira IP" id="ip_address">
             </div>
             <div class="mt-3 col-md-3">
-                <label for="IP" class="form-label">Nome do Indentificador</label>
-                <input type="text" class="form-control" name="radius_name" placeholder="Insira nome para indentificar" id="radius_name">
+                <label for="name" class="form-label">Nome do Indentificador</label>
+                <input type="text" class="form-control" name="name" placeholder="Insira nome para indentificar" id="name">
             </div>
             <div class="mt-3 col-md-3">
-                <label for="IP" class="form-label">Tipo:</label>
-                <input type="text" class="form-control" name="radius_type" placeholder="Insira o tipo" id="radius_type">
+                <label for="type" class="form-label">Tipo:</label>
+                <input type="text" class="form-control" name="type" placeholder="Insira o tipo" id="type">
             </div>
             <div class="mt-3 col-md-3">
-                <label for="IP" class="form-label">Palavra Secreta</label>
-                <input type="text" class="form-control" name="radius_secretword" placeholder="Insira a palavra passe" id="radius_secretword">
+                <label for="secret_word" class="form-label">Palavra Secreta</label>
+                <input type="text" class="form-control" name="secret_word" placeholder="Insira a palavra passe" id="secret_word">
             </div>
         </div>
         <div class="row">
             <div class="mt-3 col-md-4">
-                <label for="IP" class="form-label">Porta de Requisição NAS</label>
-                <input type="text" class="form-control" name="radius_portnas" placeholder="" id="radius_portnas">
+                <label for="port" class="form-label">Porta de Requisição NAS</label>
+                <input type="text" class="form-control" name="port" placeholder="" id="port">
             </div>
             <div class="mt-3 col-md-4">
-                <label for="IP" class="form-label">IP de Requisição NAS</label>
-                <input type="text" class="form-control" name="radius_nasip" placeholder="" id="radius_nasip">
+                <label for="nas_ip" class="form-label">IP de Requisição NAS</label>
+                <input type="text" class="form-control" name="nas_ip" placeholder="" id="nas_ip">
             </div>
             <div class="mt-3 col-md-4">
-                <label for="IP" class="form-label">IP de Origem Ping</label>
-                <input type="text" class="form-control" name="radius_iporigin" placeholder="" id="radius_iporigin">
+                <label for="ip_origin" class="form-label">IP de Origem Ping</label>
+                <input type="text" class="form-control" name="ip_origin" placeholder="" id="ip_origin">
             </div>
         </div>
         <div class="row">
             <div class="mt-3 col-md-6">
-                <label for="tipo" class="form-label">Tipo de Acesso Extra:</label>
-                <select class="form-control select2" name="radius_extratype" id="radius_extratype">
+                <label for="extra_type" class="form-label">Tipo de Acesso Extra:</label>
+                <select class="form-control select2" name="extra_type" id="extra_type">
                     <option selected>Selecione o IPv6 Prefixo POOL</option>
                     <option value="1">IP 01</option>
                 </select>
             </div>
             <div class="mt-3 col-md-6">
-                <label for="tipo" class="form-label">Radius Config:</label>
-                <select class="form-control select2" name="radius_radiusconfig" id="radius_radiusconfig">
+                <label for="radius_config" class="form-label">Radius Config:</label>
+                <select class="form-control select2" name="radius_config" id="radius_config">
                     <option selected>Selecione o IPv6 POOL</option>
                     <option value="1">IP 01</option>
                 </select>
@@ -129,130 +129,130 @@
 
         <div class="row">
             <div class="mt-3 col-md-4">
-                <label for="IP" class="form-label">Porta</label>
-                <input type="text" class="form-control" name="name" placeholder="">
+                <label for="port_2" class="form-label">Porta</label>
+                <input type="text" class="form-control" name="port_2" id="port_2" placeholder="">
             </div>
             <div class="mt-3 col-md-4">
                 <label for="IP" class="form-label">Usuário</label>
-                <input type="text" class="form-control" name="radius_port" placeholder="" id="radius_port">
+                <input type="text" class="form-control" name="user_2" placeholder="" id="user_2">
             </div>
             <div class="mt-3 col-md-4">
                 <label for="IP" class="form-label">Senha</label>
-                <input type="text" class="form-control" name="radius_password" placeholder="" id="radius_password">
+                <input type="text" class="form-control" name="password_2" placeholder="" id="password_2">
             </div>
         </div>
 
         <div class="row">
             <div class="mt-3 col-md-3">
-                <label for="IP" class="form-label">SNMP Version:</label>
-                <input type="text" class="form-control" name="radius_snmpversion" placeholder="" id="radius_snmpversion">
+                <label for="snmp_version" class="form-label">SNMP Version:</label>
+                <input type="text" class="form-control" name="snmp_version" placeholder="" id="snmp_version">
             </div>
             <div class="mt-3 col-md-3">
-                <label for="IP" class="form-label">SNMP Community:</label>
-                <input type="text" class="form-control" name="radius_snmpcommunity" placeholder="" id="radius_snmpcommunity">
+                <label for="snmp_community" class="form-label">SNMP Community:</label>
+                <input type="text" class="form-control" name="snmp_community" placeholder="" id="snmp_community">
             </div>
             <div class="mt-3 col-md-3">
-                <label for="IP" class="form-label">SNMP Port:</label>
-                <input type="text" class="form-control" name="radius_snmpport" placeholder="" id="radius_snmpport">
+                <label for="snmp_port" class="form-label">SNMP Port:</label>
+                <input type="text" class="form-control" name="snmp_port" placeholder="" id="snmp_port">
             </div>
             <div class="mt-3 col-md-3">
-                <label for="IP" class="form-label">HTTP Porta.</label>
-                <input type="text" class="form-control" name="radius_httpport" placeholder="" id="radius_httpport">
+                <label for="http_port" class="form-label">HTTP Porta:</label>
+                <input type="text" class="form-control" name="http_port" placeholder="" id="http_port">
             </div>
         </div>
 
         <div class="row">
             <div class="mt-3 col-md-4">
-                <label for="IP" class="form-label">DNS Primário:</label>
-                <input type="text" class="form-control" name="radius_dnsprimary" placeholder="" id="radius_dnsprimary">
+                <label for="dns_primary" class="form-label">DNS Primário:</label>
+                <input type="text" class="form-control" name="dns_primary" placeholder="" id="dns_primary">
             </div>
             <div class="mt-3 col-md-4">
-                <label for="IP" class="form-label">DNS Secundário:</label>
-                <input type="text" class="form-control" name="radius_dnssecudary" placeholder="" id="radius_dnssecudary">
+                <label for="dns_secudary" class="form-label">DNS Secundário:</label>
+                <input type="text" class="form-control" name="dns_secudary" placeholder="" id="dns_secudary">
             </div>
             <div class="mt-3 col-md-4">
-                <label for="IP" class="form-label">Accounting Update:</label>
-                <input type="text" class="form-control" name="radius_accountingupdate" placeholder="" id="radius_accountingupdate">
+                <label for="accounting_update" class="form-label">Accounting Update:</label>
+                <input type="text" class="form-control" name="accounting_update" placeholder="" id="accounting_update">
             </div>
         </div>
 
 
         <div class="row">
             <div class="mt-3 col-md-6">
-                <label for="IP" class="form-label">Porta</label>
-                <input type="text" class="form-control" name="radius_portsecundary" placeholder="" id="radius_portsecundary">
+                <label for="port_secundary" class="form-label">Porta</label>
+                <input type="text" class="form-control" name="port_secundary" placeholder="" id="port_secundary">
             </div>
             <div class="mt-3 col-md-6">
-                <label for="IP" class="form-label">Latitude, Longitude</label>
-                <input type="text" class="form-control" name="radius_latlong" placeholder="" id="radius_latlong">
+                <label for="lat_long" class="form-label">Latitude, Longitude</label>
+                <input type="text" class="form-control" name="lat_long" placeholder="" id="lat_long">
             </div>
         </div>
         <div class="row">
             <div class="mt-3 col-md-2">
-                <label for="IP" class="form-label"></label>
-                <input type="checkbox" name="radius_activeradius" id="radius_activeradius" class="form-check-input"> Ativar no Radius
+                <label for="active_radius" class="form-label"></label>
+                <input type="checkbox" name="active_radius" id="active_radius" class="form-check-input"> Ativar no Radius
             </div>
             <div class="mt-3 col-md-2">
-                <label for="IP" class="form-label"></label>
-                <input type="checkbox" name="radius_costumerdisponible" id="radius_costumerdisponible" class="form-check-input"> Disponível para Cliente
+                <label for="costumer_disponible" class="form-label"></label>
+                <input type="checkbox" name="costumer_disponible" id="costumer_disponible" class="form-check-input"> Disponível para Cliente
             </div>
             <div class="mt-3 col-md-2">
-                <label for="IP" class="form-label"></label>
-                <input type="checkbox" name="radius_verifylogin" id="radius_verifylogin" class="form-check-input"> Verificar Login
+                <label for="verify_login" class="form-label"></label>
+                <input type="checkbox" name="verify_login" id="verify_login" class="form-check-input"> Verificar Login
             </div>
             <div class="mt-3 col-md-2">
-                <label for="IP" class="form-label"></label>
-                <input type="checkbox" name="radius_verifymac" id="radius_verifymac" class="form-check-input"> Verificar Mac
+                <label for="verify_mac" class="form-label"></label>
+                <input type="checkbox" name="verify_mac" id="verify_mac" class="form-check-input"> Verificar Mac
             </div>
             <div class="mt-3 col-md-2">
-                <label for="IP" class="form-label"></label>
-                <input type="checkbox" name="radius_verifymaclogin" id="radius_verifymaclogin" class="form-check-input"> Verificar Mac+Login
+                <label for="verify_mac_login" class="form-label"></label>
+                <input type="checkbox" name="verify_mac_login" id="verify_mac_login" class="form-check-input"> Verificar Mac+Login
             </div>
             <div class="mt-3 col-md-2">
-                <label for="IP" class="form-label"></label>
-                <input type="checkbox" name="radius_rrdinterfaces" id="radius_rrdinterfaces" class="form-check-input"> RRd Interfaces
+                <label for="rrd_interfaces" class="form-label"></label>
+                <input type="checkbox" name="rrd_interfaces" id="rrd_interfaces" class="form-check-input"> RRd Interfaces
             </div>
         </div>
         <div class="row">
             <div class="mt-3 col-md-4">
-                <label for="IP" class="form-label">Parâmetros do JSON:</label>
-                <input type="text" class="form-control" name="radius_jsonparameters" id="radius_jsonparameters">
+                <label for="json_parameters" class="form-label">Parâmetros do JSON:</label>
+                <input type="text" class="form-control" name="json_parameters" id="json_parameters">
             </div>
             <div class="mt-5 col-md-2">
-                <label for="IP" class="form-label"></label>
-                <input type="checkbox" name="radius_autoreload" id="radius_autoreload" class="form-check-input"> Auto Reload
+                <label for="auto_reload" class="form-label"></label>
+                <input type="checkbox" name="auto_reload" id="auto_reload" class="form-check-input"> Auto Reload
             </div>
             <div class="mt-3 col-md-4">
-                <label for="IP" class="form-label">Simutâneos User por Login:</label>
-                <input type="text" class="form-control" name="radius_simutaneouserlogin" id="radius_simutaneouserlogin">
+                <label for="simutaneo_user_login" class="form-label">Simutâneos User por Login:</label>
+                <input type="text" class="form-control" name="simutaneo_user_login" id="simutaneo_user_login">
             </div>
             <div class="mt-5 col-md-2">
-                <label for="IP" class="form-label"></label>
-                <input type="checkbox" name="radius_checkradius" id="radius_checkradius" class="form-check-input"> Checar Radius
+                <label for="check_radius" class="form-label"></label>
+                <input type="checkbox" name="check_radius" id="check_radius" class="form-check-input"> Checar Radius
             </div>
         </div>
         <div class="row">
             <div class="mt-3 col-md-4">
-                <label for="IP" class="form-label">Timeout de Checagem de Conexão</label>
-                <input type="text" class="form-control" name="radius_timeoutcheck" id="radius_timeoutcheck">
+                <label for="timeout_check" class="form-label">Timeout de Checagem de Conexão</label>
+                <input type="text" class="form-control" name="timeout_check" id="timeout_check">
             </div>
             <div class="mt-5 col-md-2">
-                <label for="IP" class="form-label"></label>
-                <input type="checkbox" name="radius_checkconexion" id="radius_checkconexion" class="form-check-input"> Checar Conectividade
+                <label for="check_conexion" class="form-label"></label>
+                <input type="checkbox" name="check_conexion" id="check_conexion" class="form-check-input"> Checar Conectividade
             </div>
             <div class="mt-3 col-md-3">
-                <label for="IP" class="form-label">Timeout Gráfico de Coleta de Sinal:</label>
-                <input type="text" class="form-control" name="radius_timeoutgraphics" id="radius_timeoutgraphics">
+                <label for="timeout_graphics" class="form-label">Timeout Gráfico de Coleta de Sinal:</label>
+                <input type="text" class="form-control" name="timeout_graphics" id="timeout_graphics">
             </div>
             <div class="mt-3 col-md-3">
-                <label for="IP" class="form-label">Endereço IP de Acesso - Importação:</label>
-                <input type="text" class="form-control" name="radius_andressipacess" id="radius_andressipacess">
+                <label for="ip_address_access" class="form-label">Endereço IP de Acesso - Importação:</label>
+                <input type="text" class="form-control" name="ip_address_access" id="ip_address_access">
             </div>
         </div>
         <div class="row">
         <div class="mt-3 col-md-12">
-                <label for="tipo" class="form-label">Tipo de Acesso - Importação:</label>
-                <select class="form-control select2" name="radius_acesstype" id="radius_acesstype">
+                <label for="access_type" class="form-label">Tipo de Acesso - Importação:</label>
+                <select class="form-control select2" name="access_type" id="access_type">
                     <option selected>Selecione a importação</option>
                     <option value="1">IP 01</option>
                 </select>
@@ -260,22 +260,22 @@
         </div>
         <div class="row">
             <div class="mt-3 col-md-4">
-                <label for="IP" class="form-label">Porta de Acesso - Importação:</label>
-                <input type="text" class="form-control" name="radius_acessport" id="radius_acessport">
+                <label for="access_port" class="form-label">Porta de Acesso - Importação:</label>
+                <input type="text" class="form-control" name="access_port" id="access_port">
             </div>
             <div class="mt-3 col-md-4">
-                <label for="IP" class="form-label">Usuário de acesso - Importação:</label>
-                <input type="text" class="form-control" name="radius_acessuser" id="radius_acessuser">
+                <label for="access_user" class="form-label">Usuário de acesso - Importação:</label>
+                <input type="text" class="form-control" name="access_user" id="access_user">
             </div>
             <div class="mt-3 col-md-4">
-                <label for="IP" class="form-label">Senha de Acesso - Importação:</label>
-                <input type="text" class="form-control" name="radius_acesspassword" id="radius_acesspassword">
+                <label for="access_password" class="form-label">Senha de Acesso - Importação:</label>
+                <input type="text" class="form-control" name="access_password" id="access_password">
             </div>
         </div>
         <div class="row">
         <div class="mt-3 col-md-12">
-                <label for="IP" class="form-label">ShortCode</label>
-                <input type="text" class="form-control" name="radius_shortcode" id="radius_shortcode">
+                <label for="short_code" class="form-label">ShortCode</label>
+                <input type="text" class="form-control" name="short_code" id="short_code">
             </div>
         </div>
         <div class="row card-2 py-3 my-3">

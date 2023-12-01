@@ -55,120 +55,18 @@
 <?= $this->section('script') ?>
 
 <script>
-    const tableRadius = document.getElementById('tableRadius');
-    const radiusCount = document.getElementById('radiusCount')
-    const searchBtn = document.getElementById('searchBtn')
-
-    const search = () => {
-        const search = document.getElementById('search').value
-        const url = '<?= $baseRoute ?>/search'
-        const data = {
-            search: search
-        }
-
-        radiusCount.innerText = 'Carregando...'
-
-        fetch(url, {
-            method: 'POST',
-            body: JSON.stringify(data),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            renderTableTwo(data);
-        })
-        .catch(error => {
-            showToast('Erro ao buscar clientes !', 'error')
-        })
-
+    const renderTableOptions = {
+        urlFetch: window.location.href + '/search',
+        tableDiv: document.getElementById('tableDiv'),
+        // ID	Descrição	Tipo	Host	Secret	Cadastro	Serviço	Status	Ativo	Ação
+        theadElements: ['ID', 'Tipo', 'Porta','Plavra Secreta','Data de Cadastro','Ativo', 'ações'],
+        tbodyElements: ['id', 'type', 'port','secret_word','created_at','active_radius', ['edit', 'delete']],
+        searchField: document.getElementById('search'),
     }
-
-    const renderTableTwo = (data) => {
-        radiusCount.innerText = data.length
-
-        const tbody = document.querySelector('tbody')
-        tbody.innerHTML = ''
-        data.forEach(radius => {
-
-            Object.keys(radius).forEach(key => {
-                if (radius[key] === null) {
-                    radius[key] = ''
-                }
-            });
-
-            const tr = document.createElement('tr');
-            tr.innerHTML = `
-                <td>${radius?.name}</td>
-                <td>
-                    ${radius?.email}<br>
-                    ${radius?.phone1}
-                </td>
-                <td></td>
-                <td></td>
-                <td class='text-end'>
-                    <div class="dropstart">
-                        <button type="button" class="btn btn-outline-secondary text-white" data-bs-toggle="dropdown" aria-expanded="false">
-                            Ações
-                        </button>
-                        <ul class="dropdown-menu text-center me-2" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(7px); border-radius: 15px; border: 2px solid #198754;">
-                            <li class="dropdown-item" onclick="editRadius(${radius.id})">Editar</li>
-                            <li class="dropdown-item" onclick="deleteRadius(${radius.id})">Excluir</li>
-                        </ul>
-                    </div>
-                </td>
-            `
-            tbody.appendChild(tr);
-        })
-        
-        tableRadius.classList.add('show');
-    }
-
-    const openModalFilter = () => {
-        const modalFilter = new bootstrap.Modal('#modalFilter', {
-            keyboard: true,
-        });
-
-        modalFilter.show();
-    }
-
 
     document.addEventListener('DOMContentLoaded', () => {
-        search()
+        advancedSearchEngine(renderTableOptions);
     });
-
-    searchBtn.addEventListener('click', () => {
-        search()
-    });
-
-    const deleteRadius = (id) => {
-        url = '<?= $baseRoute ?>/delete';
-        showLoading();
-
-        fetch(url, {
-            method: 'POST',
-            body: JSON.stringify({id: id}),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then(response => response.json())
-        .then(data => {
-            hideLoading();
-
-            if (data.success === true) {
-                showToast('Cliente excluído com sucesso !', 'success')
-                search()
-            } else {
-                showToast('Erro ao excluir cliente !', 'error')
-            }
-        })
-    }
-
-    const editRadius = (id) => {
-        window.location.href = '<?= $baseRoute ?>/editar/' + id;
-    }
-
 </script>
 
 <?= $this->endSection() ?>

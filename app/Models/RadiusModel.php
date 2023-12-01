@@ -15,55 +15,58 @@ class RadiusModel extends Model
     protected $protectFields    = true;
     protected $allowedFields    = [
         'id',
-        "radius_pop",
-        "radius_ippool",
-        "radius_user",
-        "radius_password",
-        "radius_prefxipv6",
-        "radius_ipv6pool",
-        "radius_ippoolblock",
-        "radius_andressip",
-        "radius_name",
-        "radius_type",
-        "radius_port",
-        "radius_secretword",
-        "radius_nasip",
-        "radius_extratype",
-        "radius_iporigin",
-        "radius_radiusconfig",
-        "radius_port",
-        "radius_password",
-        "radius_snmpversion",
-        "radius_snmpcommunity",
-        "radius_snmpport",
-        "radius_httpport",
-        "radius_dnsprimary",
-        "radius_dnssecudary",
-        "radius_accountingupdate",
-        "radius_portsecundary",
-        "radius_latlong",
-        "radius_activeradius",
-        "radius_costumerdisponible",
-        "radius_verifylogin",
-        "radius_verifymac",
-        "radius_verifymaclogin",
-        "radius_rrdinterfaces",
-        "radius_jsonparameters",
-        "radius_autoreload",
-        "radius_simutaneouserlogin",
-        "radius_checkradius",
-        "radius_timeoutcheck",
-        "radius_checkconexion",
-        "radius_timeoutgraphics",
-        "radius_andressipacess",
-        "radius_acesstype",
-        "radius_acessport",
-        "radius_acessuser",
-        "radius_acesspassword",
-        "radius_shortcode",
+        "pop",
+        "ip_pool",
+        "user",
+        "password",
+        "prefx_ipv6",
+        "ipv6_pool",
+        "ip_pool_block",
+        "ip_address",
+        "name",
+        "type",
+        "port",
+        "secret_word",
+        "nas_ip",
+        "extra_type",
+        "ip_origin",
+        "radius_config",
+        "port_2",
+        "user_2",
+        "password_2",
+        "snmp_version",
+        "snmp_community",
+        "snmp_port",
+        "http_port",
+        "dns_primary",
+        "dns_secudary",
+        "account_ing_update",
+        "port_secundary",
+        "lat_long",
+        "active_radius",
+        "costumer_disponible",
+        "verify_login",
+        "verify_mac",
+        "verify_mac_login",
+        "rrd_interfaces",
+        "json_parameters",
+        "auto_reload",
+        "simutaneo_user_login",
+        "check_radius",
+        "timeout_check",
+        "check_conexion", 
+        "timeout_graphics",
+        "ip_address_access",//
+        "access_type",
+        "access_port",
+        "access_user",
+        "access_password",
+        "short_code",
         'created_at',
         'updated_at',
-        'deleted_at',];
+        'deleted_at',
+        'company_id',
+    ];
 
     // Dates
     protected $useTimestamps = false;
@@ -88,4 +91,47 @@ class RadiusModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function search($data)
+    {
+        $fieldsToSearch = [
+            'name',
+            'email',
+            'phones',
+            'pop_id',
+            'address1',
+        ];
+
+        $fieldsToReturn = [
+            'id',
+            'name',
+            'phones',
+            'address1',
+            'pop_id',
+        ];
+
+        $createdAtName = 'created_at';
+
+        $search = null;
+
+        if (isset($data['search']))
+            $search = $data['search'];
+
+        $query = $this->db->table($this->table)
+            ->select($fieldsToReturn);
+
+        if ($search) {
+            $query->groupStart();
+            foreach ($fieldsToSearch as $field) {
+                $query->orLike($field, $search);
+            }
+            $query->groupEnd();
+        }
+
+        $query->orderBy($createdAtName, 'DESC');
+        $result = $query->get()->getResultArray();
+
+    return $result;
+    }
+
 }

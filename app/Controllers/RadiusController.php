@@ -17,15 +17,13 @@ class RadiusController extends BaseController
         parent::__construct();
     }
 
-    public function search()
+    public function treatmentBeforeSave($data)
     {
-        $data = $this->request->getJSON();
-        
-        $radius = $this->mainModel->search($data->search);
-
-        return $this->response->setJSON($radius);
+      $session = session();
+      $data['company_id'] = $session->get('company_id');
+    
+      return $data;
     }
-
     
     
 }
