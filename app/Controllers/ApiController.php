@@ -19,29 +19,29 @@ class ApiController extends BaseController
         $this->API->connect($this->ip, $this->login, $this->password);
     }
 
-    // public function index()
-    // {
-    //     $API = new RouterosApi();
+    public function index()
+    {
+        $API = new RouterosApi();
 
-    //     $API->debug = true;
+        $API->debug = true;
 
-    //     $ip = '169.254.30.185';
-    //     $login = 'admin';
-    //     $password = '';
+        $ip = '169.254.30.185';
+        $login = 'admin';
+        $password = '';
 
-    //     if ($API->connect($ip, $login, $password)) {
+        if ($API->connect($ip, $login, $password)) {
         
-    //        $API->write('/interface/getall');
+           $API->write('/interface/getall');
         
-    //        $READ = $API->read(false);
-    //        $ARRAY = $API->parseResponse($READ);
+           $READ = $API->read(false);
+           $ARRAY = $API->parseResponse($READ);
         
-    //        print_r($ARRAY);
+           print_r($ARRAY);
         
-    //        $API->disconnect();
+           $API->disconnect();
         
-    //     }
-    // }
+        }
+    }
 
     public function listAllQueue()
     {
@@ -96,4 +96,5 @@ class ApiController extends BaseController
                 'message' => 'Fila cadastrada com sucesso!',
             ]);
         }
+    }
 }
