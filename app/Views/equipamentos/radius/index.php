@@ -2,36 +2,34 @@
 
 <?= $this->section('content') ?>
 
-<div class="card p-4">
+<div class="p-4">
 
     <h2><?= $tittle ?></h2>
-    
-    <div class="row py-3 my-3">
-        <div class="col-md-4">
+
+    <div class="row card-2 py-3 my-3">
+        <div class="col-md-8">
             <input type="text" name="search" id="search" class="form-control" placeholder="Buscar" style="background-color: transparent;">
         </div>
-        
         <div class="col-md-4 btn-group">
-            <button class="btn btn-success">Exportar Arquivo CSV</button>
-            <button class="btn btn-success">Importar</button>
-        </div>
-        
-        <div class="col-md-4 btn-group">
-            <button class="btn btn-success">Pesquisar</button>
-            <button class="btn btn-success" onclick="openModalRadius()" >Filtros</button>
+            <button class="btn btn-success" id="searchBtn">Pesquisar</button>
+            <button class="btn btn-success" onclick="openModalFilter()">Filtros</button>
             <a class="btn btn-success" href="<?= $baseRoute ?>/novo"><?= $addButtonText ?></a>
         </div>
-        
     </div>
-
-    <p>
-        Radius localizados: <span id="radiusCount">0</span>
-    </p>
-
-    <div id="tableRadius" class="collapsed p-4 justify-content card">
-        <table class="table table-striped">
-            <thead>
-                <tr>
+    <div id="tableDiv"></div>
+</div>
+<!-- Filtro modal -->
+<div id='modalFilter' class="modal" tabindex="-1" style="backdrop-filter: blur(7px);">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id='formFilter'>
+                    <label for="plano" class="form-label">Plano</label>
+                    <select class="form-control form-select select2" name="plano" aria-label="Selecione um plano">
                     <th scope="col">ID</th>
                     <th scope="col">Descrição</th>
                     <th scope="col">Tipo</th>
@@ -42,11 +40,14 @@
                     <th scope='col'>Status</th>
                     <th scope='col'>Ativo</th>
                     <th scope='col'>Ação</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
+                    </select>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary">Consultar</button>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -55,9 +56,14 @@
 <?= $this->section('script') ?>
 
 <script>
+    const collapseTable = document.getElementById('collapseTable');
+    const radiusCount = document.getElementById('radiusCount')
+    const searchBtn = document.getElementById('searchBtn')
+
     const renderTableOptions = {
         urlFetch: window.location.href + '/search',
         tableDiv: document.getElementById('tableDiv'),
+
         // ID	Descrição	Tipo	Host	Secret	Cadastro	Serviço	Status	Ativo	Ação
         theadElements: ['ID', 'Tipo', 'Porta','Plavra Secreta','Data de Cadastro','Ativo', 'ações'],
         tbodyElements: ['id', 'type', 'port','secret_word','created_at','active_radius', ['edit', 'delete']],

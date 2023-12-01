@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class RadiusModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'radius';
+    protected $table            = 'radiusNAN';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
@@ -15,11 +15,11 @@ class RadiusModel extends Model
     protected $protectFields    = true;
     protected $allowedFields    = [
         'id',
-        "pop",
+        'pop_id',
         "ip_pool",
         "user",
         "password",
-        "prefx_ipv6",
+        "ipv6_prefix",
         "ipv6_pool",
         "ip_pool_block",
         "ip_address",
@@ -39,9 +39,9 @@ class RadiusModel extends Model
         "snmp_port",
         "http_port",
         "dns_primary",
-        "dns_secudary",
+        "dns_secondary",
         "account_ing_update",
-        "port_secundary",
+        "port_secondary",
         "lat_long",
         "active_radius",
         "costumer_disponible",
@@ -51,7 +51,7 @@ class RadiusModel extends Model
         "rrd_interfaces",
         "json_parameters",
         "auto_reload",
-        "simutaneo_user_login",
+        "simultaneous_login",
         "check_radius",
         "timeout_check",
         "check_conexion", 
@@ -95,19 +95,21 @@ class RadiusModel extends Model
     public function search($data)
     {
         $fieldsToSearch = [
-            'name',
-            'email',
-            'phones',
-            'pop_id',
-            'address1',
+            'id',
+            'type',
+            'port',
+            'secret_word',
+            'created_at',
+            'active_radius',
         ];
 
         $fieldsToReturn = [
             'id',
-            'name',
-            'phones',
-            'address1',
-            'pop_id',
+            'type',
+            'port',
+            'secret_word',
+            'created_at',
+            'active_radius',
         ];
 
         $createdAtName = 'created_at';

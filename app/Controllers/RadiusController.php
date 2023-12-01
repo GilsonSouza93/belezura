@@ -7,7 +7,7 @@ use App\Controllers\BaseController;
 class RadiusController extends BaseController
 {
     public $tittle = 'Radius';
-    public $addButtonText = 'Nova Nas';
+    public $addButtonText = 'Novo Radius';
     public $viewPath = 'equipamentos/radius';
     public $baseRoute = '/equipamentos/radius';
 

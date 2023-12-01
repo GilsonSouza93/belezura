@@ -32,8 +32,8 @@
 
         <div class="row">
             <div class="mt-3 col-md-6">
-                <label for="pop" class="form-label">POP'S</label>
-                <input type="text" class="form-control" name="pop" placeholder="Insira o POP" id="pop">
+                <label for="pop_id" class="form-label">POP'S</label>
+                <input type="text" class="form-control" name="pop_id" placeholder="Insira o POP" id="pop_id">
             </div>
             <div class="mt-3 col-md-6">
                 <label for="ip_pool" class="form-label">IP POOL</label>
@@ -167,8 +167,8 @@
                 <input type="text" class="form-control" name="dns_primary" placeholder="" id="dns_primary">
             </div>
             <div class="mt-3 col-md-4">
-                <label for="dns_secudary" class="form-label">DNS Secundário:</label>
-                <input type="text" class="form-control" name="dns_secudary" placeholder="" id="dns_secudary">
+                <label for="dns_secondary" class="form-label">DNS Secundário:</label>
+                <input type="text" class="form-control" name="dns_secondary" placeholder="" id="dns_secondary">
             </div>
             <div class="mt-3 col-md-4">
                 <label for="accounting_update" class="form-label">Accounting Update:</label>
@@ -179,8 +179,8 @@
 
         <div class="row">
             <div class="mt-3 col-md-6">
-                <label for="port_secundary" class="form-label">Porta</label>
-                <input type="text" class="form-control" name="port_secundary" placeholder="" id="port_secundary">
+                <label for="port_secondary" class="form-label">Porta</label>
+                <input type="text" class="form-control" name="port_secondary" placeholder="" id="port_secondary">
             </div>
             <div class="mt-3 col-md-6">
                 <label for="lat_long" class="form-label">Latitude, Longitude</label>
@@ -223,8 +223,8 @@
                 <input type="checkbox" name="auto_reload" id="auto_reload" class="form-check-input"> Auto Reload
             </div>
             <div class="mt-3 col-md-4">
-                <label for="simutaneo_user_login" class="form-label">Simutâneos User por Login:</label>
-                <input type="text" class="form-control" name="simutaneo_user_login" id="simutaneo_user_login">
+                <label for="simultaneous_login" class="form-label">Simutâneos User por Login:</label>
+                <input type="text" class="form-control" name="simultaneous_login" id="simultaneous_login">
             </div>
             <div class="mt-5 col-md-2">
                 <label for="check_radius" class="form-label"></label>

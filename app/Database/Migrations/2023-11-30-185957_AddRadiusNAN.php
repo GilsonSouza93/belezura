@@ -15,6 +15,10 @@ class AddRadius extends Migration
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
+            'pop_id' => [
+                'type' => 'INT',
+                'constraint' => 255,
+            ],
             'ip_pool' => [
                 'type' => 'INT',
                 'constraint' => 255,
@@ -79,11 +83,15 @@ class AddRadius extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
+            'user_2' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
             'password_2' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
-            'smtp_version' => [
+            'snmp_version' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
