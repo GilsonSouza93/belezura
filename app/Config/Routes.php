@@ -394,6 +394,11 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         $routes->get('listAllQueue', 'ApiController::listAllQueue');
     });
 
+    $routes->group('api-asaas', static function ($routes) {
+        $routes->get('teste', 'AsaasApiGatewayController::createCustomer');
+    });
+
+
     $routes->group('gerencial', static function ($routes) {
         $routes->group('pop', static function ($routes) {
             $routes->get('/', 'PopController::index');
