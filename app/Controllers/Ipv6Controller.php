@@ -13,16 +13,22 @@ class Ipv6Controller extends BaseController
 
     public function __construct()
     {
-        $this->mainModel = model('Ipv6Model');
+        $this->mainModel = model('Ipv6poolModel');
         parent::__construct();
     }
 
-    public function search()
+    public function treatmentBeforeSave($data)
     {
-        $data = $this->request->getJSON();
-        
-        $ipv6s = $this->mainModel->search($data->search);
+      $session = session();
+      $data['company_id'] = $session->get('company_id');
 
-        return $this->response->setJSON($ipv6s);
+      if(isset($data['active'])){
+        $data['active'] = 1;
+      }
+      if(isset($data['order'])){
+        $data['order'] = 1;
+      }
+    
+      return $data;
     }
 }
