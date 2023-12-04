@@ -21,8 +21,11 @@ class AccountController extends BaseController
 
     public function treatmentBeforeSave($data)
     {
+        $session = session();
+
         $data['phone1'] = preg_replace('/[^0-9]/', '', $data['phone1']);
         $data['phone2'] = preg_replace('/[^0-9]/', '', $data['phone2']);
+        $data['company_id'] = $session->get('company_id');
 
         if (isset($data['password'])) {
             $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);

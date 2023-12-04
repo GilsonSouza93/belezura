@@ -27,6 +27,7 @@ class AccountModel extends Model
         'deleted_at',
         'updated_at',
         'created_at',
+        'company_id',
     ];
 
     // Dates
