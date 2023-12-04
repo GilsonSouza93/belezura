@@ -24,7 +24,7 @@
     </div>
 
     <form>
-    
+
         <?php if (isset($register)) : ?>
             <input type="hidden" name="id" value="<?= $register->id ?>">
         <?php endif ?>
@@ -32,38 +32,39 @@
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="name" class="form-label">Nome do Pool</label>
-                <input type="text" class="form-control" name="name" placeholder="">
+                <input type="text" class="form-control" name="name" id="name" placeholder="">
             </div>
             <div class="mt-3 col-md-4">
                 <label for="name" class="form-label">Range</label>
-                <input type="text" class="form-control" name="name" placeholder="">
+                <input type="text" class="form-control" name="range" id="range" placeholder="">
             </div>
             <div class="mt-3 col-md-4">
                 <label for="name" class="form-label">Next Range</label>
-                <input type="text" class="form-control" name="name" placeholder="">
+                <input type="text" class="form-control" name="next_range" id="next_range" placeholder="">
             </div>
         </div>
         <div class="row">
-            <div class="mt-3 col-md-4">
+            <div class="mt-5 col-md-4">
                 <label for="name" class="form-label">Radius Args</label>
-                <input type="text" class="form-control" name="name" placeholder="">
+                <input type="text" class="form-control" name="radius" id="radius" placeholder="">
             </div>
-            <div class="mt-5 col-md-4">
-                <label for="name" class="form-label"></label>
-                <input type="checkbox" name="" id="">Ordenar IPs por Rede /24:
+            <div class="mt-5 col-md-4 form-check">
+                <label class="form-check-label" for="flexCheckDefault"></label>
+                <input type="checkbox" class="form-check-input" name="order" id="order"  checked>Ordenar IPs por Rede /24:
             </div>
-            <div class="mt-5 col-md-4">
-                <label for="name" class="form-label"></label>
-                <input type="checkbox" name="" id="">Ativo?
+
+            <div class="mt-5 col-md-4 form-check">
+                <label class="form-check-label" for="flexCheckDefault"></label>
+                <input type="checkbox" class="form-check-input" name="active" id="active">Ativo?
             </div>
         </div>
         <div class="row">
             <div class="mt-3 col-md-12">
                 <label for="name" class="form-label">Observação</label>
-                <input type="text" class="form-control" name="name" placeholder="">
+                <input type="text" class="form-control" name="obs" id="obs" placeholder="">
             </div>
         </div>
-        
+
 
     </form>
 </div>
@@ -83,7 +84,6 @@
         showLoading();
 
         const formData = new FormData(form);
-
         fetch(url, {
             method: 'POST',
             body: formData

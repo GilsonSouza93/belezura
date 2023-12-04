@@ -4,10 +4,10 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class AccountModel extends Model
+class IppoolModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'users';
+    protected $table            = 'ippools';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
@@ -16,17 +16,15 @@ class AccountModel extends Model
     protected $allowedFields    = [
         'id',
         'name',
-        'account_type_id',
-        'email',
-        'password',
-        'phone1',
-        'phone2',
-        'deleted_by',
-        'updated_by',
-        'created_by',
+        'range',
+        'next_range',
+        'radius',
+        'order',
+        'active',
+        'obs',
+        'created_at',
         'deleted_at',
         'updated_at',
-        'created_at',
         'company_id',
     ];
 
@@ -58,38 +56,40 @@ class AccountModel extends Model
     {
         $fieldsToSearch = [
             'name',
-            'email',
-            'phone1',
-            'phone2',
+            'range',
+            'active',
+            'obs',
         ];
 
         $fieldsToReturn = [
             'id',
             'name',
-            'email',
-            'phone1',
-            'phone2',
+            'range',
+            'active',
+            'obs',
         ];
+
+        $createdAtName = 'created_at';
 
         $search = null;
 
-        if(isset($data['search']))
+        if (isset($data['search']))
             $search = $data['search'];
 
         $query = $this->db->table($this->table)
-                ->select($fieldsToReturn);
+            ->select($fieldsToReturn);
 
-        if($search) {
+        if ($search) {
             $query->groupStart();
-            foreach($fieldsToSearch as $field) {
+            foreach ($fieldsToSearch as $field) {
                 $query->orLike($field, $search);
             }
             $query->groupEnd();
         }
 
-        $query->orderBy('created_at', 'DESC');
+        $query->orderBy($createdAtName, 'DESC');
         $result = $query->get()->getResultArray();
 
-        return $result;
+    return $result;
     }
 }

@@ -21,6 +21,11 @@ class AddAccountTypes extends Migration
                 'constraint' => '100',
             ],
 
+            'company_id'=> [
+                'type' => 'INT',
+                'constraint' => '5',
+            ],
+
             'created_at timestamp DEFAULT current_timestamp NOT NULL',
         ]);
 

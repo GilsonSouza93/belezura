@@ -62,7 +62,7 @@
         tableDiv: document.getElementById('tableDiv'),
 
         theadElements: ['Código', 'Descrição','DRE','Visível', 'Tipo', 'Plano', 'Ações'],
-        tbodyElements: ['id', 'description', 'dre','visibility', 'type', 'plain_account'  ['edit', 'delete']],
+        tbodyElements: ['id', 'description', 'dre','visibility', 'type', 'plain_account',  ['edit', 'delete']],
         searchField: document.getElementById('search'),
     }
 
