@@ -32,8 +32,13 @@
 
         <div class="row">
             <div class="mt-3 col-md-6">
-                <label for="pop_id" class="form-label">POP'S</label>
-                <input type="text" class="form-control" name="pop_id" placeholder="Insira o POP" id="pop_id">
+            <label for="pop_id" class="form-label">POP</label>
+                <select class="form-control select2" id="pop_id" name="pop_id">
+                    <option selected>Selecione o Local do POP</option>
+                    <?php foreach ($pops as $pop) : ?>
+                    <option value="<?= $pop['id'] ?>"><?= $pop['city'] ?></option>
+                <?php endforeach; ?>
+                </select>
             </div>
             <div class="mt-3 col-md-6">
                 <label for="ip_pool" class="form-label">IP POOL</label>

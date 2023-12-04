@@ -13,8 +13,12 @@ class RadiusController extends BaseController
 
     public function __construct()
     {
-        $this->mainModel = model('RadiusModel');
-        parent::__construct();
+      $this->mainModel = model('RadiusModel');
+
+      $popModel = model('PopModel');
+      $this->data['pops'] = $popModel->findAll();
+
+      parent::__construct();
     }
 
     public function treatmentBeforeSave($data)
