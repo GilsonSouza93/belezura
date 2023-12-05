@@ -14,7 +14,7 @@ class AddBillstoPay extends Migration
                 'auto_increment' => true,
             ],
 
-            'description' => [
+            'payment_form' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
@@ -29,54 +29,54 @@ class AddBillstoPay extends Migration
                 "constraint" => 5,
             ],
 
-            'payment_id' => [
+            'payment' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
 
-            'fixvalue_id' => [
+            'installment' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
 
-            'value_id' => [
+            'value' => [
+                'type' => 'INT',
+                'constraint' => '30',
+            ],
+
+            'obs' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
 
-            'obs_id' => [
+            'doc_type' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
 
-            'tipododocumento_id' => [
+            'issue' => [
+                'type' => 'DATETIME',
+                'null' => true,
+            ],
+
+            'invoice' => [
+                'type' => 'DATETIME',
+                'null' => true,
+            ],
+
+            'payout' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
 
-            'descricao_id' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
-            ],
-
-            'notaFiscal_id' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
-            ],
-
-            'dataDeEmissao_id' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
-            ],
-
-            'timeout_id' => [
+            'description' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
             
-            'tipoDeParcela_id' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
+            'fix_value' => [
+                'type' => 'BOOLEAN',
+                'default' => 0,
             ],
             
             "company_id" => [

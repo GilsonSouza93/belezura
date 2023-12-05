@@ -34,8 +34,9 @@
             <div class="col mt-4">
                 <div class="form-floating">
                     <select class="form-select" id="pop_id" name="pop_id">
-                        <?php foreach ($pops as $item) : ?>
-                            <option value="<?= $item['id'] ?>"><?= $item['city'] ?></option>
+                        <?php foreach ($pops as $pop) : ?>
+                            <option value="">Selecione o local do pop</option>
+                            <option value="<?= $pop['id'] ?>"><?= $pop['city'] ?></option>
                         <?php endforeach ?>
                     </select>
                     <label for="pop">POP</label>
@@ -43,12 +44,13 @@
             </div>
             <div class="col mt-4">
                 <div class="form-floating">
-                    <select class="form-select" id="suppliers_id" name="suppliers_id" required>
+                    <select class="form-select" id="supplier_id" name="supplier_id" required>
                         <?php foreach ($suppliers as $supplier) : ?>
+                            <option value="">Selecione o local do pop</option>
                             <option value="<?= $supplier['id'] ?>"><?= $supplier['name'] ?></option>
                         <?php endforeach; ?>
                     </select>
-                    <label for="suppliers_id">Fornecedor</label>
+                    <label for="supplier_id">Fornecedor</label>
                 </div>
             </div>
 
@@ -165,7 +167,7 @@
                     showToast(data.message, 'error');
                 } else {
                     showToast(data.message, 'success');
-                    // window.location.href = '<?= $baseRoute ?>';
+                     window.location.href = '<?= $baseRoute ?>';
                 }
             }).catch(error => {
                 console.log(error);

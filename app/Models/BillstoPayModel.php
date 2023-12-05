@@ -15,25 +15,24 @@ class BillsToPayModel extends Model
     protected $protectFields    = true;
     protected $allowedFields    = [
         'id',
-        'empresa',
-        'description',
-        'pop',
-        'suplier',
-        'payment',
-        'fix_value',
-        'value',
-        'obs',
-        'doc_type',
-        'description',
-        'payout',
-        'installment',
-        'created_at',
         'pop_id',
         'supplier_id',
-        'payment_id',
-        'fixvalue_id',
+        'payment_form',
+        'value',
+        'fix_value',
+        'doc_type',
+        'invoice',
+        'issue',
+        'payment',
+        'installment',
+        'payout',
+        'obs',
+        'description',
+        'created_at',
         'updated_at',
         'deleted_at',
+        'company_id',
+        
     ];
 		
     // Dates
@@ -59,4 +58,66 @@ class BillsToPayModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function search($data)
+    {
+        $fieldsToSearch = [
+            'id',
+            'pop_id',
+            'suplier_id',
+            'payment_form',
+            'value',
+            'fix_value',
+            'doc_type',
+            'invoice',
+            'issue',
+            'payment',
+            'installment',
+            'payout',
+            'obs',
+            'description',
+            
+        ];
+
+        $fieldsToReturn = [
+            'id',
+            'pop_id',
+            'supplier_id',
+            'payment_form',
+            'value',
+            'fix_value',
+            'doc_type',
+            'invoice',
+            'issue',
+            'payment',
+            'installment',
+            'payout',
+            'obs',
+            'description',
+            
+        ];
+
+        $createdAtName = 'created_at';
+
+        $search = null;
+
+        if (isset($data['search']))
+            $search = $data['search'];
+
+        $query = $this->db->table($this->table)
+            ->select($fieldsToReturn);
+
+        if ($search) {
+            $query->groupStart();
+            foreach ($fieldsToSearch as $field) {
+                $query->orLike($field, $search);
+            }
+            $query->groupEnd();
+        }
+
+        $query->orderBy($createdAtName, 'DESC');
+        $result = $query->get()->getResultArray();
+
+    return $result;
+    }
 }

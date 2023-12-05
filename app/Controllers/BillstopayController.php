@@ -18,20 +18,20 @@ class BillstopayController extends BaseController
 
         $popModel = model('PopModel');
         $supplierModel = model('SupplierModel');
+        //->where('active', true)
 
-        $this->data['pops'] = $popModel->where('active', true)->findAll();
+        $this->data['pops'] = $popModel->findAll();
         $this->data['suppliers'] = $supplierModel->findAll();
 
         parent::__construct();
     }
 
-    public function search()
+    public function treatmentBeforeSave($data)
     {
-        $data = $this->request->getJSON();
-        
-        $billsPay = $this->mainModel->search($data->search);
-
-        return $this->response->setJSON($billsPay);
+      $session = session();
+      $data['company_id'] = $session->get('company_id');
+    
+      return $data;
     }
 
 }
