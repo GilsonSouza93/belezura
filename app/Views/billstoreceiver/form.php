@@ -33,15 +33,17 @@
         <div class="row">
             <div class="mt-3 col-md-2">
                 <label for="pop" class="form-label">POP</label>
-                <select class="form-control select2" id="pop" aria-label="pop" name="pop" >
+                <select class="form-control select2" id="pop_id" aria-label="pop_id" name="pop_id" >
+                    <option value="">Selecione o local do pop</option>
                     <?php foreach ($pops as $pop) : ?>
                         <option value="<?= $pop['id'] ?>"><?= $pop['city'] ?></option>
                     <?php endforeach; ?>
                 </select>
             </div>
             <div class="mt-3 col-md-2">
-                <label for="supplier" class="form-label">Fornecedor</label>
-                <select class="form-control select2" id="supplier" aria-label="supplier" name="supplier" >
+                <label for="supplier_id" class="form-label">Fornecedor</label>
+                <select class="form-control select2" id="supplier_id" aria-label="supplier_id" name="supplier_id" >
+                    <option value="">Selecione o fornecedor</option>
                         <?php foreach ($suppliers as $supplier) : ?>
                             <option value="<?= $supplier['id'] ?>"><?= $supplier['name'] ?></option>
                         <?php endforeach; ?>
@@ -130,65 +132,34 @@
 <?= $this->section('script') ?>
 
 <script>
-        function formatBody() {
-        const body = {
-            "pop": getValue("pop"),
-            "supplier": getValue("supplier"),
-            "form_payment": getValue("form_payment"),
-            "invoice": getValue("invoice"),
-            "value": getValue("value"),
-            "obs": getValue("obs"),
-            "doc_type": getValue("doc_type"),
-            "fix_value": document.getElementById("fix_value").checked,
-            "date_issue": getValue("date_issue"),
-            "payout": getValue("payout"),
-            "portion": getValue("portion"),
-            "description": getValue("description"),
-            
-        }
+    const submitBtn = document.querySelector('#submit-btn');
+    const form = document.querySelector('form');
+    const url = '<?= $baseRoute ?>/save';
 
-        return body
-    }
-    
-    function getValue(id) {
-        return document.getElementById(id).value;
-    }
-
-    const save = async () => {
-        const body = formatBody();
-
+    submitBtn.addEventListener('click', event => {
+        event.preventDefault();
         showLoading();
 
-        try {
-            await fetch('<?= $baseRoute ?>/save', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(body),
-                })
-                .then(response => response.json())
-                .then(data => {
-                    hideLoading();
+        const formData = new FormData(form);
 
-                    if (data.status === 'success') {
-                        showToast('Salvo com sucesso', 'success');
-
-                        setTimeout(() => {
-                            window.location.href = '<?= $baseRoute ?>';
-                        }, 2000);
-                    } else {
-                        showToast('Houve um erro', 'error');
-                    }
-                });
-
-        } catch (error) {
-            hideLoading();
-            showToast('Houve um erro', 'error');
-        }
-    }
+        fetch(url, {
+                method: 'POST',
+                body: formData
+            }).then(response => response.json())
+            .then(data => {
+                hideLoading();
+                if (data.status === 'success') {
+                    showToast(data.message, 'success');
+                    setTimeout(() => {
+                        window.location.href = '<?= $baseRoute ?>';
+                    }, 1000);
+                } else {
+                    showToast(data.message, 'error');
+                }
+            }).catch(error => {
+                console.log(error);
+            });
+    });
 </script>
-
-                    
 
 <?= $this->endSection() ?>

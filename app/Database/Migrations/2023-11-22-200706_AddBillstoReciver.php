@@ -69,7 +69,7 @@ class BillstoReceiver extends Migration
             ],
 
             "company_id" => [
-                "type" => "int",
+                "type" => "INT",
                 "constraint" => 5,
             ],
 
@@ -84,12 +84,12 @@ class BillstoReceiver extends Migration
             ],
 
             'pop_id' => [
-                "type" => "int",
+                "type" => "INT",
                 "constraint" => 5,
             ],
             
-            'supplier' => [
-                "type" => "int",
+            'supplier_id' => [
+                "type" => "INT",
                 "constraint" => 5,
             ],
 
@@ -99,14 +99,14 @@ class BillstoReceiver extends Migration
         $this->forge->addKey('id', true);
 
         $this->forge->addForeignKey('pop_id', 'pops', 'id');
-        $this->forge->addForeignKey('supplier', 'suppliers', 'id');
+        $this->forge->addForeignKey('supplier_id', 'suppliers', 'id');
         $this->forge->addForeignKey('company_id', 'companies', 'id');
 
-        $this->forge->createTable('bills_to_receive');
+        $this->forge->createTable('bills_to_receiver');
     }
 
     public function down()
     {
-        $this->forge->DropTable('bills_to_receive');
+        $this->forge->DropTable('bills_to_receiver');
     }
 }
