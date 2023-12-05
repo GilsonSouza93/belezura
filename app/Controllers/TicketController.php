@@ -23,12 +23,11 @@ class TicketController extends BaseController
 
         $popModel = model('PopModel');
 
-        $this->data['pops'] = $popModel->where('active', true)->findAll();
-        
-        
-
-        $popModel = model('PopModel');
         $this->data['pops'] = $popModel->findAll();
+
+        $subscriptionModel = model('SubscriptionModel');
+
+        $this->data['subscription'] = $subscriptionModel->findAll();
 
         
 
@@ -51,6 +50,8 @@ class TicketController extends BaseController
     
       return $data;
     }
+
+    
 
 
 }

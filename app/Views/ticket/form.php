@@ -40,13 +40,13 @@
                 <input type="text" id="andress" name="andress" class="form-control">
             </div>
             <div class="mt-3 col-md-3">
-                <label for="pop" class="form-label">POP</label>
-                <select class="form-control select2" id="pop" name="pop">
-                    <option selected>Selecione o Local do POP</option>
-                    <?php foreach ($pops as $pop) : ?>
-                    <option value="<?= $pop['id'] ?>"><?= $pop['city'] ?></option>
-                <?php endforeach; ?>
-                </select>
+                <label for="pop_id" class="form-label">POP</label>
+                <select class="form-select" id="pop_id" name="pop_id">
+                        <?php foreach ($pops as $pop) : ?>
+                            <option value="">Selecione o local do pop</option>
+                            <option value="<?= $pop['id'] ?>"><?= $pop['city'] ?></option>
+                        <?php endforeach ?>
+                    </select>
             </div>
 
             <div class="mt-3 col-md-3">
@@ -92,12 +92,11 @@
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="plano" class="form-label">Plano</label>
-                <select class="form-control select2" id="plans" aria-label="Default select example" name="plans">
-                    <option selected>Selecione o Plano</option>
-                    <option value="1">100mb -</option>
-                    <option value="2">50 mb</option>
-                    <option value="3">1GB</option>
-                    <option value="3">Rádio - 1GB</option>
+                <label for="plano" class="form-label">Plano</label>
+                <select class="form-control select2" id="plans_id" aria-label="plans_id">
+                    <?php foreach ($subscription as $plan) : ?>
+                        <option value="<?= $plan['id'] ?>"><?= $plan['name'] ?></option>
+                    <?php endforeach ?>
                 </select>
             </div>
             <div class="mt-3 col-md-4">

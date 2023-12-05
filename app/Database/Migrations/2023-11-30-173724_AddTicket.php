@@ -27,7 +27,7 @@ class AddTicket extends Migration
             ],
 
 
-            'pop' => [
+            'pop_id' => [
                 'type' => 'INT',
                 'constraint' => 11,
             ],
@@ -52,7 +52,7 @@ class AddTicket extends Migration
                 'constraint' => 255,
             ],
 
-            'plans' => [
+            'plans_id' => [
                 'type' => 'INT',
                 'constraint' => 5,
                 'unsigned' => true,
@@ -104,8 +104,8 @@ class AddTicket extends Migration
             ],
 
             'company_id' => [
-                'type' => 'INT',
-                'constraint' => 30,
+                'type' => 'int',
+                'constraint' => 5,
             ],
 
             'updated_at' => [
@@ -124,8 +124,8 @@ class AddTicket extends Migration
         $this->forge->addKey('id', true);
 
         $this->forge->addForeignKey('company_id', 'companies', 'id');
-        $this->forge->addForeignKey('pop', 'pops', 'id');
-        $this->forge->addForeignKey('plans', 'plans', 'id');
+        $this->forge->addForeignKey('pop_id', 'pops', 'id');
+        $this->forge->addForeignKey('plans_id', 'plans', 'id');
         $this->forge->createTable('ticket');
     }
 
