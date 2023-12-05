@@ -93,7 +93,7 @@
             <div class="mt-3 col-md-4">
                 <label for="plano" class="form-label">Plano</label>
                 <label for="plano" class="form-label">Plano</label>
-                <select class="form-control select2" id="plans_id" aria-label="plans_id">
+                <select class="form-control select2" name="plans_id" id="plans_id" aria-label="plans_id">
                     <?php foreach ($subscription as $plan) : ?>
                         <option value="<?= $plan['id'] ?>"><?= $plan['name'] ?></option>
                     <?php endforeach ?>
