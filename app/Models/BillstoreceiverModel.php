@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class BillstoreceiverModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'bills_to_receive';
+    protected $table            = 'bills_to_receiver';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
@@ -17,7 +17,7 @@ class BillstoreceiverModel extends Model
         'id',
         'company_id',
         'pop_id',
-        'supplier',
+        'supplier_id',
         'form_payment',
         'fix_value',
         'value',
@@ -60,13 +60,13 @@ class BillstoreceiverModel extends Model
     {
         $fieldsToSearch = [
             'name',
-            'supplier',
+            'supplier_id',
             'value',
         ];
 
         $fieldsToReturn = [
             'id',
-            'supplier',
+            'supplier_id',
             'value',
             'date_issue',
             'payout',
