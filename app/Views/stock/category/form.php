@@ -27,7 +27,7 @@
             <div class="col">
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="description" placeholder="Descrição" name="description" rows="4" <?= isset($register) ? 'value="' . $register->description . '"' : '' ?>>
-                    <label for="description">Descrição</label>
+                    <label for="description">Descrição</label> 
                 </div>
             </div>
         </div>
@@ -72,7 +72,7 @@
     function formatBody() {
         const body = {
             name: document.querySelector('#name').value,
-            speed: document.querySelector('#description').value,
+            description: document.querySelector('#description').value,
         }
 
         return JSON.stringify(body);

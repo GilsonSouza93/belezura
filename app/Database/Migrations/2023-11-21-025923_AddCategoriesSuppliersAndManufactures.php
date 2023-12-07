@@ -19,8 +19,8 @@ class AddCategoriesSuppliersAndManufactures extends Migration
                 'constraint' => '100',
             ],
             'description' => [
-                'type' => 'TEXT',
-                'null' => true,
+                'type' => 'VARCHAR',
+                'constraint' => '255',
             ],
             'created_at' => [
                 'type' => 'DATETIME',

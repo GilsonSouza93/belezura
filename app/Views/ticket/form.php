@@ -41,7 +41,7 @@
             </div>
             <div class="mt-3 col-md-3">
                 <label for="pop_id" class="form-label">POP</label>
-                <select class="form-select" id="pop_id" name="pop_id">
+                <select class="form-select" id="pop_id" required name="pop_id">
                         <?php foreach ($pops as $pop) : ?>
                             <option value="">Selecione o local do pop</option>
                             <option value="<?= $pop['id'] ?>"><?= $pop['city'] ?></option>
@@ -93,7 +93,8 @@
             <div class="mt-3 col-md-4">
                 <label for="plano" class="form-label">Plano</label>
                 <label for="plano" class="form-label">Plano</label>
-                <select class="form-control select2" name="plans_id" id="plans_id" aria-label="plans_id">
+                <select class="form-control select2" name="plans_id" required id="plans_id" aria-label="plans_id">
+                    <option value="">Selecione o plano</option>
                     <?php foreach ($subscription as $plan) : ?>
                         <option value="<?= $plan['id'] ?>"><?= $plan['name'] ?></option>
                     <?php endforeach ?>

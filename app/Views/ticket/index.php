@@ -62,7 +62,7 @@
         tableDiv: document.getElementById('tableDiv'),
 
         theadElements: ['Pop', ' Portador','Plano','Ações'],
-        tbodyElements: ['pop', 'carrier', 'plan', ['edit', 'delete']],
+        tbodyElements: ['pop_id', 'carrier', 'plans_id', ['edit', 'delete']],
         searchField: document.getElementById('search'),
     }
 

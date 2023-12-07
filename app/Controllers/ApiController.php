@@ -97,4 +97,15 @@ class ApiController extends BaseController
             ]);
         }
     }
+    private function createPPPoEServer()
+    {
+        // Configurar o perfil PPPoE
+        $this->API->write('/ppp profile add name=pppoe-profile local-address=192.168.1.1 remote-address=pppoe-pool dns-server=8.8.8.8');
+
+        // Configurar a interface PPPoE
+        $this->API->write('/interface pppoe-server server add service-name=pppoe-interface interface=ether1 disabled=no profile=pppoe-profile');
+
+        // Configurar o pool de endereços PPPoE
+        $this->API->write('/ip pool add name=pppoe-pool ranges=192.168.2.2-192.168.2.254');
+    }
 }
