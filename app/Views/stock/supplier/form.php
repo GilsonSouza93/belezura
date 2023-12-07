@@ -20,7 +20,9 @@
         <div class="row">
             <div class="col">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="name" placeholder="Nome do Fornecedor" name="name" required>
+                    <input type="text" class="form-control" id="name" placeholder="Nome do Fornecedor" name="name" required
+                        value="<?= isset($register) ? $register->name : '' ?>"
+                    >
                     <label for="name">Nome do Fornecedor</label>
                 </div>
             </div>
