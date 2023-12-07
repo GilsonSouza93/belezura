@@ -299,6 +299,10 @@ abstract class BaseController extends Controller
                         'title' => 'Central do Assinante',
                         'href' => base_url('configuracoes/centraldoassinante'),
                     ],
+                    'Integrações' => [
+                        'title' => 'Integrações',
+                        'href' => base_url('configuracoes/integracoes'),
+                    ],
                     'Alterar Senha' => [
                         'title' => 'Alterar Senha',
                         'href' => base_url('configuracoes/alterarsenha'),

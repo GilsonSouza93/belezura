@@ -211,6 +211,9 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('/', 'PasswordController::index');
             $routes->get('novo', 'PasswordController::form');
         });
+        $routes->group('integracoes', static function ($routes) {
+            $routes->get('/', 'integrationsController::index');
+        });
     });
     $routes->group('equipamentos', static function ($routes) {
         $routes->group('onu', static function ($routes) {
