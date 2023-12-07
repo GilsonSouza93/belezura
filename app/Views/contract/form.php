@@ -33,43 +33,50 @@
         <div class="row">
 
             <div class="mt-3 col-md-4">
-                <label for="grupo" class="form-label">Grupo</label>
-                <select class="form-control" id="grupo" aria-label="Default select example">
-                    <option selected>Selecione Se é Entrada ou Saída</option>
+                <label for="group" class="form-label">Grupo</label>
+                <select class="form-control" id="group" name="group" aria-label="Default select example"
+                value="<?= isset($register) ? $register->group : '' ?>">
+                    <option selected>Selecione se é entrada ou saída</option>
                     <option value="1">Entrada</option>
                     <option value="2">Saída</option>
                 </select>
             </div>
             <div class="mt-3 col-md-4">
-                <label for="descricao" class="form-label">Descrição</label>
-                <input type="text" id="descricao" class="form-control" name="name" placeholder="">
+                <label for="description" class="form-label">Descrição</label>
+                <input type="text" id="description" name="description" class="form-control" placeholder=""
+                value="<?= isset($register) ? $register->description : '' ?>">
             </div>
             <div class="mt-5 col-md-4 form-check">
                 <label class="form-check-label" for="flexCheckDefault"></label>
-                <input type="checkbox" class="form-check-input" name="" id=""  checked> Disponível:
+                <input type="checkbox" class="form-check-input" name="avaiable" id="avaiable"  checked
+                value="<?= isset($register) ? $register->avaiable : '' ?>"> Disponível:
             </div>
         </div>
 
     
         <div class="row">
         <div class="mt-4 col-md-6">
-                <label for="name" class="form-label">Comprovante</label>
-                <input type="file" class="btn btn-outline-secondary" name="comprovante" id="comprovante">
+                <label for="checking_copy" class="form-label">Comprovante</label>
+                <input type="file" class="btn btn-outline-secondary" name="checking_copy" id="checking_copy"
+                value="<?= isset($register) ? $register->checking_copy : '' ?>">
             </div>
             <div class="mt-3 col-md-6">
-                <label for="dataCompetencia" class="form-label">Data da Competência</label>
-                <input type="date" id="dataCompetencia" class="form-control" name="name" placeholder="">
+                <label for="competence" class="form-label">Data da Competência</label>
+                <input type="date" id="competence" class="form-control" name="competence" placeholder=""
+                value="<?= isset($register) ? $register->competence : '' ?>">
             </div>
         </div>
 
         <div class="row">
             <div class="mt-3 col-md-6">
-                <label for="observacao" class="form-label">Observação</label>
-                <input type="text" id="observacao" class="form-control" name="name" placeholder="">
+                <label for="obs" class="form-label">Observação</label>
+                <input type="text" id="obs" class="form-control" name="obs" placeholder=""
+                value="<?= isset($register) ? $register->obs : '' ?>">
             </div>
             <div class="mt-3 col-md-6">
-                <label for="dadosAbstratos" class="form-label">Dados Abstratos</label>
-                <input type="text" id="dadosAbstratos" class="form-control" name="name" placeholder="">
+                <label for="abstract_data" class="form-label">Dados Abstratos</label>
+                <input type="text" id="abstract_data" class="form-control" name="abstract_data" placeholder=""
+                value="<?= isset($register) ? $register->abstract_data : '' ?>">
             </div>
         </div>
 

@@ -371,14 +371,14 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->post('delete', 'BillstopayController::delete');
         });
         $routes->group('contas-receber', static function ($routes) {
-            $routes->get('/', 'BillstoreceiverController::index');
-            $routes->get('novo', 'BillstoreceiverController::form');
+            $routes->get('/', 'BillstoreciverController::index');
+            $routes->get('novo', 'BillstoreciverController::form');
             $routes->get('novo', 'BillstopayController::filter');
-            $routes->get('editar/(:num)', 'BillstoreceiverController::edit/$1');
+            $routes->get('editar/(:num)', 'BillstoreciverController::edit/$1');
 
-            $routes->post('save', 'BillstoreceiverController::save');
-            $routes->post('search', 'BillstoreceiverController::search');
-            $routes->post('delete', 'BillstoreceiverController::delete');
+            $routes->post('save', 'BillstoreciverController::save');
+            $routes->post('search', 'BillstoreciverController::search');
+            $routes->post('delete', 'BillstoreciverController::delete');
         });
         $routes->group('contratos', static function ($routes) {
             $routes->get('/', 'ContractController::index');

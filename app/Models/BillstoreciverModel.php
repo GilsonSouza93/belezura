@@ -4,10 +4,10 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class BillstoreceiverModel extends Model
+class BillstoreciverModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'bills_to_receiver';
+    protected $table            = 'bills_to_reciver';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
