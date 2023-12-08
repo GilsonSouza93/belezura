@@ -30,6 +30,11 @@ class AddCompanies extends Migration
                 'null' => true,
             ],
 
+            'apiKey' => [
+                'type' => 'VARCHAR',
+                'constraint' => '250'
+            ],
+
             'created_at timestamp DEFAULT current_timestamp NOT NULL',
         ]);
 
