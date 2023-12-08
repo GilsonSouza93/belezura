@@ -13,16 +13,15 @@ class ContractController extends BaseController
 
  public function __construct()
  {
-     $this->mainModel = model('CustomerModel');
+     $this->mainModel = model('ContractModel');
      parent::__construct();
  }
 
- public function search()
+ public function treatmentBeforeSave($data)
  {
-     $data = $this->request->getJSON();
-     
-     $contract = $this->mainModel->search($data->search);
-
-     return $this->response->setJSON($contract);
+   $session = session();
+   $data['company_id'] = $session->get('company_id');
+ 
+   return $data;
  }
 }

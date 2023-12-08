@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class BillstoReceiver extends Migration
+class BillstoReciver extends Migration
 {
     public function up()
     {
@@ -102,11 +102,11 @@ class BillstoReceiver extends Migration
         $this->forge->addForeignKey('supplier_id', 'suppliers', 'id');
         $this->forge->addForeignKey('company_id', 'companies', 'id');
 
-        $this->forge->createTable('bills_to_receiver');
+        $this->forge->createTable('bills_to_reciver');
     }
 
     public function down()
     {
-        $this->forge->DropTable('bills_to_receiver');
+        $this->forge->DropTable('bills_to_reciver');
     }
 }

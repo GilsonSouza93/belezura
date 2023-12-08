@@ -25,10 +25,6 @@ class SupplierController extends BaseController
         $data['company_id'] = $session->get('company_id');
 
 
-        if($this->mainModel->where('name', $data['name'])->first()){
-            $data['error'] = 'Já existe um fornecedor com este nome!';
-        }
-
         return $data;
     }
 }
