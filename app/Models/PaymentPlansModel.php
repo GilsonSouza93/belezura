@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class PaymentPlansModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'paymentplans';
+    protected $table            = 'paymentPlans';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';

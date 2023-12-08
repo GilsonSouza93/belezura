@@ -333,7 +333,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->post('save', 'PaymentPlansController::save');
             $routes->post('search', 'PaymentPlansController::search');
             $routes->post('delete', 'PaymentPlansController::delete');
-            $routes->get('editar/(:num)', 'PaymentPlansController   ::edit/$1');
+            $routes->get('editar/(:num)', 'PaymentPlansController::edit/$1');
         });
 
         $routes->group('caixa', static function ($routes) {
