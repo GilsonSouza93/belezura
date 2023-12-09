@@ -25,5 +25,4 @@ class ServidorController extends BaseController
 
         return $this->response->setJSON($servers);
     }
-    
 }
