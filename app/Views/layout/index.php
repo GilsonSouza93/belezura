@@ -15,15 +15,21 @@
         }
 
         body {
-            background-color: #1d2125;
+            background-image: linear-gradient(180deg, rgba(33, 37, 41, 0.01), rgba(33, 37, 41, 1) 85%),
+                radial-gradient(ellipse at top left, rgba(25, 93, 168, 0.5), transparent 100%),
+                radial-gradient(ellipse at top right, rgba(255, 228, 132, 0.5), transparent 50%),
+                radial-gradient(ellipse at center left, rgba(151, 231, 255, 0.5), transparent 50%);
+
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
         }
+
 
         .card {
             border-radius: var(--border-radius);
-            background: rgba(25, 25, 25);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(33, 37, 41, 0.2);
-            backdrop-filter: blur(7px);
+            border: none;
+            background: rgba(10, 10, 10, 0.6);
         }
 
         .border {
@@ -122,42 +128,58 @@
         .select2-no-results {
             display: none !important;
         }
+
+        @keyframes scaleAnimation {
+            0% {
+                transform: scale(1);
+            }
+
+            5% {
+                transform: scaleX(0.99) scaleY(0.8);
+            }
+
+            7% {
+                transform: scaleX(0.99) scaleY(0.8);
+            }
+
+            20% {
+                transform: scaleX(1.009) scaleY(1.2);
+            }
+
+            85% {
+                transform: scaleX(1.009) scaleY(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        header.scaled {
+            animation: scaleAnimation 3s;
+        }
     </style>
 </head>
 
 <body id="particles-js" class="bg-dark text-white">
     <div id="particles-container"></div>
-    <div id="content">
-        <header>
-            <nav class="d-flex flex-row border-bottom border-light mx-4 mt-4">
-                <img src="<?= base_url('assets/imgs/logo.png') ?>" alt="logo" class="ms-3" style="height: 50px;">
+    <div id="content" class='p-4'>
+        <header class="card mb-5" style="transition: 1s ease-in-out;border-bottom: 2px solid transparent;">
+            <nav class="d-flex flex-row p-2">
+                <img src="<?= base_url('assets/imgs/logo.png') ?>" alt="logo" class="ms-3 nav-bar-items" style="height: 50px" id="logo-img">
 
-                <div class="d-flex flex-row align-items-center">
+                <div class="d-flex flex-row align-items-center" id="nav-bar-items" style="transition: 1s ease-in-out;">
                     <?php foreach ($navigation_bar_items as $item) : ?>
                         <?php if ($item['show_subitems']) : ?>
                             <div class="nav-item mx-3 subitems">
                                 <a class="nav-link dropdown-toggle text-white" href="<?= $item['href'] ?>" data-bs-toggle="dropdown">
                                     <?= $item['title'] ?>
                                 </a>
-                                <ul class="dropdown-menu dropdown-menu-dark mt-4 px-2" style="background: rgba(10, 10, 10, 0.4); backdrop-filter: blur(7px); border-radius: 15px; border: 2px solid <?= $item['color'] ?>;">
+                                <ul class="dropdown-menu dropdown-menu-dark mt-4" style="background: rgba(10, 10, 10, 0.6); backdrop-filter: blur(7px); border-radius: 15px;">
                                     <?php foreach ($item['subitems'] as $subitem) : ?>
-
-                                        <?php if (isset($subitem['subitems'])) : ?>
-                                            <div class="subitems btn-group dropend ms-3">
-                                                <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">
-                                                    <?= $subitem['title'] ?>
-                                                </a>
-                                                <ul class="dropdown-menu dropdown-menu-dark ms-6" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(7px); border-radius: 15px; border: 2px solid <?= $item['color'] ?>;">
-                                                    <?php foreach ($subitem['subitems'] as $subsubitem) : ?>
-                                                        <li><a class="dropdown-item text-white rounded my-1" href="<?= $subsubitem['href'] ?>"><?= $subsubitem['title'] ?></a></li>
-                                                    <?php endforeach ?>
-                                                </ul>
-                                            </div>
-
-                                        <?php else : ?>
-                                            <li><a class="dropdown-item text-white rounded" href="<?= $subitem['href'] ?>"><?= $subitem['title'] ?></a></li>
-                                        <?php endif ?>
-
+                                        <li class="m-3">
+                                            <a class="dropdown-item text-white rounded" href="<?= $subitem['href'] ?>"><?= $subitem['title'] ?></a>
+                                        </li>
                                     <?php endforeach ?>
                                 </ul>
                             </div>
@@ -168,10 +190,13 @@
                         <?php endif ?>
                     <?php endforeach ?>
                 </div>
+                <h3 id="nav-bar-toast-alert" class="d-none ms-4 mt-2 text-white" style="transition: 1s ease-in-out;">
+                    
+                </h3>
             </nav>
         </header>
 
-        <div class="m-4">
+        <div>
             <?= $this->renderSection('content') ?>
         </div>
     </div>
@@ -189,50 +214,39 @@
             $(this).find('.dropdown-menu').first().stop(true, true).delay(200).slideUp();
         });
 
-        $('.show-text').hover(function() {
-            var text = $(this).data('text');
-
-            showToast(text, 'success');
-        });
-
-        $('.show-text').mouseleave(function() {
-            $('.toast').remove();
-        });
-
-        const createToast = (borderColor, message) => {
-            const div = document.createElement('div');
-            div.classList.add('position-fixed', 'bottom-0', 'start-0', 'p-3');
-            div.style.zIndex = '10';
-
-            const toast = document.createElement('div');
-            toast.classList.add('toast', 'card', 'text-white', 'p-1', 'fs-6', 'w-100', 'bg-transparent');
-            toast.style.border = `3px solid ${borderColor}`;
-            toast.style.backdropFilter = 'blur(7px)';
-
-            const toastBody = document.createElement('div');
-            toastBody.classList.add('toast-body', 'text-white');
-
-            toastBody.innerText = message;
-
-            toast.appendChild(toastBody);
-            div.appendChild(toast);
-
-            document.body.appendChild(div);
-        }
-
         const showToast = (message, type) => {
-            $('.toast').remove();
+            const header = document.querySelector('header');
+            header.classList.add('scaled');
 
             const borderColor = type === 'success' ? '#00bf63' : type === 'error' ? '#ff4e50' : type === 'warning' ? '#ffbd59' : '#00aeef';
-            createToast(borderColor, message);
+            header.style.borderBottom = `2px solid ${borderColor}`;
+            
+            const navBarItems = document.querySelector('#nav-bar-items');
+            navBarItems.style.opacity = '0';
 
-            $('.toast').toast({
-                animation: true,
-                autohide: true,
-                delay: 5000
-            });
+            const toast = document.querySelector('#nav-bar-toast-alert');
+            toast.style.opacity = '0';
 
-            $('.toast').toast('show');
+            setTimeout(() => {
+
+                navBarItems.classList.add('d-none');
+                toast.classList.remove('d-none');
+                toast.innerText = message;
+                toast.style.opacity = '1';
+
+                setTimeout(() => {
+                    header.style.borderBottom = `2px solid transparent`;
+
+                    toast.style.opacity = '0';
+                    toast.addEventListener('transitionend', () => {
+                        toast.classList.add('d-none');
+                        navBarItems.classList.remove('d-none');
+                        navBarItems.style.opacity = '1';
+                        header.classList.remove('scaled');
+                    });
+                }, 3500);
+            }, 600);
+
         }
 
         const showLoading = () => {
@@ -333,6 +347,8 @@
                 .then(response => response.json())
                 .then(data => {
                     hideLoading();
+
+                    console.log(data);
                     if (data.status == 'success') {
 
                         const registerQuantity = data.data.length;
@@ -346,7 +362,6 @@
                                 td.classList.add('text-center');
 
                                 if (Array.isArray(element)) {
-                                    console.log(element);
                                     const dropdown = document.createElement('div');
                                     dropdown.classList.add('dropdown', 'dropstart', 'dropdown-dark', 'me-2');
 
@@ -371,6 +386,7 @@
                                         editButton.innerText = 'Editar';
 
                                         dropdownMenu.appendChild(editButton);
+                                        a
                                     };
 
 
@@ -437,6 +453,7 @@
                     }
                 })
                 .catch(error => {
+                    console.log(error);
                     showToast('Erro ao carregar dados da tabela', 'error');
                 })
 

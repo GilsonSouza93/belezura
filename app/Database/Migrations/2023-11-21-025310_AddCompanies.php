@@ -30,7 +30,7 @@ class AddCompanies extends Migration
                 'null' => true,
             ],
 
-            'apiKey' => [
+            'assas_api_key' => [
                 'type' => 'VARCHAR',
                 'constraint' => '250'
             ],

@@ -213,6 +213,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         });
         $routes->group('integracoes', static function ($routes) {
             $routes->get('/', 'integrationsController::index');
+            $routes->post('save-asaas', 'integrationsController::saveAsaas');
         });
     });
     $routes->group('equipamentos', static function ($routes) {

@@ -4,16 +4,18 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class IntegrationsModel extends Model
+class CompaniesModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'integrations';
+    protected $table            = 'companies';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = [
+        'assas_api_key'
+    ];
 
     // Dates
     protected $useTimestamps = false;

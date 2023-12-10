@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 
-<div class="p-4">
+<div >
     <h2>
         <?= $tittle ?>
     </h2>

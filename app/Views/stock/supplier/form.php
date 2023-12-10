@@ -8,7 +8,7 @@
         <?= $tittle ?>
     </h2>
 
-    <form id="form" class="p-4" enctype="multipart/form-data">
+    <form id="form"  enctype="multipart/form-data">
         <div class="row card-2 py-3 my-3">
             <div class="col-md-8">
             <h4>

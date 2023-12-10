@@ -2,11 +2,10 @@
 
 <?= $this->section('content') ?>
 
-<div class="p-4">
-
+<div>
     <h2><?= $tittle ?></h2>
 
-    <div class="row card-2 py-3 my-3">
+    <div class="row py-3 my-3">
         <div class="col-md-8">
             <input type="text" name="search" id="search" class="form-control" placeholder="Buscar" style="background-color: transparent;">
         </div>
@@ -62,7 +61,7 @@
         tableDiv: document.getElementById('tableDiv'),
 
         theadElements: ['Nome', 'Telefone','Endereço','POP', 'Ações'],
-        tbodyElements: ['name', 'phones', 'address1','pop_id', ['edit', 'delete']],
+        tbodyElements: ['name', 'phone', 'address1','pop_id', ['edit', 'delete']],
         searchField: document.getElementById('search'),
     }
 
