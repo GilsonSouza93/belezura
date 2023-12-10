@@ -386,7 +386,6 @@
                                         editButton.innerText = 'Editar';
 
                                         dropdownMenu.appendChild(editButton);
-                                        a
                                     };
 
 
