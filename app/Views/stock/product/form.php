@@ -8,7 +8,7 @@
     <?= $tittle ?>
   </h2>
 
-  <form id="form card p-4" class="p-4" enctype="multipart/form-data">
+  <form id="form card p-4"  enctype="multipart/form-data">
     <input type="hidden" id="id" value="<?= isset($register) ? $register->id : '' ?>">
 
     <div class="row card-2 py-3 my-3">
