@@ -110,8 +110,8 @@
             
             <div class="col mt-4">
                 <div class="form-floating">
-                    <input type="date" id="payout" class="form-control" name="payout" placeholder="">
-                    <label for="payout">Vencimento</label>
+                    <input type="date" id="payment" class="form-control" name="Fpa" placeholder="">
+                    <label for="payment">Vencimento</label>
                 </div>
             </div>
             <div class="col mt-4 form-check">

@@ -25,7 +25,6 @@ class BillsToPayModel extends Model
         'issue',
         'payment',
         'installment',
-        'payout',
         'obs',
         'description',
         'created_at',
@@ -73,7 +72,6 @@ class BillsToPayModel extends Model
             'issue',
             'payment',
             'installment',
-            'payout',
             'obs',
             'description',
             
@@ -91,7 +89,6 @@ class BillsToPayModel extends Model
             'issue',
             'payment',
             'installment',
-            'payout',
             'obs',
             'description',
             

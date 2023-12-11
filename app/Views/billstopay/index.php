@@ -62,7 +62,7 @@
         tableDiv: document.getElementById('tableDiv'),
         
         theadElements: ['Conta'	,'Empresa','Descrição','Emissão','Vencimento','Pagamento','Valor', 'Ações'],
-        tbodyElements: ['id', 'company_id', 'description','issue','payout','payment_form','value', ['edit', 'delete']],
+        tbodyElements: ['id', 'company_id', 'description','issue','payment','payment_form','value', ['edit', 'delete']],
         searchField: document.getElementById('search'),
     }
 
