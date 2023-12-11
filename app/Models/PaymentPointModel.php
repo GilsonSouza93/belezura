@@ -95,6 +95,7 @@ class PaymentPointModel extends Model
             'filter',
             'cash_reports',
             'schedule',
+            'balance',
         ];
 
         $fieldsToReturn = [

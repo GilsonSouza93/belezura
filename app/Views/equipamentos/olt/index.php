@@ -31,7 +31,7 @@
         urlFetch: window.location.href + '/search',
         tableDiv: document.getElementById('tableDiv'),
         theadElements: ['ID','Nome', 'Host', 'Slot', 'Tipo','Ativo', 'ações'],
-        tbodyElements: ['id','name', 'host', 'slot', 'type','active', 'actions_dropdown'],
+        tbodyElements: ['id','name', 'host', 'slot', 'type','active', ['edit','delete']],
         searchField: document.getElementById('search'),
     }
 

@@ -64,8 +64,8 @@
         urlFetch: window.location.href + '/search',
         tableDiv: document.getElementById('tableDiv'),
         // Descrição	Dias	Servidor SMTP	Ativo	Status do Contrato	Mensagem	Ações
-        theadElements: ['Descrição', 'dias','Endereço','POP', 'Ações'],
-        tbodyElements: ['description', 'days', 'address1','pop_id', ['edit', 'delete']],
+        theadElements: ['Serviço', 'Limite de envios','Grupo','Vencimento','Status','Mensagem' , 'Ações'],
+        tbodyElements: ['service', 'sending_limit','group', 'expiration','status','mensage' , ['edit', 'delete']],
         searchField: document.getElementById('search'),
     }
 

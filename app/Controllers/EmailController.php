@@ -17,7 +17,7 @@ class EmailController extends BaseController
         $popModel = model('PopModel');
         $this->data['pops'] = $popModel->findAll();
 
-        $plansModel = model('PaymentPlansModel');
+        $plansModel = model('PlansModel');
         $this->data['plans'] = $plansModel->findAll();
 
         $oltsModel = model('OltModel');

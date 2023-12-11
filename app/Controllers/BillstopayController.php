@@ -17,10 +17,10 @@ class BillstopayController extends BaseController
         $this->mainModel = model('BillstoPayModel');
 
         $popModel = model('PopModel');
+        $this->data['pops'] = $popModel->findAll();
         $supplierModel = model('SupplierModel');
         //->where('active', true)
 
-        $this->data['pops'] = $popModel->findAll();
         $this->data['suppliers'] = $supplierModel->findAll();
 
         parent::__construct();

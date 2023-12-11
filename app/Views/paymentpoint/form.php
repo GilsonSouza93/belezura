@@ -14,7 +14,7 @@
         </div>
         <div class="col-md-4 btn-group">
             <a class="btn btn-success" href="<?= $baseRoute ?>">Voltar</a>
-            <button class="btn btn-success" onclick="save()">Salvar</button>
+            <button class="btn btn-success" id="submit-btn" >Salvar</button>
         </div>
     </div>
 

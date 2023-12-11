@@ -4,49 +4,28 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class EmailModel extends Model
+class ServerModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'emails';
+    protected $table            = 'servers';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        'service',
-        'sending_limit',
+        'id',
+        'description',
+        'heigth',
+        'sustainable',
         'pop_id',
-        'group',
-        'tags',
-        'nas',
-        'condominium',
-        'street',
-        'district',
-        'source',
-        'route',
-        'tower',
-        'plan_id',
-        'olt_id',
-        'slot',
-        'pon',
-        'billing_method',
-        'expiration',
-        'invoice',
-        'invoice_until',
-        'person_type',
-        'status',
-        'contact',
-        'loyalty',
+        'address',
+        'lat',
         'active',
-        'terms',
-        'comodato',
-        'mensage',
-        'created_at',
-        'updated_at',
-        'deleted_at',
         'company_id',
-        
+        'created_at',
+        'deleted_at',
+        'updated_at',
     ];
 
     // Dates
@@ -73,28 +52,33 @@ class EmailModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
+    
     public function search($data)
     {
         $fieldsToSearch = [
-            'service',
-            'sending_limit',
-            'group',
-            'expiration',
-            'status',
-            'mensage',
+            'id',
+            'description',
+            'heigth',
+            'sustainable',
+            'pop_id',
+            'address',
+            'lat',
+            'active',
         ];
 
         $fieldsToReturn = [
             'id',
-            'service',
-            'sending_limit',
-            'expiration',
-            'group',
-            'status',
-            'mensage',
+            'description',
+            'heigth',
+            'sustainable',
+            'pop_id',
+            'address',
+            'lat',
+            'active',
+            'created_at',
+            'updated_at',
+            'deleted_at',
         ];
-
-        $createdAtName = 'created_at';
 
         $search = null;
 
@@ -112,9 +96,9 @@ class EmailModel extends Model
             $query->groupEnd();
         }
 
-        $query->orderBy($createdAtName, 'DESC');
+        $query->orderBy('created_at', 'DESC');
         $result = $query->get()->getResultArray();
 
-    return $result;
+        return $result;
     }
 }

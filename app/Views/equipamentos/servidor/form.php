@@ -34,40 +34,40 @@
         <div class="row">
             <div class="mt-3 col-md-3">
                 <label for="name" class="form-label">Descrição</label>
-                <input type="text" class="form-control" name="name" placeholder="">
+                <input type="text" class="form-control" name="description" placeholder="" id="description" value="<?= isset($register) ? $register->description : '' ?>">
             </div>
             <div class="mt-3 col-md-3">
                 <label for="name" class="form-label">Altura</label>
-                <input type="text" class="form-control" name="name" placeholder="">
+                <input type="text" class="form-control" name="heigth" id="heigth" placeholder="" value="<?= isset($register) ? $register->heigth : '' ?>">
             </div>
             <div class="mt-3 col-md-3">
                 <label for="price" class="form-label"></label>
-                <input type="checkbox" name="active" id="" class="form-check-input">Sustentável
+                <input type="checkbox" name="sustainable" id="sustainable" class="form-check-input" value="<?= isset($register) ? $register->sustainable : '' ?>">Sustentável
             </div>
             <div class="mt-3 col-md-3">
                 <label for="thel" class="form-label">POP</label>
-                <select class="form-control" aria-label="Default select example">
-                    <option selected>Selecione o POP</option>
-                    <option value="1">Rua Tabareu</option>
-                    <option value="1">Av. Tabacudo</option>
-                </select>
+                <select class="form-select" id="pop_id" name="pop_id" value="<?= isset($register) ? $register->pop_id : '' ?>">
+                        <?php foreach ($pops as $pop) : ?>
+                            <option value="">Selecione o local do pop</option>
+                            <option value="<?= $pop['id'] ?>"><?= $pop['city'] ?></option>
+                        <?php endforeach ?>
+                    </select>
             </div>
         </div>
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="name" class="form-label">Endereço</label>
-                <input type="text" class="form-control" name="name" placeholder="">
+                <input type="text" class="form-control" name="address" id="address" placeholder=""value="<?= isset($register) ? $register->address : '' ?>">
             </div>
             <div class="mt-3 col-md-4">
                 <label for="name" class="form-label">Latitude/Longitude</label>
-                <input type="text" class="form-control" name="name" placeholder="">
+                <input type="text" class="form-control" name="lat" id="lat" placeholder=""value="<?= isset($register) ? $register->lat : '' ?>">
             </div>
             <div class="mt-3 col-md-4">
                 <label for="price" class="form-label"></label>
-                <input type="checkbox" name="active" id="">Ativo
+                <input type="checkbox" name="active" id="active"value="<?= isset($register) ? $register->active : '' ?>">Ativo
             </div>
         </div>
-
 
     </form>
 </div>

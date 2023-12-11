@@ -72,6 +72,11 @@ class AddPaymentPoint extends Migration
                 'constraint' => 255,
             ],
 
+            'balance' => [
+                'type' => 'INT',
+                'constraint' => 55,
+            ],
+
             'pops' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
