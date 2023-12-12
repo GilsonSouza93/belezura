@@ -4,62 +4,48 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class AddRouter extends Migration
+class AddSms extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            "id" => [
+            'id' => [
                 'type' => 'INT',
                 'constraint' => 5,
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
 
-            'font' => [
-                'type' => 'VARCHAR',
-                'constraint' => 255,
-            ],
-
-            'code' => [
-                'type' => 'VARCHAR',
-                'constraint' => 255,
-            ],
-
             'description' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255,
+                'constraint' => 1000,
             ],
 
-            'port' => [
+            'gateway' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
 
-            'source' => [
-                'type' => 'VARCHAR',
-                'constraint' => 255,
-            ],
-            'parameter' => [
-                'type' => 'VARCHAR',
-                'constraint' => 255,
-            ],
-
-            'olt_id' => [
+            'days' => [
                 'type' => 'INT',
-                'constraint' => 5,
-                'unsigned' => true,
+                'constraint' => 20,
+            ],
+
+            'mensage' => [
+                'type' => 'VARCHAR',
+                'constraint' => 1500,
             ],
 
             'company_id' => [
                 'type' => 'INT',
-                'constraint' => 30,
+                'constraint' => 5,
             ],
 
             'updated_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
             ],
+
             'deleted_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
@@ -69,14 +55,13 @@ class AddRouter extends Migration
         ]);
 
         $this->forge->addKey('id', true);
+
         $this->forge->addForeignKey('company_id', 'companies', 'id');
-        $this->forge->addForeignKey('olt_id', 'olts', 'id');
-        $this->forge->createTable('routers');
 
+        $this->forge->CreateTable('sms');
     }
-
     public function down()
     {
-        $this->forge->dropTable('routers');
+        $this->forge->DropTable('sms');
     }
 }

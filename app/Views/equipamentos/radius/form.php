@@ -51,32 +51,32 @@
         <div class="row">
             <div class="mt-3 col-md-6">
                 <label for="user" class="form-label">Usuário</label>
-                <input type="text" class="form-control" name="user" placeholder="Insira um nome"id="user">
+                <input type="text" class="form-control" name="user" placeholder="Insira um nome"id="user" value="<?= isset($register) ? $register->user : '' ?>">
             </div>
             <div class="mt-3 col-md-6">
                 <label for="password" class="form-label">Senha</label>
-                <input type="text" class="form-control" name="password" placeholder="Insira uma senha" id="password">
+                <input type="text" class="form-control" name="password" placeholder="Insira uma senha" id="password" value="<?= isset($register) ? $register->password : '' ?>">
             </div>
         </div>
 
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="prefx_ipv6" class="form-label">IPv6 Prefix Pool:</label>
-                <select class="form-control select2" aria-label="Default select example"name="prefx_ipv6" id="prefx_ipv6">
+                <select class="form-control select2" aria-label="Default select example"name="prefx_ipv6" id="prefx_ipv6" value="<?= isset($register) ? $register->prefx_ipv6 : '' ?>">
                     <option selected>Selecione o IP POOL</option>
                     <option value="1">IP 01</option>
                 </select>
             </div>
             <div class="mt-3 col-md-4">
                 <label for="ipv6_pool" class="form-label">IPv6 PD Pool:</label>
-                <select class="form-control select2" aria-label="Default select example" name="ipv6_pool" id="ipv6_pool">
+                <select class="form-control select2" aria-label="Default select example" name="ipv6_pool" id="ipv6_pool" value="<?= isset($register) ? $register->ipv6_pool : '' ?>">
                     <option selected>Selecione o IP POOL</option>
                     <option value="1">IP 01</option>
                 </select>
             </div>
             <div class="mt-3 col-md-4">
                 <label for="ip_pool_block" class="form-label">IP Pool Bloqueio:</label>
-                <select class="form-control select2" aria-label="Default select example" name="ip_pool_block" id="ip_pool_block">
+                <select class="form-control select2" aria-label="Default select example" name="ip_pool_block" id="ip_pool_block" value="<?= isset($register) ? $register->ip_pool_block : '' ?>">
                     <option selected>Selecione o IP POOL</option>
                     <option value="1">IP 01</option>
                 </select>
@@ -86,33 +86,33 @@
         <div class="row">
             <div class="mt-3 col-md-3">
                 <label for="ip_address" class="form-label">Endereço de IP</label>
-                <input type="text" class="form-control" name="ip_address" placeholder="Insira IP" id="ip_address">
+                <input type="text" class="form-control" name="ip_address" placeholder="Insira IP" id="ip_address" value="<?= isset($register) ? $register->ip_address : '' ?>">
             </div>
             <div class="mt-3 col-md-3">
                 <label for="name" class="form-label">Nome do Indentificador</label>
-                <input type="text" class="form-control" name="name" placeholder="Insira nome para indentificar" id="name">
+                <input type="text" class="form-control" name="name" placeholder="Insira nome para indentificar" id="name" value="<?= isset($register) ? $register->name : '' ?>">
             </div>
             <div class="mt-3 col-md-3">
                 <label for="type" class="form-label">Tipo:</label>
-                <input type="text" class="form-control" name="type" placeholder="Insira o tipo" id="type">
+                <input type="text" class="form-control" name="type" placeholder="Insira o tipo" id="type" value="<?= isset($register) ? $register->type : '' ?>">
             </div>
             <div class="mt-3 col-md-3">
                 <label for="secret_word" class="form-label">Palavra Secreta</label>
-                <input type="text" class="form-control" name="secret_word" placeholder="Insira a palavra passe" id="secret_word">
+                <input type="text" class="form-control" name="secret_word" placeholder="Insira a palavra passe" id="secret_word" value="<?= isset($register) ? $register->secret_word : '' ?>">
             </div>
         </div>
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="port" class="form-label">Porta de Requisição NAS</label>
-                <input type="text" class="form-control" name="port" placeholder="" id="port">
+                <input type="text" class="form-control" name="port" placeholder="" id="port" value="<?= isset($register) ? $register->port : '' ?>">
             </div>
             <div class="mt-3 col-md-4">
                 <label for="nas_ip" class="form-label">IP de Requisição NAS</label>
-                <input type="text" class="form-control" name="nas_ip" placeholder="" id="nas_ip">
+                <input type="text" class="form-control" name="nas_ip" placeholder="" id="nas_ip" value="<?= isset($register) ? $register->nas_ip : '' ?>">
             </div>
             <div class="mt-3 col-md-4">
                 <label for="ip_origin" class="form-label">IP de Origem Ping</label>
-                <input type="text" class="form-control" name="ip_origin" placeholder="" id="ip_origin">
+                <input type="text" class="form-control" name="ip_origin" placeholder="" id="ip_origin" value="<?= isset($register) ? $register->ip_origin : '' ?>">
             </div>
         </div>
         <div class="row">
@@ -125,7 +125,7 @@
             </div>
             <div class="mt-3 col-md-6">
                 <label for="radius_config" class="form-label">Radius Config:</label>
-                <select class="form-control select2" name="radius_config" id="radius_config">
+                <select class="form-control select2" name="radius_config" id="radius_config" value="<?= isset($register) ? $register->radius_config : '' ?>">
                     <option selected>Selecione o IPv6 POOL</option>
                     <option value="1">IP 01</option>
                 </select>
@@ -135,49 +135,49 @@
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="port_2" class="form-label">Porta</label>
-                <input type="text" class="form-control" name="port_2" id="port_2" placeholder="">
+                <input type="text" class="form-control" name="port_2" id="port_2" placeholder="" value="<?= isset($register) ? $register->port_2 : '' ?>">
             </div>
             <div class="mt-3 col-md-4">
                 <label for="IP" class="form-label">Usuário</label>
-                <input type="text" class="form-control" name="user_2" placeholder="" id="user_2">
+                <input type="text" class="form-control" name="user_2" placeholder="" id="user_2" value="<?= isset($register) ? $register->user_2 : '' ?>">
             </div>
             <div class="mt-3 col-md-4">
                 <label for="IP" class="form-label">Senha</label>
-                <input type="text" class="form-control" name="password_2" placeholder="" id="password_2">
+                <input type="text" class="form-control" name="password_2" placeholder="" id="password_2" value="<?= isset($register) ? $register->password_2 : '' ?>">
             </div>
         </div>
 
         <div class="row">
             <div class="mt-3 col-md-3">
                 <label for="snmp_version" class="form-label">SNMP Version:</label>
-                <input type="text" class="form-control" name="snmp_version" placeholder="" id="snmp_version">
+                <input type="text" class="form-control" name="snmp_version" placeholder="" id="snmp_version" value="<?= isset($register) ? $register->snmp_version : '' ?>">
             </div>
             <div class="mt-3 col-md-3">
                 <label for="snmp_community" class="form-label">SNMP Community:</label>
-                <input type="text" class="form-control" name="snmp_community" placeholder="" id="snmp_community">
+                <input type="text" class="form-control" name="snmp_community" placeholder="" id="snmp_community" value="<?= isset($register) ? $register->snmp_community : '' ?>">
             </div>
             <div class="mt-3 col-md-3">
                 <label for="snmp_port" class="form-label">SNMP Port:</label>
-                <input type="text" class="form-control" name="snmp_port" placeholder="" id="snmp_port">
+                <input type="text" class="form-control" name="snmp_port" placeholder="" id="snmp_port" value="<?= isset($register) ? $register->snmp_port : '' ?>">
             </div>
             <div class="mt-3 col-md-3">
                 <label for="http_port" class="form-label">HTTP Porta:</label>
-                <input type="text" class="form-control" name="http_port" placeholder="" id="http_port">
+                <input type="text" class="form-control" name="http_port" placeholder="" id="http_port" value="<?= isset($register) ? $register->http_port : '' ?>">
             </div>
         </div>
 
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="dns_primary" class="form-label">DNS Primário:</label>
-                <input type="text" class="form-control" name="dns_primary" placeholder="" id="dns_primary">
+                <input type="text" class="form-control" name="dns_primary" placeholder="" id="dns_primary" value="<?= isset($register) ? $register->dns_primary : '' ?>">
             </div>
             <div class="mt-3 col-md-4">
                 <label for="dns_secondary" class="form-label">DNS Secundário:</label>
-                <input type="text" class="form-control" name="dns_secondary" placeholder="" id="dns_secondary">
+                <input type="text" class="form-control" name="dns_secondary" placeholder="" id="dns_secondary" value="<?= isset($register) ? $register->dns_secondary : '' ?>">
             </div>
             <div class="mt-3 col-md-4">
                 <label for="accounting_update" class="form-label">Accounting Update:</label>
-                <input type="text" class="form-control" name="accounting_update" placeholder="" id="accounting_update">
+                <input type="text" class="form-control" name="accounting_update" placeholder="" id="accounting_update"value="<?= isset($register) ? $register->accounting_update : '' ?>">
             </div>
         </div>
 
@@ -185,79 +185,79 @@
         <div class="row">
             <div class="mt-3 col-md-6">
                 <label for="port_secondary" class="form-label">Porta</label>
-                <input type="text" class="form-control" name="port_secondary" placeholder="" id="port_secondary">
+                <input type="text" class="form-control" name="port_secondary" placeholder="" id="port_secondary"value="<?= isset($register) ? $register->port_secondary : '' ?>">
             </div>
             <div class="mt-3 col-md-6">
                 <label for="lat_long" class="form-label">Latitude, Longitude</label>
-                <input type="text" class="form-control" name="lat_long" placeholder="" id="lat_long">
+                <input type="text" class="form-control" name="lat_long" placeholder="" id="lat_long"value="<?= isset($register) ? $register->lat_long : '' ?>">
             </div>
         </div>
         <div class="row">
             <div class="mt-3 col-md-2">
                 <label for="active_radius" class="form-label"></label>
-                <input type="checkbox" name="active_radius" id="active_radius" class="form-check-input"> Ativar no Radius
+                <input type="checkbox" name="active_radius" id="active_radius" class="form-check-input"value="<?= isset($register) ? $register->active_radius : '' ?>"> Ativar no Radius
             </div>
             <div class="mt-3 col-md-2">
                 <label for="costumer_disponible" class="form-label"></label>
-                <input type="checkbox" name="costumer_disponible" id="costumer_disponible" class="form-check-input"> Disponível para Cliente
+                <input type="checkbox" name="costumer_disponible" id="costumer_disponible" class="form-check-input"value="<?= isset($register) ? $register->costumer_disponible : '' ?>"> Disponível para Cliente
             </div>
             <div class="mt-3 col-md-2">
                 <label for="verify_login" class="form-label"></label>
-                <input type="checkbox" name="verify_login" id="verify_login" class="form-check-input"> Verificar Login
+                <input type="checkbox" name="verify_login" id="verify_login" class="form-check-input"value="<?= isset($register) ? $register->verify_login : '' ?>"> Verificar Login
             </div>
             <div class="mt-3 col-md-2">
                 <label for="verify_mac" class="form-label"></label>
-                <input type="checkbox" name="verify_mac" id="verify_mac" class="form-check-input"> Verificar Mac
+                <input type="checkbox" name="verify_mac" id="verify_mac" class="form-check-input"value="<?= isset($register) ? $register->verify_mac : '' ?>"> Verificar Mac
             </div>
             <div class="mt-3 col-md-2">
                 <label for="verify_mac_login" class="form-label"></label>
-                <input type="checkbox" name="verify_mac_login" id="verify_mac_login" class="form-check-input"> Verificar Mac+Login
+                <input type="checkbox" name="verify_mac_login" id="verify_mac_login" class="form-check-input"value="<?= isset($register) ? $register->verify_mac_login : '' ?>"> Verificar Mac+Login
             </div>
             <div class="mt-3 col-md-2">
                 <label for="rrd_interfaces" class="form-label"></label>
-                <input type="checkbox" name="rrd_interfaces" id="rrd_interfaces" class="form-check-input"> RRd Interfaces
+                <input type="checkbox" name="rrd_interfaces" id="rrd_interfaces" class="form-check-input"value="<?= isset($register) ? $register->rrd_interfaces : '' ?>"> RRd Interfaces
             </div>
         </div>
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="json_parameters" class="form-label">Parâmetros do JSON:</label>
-                <input type="text" class="form-control" name="json_parameters" id="json_parameters">
+                <input type="text" class="form-control" name="json_parameters" id="json_parameters"value="<?= isset($register) ? $register->json_parameters : '' ?>">
             </div>
             <div class="mt-5 col-md-2">
                 <label for="auto_reload" class="form-label"></label>
-                <input type="checkbox" name="auto_reload" id="auto_reload" class="form-check-input"> Auto Reload
+                <input type="checkbox" name="auto_reload" id="auto_reload" class="form-check-input"value="<?= isset($register) ? $register->auto_reload : '' ?>"> Auto Reload
             </div>
             <div class="mt-3 col-md-4">
                 <label for="simultaneous_login" class="form-label">Simutâneos User por Login:</label>
-                <input type="text" class="form-control" name="simultaneous_login" id="simultaneous_login">
+                <input type="text" class="form-control" name="simultaneous_login" id="simultaneous_login"value="<?= isset($register) ? $register->simultaneous_login : '' ?>">
             </div>
             <div class="mt-5 col-md-2">
                 <label for="check_radius" class="form-label"></label>
-                <input type="checkbox" name="check_radius" id="check_radius" class="form-check-input"> Checar Radius
+                <input type="checkbox" name="check_radius" id="check_radius" class="form-check-input"value="<?= isset($register) ? $register->check_radius : '' ?>"> Checar Radius
             </div>
         </div>
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="timeout_check" class="form-label">Timeout de Checagem de Conexão</label>
-                <input type="text" class="form-control" name="timeout_check" id="timeout_check">
+                <input type="text" class="form-control" name="timeout_check" id="timeout_check"value="<?= isset($register) ? $register->timeout_check : '' ?>">
             </div>
             <div class="mt-5 col-md-2">
                 <label for="check_conexion" class="form-label"></label>
-                <input type="checkbox" name="check_conexion" id="check_conexion" class="form-check-input"> Checar Conectividade
+                <input type="checkbox" name="check_conexion" id="check_conexion" class="form-check-input"value="<?= isset($register) ? $register->check_conexion : '' ?>"> Checar Conectividade
             </div>
             <div class="mt-3 col-md-3">
                 <label for="timeout_graphics" class="form-label">Timeout Gráfico de Coleta de Sinal:</label>
-                <input type="text" class="form-control" name="timeout_graphics" id="timeout_graphics">
+                <input type="text" class="form-control" name="timeout_graphics" id="timeout_graphics"value="<?= isset($register) ? $register->timeout_graphics : '' ?>">
             </div>
             <div class="mt-3 col-md-3">
                 <label for="ip_address_access" class="form-label">Endereço IP de Acesso - Importação:</label>
-                <input type="text" class="form-control" name="ip_address_access" id="ip_address_access">
+                <input type="text" class="form-control" name="ip_address_access" id="ip_address_access"value="<?= isset($register) ? $register->ip_address_access : '' ?>">
             </div>
         </div>
         <div class="row">
         <div class="mt-3 col-md-12">
                 <label for="access_type" class="form-label">Tipo de Acesso - Importação:</label>
-                <select class="form-control select2" name="access_type" id="access_type">
+                <select class="form-control select2" name="access_type" id="access_type"value="<?= isset($register) ? $register->access_type : '' ?>">
                     <option selected>Selecione a importação</option>
                     <option value="1">IP 01</option>
                 </select>
@@ -266,21 +266,21 @@
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="access_port" class="form-label">Porta de Acesso - Importação:</label>
-                <input type="text" class="form-control" name="access_port" id="access_port">
+                <input type="text" class="form-control" name="access_port" id="access_port"value="<?= isset($register) ? $register->access_port : '' ?>">
             </div>
             <div class="mt-3 col-md-4">
                 <label for="access_user" class="form-label">Usuário de acesso - Importação:</label>
-                <input type="text" class="form-control" name="access_user" id="access_user">
+                <input type="text" class="form-control" name="access_user" id="access_user"value="<?= isset($register) ? $register->access_user : '' ?>">
             </div>
             <div class="mt-3 col-md-4">
                 <label for="access_password" class="form-label">Senha de Acesso - Importação:</label>
-                <input type="text" class="form-control" name="access_password" id="access_password">
+                <input type="text" class="form-control" name="access_password" id="access_password"value="<?= isset($register) ? $register->access_password : '' ?>">
             </div>
         </div>
         <div class="row">
         <div class="mt-3 col-md-12">
                 <label for="short_code" class="form-label">ShortCode</label>
-                <input type="text" class="form-control" name="short_code" id="short_code">
+                <input type="text" class="form-control" name="short_code" id="short_code"value="<?= isset($register) ? $register->short_code : '' ?>">
             </div>
         </div>
         <div class="row card-2 py-3 my-3">

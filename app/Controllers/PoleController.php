@@ -41,19 +41,13 @@ class PoleController extends BaseController
             'caixa_subterranea' => $json->caixa_subterranea,
             'company_id' => session()->get('company_id'),
         ];
+    }
 
-        $response = $this->mainModel->save($data);
-
-        if($response) {
-            return $this->response->setJSON([
-                'status' => 'success',
-                'message' => 'Poste cadastrado com sucesso!',
-            ]);
+        public function treatmentBeforeSave($data)
+        {
+          $session = session();
+          $data['company_id'] = $session->get('company_id');
+        
+          return $data;
         }
-
-        return $this->response->setJSON([
-            'status' => 'error',
-            'message' => 'Erro ao cadastrar o poste!',
-        ]);
-    }    
-}
+    }

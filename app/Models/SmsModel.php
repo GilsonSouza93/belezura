@@ -4,26 +4,25 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class RouterModel extends Model
+class SmsModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'routers';
+    protected $table            = 'sms';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        'font',
-        'code',
         'description',
-        'port',
-        'parameter',
-        'olt_id',
+        'gateway',
+        'days',
+        'mensage',
+        'id',
         'company_id',
         'created_at',
-        'deleted_at',
         'updated_at',
+        'deleted_at',
     ];
 
     // Dates
@@ -53,11 +52,18 @@ class RouterModel extends Model
     public function search($data)
     {
         $fieldsToSearch = [
-            'id', 'description', 'source','port',
+            'description',
+            'days',
+            'gateway',
+            'mensage',
         ];
 
         $fieldsToReturn = [
-            'id', 'description', 'source','port',
+            'id',
+            'description',
+            'days',
+            'gateway',
+            'mensage',
         ];
 
         $createdAtName = 'created_at';

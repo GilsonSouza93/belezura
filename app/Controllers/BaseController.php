@@ -422,6 +422,13 @@ abstract class BaseController extends Controller
         return $this->response->setJSON($data);
     }
 
+    public function FormatBoolean($value){
+
+        if($value == 'on' || $value == '1' || $value == 1 || $value == true ) return 1;
+        else return 0;
+
+    }
+
     public function search()
     {
         $json = $this->request->getJSON();
