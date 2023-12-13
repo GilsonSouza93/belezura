@@ -22,14 +22,8 @@ class IppoolController extends BaseController
     {
       $session = session();
       $data['company_id'] = $session->get('company_id');
+      $data['boolean'] = $this->FormatBoolean($data['boolean']);
 
-      if(isset($data['active'])){
-        $data['active'] = 1;
-      }
-      if(isset($data['order'])){
-        $data['order'] = 1;
-      }
-    
       return $data;
     }
 }

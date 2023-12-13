@@ -25,6 +25,7 @@ class RouterController extends BaseController
     {
       $session = session();
       $data['company_id'] = $session->get('company_id');
+      $data['boolean'] = $this->FormatBoolean($data['boolean']);
     
       return $data;
     }

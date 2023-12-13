@@ -21,13 +21,7 @@ class Ipv6Controller extends BaseController
     {
       $session = session();
       $data['company_id'] = $session->get('company_id');
-
-      if(isset($data['active'])){
-        $data['active'] = 1;
-      }
-      if(isset($data['order'])){
-        $data['order'] = 1;
-      }
+      $data['boolean'] = $this->FormatBoolean($data['boolean']);
     
       return $data;
     }

@@ -49,6 +49,8 @@ class PopController extends BaseController
 
         $response = $this->mainModel->save($theadData);
 
+        
+
         if($response) {
             return $this->response->setJSON([
                 'status' => 'success',
@@ -60,5 +62,14 @@ class PopController extends BaseController
                 'message' => 'Houve um erro'
             ]);
         }
+    }
+
+    public function treatmentBeforeSave($data)
+    {
+      $session = session();
+      $data['company_id'] = $session->get('company_id');
+      $data['boolean'] = $this->FormatBoolean($data['boolean']);
+      
+      return $data;
     }
 }
