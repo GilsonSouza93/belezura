@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class SwitchesModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'switches';
+    protected $table            = 'switche';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
@@ -15,12 +15,13 @@ class SwitchesModel extends Model
     protected $protectFields    = true;
     protected $allowedFields    = [
         'id',
-        "switch_fonte",
-        "switch_cod",
-        "switch_description",
-        "switch_port",
-        "switch_parameter",
-        "switch_olt",
+        "fonte",
+        "cod",
+        "description",
+        "port",
+        "parameter",
+        "olt",
+        'company_id',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -49,4 +50,47 @@ class SwitchesModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function search($data)
+    {
+        $fieldsToSearch = [
+            'font',
+            'cod',
+            'description',
+            'port',
+            'olt',
+        ];
+
+        $fieldsToReturn = [
+            'id',
+            'font',
+            'cod',
+            'description',
+            'port',
+            'olt',
+        ];
+
+        $createdAtName = 'created_at';
+
+        $search = null;
+
+        if (isset($data['search']))
+            $search = $data['search'];
+
+        $query = $this->db->table($this->table)
+            ->select($fieldsToReturn);
+
+        if ($search) {
+            $query->groupStart();
+            foreach ($fieldsToSearch as $field) {
+                $query->orLike($field, $search);
+            }
+            $query->groupEnd();
+        }
+
+        $query->orderBy($createdAtName, 'DESC');
+        $result = $query->get()->getResultArray();
+
+    return $result;
+    }
 }

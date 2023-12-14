@@ -16,32 +16,32 @@ class AddSwitch extends Migration
                 'auto_increment' => true,
             ],
 
-            'switch_fonte' => [
+            'fonte' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
 
-            'switch_cod' => [
+            'cod' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
 
-            'switch_discription' => [
+            'discription' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
 
-            'switch_port' => [
+            'port' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
 
-            'switch_parameter' => [
+            'parameter' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
 
-            'switch_olt' => [
+            'olt' => [
                 'type' => 'INT',
                 'constraint' => 5,
                 'unsigned' => true,
@@ -66,7 +66,7 @@ class AddSwitch extends Migration
 
         $this->forge->addKey('id', true);
         $this->forge->addForeignKey('company_id', 'companies', 'id');
-        $this->forge->addForeignKey('switch_olt', 'olts', 'id');
+        $this->forge->addForeignKey('olt', 'olts', 'id');
         $this->forge->createTable('switch');
 
 

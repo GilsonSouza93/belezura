@@ -33,7 +33,7 @@
         <div class="row">
             <div class="mt-3 col-md-3">
                 <label for="thel" class="form-label">Fonte</label>
-                <select class="form-control select2" aria-label="Default select example"name="switch_fonte" id="switch_fonte">
+                <select class="form-control select2" aria-label="Default select example"name="font" id="font">
                     <option selected>Selecione a Fonte</option>
                     <option value="1">Fonte 01</option>
                     <option value="1">Fonte 02</option>
@@ -41,15 +41,15 @@
             </div>
             <div class="mt-3 col-md-3">
                 <label for="name" class="form-label">Código</label>
-                <input type="text" class="form-control" name="switch_cod" placeholder="Insira o código da onu" id="switch_cod">
+                <input type="text" class="form-control" name="cod" placeholder="Insira o código da onu" id="cod">
             </div>
             <div class="mt-3 col-md-3">
                 <label for="model" class="form-label">Descrição</label>
-                <input type="text" class="form-control" name="switch_description" placeholder="Insira a descrição" id="switch_description">
+                <input type="text" class="form-control" name="description" placeholder="Insira a descrição" id="description">
             </div>
             <div class="mt-3 col-md-3">
                 <label for="qty" class="form-label">Portas</label>
-                <input type="text" class="form-control" name="switch_port" placeholder="Insira a porta"id="switch_port">
+                <input type="text" class="form-control" name="port" placeholder="Insira a porta"id="port">
             </div>
 
         </div>
@@ -57,11 +57,16 @@
         <div class="row">
             <div class="mt-3 col-md-6">
                 <label for="price" class="form-label">Parâmetros</label>
-                <input type="text" class="form-control" name="switch_parameter" placeholder="Insira o parâmetro" id="switch_parameter">
+                <input type="text" class="form-control" name="parameter" placeholder="Insira o parâmetro" id="parameter">
             </div>
             <div class="mt-3 col-md-6">
-                <label for="switch_olt" class="form-label">Olts</label>
-                <input type="text" class="form-control" name="switch_olt" placeholder="OLTS" id="switch_olt">
+                <label for="olt" class="form-label">Olt</label>
+                <select class="form-select" id="olt" name="olt" value="<?= isset($register) ? $register->olt : '' ?>">
+                        <?php foreach ($olts as $olt) : ?>
+                            <option value="">Selecione a olt</option>
+                            <option value="<?= $olt['id'] ?>"><?= $olt['name'] ?></option>
+                        <?php endforeach ?>
+                    </select>
             </div>
         </div>
 
@@ -74,36 +79,35 @@
 
     <?= $this->section('script') ?>
 
-<script>
+    <script>
+        const submitBtn = document.querySelector('#submit-btn');
+        const form = document.querySelector('form');
+        const url = '<?= $baseRoute ?>/save';
 
-    const submitBtn = document.querySelector('#submit-btn');
-    const form = document.querySelector('form');
-    const url = '<?= $baseRoute ?>/save';
+        submitBtn.addEventListener('click', event => {
+            event.preventDefault();
+            showLoading();
 
-    submitBtn.addEventListener('click', event => {
-        event.preventDefault();
-        showLoading();
+            const formData = new FormData(form);
 
-        const formData = new FormData(form);
-
-        fetch(url, {
-            method: 'POST',
-            body: formData
-        }).then(response => response.json())
-        .then(data => {
-            hideLoading();
-            if (data.error) {
-                showToast(data.message, 'error');
-            } else {
-                showToast(data.message, 'success');
-                window.location.href = '<?= $baseRoute ?>';
-            }
-        }).catch(error => {
-            console.log(error);
+            fetch(url, {
+                    method: 'POST',
+                    body: formData
+                }).then(response => response.json())
+                .then(data => {
+                    hideLoading();
+                    if (data.status === 'success') {
+                        showToast(data.message, 'success');
+                        setTimeout(() => {
+                            window.location.href = '<?= $baseRoute ?>';
+                        }, 1000);
+                    } else {
+                        showToast(data.message, 'error');
+                    }
+                }).catch(error => {
+                    console.log(error);
+                });
         });
-    });
-
-
-</script>
+    </script>
 
 <?= $this->endSection() ?>
