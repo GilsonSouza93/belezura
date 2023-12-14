@@ -76,7 +76,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="row mt-2 border mx-1 p-3">
+                <div class="row mt-2 border mx-1 p-3"> 
                     <div class="col">
                         <h6>Tipo de Equipamento</h6>
                         <div class="form-check">
@@ -104,7 +104,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
 

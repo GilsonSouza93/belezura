@@ -14,7 +14,7 @@
         </div>
         <div class="col-md-4 btn-group">
             <a class="btn btn-success" href="<?= $baseRoute ?>">Voltar</a>
-            <button class="btn btn-success" id="submit-btn" >Salvar</button>
+            <button class="btn btn-success" id="submit-btn">Salvar</button>
         </div>
     </div>
 
@@ -62,14 +62,6 @@
                 <input type="text" class="form-control" id="balance" name="balance" value="<?= isset($register) ? $register->balance : '' ?>">
                 <span class="badge text-bg-light show-text" data-text='Limitar recebimento para o caixa por dia. (Definir valor apenas se quiser limitar valor máximo para receber por caixa)'>?</span>
             </div>
-
-
-
-            <div class="mt-3 col-md-1 form-check">
-                <label class="form-check-label" for="active">Ativo</label>
-                <input type="checkbox" class="form-check-input" id="active" name="active" value="<?= isset($register) ? $register->active : '' ?>">
-            </div>
-
 
             <div class="mt-3 col-md-3">
                 <label for="bills_discount" class="form-label">% Desconto Caixa.</label>
@@ -182,32 +174,56 @@
 
                     </select>
                 </div>
-                <div class="mt-5 col-md-4 form-check">
-                    <label class="form-check-label" for="send_invoice">Enviar NF?</label>
-                    <input type="checkbox" class="form-check-input" id="send_invoice" name="send_invoice" value="<?= isset($register) ? $register->send_invoice : '' ?>">
-                    <span class="badge text-bg-light show-text" data-text='Enviar nota fiscal automáticamente após a NF ser gerada se houver baixa do título.'>?</span>
-                </div>
-
-                <div class="mt-5 col-md-4 form-check">
-                    <label class="form-check-label" for="filter">Filtrar Empresa nos Relatórios ?</label>
-                    <input type="checkbox" class="form-check-input" name="filter" id="filter" value="<?= isset($register) ? $register->filter : '' ?>">
-                    <span class="badge text-bg-light show-text" data-text='Se marcado, filtra a empresa definida do ponto de recebimento nos relatórios de caixa, dre etc. Se não definido, verifica a empresa no cadastro do Portador'>?</span>
-                </div>
-                <div class="mt-5 col-md-4 form-check">
-                    <label class="form-check-label" for="cash_reports">Ativo Relatório de Caixa ?</label>
-                    <input type="checkbox" class="form-check-input" name="cash_reports" id="cash_reports" value="<?= isset($register) ? $register->cash_reports : '' ?>">
-                    <span class="badge text-bg-light show-text" data-text='Se desmarcado, os lançamentos realizados neste ponto serão ocultados dos relatórios de lançamentos de caixa.'>?</span>
-                </div>
-
-                <div class="mb-3">
-                    </br>
-                    </br>
-                    <label for="schedule" class="form-label"> Horários</label>
-                    <textarea class="form-control" name="schedule" id="schedule" rows="3"><?= isset($register) ? $register->schedule : '' ?></textarea>
-                </div>
-
-
             </div>
+            <div class="row mt-5">
+                <div class="col-md-8">
+                    <label for="schedule" class="form-label"> Horários</label>
+                    <textarea class="form-control" name="schedule" id="schedule" rows="5"><?= isset($register) ? $register->schedule : '' ?></textarea>
+                </div>
+                <div class="col-md-4">
+                    <div class="row mt-4 border mx-1 p-3">
+                        <div class="col">
+                            <div class="form-check">
+                                <input type="checkbox" id="cto">
+                                <label for="cto" class="form-label">CTO</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" id="caixa_hermetica">
+                                <label for="caixa_hermetica" class="form-label">Caixa Hermética</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" id="radio">
+                                <label for="radio" class="form-label">Rádio</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-check">
+                                <input type="checkbox" id="send_invoice" name="send_invoice" value="<?= isset($register) ? $register->send_invoice : '' ?>">
+                                <label class="form-label" for="send_invoice">Enviar NF</label>
+                                <span class="badge text-bg-light show-text" data-text='Enviar nota fiscal automáticamente após a NF ser gerada se houver baixa do título.'>?</span>
+                            </div>
+
+                            <div class="form-check">
+                                <input type="checkbox" name="filter" id="filter" value="<?= isset($register) ? $register->filter : '' ?>">
+                                <label class="form-label" for="filter">Filtrar Empresa nos Relatórios</label>
+                                <span class="badge text-bg-light show-text" data-text='Se marcado, filtra a empresa definida do ponto de recebimento nos relatórios de caixa, dre etc. Se não definido, verifica a empresa no cadastro do Portador'>?</span>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" name="cash_reports" id="cash_reports" value="<?= isset($register) ? $register->cash_reports : '' ?>">
+                                <label class="form-label" for="cash_reports">Ativo Relatório de Caixa</label>
+                                <span class="badge text-bg-light show-text" data-text='Se desmarcado, os lançamentos realizados neste ponto serão ocultados dos relatórios de lançamentos de caixa.'>?</span>
+                            </div>
+
+
+                            <div class="form-check">
+                                <input type="checkbox" id="active" name="active" value="<?= isset($register) ? $register->active : '' ?>">
+                                <label class="form-label" for="active">Ativo</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
         </div>
     </form>
@@ -217,7 +233,7 @@
 <?= $this->section('script') ?>
 
 <script>
-     const submitBtn = document.querySelector('#submit-btn');
+    const submitBtn = document.querySelector('#submit-btn');
     const form = document.querySelector('form');
     const url = '<?= $baseRoute ?>/save';
 

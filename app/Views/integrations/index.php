@@ -76,6 +76,10 @@
             });
     }
 
+    const getApiKeyAssas = () => {
+        
+    }
+
     const testApiKeyAssas = () => {
         showToast('Em desenvolvimento', 'warning');
     }
