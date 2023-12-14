@@ -43,15 +43,14 @@
             <div class="mt-3 col">
                 <label for="pop_id" class="form-label">POP</label>
                 <select class="form-control select2" id="pop_id" name="pop_id">
-                    <option selected>Selecione o Local POP</option>
                     <?php foreach ($pops as $pop) : ?>
-                    <option value="<?= $pop['id'] ?>"><?= $pop['city'] ?></option>
-                <?php endforeach; ?>
+                        <option value="<?= $pop['id'] ?>"><?= $pop['city'] ?></option>
+                    <?php endforeach; ?>
                 </select>
             </div>
             <div class="mt-3 col">
                 <label for="payment_point" class="form-label">Ponto de Pagamento</label>
-                <select class="form-control select2" id="payment_point" name="payment_point" >
+                <select class="form-control select2" id="payment_point" name="payment_point">
                     <option selected>Selecione o Ponto de Pagamento</option>
                     <option value="1">Principal</option>
                     <option value="2">Caixa Reserva</option>
@@ -92,18 +91,18 @@
             </div>
             <div class="mt-3 col-md-6">
                 <label for="date" class="form-label">Data da Competência</label>
-                <input type="date" id="date" class="form-control" name="date" >
+                <input type="date" id="date" class="form-control" name="date">
             </div>
         </div>
 
         <div class="row">
             <div class="mt-3 col-md-6">
                 <label for="obs" class="form-label">Observação</label>
-                <input type="text" name="obs" class="form-control" id="obs" >
+                <input type="text" name="obs" class="form-control" id="obs">
             </div>
             <div class="mt-3 col-md-6">
                 <label for="data" class="form-label">Dados Abstratos</label>
-                <input type="text" id="data" class="form-control" name="data" >
+                <input type="text" id="data" class="form-control" name="data">
             </div>
         </div>
     </form>
