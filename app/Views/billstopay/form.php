@@ -35,7 +35,6 @@
                 <div class="form-floating">
                     <select class="form-select" id="pop_id" name="pop_id">
                         <?php foreach ($pops as $pop) : ?>
-                            <option value="">Selecione o local do pop</option>
                             <option value="<?= $pop['id'] ?>"><?= $pop['city'] ?></option>
                         <?php endforeach ?>
                     </select>
@@ -46,7 +45,6 @@
                 <div class="form-floating">
                     <select class="form-select" id="supplier_id" name="supplier_id" required>
                         <?php foreach ($suppliers as $supplier) : ?>
-                            <option value="">Selecione o local do pop</option>
                             <option value="<?= $supplier['id'] ?>"><?= $supplier['name'] ?></option>
                         <?php endforeach; ?>
                     </select>

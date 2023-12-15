@@ -27,6 +27,7 @@ class BillstoreciverController extends BaseController
     {
       $session = session();
       $data['company_id'] = $session->get('company_id');
+      if(isset($data['boolean'])) 
       $data['boolean'] = $this->FormatBoolean($data['boolean']);
     
       return $data;

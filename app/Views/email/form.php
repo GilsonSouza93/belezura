@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 
-<div >
+<div>
 
     <h2>
         <?= $tittle ?>
@@ -20,7 +20,7 @@
         </div>
         <div class="col-md-4 btn-group">
             <a class="btn btn-success" href="<?= $baseRoute ?>">Voltar</a>
-            <button class="btn btn-success" id="submit-btn" >Salvar</button>
+            <button class="btn btn-success" id="submit-btn">Salvar</button>
         </div>
     </div>
 
@@ -37,14 +37,12 @@
             </div>
             <div class="mt-3 col-md-4">
                 <label for="sending_limit" class="form-label">Limite por envio</label>
-                <input type="text" class="form-control" name="sending_limit" id="sending_limit" placeholder="Quantidade de emails enviados para cada conexão." 
-                value="<?= isset($register) ? $register->sending_limit : '' ?>">
+                <input type="text" class="form-control" name="sending_limit" id="sending_limit" placeholder="Quantidade de emails enviados para cada conexão." value="<?= isset($register) ? $register->sending_limit : '' ?>">
             </div>
             <div class="mt-3 col-md-4">
                 <label for="pop_id" class="form-label">POP</label>
                 <select class="form-select" id="pop_id" name="pop_id" value="<?= isset($register) ? $register->pop_id : '' ?>">
                     <?php foreach ($pops as $pop) : ?>
-                        <option value="">Selecione o local do pop</option>
                         <option value="<?= $pop['id'] ?>"><?= $pop['city'] ?></option>
                     <?php endforeach ?>
                 </select>
@@ -70,8 +68,7 @@
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="condominium" class="form-label">Condomínio</label>
-                <input type="text" class="form-control" name="condominium" id="condominium" placeholder=""
-                value="<?= isset($register) ? $register->condominium : '' ?>">
+                <input type="text" class="form-control" name="condominium" id="condominium" placeholder="" value="<?= isset($register) ? $register->condominium : '' ?>">
             </div>
             <div class="mt-3 col-md-4">
                 <label for="street" class="form-label">Rua</label>
@@ -107,31 +104,29 @@
             <div class="mt-3 col-md-4">
                 <label for="plans_id" class="form-label">Plano</label>
                 <select class="form-select" id="plan_id" name="plan_id" value="<?= isset($register) ? $register->plan_id : '' ?>">
-                        <?php foreach ($plans as $plan) : ?>
-                            <option value="">Selecione o plano</option>
-                            <option value="<?= $plan['id'] ?>"><?= $plan['name'] ?></option>
-                        <?php endforeach ?>
-                    </select>
+                    <?php foreach ($plans as $plan) : ?>
+                        <option value="<?= $plan['id'] ?>"><?= $plan['name'] ?></option>
+                    <?php endforeach ?>
+                </select>
             </div>
             <div class="mt-3 col-md-4">
                 <label for="olt_id" class="form-label">Olt</label>
                 <select class="form-select" id="olt_id" name="olt_id" value="<?= isset($register) ? $register->olt_id : '' ?>">
-                        <?php foreach ($olts as $olt) : ?>
-                            <option value="">Selecione a olt</option>
-                            <option value="<?= $olt['id'] ?>"><?= $olt['name'] ?></option>
-                        <?php endforeach ?>
-                    </select>
+                    <?php foreach ($olts as $olt) : ?>
+                        <option value="<?= $olt['id'] ?>"><?= $olt['name'] ?></option>
+                    <?php endforeach ?>
+                </select>
             </div>
             <div class="mt-3 col-md-4">
                 <label for="slot" class="form-label">Slot</label>
-                <input type="text" class="form-control" id="slot" name="slot"  value="<?= isset($register) ? $register->slot : '' ?>">
+                <input type="text" class="form-control" id="slot" name="slot" value="<?= isset($register) ? $register->slot : '' ?>">
             </div>
 
         </div>
         <div class="row">
             <div class="mt3 col-md-4">
                 <label for="pon" class="form-label">PON</label>
-                <input type="text" class="form-control" id="pon" name="pon"  value="<?= isset($register) ? $register->pon : '' ?>">
+                <input type="text" class="form-control" id="pon" name="pon" value="<?= isset($register) ? $register->pon : '' ?>">
             </div>
             <div class="mt3 col-md-4">
                 <label for="" class="form-label">Formas de cobrança</label>
@@ -191,34 +186,34 @@
             </div>
             <div class="mt3 col-md-4">
                 <label for="" class="form-label">Fidelidade dias restantes</label>
-                <input type="text" class="form-control" id="loyalty" name="loyalty" placeholder="Quantidade de dias até o fim da fidelidade." 
-                value="<?= isset($register) ? $register->loyalty : '' ?>">
+                <input type="text" class="form-control" id="loyalty" name="loyalty" placeholder="Quantidade de dias até o fim da fidelidade." value="<?= isset($register) ? $register->loyalty : '' ?>">
             </div>
         </div>
 
+
+
         <div class="row">
-            <div class="mt-5 col-md-3 form-check">
-                <label class="form-check-label" for="active">Ativo?</label>
-                <input type="checkbox" class="form-check-input" name="active" id="active" value="<?= isset($register) ? $register->active : '' ?>">
+            <div class="mt-3 col-md-9">
+                <label for="mensage" class="form-label">Mensagem</label>
+                <textarea name="mensage" class="form-control" id="mensage" cols="30" rows="5"><?= isset($register) ? $register->mensage : '' ?></textarea>
             </div>
-            <div class="mt-5 col-md-3 form-check">
-                <label class="form-check-label" for="terms">Termo de aceite do contrato</label>
-                <input type="checkbox" class="form-check-input" name="terms" id="terms" value="<?= isset($register) ? $register->terms : '' ?>">
-            </div>
-            <div class="mt-5 col-md-3 form-check">
-                <label class="form-check-label" for="comodato">Comodato?</label>
-                <input type="checkbox" class="form-check-input" name="comodato" id="comodato" value="<?= isset($register) ? $register->comodato : '' ?>">
+            <div class="col-md-3 mt-5">
+                <div class="form-check">
+                    <label class="form-check-label" for="active">Ativo?</label>
+                    <input type="checkbox" class="form-check-input" name="active" id="active" value="<?= isset($register) ? $register->active : '' ?>">
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label" for="terms">Termo de aceite do contrato</label>
+                    <input type="checkbox" class="form-check-input" name="terms" id="terms" value="<?= isset($register) ? $register->terms : '' ?>">
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label" for="comodato">Comodato?</label>
+                    <input type="checkbox" class="form-check-input" name="comodato" id="comodato" value="<?= isset($register) ? $register->comodato : '' ?>">
+                </div>
             </div>
         </div>
-        
-                <div class="row">
-                    <div class="mt-3 col-md-12">
-                        <label for="mensage" class="form-label">Mensagem</label>
-                        <textarea name="mensage" class="form-control" id="mensage" cols="30" rows="5"><?= isset($register) ? $register->mensage : '' ?></textarea>
-                    </div>
-                </div>
-        
-        
+
+
     </form>
 </div>
 <?= $this->endSection() ?>

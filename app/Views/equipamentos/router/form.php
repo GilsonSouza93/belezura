@@ -68,7 +68,6 @@
                 <label for="id_valor_custo" class="form-label">Olts</label>
                 <select class="form-select" id="olt_id" name="olt_id" value="<?= isset($register) ? $register->olt_id : '' ?>">
                         <?php foreach ($olts as $olt) : ?>
-                            <option value="">Selecione a olt</option>
                             <option value="<?= $olt['id'] ?>"><?= $olt['name'] ?></option>
                         <?php endforeach ?>
                     </select>            </div>

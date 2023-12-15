@@ -48,7 +48,6 @@
                 <label for="thel" class="form-label">POP</label>
                 <select class="form-select" id="pop_id" name="pop_id" value="<?= isset($register) ? $register->pop_id : '' ?>">
                         <?php foreach ($pops as $pop) : ?>
-                            <option value="">Selecione o local do pop</option>
                             <option value="<?= $pop['id'] ?>"><?= $pop['city'] ?></option>
                         <?php endforeach ?>
                     </select>

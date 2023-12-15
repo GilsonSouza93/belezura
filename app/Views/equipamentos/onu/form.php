@@ -54,7 +54,6 @@
       <div class="mt-3 col-md-6">
         <label for="olt" class="form-label">OLT</label>
         <select class="form-control" id="olt" aria-label="olt" value="<?= isset($register) ? $register->olt : '' ?>">
-          <option selected>Selecione a OLT</option>
           <?php foreach ($olts as $olt) : ?>
             <option value="<?= $olt['id'] ?>"><?= $olt['name'] ?></option>
           <?php endforeach ?>

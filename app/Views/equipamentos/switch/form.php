@@ -63,7 +63,6 @@
                 <label for="olt" class="form-label">Olt</label>
                 <select class="form-select" id="olt" name="olt" value="<?= isset($register) ? $register->olt : '' ?>">
                         <?php foreach ($olts as $olt) : ?>
-                            <option value="">Selecione a olt</option>
                             <option value="<?= $olt['id'] ?>"><?= $olt['name'] ?></option>
                         <?php endforeach ?>
                     </select>
