@@ -16,19 +16,44 @@ class AddSwitch extends Migration
                 'auto_increment' => true,
             ],
 
-            'fonte' => [
+            'source' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
 
-            'cod' => [
+            'route' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
 
-            'discription' => [
+            'initial_port' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
+            ],
+
+            'total_ports' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
+
+            'pole_id' => [
+                'type' => 'INT',
+                'constraint' => 255,
+            ],
+
+            'unavailable' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
+
+            'description' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
+
+            'ip' => [
+                'type' => 'VARCHAR',
+                'constraint' => 20,
             ],
 
             'port' => [
@@ -36,15 +61,54 @@ class AddSwitch extends Migration
                 'constraint' => 255,
             ],
 
-            'parameter' => [
+            'access_type' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
 
-            'olt' => [
-                'type' => 'INT',
-                'constraint' => 5,
-                'unsigned' => true,
+            'user' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
+
+            'password' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
+
+            'switch_model' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
+
+            'template_model' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
+
+            'snmp_community' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
+
+            'snmp_version' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
+
+            'lat_long' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
+
+            'location' => [
+                'type' => 'VARCHAR',
+                'constraint' => 1000,
+            ],
+
+            'obs' => [
+                'type' => 'VARCHAR',
+                'constraint' => 1000,
             ],
 
             'company_id' => [
@@ -66,7 +130,7 @@ class AddSwitch extends Migration
 
         $this->forge->addKey('id', true);
         $this->forge->addForeignKey('company_id', 'companies', 'id');
-        $this->forge->addForeignKey('olt', 'olts', 'id');
+        $this->forge->addForeignKey('pole_id', 'poles', 'id');
         $this->forge->createTable('switch');
 
 

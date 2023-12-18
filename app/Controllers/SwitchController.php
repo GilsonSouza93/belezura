@@ -19,6 +19,9 @@ class SwitchController extends BaseController
         $oltsModel = model('OltModel');
         $this->data['olts'] = $oltsModel->findAll();
 
+        $polesModel = model('PoleModel');
+        $this->data['poles'] = $polesModel->findAll();
+
         parent::__construct();
     }
 

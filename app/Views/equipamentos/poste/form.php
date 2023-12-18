@@ -44,8 +44,8 @@
                     <div class="col-md-4">
                         <div class="form-floating">
                             <select class="form-select" id="pop_id" name="pop_id">
-                                <?php foreach ($pops as $item) : ?>
-                                    <option value="<?= $item['id'] ?>"><?= $item['name'] ?></option>
+                                <?php foreach ($pops as $pop) : ?>
+                                    <option value="<?= $pop['id'] ?>"><?= $pop['city'] ?></option>
                                 <?php endforeach ?>
                             </select>
                             <label for="pop">POP</label>

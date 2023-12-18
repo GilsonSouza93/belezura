@@ -18,7 +18,7 @@ class PoleController extends BaseController
         $this->mainModel = model('PoleModel');
         $popModel = model('PopModel');
 
-        $this->data['pops'] = $popModel->where('active', true)->findAll();
+        $this->data['pops'] = $popModel->findAll();
 
         return parent::__construct();
     }

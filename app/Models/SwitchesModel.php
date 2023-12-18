@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class SwitchesModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'switche';
+    protected $table            = 'switch';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
@@ -15,12 +15,25 @@ class SwitchesModel extends Model
     protected $protectFields    = true;
     protected $allowedFields    = [
         'id',
-        "fonte",
-        "cod",
+        "source",
+        "route",
+        "initial_port",
+        "total_ports",
+        "pole_id",
+        "unavailable",
         "description",
+        "ip",
         "port",
-        "parameter",
-        "olt",
+        "access_type",
+        "user",
+        "password",
+        "switch_model",
+        "template_switch",
+        "snmp_community",
+        "snmp_version",
+        "lat_long",
+        "location",
+        "obs",
         'company_id',
         'created_at',
         'updated_at',

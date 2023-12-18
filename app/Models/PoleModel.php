@@ -16,7 +16,7 @@ class PoleModel extends Model
     protected $allowedFields    = [
         'latitude',
         'longitude',
-        'pop',
+        'pop_id',
         'localizacao',
         'djson',
         'observacao',
