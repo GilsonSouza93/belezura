@@ -101,6 +101,17 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->post('search', 'SupplierController::search');
             $routes->post('delete', 'SupplierController::delete');
         });
+
+        $routes->group('movements', static function ($routes) {
+            $routes->get('/', 'MovementsController::index');
+            $routes->get('novo', 'MovementsController::form');
+            $routes->get('novo', 'MovementsController::filter');
+            $routes->get('editar/(:num)', 'MovementsController::edit/$1');
+
+            $routes->post('save', 'MovementsController::save');
+            $routes->post('search', 'MovementsController::search');
+            $routes->post('delete', 'MovementsController::delete');
+        });
         $routes->group('categorias', static function ($routes) {
             $routes->get('/', 'CategoryController::index');
             $routes->get('novo', 'CategoryController::form');
@@ -161,6 +172,25 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->post('save', 'LendingController::save');
             $routes->post('search', 'LendingController::search');
             $routes->post('delete', 'LendingController::delete');
+        });
+    });
+
+    $routes->group('monitoramento', static function ($routes) {
+        $routes->group('mapa', static function ($routes) {
+            $routes->get('/', 'MapController::index');
+            $routes->get('novo', 'MapController::form');
+            $routes->get('editar/(:num)', 'MapController::edit/$1');
+            $routes->post('search', 'MapController::search');
+            $routes->post('save', 'MapController::save');
+            $routes->post('delete', 'MapController::delete');            
+        });
+        $routes->group('rede', static function ($routes) {
+            $routes->get('/', 'NetworkController::index');
+            $routes->get('novo', 'NetworkController::form');
+            $routes->get('editar/(:num)', 'NetworkController::edit/$1');
+            $routes->post('search', 'NetworkController::search');
+            $routes->post('save', 'NetworkController::save');
+            $routes->post('delete', 'NetworkController::delete');            
         });
     });
 
