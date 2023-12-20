@@ -299,6 +299,10 @@ abstract class BaseController extends Controller
                         'title' => 'Central do Assinante',
                         'href' => base_url('configuracoes/centraldoassinante'),
                     ],
+                    'Integrações' => [
+                        'title' => 'Integrações',
+                        'href' => base_url('configuracoes/integracoes'),
+                    ],
                     'Alterar Senha' => [
                         'title' => 'Alterar Senha',
                         'href' => base_url('configuracoes/alterarsenha'),
@@ -416,6 +420,13 @@ abstract class BaseController extends Controller
         }
 
         return $this->response->setJSON($data);
+    }
+
+    public function FormatBoolean($value){
+
+        if($value == 'on' || $value == '1' || $value == 1 || $value == true ) return 1;
+        else return 0;
+
     }
 
     public function search()

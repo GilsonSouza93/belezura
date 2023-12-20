@@ -25,6 +25,8 @@ class CategoryController extends BaseController
     $data['account_type_id'] = 2;
     $data['created_at'] = date('Y-m-d H:i:s');
     $data['company_id'] = $session->get('company_id');
+    if(isset($data['boolean'])) 
+    $data['boolean'] = $this->FormatBoolean($data['boolean']);
 
 
     if ($this->mainModel->where('name', $data['name'])->first()) {

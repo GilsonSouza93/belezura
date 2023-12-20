@@ -33,15 +33,15 @@
     <div class="row">
       <div class="mt-3 col-md-3">
         <label for="name" class="form-label">Código</label>
-        <input type="text" class="form-control" name="code" id="code" placeholder="Insira o código da onu">
+        <input type="text" class="form-control" name="code" id="code" placeholder="Insira o código da onu" value="<?= isset($register) ? $register->code : '' ?>">
       </div>
       <div class="mt-3 col-md-4">
         <label for="model" class="form-label">Nome</label>
-        <input type="text" class="form-control" name="name" id="name" placeholder="Insira o nome">
+        <input type="text" class="form-control" name="name" id="name" placeholder="Insira o nome" value="<?= isset($register) ? $register->name : '' ?>">
       </div>
       <div class="mt-3 col-md-4">
         <label for="qty" class="form-label">Porta</label>
-        <input type="text" class="form-control" name="port" id="port" placeholder="Insira a porta">
+        <input type="text" class="form-control" name="port" id="port" placeholder="Insira a porta" value="<?= isset($register) ? $register->port : '' ?>">
       </div>
 
     </div>
@@ -49,12 +49,11 @@
     <div class="row">
       <div class="mt-3 col-md-6">
         <label for="price" class="form-label">Parâmetros</label>
-        <input type="text" class="form-control" name="parameters" id="parameters" placeholder="Insira o parâmetro">
+        <input type="text" class="form-control" name="parameters" id="parameters" placeholder="Insira o parâmetro" value="<?= isset($register) ? $register->parameters : '' ?>">
       </div>
       <div class="mt-3 col-md-6">
         <label for="olt" class="form-label">OLT</label>
-        <select class="form-control" id="olt" aria-label="olt">
-          <option selected>Selecione a OLT</option>
+        <select class="form-control" id="olt" aria-label="olt" value="<?= isset($register) ? $register->olt : '' ?>">
           <?php foreach ($olts as $olt) : ?>
             <option value="<?= $olt['id'] ?>"><?= $olt['name'] ?></option>
           <?php endforeach ?>

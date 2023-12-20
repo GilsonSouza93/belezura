@@ -14,9 +14,10 @@ class PoleModel extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
+        'id',
         'latitude',
         'longitude',
-        'pop',
+        'pop_id',
         'localizacao',
         'djson',
         'observacao',

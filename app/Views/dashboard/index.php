@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 
-<div class="p-4 mt-0">
+<div>
     <h2>
         <?= $tittle ?>
     </h2>
@@ -62,9 +62,8 @@
         </div>
     </div>
 
-    <div class="row" style="height: 400PX">
-        <div class="row rounded" id="map">
-        </div>
+
+    <div class="row rounded m-0" id="map" style="height: 40vh">
     </div>
 </div>
 

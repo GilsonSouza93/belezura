@@ -17,13 +17,12 @@ class SmsController extends BaseController
         parent::__construct();
     }
 
-    public function search()
+    public function treatmentBeforeSave($data)
     {
-        $data = $this->request->getJSON();
-        
-        $sms = $this->mainModel->search($data->search);
-
-        return $this->response->setJSON($sms);
+      $session = session();
+      $data['company_id'] = $session->get('company_id');
+      if(isset($data['boolean'])) 
+        $data['boolean'] = $this->FormatBoolean($data['boolean']);    
+      return $data;
     }
-
 }

@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 
-<div class="p-4">
+<div >
 
     <h2><?= $tittle ?></h2>
 
@@ -30,7 +30,7 @@
     const renderTableOptions = {
         urlFetch: window.location.href + '/search',
         tableDiv: document.getElementById('tableDiv'),
-        theadElements: ['ID', 'Tipo', 'Ponto de pagamento','Valor','Forma de Pagamento','Data de Cadastro','Observação', 'ações'],
+        theadElements: ['ID', 'Tipo', 'Ponto de pagamento','Valor','Forma de Pagamento','Data de Cadastro','Observação', 'Ações'],
         tbodyElements: ['id', 'type', 'payment_point','value','payment_form','date','obs', ['edit', 'delete', 'whatsapp']],
         searchField: document.getElementById('search'),
     }

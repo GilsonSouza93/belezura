@@ -18,7 +18,7 @@ class PoleController extends BaseController
         $this->mainModel = model('PoleModel');
         $popModel = model('PopModel');
 
-        $this->data['pops'] = $popModel->where('active', true)->findAll();
+        $this->data['pops'] = $popModel->findAll();
 
         return parent::__construct();
     }
@@ -41,19 +41,14 @@ class PoleController extends BaseController
             'caixa_subterranea' => $json->caixa_subterranea,
             'company_id' => session()->get('company_id'),
         ];
+    }
 
-        $response = $this->mainModel->save($data);
-
-        if($response) {
-            return $this->response->setJSON([
-                'status' => 'success',
-                'message' => 'Poste cadastrado com sucesso!',
-            ]);
+        public function treatmentBeforeSave($data)
+        {
+          $session = session();
+          $data['company_id'] = $session->get('company_id');
+          if(isset($data['boolean'])) 
+          $data['boolean'] = $this->FormatBoolean($data['boolean']);        
+          return $data;
         }
-
-        return $this->response->setJSON([
-            'status' => 'error',
-            'message' => 'Erro ao cadastrar o poste!',
-        ]);
-    }    
-}
+    }

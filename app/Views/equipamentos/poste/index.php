@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 
-<div class="p-4">
+<div >
 
     <h2><?= $tittle ?></h2>
 
@@ -47,8 +47,8 @@
     const renderTableOptions = {
         urlFetch: window.location.href + '/search',
         tableDiv: document.getElementById('tableDiv'),
-        theadElements: ['nome', 'preço', 'descrição', 'ações'],
-        tbodyElements: ['name', 'price', 'description', ['edit', 'delete', 'whatsapp']],
+        theadElements: ['Latitude', 'Longitude', 'Localização','POP','Observação', 'ações'],
+        tbodyElements: ['latitude', 'longitude','localizacao', 'pop','observacao', ['edit', 'delete']],
         searchField: document.getElementById('search'),
     }
 

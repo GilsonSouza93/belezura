@@ -24,10 +24,10 @@ class AddPoles extends Migration
                 'constraint' => '255',
             ],
 
-            'pop' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
-            ],
+            'pop_id' => [
+                'type' => 'INT',
+                'constraint' => '11',
+            ],            
 
             'localizacao' => [
                 'type' => 'VARCHAR',
@@ -90,6 +90,7 @@ class AddPoles extends Migration
 
         $this->forge->addKey('id', true);
 
+        //$this->forge->addForeignKey('pop_id', 'pops', 'id');
         $this->forge->addForeignKey('company_id', 'companies', 'id');
 
         $this->forge->createTable('poles');

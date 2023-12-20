@@ -21,6 +21,10 @@ class SubscriptionController extends BaseController
     {
         $session = session();
         $data['company_id'] = $session->get('company_id');
+
+        if(isset($data['boolean'])) 
+        $data['boolean'] = $this->FormatBoolean($data['boolean']);
+
         $data['created_at'] = date('Y-m-d H:i:s');
 
         $id = isset($data['id']) ? $data['id'] : null;

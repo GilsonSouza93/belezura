@@ -16,32 +16,36 @@ class AddRouter extends Migration
                 'auto_increment' => true,
             ],
 
-            'router_font' => [
+            'font' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
 
-            'router_code' => [
+            'code' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
 
-            'router_discription' => [
+            'description' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
 
-            'router_port' => [
+            'port' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
 
-            'router_parameter' => [
+            'source' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
+            'parameter' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
 
-            'router_olt' => [
+            'olt_id' => [
                 'type' => 'INT',
                 'constraint' => 5,
                 'unsigned' => true,
@@ -66,13 +70,13 @@ class AddRouter extends Migration
 
         $this->forge->addKey('id', true);
         $this->forge->addForeignKey('company_id', 'companies', 'id');
-        $this->forge->addForeignKey('router_olt', 'olts', 'id');
-        $this->forge->createTable('router');
+        $this->forge->addForeignKey('olt_id', 'olts', 'id');
+        $this->forge->createTable('routers');
 
     }
 
     public function down()
     {
-        $this->forge->dropTable('router');
+        $this->forge->dropTable('routers');
     }
 }

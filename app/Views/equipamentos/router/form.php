@@ -33,23 +33,27 @@
         <div class="row">
             <div class="mt-3 col-md-3">
                 <label for="thel" class="form-label">Fonte</label>
-                <select class="form-control select2" id="router_font" name="router_font">
+                <select class="form-control select2" id="font" name="font"
+                value="<?= isset($register) ? $register->font : '' ?>">
                     <option selected>Selecione a Fonte</option>
-                    <option value="1">Fonte 01</option>
-                    <option value="1">Fonte 02</option>
+                    <option value="Fonte 01">Fonte 01</option>
+                    <option value="Fonte 02">Fonte 02</option>
                 </select>
             </div>
             <div class="mt-3 col-md-3">
                 <label for="name" class="form-label">Código</label>
-                <input type="text" class="form-control" name="router_code" placeholder="Insira o código da onu" id="router_code">
+                <input type="text" class="form-control" name="code" placeholder="Insira o código da onu" id="code"
+                value="<?= isset($register) ? $register->code : '' ?>">
             </div>
             <div class="mt-3 col-md-3">
                 <label for="model" class="form-label">Descrição</label>
-                <input type="text" class="form-control" name="router_description" placeholder="Insira a descrição" id="router_description">
+                <input type="text" class="form-control" name="description" placeholder="Insira a descrição" id="description"
+                value="<?= isset($register) ? $register->description : '' ?>">
             </div>
             <div class="mt-3 col-md-3">
                 <label for="qty" class="form-label">Portas</label>
-                <input type="text" class="form-control" name="router_port" placeholder="Insira a porta" id="router_port">
+                <input type="text" class="form-control" name="port" placeholder="Insira a porta" id="port"
+                value="<?= isset($register) ? $register->port : '' ?>">
             </div>
 
         </div>
@@ -57,12 +61,16 @@
         <div class="row">
             <div class="mt-3 col-md-6">
                 <label for="price" class="form-label">Parâmetros</label>
-                <input type="text" class="form-control" name="router_parameter" placeholder="Insira o parâmetro" id="router_parameter">
+                <input type="text" class="form-control" name="parameter" placeholder="Insira o parâmetro" id="parameter"
+                value="<?= isset($register) ? $register->parameter : '' ?>">
             </div>
             <div class="mt-3 col-md-6">
                 <label for="id_valor_custo" class="form-label">Olts</label>
-                <input type="text" class="form-control" name="router_olt" placeholder="OLTS" id="router_olt">
-            </div>
+                <select class="form-select" id="olt_id" name="olt_id" value="<?= isset($register) ? $register->olt_id : '' ?>">
+                        <?php foreach ($olts as $olt) : ?>
+                            <option value="<?= $olt['id'] ?>"><?= $olt['name'] ?></option>
+                        <?php endforeach ?>
+                    </select>            </div>
         </div>
 
 

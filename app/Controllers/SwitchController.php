@@ -15,15 +15,23 @@ class SwitchController extends BaseController
     public function __construct()
     {
         $this->mainModel = model('SwitchModel');
+
+        $oltsModel = model('OltModel');
+        $this->data['olts'] = $oltsModel->findAll();
+
+        $polesModel = model('PoleModel');
+        $this->data['poles'] = $polesModel->findAll();
+
         parent::__construct();
     }
 
-    public function search()
+    public function treatmentBeforeSave($data)
     {
-        $data = $this->request->getJSON();
-        
-        $switchs = $this->mainModel->search($data->search);
+      $session = session();
+      $data['company_id'] = $session->get('company_id');
+      if(isset($data['boolean'])) 
+      $data['boolean'] = $this->FormatBoolean($data['boolean']);
 
-        return $this->response->setJSON($switchs);
+      return $data;
     }
 }

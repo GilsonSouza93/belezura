@@ -14,12 +14,16 @@ class RouterModel extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        'router_font',
-        'router_code',
-        'router_description',
-        'router_port',
-        'router_parameter',
-        'router_olt',
+        'font',
+        'code',
+        'description',
+        'port',
+        'parameter',
+        'olt_id',
+        'company_id',
+        'created_at',
+        'deleted_at',
+        'updated_at',
     ];
 
     // Dates
@@ -45,4 +49,38 @@ class RouterModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function search($data)
+    {
+        $fieldsToSearch = [
+            'id', 'description', 'source','port',
+        ];
+
+        $fieldsToReturn = [
+            'id', 'description', 'source','port',
+        ];
+
+        $createdAtName = 'created_at';
+
+        $search = null;
+
+        if (isset($data['search']))
+            $search = $data['search'];
+
+        $query = $this->db->table($this->table)
+            ->select($fieldsToReturn);
+
+        if ($search) {
+            $query->groupStart();
+            foreach ($fieldsToSearch as $field) {
+                $query->orLike($field, $search);
+            }
+            $query->groupEnd();
+        }
+
+        $query->orderBy($createdAtName, 'DESC');
+        $result = $query->get()->getResultArray();
+
+    return $result;
+    }
 }

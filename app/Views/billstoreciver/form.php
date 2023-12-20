@@ -34,7 +34,6 @@
             <div class="mt-3 col-md-2">
                 <label for="pop" class="form-label">POP</label>
                 <select class="form-control select2" id="pop_id" aria-label="pop_id" name="pop_id" >
-                    <option value="">Selecione o local do pop</option>
                     <?php foreach ($pops as $pop) : ?>
                         <option value="<?= $pop['id'] ?>"><?= $pop['city'] ?></option>
                     <?php endforeach; ?>
@@ -43,7 +42,6 @@
             <div class="mt-3 col-md-2">
                 <label for="supplier_id" class="form-label">Fornecedor</label>
                 <select class="form-control select2" id="supplier_id" aria-label="supplier_id" name="supplier_id" >
-                    <option value="">Selecione o fornecedor</option>
                         <?php foreach ($suppliers as $supplier) : ?>
                             <option value="<?= $supplier['id'] ?>"><?= $supplier['name'] ?></option>
                         <?php endforeach; ?>

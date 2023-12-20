@@ -33,36 +33,36 @@
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="name" class="form-label">Nome do Pool</label>
-                <input type="text" class="form-control" name="name" id="name" placeholder="">
+                <input type="text" class="form-control" name="name" id="name" placeholder=""value="<?= isset($register) ? $register->name : '' ?>">
             </div>
             <div class="mt-3 col-md-4">
                 <label for="name" class="form-label">Range</label>
-                <input type="text" class="form-control" name="range" id="range" placeholder="">
+                <input type="text" class="form-control" name="range" id="range" placeholder=""value="<?= isset($register) ? $register->range : '' ?>">
             </div>
             <div class="mt-3 col-md-4">
                 <label for="name" class="form-label">Next Range</label>
-                <input type="text" class="form-control" name="next_range" id="next_range" placeholder="">
+                <input type="text" class="form-control" name="next_range" id="next_range" placeholder="" value="<?= isset($register) ? $register->next_range : '' ?>">
             </div>
         </div>
         <div class="row">
             <div class="mt-5 col-md-4">
                 <label for="name" class="form-label">Radius Args</label>
-                <input type="text" class="form-control" name="radius" id="radius" placeholder="">
+                <input type="text" class="form-control" name="radius" id="radius" placeholder="" value="<?= isset($register) ? $register->radius : '' ?>">
             </div>
             <div class="mt-5 col-md-4 form-check">
                 <label class="form-check-label" for="flexCheckDefault"></label>
-                <input type="checkbox" class="form-check-input" name="order" id="order"  checked>Ordenar IPs por Rede /24:
+                <input type="checkbox" class="form-check-input" name="order" id="order" value="<?= isset($register) ? $register->order : '' ?>" checked>Ordenar IPs por Rede /24:
             </div>
 
             <div class="mt-5 col-md-4 form-check">
                 <label class="form-check-label" for="flexCheckDefault"></label>
-                <input type="checkbox" class="form-check-input" name="active" id="active">Ativo?
+                <input type="checkbox" class="form-check-input" name="active" id="active" value="<?= isset($register) ? $register->active : '' ?>">Ativo?
             </div>
         </div>
         <div class="row">
             <div class="mt-3 col-md-12">
                 <label for="name" class="form-label">Observação</label>
-                <input type="text" class="form-control" name="obs" id="obs" placeholder="">
+                <input type="text" class="form-control" name="obs" id="obs" placeholder="" value="<?= isset($register) ? $register->obs : '' ?>">
             </div>
         </div>
 

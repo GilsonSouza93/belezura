@@ -29,13 +29,11 @@ class CustomerController extends BaseController
         $this->data['pops'] = $popModel->where('active', true)->findAll();
         
         $subscriptionModel = model('SubscriptionModel');
-        $onuModel = model('OnuModel');
 
         $popModel = model('PopModel');
         $this->data['pops'] = $popModel->findAll();
 
         $this->data['subscription'] = $subscriptionModel->findAll();
-        $this->data['onuModel'] = $onuModel->findAll();
 
         $this->saveMessage = 'Cliente salvo com sucesso!';
         parent::__construct();
@@ -45,6 +43,8 @@ class CustomerController extends BaseController
     {
       $session = session();
       $data['company_id'] = $session->get('company_id');
+      if(isset($data['boolean'])) 
+      $data['boolean'] = $this->FormatBoolean($data['boolean']);
     
       return $data;
     }

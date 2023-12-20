@@ -32,40 +32,28 @@
 
         <div class="row">
             <div class="mt-3 col-md-4">
-                <label for="name" class="form-label">Nome do Pool</label>
-                <input type="text" class="form-control" name="name" placeholder="">
+                <label for="description" class="form-label">Descrição</label>
+                <input type="text" class="form-control" name="description" id="description" placeholder=""
+                value="<?= isset($register) ? $register->description : '' ?>">
             </div>
             <div class="mt-3 col-md-4">
-                <label for="name" class="form-label">Range</label>
-                <input type="text" class="form-control" name="name" placeholder="">
+                <label for="gateway" class="form-label">Gateway SMS</label>
+                <select class="form-control" name="gateway" id="gateway"
+                value="<?= isset($register) ? $register->gateway : '' ?>">
+                    <option value="">Whatsapp</option>
+                </select>
             </div>
             <div class="mt-3 col-md-4">
-                <label for="name" class="form-label">Next Range</label>
-                <input type="text" class="form-control" name="name" placeholder="">
-            </div>
-        </div>
-        <div class="row">
-            <div class="mt-5 col-md-4">
-                <label for="name" class="form-label">Radius Args</label>
-                <input type="text" class="form-control" name="name" placeholder="">
-            </div>
-            <div class="mt-5 col-md-4 form-check">
-                <label class="form-check-label" for="flexCheckDefault"></label>
-                <input type="checkbox" class="form-check-input" name="" id=""  checked>Ordenar IPs por Rede /24:
-            </div>
-            <div class="mt-5 col-md-4 form-check ">
-                <label class="form-check-label" for="flexCheckDefault"></label>
-                <input type="checkbox" class="form-check-input" name="" id="">Ordenar IPs por Rede /24:
-            </div>
-            <div class="mt-3 col-md-4 form-check">
-                <label class="form-check-label" for="flexCheckDefault"></label>
-                <input type="checkbox" class="form-check-input" name="" id="">Ativo?
+            <span class="badge text-bg-light show-text" data-text="Ex: 2 dias antes do vencimento, inserir -2. 5 dias após vencimento inserir 5. No dia do vencimento inserir 0. Se quiser com 2,3,4 dias informar 2,3,4.">?</span>
+                <label for="name" class="form-label" >Dias</label>
+                <input type="text" class="form-control" name="days" id="days" placeholder=""
+                value="<?= isset($register) ? $register->days : '' ?>">
             </div>
         </div>
         <div class="row">
             <div class="mt-3 col-md-12">
-                <label for="name" class="form-label">Observação</label>
-                <input type="text" class="form-control" name="name" placeholder="">
+                <label for="name" class="form-label">Mensagem</label>
+                <textarea name="mensage" id="mensage" class="form-control" cols="30" rows="10"><?= isset($register) ? $register->mensage : '' ?></textarea>
             </div>
         </div>
 

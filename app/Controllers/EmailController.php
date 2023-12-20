@@ -13,17 +13,26 @@ class EmailController extends BaseController
 
     public function __construct()
     {
-        $this->mainModel = model('CustomerModel');
+        $this->mainModel = model('EmailModel');
+        $popModel = model('PopModel');
+        $this->data['pops'] = $popModel->findAll();
+
+        $plansModel = model('PlansModel');
+        $this->data['plans'] = $plansModel->findAll();
+
+        $oltsModel = model('OltModel');
+        $this->data['olts'] = $oltsModel->findAll();
+
+
         parent::__construct();
     }
-
-    public function search()
+    public function treatmentBeforeSave($data)
     {
-        $data = $this->request->getJSON();
-        
-        $emails = $this->mainModel->search($data->search);
-
-        return $this->response->setJSON($emails);
+      $session = session();
+      $data['company_id'] = $session->get('company_id');
+      if(isset($data['boolean'])) 
+      $data['boolean'] = $this->FormatBoolean($data['boolean']);
+    
+      return $data;
     }
-
 }

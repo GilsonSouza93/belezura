@@ -43,7 +43,6 @@
                 <label for="pop_id" class="form-label">POP</label>
                 <select class="form-select" id="pop_id" required name="pop_id">
                         <?php foreach ($pops as $pop) : ?>
-                            <option value="">Selecione o local do pop</option>
                             <option value="<?= $pop['id'] ?>"><?= $pop['city'] ?></option>
                         <?php endforeach ?>
                     </select>

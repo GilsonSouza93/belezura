@@ -4,16 +4,16 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 
-class BillstoreceiverController extends BaseController
+class BillstoreciverController extends BaseController
 {
     public $tittle = 'Contas a Receber';
     public $addButtonText = 'Adicionar Conta a Receber';
-    public $viewPath = 'billstoreceiver';
+    public $viewPath = 'billstoreciver';
     public $baseRoute = '/financeiro/contas-receber';
     
     public function __construct()
     {
-        $this->mainModel = model('BillstoreceiverModel');
+        $this->mainModel = model('BillstoreciverModel');
         
         $popModel = model('PopModel');
         $this->data['pops'] = $popModel->findAll();
@@ -27,6 +27,8 @@ class BillstoreceiverController extends BaseController
     {
       $session = session();
       $data['company_id'] = $session->get('company_id');
+      if(isset($data['boolean'])) 
+      $data['boolean'] = $this->FormatBoolean($data['boolean']);
     
       return $data;
     }

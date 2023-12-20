@@ -32,40 +32,128 @@
 
         <div class="row">
             <div class="mt-3 col-md-3">
-                <label for="thel" class="form-label">Fonte</label>
-                <select class="form-control select2" aria-label="Default select example"name="switch_fonte" id="switch_fonte">
+                <label for="source" class="form-label">Fonte</label>
+                <select class="form-control select2" aria-label="Default select example"name="source" id="source">
                     <option selected>Selecione a Fonte</option>
-                    <option value="1">Fonte 01</option>
-                    <option value="1">Fonte 02</option>
+                    <option value="teste_1">Fonte 01</option>
+                    <option value="teste_2">Fonte 02</option>
                 </select>
             </div>
             <div class="mt-3 col-md-3">
-                <label for="name" class="form-label">Código</label>
-                <input type="text" class="form-control" name="switch_cod" placeholder="Insira o código da onu" id="switch_cod">
+                <label for="route" class="form-label">Rota</label>
+                <input type="text" class="form-control" name="route" placeholder="Insira o código da onu" id="route">
             </div>
             <div class="mt-3 col-md-3">
-                <label for="model" class="form-label">Descrição</label>
-                <input type="text" class="form-control" name="switch_description" placeholder="Insira a descrição" id="switch_description">
+                <label for="initial_port" class="form-label">Porta Inicial</label>
+                <input type="text" class="form-control" name="initial_port" placeholder="Insira a porta inicial" id="initial_port">
             </div>
             <div class="mt-3 col-md-3">
-                <label for="qty" class="form-label">Portas</label>
-                <input type="text" class="form-control" name="switch_port" placeholder="Insira a porta"id="switch_port">
+                <label for="total_ports" class="form-label">Total de portas</label>
+                <input type="text" class="form-control" name="total_ports" placeholder="Insira o total de portas"id="total_ports">
             </div>
 
         </div>
 
         <div class="row">
-            <div class="mt-3 col-md-6">
-                <label for="price" class="form-label">Parâmetros</label>
-                <input type="text" class="form-control" name="switch_parameter" placeholder="Insira o parâmetro" id="switch_parameter">
+            <div class="mt-3 col-md-4">
+                <label for="pole_id" class="form-label">Poste</label>
+                <select name="pole_id" class="form-select" id="pole_id">
+                    <?php foreach($poles as $pole) : ?>
+                        <option value="<?= $pole['id'] ?>"><?= $pole['name'] ?></option>
+                    <?php endforeach?>
+                </select>
             </div>
-            <div class="mt-3 col-md-6">
-                <label for="switch_olt" class="form-label">Olts</label>
-                <input type="text" class="form-control" name="switch_olt" placeholder="OLTS" id="switch_olt">
+
+            <div class="mt-3 col-md-4">
+                <label for="unavailable" class="form-label">Portas não disponíveis</label>
+                <span class="badge text-bg-light show-text" data-text='Separe por vírgula se for mais de uma porta. Ex: 5,6'>?</span>
+                <input type="text" class="form-control" name="unavailable" placeholder="Insira o total de portas"id="unavailable">
+            </div>
+
+            <div class="mt-3 col-md-4">
+                <label for="description" class="form-label">Descrição</label>
+                <input type="text" class="form-control" name="description" placeholder="Insira a descrição"id="description">
             </div>
         </div>
 
+        <div class="row">
+            <div class="mt-3 col-md-4">
+                <label for="ip" class="form-label">IP</label>
+                <input type="text" class="form-control" name="ip" id="ip">
+            </div>
 
+            <div class="mt-3 col-md-4">
+                <label for="port" class="form-label">Porta</label>
+                <input type="text" class="form-control" name="port" id="port" >
+            </div>
+
+            <div class="mt-3 col-md-4">
+                <label for="access_type" class="form-label">Tipo de Acesso</label>
+                <select name="access_type" class="form-control" id="access_type">
+                    <option value="web">Web</option>
+                    <option value="telnet">Telnet</option>
+                    <option value="ssh">SSH</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="mt-3 col-4">
+                <label for="user" class="form-label">Usuário</label>
+                <input type="text" class="form-control" id="user" name="user">
+            </div>
+
+            <div class="mt-3 col-4">
+                <label for="password" class="form-label">Senha</label>
+                <input type="text" class="form-control" id="password" name="password">
+            </div>
+
+            <div class="mt-3 col-4">
+                <label for="switch_model" class="form-label">Modelo do Switch</label>
+                <input type="text" class="form-control" id="switch_model" name="switch_model">
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="mt-3 col-4">
+                <label for="template_switch" class="form-label">Switch template padrão</label>
+                <select type="text" class="form-control" id="template_switch" name="template_switch">
+                    <option value="template_1">Template 1</option>
+                </select>
+            </div>
+            
+            <div class="mt-3 col-4">
+                <label for="snmp_community" class="form-label">SNMP Community</label>
+                <input type="text" class="form-control" id="snmp_community" name="snmp_community">
+            </div>
+
+            <div class="mt-3 col-4">
+                <label for="snmp_version" class="form-label">SNMP Version</label>
+                <input type="text" class="form-control" id="snmp_version" name="snmp_version">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="mt-3 col-6">
+                <label for="lat_long" class="form-label">Latitude e Longitude</label>
+                <input type="text" class="form-control" id="lat_long" name="lat_long">
+            </div>
+            
+            <div class="mt-3 col-6">
+                <label for="location" class="form-label">Localização</label>
+                <input type="text" class="form-control" id="location" name="location">
+            </div>
+
+        </div>
+        
+        <div class="row">
+
+            <div class="mt-3 col-12">
+                <label for="obs" class="form-label">Observação</label>
+                <input type="text" class="form-control" id="obs" name="obs">
+            </div>
+            
+        </div>
     </form>
 
 
@@ -74,36 +162,35 @@
 
     <?= $this->section('script') ?>
 
-<script>
+    <script>
+        const submitBtn = document.querySelector('#submit-btn');
+        const form = document.querySelector('form');
+        const url = '<?= $baseRoute ?>/save';
 
-    const submitBtn = document.querySelector('#submit-btn');
-    const form = document.querySelector('form');
-    const url = '<?= $baseRoute ?>/save';
+        submitBtn.addEventListener('click', event => {
+            event.preventDefault();
+            showLoading();
 
-    submitBtn.addEventListener('click', event => {
-        event.preventDefault();
-        showLoading();
+            const formData = new FormData(form);
 
-        const formData = new FormData(form);
-
-        fetch(url, {
-            method: 'POST',
-            body: formData
-        }).then(response => response.json())
-        .then(data => {
-            hideLoading();
-            if (data.error) {
-                showToast(data.message, 'error');
-            } else {
-                showToast(data.message, 'success');
-                window.location.href = '<?= $baseRoute ?>';
-            }
-        }).catch(error => {
-            console.log(error);
+            fetch(url, {
+                    method: 'POST',
+                    body: formData
+                }).then(response => response.json())
+                .then(data => {
+                    hideLoading();
+                    if (data.status === 'success') {
+                        showToast(data.message, 'success');
+                        setTimeout(() => {
+                            window.location.href = '<?= $baseRoute ?>';
+                        }, 1000);
+                    } else {
+                        showToast(data.message, 'error');
+                    }
+                }).catch(error => {
+                    console.log(error);
+                });
         });
-    });
-
-
-</script>
+    </script>
 
 <?= $this->endSection() ?>

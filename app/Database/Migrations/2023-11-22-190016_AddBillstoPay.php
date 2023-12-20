@@ -64,11 +64,6 @@ class AddBillstoPay extends Migration
                 'null' => true,
             ],
 
-            'payout' => [
-                'type' => 'VARCHAR',
-                'constraint' => '255',
-            ],
-
             'description' => [
                 'type' => 'VARCHAR',
                 'constraint' => '255',

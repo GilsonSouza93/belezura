@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 
-<div class="p-4">
+<div >
     <h2>
         <?= $tittle ?>
     </h2>
@@ -46,7 +46,7 @@
                 <label for="onu_id" class="form-label">ONU</label>
                 <select class="form-select select2" id="onu_id" name="onu_id" aria-label="Default select example" alue="<?= isset($register) ? $register->onu_id : '' ?>">
                     <?php foreach ($onus as $onu) : ?>
-                        <option value="<?= $onu['id'] ?>"><?= $onu['onu_name'] ?></option>
+                        <option value="<?= $onu['id'] ?>"><?= $onu['name'] ?></option>
                     <?php endforeach; ?>
                 </select>
             </div>
