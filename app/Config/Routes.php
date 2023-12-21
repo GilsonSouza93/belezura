@@ -204,6 +204,15 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->post('delete', 'AccountController::delete');
         });
 
+        $routes->group('grupo-permissao', static function ($routes) {
+            $routes->get('/', 'ProfileController::index');
+            $routes->get('novo', 'ProfileController::form');
+            $routes->get('editar/(:num)', 'ProfileController::edit/$1');
+            $routes->post('search', 'ProfileController::search');
+            $routes->post('save', 'ProfileController::save');
+            $routes->post('delete', 'ProfileController::delete');
+        });
+
         $routes->group('ippool', static function ($routes) {
             $routes->get('/', 'IppoolController::index');
             $routes->get('novo', 'IppoolController::form');

@@ -60,8 +60,8 @@
         urlFetch: window.location.href + '/search',
         tableDiv: document.getElementById('tableDiv'),
 //ID	Descrição	Fonte	IP	Rota	Porta	Ativos	Clientes	Ação
-        theadElements: ['ID', 'Descrição','Fonte','Código','Porta','OLT', 'Ações'],
-        tbodyElements: ['id', 'description', 'font','cod','port','olt', ['edit', 'delete']],
+        theadElements: ['ID', 'Descrição','Fonte','Porta', 'Ações'],
+        tbodyElements: ['id', 'description', 'source','port', ['edit', 'delete']],
         searchField: document.getElementById('search'),
     }
 

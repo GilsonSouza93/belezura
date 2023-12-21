@@ -4,7 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class SwitchesModel extends Model
+class SwitchModel extends Model
 {
     protected $DBGroup          = 'default';
     protected $table            = 'switch';
@@ -67,20 +67,16 @@ class SwitchesModel extends Model
     public function search($data)
     {
         $fieldsToSearch = [
-            'font',
-            'cod',
+            'source',
             'description',
             'port',
-            'olt',
         ];
 
         $fieldsToReturn = [
             'id',
-            'font',
-            'cod',
+            'source',
             'description',
             'port',
-            'olt',
         ];
 
         $createdAtName = 'created_at';

@@ -33,14 +33,14 @@
         <?php endif ?>
 
         <div class="row">
-            <div class="mt-3 col">
+            <div class=" mt-3 col-md-4">
                 <label for="tipo" class="form-label">Tipo</label>
                 <select class="form-control select2" id="type" name="type">
                     <option value="1">Entrada</option>
                     <option value="2">Saída</option>
                 </select>
             </div>
-            <div class="mt-3 col">
+            <div class="mt-3 col-md-4">
                 <label for="pop_id" class="form-label">POP</label>
                 <select class="form-control select2" id="pop_id" name="pop_id">
                     <?php foreach ($pops as $pop) : ?>
@@ -48,7 +48,7 @@
                     <?php endforeach; ?>
                 </select>
             </div>
-            <div class="mt-3 col">
+            <div class="mt-3 col-md-4">
                 <label for="payment_point" class="form-label">Ponto de Pagamento</label>
                 <select class="form-control select2" id="payment_point" name="payment_point">
                     <option selected>Selecione o Ponto de Pagamento</option>

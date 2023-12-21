@@ -2,13 +2,13 @@
 
 <?= $this->section('content') ?>
 
-<div >
+<div class="card p-4" >
 
     <h2>
         <?= $tittle ?>
     </h2>
 
-    <form id="form" enctype="multipart/form-data">
+    <form  id="form" enctype="multipart/form-data">
         <?php if (isset($register)) : ?>
             <input type="hidden" id="id" name="id" value="<?= $register->id ?>">
         <?php endif ?>

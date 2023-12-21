@@ -7,31 +7,31 @@ use App\Controllers\BaseController;
 class SwitchController extends BaseController
 {
 
-    public $tittle = 'Switch';
-    public $addButtonText = 'Novo Switch';
-    public $viewPath = 'equipamentos/switch';
-    public $baseRoute = '/equipamentos/switch';
-     
-    public function __construct()
-    {
-        $this->mainModel = model('SwitchModel');
+  public $tittle = 'Switch';
+  public $addButtonText = 'Novo Switch';
+  public $viewPath = 'equipamentos/switch';
+  public $baseRoute = '/equipamentos/switch';
 
-        $oltsModel = model('OltModel');
-        $this->data['olts'] = $oltsModel->findAll();
+  public function __construct()
+  {
+    $this->mainModel = model('SwitchModel');
 
-        $polesModel = model('PoleModel');
-        $this->data['poles'] = $polesModel->findAll();
+    $oltsModel = model('OltModel');
+    $this->data['olts'] = $oltsModel->findAll();
 
-        parent::__construct();
-    }
+    $polesModel = model('PoleModel');
+    $this->data['poles'] = $polesModel->findAll();
 
-    public function treatmentBeforeSave($data)
-    {
-      $session = session();
-      $data['company_id'] = $session->get('company_id');
-      if(isset($data['boolean'])) 
+    parent::__construct();
+  }
+
+  public function treatmentBeforeSave($data)
+  {
+    $session = session();
+    $data['company_id'] = $session->get('company_id');
+    if (isset($data['boolean']))
       $data['boolean'] = $this->FormatBoolean($data['boolean']);
 
-      return $data;
-    }
+    return $data;
+  }
 }

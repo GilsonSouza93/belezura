@@ -62,8 +62,8 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="row " style="height: 300px;">
-            <div class="col border m-4 ">
+        <div class="row " style="height: 300px;">
+            <div class="col border m-3 ">
                 <div class="d-flex">
                     <div class="d-flex flex-column justify-content-around">
                         <h5 class="m-4 text-white">Clientes</h5>
@@ -88,7 +88,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col border m-4 ">
+            <div class="col border m-3 ">
                 <div class="d-flex">
                     <div class="d-flex flex-column justify-content-around">
                         <h5 class="m-4 text-white">Administrativo</h5>
@@ -109,7 +109,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col border m-4 ">
+            <div class="col border m-3 ">
                 <div class="d-flex">
                     <div class="d-flex flex-column justify-content-around">
                         <h5 class="m-4 text-white">Suporte</h5>
@@ -130,7 +130,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col border m-4 ">
+            <div class="col border m-3 ">
                 <div class="d-flex">
                     <div class="d-flex flex-column justify-content-around">
                         <h5 class="m-4 text-white">Financeiro</h5>
@@ -163,7 +163,7 @@
         </div>
 
         <div class="row " style="height: 300px;">
-            <div class="col border m-4 ">
+            <div class="col border m-3 ">
                 <div class="d-flex">
                     <div class="d-flex flex-column justify-content-around">
                         <h5 class="m-4 text-white">Frota</h5>
@@ -186,7 +186,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col border m-4 ">
+            <div class="col border m-3 ">
                 <div class="d-flex">
                     <div class="d-flex flex-column justify-content-around">
                         <h5 class="m-4 text-white">Estoque</h5>
@@ -207,7 +207,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col border m-4 ">
+            <div class="col border m-3 ">
                 <div class="d-flex">
                     <div class="d-flex flex-column justify-content-around">
                         <h5 class="m-4 text-white">Clientes</h5>
@@ -231,7 +231,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col border m-4 ">
+            <div class="col border m-3 ">
                 <div class="d-flex">
                     <div class="d-flex flex-column justify-content-around">
                         <h5 class="m-4 text-white">Configuração</h5>
@@ -252,7 +252,7 @@
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
     </form>
 </div>
 
