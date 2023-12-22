@@ -352,9 +352,11 @@
                     if (data.status == 'success') {
 
                         const registerQuantity = data.data.length;
+                        // const registerCash = data.data.length;
 
                         registerCounterText.innerText = `Foram encontrados ${registerQuantity} registros`;
-
+                        // totalityCashText.innerText = `Caixa ${registerQuantity}`;
+                        
                         data.data.forEach(row => {
                             const tr = document.createElement('tr');
                             tbodyElements.forEach(element => {

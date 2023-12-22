@@ -20,8 +20,7 @@
             <button class="btn btn-success">Pesquisar</button>
             <button class="btn btn-success" onclick="openModalIpPool()" >Filtros</button>
             <a class="btn btn-success" href="<?= $baseRoute ?>/novo"><?= $addButtonText ?></a>
-        </div>
-        
+        </div> 
     </div>
 
     <p>
