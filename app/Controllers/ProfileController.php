@@ -6,10 +6,10 @@ use App\Controllers\BaseController;
 
 class ProfileController extends BaseController
 {
-    public $tittle = 'Perfil';
-    public $addButtonText = 'Novo Perfil';
-    public $viewPath = 'profile';
-    public $baseRoute = '/perfil';
+    public $tittle = 'Grupo de Permissões';
+    public $addButtonText = 'Novo Grupo de Permissão';
+    public $viewPath = 'permission-group';
+    public $baseRoute = 'configuracoes/grupo-permissao';
 
     public $subscriptionModel;
 
@@ -17,7 +17,7 @@ class ProfileController extends BaseController
 
     public function __construct()
     {
-        $this->mainModel = model('ProfileController');
+        $this->mainModel = model('ProfileModel');
 
         parent::__construct();
     }

@@ -285,7 +285,7 @@ abstract class BaseController extends Controller
                     ],
                     'permisions_groups' => [
                         'title' => 'Grupos de Permissão',
-                        'href' => base_url('configuracoes/perfil'),
+                        'href' => base_url('configuracoes/grupo-permissao'),
                     ],
                     'Planos' => [
                         'title' => 'Planos',
