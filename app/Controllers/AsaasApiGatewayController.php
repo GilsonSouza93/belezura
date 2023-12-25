@@ -19,68 +19,138 @@ class AsaasApiGatewayController extends BaseController
     {
 
         if (getenv('CI_ENVIRONMENT') === 'development') {
-            $this->apiKey = getenv('asaasGatewayApiKeyDevelopmentMode');
-            $this->url = getenv('assasGatewayApiUrlDevelopmentMode');
+            $companyModel = model('companiesModel');
+            $company = $companyModel->find(session()->get('company_id'));
+
+            $this->apiKey = $company['assas_api_key'];
+
+            $this->url = getenv('AsaasGatewayApiUrlDevelopmentMode');
         }
     }
 
-    public function initPayment($customerId)
+    public function sendRequestPost($endpoint, $data)
     {
-    }
-
-    public function updatePaymentStatus()
-    {
-    }
-
-    public function createCustomer()
-    {
-        var_dump("{$this->apiKey}"); die;
         $curl = curl_init();
 
-        curl_setopt_array($curl, [
-            CURLOPT_URL => "{$this->url}customers",
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $this->url . $endpoint,
             CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => "",
+            CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 30,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_SSL_VERIFYHOST => false,
+            CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "POST",
-            CURLOPT_POSTFIELDS => json_encode([
-                'name' => 'string',
-                'cpfCnpj' => 'string',
-                'email' => 'string',
-                'phone' => 'string',
-                'mobilePhone' => 'string',
-                'address' => 'string',
-                'addressNumber' => 'string',
-                'complement' => 'string',
-                'province' => 'string',
-                'postalCode' => 'string',
-                'externalReference' => 'string',
-                'notificationDisabled' => true,
-                'additionalEmails' => 'string',
-                'municipalInscription' => 'string',
-                'stateInscription' => 'string',
-                'observations' => 'string',
-                'groupName' => 'string',
-                'company' => 'string'
-            ]),
-            CURLOPT_HTTPHEADER => [
-                "accept: application/json",
-                "access_token: {$this->apiKey}",
-                "content-type: application/json"
-            ],
-        ]);
+            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_POSTFIELDS => json_encode($data),
+            CURLOPT_HTTPHEADER => array(
+                'Content-Type: application/json',
+                'access_token: ' . $this->apiKey,
+            ),
+        ));
 
         $response = curl_exec($curl);
-        $err = curl_error($curl);
 
         curl_close($curl);
 
-        if ($err) {
-            echo "cURL Error #:" . $err;
-        } else {
-            echo $response;
-        }
+        return json_decode($response);
     }
+
+    public function sendRequestGet($endpoint)
+    {
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $this->url . $endpoint,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_SSL_VERIFYHOST => false,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+            CURLOPT_HTTPHEADER => array(
+                'Content-Type: application/json',
+                'access_token: ' . $this->apiKey,
+            ),
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+
+        return json_decode($response);
+    }
+
+    // public function initPayment($customerId)
+    // {
+    // }
+
+    // public function updatePaymentStatus()
+    // {
+    // }
+
+    public function createCustomer()
+    {
+        $this->customerModel = model('customersModel');
+
+        $customer = $this->customerModel->find($this->request->getPost('customer_id'));
+
+        $data = [
+            'name' => $customer->name,
+            'email' => $customer->email,
+            'phone' => $customer->phone,
+            'mobilePhone' => $customer->mobile_phone,
+            'cpfCnpj' => $customer->cpf_cnpj,
+            'postalCode' => $customer->postal_code,
+            'address' => $customer->address,
+            'addressNumber' => $customer->address_number,
+            'complement' => $customer->complement,
+            'province' => $customer->province,
+            'externalReference' => $customer->id,
+        ];
+
+        $response = $this->sendRequestPost('customers', $data);
+
+        if ($response->errors) {
+            $data = [
+                'status' => 'fail',
+                'message' => $response->errors[0]->description,
+            ];
+        } else {
+            $this->customerModel->update($customer->id, [
+                'assas_customer_id' => $response->id,
+            ]);
+
+            $data = [
+                'status' => 'success',
+                'message' => 'Cliente criado com sucesso!',
+            ];
+        }
+
+        return $this->response->setJSON($data);
+    }
+
+    public function testConnection()
+    {
+        $response = $this->sendRequestGet('customers');
+
+        if ($response === null) {
+            $data = [
+                'status' => 'fail',
+                'message' => 'Falha ao conectar com a API!',
+            ];
+        } else {
+            $data = [
+                'status' => 'success',
+                'message' => 'Conexão realizada com sucesso!',
+            ];
+        }
+
+        return $this->response->setJSON($data);
+    }
+
 }

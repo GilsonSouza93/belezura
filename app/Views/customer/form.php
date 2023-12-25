@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 
-<div >
+<div>
     <h2>
         <?= $tittle ?>
     </h2>
@@ -29,150 +29,158 @@
             <input type="hidden" name="id" value="<?= $register->id ?>">
         <?php endif ?>
 
-        <div class="row">
-            <div class="mt-3 col-md-6">
-                <label for="nomeCliente" class="form-label">Nome Completo</label>
-                <input type="text" id="nomeCliente" class="form-control" name="name" placeholder="Insira o Nome Completo" value="<?= isset($register) ? $register->name : '' ?>">
+        <h4>
+            Informações Gerais
+        </h4>
+
+        <div class="row mb-4">
+            <div class="col">
+                <div class="mt-3 form-floating">
+                    <input type="text" id="nomeCliente" class="form-control" name="name" placeholder="Insira o Nome Completo" value="<?= isset($register) ? $register->name : '' ?>">
+                    <label for="nomeCliente">Nome Completo</label>
+                </div>
             </div>
-            <div class="mt-3 col-md-3">
-                <label for="plano" class="form-label">Plano</label>
-                <select class="form-control select2" id="plano" aria-label="plano">
-                    <?php foreach ($subscription as $plan) : ?>
-                        <option value="<?= $plan['id'] ?>"><?= $plan['name'] ?></option>
-                    <?php endforeach ?>
-                </select>
+            <div class="col">
+                <div class="mt-3 form-floating">
+                    <select class="form-select" id="plano" aria-label="plano" required>
+                        <?php foreach ($subscription as $plan) : ?>
+                            <option value="<?= $plan['id'] ?>"><?= $plan['name'] ?></option>
+                        <?php endforeach ?>
+                    </select>
+                    <label for="plano">Plano</label>
+                </div>
             </div>
-            <div class="mt-3 col-md-3">
-                <label for="onu_id" class="form-label">ONU</label>
-                <select class="form-select select2" id="onu_id" name="onu_id" aria-label="Default select example" alue="<?= isset($register) ? $register->onu_id : '' ?>">
-                    <?php foreach ($onus as $onu) : ?>
-                        <option value="<?= $onu['id'] ?>"><?= $onu['name'] ?></option>
-                    <?php endforeach; ?>
-                </select>
+            <div class="col">
+                <div class="mt-3 form-floating">
+                    <select class="form-select" id="onu_id" name="onu_id" value="<?= isset($register) ? $register->onu_id : '' ?>">
+                        <?php foreach ($onus as $onu) : ?>
+                            <option value="<?= $onu['id'] ?>"><?= $onu['name'] ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                    <label for="onu_id">ONU</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="mt-3 form-floating">
+                    <select class="form-select" id="pop_id" name="pop_id">
+                        <?php foreach ($pops as $pop) : ?>
+                            <option value="<?= $pop['id'] ?>"><?= $pop['city'] ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                    <label for="pop_id">POP</label>
+                </div>
             </div>
         </div>
 
-        <div class="row">
-            <div class="mt-3 col-md-3">
-                <label for="rg" class="form-label">RG</label>
-                <input type="text" id="rg" class="form-control" name="rg" placeholder="insira o RG" value="<?= isset($register) ? $register->rg : '' ?>">
+        <h4>
+            Contato
+        </h4>
+
+        <div class="row mb-4">
+            <div class="col">
+                <div class="mt-3 form-floating">
+                    <input type="email" id="emailCliente" class="form-control" id="email" name="email" placeholder="E-mail" value="<?= isset($register) ? $register->email : '' ?>">
+                    <label for="emailCliente">E-mail</label>
+                </div>
             </div>
 
-            <div class="mt-3 col-md-5">
-                <label for="cpf" class="form-label">CPF</label>
-                <input type="text" id="cpf" class="form-control" name="cpf" placeholder="Insira o Cpf" value="<?= isset($register) ? $register->cpf : '' ?>">
-            </div>
-            <div class="mt-3 col-md-4">
-                <label for="date_of_birth" class="form-label">Data de Nascimento</label>
-                <input type="date" id="date_of_birth" class="form-control" name="date_of_birth" placeholder="Data de nascimento" value="<?= isset($register) ? $register->date_of_birth : '' ?>">
+            <div class="col">
+                <div class="mt-3 form-floating">
+                    <input type="tel" id="telefone1Cliente" class="form-control" name="phones" id="phones" placeholder="Telefone" value="<?= isset($register) ? $register->phones : '' ?>">
+                    <label for="telefone1Cliente">Telefone</label>
+                </div>
             </div>
         </div>
 
-        <div class="row">
-            <div class="mt-3 col-md-8">
-                <label for="emailCliente" class="form-label">E-mail</label>
-                <input type="email" id="emailCliente" class="form-control" id="email" name="email" placeholder="E-mail" value="<?= isset($register) ? $register->email : '' ?>">
+        <h4>
+            Endereço
+        </h4>
+
+        <div class="row mb-4">
+            <div class="col">
+                <div class="mt-3 form-floating">
+                    <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="Cep" value="<?= isset($register) ? $register->zipcode : '' ?>">
+                    <label for="zipcode">Cep</label>
+                </div>
+
+                <div class="mt-3">
+                    <button type="button" class="btn btn-success" onclick="searchCep()">Buscar Cep</button>
+                </div>
+
             </div>
-            <div class="mt-3 col-md-4">
-                <label for="estadoCivil" class="form-label">Estado Civil</label>
-                <select class="form-control select2" id="estadoCivil" aria-label="Estado civil">
-                    <option value="1">Solteiro(a)</option>
-                    <option value="2">Casado(a)</option>
-                    <option value="2">Divórciado(a)</option>
-                    <option value="2">Viúvo(a)</option>
-                </select>
+
+            <div class="col">
+                <div class="mt-3 form-floating">
+                    <input type="text" class="form-control" id="address1" name="address1" placeholder="Rua" value="<?= isset($register) ? $register->address1 : '' ?>" onclick="showMessageToFillZipCode()">
+                    <label for="address1">Rua</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="mt-3 form-floating">
+                    <input type="text" class="form-control" id="address2" name="address2" placeholder="Bairro" value="<?= isset($register) ? $register->address2 : '' ?>" onclick="showMessageToFillZipCode()">
+                    <label for="address2">Bairro</label>
+                </div>
             </div>
 
         </div>
-
-        <div class="row">
-            <div class="mt-3 col-md-4">
-                <label for="telefone1Cliente" class="form-label">Telefone</label>
-                <input type="tel" id="telefone1Cliente" class="form-control" name="phones" id="phones" placeholder="Telefone" value="<?= isset($register) ? $register->phones : '' ?>">
+        <div class="row mb-4">
+            <div class="col">
+                <div class="mt-3 form-floating">
+                    <input type="text" class="form-control" id="number" name="number" placeholder="Número" value="<?= isset($register) ? $register->number : '' ?>" onclick="showMessageToFillZipCode()">
+                    <label for="number">Número</label>
+                </div>
             </div>
-            <div class="mt-3 col-md-4">
-                <label for="tipoContato1" class="form-label">Tipo:</label>
-                <select class="form-control select2" id="tipoContato1">
-                    <option value="1">Residencial</option>
-                    <option value="2">Comercial</option>
-                </select>
+            <div class="col">
+                <div class="mt-3 form-floating">
+                    <input type="text" class="form-control" id="complement" name="complement" placeholder="Complemento" value="<?= isset($register) ? $register->complement : '' ?>" onclick="showMessageToFillZipCode()">
+                    <label for="complement">Complemento</label>
+                </div>
             </div>
-            <div class="mt-3 col-md-4">
-                <label for="pop_id" class="form-label">POP</label>
-                <select class="form-control select2" id="pop_id" name="pop_id">
-                    <option selected>Selecione o Local do POP</option>
-                    <?php foreach ($pops as $pop) : ?>
-                    <option value="<?= $pop['id'] ?>"><?= $pop['city'] ?></option>
-                <?php endforeach; ?>
-                </select>
+            <div class="col">
+                <div class="mt-3 form-floating">
+                    <input type="text" class="form-control" id="city" name="city" placeholder="Ponto de referência" value="<?= isset($register) ? $register->city : '' ?>" onclick="showMessageToFillZipCode()">
+                    <label for="city">Cidade</label>
+                </div>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="mt-3 col-md-3">
-                <label for="zipcode" class="form-label">Cep</label>
-                <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="Cep" value="<?= isset($register) ? $register->zipcode : '' ?>">
+            <div class="col">
+                <div class="mt-3 form-floating">
+                    <input type="text" class="form-control" id="state" name="state" placeholder="Ponto de referência" value="<?= isset($register) ? $register->state : '' ?>" onclick="showMessageToFillZipCode()">
+                    <label for="state">Estado</label>
+                </div>
             </div>
-
-            <div class="mt-3 col-md-5">
-                <label for="address1" class="form-label">Rua</label>
-                <input type="text" class="form-control" id="address1" name="address1" placeholder="Rua" value="<?= isset($register) ? $register->address1 : '' ?>">
-            </div>
-            <div class="mt-3 col-md-4">
-                <label for="address2" class="form-label">Bairro</label>
-                <input type="text" class="form-control" id="address2" name="address2" placeholder="Bairro" value="<?= isset($register) ? $register->address2 : '' ?>">
-            </div>
-        </div>
-        <div class="row">
-            <div class="mt-3 col-md-2">
-                <label for="number" class="form-label">Número</label>
-                <input type="text" class="form-control" id="number" name="number" placeholder="Número" value="<?= isset($register) ? $register->number : '' ?>">
-            </div>
-
-            <div class="mt-3 col-md-3">
-                <label for="complement" class="form-label">Complemento</label>
-                <input type="text" class="form-control" id="complement" name="complement" placeholder="Complemento" value="<?= isset($register) ? $register->complement : '' ?>">
-            </div>
-
-            <div class="mt-3 col-md-3">
-                <label for="reference_point" class="form-label">Ponto de Referência</label>
-                <input type="text" class="form-control" id="reference_point" name="reference_point" placeholder="Ponto de referência" value="<?= isset($register) ? $register->reference_point : '' ?>">
-            </div>
-
-            <div class="mt-3 col-md-4">
-                <label for="ufCliente" class="form-label">UF</label>
-                <select class="form-control select2" id="ufcliente" aria-label="uf cliente">
-                    <option selected>UF</option>
-                    <option value="1">Acre</option>
-                    <option value="2">Alagoas</option>
-                    <option value="2">Amapá</option>
-                    <option value="2">Amazonas</option>
-                    <option value="2">Bahia</option>
-                    <option value="2">Ceará</option>
-                    <option value="2">Espírito Santo</option>
-                    <option value="2">Goiás</option>
-                    <option value="2">Maranhão</option>
-                    <option value="2">Mato Grosso</option>
-                    <option value="2">Mato Grosso do Sul</option>
-                    <option value="2">Minas</option>
-                    <option value="2">Pará</option>
-                    <option value="2">Paraíba</option>
-                    <option value="2">Pernambuco</option>
-                    <option value="2">Piauí</option>
-                    <option value="2">Rio Grande do Norte</option>
-                    <option value="2">Rio Grande do Sul</option>
-                    <option value="2">Rondônia</option>
-                    <option value="2">Roraima</option>
-                    <option value="2">Santa Catarina</option>
-                    <option value="2">São Paulo</option>
-                    <option value="2">Sergipe</option>
-                    <option value="2">Tocatins</option>
-                    <option value="2">Distrito Federal</option>
-                </select>
+            <div class="col">
+                <div class="mt-3 form-floating">
+                    <input type="text" class="form-control" id="reference_point" name="reference_point" placeholder="Ponto de referência" value="<?= isset($register) ? $register->reference_point : '' ?>" onclick="showMessageToFillZipCode()">
+                    <label for="reference_point">Ponto de Referência</label>
+                </div>
             </div>
 
         </div>
 
+        <h4>
+            Informações Pessoais
+        </h4>
+
+        <div class="row mb-4">
+            <div class="col">
+                <div class="mt-3 form-floating">
+                    <input type="text" id="rg" class="form-control" name="rg" placeholder="insira o RG" value="<?= isset($register) ? $register->rg : '' ?>">
+                    <label for="rg">RG</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="mt-3 form-floating">
+                    <input type="text" id="cpf" class="form-control" name="cpf" placeholder="Insira o Cpf" value="<?= isset($register) ? $register->cpf : '' ?>">
+                    <label for="cpf">CPF</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="mt-3 form-floating">
+                    <input type="date" id="date_of_birth" class="form-control" name="date_of_birth" placeholder="Data de nascimento" value="<?= isset($register) ? $register->date_of_birth : '' ?>">
+                    <label for="date_of_birth">Data de Nascimento</label>
+                </div>
+            </div>
+        </div>
     </form>
 </div>
 
@@ -209,6 +217,44 @@
                 console.log(error);
             });
     });
+
+    const zipCode = document.querySelector('#zipcode');
+
+    const showMessageToFillZipCode = () => {
+
+        if (zipCode.value === '') {
+            showToast('Preencha o CEP primeiro, para que os campos sejam preenchidos automaticamente', 'warning');
+        }
+    }
+
+    const searchCep = () => {
+        const zipCodeValue = zipCode.value.replace('-', '');
+        if(!zipCodeValue) {
+            showToast('Preencha o CEP primeiro', 'warning');
+            return;
+        }
+        const url = `https://viacep.com.br/ws/${zipCodeValue}/json/`;
+
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                if (data.erro) {
+                    showToast('CEP não encontrado', 'error');
+                } else {
+                    document.querySelector('#address1').value = data.logradouro;
+                    document.querySelector('#address2').value = data.bairro;
+                    document.querySelector('#city').value = data.localidade;
+                    document.querySelector('#state').value = data.uf;
+
+                    showToast('CEP encontrado', 'success');
+                }
+            })
+            .catch(error => {
+                showToast('CEP não encontrado', 'error');
+                console.log(error);
+            });
+    };
 </script>
 
 <?= $this->endSection() ?>

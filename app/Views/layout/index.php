@@ -12,6 +12,7 @@
     <style>
         :root {
             --border-radius: 16px;
+            --border-color: rgba(255, 255, 255, 0.1)
         }
 
         body {
@@ -25,6 +26,9 @@
             background-size: cover;
         }
 
+        .hr {
+            border: 1px solid var(--border-color);
+        }
 
         .card {
             border-radius: var(--border-radius);
@@ -65,7 +69,7 @@
         }
 
         select {
-            background: rgba(255, 255, 255, 0.1) !important;
+            background: var(--border-color) !important;
         }
 
         #particles-container {

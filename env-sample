@@ -144,4 +144,6 @@ database.default.port = 3306
 
 # curlrequest.shareOptions = true
 
+AsaasGatewayApiUrlDevelopmentMode = 'https://sandbox.asaas.com/api/v3/';
+
 

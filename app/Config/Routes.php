@@ -252,7 +252,14 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         });
         $routes->group('integracoes', static function ($routes) {
             $routes->get('/', 'integrationsController::index');
+
+            // Assas
             $routes->post('save-asaas', 'integrationsController::saveAsaas');
+            $routes->get('check-company-asaas-api', 'integrationsController::checkCompanyAssasApi');
+            $routes->get('remove-asaas', 'integrationsController::removeAsaas');
+            $routes->get('test-asaas-api-key', 'AsaasApiGatewayController::testConnection');
+
+            // Outros
         });
     });
     $routes->group('equipamentos', static function ($routes) {

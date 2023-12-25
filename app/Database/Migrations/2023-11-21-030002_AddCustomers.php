@@ -93,9 +93,15 @@ class AddCustomers extends Migration
                 'null' => true,
             ],
 
-            'uf' => [
+            'city' => [
                 'type' => 'VARCHAR',
-                'constraint' => '2',
+                'constraint' => '100',
+                'null' => true,
+            ],
+
+            'state' => [
+                'type' => 'VARCHAR',
+                'constraint' => '100',
                 'null' => true,
             ],
 
