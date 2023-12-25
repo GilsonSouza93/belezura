@@ -6200,7 +6200,7 @@ fieldset:disabled .btn {
     --bs-modal-padding: 1rem;
     --bs-modal-margin: 0.5rem;
     --bs-modal-color: ;
-    --bs-modal-bg: var(--bs-body-bg);
+    --bs-modal-bg: #292b2b;
     --bs-modal-border-color: var(--bs-border-color-translucent);
     --bs-modal-border-width: var(--bs-border-width);
     --bs-modal-border-radius: var(--bs-border-radius-lg);
@@ -6288,7 +6288,7 @@ fieldset:disabled .btn {
 }
 
 .modal-backdrop {
-    --bs-backdrop-zindex: 1050;
+    --bs-backdrop-zindex: -1;
     --bs-backdrop-bg: #000;
     --bs-backdrop-opacity: 0.5;
     position: fixed;

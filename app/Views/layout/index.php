@@ -10,6 +10,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhZX90O1QnNedic9Z1XgY3P9HzA9AjbN4&libraries=places"></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <style>
+
         :root {
             --border-radius: 16px;
             --border-color: rgba(255, 255, 255, 0.1)
@@ -616,9 +617,9 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             $('.select2').select2({
-                placeholder: 'Selecione uma opção', // Mensagem para exibir no campo de seleção
+                placeholder: 'Selecione uma opção',
                 noResults: function() {
-                    return 'Nenhum resultado encontrado'; // Mensagem quando não há resultados encontrados
+                    return 'Nenhum resultado encontrado';
                 }
             });
 

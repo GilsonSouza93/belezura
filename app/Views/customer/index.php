@@ -61,7 +61,7 @@
         tableDiv: document.getElementById('tableDiv'),
 
         theadElements: ['Nome', 'Telefone','Endereço','POP', 'Ações'],
-        tbodyElements: ['name', 'phone', 'address1','pop_id', ['edit', 'delete']],
+        tbodyElements: ['name', 'phones', 'address1','pop_id', ['edit', 'delete', 'generate_bill']],
         searchField: document.getElementById('search'),
     }
 
