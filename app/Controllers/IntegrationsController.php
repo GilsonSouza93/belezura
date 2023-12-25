@@ -35,10 +35,10 @@ class IntegrationsController extends BaseController
         $company_id = $session->get('company_id');
         $companyModel = model('companiesModel');
 
-        $assas_api_key = $this->request->getPost('assas_api_key');
+        $asaas_api_key = $this->request->getPost('asaas_api_key');
 
         $response = $companyModel->update($company_id, [
-            'assas_api_key' => $assas_api_key,
+            'asaas_api_key' => $asaas_api_key,
         ]);
 
         if ($response) {

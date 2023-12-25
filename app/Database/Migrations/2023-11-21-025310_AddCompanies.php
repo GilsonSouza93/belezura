@@ -30,9 +30,9 @@ class AddCompanies extends Migration
                 'null' => true,
             ],
 
-            'assas_api_key' => [
+            'asaas_api_key' => [
                 'type' => 'VARCHAR',
-                'constraint' => '250'
+                'constraint' => '299'
             ],
 
             'created_at timestamp DEFAULT current_timestamp NOT NULL',

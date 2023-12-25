@@ -59,7 +59,7 @@
 
         const formData = new FormData();
 
-        formData.append('Asaas_api_key', input.value);
+        formData.append('asaas_api_key', input.value);
 
         fetch('<?= $baseRoute ?>/save-asaas', {
                 method: 'POST',
