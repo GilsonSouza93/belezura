@@ -22,7 +22,7 @@ class AsaasApiGatewayController extends BaseController
             $companyModel = model('companiesModel');
             $company = $companyModel->find(session()->get('company_id'));
 
-            $this->apiKey = $company['assas_api_key'];
+            $this->apiKey = $company['asaas_api_key'];
 
             $this->url = getenv('AsaasGatewayApiUrlDevelopmentMode');
         }

@@ -14,7 +14,7 @@ class CompaniesModel extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        'assas_api_key'
+        'asaas_api_key'
     ];
 
     // Dates

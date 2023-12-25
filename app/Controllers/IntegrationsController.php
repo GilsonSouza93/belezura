@@ -63,17 +63,19 @@ class IntegrationsController extends BaseController
         $companyModel = model('companiesModel');
         
         $result = $companyModel->find($company_id);
-        $assasApiKey = $result['assas_api_key'];
+        $assasApiKey = $result['asaas_api_key'];
 
         if ($assasApiKey) {
             $data = [
                 'status' => 'success',
                 'message' => 'Chave de API encontrada!',
+                'length' => strlen($assasApiKey),
             ];
         } else {
             $data = [
                 'status' => 'fail',
                 'message' => 'Chave de API não encontrada!',
+                'length' => 0,
             ];
         }
 
@@ -87,7 +89,7 @@ class IntegrationsController extends BaseController
         $companyModel = model('companiesModel');
         
         $data = [
-            'assas_api_key' => null,
+            'asaas_api_key' => null,
         ];
 
         $result = $companyModel->update($company_id, $data);

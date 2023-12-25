@@ -90,7 +90,8 @@
             .then(data => {
                 if (data.status === 'success') {
                     input.setAttribute('disabled', true);
-                    input.value = "********************************";
+                    input.value = "*".repeat(data.length);
+
                     removeAsaasBtn.classList.remove('d-none');
                     saveAsaasBtn.setAttribute('disabled', true);
                     testAsaasBtn.removeAttribute('disabled');
