@@ -139,9 +139,6 @@
                 transform: scale(1);
             }
 
-            5% {
-                transform: scaleX(0.99) scaleY(0.8);
-            }
 
             7% {
                 transform: scaleX(0.99) scaleY(0.8);
@@ -173,7 +170,7 @@
             <nav class="d-flex flex-row p-2">
                 <img src="<?= base_url('assets/imgs/logo.png') ?>" alt="logo" class="ms-3 nav-bar-items" style="height: 50px" id="logo-img">
 
-                <div class="d-flex flex-row align-items-center" id="nav-bar-items" style="transition: 1s ease-in-out;">
+                <div class="d-flex flex-row align-items-center" id="nav-bar-items" style="transition:0.3s;">
                     <?php foreach ($navigation_bar_items as $item) : ?>
                         <?php if ($item['show_subitems']) : ?>
                             <div class="nav-item mx-3 subitems">
@@ -195,7 +192,7 @@
                         <?php endif ?>
                     <?php endforeach ?>
                 </div>
-                <h3 id="nav-bar-toast-alert" class="d-none ms-4 mt-2 text-white" style="transition: 1s ease-in-out;">
+                <h3 id="nav-bar-toast-alert" class="d-none ms-4 mt-2 text-white" style="transition: 0.3s;">
                     
                 </h3>
             </nav>
@@ -424,6 +421,17 @@
                                         dropdownMenu.appendChild(whatsappButton);
                                     }
 
+                                    if (element.includes('generate_bill')) {
+                                        const generateBillButton = document.createElement('li');
+                                        generateBillButton.classList.add('dropdown-item');
+                                        generateBillButton.addEventListener('click', () => {
+                                            generateBill(row['id']);
+                                        });
+                                        generateBillButton.innerText = 'Gerar Boleto';
+
+                                        dropdownMenu.appendChild(generateBillButton);
+                                    }
+
                                     dropdown.appendChild(dropdownButton);
                                     dropdown.appendChild(dropdownMenu);
 
@@ -469,6 +477,9 @@
 
         const edit = (id) => {
             window.location.href = `<?= $baseRoute ?>/editar/${id}`;
+        }
+        const generateBill = (id) => {
+            showToast('Função em desenvolvimento', 'warning');
         }
 
         const deleteRegister = (id) => {
