@@ -42,7 +42,7 @@
             </div>
             <div class="mt-3 col-md-3">
                 <label for="price" class="form-label"></label>
-                <input type="checkbox" name="sustainable" id="sustainable" class="form-check-input" value="<?= isset($register) ? $register->sustainable : '' ?>">Sustentável
+                <input type="checkbox" name="sustainable" id="sustainable" class="form-check-input" <?= (isset($register) and $register->sustainable == 1) ? 'checked' : '' ?>>Sustentável
             </div>
             <div class="mt-3 col-md-3">
                 <label for="thel" class="form-label">POP</label>
@@ -64,7 +64,7 @@
             </div>
             <div class="mt-3 col-md-4">
                 <label for="price" class="form-label"></label>
-                <input type="checkbox" name="active" id="active"value="<?= isset($register) ? $register->active : '' ?>">Ativo
+                <input type="checkbox" name="active" id="active" <?= (isset($register) and $register->active == 1) ? 'checked' : '' ?>>Ativo
             </div>
         </div>
 

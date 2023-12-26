@@ -166,46 +166,46 @@
         <div class="row mt-4 border mx-1 p-3">
             <div class="col">
                 <div class="form-check">
-                    <input type="checkbox" id="refinance" name="refinance" value="<?= isset($register) ? $register->refinance : '' ?>">
+                    <input type="checkbox" id="refinance" name="refinance" <?= (isset($register) and $register->refinance == 1) ? 'checked' : '' ?>>
                     <label class="form-label" for="refinance">Refinanciar Valor?</label>
                     <span class="badge text-bg-light show-text" data-text='Refinanciar valor se houver diferença entre valor pago com o valor total - desconto.'>?</span>
                 </div>
                 <div class="form-check">
-                    <input type="checkbox" id="allow_discount" name="allow_discount" value="<?= isset($register) ? $register->allow_discount : '' ?>">
+                    <input type="checkbox" id="allow_discount" name="allow_discount" <?= (isset($register) and $register->allow_discount == 1) ? 'checked' : '' ?>>
                     <label class="form-label" for="allow_discount">Permitir Desconto ?</label>
                 </div>
                 <div class="form-check">
-                    <input type="checkbox" id="plan" name="plan" value="<?= isset($register) ? $register->plan : '' ?>">
+                    <input type="checkbox" id="plan" name="plan" <?= (isset($register) and $register->plan == 1) ? 'checked' : '' ?>>
                     <label class="form-label" for="plan">Exigir Plano de Conta em Lançamento ?</label>
                     <span class="badge text-bg-light show-text" data-text='Marcar opção para somente permitir lançamento no caixa com plano de conta'>?</span>
                 </div>
                 <div class="form-check">
-                    <input type="checkbox" name="canceled" id="canceled" value="<?= isset($register) ? $register->canceled : '' ?>">
+                    <input type="checkbox" name="canceled" id="canceled" <?= (isset($register) and $register->canceled == 1) ? 'checked' : '' ?>>
                     <label class="form-label" for="canceled">Receber Cancelados</label>
                     <span class="badge text-bg-light show-text" data-text='Receber titulos de contratos cancelados'>?</span>
                 </div>
             </div>
             <div class="col">
                 <div class="form-check">
-                    <input type="checkbox" id="send_invoice" name="send_invoice" value="<?= isset($register) ? $register->send_invoice : '' ?>">
+                    <input type="checkbox" id="send_invoice" name="send_invoice" <?= (isset($register) and $register->send_invoice == 1) ? 'checked' : '' ?>>
                     <label class="form-label" for="send_invoice">Enviar NF</label>
                     <span class="badge text-bg-light show-text" data-text='Enviar nota fiscal automáticamente após a NF ser gerada se houver baixa do título.'>?</span>
                 </div>
 
                 <div class="form-check">
-                    <input type="checkbox" name="filter" id="filter" value="<?= isset($register) ? $register->filter : '' ?>">
+                    <input type="checkbox" name="filter" id="filter" <?= (isset($register) and $register->filter == 1) ? 'checked' : '' ?>>
                     <label class="form-label" for="filter">Filtrar Empresa nos Relatórios</label>
                     <span class="badge text-bg-light show-text" data-text='Se marcado, filtra a empresa definida do ponto de recebimento nos relatórios de caixa, dre etc. Se não definido, verifica a empresa no cadastro do Portador'>?</span>
                 </div>
                 <div class="form-check">
-                    <input type="checkbox" name="cash_reports" id="cash_reports" value="<?= isset($register) ? $register->cash_reports : '' ?>">
+                    <input type="checkbox" name="cash_reports" id="cash_reports" <?= (isset($register) and $register->cash_reports == 1) ? 'checked' : '' ?>>
                     <label class="form-label" for="cash_reports">Ativo Relatório de Caixa</label>
                     <span class="badge text-bg-light show-text" data-text='Se desmarcado, os lançamentos realizados neste ponto serão ocultados dos relatórios de lançamentos de caixa.'>?</span>
                 </div>
 
 
                 <div class="form-check">
-                    <input type="checkbox" id="active" name="active" value="<?= isset($register) ? $register->active : '' ?>">
+                    <input type="checkbox" id="active" name="active" <?= (isset($register) and $register->active == 1) ? 'checked' : '' ?>>
                     <label class="form-label" for="active">Ativo</label>
                 </div>
             </div>

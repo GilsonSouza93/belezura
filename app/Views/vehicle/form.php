@@ -72,7 +72,7 @@
                 <input type="text" id="obs" class="form-control" name="obs" <?= isset($register) ? "value='{$register->obs}'" : '' ?>>
             </div>
             <div class="mt-5 col-md-4">
-                <input type="checkbox" name="" id="available" names="available" <?= isset($register) ? "value='{$register->available}'" : '' ?>>
+                <input type="checkbox" name="" id="available" names="available" <?= (isset($register) and $register->available == 1) ? 'checked' : '' ?>>
                 <label for="disponivel" class="form-label ">Disponível para OS?</label>
             </div>
         </div>

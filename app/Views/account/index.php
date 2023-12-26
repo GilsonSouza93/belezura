@@ -12,7 +12,7 @@
         <div class="col-md-4 btn-group">
             <button class="btn btn-success" id="searchBtn">Pesquisar</button>
             <button class="btn btn-success" id="accountFilter">Filtros</button>
-            <button class="btn btn-success" id="create-perfil">Criar Perfil</button>
+            <a class="btn btn-success" href="<?= base_url("configuracoes/grupo-permissao") ?>">Criar Grupo de Permissões</a>
             <a class="btn btn-success" href="<?= $baseRoute ?>/novo"><?= $addButtonText ?></a>
         </div>
     </div>

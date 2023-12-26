@@ -80,26 +80,26 @@
                     <div class="col">
                         <h6>Tipo de Equipamento</h6>
                         <div class="form-check">
-                            <input type="checkbox" id="cto">
+                            <input type="checkbox" id="cto" <?= (isset($register) and $register->cto == 1) ? 'checked' : '' ?>>
                             <label for="cto" class="form-label">CTO</label>
                         </div>
                         <div class="form-check">
-                            <input type="checkbox" id="caixa_hermetica">
+                            <input type="checkbox" id="caixa_hermetica" <?= (isset($register) and $register->caixa_hermetica == 1) ? 'checked' : '' ?>>
                             <label for="caixa_hermetica" class="form-label">Caixa Hermética</label>
                         </div>
                         <div class="form-check">
-                            <input type="checkbox" id="radio">
+                            <input type="checkbox" id="radio" <?= (isset($register) and $register->radio == 1) ? 'checked' : '' ?>>
                             <label for="radio" class="form-label">Rádio</label>
                         </div>
                     </div>
                     <div class="col">
                         <h6>Status/Posição</h6>
                         <div class="form-check">
-                            <input type="checkbox" id="active">
+                            <input type="checkbox" id="active" <?= (isset($register) and $register->active == 1) ? 'checked' : '' ?>>
                             <label for="active" class="form-label">Ativo</label>
                         </div>
                         <div class="form-check">
-                            <input type="checkbox" id="caixa_subterranea">
+                            <input type="checkbox" id="caixa_subterranea" <?= (isset($register) and $register->caixa_subterranea == 1) ? 'checked' : '' ?>>
                             <label for="caixa_subterranea" class="form-label">Caixa Subterrânea</label>
                         </div>
                     </div>

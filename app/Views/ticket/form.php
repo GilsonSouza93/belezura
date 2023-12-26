@@ -133,11 +133,11 @@
             </div>
             <div class="mt-5 col-md-3">
                 <label for="carneaberto" class="form-label"></label>
-                <input type="checkbox" name="ticket_open" id="ticket_open"> Exibe Carnê em Aberto
+                <input type="checkbox" name="ticket_open" id="ticket_open" <?= (isset($register) and $register->ticket_open == 1) ? 'checked' : '' ?>> Exibe Carnê em Aberto
             </div>
             <div class="mt-5 col-md-3">
                 <label for="pix" class="form-label"></label>
-                <input type="checkbox" name="pix" id="pix"> Gerar PIX
+                <input type="checkbox" name="pix" id="pix" <?= (isset($register) and $register->pix == 1) ? 'checked' : '' ?>> Gerar PIX
             </div>
         </div>
 

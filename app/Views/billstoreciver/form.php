@@ -39,7 +39,7 @@
                     <?php endforeach; ?>
                 </select>
             </div>
-            <div class="mt-3 col-md-2">
+            <div class="mt-3 col-md-3">
                 <label for="supplier_id" class="form-label">Fornecedor</label>
                 <select class="form-control select2" id="supplier_id" aria-label="supplier_id" name="supplier_id" >
                         <?php foreach ($suppliers as $supplier) : ?>
@@ -59,13 +59,13 @@
                     <option value="1">Cheque</option>
                 </select>
             </div>
-            <div class="mt-5 col-md-2 py-2 px-5 form-check">
-                <label class="form-check-label" for="fix_value"></label>
-                <input type="checkbox" id="fix_value" class="form-check-input" name="fix_value" checked> Valor Fixo:
-            </div>
-            <div class="mt-3 col-md-2">
+            <div class="mt-3 col-md-3">
                 <label for="value" class="form-label">Valor</label>
                 <input type="text" id="value" class="form-control" name="value" placeholder="">
+            </div>
+            <div class="mt-5 col-md-2 py-2 px-5 form-check">
+                <label class="form-check-label" for="fix_value"></label>
+                <input type="checkbox" id="fix_value" class="form-check-input" name="fix_value" <?= (isset($register) and $register->fix_value == 1) ? 'checked' : '' ?>> Valor Fixo:
             </div>
         </div>
 

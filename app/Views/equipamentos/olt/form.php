@@ -88,53 +88,53 @@
                     <div class="col-md-6">
                         <div class="form-check mt-1">
                             <label for="debug" class="form-label"></label>
-                            <input type="checkbox" id="debug" name="debug" class="form-check-input"> Debug
+                            <input type="checkbox" id="debug" name="debug" class="form-check-input" <?= (isset($register) and $register->debug == 1) ? 'checked' : '' ?>> Debug
                         </div>
                         <div class="form-check mt-1">
                             <label for="auto_save" class="form-label"></label>
-                            <input type="checkbox" name="auto_save" id="auto_save" class="form-check-input"> Auto Salvar?
+                            <input type="checkbox" name="auto_save" id="auto_save" class="form-check-input" <?= (isset($register) and $register->auto_save == 1) ? 'checked' : '' ?>> Auto Salvar?
                         </div>
                         <div class="form-check mt-1">
                             <label for="template_onu" class="form-label"></label>
-                            <input type="checkbox" name="template_onu" id="template_onu" class="form-check-input"> Requer ONU Template?
+                            <input type="checkbox" name="template_onu" id="template_onu" class="form-check-input" <?= (isset($register) and $register->template_onu == 1) ? 'checked' : '' ?>> Requer ONU Template?
                         </div>
                         <div class="form-check mt-1">
                             <label for="cto" class="form-label"></label>
-                            <input type="checkbox" name="cto" id="cto" class="form-check-input"> Requer Definir CTO na Autorização?
+                            <input type="checkbox" name="cto" id="cto" class="form-check-input" <?= (isset($register) and $register->cto == 1) ? 'checked' : '' ?>> Requer Definir CTO na Autorização?
                         </div>
                         <div class="form-check mt-1">
                             <label for="plot_sign" class="form-label"></label>
-                            <input type="checkbox" name="plot_sign" id="plot_sign" class="form-check-input"> Coletar sinal do lote
+                            <input type="checkbox" name="plot_sign" id="plot_sign" class="form-check-input" <?= (isset($register) and $register->plot_sign == 1) ? 'checked' : '' ?>> Coletar sinal do lote
                         </div>
                         <div class="form-check mt-1">
                             <label for="onu_filter" class="form-label" class="form-label"></label>
-                            <input type="checkbox" name="onu_filter" class="form-check-input"> Filtrar Tipos de ONU
+                            <input type="checkbox" name="onu_filter" class="form-check-input" <?= (isset($register) and $register->onu_filter == 1) ? 'checked' : '' ?>> Filtrar Tipos de ONU
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-check mt-1">
                             <label for="authorization" class="form-label"></label>
-                            <input type="checkbox" name="authorization" class="form-check-input"> Requer Definir Serviço na Autorização?
+                            <input type="checkbox" name="authorization" class="form-check-input" <?= (isset($register) and $register->authorization == 1) ? 'checked' : '' ?>> Requer Definir Serviço na Autorização?
                         </div>
                         <div class="form-check mt-1">
                             <label for="vlan" class="form-label"></label>
-                            <input type="checkbox" name="vlan" id="vlan" class="form-check-input"> Requer Definir VLAN Manualmente ?
+                            <input type="checkbox" name="vlan" id="vlan" class="form-check-input" <?= (isset($register) and $register->vlan == 1) ? 'checked' : '' ?>> Requer Definir VLAN Manualmente ?
                         </div>
                         <div class="form-check mt-1">
                             <label for="disable_onu" class="form-label"></label>
-                            <input type="checkbox" name="disable_onu" id="disable_onu" class="form-check-input"> Desativar ONU:
+                            <input type="checkbox" name="disable_onu" id="disable_onu" class="form-check-input" <?= (isset($register) and $register->disable_onu == 1) ? 'checked' : '' ?>> Desativar ONU:
                         </div>
                         <div class="form-check mt-1">
                             <label for="pop_filter" class="form-label"></label>
-                            <input type="checkbox" name="pop_filter" id="pop_filter" class="form-check-input"> Filtrar por POP?
+                            <input type="checkbox" name="pop_filter" id="pop_filter" class="form-check-input" <?= (isset($register) and $register->pop_filter == 1) ? 'checked' : '' ?>> Filtrar por POP?
                         </div>
                         <div class="form-check mt-1">
                             <label for="active" class="form-label"></label>
-                            <input type="checkbox" name="active" id="active" class="form-check-input"> Ativa?
+                            <input type="checkbox" name="active" id="active" class="form-check-input" <?= (isset($register) and $register->active == 1) ? 'checked' : '' ?>> Ativa?
                         </div>
                         <div class="form-check mt-1">
                             <label for="template_filter" class="form-label" class="form-label"></label>
-                            <input type="checkbox" id="template_filter" name="template_filter" class="form-check-input"> Filtrar Templete
+                            <input type="checkbox" id="template_filter" name="template_filter" class="form-check-input" <?= (isset($register) and $register->template_filter == 1) ? 'checked' : '' ?>> Filtrar Templete
                         </div>
                         
                     </div>

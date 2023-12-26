@@ -98,18 +98,18 @@
                             <label for="suspend" class="form-label">Suspender Serviço?
                                 <span class="badge text-bg-light show-text" data-text='definido suspender e tiver débito no cliente com esse plano de conta, irá suspender o serviço do cliente. Conta Plano Adesão e Mensalidade suspendem serviço por padrão.'>?</span>
                             </label>
-                            <input type="checkbox" name="suspend" id="suspend" class="form-check-input" value="<?= isset($register) ? $register->suspend : '' ?>">
+                            <input type="checkbox" name="suspend" id="suspend" class="form-check-input" <?= (isset($register) and $register->suspend == 1) ? 'checked' : '' ?>>
                         </div>
                         <div class="form-check">
                             <label for="charge" class="form-label">Enviar Cobrança Auto
                                 <span class="badge text-bg-light show-text" data-text='Habilita o envio dos títulos com este C. Custo por email caso habilitado também no Portador.'>?</span>
                             </label>
-                            <input type="checkbox" name="charge" id="charge" class="form-check-input" value="<?= isset($register) ? $register->charge : '' ?>">
+                            <input type="checkbox" name="charge" id="charge" class="form-check-input" <?= (isset($register) and $register->charge == 1) ? 'checked' : '' ?>>
                         </div>
 
                         <div class="form-check">
                             <label for="dre" class="form-label">DRE</label>
-                            <input type="checkbox" name="dre" class="form-check-input" id="dre" value="<?= isset($register) ? $register->dre : '' ?>">
+                            <input type="checkbox" name="dre" class="form-check-input" id="dre" <?= (isset($register) and $register->dre == 1) ? 'checked' : '' ?>>
                         </div>
                     </div>
 
@@ -118,7 +118,7 @@
 
                         <div class="form-check">
                             <label for="sped" class="form-label">Incluir no Bloco 1601 do Arquivo SPED ?</label>
-                            <input type="checkbox" name="sped" id="sped" class="form-check-input">
+                            <input type="checkbox" name="sped" id="sped" class="form-check-input" <?= (isset($register) and $register->sped == 1) ? 'checked' : '' ?>>
                         </div>
 
                         <div class="form-check">
