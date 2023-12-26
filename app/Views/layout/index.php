@@ -206,7 +206,7 @@
         </div>
     </div>
 
-    <div class="modal" id="phoneModal" tabindex="1" role="dialog" aria-hidden="true">
+    <div class="modal" id="generateBillModal" tabindex="1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-body">
@@ -215,18 +215,9 @@
                             Criar Pagamento
                         </h4>
 
-                        <ul id="numberListModal" class="list-group mb-4 text-center">
-                            Nenhum telefone cadastrado
-                        </ul>
+                        <!-- metodos de pagamento -->
 
-                        <div class="mt-3 form-floating">
-                            <input type="text" id="phoneNumberModalInput" class="form-control" placeholder="Insira o Telefone" maxlength="15">
-                            <label for="phoneNumber">Telefone</label>
-                        </div>
 
-                        <button type="button" class="btn btn-success mt-4" onclick="addPhoneToList()" disabled id="addPhoneToListBtn">
-                            Adicionar
-                        </button>
                     </form>
                 </div>
             </div>
@@ -517,7 +508,7 @@
             window.location.href = `<?= $baseRoute ?>/editar/${id}`;
         }
         const generateBill = (id) => {
-            showToast('Função em desenvolvimento', 'warning');
+            $('#generateBillModal').modal('show');
         }
 
         const createServiceOrder = (id) => {

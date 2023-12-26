@@ -101,15 +101,7 @@ class AsaasApiGatewayController extends BaseController
 
         $data = [
             'name' => $customer->name,
-            'email' => $customer->email,
-            'phone' => $customer->phone,
-            'mobilePhone' => $customer->mobile_phone,
-            'cpfCnpj' => $customer->cpf_cnpj,
-            'postalCode' => $customer->postal_code,
-            'address' => $customer->address,
-            'addressNumber' => $customer->address_number,
-            'complement' => $customer->complement,
-            'province' => $customer->province,
+            
             'externalReference' => $customer->id,
         ];
 
