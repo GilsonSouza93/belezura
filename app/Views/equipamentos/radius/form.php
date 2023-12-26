@@ -66,15 +66,15 @@
                     <div class="col-md-4">
                         <div class="form-check mt-3">
                             <label for="active_radius" class="form-label"></label>
-                            <input type="checkbox" name="active_radius" id="active_radius" class="form-check-input" value="<?= isset($register) ? $register->active_radius : '' ?>"> Ativar no Radius
+                            <input type="checkbox" name="active_radius" id="active_radius" class="form-check-input" <?= (isset($register) and $register->active_radius == 1) ? 'checked' : '' ?>> Ativar no Radius
                         </div>
                         <div class="form-check mt-3">
                             <label for="costumer_disponible" class="form-label"></label>
-                            <input type="checkbox" name="costumer_disponible" id="costumer_disponible" class="form-check-input" value="<?= isset($register) ? $register->costumer_disponible : '' ?>"> Disponível para Cliente
+                            <input type="checkbox" name="costumer_disponible" id="costumer_disponible" class="form-check-input" <?= (isset($register) and $register->costumer_disponible == 1) ? 'checked' : '' ?>> Disponível para Cliente
                         </div>
                         <div class="form-check mt-3">
                             <label for="rrd_interfaces" class="form-label"></label>
-                            <input type="checkbox" name="rrd_interfaces" id="rrd_interfaces" class="form-check-input" value="<?= isset($register) ? $register->rrd_interfaces : '' ?>"> RRd Interfaces
+                            <input type="checkbox" name="rrd_interfaces" id="rrd_interfaces" class="form-check-input" <?= (isset($register) and $register->rrd_interfaces == 1) ? 'checked' : '' ?>> RRd Interfaces
                         </div>
 
 
@@ -82,30 +82,30 @@
                     <div class="col-md-4">
                     <div class="form-check mt-3">
                             <label for="verify_login" class="form-label"></label>
-                            <input type="checkbox" name="verify_login" id="verify_login" class="form-check-input" value="<?= isset($register) ? $register->verify_login : '' ?>"> Verificar Login
+                            <input type="checkbox" name="verify_login" id="verify_login" class="form-check-input" <?= (isset($register) and $register->verify_login == 1) ? 'checked' : '' ?>> Verificar Login
                         </div>
                         <div class="form-check mt-3">
                             <label for="verify_mac" class="form-label"></label>
-                            <input type="checkbox" name="verify_mac" id="verify_mac" class="form-check-input" value="<?= isset($register) ? $register->verify_mac : '' ?>"> Verificar Mac
+                            <input type="checkbox" name="verify_mac" id="verify_mac" class="form-check-input" <?= (isset($register) and $register->verify_mac == 1) ? 'checked' : '' ?>> Verificar Mac
                         </div>
                         <div class="form-check mt-3">
                             <label for="verify_mac_login" class="form-label"></label>
-                            <input type="checkbox" name="verify_mac_login" id="verify_mac_login" class="form-check-input" value="<?= isset($register) ? $register->verify_mac_login : '' ?>"> Verificar Mac+Login
+                            <input type="checkbox" name="verify_mac_login" id="verify_mac_login" class="form-check-input" <?= (isset($register) and $register->verify_mac_login == 1) ? 'checked' : '' ?>> Verificar Mac+Login
                         </div>
                     </div>
                     <div class="col-md-4">
                     
                         <div class="form-check mt-3">
                             <label for="auto_reload" class="form-label"></label>
-                            <input type="checkbox" name="auto_reload" id="auto_reload" class="form-check-input" value="<?= isset($register) ? $register->auto_reload : '' ?>"> Auto Reload
+                            <input type="checkbox" name="auto_reload" id="auto_reload" class="form-check-input" <?= (isset($register) and $register->auto_reload == 1) ? 'checked' : '' ?>> Auto Reload
                         </div>
                         <div class="form-check mt-3">
                             <label for="check_radius" class="form-label"></label>
-                            <input type="checkbox" name="check_radius" id="check_radius" class="form-check-input" value="<?= isset($register) ? $register->check_radius : '' ?>"> Checar Radius
+                            <input type="checkbox" name="check_radius" id="check_radius" class="form-check-input" <?= (isset($register) and $register->check_radius == 1) ? 'checked' : '' ?>> Checar Radius
                         </div>
                         <div class="form-check mt-3">
                             <label for="check_conexion" class="form-label"></label>
-                            <input type="checkbox" name="check_conexion" id="check_conexion" class="form-check-input" value="<?= isset($register) ? $register->check_conexion : '' ?>"> Checar Conectividade
+                            <input type="checkbox" name="check_conexion" id="check_conexion" class="form-check-input" <?= (isset($register) and $register->check_conexion == 1) ? 'checked' : '' ?>> Checar Conectividade
                         </div>
                     </div>
 

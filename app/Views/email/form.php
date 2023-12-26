@@ -200,15 +200,15 @@
             <div class="col-md-3 mt-5">
                 <div class="form-check">
                     <label class="form-check-label" for="active">Ativo?</label>
-                    <input type="checkbox" class="form-check-input" name="active" id="active" value="<?= isset($register) ? $register->active : '' ?>">
+                    <input type="checkbox" class="form-check-input" name="active" id="active" <?= (isset($register) and $register->active == 1) ? 'checked' : '' ?>>
                 </div>
                 <div class="form-check">
                     <label class="form-check-label" for="terms">Termo de aceite do contrato</label>
-                    <input type="checkbox" class="form-check-input" name="terms" id="terms" value="<?= isset($register) ? $register->terms : '' ?>">
+                    <input type="checkbox" class="form-check-input" name="terms" id="terms" <?= (isset($register) and $register->terms == 1) ? 'checked' : '' ?>>
                 </div>
                 <div class="form-check">
                     <label class="form-check-label" for="comodato">Comodato?</label>
-                    <input type="checkbox" class="form-check-input" name="comodato" id="comodato" value="<?= isset($register) ? $register->comodato : '' ?>">
+                    <input type="checkbox" class="form-check-input" name="comodato" id="comodato" <?= (isset($register) and $register->comodato == 1) ? 'checked' : '' ?>>
                 </div>
             </div>
         </div>

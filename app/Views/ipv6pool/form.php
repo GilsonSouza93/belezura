@@ -50,12 +50,12 @@
             </div>
             <div class="mt-5 col-md-4 form-check">
                 <label class="form-check-label" for="flexCheckDefault"></label>
-                <input type="checkbox" class="form-check-input" name="order" id="order" value="<?= isset($register) ? $register->order : '' ?>" checked>Ordenar IPs por Rede /24:
+                <input type="checkbox" class="form-check-input" name="order" id="order" <?= (isset($register) and $register->order == 1) ? 'checked' : '' ?>>Ordenar IPs por Rede /24:
             </div>
 
             <div class="mt-5 col-md-4 form-check">
                 <label class="form-check-label" for="flexCheckDefault"></label>
-                <input type="checkbox" class="form-check-input" name="active" id="active" value="<?= isset($register) ? $register->active : '' ?>">Ativo?
+                <input type="checkbox" class="form-check-input" name="active" id="active" <?= (isset($register) and $register->active == 1) ? 'checked' : '' ?>>Ativo?
             </div>
         </div>
         <div class="row">

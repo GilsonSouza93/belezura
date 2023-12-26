@@ -75,7 +75,7 @@
             </div>
             <div class="col mt-4 mx-1">
                 <label class="form-check-label" for="fix_value"></label>
-                <input type="checkbox" class="form-check-input" name="fix_value" id="fix_value" checked> Valor Fixo:
+                <input type="checkbox" class="form-check-input" name="fix_value" id="fix_value" <?= (isset($register) and $register->fix_value == 1) ? 'checked' : '' ?>> Valor Fixo:
             </div>
         </div>
         

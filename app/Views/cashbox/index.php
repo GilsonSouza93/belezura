@@ -3,38 +3,43 @@
 <?= $this->section('content') ?>
 
 <div>
-    <h2><?= $tittle ?></h2>
+    <h2 class="mb-4">
+        <?= $tittle ?>
+    </h2>
 
-    <div class="row card">
-        <div class="col-md-4">
-            <div class="div">
-                <!-- <h6 class="mb-0 text-white">Saldo</h6>
-                <h3 class="me-2 mb-0 text-white" id="customerQty">R$1,00</h3> -->
+    <div class="card p-2">
+        <div class="row">
+            <div class="col-md-4 d-flex align-items-center">
+                <div class="div">
+                    <h5 class="ms-4 mb-0 text-white d-flex align-items-center">
+                        Saldo: <span id="balance" class="ms-2">R$1,00</span>
+                    </h5>
+                </div>
             </div>
-        </div>
-        <div class="col-md-8">
-            <div class="input-group">
-                <div class="form-floating">
-                    <input type="datetime-local" class="form-control" id="rangeStart">
-                    <label for="rangeStart">Data de inicio</label>
-                </div>
-                <div class="form-floating">
-                    <input type="datetime-local" class="form-control" id="rangeEnd">
-                    <label for="rangeEnd">Data limite</label>
-                </div>
-                <div class="form-floating">
-                    <select class="form-select" id="status">
-                        <option value="finished">Finalizado/Impresso</option>
-                        <option value="all">Todos</option>
-                        <option value="processing">Em processamento</option>
-                        <option value="completed">Completo</option>
-                        <option value="pending">Pendente</option>
-                        <option value="on-hold">Em espera</option>
-                        <option value="cancelled">Cancelado</option>
-                        <option value="refunded">Reembolsado</option>
-                        <option value="failed">Falhou</option>
-                    </select>
-                    <label for="status">Status</label>
+            <div class="col-md-8">
+                <div class="input-group">
+                    <div class="form-floating">
+                        <input type="datetime-local" class="form-control" id="rangeStart">
+                        <label for="rangeStart">Data de inicio</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="datetime-local" class="form-control" id="rangeEnd">
+                        <label for="rangeEnd">Data limite</label>
+                    </div>
+                    <div class="form-floating">
+                        <select class="form-select" id="status">
+                            <option value="finished">Finalizado/Impresso</option>
+                            <option value="all">Todos</option>
+                            <option value="processing">Em processamento</option>
+                            <option value="completed">Completo</option>
+                            <option value="pending">Pendente</option>
+                            <option value="on-hold">Em espera</option>
+                            <option value="cancelled">Cancelado</option>
+                            <option value="refunded">Reembolsado</option>
+                            <option value="failed">Falhou</option>
+                        </select>
+                        <label for="status">Status</label>
+                    </div>
                 </div>
             </div>
         </div>
@@ -53,9 +58,11 @@
         </div>
     </div>
 
-    <h2 class="mb-4" Lançamentos </h2>
+    <h2 class="mb-4">
+        Lançamentos
+    </h2>
 
-        <div id="tableDiv"></div>
+    <div id="tableDiv"></div>
 
 </div>
 <?= $this->endSection() ?>

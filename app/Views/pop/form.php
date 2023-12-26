@@ -58,7 +58,7 @@
 
             <div class="mt-5 col py-1 form-check">
                 <label class="form-check-label" for="active">Ativo</label>
-                <input type="checkbox" class="form-check-input" id="active" name="active" <?= isset($register) && $register->active ? 'checked' : '' ?>>
+                <input type="checkbox" class="form-check-input" id="active" name="active" <?= (isset($register) and $register->active == 1) ? 'checked' : '' ?>>
             </div>
         </div>
         <div class="row">
