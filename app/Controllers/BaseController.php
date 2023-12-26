@@ -324,6 +324,10 @@ abstract class BaseController extends Controller
                         'title' => 'Routerboard',
                         'href' => base_url('suporte/routerboard'),
                     ],
+                    'order_service' => [
+                        'title' => 'Ordem de Serviço',
+                        'href' => base_url('suporte/ordem-de-servico'),
+                    ],
                 ]
             ],
         ];

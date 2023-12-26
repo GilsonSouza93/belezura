@@ -39,7 +39,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
     $routes->group('map', static function ($routes) {
         $routes->get('postes', 'MapController::getPosts');
     });
-    $routes->group('dashboard', static function ($routes) { 
+    $routes->group('dashboard', static function ($routes) {
         $routes->get('/', 'DashboardController::index');
 
         // info to cards
@@ -182,7 +182,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('editar/(:num)', 'MapController::edit/$1');
             $routes->post('search', 'MapController::search');
             $routes->post('save', 'MapController::save');
-            $routes->post('delete', 'MapController::delete');            
+            $routes->post('delete', 'MapController::delete');
         });
         $routes->group('rede', static function ($routes) {
             $routes->get('/', 'NetworkController::index');
@@ -190,7 +190,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->get('editar/(:num)', 'NetworkController::edit/$1');
             $routes->post('search', 'NetworkController::search');
             $routes->post('save', 'NetworkController::save');
-            $routes->post('delete', 'NetworkController::delete');            
+            $routes->post('delete', 'NetworkController::delete');
         });
     });
 
@@ -367,7 +367,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         $routes->group('pontosdepagamento', static function ($routes) {
             $routes->get('/', 'PaymentPointController::index');
             $routes->get('novo', 'PaymentPointController::form');
-            
+
             $routes->post('save', 'PaymentPointController::save');
             $routes->post('search', 'PaymentPointController::search');
             $routes->post('delete', 'PaymentPointController::delete');
@@ -437,6 +437,15 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->post('search', 'ContractController::search');
             $routes->post('delete', 'ContractController::delete');
         });
+    });
+
+    $routes->group('suporte', static function ($routes) {
+        $routes->group('ordem-de-servico', static function ($routes) {
+            $routes->get('/', 'OrderServiceController::index');
+            $routes->get('novo', 'OrderServiceController::form');
+        });
+
+        // outros
     });
 
     $routes->group('api', static function ($routes) {
