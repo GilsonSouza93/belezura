@@ -10,7 +10,6 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhZX90O1QnNedic9Z1XgY3P9HzA9AjbN4&libraries=places"></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <style>
-
         :root {
             --border-radius: 16px;
             --border-color: rgba(255, 255, 255, 0.1)
@@ -160,6 +159,10 @@
         header.scaled {
             animation: scaleAnimation 3s;
         }
+
+        .dropdown-item {
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -193,13 +196,40 @@
                     <?php endforeach ?>
                 </div>
                 <h3 id="nav-bar-toast-alert" class="d-none ms-4 mt-2 text-white" style="transition: 0.3s;">
-                    
+
                 </h3>
             </nav>
         </header>
 
         <div>
             <?= $this->renderSection('content') ?>
+        </div>
+    </div>
+
+    <div class="modal" id="phoneModal" tabindex="1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form class="d-flex justify-content-center flex-column p-4">
+                        <h4 class="text-center mb-4">
+                            Criar Pagamento
+                        </h4>
+
+                        <ul id="numberListModal" class="list-group mb-4 text-center">
+                            Nenhum telefone cadastrado
+                        </ul>
+
+                        <div class="mt-3 form-floating">
+                            <input type="text" id="phoneNumberModalInput" class="form-control" placeholder="Insira o Telefone" maxlength="15">
+                            <label for="phoneNumber">Telefone</label>
+                        </div>
+
+                        <button type="button" class="btn btn-success mt-4" onclick="addPhoneToList()" disabled id="addPhoneToListBtn">
+                            Adicionar
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -222,7 +252,7 @@
 
             const borderColor = type === 'success' ? '#00bf63' : type === 'error' ? '#ff4e50' : type === 'warning' ? '#ffbd59' : '#00aeef';
             header.style.borderBottom = `2px solid ${borderColor}`;
-            
+
             const navBarItems = document.querySelector('#nav-bar-items');
             navBarItems.style.opacity = '0';
 
@@ -350,15 +380,12 @@
                 .then(data => {
                     hideLoading();
 
-                    console.log(data);
                     if (data.status == 'success') {
 
                         const registerQuantity = data.data.length;
-                        // const registerCash = data.data.length;
 
                         registerCounterText.innerText = `Foram encontrados ${registerQuantity} registros`;
-                        // totalityCashText.innerText = `Caixa ${registerQuantity}`;
-                        
+
                         data.data.forEach(row => {
                             const tr = document.createElement('tr');
                             tbodyElements.forEach(element => {
@@ -427,7 +454,7 @@
                                         generateBillButton.addEventListener('click', () => {
                                             generateBill(row['id']);
                                         });
-                                        generateBillButton.innerText = 'Gerar Boleto';
+                                        generateBillButton.innerText = 'Gerar Pagamento';
 
                                         dropdownMenu.appendChild(generateBillButton);
                                     }

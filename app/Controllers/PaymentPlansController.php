@@ -23,8 +23,10 @@ class PaymentPlansController extends BaseController
     {
       $session = session();
       $data['company_id'] = $session->get('company_id');
-      if(isset($data['boolean'])) 
-        $data['boolean'] = $this->FormatBoolean($data['boolean']);    
+
+      if(isset($data['visibility'])) 
+        $data['visibility'] = $this->FormatBoolean($data['visibility']);    
+
       return $data;
     }
 }
