@@ -114,8 +114,6 @@
                     </div>
 
                     <div class="col-md-6 mt-3">
-
-
                         <div class="form-check">
                             <label for="sped" class="form-label">Incluir no Bloco 1601 do Arquivo SPED ?</label>
                             <input type="checkbox" name="sped" id="sped" class="form-check-input">
