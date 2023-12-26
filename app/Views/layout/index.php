@@ -166,7 +166,7 @@
 <body id="particles-js" class="bg-dark text-white">
     <div id="particles-container"></div>
     <div id="content" class='p-4'>
-        <header class="card mb-5" style="transition: 1s ease-in-out;border-bottom: 2px solid transparent;">
+        <header class="card mb-4" style="transition: 1s ease-in-out;border-bottom: 2px solid transparent;">
             <nav class="d-flex flex-row p-2">
                 <img src="<?= base_url('assets/imgs/logo.png') ?>" alt="logo" class="ms-3 nav-bar-items" style="height: 50px" id="logo-img">
 
@@ -432,6 +432,17 @@
                                         dropdownMenu.appendChild(generateBillButton);
                                     }
 
+                                    if (element.includes('create_service_order')) {
+                                        const createServiceOrderButton = document.createElement('li');
+                                        createServiceOrderButton.classList.add('dropdown-item');
+                                        createServiceOrderButton.addEventListener('click', () => {
+                                            createServiceOrder(row['id']);
+                                        });
+                                        createServiceOrderButton.innerText = 'Criar Ordem de Serviço';
+
+                                        dropdownMenu.appendChild(createServiceOrderButton);
+                                    }
+
                                     dropdown.appendChild(dropdownButton);
                                     dropdown.appendChild(dropdownMenu);
 
@@ -479,6 +490,10 @@
             window.location.href = `<?= $baseRoute ?>/editar/${id}`;
         }
         const generateBill = (id) => {
+            showToast('Função em desenvolvimento', 'warning');
+        }
+
+        const createServiceOrder = (id) => {
             showToast('Função em desenvolvimento', 'warning');
         }
 
