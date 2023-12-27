@@ -90,7 +90,7 @@
                         </div>
                         <div class="form-check mt-3">
                             <label for="verify_mac_login" class="form-label"></label>
-                            <input type="checkbox" name="verify_mac_login" id="verify_mac_login" class="form-check-input" <?= (isset($register) and $register->verify_mac_login == 1) ? 'checked' : '' ?>> Verificar Mac+Login
+                            <input type="checkbox" name="verify_mac_login" id="verify_mac_login" class="form-check-input" <?= (isset($register) and $register->verify_mac_login == 1) ? 'checked' : '' ?>> Verificar Mac Login
                         </div>
                     </div>
                     <div class="col-md-4">

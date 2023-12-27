@@ -19,30 +19,11 @@
     </div>
 
     <form>
+        <h4>Informações Gerais</h4>
 
         <input type="hidden" id="id" name="id" <?= isset($register) ? 'value="' . $register->id . '"' : '' ?>>
         <div class="row">
-            <div class="mt-3 col-md-4">
-                <label for="name" class="form-label">Cidade</label>
-                <input type="text" class="form-control" name="city" id="city" <?= isset($register) ? 'value="' . $register->city . '"' : '' ?>>
-            </div>
-            <div class="mt-3 col-md-4">
-                <label for="ibge_code" class="form-label">Código IBGE</label>
-                <input type="text" class="form-control" id="ibge_code" name="ibge_code" <?= isset($register) ? 'value="' . $register->ibge_code . '"' : '' ?>>
-            </div>
-            <div class="mt-3 col-md-4">
-                <label for="uf" class="form-label">UF</label>
-                <select class="form-control select2" id="uf" name="uf" <?= isset($register) ? 'value="' . $register->uf . '"' : '' ?>>
-                    <option value="1">PE</option>
-                    <option value="2">AL</option>
-                    <option value="3">BA</option>
-                    <option value="4">PB</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="mt-3 col">
+            <div class="mt-3 col-md-6">
                 <label for="portador_padrao" class="form-label">Portador Padrão</label>
                 <select class="form-control select2" id="carrier" name="carrier" <?= isset($register) ? 'value="' . $register->carrier . '"' : '' ?>>
                     <option value="1">Banco do Brasil</option>
@@ -51,7 +32,7 @@
                     <option value="4">Banco Itau</option>
                 </select>
             </div>
-            <div class="mt-3 col">
+            <div class="mt-3 col-md-5">
                 <label for="identificador" class="form-label">Identificador</label>
                 <input type="text" id="identification" class="form-control" name="identification" <?= isset($register) ? 'value="' . $register->identification . '"' : '' ?>>
             </div>
@@ -61,11 +42,15 @@
                 <input type="checkbox" class="form-check-input" id="active" name="active" <?= (isset($register) and $register->active == 1) ? 'checked' : '' ?>>
             </div>
         </div>
+
+        <div class="row">
+
+        </div>
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">Plano</label>
                 <select class="form-control select2" id="plan" name="plan" <?= isset($register) ? 'value="' . $register->plan . '"' : '' ?>>
-                    <?php foreach ($plans as $item) : ?> 
+                    <?php foreach ($plans as $item) : ?>
                         <option value="<?= $item['id'] ?>"><?= $item['name'] ?></option>
                     <?php endforeach ?>
                 </select>
@@ -90,6 +75,45 @@
                 </select>
             </div>
 
+        </div>
+
+        <h4>Endereço</h4>
+
+        <div class="row">
+            <div class="mt-3 col-md-3">
+                <label for="" class="form-label">CEP</label>
+                <input type="text" name="cep" id="cep" class="form-control"  <?= isset($register) ? 'value="' . $register->cep . '"' : '' ?>>
+            </div>
+            <div class="mt-3 col-md-3">
+                <label for="" class="form-label">Rua</label>
+                <input type="text" name="street" id="street" class="form-control" <?= isset($register) ? 'value="' . $register->street . '"' : '' ?>>
+            </div>
+            <div class="mt-3 col-md-3">
+                <label for="" class="form-label">Bairro</label>
+                <input type="text" name="district" id="district" class="form-control" <?= isset($register) ? 'value="' . $register->district . '"' : '' ?>>
+            </div>
+            <div class="mt-3 col-md-3">
+                <label for="" class="form-label">Número</label>
+                <input type="text" name="number" id="number" class="form-control" <?= isset($register) ? 'value="' . $register->number . '"' : '' ?>>
+            </div>
+        </div>
+        <div class="row">
+            <div class="mt-3 col-md-3">
+                <label for="" class="form-label">Complemento</label>
+                <input type="text" name="complement" id="complement" class="form-control" <?= isset($register) ? 'value="' . $register->complement . '"' : '' ?>>
+            </div>
+            <div class="mt-3 col-md-3">
+                <label for="" class="form-label">Cidade</label>
+                <input type="text" id="city" name="city" class="form-control" <?= isset($register) ? 'value="' . $register->city . '"' : '' ?>>
+            </div>
+            <div class="mt-3 col-md-3">
+                <label for="" class="form-label">Estado</label>
+                <input type="text" id="state" name="state" class="form-control" <?= isset($register) ? 'value="' . $register->state . '"' : '' ?>>
+            </div>
+            <div class="mt-3 col-md-3">
+                <label for="" class="form-label">Ponto de Referência</label>
+                <input type="text" class="form-control" id="reference_point" name="reference_point" <?= isset($register) ? 'value="' . $register->reference_point . '"' : '' ?>>
+            </div>
         </div>
     </form>
 </div>

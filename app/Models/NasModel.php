@@ -4,36 +4,34 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class PopModel extends Model
+class NasModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'pops';
+    protected $table            = 'nas';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        "id",
-        "name",
-        "carrier",
-        "identification",
-        "active",
-        "plan",
-        "nas",
-        "user",
-        "cep",
-        "street",
-        "district",
-        "number",
-        "complement",
-        "city",
-        "state",
-        "reference_point",
-        "created_at",
-        "updated_at",
-        "deleted_at",
-        "company_id"
+        'id',
+        'description',
+        'ip_radius',
+        'auth_port',
+        'acct_port',
+        'timeout',
+        'notice_port',
+        'vpn_type',
+        'host_vpn',
+        'vpn_port',
+        'user',
+        'password',
+        'config_connection',
+        'config_user',
+        'template',
+        'config_password',
+        'active',
+        'company_id',
     ];
 
     // Dates
@@ -60,52 +58,50 @@ class PopModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-
+    
     public function search($data)
     {
         $fieldsToSearch = [
-            "id",
-            "city",
-            "carrier",
-            "identification",
-            "active",
-            "plan",
-            "nas",
-            "user",
+            'description',
+            'ip_radius',
+            'acct_port',
+            'auth_port',
+            'block_port',
+            'notice_port',
+            'active',
         ];
 
         $fieldsToReturn = [
             'id',
-            'city',
-            'carrier',
-            'plan',
-            'nas',
-            'user',
-            'active',	
-            'created_at',
-            'updated_at',
-            'deleted_at',
+            'ip_radius',
+            'acct_port',
+            'auth_port',
+            'block_port',
+            'notice_port',
+            'active',
         ];
+
+        $createdAtName = 'created_at';
 
         $search = null;
 
-        if(isset($data['search']))
+        if (isset($data['search']))
             $search = $data['search'];
 
         $query = $this->db->table($this->table)
-                ->select($fieldsToReturn);
+            ->select($fieldsToReturn);
 
-        if($search) {
+        if ($search) {
             $query->groupStart();
-            foreach($fieldsToSearch as $field) {
+            foreach ($fieldsToSearch as $field) {
                 $query->orLike($field, $search);
             }
             $query->groupEnd();
         }
 
-        $query->orderBy('created_at', 'DESC');
+        $query->orderBy($createdAtName, 'DESC');
         $result = $query->get()->getResultArray();
 
-        return $result;
+    return $result;
     }
 }

@@ -38,7 +38,7 @@
             </div>
             <div class="col">
                 <div class="mt-3 form-floating">
-                    <select class="form-select" id="plano" aria-label="plano" required>
+                    <select class="form-select" id="plan_id" name="plan_id" aria-label="plano" required>
                         <?php foreach ($subscription as $plan) : ?>
                             <option value="<?= $plan['id'] ?>"><?= $plan['name'] ?></option>
                         <?php endforeach ?>

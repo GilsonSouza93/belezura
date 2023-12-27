@@ -313,6 +313,16 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->post('search', 'RadiusController::search');
             $routes->post('delete', 'RadiusController::delete');
         });
+        $routes->group('nas', static function ($routes) {
+            $routes->get('/', 'NasController::index');
+            $routes->get('novo', 'NasController::form');
+            $routes->get('novo', 'NasController::filter');
+            $routes->get('editar/(:num)', 'RouterController::edit/$1');
+
+            $routes->post('save', 'NasController::save');
+            $routes->post('search', 'NasController::search');
+            $routes->post('delete', 'NasController::delete');
+        });
         $routes->group('poste', static function ($routes) {
             $routes->get('/', 'PoleController::index');
             $routes->get('novo', 'PoleController::form');

@@ -20,16 +20,6 @@ class AddPops extends Migration
                 'constraint' => 255,
             ],
 
-            'ibge_code' => [
-                'type' => 'VARCHAR',
-                'constraint' => 255,
-            ],
-
-            'uf' => [
-                'type' => 'VARCHAR',
-                'constraint' => 255,
-            ],
-
             'carrier' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
@@ -60,6 +50,40 @@ class AddPops extends Migration
                 'constraint' => 100
             ],
 
+            'cep' => [
+                'type' => 'int',
+                'constraint' => 8,
+            ],
+
+            'street' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
+
+            'district' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
+
+            'number' => [
+                'type' => 'int',
+                'constraint' => 8,
+            ],
+            
+            'complement' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
+            
+            'state' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
+            
+            'reference_point' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
             
             'updated_at' => [
                 'type' => 'DATETIME',

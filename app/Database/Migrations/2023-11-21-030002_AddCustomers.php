@@ -116,6 +116,11 @@ class AddCustomers extends Migration
                 "unsigned" => true,
                 "null" => true
             ],
+            "plan_id" => [
+                "type" => "int",
+                "constraint" => 5,
+            ],
+
 
             'created_at timestamp DEFAULT current_timestamp NOT NULL',
         ]);

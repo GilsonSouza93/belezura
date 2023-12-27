@@ -186,6 +186,12 @@ abstract class BaseController extends Controller
                         'icon' => '<i class="fas fa-network-wired"></i>'
 
                     ],
+                    'nas' => [
+                        'title' => 'NAS',
+                        'href' => base_url('equipamentos/nas'),
+                        'icon' => '<i class="fas fa-network-wired"></i>'
+
+                    ],
                     'poste' => [
                         'title' => 'Poste',
                         'href' => base_url('equipamentos/poste'),
