@@ -130,7 +130,7 @@
                 <label for="disponivel" class="form-label ">Disponível para OS?</label>
             </div>
             <div class="mt-5 col-md-2">
-                <input type="checkbox" name="" id="available" names="available" <?= isset($register) ? "value='{$register->available}'" : '' ?>>
+                <input type="checkbox" name="" id="notification" names="notification" <?= isset($register) ? "value='{$register->notification}'" : '' ?>>
                 <label for="disponivel" class="form-label ">Notificar Clientes</label>
                 <!-- as notificações de abertura de OS será enviado para os contatos cadastrados, pode ser via SMS, Via email, wpp, etc... -->
             </div>
