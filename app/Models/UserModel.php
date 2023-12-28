@@ -38,4 +38,16 @@ class UserModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function getUsers(){
+        $session = session();
+        $company_id = $session->get('company_id');
+
+        return $this->db->table($this->table)
+                        ->select('id, name')
+                        ->where('company_id', $company_id)
+                        ->get()
+                        ->getResultArray();
+    }
+
 }
