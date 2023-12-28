@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class RadiusModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'radiusNAN';
+    protected $table            = 'radiusnan';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
