@@ -42,12 +42,8 @@
                 <input type="checkbox" class="form-check-input" id="active" name="active" <?= (isset($register) and $register->active == 1) ? 'checked' : '' ?>>
             </div>
         </div>
-
         <div class="row">
-
-        </div>
-        <div class="row">
-            <div class="mt-3 col-md-4">
+            <div class="my-3 col-md-4">
                 <label for="typo" class="form-label">Plano</label>
                 <select class="form-control select2" id="plan" name="plan" <?= isset($register) ? 'value="' . $register->plan . '"' : '' ?>>
                     <?php foreach ($plans as $item) : ?>
@@ -58,18 +54,18 @@
             <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">NAS</label>
                 <select class="form-select" id="nas" name="nas">
-                        <?php foreach ($nas as $na) : ?>
-                            <option value="<?= $na['id'] ?>"><?= $na['description'] ?></option>
-                        <?php endforeach ?>
-                    </select>
+                    <?php foreach ($nas as $na) : ?>
+                        <option value="<?= $na['id'] ?>"><?= $na['description'] ?></option>
+                    <?php endforeach ?>
+                </select>
             </div>
             <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">Usuário</label>
                 <select class="form-select" id="user" name="user">
-                        <?php foreach ($users as $user) : ?>
-                            <option value="<?= $user['id'] ?>"><?= $user['name'] ?></option>
-                        <?php endforeach ?>
-                    </select>
+                    <?php foreach ($users as $user) : ?>
+                        <option value="<?= $user['id'] ?>"><?= $user['name'] ?></option>
+                    <?php endforeach ?>
+                </select>
             </div>
 
         </div>
@@ -79,7 +75,7 @@
         <div class="row">
             <div class="mt-3 col-md-3">
                 <label for="" class="form-label">CEP</label>
-                <input type="text" name="cep" id="cep" class="form-control"  <?= isset($register) ? 'value="' . $register->cep . '"' : '' ?>>
+                <input type="text" name="cep" id="cep" class="form-control" <?= isset($register) ? 'value="' . $register->cep . '"' : '' ?>>
             </div>
             <div class="mt-3 col-md-3">
                 <label for="" class="form-label">Rua</label>
@@ -93,7 +89,12 @@
                 <label for="" class="form-label">Número</label>
                 <input type="text" name="number" id="number" class="form-control" <?= isset($register) ? 'value="' . $register->number . '"' : '' ?>>
             </div>
+
+            <div class="mt-3">
+                <button type="button" class="btn btn-success" onclick="searchCep()">Buscar Cep</button>
+            </div>
         </div>
+
         <div class="row">
             <div class="mt-3 col-md-3">
                 <label for="" class="form-label">Complemento</label>
@@ -172,5 +173,34 @@
     function getValue(id) {
         return document.getElementById(id).value;
     }
+
+    const searchCep = () => {
+        const cepValue = cep.value.replace('-', '');
+        if (!cepValue) {
+            showToast('Preencha o CEP primeiro', 'warning');
+            return;
+        }
+        const url = `https://viacep.com.br/ws/${cepValue}/json/`;
+
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                if (data.erro) {
+                    showToast('CEP não encontrado', 'error');
+                } else {
+                    document.querySelector('#street').value = data.logradouro;
+                    document.querySelector('#district').value = data.bairro;
+                    document.querySelector('#city').value = data.localidade;
+                    document.querySelector('#state').value = data.uf;
+
+                    showToast('CEP encontrado', 'success');
+                }
+            })
+            .catch(error => {
+                showToast('CEP não encontrado', 'error');
+                console.log(error);
+            });
+    };
 </script>
 <?= $this->endSection() ?>
