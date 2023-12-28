@@ -24,7 +24,7 @@ class AddNas extends Migration
 
             'ip_radius' => [
                 'type' => 'VARCHAR',
-                'constraint' => 255,
+                'constraint' => '255',
             ],
 
             'auth_port' => [
@@ -104,7 +104,7 @@ class AddNas extends Migration
         ]);
         $this->forge->addKey('id', true);
 
-        $this->forge->addForeignKey('ip_radius', 'radiusNAN', 'ip_address');
+        $this->forge->addForeignKey('ip_radius', 'radiusnan', 'ip_address');
         $this->forge->addForeignKey('company_id', 'companies', 'id');
 
         $this->forge->createTable('nas');

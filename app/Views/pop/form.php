@@ -57,22 +57,19 @@
             </div>
             <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">NAS</label>
-                <select class="form-control select2" id="nas" name="nas" <?= isset($register) ? 'value="' . $register->nas . '"' : '' ?>>
-                    <option selected>Selecione o NAS</option>
-                    <option value="1">Monsenhor Tabosa</option>
-                    <option value="1">Ria Rural</option>
-                </select>
+                <select class="form-select" id="nas" name="nas">
+                        <?php foreach ($nas as $na) : ?>
+                            <option value="<?= $na['id'] ?>"><?= $na['description'] ?></option>
+                        <?php endforeach ?>
+                    </select>
             </div>
             <div class="mt-3 col-md-4">
                 <label for="typo" class="form-label">Usuário</label>
-                <select class="form-control select2" id="user" name="user" <?= isset($register) ? 'value="' . $register->user . '"' : '' ?>>
-                    <option selected>----------</option>
-                    <option value="1">SGP</option>
-                    <option value="2">Tecnico</option>
-                    <option value="3">Fabiana - Financeiro</option>
-                    <option value="2">Eduarda - Financeiro</option>
-                    <option value="2">Inviabilidade Tec.</option>
-                </select>
+                <select class="form-select" id="user" name="user">
+                        <?php foreach ($users as $user) : ?>
+                            <option value="<?= $user['id'] ?>"><?= $user['name'] ?></option>
+                        <?php endforeach ?>
+                    </select>
             </div>
 
         </div>

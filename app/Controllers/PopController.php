@@ -12,6 +12,7 @@ class PopController extends BaseController
     public $baseRoute = '/gerencial/pop';
 
     public $subscriptionModel;
+    public $nasModel;
     private $userModel;
     
 
@@ -22,6 +23,12 @@ class PopController extends BaseController
         $this->subscriptionModel = model('SubscriptionModel');
         $this->userModel = model('UserModel');
         $this->data['plans'] = $this->subscriptionModel->findAll();
+        $this->data['users'] = $this->userModel->findAll();
+
+               
+        $this->nasModel = model('nasModel');
+        $this->data['nas'] = $this->nasModel->findAll();
+
         return parent::__construct();
     }
 
