@@ -65,8 +65,8 @@
         tableDiv: document.getElementById('tableDiv'),
 
         // ID	Descrição	Tipo	Host	Secret	Cadastro	Serviço	Status	Ativo	Ação
-        theadElements: ['ID', 'Tipo', 'Porta','Palavra Secreta','Data de Cadastro','Ativo', 'ações'],
-        tbodyElements: ['id', 'type', 'port','secret_word','created_at','active_radius', ['edit', 'delete']],
+        theadElements: ['ID', 'Descrição', 'Host','Tipo','Secret','Data de Cadastro','Ativo', 'ações'],
+        tbodyElements: ['id', 'description', 'ip_radius','vpn_type','password','created_at','active', ['edit', 'delete']],
         searchField: document.getElementById('search'),
     }
 

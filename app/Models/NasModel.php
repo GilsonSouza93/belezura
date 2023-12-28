@@ -64,21 +64,23 @@ class NasModel extends Model
         $fieldsToSearch = [
             'description',
             'ip_radius',
-            'acct_port',
-            'auth_port',
-            'block_port',
-            'notice_port',
+            'password',
             'active',
+            'vpn_type',
+            'created_at',
+            'active',
+            'id',
         ];
 
         $fieldsToReturn = [
-            'id',
+            'description',
             'ip_radius',
-            'acct_port',
-            'auth_port',
-            'block_port',
-            'notice_port',
+            'password',
             'active',
+            'vpn_type',
+            'created_at',
+            'active',
+            'id',
         ];
 
         $createdAtName = 'created_at';
