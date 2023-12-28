@@ -23,7 +23,7 @@ class PopController extends BaseController
         $this->subscriptionModel = model('SubscriptionModel');
         $this->userModel = model('UserModel');
         $this->data['plans'] = $this->subscriptionModel->findAll();
-        $this->data['users'] = $this->userModel->findAll();
+        $this->data['users'] = $this->userModel->getUsers();
 
                
         $this->nasModel = model('nasModel');
