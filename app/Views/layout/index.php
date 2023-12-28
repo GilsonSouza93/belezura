@@ -228,6 +228,7 @@
     <script src="<?= base_url('assets/js/autoNumeric.js') ?>"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
         $('.subitems').hover(function() {
@@ -521,25 +522,40 @@
                 id: id,
             }
 
-            showLoading();
+            Swal.fire({
+                title: "Você deseja mesmo apagar esse registro?",
+                icon: 'question',
+                showDenyButton: false,
+                showCancelButton: true,
+                confirmButtonText: "Apagar",
+                cancelButtonText: "Cancelar",
+                
+            }).then((result) => {
+                /* Read more about isConfirmed, isDenied below */
+                if (result.isConfirmed) {
+                    showLoading();
 
-            fetch(url, {
-                    method: 'POST',
-                    body: JSON.stringify(data),
-                }).then(response => response.json())
-                .then(data => {
-                    hideLoading();
-                    if (data.status === 'success') {
-                        showToast(data.message, 'success');
-                        setTimeout(() => {
-                            window.location.href = '<?= $baseRoute ?>';
-                        }, 100);
-                    } else {
-                        showToast(data.message, 'error');
-                    }
-                }).catch(error => {
-                    console.log(error);
-                });
+                    fetch(url, {
+                            method: 'POST',
+                            body: JSON.stringify(data),
+                        }).then(response => response.json())
+                        .then(data => {
+                            hideLoading();
+                            if (data.status === 'success') {
+                                showToast(data.message, 'success');
+                                setTimeout(() => {
+                                    window.location.href = '<?= $baseRoute ?>';
+                                }, 100);
+                            } else {
+                                showToast(data.message, 'error');
+                            }
+                        }).catch(error => {
+                            console.log(error);
+                        });
+                }
+            });
+
+
         }
 
         const formatToBRL = (value) => {
