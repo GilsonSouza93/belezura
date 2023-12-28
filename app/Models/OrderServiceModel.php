@@ -100,27 +100,27 @@ class OrderServiceModel extends Model
             'created_at',
         ];
         
-        // $createAtName = 'created_at';
+        $createAtName = 'created_at';
 
-        // $search = null;
+        $search = null;
 
-        // if (isset($data['search']))
-        //     $search = $data['search'];
+        if (isset($data['search']))
+            $search = $data['search'];
 
-        // $query = $this->db->table($this->table)
-        //     ->select($fieldsToReturn);
+        $query = $this->db->table($this->table)
+            ->select($fieldsToReturn);
 
-        // if ($search) {
-        //     $query->groupStart();
-        //     foreach ($fieldsToSearch as $field) {
-        //         $query->orLike($field, $search);
-        //     }
-        //     $query->groupEnd();
-        // }
+        if ($search) {
+            $query->groupStart();
+            foreach ($fieldsToSearch as $field) {
+                $query->orLike($field, $search);
+            }
+            $query->groupEnd();
+        }
 
-        // $query->orderBy($createAtName, 'DESC');
-        // $result = $query->get()->getResultArray();
+        $query->orderBy($createAtName, 'DESC');
+        $result = $query->get()->getResultArray();
 
-        // return $result;
+        return $result;
     }
 }
