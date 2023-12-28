@@ -120,17 +120,16 @@
 <?= $this->section('script') ?>
 <script>
     const save = async () => {
-        const body = formatBody();
+        const form = document.querySelector('form');
+
+        const formData = new FormData(form);
 
         showLoading();
 
         try {
             await fetch('<?= $baseRoute ?>/save', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(body),
+                    body: formData
                 })
                 .then(response => response.json())
                 .then(data => {
@@ -151,23 +150,6 @@
             hideLoading();
             showToast('Houve um erro', 'error');
         }
-    }
-
-    function formatBody() {
-        const body = {
-            "id": getValue("id"),
-            "city": getValue("city"),
-            "ibge_code": getValue("ibge_code"),
-            "uf": getValue("uf"),
-            "carrier": getValue("carrier"),
-            "identification": getValue("identification"),
-            "plan": getValue("plan"),
-            "nas": getValue("nas"),
-            "user": getValue("user"),
-            "active": document.getElementById("active").checked,
-        }
-
-        return body
     }
 
     function getValue(id) {

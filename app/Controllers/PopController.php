@@ -32,51 +32,12 @@ class PopController extends BaseController
         return parent::__construct();
     }
 
-    public function save()
-    {
-        $data = $this->request->getJSON();
-        $session = session();
-        
-        $theadData = [
-            "city" => $data->city,
-            "ibge_code" => $data->ibge_code,
-            "uf" => $data->uf,
-            "carrier" => $data->carrier,
-            "identification" => $data->identification,
-            "active" => $data->active,
-            "plan" => $data->plan,
-            "nas" => $data->nas,
-            "user" => $data->user,
-            "company_id" => $session->get('company_id')
-        ];
-
-        if($data->id) {
-            $theadData['id'] = $data->id;
-        }
-
-        $response = $this->mainModel->save($theadData);
-
-        
-
-        if($response) {
-            return $this->response->setJSON([
-                'status' => 'success',
-                'message' => 'Salvo com sucesso'
-            ]);
-        } else {
-            return $this->response->setJSON([
-                'status' => 'error',
-                'message' => 'Houve um erro'
-            ]);
-        }
-    }
-
     public function treatmentBeforeSave($data)
     {
       $session = session();
       $data['company_id'] = $session->get('company_id');
-      if(isset($data['boolean'])) 
-        $data['boolean'] = $this->FormatBoolean($data['boolean']);      
+      if(isset($data['active'])) 
+        $data['active'] = $this->FormatBoolean($data['active']);      
       return $data;
     }
 }
