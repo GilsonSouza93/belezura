@@ -21,8 +21,8 @@ class PopController extends BaseController
         $this->mainModel = model('App\Models\PopModel');
         $this->mainModel = model('PopModel');
         $this->subscriptionModel = model('SubscriptionModel');
-        $this->userModel = model('UserModel');
         $this->data['plans'] = $this->subscriptionModel->findAll();
+        $this->userModel = model('UserModel');
         $this->data['users'] = $this->userModel->getUsers();
 
                

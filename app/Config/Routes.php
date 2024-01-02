@@ -112,6 +112,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->post('search', 'MovementsController::search');
             $routes->post('delete', 'MovementsController::delete');
         });
+       
         $routes->group('categorias', static function ($routes) {
             $routes->get('/', 'CategoryController::index');
             $routes->get('novo', 'CategoryController::form');

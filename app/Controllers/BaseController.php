@@ -244,7 +244,7 @@ abstract class BaseController extends Controller
                     'movements' => [
                         'title' => 'Movimentações',
                         'href' => base_url('estoque/movements'),
-                        'icon' => '<i class="fas fa-boxes"></i>'
+                        'icon' => '<i class="fas fa-boxes"></i>',
                     ],
                 ]
             ],
