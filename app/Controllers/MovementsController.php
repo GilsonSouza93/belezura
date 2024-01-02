@@ -9,7 +9,7 @@ class MovementsController extends BaseController
     public $tittle = 'Movimentações';
     public $addButtonText = 'Nova Movimentação';
     public $viewPath = 'movements';
-    public $baseRoute = '/movements';
+    public $baseRoute = 'estoque/movements';
 
     public $supplierModel;
     private $userModel;

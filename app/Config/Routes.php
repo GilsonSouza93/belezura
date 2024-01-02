@@ -105,7 +105,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         $routes->group('movements', static function ($routes) {
             $routes->get('/', 'MovementsController::index');
             $routes->get('novo', 'MovementsController::form');
-            $routes->get('novo', 'MovementsController::filter');
+            $routes->get('filter', 'MovementsController::filter');
             $routes->get('editar/(:num)', 'MovementsController::edit/$1');
 
             $routes->post('save', 'MovementsController::save');

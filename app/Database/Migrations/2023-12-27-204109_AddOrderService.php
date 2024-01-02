@@ -16,7 +16,7 @@ class AddOrderService extends Migration
                 'auto_increment' => true,
             ],
             
-        ])
+        ]);
         
         
         
