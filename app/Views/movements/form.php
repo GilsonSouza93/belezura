@@ -24,165 +24,187 @@
         </div>
     </div>
 
-    <form>
+    <form id="form">
 
         <?php if (isset($register)) : ?>
             <input type="hidden" name="id" value="<?= $register->id ?>">
         <?php endif ?>
 
-        <div class="row">
-            <div class="mt-3 col-md-4">
-                <label for="name" class="form-label">Fornecedor</label>
-                <select class="form-control select2" id="supplier_name" aria-label="supplier_name" name="supplier_name">
-                    <?php foreach ($suppliers as $supplier) : ?>
-                        <option value="<?= $supplier['name'] ?>"><?= $supplier['name'] ?></option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
-            <div class="mt-3 col-md-4">
-                <label for="name" class="form-label">Empresa</label>
-                <input type="text" class="form-control" name="company_buy" id="company_buy" placeholder="" value="<?= isset($register) ? $register->company_buy : '' ?>">
-            </div>
-            <div class="mt-3 col-md-4">
-                <label for="name" class="form-label">Nota fiscal</label>
-                <input type="text" class="form-control" name="invoice_buy" id="invoice_buy" placeholder="" value="<?= isset($register) ? $register->invoice_buy : '' ?>">
-            </div>
-        </div>
-        <div class="row">
-            <div class="mt-5 col-md-12">
-                <label for="name" class="form-label">Observação</label>
-                <input type="text" class="form-control" name="obs_buy" id="obs_buy" placeholder="" value="<?= isset($register) ? $register->obs_buy : '' ?>">
-            </div>
-        </div>
-
-        <!-- movimentações compras end -->
 
         <div class="row">
-            <div class="mt-3 col-md-3">
-                <label for="name" class="form-label">Cliente</label>
-                <input type="text" class="form-control" name="customer" id="customer" placeholder="" value="<?= isset($register) ? $register->customer : '' ?>">
-            </div>
-            <div class="mt-3 col-md-3">
-                <label for="name" class="form-label">Contract</label>
-                <input type="text" class="form-control" name="contract" id="contract" placeholder="" value="<?= isset($register) ? $register->contract : '' ?>">
-            </div>
-            <div class="mt-3 col-md-3">
-                <label for="name" class="form-label">Ordem de Serviço</label>
-                <input type="text" class="form-control" name="os_sell" id="os_sell" placeholder="" value="<?= isset($register) ? $register->os_sell : '' ?>">
-            </div>
-            <div class="mt-3 col-md-3">
-                <label for="name" class="form-label">Transportadora</label>
-                <input type="text" class="form-control" name="shipping" id="shipping" placeholder="" value="<?= isset($register) ? $register->shipping : '' ?>">
-            </div>
-        </div>
-        <div class="row">
-            <div class="mt-3 col-md-4">
-                <label for="name" class="form-label">Data de entrega</label>
-                <input type="date" class="form-control" name="delivery_date" id="delivery_date" placeholder="" value="<?= isset($register) ? $register->delivery_date : '' ?>">
-            </div>
-            <div class="mt-3 col-md-4">
-                <label for="name" class="form-label">Vendedor</label>
-                <select class="form-control select2" id="seller_name" aria-label="seller_name" name="seller_name">
-                    <?php foreach ($users as $user) : ?>
-                        <option value="<?= $user['id'] ?>"><?= $user['name'] ?></option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
-            <div class="mt-3 col-md-4">
-                <label for="name" class="form-label">Empresa que emitiu a nota fiscal</label>
-                <input type="text" class="form-control" name="companyInvoice" id="companyInvoice" placeholder="" value="<?= isset($register) ? $register->companyInvoice : '' ?>">
-            </div>
-        </div>
-        <div class="row">
-            <div class="mt-5 col-md-12">
-                <label for="name" class="form-label">Observação</label>
-                <input type="text" class="form-control" name="obs_sell" id="obs_sell" placeholder="" value="<?= isset($register) ? $register->obs_sell : '' ?>">
-            </div>
-        </div>
-        <!-- movimentações sell end -->
-        <div class="row">
-            <div class="mt-3 col-md-4">
-                <label for="name" class="form-label">Contrato</label>
-                <input type="text" class="form-control" name="contract" id="contract" placeholder="" value="<?= isset($register) ? $register->contract : '' ?>">
-            </div>
-            <div class="mt-3 col-md-4">
-                <label for="name" class="form-label">Ordem de serviço</label>
-                <input type="text" class="form-control" name="os_comodato" id="os_comodato" placeholder="" value="<?= isset($register) ? $register->os_comodato : '' ?>">
-            </div>
-            <div class="mt-3 col-md-4">
-                <label for="name" class="form-label">Nota fiscal</label>
-                <input type="text" class="form-control" name="invoice_comodato" id="invoice_comodato" placeholder="" value="<?= isset($register) ? $register->invoice_comodato : '' ?>">
-            </div>
-        </div>
-        <div class="row">
-            <div class="mt-5 col-md-12">
-                <label for="name" class="form-label">Observação</label>
-                <input type="text" class="form-control" name="obs_comodato" id="obs_comodato" placeholder="" value="<?= isset($register) ? $register->obs_comodato : '' ?>">
-            </div>
-        </div>
-        <!-- movimentações comodato end -->
-        <div class="row">
-            <div class="mt-5 col-md-4">
-                <label for="name" class="form-label">Local de Estoque</label>
-                <select name="local_storage" id="local_storage">
-                    <option value="almoxarifado fisico">Almoxarifado Físico</option>
-                </select>
-            </div>
-            <div class="mt-5 col-md-4">
+            <div class="mt-3 col-md-12">
                 <label for="name" class="form-label">Tipo de Movimentação</label>
-                <select name="movement_type_correcao" id="movement_type_correcao">
-                    <option value="entrada">Entrada no estoque</option>
-                    <option value="saida">Saida do estoque</option>
-                </select>
-            </div>
-            <div class="mt-3 col-md-4">
-                <label for="name" class="form-label">Quantidade</label>
-                <input type="text" class="form-control" name="amount" id="amount" placeholder="" value="<?= isset($register) ? $register->amount : '' ?>">
-            </div>
-        </div>
-        <div class="row">
-            <div class="mt-5 col-md-12">
-                <label for="name" class="form-label">Referência</label>
-                <input type="text" class="form-control" name="reference" id="reference" placeholder="" value="<?= isset($register) ? $register->reference : '' ?>">
-            </div>
-        </div>
-        <div class="row">
-            <div class="mt-5 col-md-12">
-                <label for="name" class="form-label">Observação</label>
-                <input type="text" class="form-control" name="obs_correcao" id="obs_correcao" placeholder="" value="<?= isset($register) ? $register->obs_correcao : '' ?>">
-            </div>
-        </div>
-        <!-- movimentações correção end -->
-        <div class="row">
-            <div class="mt-3 col-md-4">
-                <label for="name" class="form-label">Origem</label>
-                <select name="origin" id="origin">
-                    <option value="almoxarifado fisico">Almoxarifado Físico</option>
-                </select>
-            </div>
-            <div class="mt-3 col-md-4">
-                <label for="name" class="form-label">Destino</label>
-                <select name="destiny" id="destiny">
-                    <option value="almoxarifado fisico">Almoxarifado Físico</option>
-                </select>
-            </div>
-
-            <div class="mt-3 col-md-4">
-                <label for="name" class="form-label">Responsável do Envio</label>
-                <select class="form-control select2" id="responsible" aria-label="responsible" name="responsible">
-                    <?php foreach ($users as $user) : ?>
-                        <option value="<?= $user['id'] ?>"><?= $user['name'] ?></option>
+                <select class="form-control" onchange="showOptions()" name="optionType" id="optionType">
+                    <option value="">Selecione o tipo de movimentação</option>
+                    <?php foreach ($movementTypes as $movementType) : ?>
+                        <option value="<?= $movementType['id'] ?>"><?= $movementType['type'] ?></option>
                     <?php endforeach; ?>
                 </select>
             </div>
         </div>
-        <div class="row">
-            <div class="mt-5 col-md-12">
-                <label for="name" class="form-label">Observação</label>
-                <input type="text" class="form-control" name="obs_transferencia" id="obs_transferencia" placeholder="" value="<?= isset($register) ? $register->obs_transferencia : '' ?>">
+
+        <!-- --------------------------------------- -->
+        <div id="optionCompra" class="d-none divOption">
+            <div class="row ">
+                <div class="mt-3 col">
+                    <label for="name" class="form-label">Fornecedor</label>
+                    <select class="form-control" id="supplier_name" aria-label="supplier_name" name="supplier_name">
+                        <?php foreach ($suppliers as $supplier) : ?>
+                            <option value="<?= $supplier['name'] ?>"><?= $supplier['name'] ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="mt-3 col">
+                    <label for="name" class="form-label">Empresa</label>
+                    <input type="text" class="form-control" name="company_buy" id="company_buy" placeholder="" value="<?= isset($register) ? $register->company_buy : '' ?>">
+                </div>
+                <div class="mt-3 col">
+                    <label for="name" class="form-label">Nota fiscal</label>
+                    <input type="text" class="form-control" name="invoice_buy" id="invoice_buy" placeholder="" value="<?= isset($register) ? $register->invoice_buy : '' ?>">
+                </div>
+            </div>
+            <div class="row ">
+                <div class="mt-5 col-md-12">
+                    <label for="name" class="form-label">Observação</label>
+                    <input type="text" class="form-control" name="obs_buy" id="obs_buy" placeholder="" value="<?= isset($register) ? $register->obs_buy : '' ?>">
+                </div>
+            </div>
+
+            <!-- movimentações compras end -->
+        </div>
+        <div id="optionVenda" class="d-none divOption">
+            <div class="row ">
+                <div class="mt-3 col-md-3">
+                    <label for="name" class="form-label">Cliente</label>
+                    <input type="text" class="form-control" name="customer" id="customer" placeholder="" value="<?= isset($register) ? $register->customer : '' ?>">
+                </div>
+                <div class="mt-3 col-md-3">
+                    <label for="name" class="form-label">Contract</label>
+                    <input type="text" class="form-control" name="contract" id="contract" placeholder="" value="<?= isset($register) ? $register->contract : '' ?>">
+                </div>
+                <div class="mt-3 col-md-3">
+                    <label for="name" class="form-label">Ordem de Serviço</label>
+                    <input type="text" class="form-control" name="os_sell" id="os_sell" placeholder="" value="<?= isset($register) ? $register->os_sell : '' ?>">
+                </div>
+                <div class="mt-3 col-md-3">
+                    <label for="name" class="form-label">Transportadora</label>
+                    <input type="text" class="form-control" name="shipping" id="shipping" placeholder="" value="<?= isset($register) ? $register->shipping : '' ?>">
+                </div>
+            </div>
+            <div class="row ">
+                <div class="mt-3 col-md-4">
+                    <label for="name" class="form-label">Data de entrega</label>
+                    <input type="date" class="form-control" name="delivery_date" id="delivery_date" placeholder="" value="<?= isset($register) ? $register->delivery_date : '' ?>">
+                </div>
+                <div class="mt-3 col-md-4">
+                    <label for="name" class="form-label">Vendedor</label>
+                    <select class="form-control" id="seller_name" aria-label="seller_name" name="seller_name">
+                        <?php foreach ($users as $user) : ?>
+                            <option value="<?= $user['id'] ?>"><?= $user['name'] ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="mt-3 col-md-4">
+                    <label for="name" class="form-label">Empresa que emitiu a nota fiscal</label>
+                    <input type="text" class="form-control" name="companyInvoice" id="companyInvoice" placeholder="" value="<?= isset($register) ? $register->companyInvoice : '' ?>">
+                </div>
+            </div>
+            <div class="row ">
+                <div class="mt-5 col-md-12">
+                    <label for="name" class="form-label">Observação</label>
+                    <input type="text" class="form-control" name="obs_sell" id="obs_sell" placeholder="" value="<?= isset($register) ? $register->obs_sell : '' ?>">
+                </div>
+            </div>
+            <!-- movimentações sell end -->
+        </div>
+        <div id="optionComodato" class=" d-none divOption">
+            <div class="row ">
+                <div class="mt-3 col-md-4">
+                    <label for="name" class="form-label">Contrato</label>
+                    <input type="text" class="form-control" name="contract" id="contract" placeholder="" value="<?= isset($register) ? $register->contract : '' ?>">
+                </div>
+                <div class="mt-3 col-md-4">
+                    <label for="name" class="form-label">Ordem de serviço</label>
+                    <input type="text" class="form-control" name="os_comodato" id="os_comodato" placeholder="" value="<?= isset($register) ? $register->os_comodato : '' ?>">
+                </div>
+                <div class="mt-3 col-md-4">
+                    <label for="name" class="form-label">Nota fiscal</label>
+                    <input type="text" class="form-control" name="invoice_comodato" id="invoice_comodato" placeholder="" value="<?= isset($register) ? $register->invoice_comodato : '' ?>">
+                </div>
+            </div>
+            <div class="row ">
+                <div class="mt-5 col-md-12">
+                    <label for="name" class="form-label">Observação</label>
+                    <input type="text" class="form-control" name="obs_comodato" id="obs_comodato" placeholder="" value="<?= isset($register) ? $register->obs_comodato : '' ?>">
+                </div>
+            </div>
+            <!-- movimentações comodato end -->
+        </div>
+        <div id="optionCorrecao" class=" d-none divOption">
+            <div class="row ">
+                <div class="mt-5 col-md-4">
+                    <label for="name" class="form-label">Local de Estoque</label>
+                    <select class="form-control" name="local_storage" id="local_storage">
+                        <option value="almoxarifado fisico">Almoxarifado Físico</option>
+                    </select>
+                </div>
+                <div class="mt-5 col-md-4">
+                    <label for="name" class="form-label">Tipo de Movimentação</label>
+                    <select class="form-control" name="movement_type_correcao" id="movement_type_correcao">
+                        <option value="entrada">Entrada no estoque</option>
+                        <option value="saida">Saida do estoque</option>
+                    </select>
+                </div>
+                <div class="mt-5 col-md-4">
+                    <label for="name" class="form-label">Quantidade</label>
+                    <input type="text" class="form-control" name="amount" id="amount" placeholder="" value="<?= isset($register) ? $register->amount : '' ?>">
+                </div>
+            </div>
+            <div class="row ">
+                <div class="mt-5 col-md-12">
+                    <label for="name" class="form-label">Referência</label>
+                    <input type="text" class="form-control" name="reference" id="reference" placeholder="" value="<?= isset($register) ? $register->reference : '' ?>">
+                </div>
+            </div>
+            <div class="row ">
+                <div class="mt-5 col-md-12">
+                    <label for="name" class="form-label">Observação</label>
+                    <input type="text" class="form-control" name="obs_correcao" id="obs_correcao" placeholder="" value="<?= isset($register) ? $register->obs_correcao : '' ?>">
+                </div>
+            </div>
+            <!-- movimentações correção end -->
+        </div>
+        <div id="optionTransferencia" class=" d-none divOption">
+            <div class="row ">
+                <div class="mt-3 col-md-4">
+                    <label for="name" class="form-label">Origem</label>
+                    <select class="form-control" name="origin" id="origin">
+                        <option value="almoxarifado fisico">Almoxarifado Físico</option>
+                    </select>
+                </div>
+                <div class="mt-3 col-md-4">
+                    <label for="name" class="form-label">Destino</label>
+                    <select class="form-control" name="destiny" id="destiny">
+                        <option value="almoxarifado fisico">Almoxarifado Físico</option>
+                    </select>
+                </div>
+
+                <div class="mt-3 col-md-4">
+                    <label for="name" class="form-label">Responsável do Envio</label>
+                    <select class="form-control" id="responsible" aria-label="responsible" name="responsible">
+                        <?php foreach ($users as $user) : ?>
+                            <option value="<?= $user['id'] ?>"><?= $user['name'] ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="mt-5 col-md-12">
+                    <label for="name" class="form-label">Observação</label>
+                    <input type="text" class="form-control" name="obs_transferencia" id="obs_transferencia" placeholder="" value="<?= isset($register) ? $register->obs_transferencia : '' ?>">
+                </div>
             </div>
         </div>
-
 
     </form>
 </div>
@@ -218,6 +240,34 @@
                 console.log(error);
             });
     });
+
+    function showOptions() {
+        var option = document.getElementById("optionType");
+        var optionSelected = option.options[option.selectedIndex].text;
+        console.log(optionSelected);
+
+        ocultarTodosCampos();
+
+        if (optionSelected == "Compra") {
+            document.getElementById("optionCompra").classList.remove("d-none");
+        } else if (optionSelected == "Venda") {
+            document.getElementById("optionVenda").classList.remove("d-none");
+        } else if (optionSelected == "Comodato") {
+            document.getElementById("optionComodato").classList.remove("d-none");
+        } else if (optionSelected == "Correção") {
+            document.getElementById("optionCorrecao").classList.remove("d-none");
+        } else if (optionSelected == "Transferência") {
+            document.getElementById("optionTransferencia").classList.remove("d-none");
+        }
+    }
+
+    function ocultarTodosCampos() {
+        // Esconde todos os campos
+        var campos = document.querySelectorAll("#form .divOption");
+        campos.forEach(function(campo) {
+            campo.classList.add("d-none");
+        });
+    }
 </script>
 
 <?= $this->endSection() ?>

@@ -12,6 +12,7 @@ class MovementsController extends BaseController
     public $baseRoute = 'estoque/movements';
 
     public $supplierModel;
+    public $movementTypesModel;
     private $userModel;
 
     public function __construct()
@@ -25,7 +26,9 @@ class MovementsController extends BaseController
 
         $this->userModel = model('UserModel');
         $this->data['users'] = $this->userModel->getUsers();
-
+        
+        $this->movementTypesModel = model('movementTypesModel');
+        $this->data['movementTypes'] = $this->movementTypesModel->listAll();
 
         parent::__construct();
     }
