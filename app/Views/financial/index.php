@@ -3,9 +3,8 @@
 <?= $this->section('content') ?>
 
 <div class="card p-4">
-  <div class="row py-3 my-3 justify-content-center">
+  <div class="row py-3 my-3 justify-content-end">
     <div class="col-md-4">
-      <input type="text" name="search" id="search" class="form-control" placeholder="Buscar" style="background-color: transparent;">
     </div>
 
     <!-- <div class="col-md-4 btn-group">
@@ -13,15 +12,13 @@
       <button class="btn btn-success">Importar</button>
     </div> -->
 
-    <div class="col-md-4 btn-group">
-      <button class="btn btn-success">Pesquisar</button>
-      <!-- <button class="btn btn-success" onclick="openModalIpPool()">Filtros</button> -->
-      <a class="btn btn-success" href="<?= $baseRoute ?>/novo"><?= $addButtonText ?></a>
+    <div class="col-md-2 btn-group">
+      <a class="btn btn-success" href="<?= $baseRoute ?>/caixa/novo"><?= $addButtonText ?></a>
     </div>
   </div>
 
 
-  <div class="row d-flex mt-1 justify-content-center">
+  <div class="row d-flex mt-1 justify-content-between p-4">
     <div class="col-md-3 mx-3">
       <label for="payments" class="mt-2">Receita</label>
       <canvas id="payments" height="300"></canvas>

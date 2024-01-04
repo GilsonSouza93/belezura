@@ -7,7 +7,7 @@
         <?= $tittle ?>
     </h2>
 
-    <div class="card p-2">
+    <div class="card p-2 mb-4">
         <div class="row">
             <div class="col-md-4 d-flex align-items-center">
                 <div class="div">
@@ -45,7 +45,11 @@
         </div>
     </div>
 
-    <div class="row card-2 py-3 my-3">
+    <h2 class="mb-4">
+        Lançamentos
+    </h2>
+
+    <div class="row card-2 mb-4">
         <div class="col-md-8">
             <input type="text" id="search" class="form-control" placeholder="Buscar" style="background-color: transparent;">
         </div>
@@ -58,9 +62,6 @@
         </div>
     </div>
 
-    <h2 class="mb-4">
-        Lançamentos
-    </h2>
 
     <div id="tableDiv"></div>
 
@@ -75,7 +76,7 @@
         urlFetch: window.location.href + '/search',
         tableDiv: document.getElementById('tableDiv'),
         theadElements: ['ID', 'Tipo', 'Ponto de pagamento', 'Valor', 'Forma de Pagamento', 'Data de Cadastro', 'Observação', 'Ações'],
-        tbodyElements: ['id', 'type', 'payment_point', 'value', 'payment_form', 'date', 'obs', ['edit', 'delete', 'whatsapp']],
+        tbodyElements: ['id', 'type', 'payment_point', 'value', 'payment_form', 'created_at', 'obs', ['edit', 'delete',]],
         searchField: document.getElementById('search'),
     }
 

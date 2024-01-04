@@ -6,8 +6,6 @@ use CodeIgniter\Database\Migration;
 
 class AddFinancialBoxes extends Migration
 {
-    // 'id', 'type',   'pop_id',    'payment_point',    'payment_plans',    'payment_form',    'value',
-    // 'checking_proof',   'date',   'obs',   'data',   'company_id',
     public function up()
     {
         $this->forge->addField([
@@ -28,7 +26,6 @@ class AddFinancialBoxes extends Migration
                 'type' => 'INT',
                 'constraint' => 5,
             ],
-
 
             'payment_point' => [
                 'type' => 'VARCHAR',
@@ -85,7 +82,6 @@ class AddFinancialBoxes extends Migration
             ],
 
             'created_at timestamp DEFAULT current_timestamp NOT NULL',
-
         ]);
 
         $this->forge->addKey('id', true);
