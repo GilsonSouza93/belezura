@@ -2,11 +2,10 @@
 
 <?= $this->section('content') ?>
 
-<div >
-
+<div>
     <h2><?= $tittle ?></h2>
 
-    <div class="row card-2 py-3 my-3">
+    <div class="row py-3 my-3">
         <div class="col-md-8">
             <input type="text" name="search" id="search" class="form-control" placeholder="Buscar" style="background-color: transparent;">
         </div>
@@ -54,16 +53,15 @@
 
 <script>
     const collapseTable = document.getElementById('collapseTable');
-    const customersCount = document.getElementById('customersCount')
-    const searchBtn = document.getElementById('searchBtn')
+    const customersCount = document.getElementById('customersCount');
+    const searchBtn = document.getElementById('searchBtn');
 
     const renderTableOptions = {
         urlFetch: window.location.href + '/search',
         tableDiv: document.getElementById('tableDiv'),
-        
-        // Nome	Range	Total Ips	Fixos	Lease	Online	Livres	Nas	Obs	Ações
-        theadElements: ['Tipo','Id','Ações'],
-        tbodyElements: ['optionType','id', ['edit', 'delete']],
+
+        theadElements: ['Nome', 'Telefone','Endereço','POP', 'Ações'],
+        tbodyElements: ['name', 'phones', 'address1','pop_id', ['edit', 'delete', 'generate_bill', 'create_service_order']],
         searchField: document.getElementById('search'),
     }
 

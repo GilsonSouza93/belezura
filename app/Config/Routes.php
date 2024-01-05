@@ -50,13 +50,24 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
     });
 
     $routes->group('clientes', static function ($routes) {
-        $routes->get('/', 'CustomerController::index');
-        $routes->get('novo', 'CustomerController::form');
-        $routes->get('editar/(:num)', 'CustomerController::edit/$1');
+        $routes->group('clientes-cpf', static function ($routes) {
+            $routes->get('/', 'CustomerController::index');
+            $routes->get('novo', 'CustomerController::form');
+            $routes->get('editar/(:num)', 'CustomerController::edit/$1');
 
-        $routes->post('save', 'CustomerController::save');
-        $routes->post('search', 'CustomerController::search');
-        $routes->post('delete', 'CustomerController::delete');
+            $routes->post('save', 'CustomerController::save');
+            $routes->post('search', 'CustomerController::search');
+            $routes->post('delete', 'CustomerController::delete');
+        });
+        $routes->group('clientes-cnpj', static function ($routes) {
+            $routes->get('/', 'CustomerCnpjController::index');
+            $routes->get('novo', 'CustomerCnpjController::form');
+            $routes->get('editar/(:num)', 'CustomerCnpjController::edit/$1');
+
+            $routes->post('save', 'CustomerCnpjController::save');
+            $routes->post('search', 'CustomerCnpjController::search');
+            $routes->post('delete', 'CustomerCnpjController::delete');
+        });
     });
 
 
@@ -112,7 +123,7 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
             $routes->post('search', 'MovementsController::search');
             $routes->post('delete', 'MovementsController::delete');
         });
-       
+
         $routes->group('categorias', static function ($routes) {
             $routes->get('/', 'CategoryController::index');
             $routes->get('novo', 'CategoryController::form');
@@ -454,6 +465,12 @@ $routes->group('', ['filter' => 'auth'], static function ($routes) {
         $routes->group('ordem-de-servico', static function ($routes) {
             $routes->get('/', 'OrderServiceController::index');
             $routes->get('novo', 'OrderServiceController::form');
+            $routes->get('novo', 'OrderServiceController::filter');
+            $routes->get('editar/(:num)', 'OrderServiceController::edit/$1');
+
+            $routes->post('save', 'OrderServiceController::save');
+            $routes->post('search', 'OrderServiceController::search');
+            $routes->post('delete', 'OrderServiceController::delete');
         });
 
         // outros

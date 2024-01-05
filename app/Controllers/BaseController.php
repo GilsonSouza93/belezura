@@ -81,7 +81,17 @@ abstract class BaseController extends Controller
                 'title' => 'Clientes',
                 'href' => base_url('clientes'),
                 'icon' => '<i class="fas fa-users"></i>',
-                'show_subitems' => false,
+                'show_subitems' => true,
+                'subitems' => [
+                    'clientes-cpf' => [
+                        'title' => 'Clientes CPF',
+                        'href' => base_url('clientes/clientes-cpf'),
+                    ],
+                    'clientes-cnpj' => [
+                        'title' => 'Clientes CNPJ',
+                        'href' => base_url('clientes/clientes-cnpj'),
+                    ],
+                ]
             ],
 
             'financial' => [

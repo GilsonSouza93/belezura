@@ -4,12 +4,12 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 
-class CustomerController extends BaseController
+class CustomerCnpjController extends BaseController
 {
-    public $tittle = 'Clientes';
+    public $tittle = 'Clientes Cnpj';
     public $addButtonText = 'Novo Cliente';
-    public $viewPath = 'customer';
-    public $baseRoute = '/clientes/clientes-cpf';
+    public $viewPath = 'customerCnpj';
+    public $baseRoute = '/clientes/clientes-cnpj';
 
     public $subscriptionModel;
 

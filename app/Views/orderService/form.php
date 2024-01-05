@@ -45,7 +45,7 @@
         <div class="row">
             <div class="mt-3 col-md-4">
                 <label for="uf" class="form-label">Setor</label>
-                <select class="form-control select2" id="deposit" name="deposit" <?= isset($register) ? "value='{$register->deposit}'" : '' ?>>
+                <select class="form-control select2" id="deposit" name="deposit">
                     <option selected>Setor</option>
                     <option value="1">Comercial</option>
                     <option value="2">Suporte técnico TI</option>
@@ -140,7 +140,7 @@
 </div>
 <?= $this->endSection() ?>
 
-<!-- <?= $this->section('script') ?>
+<?= $this->section('script') ?>
 
 <script>
     const submitBtn = document.querySelector('#submit-btn');
@@ -173,4 +173,4 @@
     });
 </script>
 
-<?= $this->endSection() ?> -->
+<?= $this->endSection() ?>

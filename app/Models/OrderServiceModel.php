@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class OrderServiceModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'orderservices';
+    protected $table            = 'order_service';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
@@ -29,10 +29,8 @@ class OrderServiceModel extends Model
         'obsin',
         'available',
         'notification',
-        'updated_at',
-        'deleted_at',
         'company_id',
-        'created_at',
+
     ];
 
     // Dates
@@ -94,10 +92,8 @@ class OrderServiceModel extends Model
             'obsin',
             'available',
             'notification',
-            'updated_at',
-            'deleted_at',
             'company_id',
-            'created_at',
+
         ];
         
         $createAtName = 'created_at';
