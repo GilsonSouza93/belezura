@@ -6,7 +6,7 @@
 
     <h2><?= $tittle ?></h2>
     
-    <!-- <div class="row py-3 my-3">
+    <div class="row py-3 my-3">
         <div class="col-md-4">
             <input type="text" name="search" id="search" class="form-control" placeholder="Buscar" style="background-color: transparent;">
         </div>
@@ -21,7 +21,7 @@
             <button class="btn btn-success" onclick="openModalIpPool()" >Filtros</button>
             <a class="btn btn-success" href="<?= $baseRoute ?>/novo"><?= $addButtonText ?></a>
         </div> 
-    </div> -->
+    </div>
 
     <p>
         Entradas localizadas: <span id="entradasCount">0</span>
