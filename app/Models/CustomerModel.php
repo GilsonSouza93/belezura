@@ -33,6 +33,7 @@ class CustomerModel extends Model
         'onu_id',
         'pop_id',
         'plan_id',
+        'uuid',
     ];
 
     // Dates

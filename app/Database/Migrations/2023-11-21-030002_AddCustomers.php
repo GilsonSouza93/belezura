@@ -17,7 +17,7 @@ class AddCustomers extends Migration
                 'auto_increment' => true,
             ],
 
-            'uudi' => [
+            'uuid' => [
                 'type' => 'VARCHAR',
                 'constraint' => '100',
             ],

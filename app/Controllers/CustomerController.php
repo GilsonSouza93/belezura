@@ -46,6 +46,17 @@ class CustomerController extends BaseController
     if (isset($data['boolean']))
       $data['boolean'] = $this->FormatBoolean($data['boolean']);
 
+    if(!isset($data['id']))
+      {
+        $data['uuid'] = $this->generateUUID();
+        $uuid = $this->mainModel->where(' ', $data['uuid'])->first();
+
+        while ($uuid) {
+          $data['uuid'] = $this->generateUUID();
+          $uuid = $this->mainModel->where('uuid', $data['uuid'])->first();
+        }
+      }
+
     return $data;
   }
 
@@ -67,5 +78,10 @@ class CustomerController extends BaseController
       'cpfCnpj' => $customer->cpf,
       'externalReference' => $customer->id,
     ];
+  }
+
+  public function getCustomerInfo()
+  {
+    
   }
 }
