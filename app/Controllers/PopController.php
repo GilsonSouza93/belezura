@@ -15,7 +15,6 @@ class PopController extends BaseController
     public $nasModel;
     private $userModel;
     
-
     public function __construct()
     {
         $this->mainModel = model('App\Models\PopModel');

@@ -13,6 +13,5 @@ class Add_foreign_key_to_customers extends Migration
 
     public function down()
     {
-        $this->forge->dropForeignKey('customers', 'plan_id');
     }
 }

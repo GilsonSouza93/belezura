@@ -6,46 +6,66 @@ use App\Controllers\BaseController;
 
 class CustomerController extends BaseController
 {
-    public $tittle = 'Clientes';
-    public $addButtonText = 'Novo Cliente';
-    public $viewPath = 'customer';
-    public $baseRoute = '/clientes/clientes-cpf';
+  public $tittle = 'Clientes';
+  public $addButtonText = 'Novo Cliente';
+  public $viewPath = 'customer';
+  public $baseRoute = '/clientes/clientes-cpf';
 
-    public $subscriptionModel;
+  public $subscriptionModel;
 
-    public $onuModel;
+  public $onuModel;
 
-    public function __construct()
-    {
-        $this->mainModel = model('CustomerModel');
-        $this->subscriptionModel = model('SubscriptionModel');
-       
-        $this->onuModel = model('OnuModel');
-        $this->data['onus'] = $this->onuModel->findAll();
-        $this->data['subscription'] = $this->subscriptionModel->findAll();
+  public function __construct()
+  {
+    $this->mainModel = model('CustomerModel');
+    $this->subscriptionModel = model('SubscriptionModel');
 
-        $popModel = model('PopModel');
+    $this->onuModel = model('OnuModel');
+    $this->data['onus'] = $this->onuModel->findAll();
+    $this->data['subscription'] = $this->subscriptionModel->findAll();
 
-        $this->data['pops'] = $popModel->where('active', true)->findAll();
-        
-        $subscriptionModel = model('SubscriptionModel');
+    $popModel = model('PopModel');
 
-        $popModel = model('PopModel');
-        $this->data['pops'] = $popModel->findAll();
+    $this->data['pops'] = $popModel->where('active', true)->findAll();
 
-        $this->data['subscription'] = $subscriptionModel->findAll();
+    $subscriptionModel = model('SubscriptionModel');
 
-        $this->saveMessage = 'Cliente salvo com sucesso!';
-        parent::__construct();
-    }
+    $popModel = model('PopModel');
+    $this->data['pops'] = $popModel->findAll();
 
-    public function treatmentBeforeSave($data)
-    {
-      $session = session();
-      $data['company_id'] = $session->get('company_id');
-      if(isset($data['boolean'])) 
+    $this->data['subscription'] = $subscriptionModel->findAll();
+
+    $this->saveMessage = 'Cliente salvo com sucesso!';
+    parent::__construct();
+  }
+
+  public function treatmentBeforeSave($data)
+  {
+    $session = session();
+    $data['company_id'] = $session->get('company_id');
+    if (isset($data['boolean']))
       $data['boolean'] = $this->FormatBoolean($data['boolean']);
-    
-      return $data;
+
+    return $data;
+  }
+
+  private function requestPayment()
+  {
+    $data = $this->request->getJSON();
+
+    if (!isset($data->customer_id)) {
+      return $this->response->setJSON([
+        'status' => 'fail',
+        'message' => 'Cliente não informado!'
+      ]);
     }
+
+    $customer = $this->mainModel->find($data->customer_id);
+
+    $customerData = [
+      'name' => $customer->name,
+      'cpfCnpj' => $customer->cpf,
+      'externalReference' => $customer->id,
+    ];
+  }
 }
