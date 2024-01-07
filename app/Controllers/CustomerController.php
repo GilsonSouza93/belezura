@@ -82,6 +82,26 @@ class CustomerController extends BaseController
 
   public function getCustomerInfo()
   {
-    
+    $rawData = $this->request->getJSON();
+
+    if(!isset($rawData->customer_id))
+    {
+      return $this->response->setJSON([
+        'status' => 'fail',
+        'message' => 'Cliente não informado!'
+      ]);
+    }
+
+    $customer = $this->mainModel->find($rawData->customer_id);
+
+    $customerFormatedData = [
+      'name' => $customer->name,
+      'cpfCnpj' => $customer->cpf,
+    ];
+
+    return $this->response->setJSON([
+      'status' => 'success',
+      'data' => $customerFormatedData,
+    ]);
   }
 }
