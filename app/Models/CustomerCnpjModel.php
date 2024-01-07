@@ -13,7 +13,25 @@ class CustomerCnpjModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = [
+        'id',
+        'corporate_reason',
+        'fantasy_name',
+        'responsible',
+        'cpf_responsible',
+        'cpnj',
+        'foundation_date',
+        'state_registration',
+        'municipal_registration',
+        'icms',
+        'type',
+        'tax_substitute',
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        'company_id',
+
+    ];
 
     // Dates
     protected $useTimestamps = false;
@@ -38,4 +56,67 @@ class CustomerCnpjModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function search($data)
+    {
+        $fieldsToSearch = [
+            'id',
+            'corporate_reason',
+            'fantasy_name',
+            'responsible',
+            'cpf_responsible',
+            'cpnj',
+            'foundation_date',
+            'state_registration',
+            'municipal_registration',
+            'icms',
+            'type',
+            'tax_substitute',
+            'created_at',
+            'updated_at',
+            'deleted_at',
+            'company_id',
+        ];
+        $fieldsToReturn = [
+            'id',
+            'corporate_reason',
+            'fantasy_name',
+            'responsible',
+            'cpf_responsible',
+            'cpnj',
+            'foundation_date',
+            'state_registration',
+            'municipal_registration',
+            'icms',
+            'type',
+            'tax_substitute',
+            'created_at',
+            'updated_at',
+            'deleted_at',
+            'company_id',
+        ];
+
+        $createdAtName = 'created_at';
+
+        $search = null;
+
+        if (isset($data['search']))
+            $search = $data['search'];
+
+        $query = $this->db->table($this->table)
+            ->select($fieldsToReturn);
+
+        if ($search) {
+            $query->groupStart();
+            foreach ($fieldsToSearch as $field) {
+                $query->orLike($field, $search);
+            }
+            $query->groupEnd();
+        }
+
+        $query->orderBy($createdAtName, 'DESC');
+        $result = $query->get()->getResultArray();
+
+        return $result;
+    }
 }
