@@ -215,6 +215,9 @@
                             Criar Pagamento
                         </h4>
 
+                        <input type="hidden" id="">
+
+                        <input type="text" class="form-control mb-3" placeholder="Nome do Cliente" id="customerName" disabled>
                         <!-- metodos de pagamento -->
 
 

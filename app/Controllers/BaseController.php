@@ -8,6 +8,7 @@ use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
+use Ramsey\Uuid\Uuid;
 
 /**
  * Class BaseController
@@ -480,5 +481,13 @@ abstract class BaseController extends Controller
                 'message' => $message
             ]);
         }
+    }
+
+    public function generateUUID()
+    {
+        $uuid = Uuid::uuid4();
+        $uuidString = $uuid->toString();
+    
+        return $uuidString;
     }
 }

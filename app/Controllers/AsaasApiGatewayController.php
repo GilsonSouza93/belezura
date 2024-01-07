@@ -101,7 +101,7 @@ class AsaasApiGatewayController extends BaseController
 
         $data = [
             'name' => $customer->name,
-            
+            'cpfCnpj' => $customer->cpf,
             'externalReference' => $customer->id,
         ];
 

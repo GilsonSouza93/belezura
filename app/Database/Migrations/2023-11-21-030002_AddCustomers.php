@@ -17,6 +17,11 @@ class AddCustomers extends Migration
                 'auto_increment' => true,
             ],
 
+            'uuid' => [
+                'type' => 'VARCHAR',
+                'constraint' => '100',
+            ],
+
             'name' => [
                 'type' => 'VARCHAR',
                 'constraint' => '100',
@@ -120,7 +125,6 @@ class AddCustomers extends Migration
                 "type" => "int",
                 "constraint" => 5,
             ],
-
 
             'created_at timestamp DEFAULT current_timestamp NOT NULL',
         ]);
